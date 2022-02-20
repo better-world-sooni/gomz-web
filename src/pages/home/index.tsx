@@ -17,9 +17,7 @@ import useIsTablet from "src/hooks/useIsTablet";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "src/store/reducers/rootReducer";
 import { useCaver, useSelectedAddress } from "src/hooks/wallet/kaikas";
-import SignInModal from "src/components/modals/SignInModal";
 import { modalActions } from "src/store/reducers/modalReducer";
-import KlipQRModal from "src/components/modals/KlipQRModal";
 import Confetti from "src/components/modals/Confetti";
 import { KAIKAS } from "src/modules/constants";
 import { useSmartContract } from "src/hooks/contract/kip17";
@@ -341,8 +339,6 @@ export default function Home() {
 				<CallToActionAndStory />
 				<GomzNFT />
 				<GomRoomzMetaverse />
-				<SignInModal />
-				<KlipQRModal />
 			</Div>
 		</Controller>
 	);

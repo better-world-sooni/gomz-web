@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import SignInModal from "./modals/SignInModal";
 import KlipQRModal from "./modals/KlipQRModal";
 
-const TopBar = ({ mode }) => {
+const FullMapTopBar = ({ mode }) => {
 	const { locale } = useRouter();
 	const dispatch = useDispatch();
 	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
@@ -31,7 +31,7 @@ const TopBar = ({ mode }) => {
 
 	if (isTablet)
 		return (
-			<Div fixed bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
+			<Div absolute top0 bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
 				<Row mxAuto flex justifyCenter pr20>
 					<Col auto>
 						<Row roundedLg px={20}>
@@ -58,7 +58,7 @@ const TopBar = ({ mode }) => {
 			</Div>
 		);
 	return (
-		<Div fixed bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
+		<Div absolute top0 bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
 			<Row maxW={960} mxAuto flex justifyCenter px30>
 				<Col auto cursorPointer>
 					<Link href="/home" passHref>
@@ -66,41 +66,20 @@ const TopBar = ({ mode }) => {
 							<Col auto px0>
 								<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
 							</Col>
-							<Col auto px0 pr8 flex itemsCenter>
+							<Col auto px0 pr2 flex itemsCenter>
 								<Div spanTag fontBold {...logoTextProps}>
 									Gomz
+								</Div>
+							</Col>
+							<Col auto px0 pr8 flex itemsCenter>
+								<Div spanTag fontLight textBase {...logoTextProps}>
+									Space
 								</Div>
 							</Col>
 						</Row>
 					</Link>
 				</Col>
 				<Col></Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight>
-						Gomz Gallery
-					</Div>
-				</Col>
-				<Link href="/gomz-space" passHref>
-					<Col auto pt1 cursorPointer>
-						<Div spanTag fontLight>
-							GomSpace Metaverse
-						</Div>
-					</Col>
-				</Link>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight>
-						Roadmap
-					</Div>
-				</Col>
-				<Col auto pt1 cursorPointer>
-					<Div spanTag fontLight>
-						Sooni
-					</Div>
-				</Col>
-				<Col auto py4 cursorPointer>
-					<GlobeAltIcon className="h-20 w-20 text-blue-500" />
-				</Col>
-				<Col auto px10></Col>
 				<Col auto rounded3xl pt2 cursorPointer {...loginButtonProps} onClick={onClickLogin}>
 					<Div spanTag fontLight fontMedium>
 						{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
@@ -113,4 +92,4 @@ const TopBar = ({ mode }) => {
 	);
 };
 
-export default TopBar;
+export default FullMapTopBar;
