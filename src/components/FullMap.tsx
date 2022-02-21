@@ -1,10 +1,13 @@
 import { range } from "lodash";
+import { useDispatch } from "react-redux";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { fullMapActions } from "src/store/reducers/fullMapReducer";
 import Div from "./Div";
+import FullMapMintedLand from "./FullMapMintedLand";
 
 const FullMap = () => {
 	const mapInfo = [
-		{ imageSrc: "static/images/1.png", size: 24, coordinates: { x: 100, y: 100 } },
+		{ imgSrc: "static/images/1.png", size: 24, coordinates: { x: 100, y: 100 } },
 		{ size: 1, coordinates: { x: 2, y: 1 } },
 		{ size: 1, coordinates: { x: 3, y: 1 } },
 		{ size: 1, coordinates: { x: 4, y: 1 } },
@@ -14,10 +17,9 @@ const FullMap = () => {
 		{ size: 24, coordinates: { x: 330, y: 300 } },
 		{ size: 2, coordinates: { x: 99, y: 1 } },
 	];
-	const galleryImgProps = {
-		width: "100%",
-		height: "100%",
-		objectFit: "cover",
+	const dispatch = useDispatch();
+	const handleClickLand = () => {
+		dispatch(fullMapActions.setSelectedMap(null));
 	};
 	return (
 		<TransformWrapper initialScale={1} initialPositionX={0} initialPositionY={0} limitToBounds={false} minScale={0.2}>
@@ -35,24 +37,12 @@ const FullMap = () => {
 				>
 					{[
 						range(160000).map((number) => {
-							return <figure key={number} style={{ backgroundColor: "#333d4b" }}></figure>;
+							return <figure key={number} style={{ backgroundColor: "#333d4b" }} onClick={handleClickLand}></figure>;
 						}),
 					]}
 					{mapInfo.map((elem) => {
-						return (
-							<figure
-								key={`${elem.coordinates.x}, ${elem.coordinates.y}`}
-								style={{
-									gridColumnStart: elem.coordinates.x,
-									gridRowStart: elem.coordinates.y,
-									gridColumnEnd: elem.coordinates.x + elem.size,
-									gridRowEnd: elem.coordinates.y + elem.size,
-									backgroundColor: "#3cd278",
-								}}
-							>
-								<Div imgTag src={elem.imageSrc} {...galleryImgProps}></Div>
-							</figure>
-						);
+						const id = `${elem.coordinates.x}, ${elem.coordinates.y}`;
+						return <FullMapMintedLand x={elem.coordinates.x} y={elem.coordinates.y} size={elem.size} imgSrc={elem.imgSrc} id={id} key={id} />;
 					})}
 				</div>
 			</TransformComponent>

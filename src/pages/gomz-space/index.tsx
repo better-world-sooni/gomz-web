@@ -29,13 +29,11 @@ export default function GomzSpace() {
 			<Helmet bodyAttributes={{ style: "background-color : #000; overflow-x: hidden;" }} />
 			{/* <TopBar mode={"dark"} /> */}
 			<Row>
-				<Col>
+				<Col px0>
 					<FullMapTopBar mode={"dark"} />
 				</Col>
-				<Col>
-					<Div w={1199} overflowHidden bgGray900>
-						{dynamicallyLoadedFullMap}
-					</Div>
+				<Col auto overflowHidden bgGray900 w={"70%"} px0>
+					{dynamicallyLoadedFullMap}
 				</Col>
 			</Row>
 		</Div>
