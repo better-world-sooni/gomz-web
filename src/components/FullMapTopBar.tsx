@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import SignInModal from "./modals/SignInModal";
 import KlipQRModal from "./modals/KlipQRModal";
 
-const FullMapTopBar = ({ mode }) => {
+const FullMapTopBar = ({ mode, clx = {} }) => {
 	const { locale } = useRouter();
 	const dispatch = useDispatch();
 	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
@@ -31,7 +31,7 @@ const FullMapTopBar = ({ mode }) => {
 
 	if (isTablet)
 		return (
-			<Div absolute top0 bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
+			<Div absolute top0 bdBlurXl wFull pt20 pb10 z100 {...textColorProp} {...clx}>
 				<Row mxAuto flex justifyCenter pr20>
 					<Col auto>
 						<Row roundedLg px={20}>
