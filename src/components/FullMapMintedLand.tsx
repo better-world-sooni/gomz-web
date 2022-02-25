@@ -37,7 +37,7 @@ const FullMapMintedLand = ({ x, y, size, imgSrc, id, saleState }) => {
 		}
 	};
 	return (
-		<figure
+		<Div
 			style={{
 				gridColumnStart: x,
 				gridRowStart: y,
@@ -48,7 +48,7 @@ const FullMapMintedLand = ({ x, y, size, imgSrc, id, saleState }) => {
 			onClick={handleClickLand}
 		>
 			{imgSrc && <Div imgTag src={imgSrc} wFull hFull p2 cover border0></Div>}
-		</figure>
+		</Div>
 	);
 };
 

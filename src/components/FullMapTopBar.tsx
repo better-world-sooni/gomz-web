@@ -26,8 +26,8 @@ const FullMapTopBar = ({ mode, clx = {} }) => {
 	};
 	const logoSrc = mode == "dark" ? "static/images/basicBearWhite.png" : "static/images/basicBearNoBg.png";
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
-	const textColorProp = mode == "dark" ? { textWhite: true } : { textBlack: true };
-	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgBlack: true, textWhite: true };
+	const textColorProp = mode == "dark" ? { textWhite: true, bgGrayOpacity300: true } : { textBlack: true };
+	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgPrimary: true, textWhite: true };
 
 	if (isTablet)
 		return (
@@ -58,8 +58,8 @@ const FullMapTopBar = ({ mode, clx = {} }) => {
 			</Div>
 		);
 	return (
-		<Div absolute top0 bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
-			<Row maxW={960} mxAuto flex justifyCenter px30>
+		<Div absolute top0 bdBlurXl wFull pt10 pb10 z100 {...textColorProp}>
+			<Row mxAuto flex justifyCenter px30>
 				<Col auto cursorPointer>
 					<Link href="/home" passHref>
 						<Row roundedLg px={20}>

@@ -1,6 +1,7 @@
 import { range } from "lodash";
 import { useDispatch } from "react-redux";
 import { fullMapActions } from "src/store/reducers/fullMapReducer";
+import Div from "./Div";
 
 const FullMapGridElements = () => {
 	const dispatch = useDispatch();
@@ -14,17 +15,17 @@ const FullMapGridElements = () => {
 					const colStart = number % 400;
 					const rowStart = Math.floor(number / 400) + 1;
 					return (
-						<figure
+						<Div
+							bgGray500
 							key={number}
 							style={{
-								backgroundColor: "#333d4b",
 								gridColumnStart: colStart,
 								gridRowStart: rowStart,
 								gridColumnEnd: colStart + 1,
 								gridRowEnd: rowStart + 1,
 							}}
 							onClick={handleClickLand}
-						></figure>
+						></Div>
 					);
 				}),
 			]}

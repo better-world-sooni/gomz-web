@@ -332,7 +332,7 @@ export default function Home() {
 				<Confetti />
 				<Div fixed wScreen hScreen>
 					<Canvas style={{ zIndex: -10 }}>
-						<Stars count={700} />
+						<Stars count={200} />
 					</Canvas>
 				</Div>
 				<TopBar mode={"dark"} />

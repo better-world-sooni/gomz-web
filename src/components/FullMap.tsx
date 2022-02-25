@@ -1,11 +1,9 @@
-import { range } from "lodash";
-import { useDispatch } from "react-redux";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { mapInfo, SALE_STATE } from "src/modules/constants";
-import { fullMapActions } from "src/store/reducers/fullMapReducer";
-import Div from "./Div";
+import { SALE_STATE, MapLand } from "src/modules/constants";
 import FullMapGridElements from "./FullMapGridElements";
 import FullMapMintedLand from "./FullMapMintedLand";
+import * as mapInfo from "../modules/mapInfo.json";
+import Div from "./Div";
 
 const FullMap = () => {
 	return (
@@ -21,27 +19,27 @@ const FullMap = () => {
 			minScale={0.2}
 		>
 			<TransformComponent>
-				<div
+				<Div
 					style={{
 						display: "grid",
 						gridTemplateColumns: "repeat(400, 5px)",
 						gridTemplateRows: "repeat(400, 5px)",
 						gridGap: "1px",
-						backgroundColor: "#191f28",
+						// backgroundColor: "#191f28",
 						width: "2399px",
 						height: "2399px",
 					}}
 				>
 					<FullMapGridElements />
-					<figure
+					<Div
 						style={{
 							gridColumnStart: 150,
 							gridRowStart: 150,
-							gridColumnEnd: 250,
-							gridRowEnd: 250,
+							gridColumnEnd: 249,
+							gridRowEnd: 249,
 							outline: "1px solid white",
 						}}
-					></figure>
+					></Div>
 					{mapInfo.map((elem) => {
 						const id = `${elem.coordinates.x}, ${elem.coordinates.y}`;
 						return (
@@ -56,7 +54,7 @@ const FullMap = () => {
 							/>
 						);
 					})}
-				</div>
+				</Div>
 			</TransformComponent>
 		</TransformWrapper>
 	);

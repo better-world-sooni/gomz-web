@@ -132,6 +132,8 @@ const propsToClx = (props) => {
 		textXl: () => addStyle(styles, "", { fontSize: 30 }),
 		textXxl: () => addStyle(styles, "", { fontSize: 70 }),
 		textXxxl: () => addStyle(styles, "", { fontSize: 150 }),
+		// background-color
+		bgColor: (v) => addStyle(styles, "", { backgroundColor: v }),
 
 		// ==== Layout ====
 		// breakpoints
