@@ -1,11 +1,16 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { SALE_STATE, MapLand } from "src/modules/constants";
 import FullMapGridElements from "./FullMapGridElements";
 import FullMapMintedLand from "./FullMapMintedLand";
-import * as mapInfo from "../modules/mapInfo.json";
 import Div from "./Div";
+import { RootState } from "src/store/reducers/rootReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { fullMapActions } from "src/store/reducers/fullMapReducer";
+import lands from "src/modules/lands.json";
 
 const FullMap = () => {
+	const { selectedLandId } = useSelector((state: RootState) => ({
+		selectedLandId: state.fullMap.selectedLandId,
+	}));
 	return (
 		<TransformWrapper
 			initialScale={1}
@@ -40,15 +45,17 @@ const FullMap = () => {
 							outline: "1px solid white",
 						}}
 					></Div>
-					{mapInfo.map((elem) => {
-						const id = `${elem.coordinates.x}, ${elem.coordinates.y}`;
+					{lands.map((elem) => {
+						const id = `${elem.x}, ${elem.y}`;
+						const isClicked = id == selectedLandId;
 						return (
 							<FullMapMintedLand
-								x={elem.coordinates.x}
-								y={elem.coordinates.y}
+								isClicked={isClicked}
+								x={elem.x}
+								y={elem.y}
 								saleState={elem.saleState}
 								size={elem.size}
-								imgSrc={elem.imgSrc}
+								coverImgSrc={elem.coverImgSrc}
 								id={id}
 								key={id}
 							/>

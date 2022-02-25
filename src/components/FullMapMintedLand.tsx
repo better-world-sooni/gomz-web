@@ -5,11 +5,7 @@ import { fullMapActions } from "src/store/reducers/fullMapReducer";
 import { RootState } from "src/store/reducers/rootReducer";
 import Div from "./Div";
 
-const FullMapMintedLand = ({ x, y, size, imgSrc, id, saleState }) => {
-	const { selectedLandId } = useSelector((state: RootState) => ({
-		selectedLandId: state.fullMap.selectedLandId,
-	}));
-	const isClicked = selectedLandId === id;
+const FullMapMintedLand = ({ x, y, size, coverImgSrc, id, saleState, isClicked }) => {
 	const dispatch = useDispatch();
 	const color = () => {
 		if (isClicked) {
@@ -47,7 +43,7 @@ const FullMapMintedLand = ({ x, y, size, imgSrc, id, saleState }) => {
 			}}
 			onClick={handleClickLand}
 		>
-			{imgSrc && <Div imgTag src={imgSrc} wFull hFull p2 cover border0></Div>}
+			{coverImgSrc && <Div imgTag src={coverImgSrc} wFull hFull p2 border0></Div>}
 		</Div>
 	);
 };

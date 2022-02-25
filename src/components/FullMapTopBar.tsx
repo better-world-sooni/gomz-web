@@ -10,6 +10,7 @@ import Row from "./Row";
 import { useRouter } from "next/router";
 import SignInModal from "./modals/SignInModal";
 import KlipQRModal from "./modals/KlipQRModal";
+import { images } from "src/modules/images";
 
 const FullMapTopBar = ({ mode, clx = {} }) => {
 	const { locale } = useRouter();
@@ -24,9 +25,9 @@ const FullMapTopBar = ({ mode, clx = {} }) => {
 		if (isLoggedIn && selectedAddress) return;
 		dispatch(modalActions.setSignInEnabled(true));
 	};
-	const logoSrc = mode == "dark" ? "static/images/basicBearWhite.png" : "static/images/basicBearNoBg.png";
+	const logoSrc = mode == "dark" ? images.basicBearWhite : images.basicBearNoBg;
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
-	const textColorProp = mode == "dark" ? { textWhite: true, bgGrayOpacity300: true } : { textBlack: true };
+	const textColorProp = mode == "dark" ? { textWhite: true, bgGrayOpacity600: true } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgPrimary: true, textWhite: true };
 
 	if (isTablet)

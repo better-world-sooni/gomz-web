@@ -26,6 +26,7 @@ import { generateQR } from "src/modules/generateQR";
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import TopBar from "src/components/TopBar";
 import { useRouter } from "next/router";
+import { images } from "src/modules/images";
 
 const CallToActionAndStory = () => {
 	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
@@ -74,10 +75,10 @@ const CallToActionAndStory = () => {
 	return (
 		<Div maxW={960} mxAuto textWhite relative px10>
 			{isTablet && <EmptyBlock h={250} />}
-			<Div imgTag absolute src={"static/images/planets/11.png"} h80></Div>
-			<Div imgTag absolute src={"static/images/planets/13.png"} h30 right200 top50></Div>
-			{!isTablet && <Div imgTag absolute src={"static/images/planets/18.png"} h100 left500 top300></Div>}
-			{!isTablet && <Div imgTag absolute src={"static/images/planets/19.png"} h40 left100 top600></Div>}
+			<Div imgTag absolute src={images.planets["11"]} h80></Div>
+			<Div imgTag absolute src={images.planets["13"]} h30 right200 top50></Div>
+			{!isTablet && <Div imgTag absolute src={images.planets["18"]} h100 left500 top300></Div>}
+			{!isTablet && <Div imgTag absolute src={images.planets["19"]} h40 left100 top600></Div>}
 			<Scene duration={isTablet ? 1 : 600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
 				<Div>
 					<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py80={!isTablet} pb30={isTablet} rounded3xl relative h250={!isTablet}>
@@ -118,7 +119,7 @@ const CallToActionAndStory = () => {
 					<EmptyBlock />
 					{isTablet ? (
 						<Div px10>
-							<Div imgTag src={"static/images/gomzPlanet.png"} w={"100%"}></Div>
+							<Div imgTag src={images.gomzPlanet} w={"100%"}></Div>
 							<Div fontBold textXl textWhite mb15>
 								{pagesWording.home.index.storySection.title[locale]}
 							</Div>
@@ -136,7 +137,7 @@ const CallToActionAndStory = () => {
 												<Div absolute h900 w900 right0>
 													<Row>
 														<Col auto>
-															<Div imgTag src={"static/images/gomzPlanet.png"} h400 w400></Div>
+															<Div imgTag src={images.gomzPlanet} h400 w400></Div>
 														</Col>
 														<Col bdBlurSm rounded3xl>
 															<Div fontBold textXl textWhite mb15>
@@ -189,7 +190,7 @@ const GomzNFT = () => {
 						<Suspense fallback={null}>
 							<AstronautHelmet />
 							{/* @ts-ignore */}
-							<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
+							<Image url={images.gomz["1cut"]} scale={[23, 23]} position-y={19} position-z={3} />
 							<RotateCamera />
 						</Suspense>
 					</Canvas>
@@ -238,7 +239,7 @@ const GomzNFT = () => {
 													<Suspense fallback={null}>
 														<AstronautHelmet />
 														{/* @ts-ignore */}
-														<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
+														<Image url={images.gomz["1cut"]} scale={[23, 23]} position-y={19} position-z={3} />
 														<RotateCamera />
 													</Suspense>
 												</Canvas>
