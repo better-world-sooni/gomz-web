@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import EmptyBlock from "src/components/EmptyBlock";
 import { useSelector } from "react-redux";
 import { RootState } from "src/store/reducers/rootReducer";
+import { apiHelper } from "src/modules/apiHelper";
+import apis from "src/modules/apis";
 
 const LoadingComponent = () => {
 	return (
@@ -18,7 +20,7 @@ const LoadingComponent = () => {
 		</Div>
 	);
 };
-export default function GomzSpace() {
+export default function GomzSpace({ lands }) {
 	const isTablet = useIsTablet();
 	const [dynamicallyLoadedFullMap, setDynamicallyLoadedFullMap] = useState(<LoadingComponent />);
 	const { selectedLandId } = useSelector((state: RootState) => ({
@@ -27,7 +29,7 @@ export default function GomzSpace() {
 	useEffect(() => {
 		setTimeout(() => {
 			const FullMap = dynamic(() => import("src/components/FullMap"), { loading: LoadingComponent, ssr: false });
-			setDynamicallyLoadedFullMap(<FullMap />);
+			setDynamicallyLoadedFullMap(<FullMap lands={lands} />);
 		}, 100);
 	}, []);
 	return (
@@ -83,3 +85,10 @@ export default function GomzSpace() {
 		</Div>
 	);
 }
+
+GomzSpace.getInitialProps = async () => {
+	const res = await apiHelper(apis.land.getAll());
+	return {
+		lands: res.data,
+	};
+};

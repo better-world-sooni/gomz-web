@@ -2,10 +2,9 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { SALE_STATE, MapLand } from "src/modules/constants";
 import FullMapGridElements from "./FullMapGridElements";
 import FullMapMintedLand from "./FullMapMintedLand";
-import * as mapInfo from "../modules/mapInfo.json";
 import Div from "./Div";
 
-const FullMap = () => {
+const FullMap = ({ lands }) => {
 	return (
 		<TransformWrapper
 			initialScale={1}
@@ -40,18 +39,10 @@ const FullMap = () => {
 							outline: "1px solid white",
 						}}
 					></Div>
-					{mapInfo.map((elem) => {
-						const id = `${elem.coordinates.x}, ${elem.coordinates.y}`;
+					{lands.map((elem) => {
+						const id = `${elem.x}, ${elem.y}`;
 						return (
-							<FullMapMintedLand
-								x={elem.coordinates.x}
-								y={elem.coordinates.y}
-								saleState={elem.saleState}
-								size={elem.size}
-								imgSrc={elem.imgSrc}
-								id={id}
-								key={id}
-							/>
+							<FullMapMintedLand x={elem.x} y={elem.y} saleState={elem.saleState} size={elem.size} coverImgSrc={elem.coverImgSrc} id={id} key={id} />
 						);
 					})}
 				</Div>

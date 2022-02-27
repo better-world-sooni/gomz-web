@@ -8,6 +8,7 @@ export function apiHelper(url, method = 'GET', body = null) {
     if (body) {
       header = {
         method: method,
+        mode:'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -16,6 +17,7 @@ export function apiHelper(url, method = 'GET', body = null) {
     } else {
       header = {
         method: method,
+        mode:'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },

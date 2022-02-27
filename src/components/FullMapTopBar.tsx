@@ -26,7 +26,7 @@ const FullMapTopBar = ({ mode, clx = {} }) => {
 	};
 	const logoSrc = mode == "dark" ? "static/images/basicBearWhite.png" : "static/images/basicBearNoBg.png";
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
-	const textColorProp = mode == "dark" ? { textWhite: true, bgGrayOpacity300: true } : { textBlack: true };
+	const textColorProp = mode == "dark" ? { textWhite: true, bgGrayOpacity700: true } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgPrimary: true, textWhite: true };
 
 	if (isTablet)
