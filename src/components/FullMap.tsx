@@ -3,11 +3,9 @@ import FullMapGridElements from "./FullMapGridElements";
 import FullMapMintedLand from "./FullMapMintedLand";
 import Div from "./Div";
 import { RootState } from "src/store/reducers/rootReducer";
-import { useDispatch, useSelector } from "react-redux";
-import { fullMapActions } from "src/store/reducers/fullMapReducer";
-import lands from "src/modules/lands.json";
+import { useSelector } from "react-redux";
 
-const FullMap = () => {
+const FullMap = ({ lands }) => {
 	const { selectedLandId } = useSelector((state: RootState) => ({
 		selectedLandId: state.fullMap.selectedLandId,
 	}));

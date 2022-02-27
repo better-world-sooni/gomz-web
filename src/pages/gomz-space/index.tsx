@@ -20,17 +20,17 @@ const LoadingComponent = () => {
 
 const FullMap = dynamic(() => import("src/components/FullMap"), { loading: LoadingComponent, ssr: false });
 
-const GomzSpace = () => {
+const GomzSpace = ({ lands }) => {
 	const isTablet = useIsTablet();
-	const { selectedLandId } = useSelector((state: RootState) => ({
-		selectedLandId: state.fullMap.selectedLandId,
-	}));
+	// const { selectedLandId } = useSelector((state: RootState) => ({
+	// 	selectedLandId: state.fullMap.selectedLandId,
+	// }));
 	return (
 		<Div overflowHidden hScreen>
 			<Helmet bodyAttributes={{ style: "background-color : black; overflow-x: hidden;" }} />
 			<FullMapTopBar mode={"dark"} />
 			<Div bgGray100 wFull hFull fixed>
-				<FullMap />
+				<FullMap lands={lands} />
 			</Div>
 			<Div fixed hFull w400 px30 overflowScroll>
 				<EmptyBlock h={80} />
@@ -42,7 +42,7 @@ const GomzSpace = () => {
 					</Div>
 				</Div>
 				<Div bgColor={"rgb(21, 21, 23)"} shadowLg rounded20 py15 mt15 px15>
-					<Div textGray200 fontBold>{`Space at ${selectedLandId}`}</Div>
+					{/* <Div textGray200 fontBold>{`Space at ${selectedLandId}`}</Div> */}
 					<Div textInfo mb10>
 						@irlyglo
 					</Div>
@@ -59,7 +59,7 @@ const GomzSpace = () => {
 							Location
 						</Div>
 						<Div textSuccess fontBold mt5>
-							{selectedLandId}
+							{/* {selectedLandId} */}
 						</Div>
 					</Div>
 					<Div flex1 bgGray200 shadowLg rounded20 py15 px15>
@@ -67,7 +67,7 @@ const GomzSpace = () => {
 							Size
 						</Div>
 						<Div textGray700 fontBold mt5>
-							{selectedLandId}
+							{/* {selectedLandId} */}
 						</Div>
 					</Div>
 				</Div>
@@ -80,10 +80,10 @@ const GomzSpace = () => {
 };
 
 GomzSpace.getInitialProps = async (ctx) => {
-	const fs = require("fs");
 	const res = await apiHelper(apis.land.getAll());
-	fs.writeFileSync("src/modules/lands.json", JSON.stringify(res.data));
-	return {};
+	return {
+		lands: res.data,
+	};
 };
 
 export default GomzSpace;
