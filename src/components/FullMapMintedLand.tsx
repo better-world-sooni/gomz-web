@@ -5,11 +5,11 @@ import { fullMapActions } from "src/store/reducers/fullMapReducer";
 import { RootState } from "src/store/reducers/rootReducer";
 import Div from "./Div";
 
-const FullMapMintedLand = ({ x, y, size, coverImgSrc, id, saleState }) => {
-	const { selectedLandId } = useSelector((state: RootState) => ({
-		selectedLandId: state.fullMap.selectedLandId,
+const FullMapMintedLand = ({ x, y, size, coverImgSrc, saleState }) => {
+	const { selectedLandCoordinates } = useSelector((state: RootState) => ({
+		selectedLandCoordinates: state.fullMap.selectedLandCoordinates,
 	}));
-	const isClicked = selectedLandId === id;
+	const isClicked = selectedLandCoordinates.x == x && selectedLandCoordinates.y == y;
 	const dispatch = useDispatch();
 	const color = () => {
 		if (isClicked) {
@@ -30,7 +30,12 @@ const FullMapMintedLand = ({ x, y, size, coverImgSrc, id, saleState }) => {
 		}
 	};
 	const handleClickLand = () => {
-		dispatch(fullMapActions.setSelectedMap(id));
+		dispatch(
+			fullMapActions.setSelectedMap({
+				x,
+				y,
+			}),
+		);
 	};
 	return (
 		<Div
@@ -41,6 +46,7 @@ const FullMapMintedLand = ({ x, y, size, coverImgSrc, id, saleState }) => {
 				gridRowEnd: y + size,
 				backgroundColor: color(),
 			}}
+			cursorPointer
 			onClick={handleClickLand}
 		>
 			{coverImgSrc && <Div imgTag src={coverImgSrc} wFull hFull p2 cover border0></Div>}

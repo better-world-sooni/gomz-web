@@ -41,9 +41,7 @@ const FullMap = ({ lands }) => {
 					></Div>
 					{lands.map((elem) => {
 						const id = `${elem.x}, ${elem.y}`;
-						return (
-							<FullMapMintedLand x={elem.x} y={elem.y} saleState={elem.saleState} size={elem.size} coverImgSrc={elem.coverImgSrc} id={id} key={id} />
-						);
+						return <FullMapMintedLand x={elem.x} y={elem.y} saleState={elem.saleState} size={elem.size} coverImgSrc={elem.coverImgSrc} key={id} />;
 					})}
 				</Div>
 			</TransformComponent>

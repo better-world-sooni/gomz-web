@@ -10,6 +10,8 @@ import Row from "./Row";
 import { useRouter } from "next/router";
 import SignInModal from "./modals/SignInModal";
 import KlipQRModal from "./modals/KlipQRModal";
+import { urls } from "src/modules/urls";
+import { moveTo } from "src/modules/routeHelper";
 
 const FullMapTopBar = ({ mode, clx = {} }) => {
 	const { locale } = useRouter();
@@ -26,7 +28,7 @@ const FullMapTopBar = ({ mode, clx = {} }) => {
 	};
 	const logoSrc = mode == "dark" ? "static/images/basicBearWhite.png" : "static/images/basicBearNoBg.png";
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
-	const textColorProp = mode == "dark" ? { textWhite: true, bgGrayOpacity700: true } : { textBlack: true };
+	const textColorProp = mode == "dark" ? { textWhite: true, bgColor: "rgba(0, 0, 0, 0.8)" } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgPrimary: true, textWhite: true };
 
 	if (isTablet)
@@ -61,23 +63,21 @@ const FullMapTopBar = ({ mode, clx = {} }) => {
 		<Div absolute top0 bdBlurXl wFull pt10 pb10 z100 {...textColorProp}>
 			<Row mxAuto flex justifyCenter px30>
 				<Col auto cursorPointer>
-					<Link href="/home" passHref>
-						<Row roundedLg px={20}>
-							<Col auto px0>
-								<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
-							</Col>
-							<Col auto px0 pr2 flex itemsCenter>
-								<Div spanTag fontBold {...logoTextProps}>
-									Gomz
-								</Div>
-							</Col>
-							<Col auto px0 pr8 flex itemsCenter>
-								<Div spanTag fontLight textBase {...logoTextProps}>
-									Space
-								</Div>
-							</Col>
-						</Row>
-					</Link>
+					<Row roundedLg px={20} onClick={() => moveTo(urls.home)}>
+						<Col auto px0>
+							<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
+						</Col>
+						<Col auto px0 pr2 flex itemsCenter>
+							<Div spanTag fontBold {...logoTextProps}>
+								Gomz
+							</Div>
+						</Col>
+						<Col auto px0 pr8 flex itemsCenter>
+							<Div spanTag fontLight textBase {...logoTextProps}>
+								Space
+							</Div>
+						</Col>
+					</Row>
 				</Col>
 				<Col></Col>
 				<Col auto rounded3xl pt2 cursorPointer {...loginButtonProps} onClick={onClickLogin}>

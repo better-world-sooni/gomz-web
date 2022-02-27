@@ -1,13 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { defaultSelectedLandCoordinates } from 'src/modules/constants'
 
 const fullMapSlice = createSlice({
   name: 'fullMap',
   initialState: {
-    selectedLandId: null
+    selectedLandCoordinates: defaultSelectedLandCoordinates
   },
   reducers: {
     setSelectedMap(state, action) {
-        state.selectedLandId = action.payload
+        state.selectedLandCoordinates = action.payload
     }
   },
 })
