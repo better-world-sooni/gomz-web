@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { Suspense } from "react";
 import Div from "src/components/Div";
 import Row from "src/components/Row";
 import Col from "src/components/Col";
@@ -26,9 +26,7 @@ import { generateQR } from "src/modules/generateQR";
 import { GlobeAltIcon } from "@heroicons/react/outline";
 import TopBar from "src/components/TopBar";
 import { useRouter } from "next/router";
-import Effects from "src/components/Effects";
-import Particles from "src/components/Particles";
-import Number from "src/components/Number";
+import { images } from "src/modules/images";
 
 const CallToActionAndStory = () => {
 	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
@@ -74,39 +72,95 @@ const CallToActionAndStory = () => {
 			dispatch(modalActions.setSignInEnabled(true));
 		}
 	};
-	const [hovered, hover] = useState(false);
-	const [down, set] = useState(false);
-	const mouse = useRef([0, 0]);
-	const RotateCamera = () => {
-		useFrame((state) => {
-			state.camera.rotation.z += 0.02 * Math.sin(state.clock.elapsedTime * 0.8);
-			state.camera.rotation.y += 0.03 * Math.sin(state.clock.elapsedTime * 0.3);
-			state.camera.rotation.x += 0.005 * Math.cos(state.clock.elapsedTime * 0.2);
-			state.camera.updateProjectionMatrix();
-		});
-		return null;
-	};
 	return (
-		<Div relative>
-			<Div maxW={960} mxAuto textWhite relative px10></Div>
-			<Div absolute wScreen hScreen>
-				<Canvas style={{ zIndex: 10 }} camera={{ fov: 30, near: 1, far: 1000, position: [0, 0, 200] }}>
-					<Stars count={1000} />
-					<OrbitControls enableZoom={false} enablePan={false} />
-					<MovingSpotlight to={{ x: 240, y: 10 }} from={{ x: 190, y: 100 }} color={new Color(255, 0, 0)} />
-					<spotLight color={new Color(0, 255, 0)} intensity={0.001} position={new Vector3(0, 0, 40)} angle={Math.PI} penumbra={0} distance={50} />
-					<ambientLight intensity={0.2} />
-					<Effects down={false} />
-					<Suspense fallback={null}>
-						<AstronautHelmet />
-						{/* @ts-ignore */}
-						<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
-						<RotateCamera />
-					</Suspense>
-					<Number />
-					<Particles mouse={mouse} count={50} />
-				</Canvas>
-			</Div>
+		<Div maxW={960} mxAuto textWhite relative px10>
+			{isTablet && <EmptyBlock h={250} />}
+			<Div imgTag absolute src={images.planets["11"]} h80></Div>
+			<Div imgTag absolute src={images.planets["13"]} h30 right200 top50></Div>
+			{!isTablet && <Div imgTag absolute src={images.planets["18"]} h100 left500 top300></Div>}
+			{!isTablet && <Div imgTag absolute src={images.planets["19"]} h40 left100 top600></Div>}
+			<Scene duration={isTablet ? 1 : 600} pin={{ pushFollowers: false }} triggerHook={0.5} offset={300}>
+				<Div>
+					<Div mxAuto maxW={600} fontBold textCenter leadingNone bdBlurSm py80={!isTablet} pb30={isTablet} rounded3xl relative h250={!isTablet}>
+						<Scene duration={100} triggerHook={0} pin={{ pushFollowers: true }}>
+							{(progress) => (
+								<Timeline totalProgress={progress} paused>
+									<Timeline
+										target={
+											<Div textXxxl={!isTablet} textXxl={isTablet} clx={"timeline"}>
+												{pagesWording.home.index.mintSection.title[locale]}
+											</Div>
+										}
+									>
+										<Tween from={{ opacity: 1, y: 0 }} to={{ opacity: -1, y: -100 }} />
+									</Timeline>
+									<Timeline
+										target={
+											<Div textXxl={!isTablet} fontSize40={isTablet} clx={"timeline"} absolute top0>
+												{pagesWording.home.index.mintSection.mainMessage[locale]}
+											</Div>
+										}
+									>
+										<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
+									</Timeline>
+								</Timeline>
+							)}
+						</Scene>
+					</Div>
+					<Div mxAuto maxW={500} textLg textCenter textGray500 bdBlurSm rounded3xl>
+						{pagesWording.home.index.mintSection.secondaryMessage[locale]}
+					</Div>
+					<Div mxAuto maxW={500} textBase textCenter textGray600 bdBlurSm rounded3xl>
+						{pagesWording.home.index.mintSection.tertiaryMessage[locale]}
+					</Div>
+					<Div justifyCenter flex py25>
+						<RoundedButton size={"xlarge"} color={"black"} text={pagesWording.home.index.mintSection.mintButton[locale]} onClick={mint} />
+					</Div>
+					<EmptyBlock />
+					{isTablet ? (
+						<Div px10>
+							<Div imgTag src={images.gomzPlanet} w={"100%"}></Div>
+							<Div fontBold textXl textWhite mb15>
+								{pagesWording.home.index.storySection.title[locale]}
+							</Div>
+							<Div textLg textGray500>
+								{pagesWording.home.index.storySection.plot[locale]}
+							</Div>
+						</Div>
+					) : (
+						<Div>
+							<Scene duration={500} pin={{ pushFollowers: false }} triggerHook={0.5} offset={200}>
+								{(progress) => (
+									<Timeline totalProgress={progress} paused>
+										<Timeline
+											target={
+												<Div absolute h900 w900 right0>
+													<Row>
+														<Col auto>
+															<Div imgTag src={images.gomzPlanet} h400 w400></Div>
+														</Col>
+														<Col bdBlurSm rounded3xl>
+															<Div fontBold textXl textWhite mb15>
+																{pagesWording.home.index.storySection.title[locale]}
+															</Div>
+															<Div textLg textGray500>
+																{pagesWording.home.index.storySection.plot[locale]}
+															</Div>
+														</Col>
+													</Row>
+												</Div>
+											}
+										>
+											<Tween from={{ x: 1000 }} to={{ x: 0 }} />
+										</Timeline>
+									</Timeline>
+								)}
+							</Scene>
+							<EmptyBlock h={600} />
+						</Div>
+					)}
+				</Div>
+			</Scene>
 		</Div>
 	);
 };
@@ -136,7 +190,7 @@ const GomzNFT = () => {
 						<Suspense fallback={null}>
 							<AstronautHelmet />
 							{/* @ts-ignore */}
-							<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
+							<Image url={images.gomz["1cut"]} scale={[23, 23]} position-y={19} position-z={3} />
 							<RotateCamera />
 						</Suspense>
 					</Canvas>
@@ -185,7 +239,7 @@ const GomzNFT = () => {
 													<Suspense fallback={null}>
 														<AstronautHelmet />
 														{/* @ts-ignore */}
-														<Image url={"static/images/1cut.png"} scale={[23, 23]} position-y={19} position-z={3} />
+														<Image url={images.gomz["1cut"]} scale={[23, 23]} position-y={19} position-z={3} />
 														<RotateCamera />
 													</Suspense>
 												</Canvas>
@@ -277,10 +331,15 @@ export default function Home() {
 			<Div bgBlack>
 				<Helmet bodyAttributes={{ style: "background-color : #000; overflow-x: hidden;" }} />
 				<Confetti />
+				<Div fixed wScreen hScreen>
+					<Canvas style={{ zIndex: -10 }}>
+						<Stars count={200} />
+					</Canvas>
+				</Div>
 				<TopBar mode={"dark"} />
 				<CallToActionAndStory />
-				{/* <GomzNFT />
-				<GomRoomzMetaverse /> */}
+				<GomzNFT />
+				<GomRoomzMetaverse />
 			</Div>
 		</Controller>
 	);

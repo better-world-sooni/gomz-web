@@ -71,7 +71,7 @@ const FullMapDetailsShelf = () => {
 					<Div textGray700 textSm fontLight>
 						Size
 					</Div>
-					<Div fontGray900 fontBold mt5>
+					<Div textGray900 fontBold mt5>
 						{landDetails.size}
 					</Div>
 				</Div>
