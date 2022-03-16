@@ -6,9 +6,6 @@ import { RootState } from "src/store/reducers/rootReducer";
 import { useSelector } from "react-redux";
 
 const FullMap = ({ lands }) => {
-	const { selectedLandId } = useSelector((state: RootState) => ({
-		selectedLandId: state.fullMap.selectedLandId,
-	}));
 	return (
 		<TransformWrapper
 			initialScale={1}
@@ -45,19 +42,7 @@ const FullMap = ({ lands }) => {
 					></Div>
 					{lands.map((elem) => {
 						const id = `${elem.x}, ${elem.y}`;
-						const isClicked = id == selectedLandId;
-						return (
-							<FullMapMintedLand
-								isClicked={isClicked}
-								x={elem.x}
-								y={elem.y}
-								saleState={elem.saleState}
-								size={elem.size}
-								coverImgSrc={elem.coverImgSrc}
-								id={id}
-								key={id}
-							/>
-						);
+						return <FullMapMintedLand x={elem.x} y={elem.y} saleState={elem.saleState} size={elem.size} coverImgSrc={elem.coverImgSrc} key={id} />;
 					})}
 				</Div>
 			</TransformComponent>

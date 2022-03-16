@@ -5,9 +5,6 @@ import Div from "./Div";
 
 const FullMapGridElements = () => {
 	const dispatch = useDispatch();
-	const handleClickLand = () => {
-		dispatch(fullMapActions.setSelectedMap(null));
-	};
 	return (
 		<>
 			{[
@@ -24,7 +21,6 @@ const FullMapGridElements = () => {
 								gridColumnEnd: colStart + 1,
 								gridRowEnd: rowStart + 1,
 							}}
-							onClick={handleClickLand}
 						></Div>
 					);
 				}),

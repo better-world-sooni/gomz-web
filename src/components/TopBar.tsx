@@ -10,6 +10,8 @@ import Row from "./Row";
 import { useRouter } from "next/router";
 import SignInModal from "./modals/SignInModal";
 import KlipQRModal from "./modals/KlipQRModal";
+import { moveTo } from "src/modules/routeHelper";
+import { urls } from "src/modules/urls";
 
 const TopBar = ({ mode }) => {
 	const { locale } = useRouter();
@@ -61,18 +63,16 @@ const TopBar = ({ mode }) => {
 		<Div fixed bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
 			<Row maxW={960} mxAuto flex justifyCenter px30>
 				<Col auto cursorPointer>
-					<Link href="/home" passHref>
-						<Row roundedLg px={20}>
-							<Col auto px0>
-								<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
-							</Col>
-							<Col auto px0 pr8 flex itemsCenter>
-								<Div spanTag fontBold {...logoTextProps}>
-									Gomz
-								</Div>
-							</Col>
-						</Row>
-					</Link>
+					<Row roundedLg px={20} onClick={() => moveTo(urls.home)}>
+						<Col auto px0>
+							<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
+						</Col>
+						<Col auto px0 pr8 flex itemsCenter>
+							<Div spanTag fontBold {...logoTextProps}>
+								Gomz
+							</Div>
+						</Col>
+					</Row>
 				</Col>
 				<Col></Col>
 				<Col auto pt1 cursorPointer>
@@ -80,13 +80,11 @@ const TopBar = ({ mode }) => {
 						Gomz Gallery
 					</Div>
 				</Col>
-				<Link href="/gomz-space" passHref>
-					<Col auto pt1 cursorPointer>
-						<Div spanTag fontLight>
-							GomSpace Metaverse
-						</Div>
-					</Col>
-				</Link>
+				<Col auto pt1 cursorPointer onClick={() => moveTo(urls.gomzSpace)}>
+					<Div spanTag fontLight>
+						GomSpace Metaverse
+					</Div>
+				</Col>
 				<Col auto pt1 cursorPointer>
 					<Div spanTag fontLight>
 						Roadmap

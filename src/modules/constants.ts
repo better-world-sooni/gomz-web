@@ -920,3 +920,8 @@ export type Land = {
     description?: string;
    
 }
+
+export const defaultSelectedLandCoordinates = {
+    x: 186, 
+    y: 192
+}

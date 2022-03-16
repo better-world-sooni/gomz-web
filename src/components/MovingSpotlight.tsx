@@ -14,7 +14,7 @@ const MovingSpotlight = ({ from, to, color }) => {
 	});
 	return (
 		<>
-			<spotLight color={color} intensity={0.01} position={new Vector3(position.x, position.y, 30)} angle={Math.PI} penumbra={0} distance={50} />
+			<spotLight color={color} intensity={0.003} position={new Vector3(position.x, position.y, 30)} angle={Math.PI} penumbra={0} distance={50} />
 		</>
 	);
 };
