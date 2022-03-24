@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { KAIKAS, KLIP } from 'src/modules/constants'
 
-const klaytn = (typeof window == 'undefined') ? null : window["klaytn"]
+// const klaytn = (typeof window == 'undefined') ? null : window["klaytn"]
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    isLoggedIn: klaytn?.selectedAddress ? true: false,
-    walletType: klaytn?.selectedAddress ? KAIKAS: KLIP,
-    klaytnAddress: klaytn?.selectedAddress
+    isLoggedIn: false,
+    walletType: null,
+    klaytnAddress: null,
   },
   reducers: {
     setIsLoggedIn(state, action) {

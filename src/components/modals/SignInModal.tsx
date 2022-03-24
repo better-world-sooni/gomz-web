@@ -16,6 +16,8 @@ import { klipPrepareAuth, klipRequestQRUrl, klipResult } from "src/modules/klipA
 import { generateQR } from "src/modules/generateQR";
 import RoundedButton from "../RoundedButton";
 import { useRouter } from "next/router";
+import { apiHelper } from "src/modules/apiHelper";
+import apis from "src/modules/apis";
 
 export default function SignInModal() {
 	const dispatch = useDispatch();
@@ -40,26 +42,27 @@ export default function SignInModal() {
 	};
 	const onClickKlipQRDone = async () => {
 		const klipAuthResult = await klipResult(qrCode.requestKey);
-		if (klipAuthResult.status == "prepared") {
+		if (klipAuthResult.data.status == "prepared") {
 			setError(<Div spanTag>{"You have not authorized yet."}</Div>);
-		} else if (klipAuthResult.status == "canceled") {
+		} else if (klipAuthResult.data.status == "canceled") {
 			setError(<Div spanTag>{"You have cancelled login."}</Div>);
-		} else if (klipAuthResult.status == "preparing") {
+		} else if (klipAuthResult.data.status == "preparing") {
 			setError(<Div spanTag>{"Preparing QR code."}</Div>);
-		} else if (klipAuthResult.status == "completed") {
+		} else if (klipAuthResult.data.status == "completed") {
 			const loginParams = {
 				walletType: KLIP,
-				address: klipAuthResult.result.klaytn_address,
+				address: klipAuthResult.data.jwt_token,
 			};
-			dispatch(authActions.login(loginParams));
-			closeModal();
-			dispatch(modalActions.setConfettiEnabled(true));
+			console.log(loginParams);
+			// dispatch(authActions.login(loginParams));
+			// closeModal();
+			// dispatch(modalActions.setConfettiEnabled(true));
 		} else {
 			setError(<Div spanTag>{"Error occurred while authorizing."}</Div>);
 		}
 		return;
 	};
-	const onClickKlip = async () => {
+	const handleClickKlip = async () => {
 		const authPrepareResponse = await klipPrepareAuth();
 		const deeplinkUrl = await klipRequestQRUrl(authPrepareResponse.request_key);
 		const qrImage = await generateQR(deeplinkUrl);
@@ -70,21 +73,36 @@ export default function SignInModal() {
 			requestKey: authPrepareResponse.request_key,
 		});
 	};
-	const onClickKaikas = async () => {
+	const handleClickKaikas = async () => {
 		// @ts-ignore
 		if (typeof window !== "undefined" && typeof window.klaytn !== "undefined") {
 			const klaytn = window["klaytn"];
-			const unlocked = await klaytn._kaikas.isUnlocked();
-			if (!unlocked || !klaytn._kaikas.isEnabled()) {
+			// const unlocked = await klaytn._kaikas.isUnlocked();
+			// if (!unlocked || !klaytn._kaikas.isEnabled()) {
+			if (true) {
 				try {
 					const res = await klaytn.enable();
+					const selectedAddress = window["klaytn"].selectedAddress;
 					const loginParams = {
 						walletType: KAIKAS,
-						address: window["klaytn"].selectedAddress,
+						address: selectedAddress,
 					};
-					dispatch(authActions.login(loginParams));
-					closeModal();
-					dispatch(modalActions.setConfettiEnabled(true));
+					const caver = window["caver"];
+					if (caver && selectedAddress) {
+						const nonceResponse = await apiHelper(apis.auth.nonce(window["klaytn"].selectedAddress));
+						if (nonceResponse.success) {
+							const signature = await caver.klay.sign(nonceResponse.data.nonce, selectedAddress);
+							console.log(signature);
+							const verifyResponse = await apiHelper(apis.auth.kaikas.verify(), "POST", {
+								signature,
+								wallet_address: selectedAddress,
+							});
+							console.log(verifyResponse);
+						}
+					}
+					// dispatch(authActions.login(loginParams));
+					// closeModal();
+					// dispatch(modalActions.setConfettiEnabled(true));
 				} catch (error) {
 					setError(
 						<Div spanTag textWarning>
@@ -102,7 +120,51 @@ export default function SignInModal() {
 					walletType: KAIKAS,
 					address: window["klaytn"].selectedAddress,
 				};
-				dispatch(authActions.login(loginParams));
+				// dispatch(authActions.login(loginParams));
+			}
+		} else {
+			setError(
+				<Div spanTag textDanger>
+					{modalsWording.signIn.walletNotDetected.kaikas[locale]}
+				</Div>,
+			);
+		}
+	};
+	const handleClickMetamask = async () => {
+		// @ts-ignore
+		if (typeof window !== "undefined" && typeof window.web3 !== "undefined" && typeof window.web3.currentProvider !== "undefined") {
+			const metamask = window["web3"].currentProvider?.isMetaMask && window["web3"].currentProvider;
+			console.log(metamask);
+			const unlocked = await metamask._metamask.isUnlocked();
+			try {
+				const res = await metamask.enable();
+				const selectedAddress = metamask.selectedAddress;
+				const loginParams = {
+					walletType: KAIKAS,
+					address: selectedAddress,
+				};
+				if (selectedAddress) {
+					const nonceResponse = await apiHelper(apis.auth.nonce(metamask.selectedAddress));
+					console.log(nonceResponse);
+					if (nonceResponse.success) {
+						metamask.sendAsync({ method: "personal_sign", params: [nonceResponse.data.nonce, selectedAddress] }, async (err, response) => {
+							const verifyResponse = await apiHelper(apis.auth.metamask.verify(), "POST", {
+								signature: response.result,
+								wallet_address: selectedAddress,
+							});
+							console.log(verifyResponse);
+						});
+					}
+				}
+				// dispatch(authActions.login(loginParams));
+				// closeModal();
+				// dispatch(modalActions.setConfettiEnabled(true));
+			} catch (error) {
+				setError(
+					<Div spanTag textWarning>
+						{modalsWording.signIn.userCancelledRequest[locale]}
+					</Div>,
+				);
 			}
 		} else {
 			setError(
@@ -133,42 +195,85 @@ export default function SignInModal() {
 							{modalsWording.signIn.title[locale]}
 						</Div>
 					</Div>
-					<Row>
-						<Col
-							cursorPointer
-							roundedXl
-							mr15
-							py30
-							onClick={onClickKlip}
-							clx={"transition delay-50 bg-gray-100 hover:-translate-y-1 hover:scale-110 hover:bg-gray-400 duration-150 "}
-						>
-							<Div px50 py10>
+					<Row
+						my15
+						bgColor="#216FEA"
+						onClick={handleClickKlip}
+						roundedMd
+						h56
+						flex
+						itemsCenter
+						clx={"transition delay-50 hover:-translate-y-1 hover:scale-105 duration-150 "}
+					>
+						<Col />
+						<Col auto px0>
+							<Div>
 								<Div imgTag src={images.KAKAO_KLIP_ICON}></Div>
 							</Div>
-							<Div px20 py10 textCenter>
-								<Div spanTag fontBold>
-									{modalsWording.signIn.methods.kakaoKlip[locale]}
-								</Div>
+						</Col>
+						<Col auto pr0>
+							<Div textCenter textWhite>
+								<Div spanTag>{modalsWording.signIn.methods.klip[locale]}</Div>
 							</Div>
 						</Col>
-						<Col
-							roundedXl
-							bgGray100
-							cursorPointer
-							ml15
-							py30
-							onClick={onClickKaikas}
-							clx={"transition delay-50 bg-gray-100 hover:-translate-y-1 hover:scale-110 hover:bg-gray-400 duration-150 "}
-						>
-							<Div px50 py10>
-								<Div imgTag src={images.KAIKAS_ICON}></Div>
-							</Div>
-							<Div px20 py10 textCenter>
-								<Div spanTag fontBold>
-									{modalsWording.signIn.methods.kaikas[locale]}
-								</Div>
+						<Col />
+					</Row>
+					<Row my15 h56 flex itemsCenter>
+						<Col>
+							<Div hrTag />
+						</Col>
+						<Col auto>
+							<Div spanTag>{modalsWording.signIn.or[locale]}</Div>
+						</Col>
+						<Col>
+							<Div hrTag />
+						</Col>
+					</Row>
+					<Row
+						my15
+						bgColor="rgb(89, 82, 72)"
+						onClick={handleClickKaikas}
+						roundedMd
+						h56
+						flex
+						itemsCenter
+						clx={"transition delay-50 hover:-translate-y-1 hover:scale-105 duration-150 "}
+					>
+						<Col />
+						<Col auto px0>
+							<Div>
+								<Div imgTag h24 w24 src={images.KAIKAS_ICON}></Div>
 							</Div>
 						</Col>
+						<Col auto pr0>
+							<Div textCenter textGray100>
+								<Div spanTag>{modalsWording.signIn.methods.kaikas[locale]}</Div>
+							</Div>
+						</Col>
+						<Col />
+					</Row>
+					<Row
+						my15
+						bgGray100
+						onClick={handleClickMetamask}
+						roundedMd
+						h56
+						flex
+						itemsCenter
+						clx={"transition delay-50 hover:-translate-y-1 hover:scale-105 duration-150 "}
+					>
+						<Col />
+						<Col auto px0>
+							<Div>
+								<Div imgTag h24 w24 src={images.METAMASK_ICON}></Div>
+							</Div>
+						</Col>
+						<Col auto pr0>
+							<Div textCenter textGray700>
+								<Div spanTag>{modalsWording.signIn.methods.metamask[locale]}</Div>
+							</Div>
+						</Col>
+						<Col />
 					</Row>
 					<Div textCenter pb15 pt30>
 						<Div spanTag fontLight>

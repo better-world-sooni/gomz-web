@@ -1,6 +1,7 @@
 export const images = {
-    KAKAO_KLIP_ICON: 'static/images/kakaoKlipIcon.png',
-    KAIKAS_ICON: 'static/images/kaikasIcon.png',
+    KAKAO_KLIP_ICON: 'static/images/klipLogo.svg',
+    KAIKAS_ICON: 'static/images/kaikasLogo.svg',
+    METAMASK_ICON: 'static/images/metamaskLogo.webp',
     basicBearWhite: "static/images/basicBearWhite.png",
     basicBearNoBg: "static/images/basicBearNoBg.png",
     planets: {

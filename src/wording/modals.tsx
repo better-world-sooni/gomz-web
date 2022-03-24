@@ -4,18 +4,26 @@ import Div from "src/components/Div";
 export const modalsWording = {
 	signIn: {
 		title: {
-			ko: "Login to Gomz with",
-			en: "Login to Gomz with",
+			ko: "Gomz 시작하기",
+			en: "Start Gomz",
 		},
 		methods: {
-			kakaoKlip: {
-				ko: "Kakao Klip",
-				en: "Kakao Klip",
+			klip: {
+				ko: "Klip으로 로그인",
+				en: "Login with Klip",
 			},
 			kaikas: {
-				ko: "Kaikas",
-				en: "Kaikas",
+				ko: "Kaikas로 로그인",
+				en: "Login with Kaikas",
 			},
+			metamask: {
+				ko: "Metamask로 로그인",
+				en: "Login with Metamask",
+			},
+		},
+		or: {
+			ko: "혹은",
+			en: "Or",
 		},
 		encourageKlip: {
 			ko: "We encourage using Kakao Klip for a better experience in future mobile app releases.",

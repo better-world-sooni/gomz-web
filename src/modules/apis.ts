@@ -29,6 +29,20 @@ const apis = {
         y,
       })}`),
       getAll: () => apiV1('land/all'),
+  },
+  auth: {
+    kaikas: {
+      verification: () => apiV1('/auth/kaikas/verify'),
+      nonce: (walletAddress) => apiV1(`/auth/nonce${urlParams({
+        wallet_address: walletAddress
+      })}`),
+    },
+    metamask: {
+      verify: () => apiV1('/auth/metamask/verify')
+    },
+    klip: {
+      verify: () =>apiV1('/auth/klip/verify')
+    }
   }
 }
 

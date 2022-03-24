@@ -1,4 +1,5 @@
 import { apiHelper } from "./apiHelper"
+import apis from "./apis";
 import { APP_NAME, deployedAddress } from "./constants";
 const klipApiRoot = 'https://a2a-api.klipwallet.com/'
 const klipApiQRRoot = 'https://klipwallet.com/'
@@ -19,8 +20,8 @@ const klipApiUrl = (type) => {
                 return  klipApiQRRoot + '?target=/a2a?request_key=' + param
             };
         case KlipApiType.RESULT:
-            return (param) => {
-                return klipApiRoot + 'v2/a2a/result?request_key=' + param
+            return () => {
+                return apis.auth.klip.verify()
             };
         case KlipApiType.GET_CARD_INFO:
             return (param) => {
@@ -74,5 +75,5 @@ export const klipRequestQRUrl = (requestKey) => {
 }
 export const klipResult = async (requestKey) => {
     const url = klipApiUrl(KlipApiType.RESULT)
-    return await apiHelper(url(requestKey))
+    return await apiHelper(url(null), 'POST', {request_key: requestKey})
 }
