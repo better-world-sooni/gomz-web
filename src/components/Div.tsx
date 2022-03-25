@@ -421,6 +421,7 @@ const propsToClx = (props) => {
 		textOpacity75: () => clxs.push("text-opacity-75"),
 		textOpacity80: () => clxs.push("text-opacity-80"),
 		//font-family
+		moonget: (v) => addStyle(styles, "", { fontFamily: "MOONGET" }),
 
 		// font-smoothing
 		antialiased: () => clxs.push("antialiased"),
@@ -438,6 +439,7 @@ const propsToClx = (props) => {
 		fontBold: () => clxs.push("font-bold"),
 		fontExtrabold: () => clxs.push("font-extrabold"),
 		fontBlack: () => clxs.push("font-black"),
+
 		// font-variant-numeric
 		normalNums: () => clxs.push("normal-nums"),
 		oridnal: () => clxs.push("ordinal"),

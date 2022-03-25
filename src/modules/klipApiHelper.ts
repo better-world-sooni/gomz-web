@@ -1,6 +1,6 @@
 import { apiHelper } from "./apiHelper"
 import apis from "./apis";
-import { APP_NAME, deployedAddress } from "./constants";
+import { APP_NAME, deployedAddress, PLATFORM } from "./constants";
 const klipApiRoot = 'https://a2a-api.klipwallet.com/'
 const klipApiQRRoot = 'https://klipwallet.com/'
 export enum KlipApiType {
@@ -73,7 +73,7 @@ export const klipRequestQRUrl = (requestKey) => {
     const url = klipApiUrl(KlipApiType.REQUEST)
     return url(requestKey)
 }
-export const klipResult = async (requestKey) => {
+export const klipResult = async (requestKey, locale) => {
     const url = klipApiUrl(KlipApiType.RESULT)
-    return await apiHelper(url(null), 'POST', {request_key: requestKey})
+    return await apiHelper(url(null), 'POST', {request_key: requestKey, platform: PLATFORM, locale})
 }

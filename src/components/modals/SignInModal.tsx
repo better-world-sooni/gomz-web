@@ -11,7 +11,7 @@ import Col from "../Col";
 import { images } from "src/modules/images";
 import { modalsWording } from "src/wording/modals";
 import { authActions } from "src/store/reducers/authReducer";
-import { HOME_URL, KAIKAS, KLIP } from "src/modules/constants";
+import { HOME_URL, KAIKAS, KLIP, PLATFORM } from "src/modules/constants";
 import { klipPrepareAuth, klipRequestQRUrl, klipResult } from "src/modules/klipApiHelper";
 import { generateQR } from "src/modules/generateQR";
 import RoundedButton from "../RoundedButton";
@@ -41,17 +41,17 @@ export default function SignInModal() {
 		});
 	};
 	const onClickKlipQRDone = async () => {
-		const klipAuthResult = await klipResult(qrCode.requestKey);
-		if (klipAuthResult.data.status == "prepared") {
+		const klipAuthResult = await klipResult(qrCode.requestKey, locale);
+		if (klipAuthResult.status == "prepared") {
 			setError(<Div spanTag>{"You have not authorized yet."}</Div>);
-		} else if (klipAuthResult.data.status == "canceled") {
+		} else if (klipAuthResult.status == "canceled") {
 			setError(<Div spanTag>{"You have cancelled login."}</Div>);
-		} else if (klipAuthResult.data.status == "preparing") {
+		} else if (klipAuthResult.status == "preparing") {
 			setError(<Div spanTag>{"Preparing QR code."}</Div>);
-		} else if (klipAuthResult.data.status == "completed") {
+		} else if (klipAuthResult.status == "completed") {
 			const loginParams = {
 				walletType: KLIP,
-				address: klipAuthResult.data.jwt_token,
+				address: klipAuthResult.jwt_token,
 			};
 			console.log(loginParams);
 			// dispatch(authActions.login(loginParams));
@@ -83,19 +83,19 @@ export default function SignInModal() {
 				try {
 					const res = await klaytn.enable();
 					const selectedAddress = window["klaytn"].selectedAddress;
-					const loginParams = {
-						walletType: KAIKAS,
-						address: selectedAddress,
-					};
 					const caver = window["caver"];
 					if (caver && selectedAddress) {
-						const nonceResponse = await apiHelper(apis.auth.nonce(window["klaytn"].selectedAddress));
+						const nonceResponse = await apiHelper(apis.auth.kaikas.nonce(), "POST", {
+							address: selectedAddress,
+							platform: PLATFORM,
+							locale: locale,
+						});
 						if (nonceResponse.success) {
-							const signature = await caver.klay.sign(nonceResponse.data.nonce, selectedAddress);
-							console.log(signature);
-							const verifyResponse = await apiHelper(apis.auth.kaikas.verify(), "POST", {
+							const signature = await caver.klay.sign(nonceResponse.nonce, selectedAddress);
+							const verifyResponse = await apiHelper(apis.auth.kaikas.verification(), "POST", {
 								signature,
-								wallet_address: selectedAddress,
+								address: selectedAddress,
+								signup_uuid: typeof nonceResponse.signup == "undefined" ? null : nonceResponse.signup.uuid,
 							});
 							console.log(verifyResponse);
 						}
@@ -104,6 +104,7 @@ export default function SignInModal() {
 					// closeModal();
 					// dispatch(modalActions.setConfettiEnabled(true));
 				} catch (error) {
+					console.log(error);
 					setError(
 						<Div spanTag textWarning>
 							{modalsWording.signIn.userCancelledRequest[locale]}
@@ -130,50 +131,7 @@ export default function SignInModal() {
 			);
 		}
 	};
-	const handleClickMetamask = async () => {
-		// @ts-ignore
-		if (typeof window !== "undefined" && typeof window.web3 !== "undefined" && typeof window.web3.currentProvider !== "undefined") {
-			const metamask = window["web3"].currentProvider?.isMetaMask && window["web3"].currentProvider;
-			console.log(metamask);
-			const unlocked = await metamask._metamask.isUnlocked();
-			try {
-				const res = await metamask.enable();
-				const selectedAddress = metamask.selectedAddress;
-				const loginParams = {
-					walletType: KAIKAS,
-					address: selectedAddress,
-				};
-				if (selectedAddress) {
-					const nonceResponse = await apiHelper(apis.auth.nonce(metamask.selectedAddress));
-					console.log(nonceResponse);
-					if (nonceResponse.success) {
-						metamask.sendAsync({ method: "personal_sign", params: [nonceResponse.data.nonce, selectedAddress] }, async (err, response) => {
-							const verifyResponse = await apiHelper(apis.auth.metamask.verify(), "POST", {
-								signature: response.result,
-								wallet_address: selectedAddress,
-							});
-							console.log(verifyResponse);
-						});
-					}
-				}
-				// dispatch(authActions.login(loginParams));
-				// closeModal();
-				// dispatch(modalActions.setConfettiEnabled(true));
-			} catch (error) {
-				setError(
-					<Div spanTag textWarning>
-						{modalsWording.signIn.userCancelledRequest[locale]}
-					</Div>,
-				);
-			}
-		} else {
-			setError(
-				<Div spanTag textDanger>
-					{modalsWording.signIn.walletNotDetected.kaikas[locale]}
-				</Div>,
-			);
-		}
-	};
+
 	return (
 		<Modal open={signInEnabled} onClose={closeModal}>
 			{qrCode.enabled ? (
@@ -248,29 +206,6 @@ export default function SignInModal() {
 						<Col auto pr0>
 							<Div textCenter textGray100>
 								<Div spanTag>{modalsWording.signIn.methods.kaikas[locale]}</Div>
-							</Div>
-						</Col>
-						<Col />
-					</Row>
-					<Row
-						my15
-						bgGray100
-						onClick={handleClickMetamask}
-						roundedMd
-						h56
-						flex
-						itemsCenter
-						clx={"transition delay-50 hover:-translate-y-1 hover:scale-105 duration-150 "}
-					>
-						<Col />
-						<Col auto px0>
-							<Div>
-								<Div imgTag h24 w24 src={images.METAMASK_ICON}></Div>
-							</Div>
-						</Col>
-						<Col auto pr0>
-							<Div textCenter textGray700>
-								<Div spanTag>{modalsWording.signIn.methods.metamask[locale]}</Div>
 							</Div>
 						</Col>
 						<Col />

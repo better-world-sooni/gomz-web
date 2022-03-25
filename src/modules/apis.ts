@@ -32,16 +32,11 @@ const apis = {
   },
   auth: {
     kaikas: {
-      verification: () => apiV1('/auth/kaikas/verify'),
-      nonce: (walletAddress) => apiV1(`/auth/nonce${urlParams({
-        wallet_address: walletAddress
-      })}`),
-    },
-    metamask: {
-      verify: () => apiV1('/auth/metamask/verify')
+      verification: () => apiV1('/auth/kaikas/verification'),
+      nonce: () => apiV1(`/auth/kaikas/nonce`),
     },
     klip: {
-      verify: () =>apiV1('/auth/klip/verify')
+      verify: () =>apiV1('/auth/klip/verification')
     }
   }
 }

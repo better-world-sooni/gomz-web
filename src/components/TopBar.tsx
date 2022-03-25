@@ -26,7 +26,7 @@ const TopBar = ({ mode }) => {
 		if (isLoggedIn && selectedAddress) return;
 		dispatch(modalActions.setSignInEnabled(true));
 	};
-	const logoSrc = mode == "dark" ? "static/images/basicBearWhite.png" : "static/images/basicBearNoBg.png";
+	const logoSrc = mode == "dark" ? "static/images/basicBearNoBg.png" : "static/images/basicBearNoBg.png";
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
 	const textColorProp = mode == "dark" ? { textWhite: true } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgBlack: true, textWhite: true };
@@ -41,7 +41,7 @@ const TopBar = ({ mode }) => {
 								<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
 							</Col>
 							<Col auto px0 pr8 flex itemsCenter {...logoTextProps}>
-								<Div spanTag fontBold>
+								<Div spanTag fontBold moonget>
 									Gomz
 								</Div>
 							</Col>
@@ -61,14 +61,14 @@ const TopBar = ({ mode }) => {
 		);
 	return (
 		<Div fixed bdBlurXl wFull pt20 pb10 z100 {...textColorProp}>
-			<Row maxW={960} mxAuto flex justifyCenter px30>
+			<Row maxW={1200} mxAuto flex justifyCenter px30>
 				<Col auto cursorPointer>
 					<Row roundedLg px={20} onClick={() => moveTo(urls.home)}>
 						<Col auto px0>
-							<Div imgTag src={logoSrc} h={30} w={30} style={{ objectFit: "cover" }} />
+							<Div imgTag src={logoSrc} h={50} w={50} style={{ objectFit: "cover" }} />
 						</Col>
 						<Col auto px0 pr8 flex itemsCenter>
-							<Div spanTag fontBold {...logoTextProps}>
+							<Div spanTag style={{ webkitTextStroke: "1px black" }} {...logoTextProps} moonget>
 								Gomz
 							</Div>
 						</Col>

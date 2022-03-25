@@ -925,3 +925,5 @@ export const defaultSelectedLandCoordinates = {
     x: 186, 
     y: 192
 }
+
+export const PLATFORM = 'WEB-GOMZ'

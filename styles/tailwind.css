@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "MOONGET";
+  src: local("MOONGET"),
+    url("/fonts/MOONGET.ttf") format("truetype");
+  font-weight: normal;
+}
 @layer base {
     body {
       font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
