@@ -10,7 +10,6 @@ import Row from "../Row";
 import Col from "../Col";
 import { images } from "src/modules/images";
 import { modalsWording } from "src/wording/modals";
-import { authActions } from "src/store/reducers/authReducer";
 import { HOME_URL, KAIKAS, KLIP, PLATFORM } from "src/modules/constants";
 import { klipPrepareAuth, klipRequestQRUrl, klipResult } from "src/modules/klipApiHelper";
 import { generateQR } from "src/modules/generateQR";
@@ -18,6 +17,7 @@ import RoundedButton from "../RoundedButton";
 import { useRouter } from "next/router";
 import { apiHelper } from "src/modules/apiHelper";
 import apis from "src/modules/apis";
+import { loginAction } from "src/store/reducers/authReducer";
 
 export default function SignInModal() {
 	const dispatch = useDispatch();
@@ -50,13 +50,12 @@ export default function SignInModal() {
 			setError(<Div spanTag>{"Preparing QR code."}</Div>);
 		} else if (klipAuthResult.status == "completed") {
 			const loginParams = {
-				walletType: KLIP,
-				address: klipAuthResult.jwt_token,
+				user: klipAuthResult.user,
+				jwt: klipAuthResult.jwt,
 			};
-			console.log(loginParams);
-			// dispatch(authActions.login(loginParams));
-			// closeModal();
-			// dispatch(modalActions.setConfettiEnabled(true));
+			dispatch(loginAction(loginParams));
+			closeModal();
+			dispatch(modalActions.setConfettiEnabled(true));
 		} else {
 			setError(<Div spanTag>{"Error occurred while authorizing."}</Div>);
 		}
@@ -98,11 +97,15 @@ export default function SignInModal() {
 								signup_uuid: typeof nonceResponse.signup == "undefined" ? null : nonceResponse.signup.uuid,
 							});
 							console.log(verifyResponse);
+							const loginParams = {
+								user: verifyResponse.user,
+								jwt: verifyResponse.jwt,
+							};
+							dispatch(loginAction(loginParams));
+							closeModal();
+							dispatch(modalActions.setConfettiEnabled(true));
 						}
 					}
-					// dispatch(authActions.login(loginParams));
-					// closeModal();
-					// dispatch(modalActions.setConfettiEnabled(true));
 				} catch (error) {
 					console.log(error);
 					setError(

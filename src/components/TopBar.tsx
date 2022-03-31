@@ -12,21 +12,25 @@ import SignInModal from "./modals/SignInModal";
 import KlipQRModal from "./modals/KlipQRModal";
 import { moveTo } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
+import EmailVerificationModal from "./modals/EmailVerificationModal";
 
 const TopBar = ({ mode }) => {
 	const { locale } = useRouter();
 	const dispatch = useDispatch();
-	const { isLoggedIn, walletType, selectedAddress } = useSelector((state: RootState) => ({
+	const { isLoggedIn, user } = useSelector((state: RootState) => ({
 		isLoggedIn: state.auth.isLoggedIn,
-		walletType: state.auth.walletType,
-		selectedAddress: state.auth.klaytnAddress,
+		user: state.auth.user,
 	}));
 	const isTablet = useIsTablet();
 	const onClickLogin = () => {
-		if (isLoggedIn && selectedAddress) return;
+		if (isLoggedIn) return;
 		dispatch(modalActions.setSignInEnabled(true));
 	};
-	const logoSrc = mode == "dark" ? "static/images/basicBearNoBg.png" : "static/images/basicBearNoBg.png";
+	const onClickEmailVerification = () => {
+		if (isLoggedIn) return;
+		dispatch(modalActions.setEmailVerificationEnabled(true));
+	};
+	const logoSrc = mode == "dark" ? "static/images/logoText.png" : "static/images/logoText.png";
 	const logoTextProps = mode == "dark" ? { textWhite: true } : { textPrimary: true };
 	const textColorProp = mode == "dark" ? { textWhite: true } : { textBlack: true };
 	const loginButtonProps = mode == "dark" ? { bgWhite: true, textBlack: true } : { bgBlack: true, textWhite: true };
@@ -51,7 +55,7 @@ const TopBar = ({ mode }) => {
 					<Col auto px10></Col>
 					<Col auto {...loginButtonProps} rounded3xl pt2 cursorPointer onClick={onClickLogin}>
 						<Div spanTag fontLight fontMedium>
-							{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
+							{isLoggedIn ? "Log out" : "Login"}
 						</Div>
 					</Col>
 				</Row>
@@ -65,12 +69,7 @@ const TopBar = ({ mode }) => {
 				<Col auto cursorPointer>
 					<Row roundedLg px={20} onClick={() => moveTo(urls.home)}>
 						<Col auto px0>
-							<Div imgTag src={logoSrc} h={50} w={50} style={{ objectFit: "cover" }} />
-						</Col>
-						<Col auto px0 pr8 flex itemsCenter>
-							<Div spanTag style={{ webkitTextStroke: "1px black" }} {...logoTextProps} moonget>
-								Gomz
-							</Div>
+							<Div imgTag src={logoSrc} h={40} w={144} style={{ objectFit: "cover" }} />
 						</Col>
 					</Row>
 				</Col>
@@ -99,13 +98,19 @@ const TopBar = ({ mode }) => {
 					<GlobeAltIcon className="h-20 w-20 text-blue-500" />
 				</Col>
 				<Col auto px10></Col>
+				<Col auto rounded3xl pt2 cursorPointer {...loginButtonProps} onClick={onClickEmailVerification}>
+					<Div spanTag fontLight fontMedium>
+						Email Login Method
+					</Div>
+				</Col>
 				<Col auto rounded3xl pt2 cursorPointer {...loginButtonProps} onClick={onClickLogin}>
 					<Div spanTag fontLight fontMedium>
-						{isLoggedIn && selectedAddress ? selectedAddress.substring(0, 5) + "..." : "Login"}
+						{isLoggedIn ? "Log out" : "Login"}
 					</Div>
 				</Col>
 			</Row>
 			<SignInModal />
+			<EmailVerificationModal />
 			<KlipQRModal />
 		</Div>
 	);

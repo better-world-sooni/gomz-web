@@ -6,6 +6,9 @@ const modalSlice = createSlice({
     signIn: {
       enabled: false
     },
+    emailVerification: {
+      enabled: false
+    },
     klipQR: {
       enabled: false,
       qrImage: null,
@@ -18,6 +21,9 @@ const modalSlice = createSlice({
   reducers: {
     setSignInEnabled(state, action) {
       state.signIn.enabled = action.payload
+    },
+    setEmailVerificationEnabled(state,action){
+      state.emailVerification.enabled = action.payload
     },
     openKlipQR(state, action) {
       state.klipQR.enabled = true
