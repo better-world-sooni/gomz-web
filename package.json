@@ -28,6 +28,7 @@
     "fs": "^0.0.1-security",
     "gsap": "^3.9.1",
     "isomorphic-unfetch": "^3.1.0",
+    "js-sha3": "^0.8.0",
     "lerp": "^1.0.3",
     "lodash": "^4.17.21",
     "next": "11.1.0",

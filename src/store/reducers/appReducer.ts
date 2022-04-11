@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const appSlice = createSlice({
-  name: 'auth',
+  name: 'app',
   initialState: {
   },
   reducers: {
