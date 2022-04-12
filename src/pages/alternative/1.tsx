@@ -200,7 +200,7 @@ const Index: NextPage = () => {
 					<Div mxAuto maxW={1400} px40>
 						<Row flex itemsCenter gapX={20}>
 							<Col auto text3xl textWhite>
-								Join Our{" "}
+								Mint to build{" "}
 								<Div spanTag style={{ color: "rgb(25, 110, 237)" }}>
 									Better{" "}
 								</Div>
