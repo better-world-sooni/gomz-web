@@ -1,7 +1,7 @@
 export const IMAGES = {
     spaceBg: '/images/spaceBgSquare.png',
     gomzDetective: '/images/gomzDetective.png',
-    gomzWarSpaceShip: '/images/gomzWarSpaceShip.png',
+    gomzWarSpaceShip: '/images/gomzStory1.png',
     gomzSoldier: '/images/gomzSoldier.png',
     gomzAstronaut: '/images/gomzAstronaut.png',
     cityBg: "/images/cityBg.png",
