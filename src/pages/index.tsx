@@ -78,7 +78,7 @@ const Index: NextPage = () => {
 					overflowHidden
 					clx={"snap-start"}
 				>
-					<Div style={{ backdropFilter: "brightness(30%)" }} py50 hFull>
+					<Div py50 hFull>
 						<Div imgTag src={IMAGES.gomzAstronaut} absolute bottom0 right0 w={"30%"} hAuto></Div>
 						<Div imgTag src={IMAGES.gomzSoldier} absolute bottom0 left0 w={"25%"} hAuto></Div>
 						<Div flex>
