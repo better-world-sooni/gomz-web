@@ -52,28 +52,38 @@ const Index: NextPage = () => {
 					<Controller>
 						<Scene duration={1000} triggerHook={0} pin={true}>
 							<Div relative>
-								<Div hScreen flex justifyCenter flexCol mxAuto px40 maxW={1400}>
+								<Div hScreen flex justifyCenter flexCol>
 									<Div>
-										<Row flex itemsCenter textWhite gapX={10} bgBlack px20>
-											<Col>
+										<Row flex itemsEnd textWhite gapX={10} bgBlack maxW={1200} mxAuto px20 py5>
+											<Col />
+											<Col auto>
 												<Div maxW={200}>
 													<Div imgTag src={IMAGES.logos.gomzWordDude}></Div>
 												</Div>
 											</Col>
-											<Col></Col>
-											<Col auto>VALUES</Col>
-											<Col auto>JOURNEY</Col>
-											<Col auto>GALLERY</Col>
-											<Col auto>TEAM</Col>
-											<Col auto textPrimary>
-												BETTER WORLD
+											<Col>
+												<Row>
+													<Col />
+													<Col auto textSm>
+														Values
+													</Col>
+													<Col auto textSm>
+														Journey
+													</Col>
+													<Col auto textSm>
+														Gallery
+													</Col>
+													<Col auto textSm>
+														Team
+													</Col>
+													<Col auto textPrimary textSm>
+														BetterWorld
+													</Col>
+												</Row>
 											</Col>
 										</Row>
 									</Div>
 									<Div wFull h={"75vh"} style={{ backgroundImage: `url(${IMAGES.gomzWar})`, backgroundSize: "cover" }} relative>
-										<Div absolute clx={"animate-pulse"} bottom0 right0 textPrimary textXl px30 py20>
-											Scroll for the Gomz Story
-										</Div>
 										<Scene duration={1000} triggerHook={0} pin={true}>
 											{(progress) => (
 												<Timeline totalProgress={progress} paused>
@@ -83,27 +93,26 @@ const Index: NextPage = () => {
 																wFull
 																h={"75vh"}
 																textXl
-																style={{ backgroundImage: `url(${IMAGES.gomzSpaceship})`, backgroundSize: "cover" }}
+																style={{
+																	backgroundImage: `url(${IMAGES.gomzSoldierBg})`,
+																	backgroundSize: "cover",
+																	backdropFilter: "brightness(50%)",
+																}}
 																flex
 																flexCol
 																justifyBetween
 															>
-																<Div flex>
-																	<Div maxW={600} textWhite py20 px20 textXl fontThin italic mx20 my20 bgBlack>
+																<Div flex justifyEnd>
+																	<Div maxW={600} textWhite py20 px20 textBasse mx20 my20>
 																		For the past decade, GOMZ have been in a planet-wide war, a war provoked by excessive indoctrination of
 																		competition and capitalism. Such violence has made the planet too hostile, colorless, and systematic, rendering it
 																		uninhabitable.{" "}
 																	</Div>
 																</Div>
-																<Div flex justifyEnd>
-																	<Div maxW={600} textWhite py20 px20 textXl fontThin italic mx20 my20 bgBlack>
-																		8,888 of these bears have turned to space travel with an altruistic vision:”A Better World”
-																	</Div>
-																</Div>
 															</Div>
 														}
 													>
-														<Tween from={{ opacity: -1, x: 1000 }} to={{ opacity: 1, x: 0 }} />
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
 													</Timeline>
 													<Timeline
 														target={
@@ -137,45 +146,50 @@ const Index: NextPage = () => {
 															</Div>
 														}
 													>
-														<Tween from={{ opacity: -1, x: 1000 }} to={{ opacity: 1, x: 0 }} />
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
 													</Timeline>
 												</Timeline>
 											)}
 										</Scene>
 									</Div>
 									<Div textWhite py20 relative>
-										<Div>
-											<Row gapX={20}>
-												<Col auto maxW={800}>
-													GOMZ: The first Klaytn-based collection to lead popularization of NFT through tangible and social values
-												</Col>
-												<Col />
-											</Row>
-										</Div>
-										<Scene duration={1000} triggerHook={0} pin={true}>
-											{(progress) => (
-												<Timeline totalProgress={progress} paused>
-													<Timeline
-														target={
-															<Div bgBlack maxW={800}>
-																War and Venture
-															</Div>
-														}
-													>
-														<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
+										<Div maxW={1200} mxAuto px20>
+											<Div>
+												<Row gapX={20}>
+													<Col auto maxW={800}>
+														GOMZ: The first Klaytn-based collection to lead popularization of NFT through tangible and social values
+													</Col>
+													<Col />
+													<Col clx={"animate-pulse"} textPrimary textSm auto>
+														Scroll for the Gomz Story
+													</Col>
+												</Row>
+											</Div>
+											<Scene duration={1000} triggerHook={0} pin={true}>
+												{(progress) => (
+													<Timeline totalProgress={progress} paused>
 														<Timeline
 															target={
-																<Div bgBlack maxW={800}>
-																	Dilemma and Action
+																<Div bgBlack absolute top0 wFull py20>
+																	War
 																</Div>
 															}
 														>
-															<Tween from={{ opacity: -1, y: 100 }} to={{ opacity: 1, y: 0 }} />
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+															<Timeline
+																target={
+																	<Div bgBlack absolute top0 wFull py20>
+																		Venture
+																	</Div>
+																}
+															>
+																<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+															</Timeline>
 														</Timeline>
 													</Timeline>
-												</Timeline>
-											)}
-										</Scene>
+												)}
+											</Scene>
+										</Div>
 									</Div>
 								</Div>
 							</Div>

@@ -4,6 +4,7 @@ export const IMAGES = {
     gomzWarSpaceShip: '/images/gomzStory1.png',
     gomzWar: '/images/gomzWar.png',
     gomzSoldier: '/images/gomzSoldier.png',
+    gomzSoldierBg: '/images/gomzSoldierBg.png',
     gomzAstronaut: '/images/gomzAstronaut.png',
     gomzSpaceship: '/images/gomzSpaceship.png',
     gomzSpace: '/images/gomzSpace.png',
