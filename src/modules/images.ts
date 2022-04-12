@@ -26,6 +26,15 @@ export const IMAGES = {
         gomzWord: '/images/logos/gomzWord.png',
         gomzWordDude: '/images/logos/gomzWordDude.png',
         betterWorldBlue: '/images/logos/betterWorldBlue.png',
-        
+    },
+    team: {
+        mj: "/images/team/1.png",
+        eric: "/images/team/2.png",
+        ian: "/images/team/3.png",
+        serena: "/images/team/4.png",
+        jay: "/images/team/5.png",
+        jieun: "/images/team/6.png",
+        seungan: "/images/team/7.png",
+        seonghyun: "/images/team/8.png",
     }
 }

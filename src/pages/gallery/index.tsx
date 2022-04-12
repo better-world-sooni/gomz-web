@@ -1,17 +1,14 @@
 import type { NextPage } from "next";
 import BasicHead from "src/components/BasicHead";
-import Router from "next/router";
-import { useEffect } from "react";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
-import Row from "src/components/Row";
-import Col from "src/components/Col";
 import EmptyBlock from "src/components/EmptyBlock";
-import { FaDiscord, FaTwitter } from "react-icons/fa";
 import Footer from "src/components/common/Footer";
 import MainTopBar from "src/components/common/MainTopBar";
+import useFocus from "src/hooks/useFocus";
 
 const Index: NextPage = () => {
+	const focused = useFocus();
 	return (
 		<>
 			<BasicHead />
@@ -27,7 +24,7 @@ const Index: NextPage = () => {
 					<Div style={{ backdropFilter: "brightness(20%)" }}>
 						<EmptyBlock h={50} />
 						<MainTopBar />
-						<Div mxAuto maxW={1200} px40>
+						<Div mxAuto maxW={1200} px40 translateY1over4={!focused} opacity0={!focused} clx={"transition-all ease-in-out duration-1000"}>
 							<Div pt50>
 								<Div textWhite text2xl fontBold>
 									Gallery

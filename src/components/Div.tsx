@@ -810,6 +810,7 @@ const propsToClx = (props) => {
 		_translateXFull: () => clxs.push("-translate-x-full"),
 		translateY0: () => clxs.push("translate-y-0"),
 		translateY1over2: () => clxs.push("translate-y-1/2"),
+		translateY1over4: () => clxs.push("translate-y-1/4"),
 		translateYFull: () => clxs.push("translate-y-full"),
 		_translateY1over2: () => clxs.push("-translate-y-1/2"),
 		_translateYFull: () => clxs.push("-translate-y-full"),

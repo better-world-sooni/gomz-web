@@ -6,15 +6,10 @@ import Row from "src/components/Row";
 import Col from "src/components/Col";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
-import { FaDiscord, FaTwitter } from "react-icons/fa";
-import { href } from "src/modules/routeHelper";
-import { urls } from "src/modules/urls";
 import Footer from "src/components/common/Footer";
+import HomeTopBar from "src/components/home/HomeTopBar";
 
 const Index: NextPage = () => {
-	const handleClickValues = () => {
-		href(urls.values.index);
-	};
 	return (
 		<>
 			<BasicHead />
@@ -31,47 +26,7 @@ const Index: NextPage = () => {
 						<Scene duration={1000} triggerHook={0} pin={true}>
 							<Div relative style={{ backdropFilter: "brightness(15%)" }}>
 								<Div hScreen flex justifyCenter flexCol>
-									<Div>
-										<Row flex itemsEnd textWhite maxW={1200} mxAuto px40 textSm fontBold>
-											<Col>
-												<Row>
-													<Col auto onClick={handleClickValues} cursorPointer>
-														Values
-													</Col>
-													<Col auto cursorPointer>
-														Journey
-													</Col>
-													<Col auto cursorPointer>
-														Gallery
-													</Col>
-													<Col auto cursorPointer>
-														Team
-													</Col>
-													<Col auto cursorPointer>
-														BetterWorld
-													</Col>
-													<Col />
-												</Row>
-											</Col>
-											<Col auto>
-												<Div maxW={200}>
-													<Div imgTag src={IMAGES.logos.gomzWordDude}></Div>
-												</Div>
-											</Col>
-											<Col>
-												<Row flex itemsCenter>
-													<Col />
-													<Col auto>Public Docs</Col>
-													<Col auto>
-														<FaDiscord />
-													</Col>
-													<Col auto>
-														<FaTwitter />
-													</Col>
-												</Row>
-											</Col>
-										</Row>
-									</Div>
+									<HomeTopBar />
 									<Div
 										wFull
 										h={"75vh"}
@@ -199,7 +154,7 @@ const Index: NextPage = () => {
 										</Scene>
 									</Div>
 									<Div textWhite py20>
-										<Div maxW={1200} mxAuto px40 relative textSm fontBold>
+										<Div maxW={1200} mxAuto px40 relative textSm fontSemibold>
 											<Div>
 												<Row gapX={20}>
 													<Col auto maxW={800}>
@@ -267,6 +222,85 @@ const Index: NextPage = () => {
 						</Div>
 						<Div hrTag />
 					</Div>
+				</Div>
+				<Div style={{ backdropFilter: "brightness(15%)" }}>
+					<Row mxAuto maxW={1200} px40 fontBold pb50>
+						<Col auto text2xl textWhite>
+							Team
+						</Col>
+						<Col></Col>
+					</Row>
+					<Row mxAuto maxW={1200} px40>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.mj}></Div>
+							</Div>
+							<Div textWhite py20>
+								MJ
+							</Div>
+						</Col>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.eric}></Div>
+							</Div>
+							<Div textWhite py20>
+								Eric
+							</Div>
+						</Col>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.ian}></Div>
+							</Div>
+							<Div textWhite py20>
+								Ian
+							</Div>
+						</Col>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.serena}></Div>
+							</Div>
+							<Div textWhite py20>
+								Serena
+							</Div>
+						</Col>
+					</Row>
+					<Row mxAuto maxW={1200} px40>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.jay}></Div>
+							</Div>
+							<Div textWhite py20>
+								Jay
+							</Div>
+						</Col>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.jieun}></Div>
+							</Div>
+							<Div textWhite py20>
+								Jieun
+							</Div>
+						</Col>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.seungan}></Div>
+							</Div>
+							<Div textWhite py20>
+								Seungan
+							</Div>
+						</Col>
+						<Col flex flexCol itemsCenter>
+							<Div maxW={200} roundedXl overflowHidden>
+								<Div imgTag src={IMAGES.team.seonghyun}></Div>
+							</Div>
+							<Div textWhite py20>
+								SeongHyun
+							</Div>
+						</Col>
+					</Row>
+					<Row mxAuto maxW={1200} px40 py50>
+						<Div hrTag />
+					</Row>
 				</Div>
 				<Div style={{ backdropFilter: "brightness(15%)" }}>
 					<Footer />

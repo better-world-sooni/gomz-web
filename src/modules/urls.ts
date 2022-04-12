@@ -8,5 +8,5 @@ export const urls = {
     },
     gallery: {
         index: '/gallery'
-    }
+    },
 }

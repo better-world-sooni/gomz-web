@@ -5,8 +5,10 @@ import Row from "../Row";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
+import { useRouter } from "next/router";
 
 function MainTopBar() {
+	const { asPath } = useRouter();
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
@@ -19,36 +21,36 @@ function MainTopBar() {
 	const handleClickGallery = () => {
 		href(urls.gallery.index);
 	};
+	const selectedProps = { roundedXl: true, py10: true, bgOpacity10: true, bgWhite: true };
 	return (
-		<Row flex itemsEnd textWhite maxW={1200} mxAuto px40 textBase>
+		<Row flex itemsEnd textWhite maxW={1200} mxAuto px40 textBase fontSemibold>
 			<Col auto onClick={handleClickGomz} cursorPointer>
-				<Div maxW={200}>
+				<Div maxW={200} clx={"hover:animate-pulse"}>
 					<Div imgTag src={IMAGES.logos.gomzWordDude}></Div>
 				</Div>
 			</Col>
 			<Col>
 				<Row flex itemsCenter>
 					<Col />
-					<Col auto cursorPointer onClick={handleClickValues}>
+					<Col auto cursorPointer onClick={handleClickValues} clx={"hover:text-primary"} {...(asPath == urls.values.index && selectedProps)}>
 						Values
 					</Col>
-					<Col auto cursorPointer onClick={handleClickJourney}>
+					<Col auto cursorPointer onClick={handleClickJourney} clx={"hover:text-primary"} {...(asPath == urls.journey.index && selectedProps)}>
 						Journey
 					</Col>
-					<Col auto cursorPointer onClick={handleClickGallery}>
+					<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"} {...(asPath == urls.gallery.index && selectedProps)}>
 						Gallery
 					</Col>
-					<Col auto cursorPointer>
-						Team
-					</Col>
-					<Col auto cursorPointer>
+					<Col auto cursorPointer clx={"hover:text-primary"}>
 						BetterWorld
 					</Col>
-					<Col auto>Public Docs</Col>
-					<Col auto>
+					<Col auto cursorPointer clx={"hover:text-primary"}>
+						Public Docs
+					</Col>
+					<Col auto cursorPointer clx={"hover:text-primary"}>
 						<FaDiscord />
 					</Col>
-					<Col auto>
+					<Col auto cursorPointer clx={"hover:text-primary"}>
 						<FaTwitter />
 					</Col>
 				</Row>
