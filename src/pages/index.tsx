@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 import BasicHead from "src/components/BasicHead";
-import Router from 'next/router'
-import { useEffect } from 'react'
+import Router from "next/router";
+import { useEffect } from "react";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import Row from "src/components/Row";
@@ -55,7 +55,7 @@ const Index: NextPage = () => {
 					</Div>
 					<Div>
 						<Div flex itemsCenter justifyCenter px20 relative>
-							<Div maxW={800}>
+							<Div maxW={1200}>
 								<Div imgTag src={IMAGES.logos.gomzWordDude}></Div>
 							</Div>
 						</Div>
@@ -203,4 +203,4 @@ const Index: NextPage = () => {
 	);
 };
 
-export default Index
+export default Index;
