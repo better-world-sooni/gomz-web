@@ -1,4 +1,12 @@
 export const urls = {
-    home: '/home',
-    gomzSpace: '/gomz-space'
+    index: '/',
+    values: {
+        index: '/values'
+    },
+    journey: {
+        index: '/journey'
+    },
+    gallery: {
+        index: '/gallery'
+    }
 }

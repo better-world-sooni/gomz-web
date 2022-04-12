@@ -126,10 +126,10 @@ const propsToClx = (props) => {
 		lineHeight: (v) => addStyle(styles, v, { lineHeight: v }),
 		//font-size
 		textXs: () => addStyle(styles, "", { fontSize: 5 }),
-		textSm: () => addStyle(styles, "", { fontSize: 12 }),
-		textBase: () => addStyle(styles, "", { fontSize: 14 }),
+		textSm: () => addStyle(styles, "", { fontSize: 13 }),
+		textBase: () => addStyle(styles, "", { fontSize: 16 }),
 		textLg: () => addStyle(styles, "", { fontSize: 18 }),
-		textXl: () => addStyle(styles, "", { fontSize: 20 }),
+		textXl: () => addStyle(styles, "", { fontSize: 24 }),
 		text2xl: () => addStyle(styles, "", { fontSize: 40 }),
 		text3xl: () => addStyle(styles, "", { fontSize: 70 }),
 		// background-color
