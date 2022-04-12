@@ -6,8 +6,8 @@ import Row from "src/components/Row";
 import Col from "src/components/Col";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
-import EmptyBlock from "src/components/EmptyBlock";
 import { useEffect, useState } from "react";
+import { FaDiscord, FaTwitter } from "react-icons/fa";
 
 function useWindowSize() {
 	// Initialize state with undefined width/height so server and client renders match
@@ -54,30 +54,33 @@ const Index: NextPage = () => {
 							<Div relative>
 								<Div hScreen flex justifyCenter flexCol>
 									<Div>
-										<Row flex itemsEnd textWhite gapX={10} bgBlack maxW={1200} mxAuto px40>
-											<Col />
+										<Row flex itemsEnd textWhite bgBlack maxW={1200} mxAuto px40>
+											<Col>
+												<Row>
+													<Col auto>Values</Col>
+													<Col auto>Journey</Col>
+													<Col auto>Gallery</Col>
+													<Col auto>Team</Col>
+													<Col auto textPrimary>
+														BetterWorld
+													</Col>
+													<Col />
+												</Row>
+											</Col>
 											<Col auto>
 												<Div maxW={200}>
 													<Div imgTag src={IMAGES.logos.gomzWordDude}></Div>
 												</Div>
 											</Col>
 											<Col>
-												<Row>
+												<Row flex itemsCenter>
 													<Col />
-													<Col auto textSm>
-														Values
+													<Col auto>Public Docs</Col>
+													<Col auto>
+														<FaDiscord />
 													</Col>
-													<Col auto textSm>
-														Journey
-													</Col>
-													<Col auto textSm>
-														Gallery
-													</Col>
-													<Col auto textSm>
-														Team
-													</Col>
-													<Col auto textPrimary textSm>
-														BetterWorld
+													<Col auto>
+														<FaTwitter />
 													</Col>
 												</Row>
 											</Col>
@@ -216,8 +219,8 @@ const Index: NextPage = () => {
 														GOMZ: The first Klaytn-based collection to lead popularization of NFT through tangible and social values
 													</Col>
 													<Col />
-													<Col clx={"animate-pulse"} textPrimary textSm auto>
-														Scroll for the Gomz Story
+													<Col clx={"animate-pulse"} textPrimary auto>
+														Scroll for our Story
 													</Col>
 												</Row>
 											</Div>
@@ -328,12 +331,12 @@ const Index: NextPage = () => {
 							</Col>
 							<Col py20>
 								<Row py10>
-									<Col auto>VALUES</Col>
-									<Col auto>JOURNEY</Col>
-									<Col auto>GALLERY</Col>
-									<Col auto>TEAM</Col>
+									<Col auto>Values</Col>
+									<Col auto>Journey</Col>
+									<Col auto>Gallery</Col>
+									<Col auto>Team</Col>
 									<Col auto textPrimary>
-										BETTER WORLD
+										BetterWorld
 									</Col>
 									<Col></Col>
 								</Row>
