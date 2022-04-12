@@ -8,6 +8,11 @@ export const IMAGES = {
     gomzAstronaut: '/images/gomzAstronaut.png',
     gomzSpaceship: '/images/gomzSpaceship.png',
     gomzSpace: '/images/gomzSpace.png',
+    gomzStory1Bg: '/images/gomzStory1Bg.png',
+    gomzStory1Char: '/images/gomzStory1Char.png',
+    gomzStory2: '/images/gomzStory2.png',
+    gomzStory3: '/images/gomzStory3.png',
+    gomzStory4: '/images/gomzStory4.png',
     cityBg: "/images/cityBg.png",
     logos: {
         main: '/images/logos/main.png',

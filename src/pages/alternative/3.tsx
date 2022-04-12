@@ -54,7 +54,7 @@ const Index: NextPage = () => {
 							<Div relative>
 								<Div hScreen flex justifyCenter flexCol>
 									<Div>
-										<Row flex itemsEnd textWhite gapX={10} bgBlack maxW={1200} mxAuto px20 py5>
+										<Row flex itemsEnd textWhite gapX={10} bgBlack maxW={1200} mxAuto px40>
 											<Col />
 											<Col auto>
 												<Div maxW={200}>
@@ -83,7 +83,13 @@ const Index: NextPage = () => {
 											</Col>
 										</Row>
 									</Div>
-									<Div wFull h={"75vh"} style={{ backgroundImage: `url(${IMAGES.gomzWar})`, backgroundSize: "cover" }} relative>
+									<Div
+										wFull
+										h={"75vh"}
+										style={{ backgroundImage: `url(${IMAGES.gomzStory1Bg})`, backgroundSize: "cover", backgroundPositionY: "center" }}
+										relative
+										my20
+									>
 										<Scene duration={1000} triggerHook={0} pin={true}>
 											{(progress) => (
 												<Timeline totalProgress={progress} paused>
@@ -94,9 +100,10 @@ const Index: NextPage = () => {
 																h={"75vh"}
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzSoldierBg})`,
+																	backgroundImage: `url(${IMAGES.gomzStory1Char})`,
 																	backgroundSize: "cover",
 																	backdropFilter: "brightness(50%)",
+																	backgroundPositionY: "center",
 																}}
 																flex
 																flexCol
@@ -120,27 +127,76 @@ const Index: NextPage = () => {
 																wFull
 																absolute
 																top0
-																bgBlack
 																h={"75vh"}
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzSpace})`,
+																	backgroundImage: `url(${IMAGES.gomzStory2})`,
 																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																}}
+																flex
+																flexCol
+																justifyBetween
+															>
+																<Div flex>
+																	<Div maxW={600} textWhite py20 px20 textBasse mx20 my20>
+																		8,888 of these bears have turned to space travel with an altruistic vision:”A Better World”
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																h={"75vh"}
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.gomzStory3})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																}}
+																flex
+																flexCol
+																justifyBetween
+															>
+																<Div flex>
+																	<Div maxW={600} textWhite py20 px20 textBasse mx20 my20>
+																		After years of deep hibernation in their space capsules, GOMZ have been awakened by other space wanderers who are
+																		also in search of a habitable planet.
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																h={"75vh"}
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.gomzStory4})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
 																}}
 																flex
 																flexCol
 																justifyBetween
 															>
 																<Div flex justifyEnd>
-																	<Div maxW={600} py20 px20 textXl fontThin italic mx20 my20 bgBlack textWhite>
-																		Instead of fighting these space wanderers, GOMZ decide to establish a better world with these wanderers —— a free,
-																		creative, and amicable society for those who recognize a need for change.
-																	</Div>
-																</Div>
-																<Div flex>
-																	<Div maxW={600} py20 px20 textXl fontThin italic mx20 my20 bgBlack textWhite>
-																		After years of deep hibernation in their space capsules, GOMZ have been awakened by other space wanderers who are
-																		also in search of a habitable planet.
+																	<Div maxW={600} textWhite py20 px20 textBasse mx20 my20>
+																		Instead of fighting these space wanderers, GOMZ decides to establish the better world —— a free, creative, and
+																		amicable society for space wanderers.
 																	</Div>
 																</Div>
 															</Div>
@@ -152,8 +208,8 @@ const Index: NextPage = () => {
 											)}
 										</Scene>
 									</Div>
-									<Div textWhite py20 relative>
-										<Div maxW={1200} mxAuto px20>
+									<Div textWhite py20>
+										<Div maxW={1200} mxAuto px40 relative>
 											<Div>
 												<Row gapX={20}>
 													<Col auto maxW={800}>
@@ -170,21 +226,39 @@ const Index: NextPage = () => {
 													<Timeline totalProgress={progress} paused>
 														<Timeline
 															target={
-																<Div bgBlack absolute top0 wFull py20>
+																<Div bgBlack absolute top0 wFull>
 																	War
 																</Div>
 															}
 														>
 															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-															<Timeline
-																target={
-																	<Div bgBlack absolute top0 wFull py20>
-																		Venture
-																	</Div>
-																}
-															>
-																<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-															</Timeline>
+														</Timeline>
+														<Timeline
+															target={
+																<Div bgBlack absolute top0 wFull>
+																	Venture
+																</Div>
+															}
+														>
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+														</Timeline>
+														<Timeline
+															target={
+																<Div bgBlack absolute top0 wFull>
+																	Wanderers
+																</Div>
+															}
+														>
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+														</Timeline>
+														<Timeline
+															target={
+																<Div bgBlack absolute top0 wFull>
+																	BetterWorld
+																</Div>
+															}
+														>
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
 														</Timeline>
 													</Timeline>
 												)}
@@ -197,9 +271,10 @@ const Index: NextPage = () => {
 					</Controller>
 				</Div>
 				<Div py50 bgBlack flex itemsCenter justifyCenter>
-					<Div mxAuto maxW={1400} px40>
+					<Div mxAuto maxW={1200} px40>
+						<Div hrTag mb50 />
 						<Row flex itemsCenter gapX={20}>
-							<Col auto text3xl textWhite>
+							<Col auto text2xl textWhite>
 								Build a{" "}
 								<Div spanTag style={{ color: "rgb(25, 110, 237)" }}>
 									Better{" "}
@@ -216,10 +291,7 @@ const Index: NextPage = () => {
 						<Div>
 							<Row flex itemsCenter gapX={20}>
 								<Col>
-									<Div text2xl textWhite textCenter py10>
-										Online
-									</Div>
-									<Div roundedXl textWhite textXl border1 borderWhite bgColor={"rgba(255,255,255,0.1)"} h450 flex itemsCenter>
+									<Div textWhite h450 flex itemsCenter>
 										<Div>
 											<Div imgTag src={IMAGES.logos.betterWorldBlue} mxAuto w={"40%"}></Div>
 											<Div px40>
@@ -230,10 +302,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Col>
 								<Col>
-									<Div text2xl textWhite textCenter py10>
-										Offline
-									</Div>
-									<Div roundedXl textWhite textXl border1 borderWhite bgColor={"rgba(255,255,255,0.1)"} h450 flex itemsCenter>
+									<Div h450 flex itemsCenter textWhite>
 										<Div>
 											<Div mxAuto wMax={300} style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }} text3xl leadingNone pb30>
 												Innovators <br /> Program
@@ -248,10 +317,11 @@ const Index: NextPage = () => {
 								</Col>
 							</Row>
 						</Div>
+						<Div hrTag />
 					</Div>
 				</Div>
 				<Div bgBlack>
-					<Div mxAuto maxW={1400} px20 py50 clx={"snap-start"}>
+					<Div mxAuto maxW={1200} px20 py50 clx={"snap-start"}>
 						<Row textWhite>
 							<Col auto>
 								<Div imgTag src={IMAGES.logos.main} w150 h150></Div>
