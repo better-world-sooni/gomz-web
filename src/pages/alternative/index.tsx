@@ -117,15 +117,17 @@ const Index: NextPage = () => {
 																flex
 																flexCol
 																justifyBetween
+																border1
+																borderGray100
 															>
 																<Div flex>
-																	<Div maxW={600} py20 px20 textXl fontThin italic mx20 my20 bgWhite>
+																	<Div maxW={600} py20 px20 textXl fontThin italic mx20 my20 bgBlack textWhite>
 																		After years of deep hibernation in their space capsules, GOMZ have been awakened by other space wanderers who are
 																		also in search of a habitable planet.
 																	</Div>
 																</Div>
 																<Div flex justifyEnd>
-																	<Div maxW={600} py20 px20 textXl fontThin italic mx20 my20 bgWhite>
+																	<Div maxW={600} py20 px20 textXl fontThin italic mx20 my20 bgBlack textWhite>
 																		Instead of fighting these space wanderers, GOMZ decide to establish a better world with these wanderers —— a free,
 																		creative, and amicable society for those who recognize a need for change.
 																	</Div>
