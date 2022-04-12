@@ -15,8 +15,8 @@ function MainTopBar() {
 	const handleClickValues = () => {
 		href(urls.values.index);
 	};
-	const handleClickJourney = () => {
-		href(urls.journey.index);
+	const handleClickRoadmap = () => {
+		href(urls.roadmap.index);
 	};
 	const handleClickGallery = () => {
 		href(urls.gallery.index);
@@ -35,8 +35,8 @@ function MainTopBar() {
 					<Col auto cursorPointer onClick={handleClickValues} clx={"hover:text-primary"} {...(asPath == urls.values.index && selectedProps)}>
 						Values
 					</Col>
-					<Col auto cursorPointer onClick={handleClickJourney} clx={"hover:text-primary"} {...(asPath == urls.journey.index && selectedProps)}>
-						Journey
+					<Col auto cursorPointer onClick={handleClickRoadmap} clx={"hover:text-primary"} {...(asPath == urls.roadmap.index && selectedProps)}>
+						Roadmap
 					</Col>
 					<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"} {...(asPath == urls.gallery.index && selectedProps)}>
 						Gallery

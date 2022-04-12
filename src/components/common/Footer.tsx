@@ -13,7 +13,7 @@ export default function Footer() {
 		href(urls.values.index);
 	};
 	const handleClickJourney = () => {
-		href(urls.journey.index);
+		href(urls.roadmap.index);
 	};
 	const handleClickGallery = () => {
 		href(urls.gallery.index);

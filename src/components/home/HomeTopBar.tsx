@@ -13,8 +13,8 @@ function HomeTopBar() {
 	const handleClickValues = () => {
 		href(urls.values.index);
 	};
-	const handleClickJourney = () => {
-		href(urls.journey.index);
+	const handleClickRoadmap = () => {
+		href(urls.roadmap.index);
 	};
 	const handleClickGallery = () => {
 		href(urls.gallery.index);
@@ -27,8 +27,8 @@ function HomeTopBar() {
 						<Col auto onClick={handleClickValues} cursorPointer clx={"hover:text-primary"}>
 							Values
 						</Col>
-						<Col auto cursorPointer onClick={handleClickJourney} clx={"hover:text-primary"}>
-							Journey
+						<Col auto cursorPointer onClick={handleClickRoadmap} clx={"hover:text-primary"}>
+							Roadmap
 						</Col>
 						<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"}>
 							Gallery

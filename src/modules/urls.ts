@@ -3,10 +3,13 @@ export const urls = {
     values: {
         index: '/values'
     },
-    journey: {
-        index: '/journey'
+    roadmap: {
+        index: '/roadmap'
     },
     gallery: {
         index: '/gallery'
     },
+    story: {
+        index: '/story'
+    }
 }
