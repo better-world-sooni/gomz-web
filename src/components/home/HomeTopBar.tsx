@@ -20,7 +20,7 @@ function HomeTopBar() {
 		href(urls.gallery.index);
 	};
 	return (
-		<Div>
+		<Div italic>
 			<Row flex itemsEnd textWhite maxW={1200} mxAuto px40 textSm fontSemibold>
 				<Col>
 					<Row>

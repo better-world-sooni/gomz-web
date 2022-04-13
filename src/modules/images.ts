@@ -26,6 +26,7 @@ export const IMAGES = {
         gomzWord: '/images/logos/gomzWord.png',
         gomzWordDude: '/images/logos/gomzWordDude.png',
         betterWorldBlue: '/images/logos/betterWorldBlue.png',
+        betterWorldPurpleBox: "/images/logos/betterWorldPurpleBox.jpg"
     },
     team: {
         mj: "/images/team/1.png",

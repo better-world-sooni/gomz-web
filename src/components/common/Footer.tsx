@@ -20,13 +20,13 @@ export default function Footer() {
 	};
 	return (
 		<Div>
-			<Div mxAuto maxW={1200} px20 py50 fontSemibold>
+			<Div mxAuto maxW={1200} px20 py50 fontSemibold italic>
 				<Row textWhite>
 					<Col auto clx={"hover:animate-pulse"}>
 						<Div imgTag src={IMAGES.logos.main} w150 h150></Div>
 					</Col>
 					<Col py20>
-						<Row py10>
+						<Row py10 textSm>
 							<Col auto onClick={handleClickValues} cursorPointer clx={"hover:text-primary"}>
 								Values
 							</Col>

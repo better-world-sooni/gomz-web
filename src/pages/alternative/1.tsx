@@ -4,11 +4,10 @@ import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import Row from "src/components/Row";
 import Col from "src/components/Col";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
 import Footer from "src/components/common/Footer";
 import HomeTopBar from "src/components/home/HomeTopBar";
-import { useState } from "react";
+import { href } from "src/modules/routeHelper";
+import { urls } from "src/modules/urls";
 
 const Index: NextPage = () => {
 	return (
@@ -23,174 +22,68 @@ const Index: NextPage = () => {
 				}}
 			>
 				<Div>
-					<Controller>
-						<Scene duration={1000} triggerHook={0} pin={true}>
-							<Div relative style={{ backdropFilter: "brightness(15%)" }}>
-								<Div hScreen flex justifyCenter flexCol>
-									<HomeTopBar />
-									<Div
-										wFull
-										h={"75vh"}
-										style={{ backgroundImage: `url(${IMAGES.gomzStory1Bg})`, backgroundSize: "cover", backgroundPositionY: "center" }}
-										relative
-										my20
-										textSm
-									>
-										<Scene duration={1000} triggerHook={0} pin={true}>
-											{(progress) => (
-												<Timeline totalProgress={progress} paused>
-													<Timeline
-														target={
-															<Div
-																wFull
-																h={"75vh"}
-																textXl
-																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory1Char})`,
-																	backgroundSize: "cover",
-																	backdropFilter: "brightness(50%)",
-																	backgroundPositionY: "center",
-																}}
-																flex
-																flexCol
-																justifyEnd
-															>
-																<Div flex justifyCenter>
-																	<Div maxW={600} textWhite py20 px20 mx20 my20 textBase bgBlack textCenter>
-																		For the past decade, GOMZ have been in a planet-wide war, a war provoked by excessive indoctrination of
-																		competition and capitalism. Such violence has made the planet too hostile, colorless, and systematic, rendering it
-																		uninhabitable.{" "}
-																	</Div>
-																</Div>
-															</Div>
-														}
-													>
-														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-													</Timeline>
-													<Timeline
-														target={
-															<Div
-																wFull
-																absolute
-																top0
-																h={"75vh"}
-																textXl
-																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory2})`,
-																	backgroundSize: "cover",
-																	backgroundPositionY: "center",
-																}}
-																flex
-																flexCol
-																justifyEnd
-															>
-																<Div flex justifyCenter>
-																	<Div maxW={600} textWhite py20 px20 mx20 my20 textBase bgBlack textCenter>
-																		8,888 of these bears have turned to space travel with an altruistic vision:”A Better World”
-																	</Div>
-																</Div>
-															</Div>
-														}
-													>
-														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-													</Timeline>
-													<Timeline
-														target={
-															<Div
-																wFull
-																absolute
-																top0
-																h={"75vh"}
-																textXl
-																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory3})`,
-																	backgroundSize: "cover",
-																	backgroundPositionY: "center",
-																}}
-																flex
-																flexCol
-																justifyEnd
-															>
-																<Div flex justifyCenter>
-																	<Div maxW={600} textWhite py20 px20 mx20 my20 textBase bgBlack textCenter>
-																		After years of deep hibernation in their space capsules, GOMZ have been awakened by other space wanderers who are
-																		also in search of a habitable planet.
-																	</Div>
-																</Div>
-															</Div>
-														}
-													>
-														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-													</Timeline>
-													<Timeline
-														target={
-															<Div
-																wFull
-																absolute
-																top0
-																h={"75vh"}
-																textXl
-																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory4})`,
-																	backgroundSize: "cover",
-																	backgroundPositionY: "center",
-																}}
-																flex
-																flexCol
-																justifyEnd
-															>
-																<Div flex justifyCenter>
-																	<Div maxW={600} textWhite py20 px20 mx20 my20 textBase bgBlack textCenter>
-																		Instead of kicking these space wanderers out, GOMZ decide to establish a better world —— a free, creative, and
-																		amicable society for those who recognize a need for change.
-																	</Div>
-																</Div>
-															</Div>
-														}
-													>
-														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-													</Timeline>
-												</Timeline>
-											)}
-										</Scene>
-									</Div>
-									<Div textWhite py20>
-										<Div maxW={1200} mxAuto px40 relative textSm fontSemibold>
-											<Div>
-												<Row gapX={20}>
-													<Col auto maxW={800}>
-														GOMZ: The first Klaytn-based collection to lead popularization of NFT through tangible and social values
-													</Col>
-													<Col />
-													<Col textPrimary auto bgBlack roundedXl>
-														Scroll to read story
-													</Col>
-												</Row>
-											</Div>
-										</Div>
+					<Div relative style={{ backdropFilter: "brightness(20%)" }}>
+						<Div hScreen flex justifyCenter flexCol>
+							<HomeTopBar />
+							<Div
+								wFull
+								h={"75vh"}
+								style={{
+									backgroundImage: `url(${IMAGES.gomzStory2})`,
+									backgroundSize: "cover",
+									backgroundPositionX: "center",
+									backgroundPositionY: "center",
+								}}
+								relative
+								my20
+								textSm
+								cursorPointer
+								onClick={() => href(urls.story.index)}
+							>
+								<Div absolute bottom0 wFull flex justifyCenter>
+									<Div maxW={600} textWhite py20 px20 mx20 my20 textBase bgBlack textCenter>
+										...8,888 of these bears have turned to space travel with an altruistic vision: <br /> &quot;A Better World&quot;
 									</Div>
 								</Div>
 							</Div>
-						</Scene>
-					</Controller>
+							<Div textWhite py10>
+								<Div maxW={1200} mxAuto px40 relative textBase fontSemibold>
+									<Div>
+										<Row gapX={20} flex itemsCenter>
+											<Col auto maxW={800}>
+												Gomz is the collection to lead popularization of NFT through tangible and social values
+											</Col>
+											<Col></Col>
+											<Col auto>
+												<Div roundedXl bgWhite py10 px50 textBlack flex itemsCenter textXl fontNormal>
+													Mint
+												</Div>
+											</Col>
+										</Row>
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+					</Div>
 				</Div>
 				<Div py50 flex itemsCenter justifyCenter style={{ backdropFilter: "brightness(15%)" }}>
 					<Div mxAuto maxW={1200} px40>
 						<Div hrTag mb50 />
 						<Row flex itemsCenter gapX={20} fontBold>
 							<Col auto text2xl textWhite>
-								Build a{" "}
+								Gomz are builders, investors, and settlers <br />
+								of{" "}
 								<Div spanTag style={{ color: "rgb(25, 110, 237)" }}>
 									Better{" "}
 								</Div>
 								<Div spanTag style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }}>
-									World
+									World{" "}
+								</Div>
+								<Div spanTag textXl>
+									which comes in two forms
 								</Div>
 							</Col>
-							<Col textWhite>
-								대중들이 블록체인 커뮤니티를 통하여
-								<br /> 실질적인 가치를 창출하는 창의적인 세상
-							</Col>
+							<Col textWhite></Col>
 						</Row>
 						<Div>
 							<Row flex itemsCenter gapX={20}>
@@ -227,7 +120,94 @@ const Index: NextPage = () => {
 				<Div style={{ backdropFilter: "brightness(15%)" }}>
 					<Row mxAuto maxW={1200} px40 fontBold pb50>
 						<Col auto text2xl textWhite>
-							Team
+							Gomz uphold{" "}
+							<Div spanTag style={{ color: "rgb(25, 110, 237)" }}>
+								3 Core
+							</Div>{" "}
+							<Div spanTag style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }}>
+								Values
+							</Div>
+						</Col>
+						<Col></Col>
+					</Row>
+					<Row mxAuto maxW={1200} px40 flex itemsCenter gapX={30}>
+						<Col h700 flex flexCol justifyAround>
+							<Div maxW={300} mxAuto>
+								<Div imgTag src={IMAGES.gomzInnovate}></Div>
+							</Div>
+							<Div>
+								<Div text2xl fontBold>
+									<Div spanTag style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }}>
+										혁신
+									</Div>
+									<Div spanTag textWhite>
+										하고,
+									</Div>
+								</Div>
+								<Div textWhite>
+									GOMZ는 NFT 공간을 통합하는 소셜 어플리케이션을 출시하여 웹2.0에서 웹3.0으로의 원활한 전환을 준비합니다. 웹과 앱 내에서 다양한
+									홀더들은 PFP가 자신의 아바타이자 정체성이 되어 표현하고, 활동하고, 교류합니다. 나아가 GOMZ는 홀더들에게 지속적으로 만질 수 있는
+									가치를 제공함으로써 가상과 현실세계 모두에서 더 나은 세상 구축에 앞장섭니다.
+								</Div>
+							</Div>
+						</Col>
+						<Col h700 flex flexCol justifyAround>
+							<Div>
+								<Div text2xl fontBold>
+									<Div spanTag style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }}>
+										반항
+									</Div>
+									<Div spanTag textWhite>
+										하며,
+									</Div>
+								</Div>
+								<Div textWhite>
+									GOMZ는 묻습니다. “여러분의 진정한 꿈은 무엇인가요? 무엇을 할 때 가장 행복한가요?” GOMZ는 보편적인 사회구조에 도전하고 이들만의
+									문화를 개척하기 위해 나타났습니다. 이들은 자유가 더 넓은 차원의 지식과 혁신을 만들어낸다고 믿습니다. 그리고 자유와 책임의 적정선을
+									잘 인지하고 있습니다. 따라서 외칩니다. “멋있게 일하고, 더 멋있게 놀자!” GOMZ는 모두에게 더 많은 꿈을, 그리고 더 자유로운 일상을
+									제공하고자 나타났습니다.
+								</Div>
+							</Div>
+							<Div style={{ flex: 1 }}></Div>
+							<Div maxW={300} mxAuto>
+								<Div imgTag src={IMAGES.gomzRebel}></Div>
+							</Div>
+						</Col>
+						<Col h700 flex flexCol justifyAround>
+							<Div maxW={500} mxAuto>
+								<Div imgTag src={IMAGES.gomzTogether}></Div>
+							</Div>
+							<Div>
+								<Div text2xl fontBold>
+									<Div spanTag style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }}>
+										함께
+									</Div>
+									<Div spanTag textWhite>
+										하다.
+									</Div>
+								</Div>
+								<Div textWhite>
+									GOMZ는 Klaytn 시장 최초로 NFT 공간을 통합하는 모바일 기반 소셜 어플리케이션을 출시하여 웹2.0에서 웹3.0으로의 원활한 전환을
+									준비합니다. 앱 내에서 다양한 홀더들은 PFP가 자신의 아바타이자 정체성이 되어 표현하고, 활동하고, 교류합니다. 나아가 GOMZ는 홀더들에게
+									지속적으로 만질 수 있는 가치를 제공함으로써 가상과 현실세계 모두에서 더 나은 세상 구축에 앞장섭니다.
+								</Div>
+							</Div>
+						</Col>
+					</Row>
+					<Row mxAuto maxW={1200} px40 py50>
+						<Div hrTag />
+					</Row>
+				</Div>
+				<Div style={{ backdropFilter: "brightness(15%)" }}>
+					<Row mxAuto maxW={1200} px40 fontBold pb50>
+						<Col auto text2xl textWhite>
+							Team: Simply the{" "}
+							<Div spanTag style={{ color: "rgb(25, 110, 237)" }}>
+								First 8
+							</Div>{" "}
+							<Div spanTag style={{ color: "rgba(0,0,0,0)", ["-webkit-text-stroke"]: "1px white" }}>
+								Gomz
+							</Div>
 						</Col>
 						<Col></Col>
 					</Row>
