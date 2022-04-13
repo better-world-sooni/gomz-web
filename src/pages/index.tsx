@@ -166,7 +166,7 @@ const Index: NextPage = () => {
 													</Col>
 													<Col></Col>
 													<Col auto>
-														<Div roundedXl bgWhite py10 px50 textBlack flex itemsCenter textXl fontBold>
+														<Div roundedXl bgPrimary py10 px50 textBlack flex itemsCenter textXl fontBold>
 															Mint
 														</Div>
 													</Col>
@@ -180,7 +180,7 @@ const Index: NextPage = () => {
 					</Controller>
 				</Div>
 				<Div py50 flex itemsCenter justifyCenter style={{ backdropFilter: "brightness(15%)" }}>
-					<Div mxAuto maxW={1200} px40 borderT1 borderB1 borderWhite py50>
+					<Div mxAuto maxW={1200} px40 borderT1 borderB1 borderGray700 py50>
 						<Row flex itemsCenter gapX={20} fontBold italic>
 							<Col auto text2xl textWhite>
 								Gomz are builders, investors, and settlers <br />
@@ -230,7 +230,7 @@ const Index: NextPage = () => {
 						</Col>
 						<Col></Col>
 					</Row>
-					<Row mxAuto maxW={1200} px40 flex itemsCenter gapX={30} borderB1 borderWhite py50>
+					<Row mxAuto maxW={1200} px40 flex itemsCenter gapX={30} borderB1 borderGray700 py50>
 						<Col h700 flex flexCol justifyAround>
 							<Div maxW={300} mxAuto>
 								<Div imgTag src={IMAGES.gomzInnovate}></Div>
@@ -339,7 +339,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Col>
 					</Row>
-					<Row mxAuto maxW={1200} px40 borderB1 borderWhite pb50>
+					<Row mxAuto maxW={1200} px40 borderB1 borderGray700 pb50>
 						<Col flex flexCol itemsCenter>
 							<Div maxW={200} roundedXl overflowHidden>
 								<Div imgTag src={IMAGES.team.jay}></Div>
