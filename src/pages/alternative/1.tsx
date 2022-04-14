@@ -38,7 +38,6 @@ const Index: NextPage = () => {
 								my20
 								textSm
 								cursorPointer
-								onClick={() => href(urls.story.index)}
 							>
 								<Div absolute bottom0 wFull flex justifyCenter>
 									<Div maxW={600} textWhite py20 px20 mx20 my20 textBase bgBlack textCenter>
