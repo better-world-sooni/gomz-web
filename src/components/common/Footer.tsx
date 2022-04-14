@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { IMAGES } from "src/modules/images";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
@@ -6,34 +7,36 @@ import Div from "../Div";
 import Row from "../Row";
 
 export default function Footer() {
+	const { asPath } = useRouter();
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
-	const handleClickValues = () => {
-		href(urls.values.index);
+	const handleClickHome = () => {
+		href(urls.home.index);
 	};
 	const handleClickJourney = () => {
-		href(urls.roadmap.index);
+		href(urls.journey.index);
 	};
 	const handleClickGallery = () => {
 		href(urls.gallery.index);
 	};
+	const selectedProps = { textPrimary: true };
 	return (
 		<Div>
 			<Div mxAuto maxW={1200} px20 py50 fontSemibold italic>
 				<Row textWhite>
-					<Col auto clx={"hover:animate-pulse"}>
-						<Div imgTag src={IMAGES.logos.main} w150 h150></Div>
+					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
+						<Div imgTag src={IMAGES.logos.main} w100 h100></Div>
 					</Col>
 					<Col py20>
 						<Row py10 textSm>
-							<Col auto onClick={handleClickValues} cursorPointer clx={"hover:text-primary"}>
-								Values
+							<Col auto onClick={handleClickHome} cursorPointer clx={"hover:text-primary"} {...(asPath == urls.home.index && selectedProps)}>
+								Home
 							</Col>
-							<Col auto cursorPointer onClick={handleClickJourney} clx={"hover:text-primary"}>
+							<Col auto cursorPointer onClick={handleClickJourney} clx={"hover:text-primary"} {...(asPath == urls.journey.index && selectedProps)}>
 								Journey
 							</Col>
-							<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"}>
+							<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"} {...(asPath == urls.gallery.index && selectedProps)}>
 								Gallery
 							</Col>
 							<Col auto cursorPointer clx={"hover:text-primary"}>

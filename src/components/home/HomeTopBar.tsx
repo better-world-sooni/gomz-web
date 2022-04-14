@@ -10,35 +10,10 @@ function HomeTopBar() {
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
-	const handleClickValues = () => {
-		href(urls.values.index);
-	};
-	const handleClickRoadmap = () => {
-		href(urls.roadmap.index);
-	};
-	const handleClickGallery = () => {
-		href(urls.gallery.index);
-	};
 	return (
-		<Div italic>
+		<Div italic pt50>
 			<Row flex itemsEnd textWhite maxW={1200} mxAuto px40 textSm fontSemibold>
-				<Col>
-					<Row>
-						<Col auto onClick={handleClickValues} cursorPointer clx={"hover:text-primary"}>
-							Values
-						</Col>
-						<Col auto cursorPointer onClick={handleClickRoadmap} clx={"hover:text-primary"}>
-							Roadmap
-						</Col>
-						<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"}>
-							Gallery
-						</Col>
-						<Col auto cursorPointer clx={"hover:text-primary"}>
-							BetterWorld
-						</Col>
-						<Col />
-					</Row>
-				</Col>
+				<Col></Col>
 				<Col auto onClick={handleClickGomz} cursorPointer>
 					<Div maxW={200} clx={"hover:animate-pulse"}>
 						<Div imgTag src={IMAGES.logos.gomzWordDude}></Div>
@@ -47,9 +22,6 @@ function HomeTopBar() {
 				<Col>
 					<Row flex itemsCenter>
 						<Col />
-						<Col auto cursorPointer clx={"hover:text-primary"}>
-							Public Docs
-						</Col>
 						<Col auto cursorPointer clx={"hover:text-primary"}>
 							<FaDiscord />
 						</Col>

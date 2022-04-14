@@ -22,7 +22,6 @@ const Index: NextPage = () => {
 					}}
 				>
 					<Div style={{ backdropFilter: "brightness(20%)" }}>
-						<EmptyBlock h={50} />
 						<MainTopBar />
 						<Div mxAuto maxW={1200} px40 translateY1over4={!focused} opacity0={!focused} clx={"transition-all ease-in-out duration-1000"}>
 							<Div pt50>

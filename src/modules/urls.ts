@@ -1,15 +1,15 @@
 export const urls = {
     index: '/',
     values: {
-        index: '/values'
+        index: '/home#values'
     },
-    roadmap: {
-        index: '/roadmap'
+    journey: {
+        index: '/journey'
     },
     gallery: {
         index: '/gallery'
     },
-    story: {
-        index: '/story'
+    home: {
+        index: '/home'
     }
 }
