@@ -37,7 +37,7 @@ const Index: NextPage = () => {
 							<Row>
 								<Col flex itemsCenter>
 									<Div>
-										<Div>
+										<Div maxW={450} py20>
 											<Div imgTag src={IMAGES.logos.gomzWord}></Div>
 										</Div>
 										<Div textWhite italic py20>
