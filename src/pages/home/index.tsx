@@ -178,12 +178,11 @@ const Index: NextPage = () => {
 						</Scene>
 					</Controller>
 				</Div>
-				<Div py50 flex itemsCenter justifyCenter style={{ backdropFilter: "brightness(15%)" }}>
-					<Div mxAuto maxW={1200} px40 borderT1 borderB1 borderGray700 py50>
+				<Div py100 flex itemsCenter justifyCenter style={{ backdropFilter: "brightness(15%)" }}>
+					<Div mxAuto maxW={1200} px40 borderT1 borderB1 borderGray700 py100>
 						<Row flex itemsCenter gapX={20} fontBold italic>
-							<Col auto text2xl textWhite>
-								Gomz are builders, investors, and settlers <br />
-								of{" "}
+							<Col auto textXl textWhite>
+								Gomz are builders, investors, and settlers of <br />
 								<Div spanTag textPrimary>
 									BetterWorld{" "}
 								</Div>
@@ -194,21 +193,21 @@ const Index: NextPage = () => {
 						<Div>
 							<Row textWhite flex itemsCenter>
 								<Col py10>
-									<Div imgTag src={IMAGES.logos.betterWorldPurpleBox} mxAuto roundedXl w={"60%"}></Div>
+									<Div imgTag src={IMAGES.logos.betterWorldPurpleBox} mxAuto roundedXl w={"40%"}></Div>
 								</Col>
 								<Col>
-									<Div>
-										<Div fontBold textXl textPrimary>
+									<Div italic>
+										<Div fontBold textLg textPrimary>
 											온라인
 										</Div>
-										<Div py10>
+										<Div py10 textBase>
 											BetterWorld 앱을 통해 NFT 공간을 선도하는 다양한 홀더들이 활발히 교류할 수 있습니다. 이 곳에 홀더들은 본인의 PFP가 자신의
 											아바타이자 정체성이되어 표현하고, 활동하고, 소통하며 PFP 생태계 활성화에 앞장섭니다.
 										</Div>
-										<Div pt10 fontBold textXl textPrimary>
+										<Div pt10 fontBold textLg textPrimary>
 											오프라인
 										</Div>
-										<Div py10>
+										<Div py10 textBase>
 											우리가 일상 속에서 흔히 만나는 것들에 GOMZ가 함께하는 것으로 더 나은 세상은 시작됩니다. 자주가는 음식점, 카페, 바에서 GOMZ
 											홀더로서 다양한 혜택을 받으세요. 이는 모두가 함께 상생할 수 있는 구조의 협약을 기반으로 이루어집니다.뿐만 아니라, NFT 홀더들이
 											교류하고 네트워킹 할 수 있는 다양한 행사들도 준비되어있습니다.
@@ -219,9 +218,9 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 				</Div>
-				<Div style={{ backdropFilter: "brightness(15%)" }} pb50>
+				<Div style={{ backdropFilter: "brightness(15%)" }} pb100>
 					<Row mxAuto maxW={1200} px40 fontBold>
-						<Col auto text2xl textWhite italic>
+						<Col auto textXl textWhite italic>
 							Gomz uphold{" "}
 							<Div spanTag textPrimary>
 								3 Core Values
@@ -229,13 +228,13 @@ const Index: NextPage = () => {
 						</Col>
 						<Col></Col>
 					</Row>
-					<Row mxAuto maxW={1200} px40 flex itemsCenter gapX={30} borderB1 borderGray700 py50>
+					<Row mxAuto maxW={1200} px40 flex itemsCenter gapX={30} borderB1 borderGray700 pt50 pb100 italic>
 						<Col h700 flex flexCol justifyAround>
 							<Div maxW={300} mxAuto>
 								<Div imgTag src={IMAGES.gomzInnovate}></Div>
 							</Div>
 							<Div>
-								<Div text2xl fontBold>
+								<Div textXl fontBold>
 									<Div spanTag textPrimary>
 										혁신
 									</Div>
@@ -252,7 +251,7 @@ const Index: NextPage = () => {
 						</Col>
 						<Col h700 flex flexCol justifyAround>
 							<Div>
-								<Div text2xl fontBold>
+								<Div textXl fontBold>
 									<Div spanTag textPrimary>
 										반항
 									</Div>
@@ -277,7 +276,7 @@ const Index: NextPage = () => {
 								<Div imgTag src={IMAGES.gomzTogether}></Div>
 							</Div>
 							<Div>
-								<Div text2xl fontBold>
+								<Div textXl fontBold>
 									<Div spanTag textPrimary>
 										함께
 									</Div>
@@ -296,7 +295,7 @@ const Index: NextPage = () => {
 				</Div>
 				<Div style={{ backdropFilter: "brightness(15%)" }}>
 					<Row mxAuto maxW={1200} px40 fontBold>
-						<Col auto text2xl textWhite italic>
+						<Col auto textXl textWhite italic>
 							Team: Simply the{" "}
 							<Div spanTag textPrimary>
 								First 8 Gomz
@@ -338,7 +337,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Col>
 					</Row>
-					<Row mxAuto maxW={1200} px40 borderB1 borderGray700 pb50>
+					<Row mxAuto maxW={1200} px40 borderB1 borderGray700 pb100>
 						<Col flex flexCol itemsCenter>
 							<Div maxW={200} roundedXl overflowHidden>
 								<Div imgTag src={IMAGES.team.jay}></Div>
