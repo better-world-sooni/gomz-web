@@ -130,7 +130,7 @@ const propsToClx = (props) => {
 		textBase: () => addStyle(styles, "", { fontSize: 16 }),
 		textLg: () => addStyle(styles, "", { fontSize: 18 }),
 		textXl: () => addStyle(styles, "", { fontSize: 22 }),
-		text2xl: () => addStyle(styles, "", { fontSize: 28 }),
+		text2xl: () => addStyle(styles, "", { fontSize: 26 }),
 		text3xl: () => addStyle(styles, "", { fontSize: 70 }),
 		// background-color
 		bgColor: (v) => addStyle(styles, "", { backgroundColor: v }),
@@ -422,6 +422,7 @@ const propsToClx = (props) => {
 		textOpacity80: () => clxs.push("text-opacity-80"),
 		//font-family
 		moonget: (v) => addStyle(styles, "", { fontFamily: "MOONGET" }),
+		bungee: (v) => addStyle(styles, "", { fontFamily: "Bungee" }),
 
 		// font-smoothing
 		antialiased: () => clxs.push("antialiased"),

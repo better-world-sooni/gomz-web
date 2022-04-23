@@ -24,26 +24,11 @@ export default function Footer() {
 	return (
 		<Div>
 			<Div mxAuto maxW={1200} px20 py50 fontSemibold italic>
-				<Row textWhite>
+				<Row textWhite itemsCenter>
 					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
 						<Div imgTag src={IMAGES.logos.main} w100 h100></Div>
 					</Col>
 					<Col py20>
-						<Row py10 textSm>
-							<Col auto onClick={handleClickHome} cursorPointer clx={"hover:text-primary"} {...(asPath == urls.home.index && selectedProps)}>
-								Home
-							</Col>
-							<Col auto cursorPointer onClick={handleClickJourney} clx={"hover:text-primary"} {...(asPath == urls.journey.index && selectedProps)}>
-								Journey
-							</Col>
-							<Col auto cursorPointer onClick={handleClickGallery} clx={"hover:text-primary"} {...(asPath == urls.gallery.index && selectedProps)}>
-								Gallery
-							</Col>
-							<Col auto cursorPointer clx={"hover:text-primary"}>
-								BetterWorld
-							</Col>
-							<Col></Col>
-						</Row>
 						<Row py5>
 							<Col auto>
 								<Div spanTag>Gomz by </Div>

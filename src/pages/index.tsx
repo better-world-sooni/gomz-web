@@ -14,6 +14,7 @@ import MainTopBar from "src/components/common/MainTopBar";
 import { VIDEOS } from "src/modules/videos";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
+import { FaDiscord, FaTwitter } from "react-icons/fa";
 
 const Index: NextPage = () => {
 	const handleClickHome = () => {
@@ -24,46 +25,56 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<Div
 				style={{
-					backgroundImage: `url(${IMAGES.cityBgLong})`,
-					backgroundSize: "cover",
-					backgroundPositionX: "center",
-					backgroundPositionY: "center",
+					background: "radial-gradient(50% 50% at 50% 50%, #000000 44.27%, #02012D 100%)",
 				}}
+				hScreen
+				relative
 			>
-				<Div>
-					<Div relative style={{ backdropFilter: "brightness(15%)" }}>
-						<MainTopBar />
-						<Div mxAuto maxW={1200} px40>
-							<Row>
-								<Col flex itemsCenter>
-									<Div>
-										<Div maxW={450} py20>
-											<Div imgTag src={IMAGES.logos.gomzWord}></Div>
-										</Div>
-										<Div textWhite italic py20>
-											Gomz is the collection to lead popularization of NFT through tangible and social values
-										</Div>
-									</Div>
-								</Col>
-								<Col>
-									<Div relative cursorPointer onClick={handleClickHome}>
-										<video autoPlay width="100%" muted loop>
-											<source src={VIDEOS.gomzAstronaut} type="video/mp4" />
-										</video>
-										<Div wFull absolute bottom80 left0 z10>
-											<Div textCenter textWhite clx={"animate-bounce"} italic fontSemibold>
-												Click to Enter
-											</Div>
-										</Div>
-									</Div>
-								</Col>
-							</Row>
+				<Div absolute top0 wFull>
+					<Div flex flexRow px80 mt50>
+						<Div flex1></Div>
+						<Div flex flexRow itemsCenter>
+							<Div mx10>
+								<Div roundedFull border1 borderWhite textWhite flex itemsCenter justifyCenter fontBold py5 px20>
+									Public Docs
+								</Div>
+							</Div>
+							<Div mx10>
+								<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
+							</Div>
+							<Div mx10 textWhite>
+								<FaDiscord size={35} />
+							</Div>
+							<Div ml10 textWhite>
+								<FaTwitter size={35} />
+							</Div>
 						</Div>
 					</Div>
 				</Div>
-
-				<Div style={{ backdropFilter: "brightness(15%)" }}>
-					<Footer />
+				<Div flex flexRow hFull relative>
+					<Div hFull absolute>
+						<Div flex flexRow hFull style={{ pointerEvents: "none" }}>
+							<Div style={{ flex: 1 }}></Div>
+							<Div style={{ flex: 1.3 }} flex justifyCenter itemsCenter>
+								<Div imgTag src={IMAGES.gomzMainAstronaut}></Div>
+							</Div>
+							<Div style={{ flex: 1 }}></Div>
+						</Div>
+					</Div>
+					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter z100>
+						<Div imgTag src={IMAGES.logos.gomzWord} px50 ml30></Div>
+					</Div>
+					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter cursorPointer onClick={handleClickHome} z100></Div>
+					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter textWhite fontMedium z100>
+						<Div flex itemsEnd bottom50 textWhite text2xl flexCol pr90>
+							<Div textRight fontSize36>
+								A Creative Playground with Your Web 3.0 Identity
+							</Div>
+							<Div px50 py10 roundedFull border1 borderWhite fontExtrabold mt20>
+								MINT
+							</Div>
+						</Div>
+					</Div>
 				</Div>
 			</Div>
 		</>
