@@ -11,8 +11,10 @@ import EmptyBlock from "src/components/EmptyBlock";
 import MainTopBar from "src/components/common/MainTopBar";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import useIsTablet from "src/hooks/useIsTablet";
 
 const Index: NextPage = () => {
+	const isTablet = useIsTablet();
 	const team = [
 		{
 			name: "sehan",
@@ -67,6 +69,278 @@ const Index: NextPage = () => {
 			answer: "다양한 구성원으로 이루어진 커뮤니티를 보장하기 위해 지갑당 5개의 GOMZ로 제한합니다.",
 		},
 	];
+	if (isTablet) {
+		return (
+			<>
+				<BasicHead />
+				<Div
+					style={{
+						background: "linear-gradient(180deg, #000000 0%, #02012D 51.56%, #02012D 76.56%, #000000 100%)",
+					}}
+				>
+					<Div>
+						<Controller>
+							<Scene duration={1000} triggerHook={0} pin={true}>
+								<Div relative>
+									<Div flex justifyBetween flexCol>
+										<MainTopBar />
+										<Div
+											wFull
+											style={{ backgroundImage: `url(${IMAGES.gomzStory1Bg})`, backgroundSize: "cover", backgroundPositionY: "center" }}
+											relative
+											h={"200px"}
+											italic
+											my10
+											textSm
+										>
+											<Div
+												wFull
+												h={"200px"}
+												textXl
+												style={{
+													backgroundImage: `url(${IMAGES.gomzStory1Char})`,
+													backgroundSize: "cover",
+													backdropFilter: "brightness(50%)",
+													backgroundPositionY: "center",
+													backgroundPositionX: "center",
+												}}
+												flex
+												flexCol
+											>
+												<Div flex justifyEnd>
+													<Div maxW={300} p10 textWhite textXs textRight>
+														지나친 경쟁과 획일화로 인해 곰즈는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고
+														삭막하여 거주하기 힘든 환경으로 만들어버렸습니다.
+													</Div>
+												</Div>
+											</Div>
+											<Scene duration={1000} triggerHook={0} pin={true}>
+												{(progress) => (
+													<Timeline totalProgress={progress} paused>
+														<Timeline
+															target={
+																<Div
+																	wFull
+																	absolute
+																	top0
+																	h={"200px"}
+																	textXl
+																	style={{
+																		backgroundImage: `url(${IMAGES.gomzStory2})`,
+																		backgroundSize: "cover",
+																		backgroundPositionY: "center",
+																		backgroundPositionX: "center",
+																	}}
+																	flex
+																	flexCol
+																	justifyEnd
+																>
+																	<Div flex justifyStart>
+																		<Div>
+																			<Div maxW={200} p10 textWhite textXs textLeft>
+																				전쟁에 지친 8,888 마리의 GOMZ는 이타적인 비전을 가지고 우주여행을 떠났습니다:
+																			</Div>
+																			<Div maxW={200} p10 textWhite textXs textLeft>
+																				---- 더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.
+																			</Div>
+																		</Div>
+																	</Div>
+																</Div>
+															}
+														>
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+														</Timeline>
+														<Timeline
+															target={
+																<Div
+																	wFull
+																	absolute
+																	top0
+																	h={"200px"}
+																	textXl
+																	style={{
+																		backgroundImage: `url(${IMAGES.gomzStory3})`,
+																		backgroundSize: "cover",
+																		backgroundPositionY: "center",
+																		backgroundPositionX: "center",
+																	}}
+																	flex
+																	flexCol
+																	justifyStart
+																>
+																	<Div flex justifyStart>
+																		<Div maxW={200} p10 textWhite textXs textLeft>
+																			어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 GOMZ는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
+																			깨어났습니다.
+																		</Div>
+																	</Div>
+																</Div>
+															}
+														>
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+														</Timeline>
+														<Timeline
+															target={
+																<Div
+																	wFull
+																	absolute
+																	top0
+																	h={"200px"}
+																	textXl
+																	style={{
+																		backgroundImage: `url(${IMAGES.gomzStory4})`,
+																		backgroundSize: "cover",
+																		backgroundPositionY: "center",
+																		backgroundPositionX: "center",
+																	}}
+																	flex
+																	flexCol
+																>
+																	<Div flex justifyEnd>
+																		<Div maxW={200} p10 textWhite textXs textRight>
+																			GOMZ는 이들과 맞서 싸우는 대신 BetterWorld로 초대하고 환영하기로 합니다.
+																		</Div>
+																	</Div>
+																</Div>
+															}
+														>
+															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+														</Timeline>
+													</Timeline>
+												)}
+											</Scene>
+										</Div>
+									</Div>
+									<EmptyBlock h={100} />
+									<Div>
+										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
+										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
+										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
+										<Div mxAuto my52 maxW={300} px20>
+											<Div imgTag src={IMAGES.quote}></Div>
+										</Div>
+										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
+										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
+										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
+									</Div>
+									<EmptyBlock h={100} />
+									<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
+										<Div textWhite textBase textCenter maxW={750} px40 lineHeight={1.8}>
+											GOMZ는 획일화된 교육, 이로 인한 지나친 경쟁, 다름을 틀림으로 보는 사회에 지쳤습니다. 따라서{" "}
+											<Div textPrimary>더 많은 자유와 다양성이 보장되는 창의적인 문화</Div>를 전하고자 나타났습니다.
+										</Div>
+									</Div>
+									<EmptyBlock h={150} />
+									<Div imgTag src={IMAGES.gomzInnovate} px40></Div>
+									<Div maxW={750} px40>
+										<Div textWhite textXl textLeft lineHeight={1.2} bungee>
+											We Are
+											<Div textPrimary>Innovators.</Div>
+										</Div>
+										<Div textSm textLeft textWhite lineHeight={1.8} py10>
+											현재 수만개의 PFP 컬렉션이 존재하지만, 대부분 트위터 프로필 사진으로만 쓰여지고 있습니다. 해당 프로젝트에서는 GOMZ만의 Web 3.0
+											SNS인 BetterWorld 앱에서 홀더가 본인의 GOMZ에 인생을 부여하여 자신의 혁신가적인 “Web 3.0 부캐”를 직접 생성합니다. 부캐들의 SNS
+											활동, 네트워킹, 오디오 세션 등 홀더들은 GOMZ로서 마음껏 활동하고 교류하며 서로 상생하고 발전할 수 있는 프로그램에 함께하고
+											다양한 보상을 받습니다. GOMZ를 보유하는 누구든 혁신에 앞장설 수 있습니다.
+										</Div>
+									</Div>
+									<EmptyBlock h={150} />
+									<Div imgTag src={IMAGES.gomzRebel} px40></Div>
+									<Div maxW={750} px40>
+										<Div textWhite textXl textLeft lineHeight={1.2} bungee>
+											We Are
+											<Div textPrimary>Rebels.</Div>
+										</Div>
+										<Div textSm textLeft textWhite lineHeight={1.8} py10>
+											GOMZ는 Web 3.0 의 잠재력을 높게 사고있습니다. 하지만, Web 3의 잠재력은 더 많은 사람들이 일상생활에서 이를 이용할 수 있을 때
+											극대화될 수 있습니다. 따라서 GOMZ는 사회에 더 큰 영향을 미치는 실질적이고 사회적인 가치를 제공함으로써 더 많은 사람들과
+											함께합니다. 그 첫 번째 파트너는 코로나 여파로부터 회복하고 있는 소상공인으로, 다양한 지역의 소상공인과 공생 관계를 맺어 돕고,
+											음식점, 카페 할인 등 홀더들의 오프라인 혜택 또한 극대화합니다. 머지않아 GOMZ는 곧 당신 일상의 일부가 될 것입니다.
+										</Div>
+									</Div>
+									<EmptyBlock h={150} />
+									<Div imgTag src={IMAGES.gomzStore} px40></Div>
+									<Div maxW={750} px40>
+										<Div textWhite textXl textLeft lineHeight={1.2} bungee>
+											We Are
+											<Div textPrimary>Amigos.</Div>
+										</Div>
+										<Div textSm textLeft textWhite lineHeight={1.8} py10>
+											현재 수만개의 PFP 컬렉션이 존재하지만, 대부분 트위터 프로필 사진으로만 쓰여지고 있습니다. 해당 프로젝트에서는 GOMZ만의 Web 3.0
+											SNS인 BetterWorld 앱에서 홀더가 본인의 GOMZ에 인생을 부여하여 자신의 혁신가적인 “Web 3.0 부캐”를 직접 생성합니다. 부캐들의 SNS
+											활동, 네트워킹, 오디오 세션 등 홀더들은 GOMZ로서 마음껏 활동하고 교류하며 서로 상생하고 발전할 수 있는 프로그램에 함께하고
+											다양한 보상을 받습니다. GOMZ를 보유하는 누구든 혁신에 앞장설 수 있습니다.
+										</Div>
+									</Div>
+									<EmptyBlock h={100} />
+									<Div textCenter bungee textPrimary textXl>
+										Mileage
+									</Div>
+									<EmptyBlock h={50} />
+									<Div maxW={300} mxAuto>
+										<Div imgTag src={IMAGES.document} mxAuto></Div>
+										<Div textWhite textBase textCenter>
+											PFP 100% 소유 <br />및 상업적 이용 권리
+										</Div>
+									</Div>
+									<EmptyBlock h={50} />
+									<Div maxW={300} mxAuto>
+										<Div imgTag src={IMAGES.gomzCards} mxAuto></Div>
+										<Div textWhite textBase textCenter>
+											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
+										</Div>
+									</Div>
+									<EmptyBlock h={50} />
+									<Div maxW={300} mxAuto>
+										<Div imgTag src={IMAGES.gomzHeart} mxAuto></Div>
+										<Div textPrimary textBase textCenter>
+											GOMZ Partners
+										</Div>
+										<Div textWhite textBase textCenter>
+											일상 속에서 만나는 <br /> 오프라인 혜택
+										</Div>
+									</Div>
+									<EmptyBlock h={100} />
+									<Div textCenter bungee textPrimary textXl>
+										First 8{" "}
+										<Div spanTag textWhite>
+											GOMZ
+										</Div>
+									</Div>
+									<Div textCenter bungee textWhite textBase>
+										Departing for{" "}
+										<Div spanTag textPrimary>
+											BetterWorld
+										</Div>
+									</Div>
+									<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py40 clx={"scrollbar-off"}>
+										{team.map((member, index) => {
+											return (
+												<Div key={index} w100 inlineBlock mx5>
+													<Div imgTag src={`/images/team/${index + 1}.png`} w100 h100 roundedXl></Div>
+												</Div>
+											);
+										})}
+									</Div>
+									<EmptyBlock h={100} />
+									<Div textCenter bungee textPrimary textXl>
+										FAQS
+									</Div>
+									<Div maxW={1200} px40 mxAuto>
+										{faqs.map(({ question, answer }, index) => {
+											return <Faq key={index} question={question} answer={answer} isTablet={true} />;
+										})}
+									</Div>
+								</Div>
+							</Scene>
+						</Controller>
+						<Footer />
+					</Div>
+				</Div>
+			</>
+		);
+	}
+
 	return (
 		<>
 			<BasicHead />
@@ -208,7 +482,7 @@ const Index: NextPage = () => {
 											)}
 										</Scene>
 									</Div>
-									<Div h={"8vh"} />
+									<Div h={"8vh"}></Div>
 								</Div>
 								<Div>
 									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
@@ -267,50 +541,45 @@ const Index: NextPage = () => {
 										<Div imgTag src={IMAGES.gomzRebel}></Div>
 									</Div>
 								</Div>
-								<EmptyBlock h={200} />
+								<EmptyBlock h={150} />
+								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
+									<Div flex1>
+										<Div imgTag src={IMAGES.gomzStore}></Div>
+									</Div>
+									<Div maxW={750} px40>
+										<Div textWhite text3xl textLeft lineHeight={1.2} bungee>
+											We Are
+											<Div textPrimary>Amigos.</Div>
+										</Div>
+										<Div textLeft textWhite lineHeight={1.8} py10>
+											GOMZ는 Web 3.0 의 잠재력을 높게 사고있습니다. 하지만, Web 3의 잠재력은 더 많은 사람들이 일상생활에서 이를 이용할 수 있을 때
+											극대화될 수 있습니다. 따라서 GOMZ는 사회에 더 큰 영향을 미치는 실질적이고 사회적인 가치를 제공함으로써 더 많은 사람들과
+											함께합니다. 그 첫 번째 파트너는 코로나 여파로부터 회복하고 있는 소상공인으로, 다양한 지역의 소상공인과 공생 관계를 맺어 돕고,
+											음식점, 카페 할인 등 홀더들의 오프라인 혜택 또한 극대화합니다. 머지않아 GOMZ는 곧 당신 일상의 일부가 될 것입니다.
+										</Div>
+									</Div>
+								</Div>
+								<EmptyBlock h={150} />
 								<Div textCenter bungee textPrimary text3xl>
 									Mileage
 								</Div>
 								<EmptyBlock h={50} />
-								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter style={{ justifyContent: "space-evenly" }}>
-									<Div maxW={300}>
+								<Div maxW={1200} flex flexRow mxAuto itemsCenter justifyCenter>
+									<Div flex1 flex flexCol itemsCenter>
 										<Div imgTag src={IMAGES.document}></Div>
 										<Div textWhite text2xl textCenter>
 											PFP 100% 소유 <br />및 상업적 이용 권리
 										</Div>
 									</Div>
-									<Div maxW={300}>
+									<Div flex1 flex flexCol itemsCenter>
+										<Div imgTag src={IMAGES.gomzHeart} my30></Div>
+
+										<Div textWhite text2xl textCenter>
+											일상 속에서 만나는 <br /> 오프라인 혜택
+										</Div>
+									</Div>
+									<Div flex1 flex flexCol itemsCenter>
 										<Div imgTag src={IMAGES.gomzCards}></Div>
-										<Div textWhite text2xl textCenter>
-											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
-										</Div>
-									</Div>
-								</Div>
-								<EmptyBlock h={50} />
-								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter justifyBetween>
-									<Div maxW={300}>
-										<Div imgTag src={IMAGES.appMain} mxAuto px50></Div>
-										<Div textPrimary text2xl textCenter>
-											BetterWorld Alpha
-										</Div>
-										<Div textWhite text2xl textCenter>
-											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
-										</Div>
-									</Div>
-									<Div maxW={300}>
-										<Div imgTag src={IMAGES.gomzHeart}></Div>
-										<Div textPrimary text2xl textCenter>
-											GOMZ Partners
-										</Div>
-										<Div textWhite text2xl textCenter>
-											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
-										</Div>
-									</Div>
-									<Div maxW={300}>
-										<Div imgTag src={IMAGES.appForum} mxAuto px50></Div>
-										<Div textPrimary text2xl textCenter>
-											GOMZ Governance
-										</Div>
 										<Div textWhite text2xl textCenter>
 											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
 										</Div>
@@ -344,7 +613,7 @@ const Index: NextPage = () => {
 								</Div>
 								<Div maxW={1200} px40 mxAuto>
 									{faqs.map(({ question, answer }, index) => {
-										return <Faq key={index} question={question} answer={answer} />;
+										return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 									})}
 								</Div>
 								<EmptyBlock h={100} />
@@ -358,8 +627,31 @@ const Index: NextPage = () => {
 	);
 };
 
-function Faq({ question, answer }) {
+function Faq({ question, answer, isTablet }) {
 	const [clicked, setClicked] = useState(false);
+	if (isTablet) {
+		return (
+			<Div textWhite my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
+				<Row textBase py20 borderB1 borderWhite>
+					<Col auto bungee>
+						Q.{" "}
+					</Col>
+					<Col>
+						<Div>{question}</Div>
+					</Col>
+					<Col auto>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
+				</Row>
+				{clicked && (
+					<Row py20>
+						<Col auto bungee textPrimary textBase>
+							A.{" "}
+						</Col>
+						<Col textSm>{answer}</Col>
+					</Row>
+				)}
+			</Div>
+		);
+	}
 	return (
 		<Div textWhite my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
 			<Row fontSize36 py20 borderB1 borderWhite>

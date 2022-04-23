@@ -38,7 +38,7 @@ export default function Footer() {
 							</Col>
 							<Col></Col>
 						</Row>
-						<Row textSm textThin>
+						<Row textSm>
 							<Col auto>
 								<Div spanTag>COPYRIGHT © GOMZ. ALL RIGHTS RESERVED</Div>
 							</Col>

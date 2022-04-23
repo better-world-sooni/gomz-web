@@ -2,24 +2,60 @@ import type { NextPage } from "next";
 import BasicHead from "src/components/BasicHead";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
-import Row from "src/components/Row";
-import Col from "src/components/Col";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
-import Footer from "src/components/common/Footer";
-import HomeTopBar from "src/components/home/HomeTopBar";
-import { useState } from "react";
-import EmptyBlock from "src/components/EmptyBlock";
-import MainTopBar from "src/components/common/MainTopBar";
-import { VIDEOS } from "src/modules/videos";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
-import { FaDiscord, FaTwitter } from "react-icons/fa";
+import { FaBook, FaDiscord, FaTwitter } from "react-icons/fa";
+import useIsTablet from "src/hooks/useIsTablet";
+import Footer from "src/components/common/Footer";
 
 const Index: NextPage = () => {
+	const isTablet = useIsTablet();
 	const handleClickHome = () => {
 		href(urls.home.index);
 	};
+	if (isTablet) {
+		return (
+			<>
+				<BasicHead />
+				<Div
+					style={{
+						background: "radial-gradient(50% 50% at 50% 50%, #000000 44.27%, #02012D 100%)",
+					}}
+					relative
+					hScreen
+				>
+					<Div wFull>
+						<Div flex flexRow py20 px20>
+							<Div flex1></Div>
+							<Div flex flexRow itemsCenter>
+								<Div mx10 textWhite>
+									<FaBook size={20} />
+								</Div>
+								<Div mx10>
+									<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
+								</Div>
+								<Div mx10 textWhite>
+									<FaDiscord size={20} />
+								</Div>
+								<Div ml10 textWhite>
+									<FaTwitter size={20} />
+								</Div>
+							</Div>
+						</Div>
+					</Div>
+					<Div hFull flexCol flex itemsCenter>
+						<Div onClick={handleClickHome}>
+							<Div imgTag src={IMAGES.gomzMainAstronaut}></Div>
+							<Div imgTag src={IMAGES.logos.gomzWord} mxAuto px50></Div>
+							<Div textWhite textBase textCenter px20 textLg>
+								Realize your lost identity
+							</Div>
+						</Div>
+					</Div>
+				</Div>
+			</>
+		);
+	}
 	return (
 		<>
 			<BasicHead />
@@ -34,10 +70,8 @@ const Index: NextPage = () => {
 					<Div flex flexRow px80 mt50>
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
-							<Div mx10>
-								<Div roundedFull border1 borderWhite textWhite flex itemsCenter justifyCenter fontBold py5 px20>
-									Public Docs
-								</Div>
+							<Div mx10 textWhite>
+								<FaBook size={35} />
 							</Div>
 							<Div mx10>
 								<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
@@ -66,9 +100,9 @@ const Index: NextPage = () => {
 					</Div>
 					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter cursorPointer onClick={handleClickHome} z100></Div>
 					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter textWhite fontMedium z100>
-						<Div flex itemsEnd bottom50 textWhite text2xl flexCol pr90>
+						<Div flex itemsCenter bottom50 textWhite text2xl flexCol pr90>
 							<Div textRight fontSize36>
-								A Creative Playground with Your Web 3.0 Identity
+								Realize your lost identity
 							</Div>
 							<Div px50 py10 roundedFull border1 borderWhite fontExtrabold mt20>
 								MINT

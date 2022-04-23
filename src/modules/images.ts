@@ -16,6 +16,7 @@ export const IMAGES = {
     document: '/images/document.png',
     gomzCards: '/images/gomzCards.png',
     gomzHeart: '/images/gomzHeart.png',
+    gomzStore: '/images/gomzStore.png',
     circle: '/images/circle.png',
     gomzMainAstronaut: '/images/gomzMainAstronaut.gif',
     logos: {
