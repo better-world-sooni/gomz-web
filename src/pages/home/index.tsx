@@ -104,14 +104,11 @@ const Index: NextPage = () => {
 													backgroundPositionY: "center",
 													backgroundPositionX: "center",
 												}}
-												flex
-												flexCol
 											>
-												<Div flex justifyEnd>
-													<Div maxW={300} p10 textWhite textXs textRight>
-														지나친 경쟁과 획일화로 인해 곰즈는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고
-														삭막하여 거주하기 힘든 환경으로 만들어버렸습니다.
-													</Div>
+												<EmptyBlock h={200} />
+												<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
+													지나친 경쟁과 획일화로 인해 곰즈는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고 삭막하여
+													거주하기 힘든 환경으로 만들어버렸습니다.
 												</Div>
 											</Div>
 											<Scene duration={1000} triggerHook={0} pin={true}>
@@ -131,18 +128,12 @@ const Index: NextPage = () => {
 																		backgroundPositionY: "center",
 																		backgroundPositionX: "center",
 																	}}
-																	flex
-																	flexCol
-																	justifyEnd
 																>
-																	<Div flex justifyStart>
+																	<EmptyBlock h={200} />
+																	<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
 																		<Div>
-																			<Div maxW={200} p10 textWhite textXs textLeft>
-																				전쟁에 지친 8,888 마리의 GOMZ는 이타적인 비전을 가지고 우주여행을 떠났습니다:
-																			</Div>
-																			<Div maxW={200} p10 textWhite textXs textLeft>
-																				---- 더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.
-																			</Div>
+																			<Div>전쟁에 지친 8,888 마리의 GOMZ는 이타적인 비전을 가지고 우주여행을 떠났습니다:</Div>
+																			<Div>---- 더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.</Div>
 																		</Div>
 																	</Div>
 																</Div>
@@ -164,15 +155,11 @@ const Index: NextPage = () => {
 																		backgroundPositionY: "center",
 																		backgroundPositionX: "center",
 																	}}
-																	flex
-																	flexCol
-																	justifyStart
 																>
-																	<Div flex justifyStart>
-																		<Div maxW={200} p10 textWhite textXs textLeft>
-																			어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 GOMZ는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
-																			깨어났습니다.
-																		</Div>
+																	<EmptyBlock h={200} />
+																	<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
+																		어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 GOMZ는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
+																		깨어났습니다
 																	</Div>
 																</Div>
 															}
@@ -193,13 +180,10 @@ const Index: NextPage = () => {
 																		backgroundPositionY: "center",
 																		backgroundPositionX: "center",
 																	}}
-																	flex
-																	flexCol
 																>
-																	<Div flex justifyEnd>
-																		<Div maxW={200} p10 textWhite textXs textRight>
-																			GOMZ는 이들과 맞서 싸우는 대신 BetterWorld로 초대하고 환영하기로 합니다.
-																		</Div>
+																	<EmptyBlock h={200} />
+																	<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
+																		GOMZ는 이들과 맞서 싸우는 대신 BetterWorld로 초대하고 환영하기로 합니다.
 																	</Div>
 																</Div>
 															}
@@ -211,12 +195,12 @@ const Index: NextPage = () => {
 											</Scene>
 										</Div>
 									</Div>
-									<EmptyBlock h={100} />
+									<EmptyBlock h={200} />
 									<Div>
 										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
 										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
 										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-										<Div mxAuto my52 maxW={300} px20>
+										<Div mxAuto my52 maxW={400} px20>
 											<Div imgTag src={IMAGES.quote}></Div>
 										</Div>
 										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
