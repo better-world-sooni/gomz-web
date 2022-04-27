@@ -7,12 +7,19 @@ import { urls } from "src/modules/urls";
 import { FaBook, FaDiscord, FaTwitter } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
 import Footer from "src/components/common/Footer";
+import { useEffect, useState } from "react";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
+	const [mainImage, setMainImage] = useState(IMAGES.gomzMainAstronaut);
 	const handleClickHome = () => {
-		href(urls.home.index);
+		setMainImage(IMAGES.gomzMainAstronautGif);
 	};
+	useEffect(() => {
+		if (mainImage == IMAGES.gomzMainAstronautGif) {
+			setTimeout(() => href(urls.home.index), 6500);
+		}
+	}, [mainImage]);
 	if (isTablet) {
 		return (
 			<>
@@ -29,23 +36,30 @@ const Index: NextPage = () => {
 							<Div flex1></Div>
 							<Div flex flexRow itemsCenter>
 								<Div mx10 textWhite>
-									<FaBook size={20} />
+									<Div roundedFull border1 borderWhite py3 px15 textSm>
+										Public Docs
+									</Div>
 								</Div>
 								<Div mx10>
-									<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
+									<Div imgTag src={IMAGES.logos.betterWorld} h18 wAuto></Div>
 								</Div>
 								<Div mx10 textWhite>
-									<FaDiscord size={20} />
+									<FaDiscord size={18} />
 								</Div>
 								<Div ml10 textWhite>
-									<FaTwitter size={20} />
+									<FaTwitter size={18} />
 								</Div>
 							</Div>
 						</Div>
 					</Div>
 					<Div hFull flexCol flex itemsCenter>
 						<Div onClick={handleClickHome}>
-							<Div imgTag src={IMAGES.gomzMainAstronaut}></Div>
+							<Div relative>
+								<Div imgTag src={mainImage}></Div>
+								<Div textCenter wFull textWhite bottom30 absolute textSm clx={"animate-bounce"}>
+									Click Me to Enter
+								</Div>
+							</Div>
 							<Div imgTag src={IMAGES.logos.gomzWord} mxAuto px50></Div>
 							<Div textWhite textBase textCenter px20 textLg>
 								Realize your lost identity
@@ -53,6 +67,7 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 				</Div>
+				<Footer />
 			</>
 		);
 	}
@@ -71,16 +86,18 @@ const Index: NextPage = () => {
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
 							<Div mx10 textWhite>
-								<FaBook size={35} />
+								<Div roundedFull border1 borderWhite py3 px15 textSm>
+									Public Docs
+								</Div>
 							</Div>
 							<Div mx10>
-								<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
+								<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
 							</Div>
 							<Div mx10 textWhite>
-								<FaDiscord size={35} />
+								<FaDiscord size={25} />
 							</Div>
 							<Div ml10 textWhite>
-								<FaTwitter size={35} />
+								<FaTwitter size={25} />
 							</Div>
 						</Div>
 					</Div>
@@ -89,20 +106,23 @@ const Index: NextPage = () => {
 					<Div hFull absolute>
 						<Div flex flexRow hFull style={{ pointerEvents: "none" }}>
 							<Div style={{ flex: 1 }}></Div>
-							<Div style={{ flex: 1.3 }} flex justifyCenter itemsCenter>
-								<Div imgTag src={IMAGES.gomzMainAstronaut}></Div>
+							<Div style={{ flex: 1.3 }} flex justifyCenter itemsCenter relative>
+								<Div imgTag src={mainImage}></Div>
+								<Div absolute bottom50 textWhite>
+									<Div>Click Me to Enter</Div>
+								</Div>
 							</Div>
 							<Div style={{ flex: 1 }}></Div>
 						</Div>
 					</Div>
 					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter z100>
-						<Div imgTag src={IMAGES.logos.gomzWord} px50 ml30></Div>
+						<Div imgTag src={IMAGES.logos.gomzWord} pl50 pr100 ml30></Div>
 					</Div>
-					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter cursorPointer onClick={handleClickHome} z100></Div>
+					<Div style={{ flex: 0.8 }} flex justifyCenter itemsCenter cursorPointer onClick={handleClickHome} z100></Div>
 					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter textWhite fontMedium z100>
-						<Div flex itemsCenter bottom50 textWhite text2xl flexCol pr90>
-							<Div textRight fontSize36>
-								Realize your lost identity
+						<Div flex itemsEnd bottom50 textWhite text2xl flexCol pr90>
+							<Div textRight fontSize30>
+								REVOLUTIONARY SOCIAL NETWORK OF WEB3 IDENTITIES
 							</Div>
 							<Div px50 py10 roundedFull border1 borderWhite fontExtrabold mt20>
 								MINT
@@ -111,6 +131,7 @@ const Index: NextPage = () => {
 					</Div>
 				</Div>
 			</Div>
+			<Footer index />
 		</>
 	);
 };

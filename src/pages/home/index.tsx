@@ -12,33 +12,68 @@ import MainTopBar from "src/components/common/MainTopBar";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
+import { wording } from "src/wording/wording";
+import { useRouter } from "next/router";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
+	const { locale } = useRouter();
 	const team = [
 		{
-			name: "sehan",
+			name: wording.team.index.members.jieun.name[locale],
+			position: wording.team.index.members.jieun.position[locale],
+			desc: wording.team.index.members.jieun.desc[locale],
+			specialty: wording.team.index.members.jieun.specialty[locale],
+			countries: wording.team.index.members.jieun.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.jade.name[locale],
+			position: wording.team.index.members.jade.position[locale],
+			desc: wording.team.index.members.jade.desc[locale],
+			specialty: wording.team.index.members.jade.specialty[locale],
+			countries: wording.team.index.members.jade.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.minjun.name[locale],
+			position: wording.team.index.members.minjun.position[locale],
+			desc: wording.team.index.members.minjun.desc[locale],
+			specialty: wording.team.index.members.minjun.specialty[locale],
+			countries: wording.team.index.members.minjun.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.yeajean.name[locale],
+			position: wording.team.index.members.yeajean.position[locale],
+			desc: wording.team.index.members.yeajean.desc[locale],
+			specialty: wording.team.index.members.yeajean.specialty[locale],
+			countries: wording.team.index.members.yeajean.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.eric.name[locale],
+			position: wording.team.index.members.eric.position[locale],
+			desc: wording.team.index.members.eric.desc[locale],
+			specialty: wording.team.index.members.eric.specialty[locale],
+			countries: wording.team.index.members.eric.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.ian.name[locale],
+			position: wording.team.index.members.ian.position[locale],
+			desc: wording.team.index.members.ian.desc[locale],
+			specialty: wording.team.index.members.ian.specialty[locale],
+			countries: wording.team.index.members.ian.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.jaehwan.name[locale],
+			position: wording.team.index.members.jaehwan.position[locale],
+			desc: wording.team.index.members.jaehwan.desc[locale],
+			specialty: wording.team.index.members.jaehwan.specialty[locale],
+			countries: wording.team.index.members.jaehwan.countries,
 		},
 		{
-			name: "sehan",
+			name: wording.team.index.members.seungan.name[locale],
+			position: wording.team.index.members.seungan.position[locale],
+			desc: wording.team.index.members.seungan.desc[locale],
+			specialty: wording.team.index.members.seungan.specialty[locale],
+			countries: wording.team.index.members.seungan.countries,
 		},
 	];
 	const faqs = [
@@ -80,7 +115,7 @@ const Index: NextPage = () => {
 				>
 					<Div>
 						<Controller>
-							<Scene duration={1000} triggerHook={0} pin={true}>
+							<Scene duration={1500} triggerHook={0} pin={true}>
 								<Div relative>
 									<Div flex justifyBetween flexCol>
 										<MainTopBar />
@@ -262,24 +297,21 @@ const Index: NextPage = () => {
 									</Div>
 									<EmptyBlock h={50} />
 									<Div maxW={300} mxAuto>
-										<Div imgTag src={IMAGES.document} mxAuto></Div>
+										<Div imgTag src={IMAGES.document} mxAuto maxW={150}></Div>
 										<Div textWhite textBase textCenter>
 											PFP 100% 소유 <br />및 상업적 이용 권리
 										</Div>
 									</Div>
 									<EmptyBlock h={50} />
 									<Div maxW={300} mxAuto>
-										<Div imgTag src={IMAGES.gomzCards} mxAuto></Div>
+										<Div imgTag src={IMAGES.gomzCards} mxAuto maxW={150}></Div>
 										<Div textWhite textBase textCenter>
 											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
 										</Div>
 									</Div>
 									<EmptyBlock h={50} />
 									<Div maxW={300} mxAuto>
-										<Div imgTag src={IMAGES.gomzHeart} mxAuto></Div>
-										<Div textPrimary textBase textCenter>
-											GOMZ Partners
-										</Div>
+										<Div imgTag src={IMAGES.gomzHeart} mxAuto maxW={150}></Div>
 										<Div textWhite textBase textCenter>
 											일상 속에서 만나는 <br /> 오프라인 혜택
 										</Div>
@@ -300,8 +332,16 @@ const Index: NextPage = () => {
 									<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py40 clx={"scrollbar-off"}>
 										{team.map((member, index) => {
 											return (
-												<Div key={index} w100 inlineBlock mx5>
+												<Div key={index} w100 inlineBlock mx20>
 													<Div imgTag src={`/images/team/${index + 1}.png`} w100 h100 roundedXl></Div>
+													<EmptyBlock h={30} />
+													<Div textWhite textCenter textXl fontBold>
+														{member.name}
+													</Div>
+													<EmptyBlock h={10} />
+													<Div textGray600 textCenter textLg fontBold>
+														{member.position}
+													</Div>
 												</Div>
 											);
 										})}
@@ -469,15 +509,15 @@ const Index: NextPage = () => {
 									<Div h={"8vh"}></Div>
 								</Div>
 								<Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
-									<Div mxAuto my52 maxW={500} pl20>
+									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
+									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
+									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
+									<Div mxAuto my40 maxW={500} pl20>
 										<Div imgTag src={IMAGES.quote}></Div>
 									</Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my52></Div>
+									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
+									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
+									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
 								</Div>
 								<EmptyBlock h={100} />
 								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
@@ -550,20 +590,27 @@ const Index: NextPage = () => {
 								<EmptyBlock h={50} />
 								<Div maxW={1200} flex flexRow mxAuto itemsCenter justifyCenter>
 									<Div flex1 flex flexCol itemsCenter>
-										<Div imgTag src={IMAGES.document}></Div>
+										<Div imgTag src={IMAGES.document} maxW={150}></Div>
+									</Div>
+									<Div flex1 flex flexCol itemsCenter>
+										<Div imgTag src={IMAGES.gomzHeart} maxW={150}></Div>
+									</Div>
+									<Div flex1 flex flexCol itemsCenter>
+										<Div imgTag src={IMAGES.gomzCards} maxW={250}></Div>
+									</Div>
+								</Div>
+								<Div maxW={1200} flex flexRow mxAuto itemsCenter justifyCenter>
+									<Div flex1 flex flexCol itemsCenter>
 										<Div textWhite text2xl textCenter>
 											PFP 100% 소유 <br />및 상업적 이용 권리
 										</Div>
 									</Div>
 									<Div flex1 flex flexCol itemsCenter>
-										<Div imgTag src={IMAGES.gomzHeart} my30></Div>
-
 										<Div textWhite text2xl textCenter>
 											일상 속에서 만나는 <br /> 오프라인 혜택
 										</Div>
 									</Div>
 									<Div flex1 flex flexCol itemsCenter>
-										<Div imgTag src={IMAGES.gomzCards}></Div>
 										<Div textWhite text2xl textCenter>
 											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
 										</Div>
@@ -587,6 +634,14 @@ const Index: NextPage = () => {
 										return (
 											<Div key={index} w300 inlineBlock mx25>
 												<Div imgTag src={`/images/team/${index + 1}.png`} w300 h300 roundedXl></Div>
+												<EmptyBlock h={30} />
+												<Div textWhite textCenter textXl fontBold>
+													{member.name}
+												</Div>
+												<EmptyBlock h={10} />
+												<Div textGray600 textCenter textLg fontBold>
+													{member.position}
+												</Div>
 											</Div>
 										);
 									})}
@@ -604,7 +659,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Scene>
 					</Controller>
-					<Footer />
+					<Footer  />
 				</Div>
 			</Div>
 		</>
@@ -638,7 +693,7 @@ function Faq({ question, answer, isTablet }) {
 	}
 	return (
 		<Div textWhite my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row fontSize36 py20 borderB1 borderWhite>
+			<Row text2xl py20 borderB1 borderWhite>
 				<Col auto bungee>
 					Q.{" "}
 				</Col>
@@ -647,10 +702,10 @@ function Faq({ question, answer, isTablet }) {
 			</Row>
 			{clicked && (
 				<Row text2xl py20>
-					<Col auto bungee fontSize36 textPrimary>
+					<Col auto bungee textPrimary>
 						A.{" "}
 					</Col>
-					<Col>{answer}</Col>
+					<Col textXl>{answer}</Col>
 				</Row>
 			)}
 		</Div>

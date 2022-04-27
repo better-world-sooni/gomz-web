@@ -6,27 +6,17 @@ import Col from "../Col";
 import Div from "../Div";
 import Row from "../Row";
 
-export default function Footer() {
+export default function Footer({ index = false }) {
 	const { asPath } = useRouter();
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
-	const handleClickHome = () => {
-		href(urls.home.index);
-	};
-	const handleClickJourney = () => {
-		href(urls.journey.index);
-	};
-	const handleClickGallery = () => {
-		href(urls.gallery.index);
-	};
-	const selectedProps = { textPrimary: true };
 	return (
 		<Div>
-			<Div mxAuto maxW={1200} px20 py50 fontSemibold italic>
+			<Div mxAuto maxW={!index && 1200} px={index ? 60 : 20} py30 fontSemibold italic>
 				<Row textWhite itemsCenter>
 					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
-						<Div imgTag src={IMAGES.logos.main} w100 h100></Div>
+						<Div imgTag src={IMAGES.logos.main} w60 h60></Div>
 					</Col>
 					<Col py20>
 						<Row py5>

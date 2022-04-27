@@ -129,9 +129,9 @@ const propsToClx = (props) => {
 		textSm: () => addStyle(styles, "", { fontSize: 12 }),
 		textBase: () => addStyle(styles, "", { fontSize: 16 }),
 		textLg: () => addStyle(styles, "", { fontSize: 18 }),
-		textXl: () => addStyle(styles, "", { fontSize: 22 }),
-		text2xl: () => addStyle(styles, "", { fontSize: 26 }),
-		text3xl: () => addStyle(styles, "", { fontSize: 70 }),
+		textXl: () => addStyle(styles, "", { fontSize: 20 }),
+		text2xl: () => addStyle(styles, "", { fontSize: 22 }),
+		text3xl: () => addStyle(styles, "", { fontSize: 60 }),
 		// background-color
 		bgColor: (v) => addStyle(styles, "", { backgroundColor: v }),
 

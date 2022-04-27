@@ -34,16 +34,18 @@ function MainTopBar() {
 					<Div flex1></Div>
 					<Div flex flexRow itemsCenter>
 						<Div mx10 textWhite>
-							<FaBook size={20} />
+							<Div roundedFull border1 borderWhite py3 px15 textSm>
+								Public Docs
+							</Div>
 						</Div>
 						<Div mx10>
-							<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
+							<Div imgTag src={IMAGES.logos.betterWorld} h18 wAuto></Div>
 						</Div>
 						<Div mx10 textWhite>
-							<FaDiscord size={20} />
+							<FaDiscord size={18} />
 						</Div>
 						<Div ml10 textWhite>
-							<FaTwitter size={20} />
+							<FaTwitter size={18} />
 						</Div>
 					</Div>
 				</Div>
@@ -60,14 +62,19 @@ function MainTopBar() {
 				</Div>
 				<Div flex1></Div>
 				<Div flex flexRow itemsCenter>
-					<Div mx12>
-						<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
+					<Div mx10 textWhite>
+						<Div roundedFull border1 borderWhite py3 px15 textSm>
+							Public Docs
+						</Div>
 					</Div>
-					<Div mx12>
-						<FaDiscord size={35} />
+					<Div mx10>
+						<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
 					</Div>
-					<Div mx12>
-						<FaTwitter size={35} />
+					<Div mx10>
+						<FaDiscord size={25} />
+					</Div>
+					<Div mx10>
+						<FaTwitter size={25} />
 					</Div>
 				</Div>
 			</Div>

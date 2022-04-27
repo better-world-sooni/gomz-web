@@ -18,7 +18,8 @@ export const IMAGES = {
     gomzHeart: '/images/gomzHeart.png',
     gomzStore: '/images/gomzStore.png',
     circle: '/images/circle.png',
-    gomzMainAstronaut: '/images/gomzMainAstronaut.gif',
+    gomzMainAstronautGif: '/images/gomzMainAstronaut.gif',
+    gomzMainAstronaut: '/images/gomzMainAstronaut.png',
     logos: {
         main: '/images/logos/main.png',
         discord: '/images/logos/discord.png',
