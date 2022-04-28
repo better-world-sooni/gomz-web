@@ -12,8 +12,10 @@ import { useEffect, useState } from "react";
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
 	const [mainImage, setMainImage] = useState(IMAGES.gomzMainAstronaut);
+	const [animation, setAnimation] = useState(null);
 	const handleClickHome = () => {
 		if (mainImage == IMAGES.gomzMainAstronautGif) {
+			clearTimeout(animation);
 			href(urls.home.index);
 			return;
 		}
@@ -21,7 +23,8 @@ const Index: NextPage = () => {
 	};
 	useEffect(() => {
 		if (mainImage == IMAGES.gomzMainAstronautGif) {
-			setTimeout(() => href(urls.home.index), 6500);
+			const timeout = setTimeout(() => href(urls.home.index), 6500);
+			setAnimation(timeout);
 		}
 	}, [mainImage]);
 	if (isTablet) {
@@ -68,7 +71,7 @@ const Index: NextPage = () => {
 							<Div relative>
 								<Div imgTag src={mainImage}></Div>
 								<Div textCenter wFull textWhite bottom30 absolute textSm clx={"animate-bounce"}>
-									Click Me to Enter
+									{animation ? "Click again to skip" : "Click Me to Enter"}
 								</Div>
 							</Div>
 							<Div imgTag src={IMAGES.logos.gomzWord} mxAuto px50></Div>
@@ -127,7 +130,7 @@ const Index: NextPage = () => {
 							<Div style={{ flex: 1.3 }} flex justifyCenter itemsCenter relative>
 								<Div imgTag src={mainImage}></Div>
 								<Div absolute bottom50 textWhite>
-									<Div>Click Me to Enter</Div>
+									<Div>{animation ? "Click again to skip" : "Click Me to Enter"}</Div>
 								</Div>
 							</Div>
 							<Div style={{ flex: 1 }}></Div>
