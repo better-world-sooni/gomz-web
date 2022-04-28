@@ -12,16 +12,6 @@ function MainTopBar() {
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
-	const handleClickHome = () => {
-		href(urls.home.index);
-	};
-	const handleClickJourney = () => {
-		href(urls.journey.index);
-	};
-	const handleClickGallery = () => {
-		href(urls.gallery.index);
-	};
-	const selectedProps = { textPrimary: true };
 	if (isTablet) {
 		return (
 			<Div wFull>
@@ -33,18 +23,25 @@ function MainTopBar() {
 					</Div>
 					<Div flex1></Div>
 					<Div flex flexRow itemsCenter>
-						<Div mx10 textWhite>
+						<Div
+							mx10
+							textWhite
+							clx={"hover:opacity-50"}
+							cursorPointer
+							aTag
+							href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
+						>
 							<Div roundedFull border1 borderWhite py3 px15 textSm>
 								Public Docs
 							</Div>
 						</Div>
-						<Div mx10>
+						<Div mx10 clx={"hover:opacity-50"} aTag href={"https://betterworldapp.io"}>
 							<Div imgTag src={IMAGES.logos.betterWorld} h18 wAuto></Div>
 						</Div>
-						<Div mx10 textWhite>
+						<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
 							<FaDiscord size={18} />
 						</Div>
-						<Div ml10 textWhite>
+						<Div ml10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 							<FaTwitter size={18} />
 						</Div>
 					</Div>
@@ -56,24 +53,31 @@ function MainTopBar() {
 		<Div pt40>
 			<Div flex itemsEnd textWhite maxW={1200} mxAuto px40 textLg fontSemibold justifyEnd>
 				<Div onClick={handleClickGomz} cursorPointer>
-					<Div maxW={50} clx={"hover:animate-pulse"}>
+					<Div maxW={50} clx={"hover:animate-pulse"} cursorPointer>
 						<Div imgTag src={IMAGES.logos.main}></Div>
 					</Div>
 				</Div>
 				<Div flex1></Div>
 				<Div flex flexRow itemsCenter>
-					<Div mx10 textWhite>
+					<Div
+						mx10
+						textWhite
+						clx={"hover:opacity-50"}
+						cursorPointer
+						aTag
+						href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
+					>
 						<Div roundedFull border1 borderWhite py3 px15 textSm>
 							Public Docs
 						</Div>
 					</Div>
-					<Div mx10>
+					<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
 						<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
 					</Div>
-					<Div mx10>
+					<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
 						<FaDiscord size={25} />
 					</Div>
-					<Div mx10>
+					<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 						<FaTwitter size={25} />
 					</Div>
 				</Div>
