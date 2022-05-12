@@ -9,7 +9,7 @@ const px = (num) => ({ [num]: `${num}px` })
 
 const basicColors = {
   primary: {
-    DEFAULT: '#00A7AF',
+    DEFAULT: '#404673',
     light: 'rgba(122, 93, 232, 0.2)',
     pastel: '#dddaf6',
     teens: '#4c9cff',

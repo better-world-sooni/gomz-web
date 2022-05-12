@@ -90,13 +90,12 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<Div
 				style={{
-					background: "radial-gradient(50% 50% at 50% 50%, #000000 44.27%, #02012D 100%)",
+					background: "#EDEEE9",
 				}}
 				hScreen
 				relative
 			>
-				<Div absolute top0 wFull z200>
-					<Div flex flexRow px80 mt50>
+				<Div absolute top0 wFull z200 flex flexRow px80 mt50 bgBlack>
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
 							<Div
@@ -121,7 +120,6 @@ const Index: NextPage = () => {
 								<FaTwitter size={25} />
 							</Div>
 						</Div>
-					</Div>
 				</Div>
 				<Div flex flexRow hFull relative>
 					<Div hFull absolute>
@@ -129,8 +127,8 @@ const Index: NextPage = () => {
 							<Div style={{ flex: 1 }}></Div>
 							<Div style={{ flex: 1.3 }} flex justifyCenter itemsCenter relative>
 								<Div imgTag src={mainImage}></Div>
-								<Div absolute bottom50 textWhite>
-									<Div>{animation ? "Click again to skip" : "Click Me to Enter"}</Div>
+								<Div absolute top100 right100 textPrimary>
+									<Div>Click Me to Enter</Div>
 								</Div>
 							</Div>
 							<Div style={{ flex: 1 }}></Div>
@@ -141,7 +139,7 @@ const Index: NextPage = () => {
 					</Div>
 					<Div style={{ flex: 0.8 }} flex justifyCenter itemsCenter cursorPointer onClick={handleClickHome} z100></Div>
 					<Div style={{ flex: 1 }} flex justifyCenter itemsCenter textWhite fontMedium z100>
-						<Div flex itemsEnd bottom50 textWhite text2xl flexCol pr90>
+						<Div flex itemsEnd bottom50 textPrimary text2xl flexCol pr90>
 							<Div textRight fontSize30>
 								REVOLUTIONARY SOCIAL NETWORK OF WEB3 IDENTITIES
 							</Div>
