@@ -20,13 +20,17 @@ export const IMAGES = {
     circle: '/images/circle.png',
     gomzMainAstronautGif: '/images/gomzMainAstronaut.gif',
     gomzMainAstronaut: '/images/gomzMainAstronaut.png',
+    mintingProcess: '/images/mintingProcess.png',
+    clickmetoenter: '/images/clickmetoenter.png',
     logos: {
         main: '/images/logos/main.png',
         discord: '/images/logos/discord.png',
         twitter: '/images/logos/twitter.png',
         betterWorld: '/images/logos/betterWorld.png',
+        betterWorldSecondary: '/images/logos/betterWorldSecondary.png',
         gomzWord: '/images/logos/gomzWord.png',
         gomzMotto: '/images/logos/gomzMotto.png',
+        webeWord: '/images/logos/webeWord.png',
     },
     team: {
         mj: "/images/team/1.png",

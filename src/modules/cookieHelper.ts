@@ -13,3 +13,8 @@ export const setJwt = (jwt) => {
     const cookies = new Cookies();
     return cookies.set('jwt', jwt, COOKIE_OPT)
 }
+export const setNextLocaleCookie = (locale: string) => {
+    if(typeof document != 'undefined'){
+        document.cookie = `NEXT_LOCALE=${locale}`
+    }
+}
