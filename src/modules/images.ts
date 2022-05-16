@@ -22,6 +22,9 @@ export const IMAGES = {
     gomzMainAstronaut: '/images/gomzMainAstronaut.png',
     mintingProcess: '/images/mintingProcess.png',
     clickmetoenter: '/images/clickmetoenter.png',
+    menuIcon: '/images/menuIcon.png',
+    cancelIcon: '/images/cancelIcon.png',
+
     logos: {
         main: '/images/logos/main.png',
         discord: '/images/logos/discord.png',
@@ -31,6 +34,8 @@ export const IMAGES = {
         gomzWord: '/images/logos/gomzWord.png',
         gomzMotto: '/images/logos/gomzMotto.png',
         webeWord: '/images/logos/webeWord.png',
+        betterWorldPrimaryLogo: '/images/logos/betterWorldPrimaryLogo.png',
+        webePrimaryIcon: '/images/logos/webePrimaryIcon.png',
     },
     team: {
         mj: "/images/team/1.png",

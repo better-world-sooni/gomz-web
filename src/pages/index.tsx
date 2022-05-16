@@ -4,7 +4,7 @@ import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import { href, LOCALES, reloadWithLocale } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
-import { FaBook, FaDiscord, FaTwitter } from "react-icons/fa";
+import { FaBook, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
 import Footer from "src/components/common/Footer";
 import { useEffect, useState } from "react";
@@ -30,56 +30,60 @@ const Index: NextPage = () => {
 				<BasicHead />
 				<Div
 					style={{
-						background: "radial-gradient(50% 50% at 50% 50%, #000000 44.27%, #02012D 100%)",
+						background: "#EDEEE9",
 					}}
 					relative
 					hScreen
 				>
-					<Div wFull>
-						<Div flex flexRow py20 px20>
-							<Div flex1></Div>
-							<Div flex flexRow itemsCenter>
-								<Div
-									mx10
-									textWhite
-									clx={"hover:opacity-50"}
-									cursorPointer
-									aTag
-									href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
-								>
-									<Div roundedFull border1 borderWhite py3 px15 textSm>
-										Public Docs
-									</Div>
-								</Div>
-								<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-									<Div imgTag src={IMAGES.logos.betterWorld} h18 wAuto></Div>
-								</Div>
-								<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
-									<FaDiscord size={18} />
-								</Div>
-								<Div ml10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
-									<FaTwitter size={18} />
-								</Div>
-							</Div>
-						</Div>
+					<Div flex>
+						<Div absolute top24 left24 w90 imgTag src={IMAGES.logos.webeWord}></Div>
+						<Div absolute top28 right24 w18
+						imgTag src={IMAGES.menuIcon}
+						></Div>
 					</Div>
-					<Div hFull flexCol flex itemsCenter>
-						<Div onClick={handleClickHome}>
-							<Div relative>
-								<Div imgTag src={mainImage}></Div>
-								<Div textCenter wFull textWhite bottom30 absolute textSm clx={"animate-bounce"}>
-									{animation ? "Click again to skip" : "Click Me to Enter"}
+					<Div flex justifyCenter>
+						<Div mt104 w346 imgTag src={IMAGES.gomzMainAstronaut}></Div>
+					</Div>
+					<Div flex justifyCenter>
+						<Div flex justifyCenter itemsCenter mt45 bgPrimary roundedFull w150 h50 textWhite fontSize20 onClick={handleClickHome}>ENTER</Div>
+					</Div>
+
+					<Div
+						absolute
+						top0
+						z999
+						style={{background: "rgba(237, 238, 233, 0.96)"}}
+						wFull hScreen
+						>
+							<Div absolute top28 right24 w18 imgTag src={IMAGES.cancelIcon}></Div>
+							<Div textPrimary fontSize32 fontSemibold mt76 ml35>
+								<Div flex mb38 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
+									<Div w30 imgTag src={IMAGES.logos.webePrimaryIcon}></Div>
+									<Div ml18>Public Docs</Div>
 								</Div>
+								<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}>
+									<Div w32 imgTag src={IMAGES.logos.betterWorldPrimaryLogo}></Div>
+									<Div ml17>BetterWorld</Div>
+								</Div>
+								<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+									<FaDiscord size={32} />
+									<Div ml18>Discord</Div>
+								</Div>
+								<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}>
+									<FaTwitter size={32} />
+									<Div ml18>Twitter</Div>
+								</Div>
+								<Div flex mb38 itemsCenter aTag href={"https://instagram.com/offical_gomz"}>
+									<FaInstagram size={32} />
+									<Div ml18>Instagram</Div>
+								</Div>
+
 							</Div>
-							<Div imgTag src={IMAGES.logos.gomzWord} mxAuto px50></Div>
-							<Div textWhite textBase textCenter px20 textLg>
-								Realize your lost identity
-							</Div>
-						</Div>
+
 					</Div>
 				</Div>
-				<Footer />
 			</>
+					
 		);
 	}
 	return (
@@ -103,7 +107,7 @@ const Index: NextPage = () => {
 								aTag
 								href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
 							>
-								<Div roundedFull bgPrimary py4 px18 textSm trackingWidest>
+								<Div roundedFull bgPrimary py4 px18 fontSize12 trackingWidest>
 									Public Docs
 								</Div>
 							</Div>
@@ -122,20 +126,19 @@ const Index: NextPage = () => {
 						</Div>
 				</Div>
 				<Div flex hFull relative>
-					<Div flexCol z100 ml200 mt130>
+					<Div flexCol z100 ml200 mt120>
 						<Div w330 imgTag src={IMAGES.logos.webeWord}></Div>
 						<Div mt35 textLeft fontSize25 textPrimary leadingTight>
 							Dedicated to global innovators,<br></br>party heads, and Web 3 enthusiasts</Div>
-						<Div mt40 clx={"hover:opacity-50"} w140 bgPrimary roundedFull px40 py8 fontSize25 textWhite>
+						<Div mt35 clx={"hover:opacity-50"} w140 bgPrimary roundedFull px40 py8 fontSize25 textWhite>
 							MINT</Div>
-						<Div mt50 w250 imgTag src={IMAGES. mintingProcess}></Div>
+						<Div mt45 w250 imgTag src={IMAGES. mintingProcess}></Div>
 					</Div>
 					<Div ml200 mt120 mb40 imgTag src={IMAGES.gomzMainAstronaut} cursorPointer onClick={handleClickHome}></Div>
 						<Div absolute w150 top200 right150 imgTag src={IMAGES.clickmetoenter}>
 						</Div>
 				</Div>
 			</Div>
-			<Footer index />
 		</>
 	);
 };
