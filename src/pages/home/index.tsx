@@ -121,7 +121,7 @@ const Index: NextPage = () => {
 										<MainTopBar />
 										<Div
 											wFull
-											style={{ backgroundImage: `url(${IMAGES.gomzStory1Bg})`, backgroundSize: "cover", backgroundPositionY: "center" }}
+											style={{backgroundSize: "cover", backgroundPositionY: "center" }}
 											relative
 											h={"200px"}
 											italic
@@ -133,7 +133,7 @@ const Index: NextPage = () => {
 												h={"200px"}
 												textXl
 												style={{
-													backgroundImage: `url(${IMAGES.gomzStory1Char})`,
+													backgroundImage: `url(${IMAGES.gomzStory1})`,
 													backgroundSize: "cover",
 													backdropFilter: "brightness(50%)",
 													backgroundPositionY: "center",
@@ -377,23 +377,22 @@ const Index: NextPage = () => {
 					<Controller>
 						<Scene duration={1000} triggerHook={0} pin={true}>
 							<Div relative>
-								<Div hScreen flex justifyBetween flexCol>
+								<Div hScreen>
 									<MainTopBar />
 									<Div
 										wFull
-										style={{ backgroundImage: `url(${IMAGES.gomzStory1Bg})`, backgroundSize: "cover", backgroundPositionY: "center" }}
+										style={{ backgroundSize: "cover", backgroundPositionY: "center" }}
 										relative
-										h={"75vh"}
+										hFull
 										italic
-										my10
 										textSm
 									>
 										<Div
 											wFull
-											h={"75vh"}
+											hFull
 											textXl
 											style={{
-												backgroundImage: `url(${IMAGES.gomzStory1Char})`,
+												backgroundImage: `url(${IMAGES.gomzStory1})`,
 												backgroundSize: "cover",
 												backdropFilter: "brightness(50%)",
 												backgroundPositionY: "center",
@@ -403,8 +402,9 @@ const Index: NextPage = () => {
 											flexCol
 										>
 											<Div flex justifyEnd>
-												<Div maxW={600} textWhite py20 px20 mx80 my50 text2xl textRight>
-													지나친 경쟁과 획일화로 인해 곰즈는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고 삭막하여
+												<Div maxW={500} textWhite mx80 my160 text2xl textRight fontMedium
+												style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
+													지나친 경쟁과 획일화로 인해 위비는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고 삭막하여
 													거주하기 힘든 환경으로 만들어버렸습니다.
 												</Div>
 											</Div>
@@ -418,7 +418,7 @@ const Index: NextPage = () => {
 																wFull
 																absolute
 																top0
-																h={"75vh"}
+																hFull
 																textXl
 																style={{
 																	backgroundImage: `url(${IMAGES.gomzStory2})`,
@@ -431,12 +431,12 @@ const Index: NextPage = () => {
 																justifyEnd
 															>
 																<Div flex justifyStart>
-																	<Div>
-																		<Div maxW={600} textWhite py20 px20 mx80 text2xl textLeft>
-																			전쟁에 지친 8,888 마리의 GOMZ는 이타적인 비전을 가지고 우주여행을 떠났습니다:
+																	<Div style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
+																		<Div maxW={500} textWhite my30 mx80 text2xl textLeft fontMedium>
+																			전쟁에 지친 8,888 마리의 위비는<br></br>이타적인 비전을 가지고 우주여행을 떠났습니다:
 																		</Div>
-																		<Div maxW={600} textWhite py20 px20 mx80 mb50 text2xl textLeft>
-																			---- 더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.
+																		<Div maxW={500} textWhite mb70 mx80 text2xl textLef fontMedium>
+																			더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.
 																		</Div>
 																		<EmptyBlock h={100} />
 																	</Div>
@@ -452,7 +452,7 @@ const Index: NextPage = () => {
 																wFull
 																absolute
 																top0
-																h={"75vh"}
+																hFull
 																textXl
 																style={{
 																	backgroundImage: `url(${IMAGES.gomzStory3})`,
@@ -465,8 +465,9 @@ const Index: NextPage = () => {
 																justifyStart
 															>
 																<Div flex justifyStart>
-																	<Div maxW={600} textWhite py20 px20 mx80 my50 text2xl textLeft>
-																		어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 GOMZ는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
+																	<Div maxW={500} textWhite mx80 my160 text2xl textLeft fontMedium
+																	style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
+																		어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 위비는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
 																		깨어났습니다.
 																	</Div>
 																</Div>
@@ -481,7 +482,7 @@ const Index: NextPage = () => {
 																wFull
 																absolute
 																top0
-																h={"75vh"}
+																hFull
 																textXl
 																style={{
 																	backgroundImage: `url(${IMAGES.gomzStory4})`,
@@ -493,8 +494,9 @@ const Index: NextPage = () => {
 																flexCol
 															>
 																<Div flex justifyEnd>
-																	<Div maxW={600} textWhite py20 px20 mx80 my50 text2xl textRight>
-																		GOMZ는 이들과 맞서 싸우는 대신 BetterWorld로 초대하고 환영하기로 합니다.
+																	<Div maxW={500} textWhite mx80 my180 text2xl textRight fontMedium
+																	style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
+																		위비는 이들과 맞서 싸우는 대신<br></br>BetterWorld로 초대하고 환영하기로 합니다.
 																	</Div>
 																</Div>
 															</Div>
@@ -507,17 +509,6 @@ const Index: NextPage = () => {
 										</Scene>
 									</Div>
 									<Div h={"8vh"}></Div>
-								</Div>
-								<Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
-									<Div mxAuto my40 maxW={500} pl20>
-										<Div imgTag src={IMAGES.quote}></Div>
-									</Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
-									<Div imgTag src={IMAGES.circle} mxAuto h10 w10 my40></Div>
 								</Div>
 								<EmptyBlock h={100} />
 								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>

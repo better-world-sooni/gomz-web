@@ -1,8 +1,7 @@
 export const IMAGES = {
     spaceBg: '/images/spaceBgSquare.png',
     gomzAstronaut: '/images/gomzAstronaut.png',
-    gomzStory1Bg: '/images/gomzStory1Bg.png',
-    gomzStory1Char: '/images/gomzStory1Char.png',
+    gomzStory1: '/images/gomzStory1.png',
     gomzStory2: '/images/gomzStory2.png',
     gomzStory3: '/images/gomzStory3.png',
     gomzStory4: '/images/gomzStory4.png',
@@ -36,6 +35,7 @@ export const IMAGES = {
         webeWord: '/images/logos/webeWord.png',
         betterWorldPrimaryLogo: '/images/logos/betterWorldPrimaryLogo.png',
         webePrimaryIcon: '/images/logos/webePrimaryIcon.png',
+        webeWhiteLogo: '/images/logos/webeWhiteLogo.png',
     },
     team: {
         mj: "/images/team/1.png",

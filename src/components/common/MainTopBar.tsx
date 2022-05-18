@@ -1,13 +1,14 @@
 import { IMAGES } from "src/modules/images";
 import Div from "../Div";
 import { FaBook, FaDiscord, FaTwitter } from "react-icons/fa";
-import { href } from "src/modules/routeHelper";
+import { href, LOCALES, reloadWithLocale } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
 import { useRouter } from "next/router";
 import useIsTablet from "src/hooks/useIsTablet";
 
 function MainTopBar() {
 	const isTablet = useIsTablet();
+	const { locale: nextLocale } = useRouter();
 	const { asPath } = useRouter();
 	const handleClickGomz = () => {
 		href(urls.index);
@@ -50,37 +51,34 @@ function MainTopBar() {
 		);
 	}
 	return (
-		<Div pt40>
-			<Div flex itemsEnd textWhite maxW={1200} mxAuto px40 textLg fontSemibold justifyEnd>
-				<Div onClick={handleClickGomz} cursorPointer>
-					<Div maxW={50} clx={"hover:animate-pulse"} cursorPointer>
-						<Div imgTag src={IMAGES.logos.main}></Div>
+		<Div absolute top0 wFull z200 flex px80 mt40>
+			<Div flex1></Div>
+			<Div flex flexRow itemsCenter>
+				<Div absolute left80 w100 imgTag src={IMAGES.logos.webeWhiteLogo} onClick={handleClickGomz}></Div>
+				<Div
+				mx10
+				textWhite
+				clx={"hover:opacity-50"}
+				cursorPointer
+				aTag
+				href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
+			>
+					<Div roundedFull border1 py4 px18 fontSize12 trackingWidest>
+					Public Docs
 					</Div>
 				</Div>
-				<Div flex1></Div>
-				<Div flex flexRow itemsCenter>
-					<Div
-						mx10
-						textWhite
-						clx={"hover:opacity-50"}
-						cursorPointer
-						aTag
-						href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
-					>
-						<Div roundedFull border1 borderWhite py3 px15 textSm>
-							Public Docs
-						</Div>
-					</Div>
-					<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-						<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
-					</Div>
-					<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
-						<FaDiscord size={25} />
-					</Div>
-					<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
-						<FaTwitter size={25} />
-					</Div>
+				<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
+					<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
 				</Div>
+				<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+					<FaDiscord size={30} />
+				</Div>
+				<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
+					<FaTwitter size={25} />
+				</Div>
+				<Div mx10 textSm textPrimary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
+				<Div textSm textSecondary>l</Div>
+				<Div ml10 textSm textPrimary={nextLocale==LOCALES.EN} textWhite={nextLocale!=LOCALES.EN} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
 			</Div>
 		</Div>
 	);
