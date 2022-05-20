@@ -16,7 +16,7 @@ function MainTopBar() {
 	if (isTablet) {
 		return (
 			<Div wFull>
-				<Div flex flexRow py20 px20>
+				<Div flex py20 px20>
 					<Div onClick={handleClickGomz} cursorPointer>
 						<Div maxW={30} clx={"hover:animate-pulse"}>
 							<Div imgTag src={IMAGES.logos.main}></Div>
@@ -54,7 +54,7 @@ function MainTopBar() {
 		<Div absolute top0 wFull z200 flex px80 mt40>
 			<Div flex1></Div>
 			<Div flex flexRow itemsCenter>
-				<Div absolute left80 w100 imgTag src={IMAGES.logos.webeWhiteLogo} onClick={handleClickGomz}></Div>
+				<Div absolute left80 w100 imgTag src={IMAGES.logos.webeWhiteLogo} onClick={handleClickGomz} cursorPointer></Div>
 				<Div
 				mx10
 				textWhite
@@ -63,7 +63,7 @@ function MainTopBar() {
 				aTag
 				href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
 			>
-					<Div roundedFull border1 py4 px18 fontSize12 trackingWidest>
+					<Div roundedFull bgSecondary textWhite py4 px18 fontSize12 trackingWidest>
 					Public Docs
 					</Div>
 				</Div>
@@ -76,9 +76,9 @@ function MainTopBar() {
 				<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 					<FaTwitter size={25} />
 				</Div>
-				<Div mx10 textSm textPrimary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
-				<Div textSm textSecondary>l</Div>
-				<Div ml10 textSm textPrimary={nextLocale==LOCALES.EN} textWhite={nextLocale!=LOCALES.EN} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
+				<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
+				<Div textSm textSecondary2>l</Div>
+				<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textWhite={nextLocale!=LOCALES.EN} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
 			</Div>
 		</Div>
 	);

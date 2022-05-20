@@ -80,28 +80,24 @@ const Index: NextPage = () => {
 		{
 			question: "왜 8,888 인가요?",
 			answer:
-				"숫자 ‘8’은 부, 명예, ∞(무한대) 등 삶의 다양한 측면을 의미합니다. 곰즈는 다양한 의미 중에서 ∞ 로 인해 8,888을 선택했습니다. 변덕스러운 가격, 폰지 사기가 수두룩한 NFT 공간의 모든 외부 요인에도 불구하고 GOMZ는 무한한 혁신적인 커뮤니티를 보장합니다. 8,888 혁신가 GOMZ들과 함께 Web 3 Identity를 구축할 것입니다.",
+				"숫자 ‘8’은 부, 명예, ∞(무한대) 등 삶의 다양한 측면을 의미합니다. 위비는 다양한 의미 중에서 ∞ 로 인해 8,888을 선택했습니다. 변덕스러운 가격, 폰지 사기가 수두룩한 NFT 공간의 모든 외부 요인에도 불구하고 위비는 무한하고 혁신적인 커뮤니티를 보장합니다.",
 		},
 		{
 			question: "왜 Klaytn 인가요?",
-			answer: "GOMZ는 에너지 효율성, 짧은 지연 시간, 카카오톡 접근성, 안정적인 가스비 등의 이유로 Klaytn에서 출시하기로 결정했습니다.",
-		},
-		{
-			question: "GOMZ 로드맵은 어떻게 확인하나요?",
-			answer: "GOMZ Public Docs를 통해 로드맵을 확인하실 수 있습니다. 다가오는 GOMZ만의 온/오프라인 이벤트에 대해 자세히 알아보세요!",
+			answer: "에너지 효율성, 짧은 지연 시간, 카카오톡 접근성, 안정적인 가스비 등의 이유로 Klaytn에서 출시하기로 결정했습니다.",
 		},
 		{
 			question: "어떻게 민팅할 수 있나요?",
 			answer:
-				"GOMZ의 민팅 과정은 4가지로 (코호트 A, 코호트 B, 코호트 C, 퍼블릭 민팅)으로 나뉘어있습니다. 코호트 A, B, C로 선정되려면 1) 코호트 회원의 초대를 받거나 2) GOMZ 화이트리스트 지원서를 제출하여 통과거나 3) 화이트리스트 이벤트에 선정되어야합니다. 화이트리스트에서 퍼블릭 민팅까지, 모든 판매는 해당 공식 웹사이트에서만 이루어집니다. 2차 판매의 경우 OpenSea를 통해 제공됩니다.",
+				"위비의 민팅 과정은 4가지로 (코호트 A, 코호트 B, 코호트 C, 퍼블릭 민팅)으로 나뉘어있습니다. 코호트 A, B, C로 선정되려면 1) 코호트 회원의 초대를 받거나 2) 각 코호트 모집 기간 동안 위비 지원서를 제출하여 통과거나 3) 화이트리스트 이벤트에 선정되어야합니다. 화이트리스트에서 퍼블릭 민팅까지, 모든 판매는 해당 공식 웹사이트에서만 이루어집니다. 2차 판매의 경우 OpenSea를 통해 제공됩니다.",
 		},
 		{
-			question: "민팅 날짜와 가격은 어떻게 되나요?",
-			answer: "화이트리스트 사전 민팅: 날짜 - 진행 중 I 가격- 100 KLAY Public 민팅: 날짜 - 미정 I 가격 -  200 KLAY",
+			question: "민팅 가격은 어떻게 되나요?",
+			answer: "화이트리스트 사전 민팅: 150 KLAY l Public 민팅: 200 KLAY",
 		},
 		{
-			question: "최대 몇 개의 GOMZ를 민팅할 수 있나요?",
-			answer: "다양한 구성원으로 이루어진 커뮤니티를 보장하기 위해 지갑당 5개의 GOMZ로 제한합니다.",
+			question: "최대 몇 개의 위비를 민팅할 수 있나요?",
+			answer: "다양한 구성원으로 이루어진 커뮤니티를 보장하기 위해 지갑당 5개의 위비로 제한합니다.",
 		},
 	];
 	if (isTablet) {
@@ -370,7 +366,7 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<Div
 				style={{
-					background: "linear-gradient(180deg, #000000 0%, #02012D 51.56%, #02012D 76.56%, #000000 100%)",
+					background: "linear-gradient(180deg, #37315A 0%, #3E4071 21.35%, #3E4071 69.27%, #37315A 100%)",
 				}}
 			>
 				<Div>
@@ -575,7 +571,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 								<EmptyBlock h={150} />
-								<Div textCenter bungee textPrimary text3xl>
+								<Div textCenter bungee textSecondary text3xl>
 									Mileage
 								</Div>
 								<EmptyBlock h={50} />
@@ -608,23 +604,23 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 								<EmptyBlock h={200} />
-								<Div textCenter bungee textPrimary text3xl>
+								<Div textCenter bungee textSecondary text3xl>
 									First 8{" "}
 									<Div spanTag textWhite>
-										GOMZ
+										WeBe
 									</Div>
 								</Div>
-								<Div textCenter bungee textWhite text2xl>
+								<Div textCenter bungee textSecondary2 text2xl>
 									Departing for{" "}
-									<Div spanTag textPrimary>
+									<Div spanTag textSecondary>
 										BetterWorld
 									</Div>
 								</Div>
 								<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py40 clx={"scrollbar-off"}>
 									{team.map((member, index) => {
 										return (
-											<Div key={index} w300 inlineBlock mx25>
-												<Div imgTag src={`/images/team/${index + 1}.png`} w300 h300 roundedXl></Div>
+											<Div key={index} w200 inlineBlock mx25>
+												<Div imgTag src={`/images/team/${index + 1}.png`} w200 h200 roundedXl></Div>
 												<EmptyBlock h={30} />
 												<Div textWhite textCenter textXl fontBold>
 													{member.name}
@@ -638,15 +634,16 @@ const Index: NextPage = () => {
 									})}
 								</Div>
 								<EmptyBlock h={200} />
-								<Div textCenter bungee textPrimary text3xl>
+								<Div textCenter bungee textSecondary text3xl
+								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									FAQS
 								</Div>
-								<Div maxW={1200} px40 mxAuto>
+								<Div maxW={1000} px40 mxAuto>
 									{faqs.map(({ question, answer }, index) => {
 										return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 									})}
 								</Div>
-								<EmptyBlock h={100} />
+								<EmptyBlock h={70} />
 							</Div>
 						</Scene>
 					</Controller>
@@ -683,20 +680,20 @@ function Faq({ question, answer, isTablet }) {
 		);
 	}
 	return (
-		<Div textWhite my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row text2xl py20 borderB1 borderWhite>
-				<Col auto bungee>
+		<Div textWhite my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
+			<Row textXl py20 borderB1 borderWhite itemsEnd fontThin>
+				<Col auto bungee fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
 					Q.{" "}
 				</Col>
 				<Col>{question}</Col>
-				<Col auto>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
+				<Col auto mr40>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
 			</Row>
 			{clicked && (
-				<Row text2xl py20>
-					<Col auto bungee textPrimary>
+				<Row textXl py20 fontThin>
+					<Col auto bungee textSecondary fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
 						A.{" "}
 					</Col>
-					<Col textXl>{answer}</Col>
+					<Col textLg maxW={775} flex itemsEnd>{answer}</Col>
 				</Row>
 			)}
 		</Div>

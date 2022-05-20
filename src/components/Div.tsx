@@ -423,6 +423,9 @@ const propsToClx = (props) => {
 		//font-family
 		moonget: (v) => addStyle(styles, "", { fontFamily: "MOONGET" }),
 		bungee: (v) => addStyle(styles, "", { fontFamily: "Bungee" }),
+		notoSans: (v) => addStyle(styles, "", {fontFamily: "Noto Sans"}),
+		overMono: (v) => addStyle(styles, "", {fontFamily: "OverpassMono"}),
+		baLoo: (v) => addStyle(styles, "", {fontFamily: "BalooBhaijaan"}),
 
 		// font-smoothing
 		antialiased: () => clxs.push("antialiased"),

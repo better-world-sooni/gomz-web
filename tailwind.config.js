@@ -9,14 +9,14 @@ const px = (num) => ({ [num]: `${num}px` })
 
 const basicColors = {
   primary: {
-    DEFAULT: '#404673',
+    DEFAULT: '#413F70',
     light: 'rgba(122, 93, 232, 0.2)',
     pastel: '#dddaf6',
     teens: '#4c9cff',
     teensLight: '#d5ebff',
   },
-  secondary: '#A4A4A4',
-  secondary2: '#3f3d88',
+  secondary: '#8798E9',
+  secondary2: '#DAE2FF',
   transparent: 'transparent',
   current: 'currentColor',
   gray: {

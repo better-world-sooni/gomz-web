@@ -23,6 +23,10 @@ export const IMAGES = {
     clickmetoenter: '/images/clickmetoenter.png',
     menuIcon: '/images/menuIcon.png',
     cancelIcon: '/images/cancelIcon.png',
+    starDusts: '/images/starDusts.png',
+    starDusts2: '/images/starDusts2.png',
+    starDusts3: '/images/starDusts3.png',
+    circleLeftArrow: '/images/circleLeftArrow.png',
 
     logos: {
         main: '/images/logos/main.png',

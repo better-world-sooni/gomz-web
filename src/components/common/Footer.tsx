@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { IMAGES } from "src/modules/images";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
@@ -13,7 +14,7 @@ export default function Footer({ index = false }) {
 	};
 	return (
 		<Div>
-			<Div mxAuto maxW={!index && 1200} px={index ? 60 : 20} py30 fontSemibold italic>
+			<Div mxAuto maxW={!index && 1200} px={index ? 60 : 20} py30 fontThin italic>
 				<Row textWhite itemsCenter>
 					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
 						<Div imgTag src={IMAGES.logos.main} w60 h60></Div>
@@ -21,8 +22,8 @@ export default function Footer({ index = false }) {
 					<Col py20>
 						<Row py5>
 							<Col auto>
-								<Div spanTag>Gomz by </Div>
-								<Div spanTag style={{ color: "rgb(20,152,159)" }} aTag href={"https://soonilabs.com"}>
+								<Div spanTag>WeBe from </Div>
+								<Div spanTag textSecondary aTag href={"https://soonilabs.com"}>
 									SOONI Labs
 								</Div>
 							</Col>
@@ -30,7 +31,7 @@ export default function Footer({ index = false }) {
 						</Row>
 						<Row textSm>
 							<Col auto>
-								<Div spanTag>COPYRIGHT © GOMZ. ALL RIGHTS RESERVED</Div>
+								<Div spanTag>COPYRIGHT © WeBe. ALL RIGHTS RESERVED</Div>
 							</Col>
 							<Col></Col>
 						</Row>
