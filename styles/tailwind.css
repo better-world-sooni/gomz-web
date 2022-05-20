@@ -20,6 +20,14 @@
     url("/fonts/BalooBhaijaan-Regular.ttf") format("truetype");
   font-weight: normal;
   unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+  }
+
+@font-face {
+  font-family: "Baloo";
+  src: local("Baloo"),
+    url("/fonts/Baloo2-VariableFont_wght.ttf") format("truetype");
+  font-weight: inherit;
+  unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
 }
 
 @font-face {

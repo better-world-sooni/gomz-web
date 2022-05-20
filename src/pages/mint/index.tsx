@@ -26,7 +26,7 @@ const Index: NextPage = () => {
                 <Div ml100 my120>
                     <Div flex>
                         <Div mr20>WALLET ADDRESS:</Div>
-                        <Div w220 h40 borderBlack border1 roundedFull baLoo textTransparent fontSize25 style={{webkitTextStroke: "1px #000"}} flex justifyCenter>
+                        <Div w220 h40 borderBlack border1 roundedFull balooB textTransparent fontSize25 style={{webkitTextStroke: "1px #000"}} flex justifyCenter>
                         Connect Wallet</Div>
                     </Div>
                     <Div flex mt40>
@@ -51,12 +51,13 @@ const Index: NextPage = () => {
                         <Div mr20>AMOUNT:</Div>
                         <Div fontBold> 1 per Wallet</Div>
                     </Div>
-                    <Div mt40 w200 h70 borderBlack border1 roundedFull baLoo textWhite bgPrimary fontSize40
+                    <Div mt40 w230 h70 borderBlack border1 roundedFull textWhite bgPrimary fontSize36 balooB
                     style={{webkitTextStroke: "1px #000"}} flex justifyCenter itemsCenter>
                         MINT
                     </Div>
                 </Div>
             </Div>
+            <Div absolute bottom0 right0 w600 z999 imgTag src={IMAGES.webeAir}></Div>
         </Div>
     )
 }
