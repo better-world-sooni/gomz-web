@@ -248,7 +248,7 @@ const Index: NextPage = () => {
 									<EmptyBlock h={150} />
 									<Div imgTag src={IMAGES.gomzInnovate} px40></Div>
 									<Div maxW={750} px40>
-										<Div textWhite textXl textLeft lineHeight={1.2} bungee>
+										<Div textWhite textXl textLeft lineHeight={1.2}>
 											We Are
 											<Div textPrimary>Innovators.</Div>
 										</Div>
@@ -262,7 +262,7 @@ const Index: NextPage = () => {
 									<EmptyBlock h={150} />
 									<Div imgTag src={IMAGES.gomzRebel} px40></Div>
 									<Div maxW={750} px40>
-										<Div textWhite textXl textLeft lineHeight={1.2} bungee>
+										<Div textWhite textXl textLeft lineHeight={1.2} >
 											We Are
 											<Div textPrimary>Rebels.</Div>
 										</Div>
@@ -522,7 +522,7 @@ const Index: NextPage = () => {
 										<Div imgTag src={IMAGES.gomzInnovate}></Div>
 									</Div>
 									<Div maxW={750} px40>
-										<Div textWhite text3xl textLeft lineHeight={1.2} bungee>
+										<Div textWhite text3xl textLeft lineHeight={1.2}>
 											We Are
 											<Div textPrimary>Innovators.</Div>
 										</Div>
@@ -535,43 +535,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 								<EmptyBlock h={150} />
-								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
-									<Div maxW={750} px40>
-										<Div textWhite text3xl textLeft lineHeight={1.2} bungee>
-											We Are
-											<Div textPrimary>Rebels.</Div>
-										</Div>
-										<Div textLeft textWhite lineHeight={1.8} py10>
-											현재 수만개의 PFP 컬렉션이 존재하지만, 대부분 트위터 프로필 사진으로만 쓰여지고 있습니다. 해당 프로젝트에서는 GOMZ만의 Web 3.0
-											SNS인 BetterWorld 앱에서 홀더가 본인의 GOMZ에 인생을 부여하여 자신의 혁신가적인 “Web 3.0 부캐”를 직접 생성합니다. 부캐들의 SNS
-											활동, 네트워킹, 오디오 세션 등 홀더들은 GOMZ로서 마음껏 활동하고 교류하며 서로 상생하고 발전할 수 있는 프로그램에 함께하고
-											다양한 보상을 받습니다. GOMZ를 보유하는 누구든 혁신에 앞장설 수 있습니다.
-										</Div>
-									</Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.gomzRebel}></Div>
-									</Div>
-								</Div>
-								<EmptyBlock h={150} />
-								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
-									<Div flex1>
-										<Div imgTag src={IMAGES.gomzStore}></Div>
-									</Div>
-									<Div maxW={750} px40>
-										<Div textWhite text3xl textLeft lineHeight={1.2} bungee>
-											We Are
-											<Div textPrimary>Amigos.</Div>
-										</Div>
-										<Div textLeft textWhite lineHeight={1.8} py10>
-											GOMZ는 Web 3.0 의 잠재력을 높게 사고있습니다. 하지만, Web 3의 잠재력은 더 많은 사람들이 일상생활에서 이를 이용할 수 있을 때
-											극대화될 수 있습니다. 따라서 GOMZ는 사회에 더 큰 영향을 미치는 실질적이고 사회적인 가치를 제공함으로써 더 많은 사람들과
-											함께합니다. 그 첫 번째 파트너는 코로나 여파로부터 회복하고 있는 소상공인으로, 다양한 지역의 소상공인과 공생 관계를 맺어 돕고,
-											음식점, 카페 할인 등 홀더들의 오프라인 혜택 또한 극대화합니다. 머지않아 GOMZ는 곧 당신 일상의 일부가 될 것입니다.
-										</Div>
-									</Div>
-								</Div>
-								<EmptyBlock h={150} />
-								<Div textCenter bungee textSecondary text3xl>
+								<Div textCenter textSecondary text3xl>
 									Mileage
 								</Div>
 								<EmptyBlock h={50} />
@@ -604,13 +568,13 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 								<EmptyBlock h={200} />
-								<Div textCenter bungee textSecondary text3xl>
+								<Div textCenter textSecondary text3xl>
 									First 8{" "}
 									<Div spanTag textWhite>
 										WeBe
 									</Div>
 								</Div>
-								<Div textCenter bungee textSecondary2 text2xl>
+								<Div textCenter textSecondary2 text2xl>
 									Departing for{" "}
 									<Div spanTag textSecondary>
 										BetterWorld
@@ -634,7 +598,7 @@ const Index: NextPage = () => {
 									})}
 								</Div>
 								<EmptyBlock h={200} />
-								<Div textCenter bungee textSecondary text3xl
+								<Div textCenter textSecondary text3xl
 								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									FAQS
 								</Div>
@@ -682,7 +646,7 @@ function Faq({ question, answer, isTablet }) {
 	return (
 		<Div textWhite my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
 			<Row textXl py20 borderB1 borderWhite itemsEnd fontThin>
-				<Col auto bungee fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
+				<Col auto fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
 					Q.{" "}
 				</Col>
 				<Col>{question}</Col>
@@ -690,7 +654,7 @@ function Faq({ question, answer, isTablet }) {
 			</Row>
 			{clicked && (
 				<Row textXl py20 fontThin>
-					<Col auto bungee textSecondary fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
+					<Col auto textSecondary fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
 						A.{" "}
 					</Col>
 					<Col textLg maxW={775} flex itemsEnd>{answer}</Col>

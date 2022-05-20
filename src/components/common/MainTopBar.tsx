@@ -18,7 +18,7 @@ function MainTopBar() {
 			<Div wFull>
 				<Div flex py20 px20>
 					<Div onClick={handleClickGomz} cursorPointer>
-						<Div maxW={30} clx={"hover:animate-pulse"}>
+						<Div maxW={30}>
 							<Div imgTag src={IMAGES.logos.main}></Div>
 						</Div>
 					</Div>
@@ -51,7 +51,7 @@ function MainTopBar() {
 		);
 	}
 	return (
-		<Div absolute top0 wFull z200 flex px80 mt40>
+		<Div absolute top0 wFull z200 flex px80 mt40 style={{webkitTextStroke: "1px #000"}}>
 			<Div flex1></Div>
 			<Div flex flexRow itemsCenter>
 				<Div absolute left80 w100 imgTag src={IMAGES.logos.webeWhiteLogo} onClick={handleClickGomz} cursorPointer></Div>
@@ -63,17 +63,17 @@ function MainTopBar() {
 				aTag
 				href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
 			>
-					<Div roundedFull bgSecondary textWhite py4 px18 fontSize12 trackingWidest>
+					<Div roundedFull bgSecondary textWhite py4 px18 fontSize12 trackingWidest style={{webkitTextStroke: "1px #000"}}>
 					Public Docs
 					</Div>
 				</Div>
 				<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
 					<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
 				</Div>
-				<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+				<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
 					<FaDiscord size={30} />
 				</Div>
-				<Div mx10 textWhite clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
+				<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 					<FaTwitter size={25} />
 				</Div>
 				<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>

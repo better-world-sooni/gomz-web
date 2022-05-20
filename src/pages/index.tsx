@@ -18,6 +18,9 @@ const Index: NextPage = () => {
 	const handleClickHome = () => {
 		href(urls.home.index)
 	};
+	const handleClickMint = () => {
+		href(urls.mint.index)	
+	}
 	useEffect(() => {
 		if (mainImage == IMAGES.gomzMainAstronautGif) {
 			const timeout = setTimeout(() => href(urls.home.index), 6500);
@@ -47,7 +50,7 @@ const Index: NextPage = () => {
 								hFull
 								style={{background: "rgba(237, 238, 233, 0.96)"}}
 								>
-									<Div mt90 ml35 textPrimary fontSize32 fontSemibold>
+									<Div mt90 ml35 textPrimary fontSize32>
 										<Div flex mb38 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
 											<Div w30 imgTag src={IMAGES.logos.webePrimaryIcon}></Div>
 											<Div ml18>Public Docs</Div>
@@ -113,7 +116,7 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 							<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-								<Div imgTag src={IMAGES.logos.betterWorldSecondary} h20 wAuto></Div>
+								<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
 							</Div>
 							<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
 								<FaDiscord size={30} />
@@ -127,16 +130,17 @@ const Index: NextPage = () => {
 						</Div>
 				</Div>
 				<Div flex hFull relative>
-					<Div flexCol z100 ml200 mt120>
-						<Div w330 imgTag src={IMAGES.logos.webeWhiteLogo}></Div>
+					<Div flexCol z100 ml200 mt100>
+						<Div w300 imgTag src={IMAGES.logos.webeWhiteLogo}></Div>
 						<Div mt35 textLeft fontSize25 textSecondary2 leadingTight>
-							Dedicated to global innovators,<br></br>party heads, and Web 3 enthusiasts</Div>
-						<Div mt35 clx={"hover:opacity-50"} w140 bgSecondary roundedFull px40 py8 fontSize25 textWhite borderBlack border1>
+							Cultural franchise dedicated to global innovators,<br></br>party heads, and Web 3 enthusiasts</Div>
+						<Div mt35 clx={"hover:opacity-50"} w140 bgSecondary roundedFull px40 py8 fontSize25 textWhite borderBlack border1
+						onClick={handleClickMint} cursorPointer>
 							MINT</Div>
 						<Div mt45 w250 imgTag src={IMAGES. mintingProcess}></Div>
 					</Div>
-					<Div ml200 mt120 mb40 imgTag src={IMAGES.gomzMainAstronaut} cursorPointer onClick={handleClickHome}></Div>
-						<Div absolute w150 top200 right150 textSecondary2>
+					<Div absolute w350 top110 right250 z999 imgTag src={IMAGES.gomzMainAstronaut} cursorPointer onClick={handleClickHome}></Div>
+						<Div absolute top200 right100 textSecondary2 textXl>
 							Click Me To Enter!
 						</Div>
 				</Div>
