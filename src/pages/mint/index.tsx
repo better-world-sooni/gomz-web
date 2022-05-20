@@ -3,6 +3,7 @@ import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
+import { VIDEOS } from "src/modules/videos";
 
 const Index: NextPage = () => {
     const handleClickGomz = () => {
@@ -41,7 +42,7 @@ const Index: NextPage = () => {
                     </Div>
                     <Div mt40>AVAILABLE SEATS:</Div>
                 </Div>
-                <Div absolute top410 right240 borderDashed border1 w540 h0 rotate90 borderBlack></Div>
+                <Div absolute top475 right160 borderDashed border1 w700 h0 rotate90 borderBlack></Div>
                 <Div absolute top205 right110>
                     <Div flex mt40>
                         <Div mr20>PRICE:</Div>
