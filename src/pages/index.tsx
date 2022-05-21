@@ -19,14 +19,8 @@ const Index: NextPage = () => {
 		href(urls.home.index)
 	};
 	const handleClickMint = () => {
-		href(urls.mint.index)	
+		href(urls.mint.index);
 	}
-	useEffect(() => {
-		if (mainImage == IMAGES.gomzMainAstronautGif) {
-			const timeout = setTimeout(() => href(urls.home.index), 6500);
-			setAnimation(timeout);
-		}
-	}, [mainImage]);
 
 	if (isTablet) {
 		return (

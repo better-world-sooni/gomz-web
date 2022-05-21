@@ -500,6 +500,41 @@ const Index: NextPage = () => {
 													>
 														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
 													</Timeline>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.homeBackground})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flex
+																flexCol
+															>
+																<Div flex justifyCenter mt180 notItalic style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+																	<Div textSecondary2 fontSize58 textCenter mr20>
+																		“We be</Div>
+																	<Div textSecondary text3xl textCenter>
+																		weird, different, and free”</Div>
+																</Div>
+																<Div flex justifyCenter balooR textWhite textCenter textLg mt30 notItalic>
+																8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
+																<br></br>but frankly, a little different compared to the majority. Individuals nowadays, especially those in 20 and 30s,
+																<br></br>are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. 
+																<br></br>WeBe challenges these social norms by creating a cultural franchise suggesting
+																<br></br>an unique identity in both worlds, digital and real.
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
 												</Timeline>
 											)}
 										</Scene>
@@ -507,34 +542,45 @@ const Index: NextPage = () => {
 									<Div h={"8vh"}></Div>
 								</Div>
 								<EmptyBlock h={100} />
-								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
-									<Div textWhite text2xl textCenter maxW={750} px40 lineHeight={1.8}>
-										GOMZ는 획일화된 교육, 이로 인한 지나친 경쟁, 다름을 틀림으로 보는 사회에 지쳤습니다. 따라서{" "}
-										<Div textPrimary>더 많은 자유와 다양성이 보장되는 창의적인 문화</Div>를 전하고자 나타났습니다.
-									</Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.gomzPlanet}></Div>
+
+								<Div flex justifyCenter>
+									<Div textWhite text3xl textCenter flex justifyCente style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+										In <Div textSecondary mx10>Digital</Div> World
 									</Div>
 								</Div>
-								<EmptyBlock h={150} />
-								<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
-									<Div flex1>
-										<Div imgTag src={IMAGES.gomzInnovate}></Div>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize28 style={{webkitTextStroke: "1px #000",}}>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										Re-Birth
+										<Div absolute right20 bottom0 w200 imgTag src={IMAGES.journeyIcons.reBirth}></Div>
 									</Div>
-									<Div maxW={750} px40>
-										<Div textWhite text3xl textLeft lineHeight={1.2}>
-											We Are
-											<Div textPrimary>Innovators.</Div>
-										</Div>
-										<Div textLeft textWhite lineHeight={1.8} py10>
-											현재 수만개의 PFP 컬렉션이 존재하지만, 대부분 트위터 프로필 사진으로만 쓰여지고 있습니다. 해당 프로젝트에서는 GOMZ만의 Web 3.0
-											SNS인 BetterWorld 앱에서 홀더가 본인의 GOMZ에 인생을 부여하여 자신의 혁신가적인 “Web 3.0 부캐”를 직접 생성합니다. 부캐들의 SNS
-											활동, 네트워킹, 오디오 세션 등 홀더들은 GOMZ로서 마음껏 활동하고 교류하며 서로 상생하고 발전할 수 있는 프로그램에 함께하고
-											다양한 보상을 받습니다. GOMZ를 보유하는 누구든 혁신에 앞장설 수 있습니다.
-										</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										Weird<br></br>Wine
+										<Div absolute right20 bottom0 w180 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
+										Wizard<br></br>WeBe
+										<Div absolute right20 bottom0 w150 imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
+									</Div>
+									<Div textSecondary fontSize48 mx100>Collection</Div>
+								</Div>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize28 style={{webkitTextStroke: "1px #000",}}>
+									<Div textSecondary2 fontSize48 mx100>BetterWorld</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										Pioneer
+										<Div absolute right5 bottom0 w140 imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										Socialize<br></br>to Earn
+										<Div absolute right10 bottom0 w150 imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
+										Capsule
+										<Div absolute right20 bottom0 w130 imgTag src={IMAGES.journeyIcons.capsule}></Div>
 									</Div>
 								</Div>
-								<EmptyBlock h={150} />
+
+								
+								{/* <EmptyBlock h={150} />
 								<Div textCenter textSecondary text3xl>
 									Mileage
 								</Div>
@@ -566,7 +612,7 @@ const Index: NextPage = () => {
 											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
 										</Div>
 									</Div>
-								</Div>
+								</Div> */}
 								<EmptyBlock h={200} />
 								<Div textCenter textSecondary text3xl>
 									First 8{" "}
@@ -646,7 +692,7 @@ function Faq({ question, answer, isTablet }) {
 	return (
 		<Div textWhite my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
 			<Row textXl py20 borderB1 borderWhite itemsEnd fontThin>
-				<Col auto fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
+				<Col auto fontSize36 ml40 style={{webkitTextStroke: "1px #000",}}>
 					Q.{" "}
 				</Col>
 				<Col>{question}</Col>
@@ -654,7 +700,7 @@ function Faq({ question, answer, isTablet }) {
 			</Row>
 			{clicked && (
 				<Row textXl py20 fontThin>
-					<Col auto textSecondary fontSize36 ml40 style={{textShadow:"1px 4px 0px rgba(0, 0, 0, 0.25)"}}>
+					<Col auto textSecondary fontSize36 ml40 style={{webkitTextStroke: "1px #000",}}>
 						A.{" "}
 					</Col>
 					<Col textLg maxW={775} flex itemsEnd>{answer}</Col>
