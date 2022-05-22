@@ -19,6 +19,7 @@ export const IMAGES = {
     circle: '/images/circle.png',
     webeAir: '/images/webeAir.gif',
     gomzMainAstronaut: '/images/gomzMainAstronaut.png',
+    webeMainAstronaut: '/images/webeMainAstronaut.png',
     mintingProcess: '/images/mintingProcess.png',
     clickmetoenter: '/images/clickmetoenter.png',
     menuIcon: '/images/menuIcon.png',
@@ -32,17 +33,17 @@ export const IMAGES = {
     circleLeftArrow: '/images/circleLeftArrow.png',
 
     logos: {
-        main: '/images/logos/main.png',
         discord: '/images/logos/discord.png',
         twitter: '/images/logos/twitter.png',
         betterWorld: '/images/logos/betterWorld.png',
-        betterWorldSecondary: '/images/logos/betterWorldSecondary.png',
+        betterWorldPrimary: '/images/logos/betterWorldPrimary.png',
+        betterWorldSecondary2: '/images/logos/betterWorldSecondary2.png',
         gomzWord: '/images/logos/gomzWord.png',
         gomzMotto: '/images/logos/gomzMotto.png',
-        webeWord: '/images/logos/webeWord.png',
-        betterWorldPrimaryLogo: '/images/logos/betterWorldPrimaryLogo.png',
-        webePrimaryIcon: '/images/logos/webePrimaryIcon.png',
+        webeIcon: '/images/logos/webeIcon.png',
+        webeIconPrimary: '/images/logos/webeIconPrimary.png',
         webeWhiteLogo: '/images/logos/webeWhiteLogo.png',
+        webeLogo: '/images/logos/webeLogo.png',
     },
     journeyIcons: {
         capsule: '/images/journeyIcons/capsule.png',
@@ -66,5 +67,11 @@ export const IMAGES = {
         jieun: "/images/team/6.png",
         seungan: "/images/team/7.png",
         seonghyun: "/images/team/8.png",
+    },
+    partners: {
+        bankofWine: "/images/partners/bankofWine.png",
+        philosophiaCapital: "/images/partners/philosophiaCapital.png",
+        blinkers: "/images/partners/blinkers.png",
+        kote: "/images/partners/kote.png",
     }
 }

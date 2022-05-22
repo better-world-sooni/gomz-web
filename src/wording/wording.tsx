@@ -137,12 +137,12 @@ export const wording = {
 			members: {
 				minjun: {
 					name: {
-						en: "Min Jun Kim",
-						ko: "김민준",
+						en: "Alpha Kim",
+						ko: "알파김",
 					},
 					position: {
-						ko: "알파 곰즈",
-						en: "Alpha Gomz",
+						ko: "CEO",
+						en: "CEO",
 					},
 					countries: "🇰🇷 🇨🇳 🇦🇺 🇺🇸",
 					specialty: {
@@ -170,13 +170,13 @@ export const wording = {
 				},
 				yeajean: {
 					name: {
-						en: "Yea Jean Lee",
-						ko: "이예진",
+						en: "Mama Lee",
+						ko: "마마리",
 					},
 					countries: "🇰🇷 🇻🇳 ",
 					position: {
-						ko: "마마 곰즈",
-						en: "Mama Gomz",
+						ko: "COO",
+						en: "COO",
 					},
 					specialty: {
 						en: "People first",
@@ -201,12 +201,12 @@ export const wording = {
 				},
 				eric: {
 					name: {
-						en: "Eric Kim",
-						ko: "김민수",
+						en: "Kid Kim",
+						ko: "키드김",
 					},
 					position: {
-						ko: "키드 곰즈",
-						en: "Kid Gomz",
+						ko: "CBO",
+						en: "CBO",
 					},
 					countries: "🇰🇷 🇩🇪 🇨🇳 🇺🇸",
 					specialty: {
@@ -232,12 +232,12 @@ export const wording = {
 				},
 				jieun: {
 					name: {
-						en: "Ji Eun Park",
-						ko: "박지은",
+						en: "Disney Park",
+						ko: "디즈니박",
 					},
 					position: {
-						en: "Designer Gomz",
-						ko: "디자이너 곰즈",
+						en: "Illustrator",
+						ko: "일러스트 디자이너",
 					},
 					countries: "🇰🇷 🇭🇰 🇨🇳",
 					specialty: {
@@ -266,11 +266,11 @@ export const wording = {
 				jade: {
 					name: {
 						en: "Jade Yang",
-						ko: "양성현",
+						ko: "제이드양",
 					},
 					position: {
-						ko: "UI/UX 곰즈",
-						en: "UI/UX Gomz",
+						ko: "UI/UX 디자이너",
+						en: "UI/UX Designer",
 					},
 					countries: "🇰🇷 🇨🇳",
 					specialty: {
@@ -292,12 +292,12 @@ export const wording = {
 				},
 				ian: {
 					name: {
-						en: "Ian Park",
-						ko: "박세한",
+						en: "Nerd Park",
+						ko: "너드박",
 					},
 					position: {
-						ko: "너드 곰즈",
-						en: "Nerd Gomz",
+						ko: "CTO",
+						en: "CTO",
 					},
 					specialty: {
 						en: "Developing the next generation of web",
@@ -323,12 +323,12 @@ export const wording = {
 				},
 				jaehwan: {
 					name: {
-						en: "Jae Hwan Jeong",
-						ko: "정재환",
+						en: "Solidity Jeong",
+						ko: "솔리디티정",
 					},
 					position: {
-						ko: "Solidity 곰즈",
-						en: "Solidity Gomz",
+						ko: "스마트 컨트랙트 개발자",
+						en: "Smart Contract Dev",
 					},
 					countries: "🇰🇷 🇸🇬",
 					specialty: {
@@ -354,12 +354,12 @@ export const wording = {
 				},
 				seungan: {
 					name: {
-						en: "Seung An Jung",
-						ko: "정승안",
+						en: "Code Jung",
+						ko: "코드정",
 					},
 					position: {
-						ko: "풀 스택 곰즈",
-						en: "Full Stack Gomz",
+						ko: "풀 스택 개발자",
+						en: "Full-Stack Dev",
 					},
 					countries: "🇰🇷",
 					specialty: {

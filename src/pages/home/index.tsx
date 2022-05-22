@@ -78,26 +78,25 @@ const Index: NextPage = () => {
 	];
 	const faqs = [
 		{
-			question: "왜 8,888 인가요?",
+			question: "Why 8,888?",
+			answer: "Eight signifies various aspects of life. Wealth, prosperity, ∞ (infinity), and many more. Out of all the different meanings, WeBe has chosen 8,888 due to ∞ . Despite all the external factors in the NFT space, such as volatile floor prices, rug pulls, and ponzi-like schemes, WeBe ensures an innovative community that will be infinite. We are here to create a culture of its own with 8,888 WeBe. ",
+		},
+		{
+			question: "Why Klaytn?",
+			answer: "WeBe decided to launch on Klaytn for the following reasons— energy efficient, low latency, easy access to Kakao Talk, and stable gas fee.",
+		},
+		{
+			question: "How to mint?",
 			answer:
-				"숫자 ‘8’은 부, 명예, ∞(무한대) 등 삶의 다양한 측면을 의미합니다. 위비는 다양한 의미 중에서 ∞ 로 인해 8,888을 선택했습니다. 변덕스러운 가격, 폰지 사기가 수두룩한 NFT 공간의 모든 외부 요인에도 불구하고 위비는 무한하고 혁신적인 커뮤니티를 보장합니다.",
+				"WeBe's minting process is divided into 4 categories (Cohort A, Cohort B, Cohort C, and Public Minting). To be selected for Cohort A, B, or C, you must either 1) be invited by a cohort member, 2) submit a WeBe whitelist application, or 3) be selected for a whitelisted event. From whitelist to public minting, all sales are performed on this website. For secondary sales, it will be available via OpenSea.",
 		},
 		{
-			question: "왜 Klaytn 인가요?",
-			answer: "에너지 효율성, 짧은 지연 시간, 카카오톡 접근성, 안정적인 가스비 등의 이유로 Klaytn에서 출시하기로 결정했습니다.",
+			question: "Mnt date & price?",
+			answer: "Whitelist Minting: Date- TBD I Price- 100 KLAY Public Minting: Date- TBD I Price: 200 KLAY",
 		},
 		{
-			question: "어떻게 민팅할 수 있나요?",
-			answer:
-				"위비의 민팅 과정은 4가지로 (코호트 A, 코호트 B, 코호트 C, 퍼블릭 민팅)으로 나뉘어있습니다. 코호트 A, B, C로 선정되려면 1) 코호트 회원의 초대를 받거나 2) 각 코호트 모집 기간 동안 위비 지원서를 제출하여 통과거나 3) 화이트리스트 이벤트에 선정되어야합니다. 화이트리스트에서 퍼블릭 민팅까지, 모든 판매는 해당 공식 웹사이트에서만 이루어집니다. 2차 판매의 경우 OpenSea를 통해 제공됩니다.",
-		},
-		{
-			question: "민팅 가격은 어떻게 되나요?",
-			answer: "화이트리스트 사전 민팅: 150 KLAY l Public 민팅: 200 KLAY",
-		},
-		{
-			question: "최대 몇 개의 위비를 민팅할 수 있나요?",
-			answer: "다양한 구성원으로 이루어진 커뮤니티를 보장하기 위해 지갑당 5개의 위비로 제한합니다.",
+			question: "How many WeBe can I mint?",
+			answer: "To ensure a wide range of community, we are limiting holders to five WeBe per wallet",
 		},
 	];
 	if (isTablet) {
@@ -366,7 +365,7 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<Div
 				style={{
-					background: "linear-gradient(180deg, #37315A 0%, #3E4071 21.35%, #3E4071 69.27%, #37315A 100%)",
+					background: "linear-gradient(180deg, #37315A 0%, #413F70 21.35%, #413F70 69.27%, #37315A 100%)",
 				}}
 			>
 				<Div>
@@ -398,10 +397,11 @@ const Index: NextPage = () => {
 											flexCol
 										>
 											<Div flex justifyEnd>
-												<Div maxW={500} textWhite mx80 my160 text2xl textRight fontMedium
-												style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
-													지나친 경쟁과 획일화로 인해 위비는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고 삭막하여
-													거주하기 힘든 환경으로 만들어버렸습니다.
+												<Div maxW={600} textWhite mx80 my120 fontSize24 textRight balooR
+												style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+													WeBe have been in a planet-wide war for the past years.
+													The war was provoked by excessive indoctrination of competition and uniformity.
+													Such violence has made the planet too hostile, colorless, and systematic,<br></br>rendering it uninhabitable. 
 												</Div>
 											</Div>
 										</Div>
@@ -422,17 +422,16 @@ const Index: NextPage = () => {
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
 																}}
-																flex
 																flexCol
 																justifyEnd
 															>
 																<Div flex justifyStart>
-																	<Div style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
-																		<Div maxW={500} textWhite my30 mx80 text2xl textLeft fontMedium>
-																			전쟁에 지친 8,888 마리의 위비는<br></br>이타적인 비전을 가지고 우주여행을 떠났습니다:
+																	<Div style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+																		<Div maxW={500} textWhite mx80 my400 fontSize24 textLeft balooR>
+																			8,888 of these bears have turned to space travel with an altruistic vision:
 																		</Div>
-																		<Div maxW={500} textWhite mb70 mx80 text2xl textLef fontMedium>
-																			더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.
+																		<Div maxW={500} textWhite mx80 my-380 fontSize24 textLeft balooR>
+																			Establish a “BetterWorld”, a free and creative playground for diverse innovators.
 																		</Div>
 																		<EmptyBlock h={100} />
 																	</Div>
@@ -461,10 +460,10 @@ const Index: NextPage = () => {
 																justifyStart
 															>
 																<Div flex justifyStart>
-																	<Div maxW={500} textWhite mx80 my160 text2xl textLeft fontMedium
-																	style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
-																		어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 위비는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
-																		깨어났습니다.
+																	<Div maxW={600} textWhite mx80 my120 fontSize24 textLeft balooR
+																	style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+																		During deep hibernation in their capsules in BetterWorld,
+																		WeBe have been awakened by other space wanderers<br></br>who are also in search of a habitable planet.
 																	</Div>
 																</Div>
 															</Div>
@@ -490,9 +489,10 @@ const Index: NextPage = () => {
 																flexCol
 															>
 																<Div flex justifyEnd>
-																	<Div maxW={500} textWhite mx80 my180 text2xl textRight fontMedium
-																	style={{textShadow: "0px 4px 0px rgba(0, 0, 0, 0.81)"}}>
-																		위비는 이들과 맞서 싸우는 대신<br></br>BetterWorld로 초대하고 환영하기로 합니다.
+																	<Div maxW={600} textWhite mx80 my120 fontSize24 textRight balooR
+																	style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+																		Instead of fighting these space wanderers,<br></br>
+																		WeBe decides to invite and welcome them<br></br>to BetterWorld.
 																	</Div>
 																</Div>
 															</Div>
@@ -523,7 +523,7 @@ const Index: NextPage = () => {
 																	<Div textSecondary text3xl textCenter>
 																		weird, different, and free”</Div>
 																</Div>
-																<Div flex justifyCenter balooR textWhite textCenter textLg mt30 notItalic>
+																<Div flex justifyCenter balooR textWhite textCenter textXl mt30 notItalic>
 																8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
 																<br></br>but frankly, a little different compared to the majority. Individuals nowadays, especially those in 20 and 30s,
 																<br></br>are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. 
@@ -541,41 +541,160 @@ const Index: NextPage = () => {
 									</Div>
 									<Div h={"8vh"}></Div>
 								</Div>
-								<EmptyBlock h={100} />
-
-								<Div flex justifyCenter>
-									<Div textWhite text3xl textCenter flex justifyCente style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-										In <Div textSecondary mx10>Digital</Div> World
-									</Div>
+								<EmptyBlock h={150} />
+								<Div textCenter textSecondary2 text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+									In<Div spanTag textSecondary> Digital </Div>World
 								</Div>
-								<Div flex itemsCenter mt30 textSecondary2 fontSize28 style={{webkitTextStroke: "1px #000",}}>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize28>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
 										Re-Birth
-										<Div absolute right20 bottom0 w200 imgTag src={IMAGES.journeyIcons.reBirth}></Div>
+										<Div absolute right10 bottom0 w200 imgTag src={IMAGES.journeyIcons.reBirth}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Re-Birth:<Div textSm balooR mt10>We understand your minted WeBe may not be your favorite. You will be able to re-mint
+												your WeBe up to five times at 50 $Klay per trial.</Div></Div>
+											</Div>
+										</Div>
 									</Div>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
 										Weird<br></br>Wine
 										<Div absolute right20 bottom0 w180 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Weird Wine:<Div textSm balooR mt10>A mysterious bottle of wine found in
+												BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders to
+												expand WeBe collection in BetterWorld metaverse.</Div></Div>
+											</Div>
+										</Div>
 									</Div>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
 										Wizard<br></br>WeBe
 										<Div absolute right20 bottom0 w150 imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Wizard Webe:<Div textSm balooR mt10> 3D collection of our WeBes.
+												Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.</Div></Div>
+											</Div>
+										</Div>
 									</Div>
-									<Div textSecondary fontSize48 mx100>Collection</Div>
+									<Div textSecondary fontSize48 mx100 style={{webkitTextStroke: "1px #000"}}>Collection</Div>
 								</Div>
-								<Div flex itemsCenter mt30 textSecondary2 fontSize28 style={{webkitTextStroke: "1px #000",}}>
-									<Div textSecondary2 fontSize48 mx100>BetterWorld</Div>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize28>
+									<Div textSecondary2 fontSize48 mx80 style={{webkitTextStroke: "1px #000"}}>BetterWorld</Div>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
 										Pioneer
 										<Div absolute right5 bottom0 w140 imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Pioneer:<Div textSm balooR mt10>WeBe will be the first collection to join
+												BetterWorld, the first social media for PFPs. Communicate,
+												post, and perform in BetterWorld via your Web 3 persona. </Div></Div>
+											</Div>
+										</Div>
 									</Div>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
 										Socialize<br></br>to Earn
 										<Div absolute right10 bottom0 w150 imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Socialize to Earn:<Div textSm balooR mt10>Connect in the app to receive $Klay
+												every week. Socialize to earn passive income.</Div></Div>
+											</Div>
+										</Div>
 									</Div>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
 										Capsule
 										<Div absolute right20 bottom0 w130 imgTag src={IMAGES.journeyIcons.capsule}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Capsule:<Div textSm balooR mt10>WeBe holders receive a free metaverse land-the capsule-in BetterWorld.
+												Here, you can decorate, communicate, and explore the digital world.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+								</Div>
+
+								<EmptyBlock h={250} />
+								<Div textCenter textSecondary2 text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+									In<Div spanTag textSecondary> Real </Div>World
+								</Div>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize28>
+									<Div relative w500 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										WeBe Goods
+										<Div absolute right50 bottom30 w100 imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe Goods:<Div textSm balooR mt10>Providing tangible accesorries to
+												expand our values IRL.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div relative w500 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										WeBe Partners
+										<Div absolute right0 bottom0 w230 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe Partners:<Div textSm balooR mt10>Partnering with various restaurants, bars, and entreprises to expand
+												WeBe in various methods. In addition, holders will receive discounts and exclusive offers in
+												partnered ventures. Check out Public Docs to see our ready-to-go partnerships. More partnerships underway.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div textSecondary fontSize48 mx100 style={{webkitTextStroke: "1px #000"}}>Brand</Div>
+								</Div>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize28>
+									<Div textSecondary2 fontSize48 mx90 style={{webkitTextStroke: "1px #000"}}>Community</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										Weird<br></br>IRL
+										<Div absolute right30 bottom0 w140 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Weird IRL:<Div textSm balooR mt10>Be weird, together. Regular events for holders to get together.
+												Wine nights, futsal games, and weird events prepared.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
+										WeBe<br></br>DAO
+										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe DAO:<Div textSm balooR mt10>Propose, vote, and discuss the future of WeBe in our decentralized community
+												(Off-chain forums will be available in BetterWorld).</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
+										WeBe<br></br>Bank
+										<Div absolute right30 bottom30 w130 imgTag src={IMAGES.journeyIcons.webeBank}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe Bank:<Div textSm balooR mt10>A systematic community treasury for holders to utilize. Holders will be
+												able to utilize the fund to turn their visions into reality.</Div></Div>
+											</Div>
+										</Div>
 									</Div>
 								</Div>
 
@@ -613,47 +732,50 @@ const Index: NextPage = () => {
 										</Div>
 									</Div>
 								</Div> */}
-								<EmptyBlock h={200} />
-								<Div textCenter textSecondary text3xl>
-									First 8{" "}
-									<Div spanTag textWhite>
-										WeBe
-									</Div>
+								<EmptyBlock h={250} />
+								<Div textCenter textSecondary text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+									First 8 <Div spanTag textSecondary2> WeBe</Div>
 								</Div>
-								<Div textCenter textSecondary2 text2xl>
-									Departing for{" "}
-									<Div spanTag textSecondary>
-										BetterWorld
-									</Div>
+								<Div textCenter textSecondary2 text2xl style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+									Departing for<Div spanTag textSecondary> BetterWorld</Div>
 								</Div>
 								<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py40 clx={"scrollbar-off"}>
 									{team.map((member, index) => {
 										return (
-											<Div key={index} w200 inlineBlock mx25>
-												<Div imgTag src={`/images/team/${index + 1}.png`} w200 h200 roundedXl></Div>
+											<Div key={index} inlineBlock mx25 balooR>
+												<Div imgTag src={`/images/team/${index + 1}.png`} w200 h200 roundedXl border1 borderBlack></Div>
 												<EmptyBlock h={30} />
-												<Div textWhite textCenter textXl fontBold>
+												<Div textSecondary2 textCenter textXl balooB>
 													{member.name}
 												</Div>
-												<EmptyBlock h={10} />
-												<Div textGray600 textCenter textLg fontBold>
+												<Div textSecondary2 textCenter textLg>
 													{member.position}
 												</Div>
 											</Div>
 										);
 									})}
 								</Div>
-								<EmptyBlock h={200} />
-								<Div textCenter textSecondary text3xl
-								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-									FAQS
+								<EmptyBlock h={250} />
+								<Div textCenter textSecondary2 text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+									Partnered with <Div spanTag textSecondary> the Best</Div>
 								</Div>
-								<Div maxW={1000} px40 mxAuto>
+								<Div flex justifyCenter itemsCenter mt30>
+									<Div w200 mr80 imgTag src={IMAGES.partners.bankofWine}></Div>
+									<Div w200 h70 mr80 imgTag src={IMAGES.partners.philosophiaCapital}></Div>
+									<Div w250 h35 mr80 imgTag src={IMAGES.partners.blinkers}></Div>
+									<Div w180 h50 imgTag src={IMAGES.partners.kote}></Div>
+								</Div>
+								<EmptyBlock h={200} />
+								<Div textCenter textSecondary text3xl mb30
+								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+									FAQs
+								</Div>
+								<Div maxW={900} px40 mxAuto>
 									{faqs.map(({ question, answer }, index) => {
 										return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 									})}
 								</Div>
-								<EmptyBlock h={70} />
+								<EmptyBlock h={30} />
 							</Div>
 						</Scene>
 					</Controller>
@@ -668,7 +790,7 @@ function Faq({ question, answer, isTablet }) {
 	const [clicked, setClicked] = useState(false);
 	if (isTablet) {
 		return (
-			<Div textWhite my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
+			<Div textSecondary2 my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
 				<Row textBase py20 borderB1 borderWhite>
 					<Col auto bungee>
 						Q.{" "}
@@ -690,20 +812,20 @@ function Faq({ question, answer, isTablet }) {
 		);
 	}
 	return (
-		<Div textWhite my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row textXl py20 borderB1 borderWhite itemsEnd fontThin>
-				<Col auto fontSize36 ml40 style={{webkitTextStroke: "1px #000",}}>
+		<Div textSecondary2 my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
+			<Row textXl py15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
+				<Col auto fontSize36 ml20 balooB style={{webkitTextStroke: "1px #000"}}>
 					Q.{" "}
 				</Col>
 				<Col>{question}</Col>
-				<Col auto mr40>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
+				<Col auto mr20>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
 			</Row>
 			{clicked && (
-				<Row textXl py20 fontThin>
-					<Col auto textSecondary fontSize36 ml40 style={{webkitTextStroke: "1px #000",}}>
+				<Row textXl py20 balooR>
+					<Col auto textSecondary fontSize36 ml40 balooB style={{webkitTextStroke: "1px #000",}}>
 						A.{" "}
 					</Col>
-					<Col textLg maxW={775} flex itemsEnd>{answer}</Col>
+					<Col textLg maxW={690} flex itemsCenter>{answer}</Col>
 				</Row>
 			)}
 		</Div>

@@ -17,7 +17,7 @@ const Index: NextPage = () => {
 			relative
 			hScreen>
             <Div wFull h110 bgPrimary flex itemsCenter z2 borderB1 borderBlack style={{webkitTextStroke: "1px #000",}}>
-                <Div ml250 w200 hAuto imgTag src={IMAGES.logos.webeWhiteLogo}></Div>
+                <Div ml250 w200 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
                 <Div ml20 textWhite text3xl>Air</Div>
                 <Div absolute right150 textWhite fontSize32>OnBoarding Pass</Div>
             </Div>
@@ -27,7 +27,9 @@ const Index: NextPage = () => {
                 <Div ml100 my120>
                     <Div flex>
                         <Div mr20>WALLET ADDRESS:</Div>
-                        <Div w220 h40 borderBlack border1 roundedFull balooB textTransparent fontSize25 style={{webkitTextStroke: "1px #000"}} flex justifyCenter>
+                        <Div w210 h40 borderBlack border2 roundedFull balooR fontSize25
+                        style={{webkitTextStroke: "1px #000"}} flex justifyCenter
+                        cursorPointer>
                         Connect Wallet</Div>
                     </Div>
                     <Div flex mt40>
@@ -53,12 +55,13 @@ const Index: NextPage = () => {
                         <Div fontBold> 1 per Wallet</Div>
                     </Div>
                     <Div mt40 w230 h70 borderBlack border1 roundedFull textWhite bgPrimary fontSize36 balooB
-                    style={{webkitTextStroke: "1px #000"}} flex justifyCenter itemsCenter>
+                    style={{webkitTextStroke: "1px #000"}} flex justifyCenter itemsCenter
+                    clx={"group transition hover:bg-primary-teens"} cursorPointer>
                         MINT
                     </Div>
                 </Div>
             </Div>
-            <Div absolute bottom0 right0 w600 z999 imgTag src={IMAGES.webeAir}></Div>
+            <Div absolute bottom0 right100 w550 imgTag src={IMAGES.webeAir}></Div>
         </Div>
     )
 }

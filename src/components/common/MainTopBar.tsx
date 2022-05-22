@@ -19,7 +19,7 @@ function MainTopBar() {
 				<Div flex py20 px20>
 					<Div onClick={handleClickGomz} cursorPointer>
 						<Div maxW={30}>
-							<Div imgTag src={IMAGES.logos.main}></Div>
+							<Div imgTag src={IMAGES.logos.webeWhiteLogo}></Div>
 						</Div>
 					</Div>
 					<Div flex1></Div>
@@ -58,27 +58,27 @@ function MainTopBar() {
 				<Div
 				mx10
 				textWhite
-				clx={"hover:opacity-50"}
 				cursorPointer
 				aTag
 				href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
 			>
-					<Div roundedFull bgSecondary textWhite py4 px18 fontSize12 trackingWidest style={{webkitTextStroke: "1px #000"}}>
+					<Div roundedFull bgSecondary textWhite py4 px18 fontSize12 trackingWidest style={{webkitTextStroke: "1px #000"}}
+					clx={"group transition hover:bg-primary-light"}>
 					Public Docs
 					</Div>
 				</Div>
 				<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-					<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
+					<Div imgTag src={IMAGES.logos.betterWorldSecondary2} h20 wAuto></Div>
 				</Div>
-				<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+				<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
 					<FaDiscord size={30} />
 				</Div>
-				<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
+				<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 					<FaTwitter size={25} />
 				</Div>
-				<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
+				<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
 				<Div textSm textSecondary2>l</Div>
-				<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textWhite={nextLocale!=LOCALES.EN} clx={"hover:opacity-50"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
+				<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textWhite={nextLocale!=LOCALES.EN} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
 			</Div>
 		</Div>
 	);

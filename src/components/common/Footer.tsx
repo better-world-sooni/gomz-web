@@ -17,7 +17,7 @@ export default function Footer({ index = false }) {
 			<Div mxAuto maxW={!index && 1200} px={index ? 60 : 20} py30 balooR>
 				<Row textWhite itemsCenter>
 					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
-						<Div imgTag src={IMAGES.logos.main} w60 h60></Div>
+						<Div imgTag src={IMAGES.logos.webeIcon} w60 h60></Div>
 					</Col>
 					<Col py20>
 						<Row py5>

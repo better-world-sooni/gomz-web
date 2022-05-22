@@ -12,7 +12,7 @@ const basicColors = {
     DEFAULT: '#413F70',
     light: '#616AAA',
     pastel: '#dddaf6',
-    teens: '#4c9cff',
+    teens: '#2B2948',
     teensLight: '#d5ebff',
   },
   secondary: '#8798E9',
