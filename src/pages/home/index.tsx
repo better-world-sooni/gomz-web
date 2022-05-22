@@ -102,261 +102,370 @@ const Index: NextPage = () => {
 	if (isTablet) {
 		return (
 			<>
-				<BasicHead />
-				<Div
-					style={{
-						background: "linear-gradient(180deg, #000000 0%, #02012D 51.56%, #02012D 76.56%, #000000 100%)",
-					}}
-				>
-					<Div>
-						<Controller>
-							<Scene duration={1500} triggerHook={0} pin={true}>
-								<Div relative>
-									<Div flex justifyBetween flexCol>
-										<MainTopBar />
+			<BasicHead />
+			<Div
+				style={{
+					background: "linear-gradient(180deg, #37315A 0%, #413F70 21.35%, #413F70 69.27%, #37315A 100%)",
+				}}
+			>
+				<Div>
+					<Controller>
+						<Scene duration={1000} triggerHook={0} pin={true}>
+							<Div relative>
+									<MainTopBar />
+									<Div
+										style={{ backgroundSize: "cover", backgroundPositionY: "center" }}
+										relative
+										italic
+										textSm
+									>
 										<Div
-											wFull
-											style={{backgroundSize: "cover", backgroundPositionY: "center" }}
-											relative
-											h={"200px"}
-											italic
-											my10
-											textSm
+											style={{
+											backgroundImage: `url(${IMAGES.gomzStory1})`,
+											backgroundSize: "cover",
+											backdropFilter: "brightness(50%)",
+											backgroundPositionY: "center",
+											backgroundPositionX: "center",
+											}}
+											flex
+											flexCol
 										>
-											<Div
-												wFull
-												h={"200px"}
-												textXl
-												style={{
-													backgroundImage: `url(${IMAGES.gomzStory1})`,
-													backgroundSize: "cover",
-													backdropFilter: "brightness(50%)",
-													backgroundPositionY: "center",
-													backgroundPositionX: "center",
-												}}
-											>
-												<EmptyBlock h={200} />
-												<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
-													지나친 경쟁과 획일화로 인해 곰즈는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고 삭막하여
-													거주하기 힘든 환경으로 만들어버렸습니다.
+											<Div flex justifyEnd>
+												<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR
+												style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+													WeBe have been in a planet-wide war for the past years.
+													The war was provoked by excessive indoctrination of competition and uniformity.
+													Such violence has made the planet too hostile, colorless, and systematic,<br></br>rendering it uninhabitable. 
 												</Div>
 											</Div>
-											<Scene duration={1000} triggerHook={0} pin={true}>
-												{(progress) => (
-													<Timeline totalProgress={progress} paused>
-														<Timeline
-															target={
-																<Div
-																	wFull
-																	absolute
-																	top0
-																	h={"200px"}
-																	textXl
-																	style={{
-																		backgroundImage: `url(${IMAGES.gomzStory2})`,
-																		backgroundSize: "cover",
-																		backgroundPositionY: "center",
-																		backgroundPositionX: "center",
-																	}}
-																>
-																	<EmptyBlock h={200} />
-																	<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
-																		<Div>
-																			<Div>전쟁에 지친 8,888 마리의 GOMZ는 이타적인 비전을 가지고 우주여행을 떠났습니다:</Div>
-																			<Div>---- 더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.</Div>
+										</Div>
+										<Scene duration={1000} triggerHook={0} pin={true}>
+											{(progress) => (
+												<Timeline totalProgress={progress} paused>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.gomzStory2})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flexCol
+																justifyEnd
+															>
+																<Div flex justifyStart>
+																	<Div style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+																		<Div maxW={150} textWhite mx24 my100 fontSize8 textLeft balooR>
+																			8,888 of these bears have turned to space travel with an altruistic vision:
 																		</Div>
+																		<Div maxW={150} textWhite mx24 my-80 fontSize8 textLeft balooR>
+																			Establish a “BetterWorld”, a free and creative playground for diverse innovators.
+																		</Div>
+																		<EmptyBlock h={100} />
 																	</Div>
 																</Div>
-															}
-														>
-															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-														</Timeline>
-														<Timeline
-															target={
-																<Div
-																	wFull
-																	absolute
-																	top0
-																	h={"200px"}
-																	textXl
-																	style={{
-																		backgroundImage: `url(${IMAGES.gomzStory3})`,
-																		backgroundSize: "cover",
-																		backgroundPositionY: "center",
-																		backgroundPositionX: "center",
-																	}}
-																>
-																	<EmptyBlock h={200} />
-																	<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
-																		어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 GOMZ는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해
-																		깨어났습니다
-																	</Div>
-																</Div>
-															}
-														>
-															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-														</Timeline>
-														<Timeline
-															target={
-																<Div
-																	wFull
-																	absolute
-																	top0
-																	h={"200px"}
-																	textXl
-																	style={{
-																		backgroundImage: `url(${IMAGES.gomzStory4})`,
-																		backgroundSize: "cover",
-																		backgroundPositionY: "center",
-																		backgroundPositionX: "center",
-																	}}
-																>
-																	<EmptyBlock h={200} />
-																	<Div flex itemsCenter my10 px20 textWhite textBase textCenter h100 bgBlack>
-																		GOMZ는 이들과 맞서 싸우는 대신 BetterWorld로 초대하고 환영하기로 합니다.
-																	</Div>
-																</Div>
-															}
-														>
-															<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-														</Timeline>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
 													</Timeline>
-												)}
-											</Scene>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.gomzStory3})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flex
+																flexCol
+																justifyStart
+															>
+																<Div flex justifyStart>
+																	<Div maxW={150} textWhite mx24 my90 fontSize8 textLeft balooR
+																	style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+																		During deep hibernation in their capsules in BetterWorld,
+																		WeBe have been awakened by other space wanderers<br></br>who are also in search of a habitable planet.
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.gomzStory4})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flex
+																flexCol
+															>
+																<Div flex justifyEnd>
+																	<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR
+																	style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
+																		Instead of fighting these space wanderers,<br></br>
+																		WeBe decides to invite and welcome them<br></br>to BetterWorld.
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+												</Timeline>
+											)}
+										</Scene>
+									</Div>
+								<Div relative textCenter textSecondary2 fontSize36 pt50 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
+									"We be<Div spanTag textSecondary> weird, different, and free.</Div>"
+									<Div w120 absolute top5 imgTag src={IMAGES.starDusts4}></Div>
+								</Div>
+								<Div relative flex justifyCenter balooR textWhite textCenter textSm mt20 pb80 px40 notItalic>
+								8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
+								but frankly, a little different compared to the majority. Individuals nowadays, especially those in 20 and 30s,
+								are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. 
+								WeBe challenges these social norms by creating a cultural franchise suggesting
+								an unique identity in both worlds, digital and real.
+									<Div w120 absolute right0 bottom0 imgTag src={IMAGES.starDusts5}></Div>
+								</Div>
+								<EmptyBlock h={70}/>
+								<Div textCenter textSecondary2 fontSize42 mb30 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+									In<Div spanTag textSecondary> Digital </Div>World
+								</Div>
+								<Div flex itemsCenter textSecondary2 fontSize24
+								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										Re-Birth
+										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.reBirth}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Re-Birth:<Div textSm balooR mt10>We understand your minted WeBe may not be your favorite. You will be able to re-mint
+												your WeBe up to five times at 50 $Klay per trial.</Div></Div>
+											</Div>
 										</Div>
 									</Div>
-									<EmptyBlock h={200} />
-									<Div>
-										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-										<Div mxAuto my52 maxW={400} px20>
-											<Div imgTag src={IMAGES.quote}></Div>
-										</Div>
-										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-										<Div imgTag src={IMAGES.circle} mxAuto h5 w5 my10></Div>
-									</Div>
-									<EmptyBlock h={100} />
-									<Div maxW={1200} px40 flex flexRow mxAuto itemsCenter>
-										<Div textWhite textBase textCenter maxW={750} px40 lineHeight={1.8}>
-											GOMZ는 획일화된 교육, 이로 인한 지나친 경쟁, 다름을 틀림으로 보는 사회에 지쳤습니다. 따라서{" "}
-											<Div textPrimary>더 많은 자유와 다양성이 보장되는 창의적인 문화</Div>를 전하고자 나타났습니다.
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										Weird<br></br>Wine
+										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Weird Wine:<Div textSm balooR mt10>A mysterious bottle of wine found in
+												BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders to
+												expand WeBe collection in BetterWorld metaverse.</Div></Div>
+											</Div>
 										</Div>
 									</Div>
-									<EmptyBlock h={150} />
-									<Div imgTag src={IMAGES.gomzInnovate} px40></Div>
-									<Div maxW={750} px40>
-										<Div textWhite textXl textLeft lineHeight={1.2}>
-											We Are
-											<Div textPrimary>Innovators.</Div>
-										</Div>
-										<Div textSm textLeft textWhite lineHeight={1.8} py10>
-											현재 수만개의 PFP 컬렉션이 존재하지만, 대부분 트위터 프로필 사진으로만 쓰여지고 있습니다. 해당 프로젝트에서는 GOMZ만의 Web 3.0
-											SNS인 BetterWorld 앱에서 홀더가 본인의 GOMZ에 인생을 부여하여 자신의 혁신가적인 “Web 3.0 부캐”를 직접 생성합니다. 부캐들의 SNS
-											활동, 네트워킹, 오디오 세션 등 홀더들은 GOMZ로서 마음껏 활동하고 교류하며 서로 상생하고 발전할 수 있는 프로그램에 함께하고
-											다양한 보상을 받습니다. GOMZ를 보유하는 누구든 혁신에 앞장설 수 있습니다.
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40>
+										Wizard<br></br>WeBe
+										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Wizard Webe:<Div textSm balooR mt10> 3D collection of our WeBes.
+												Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.</Div></Div>
+											</Div>
 										</Div>
 									</Div>
-									<EmptyBlock h={150} />
-									<Div imgTag src={IMAGES.gomzRebel} px40></Div>
-									<Div maxW={750} px40>
-										<Div textWhite textXl textLeft lineHeight={1.2} >
-											We Are
-											<Div textPrimary>Rebels.</Div>
-										</Div>
-										<Div textSm textLeft textWhite lineHeight={1.8} py10>
-											GOMZ는 Web 3.0 의 잠재력을 높게 사고있습니다. 하지만, Web 3의 잠재력은 더 많은 사람들이 일상생활에서 이를 이용할 수 있을 때
-											극대화될 수 있습니다. 따라서 GOMZ는 사회에 더 큰 영향을 미치는 실질적이고 사회적인 가치를 제공함으로써 더 많은 사람들과
-											함께합니다. 그 첫 번째 파트너는 코로나 여파로부터 회복하고 있는 소상공인으로, 다양한 지역의 소상공인과 공생 관계를 맺어 돕고,
-											음식점, 카페 할인 등 홀더들의 오프라인 혜택 또한 극대화합니다. 머지않아 GOMZ는 곧 당신 일상의 일부가 될 것입니다.
-										</Div>
-									</Div>
-									<EmptyBlock h={150} />
-									<Div imgTag src={IMAGES.gomzStore} px40></Div>
-									<Div maxW={750} px40>
-										<Div textWhite textXl textLeft lineHeight={1.2} bungee>
-											We Are
-											<Div textPrimary>Amigos.</Div>
-										</Div>
-										<Div textSm textLeft textWhite lineHeight={1.8} py10>
-											현재 수만개의 PFP 컬렉션이 존재하지만, 대부분 트위터 프로필 사진으로만 쓰여지고 있습니다. 해당 프로젝트에서는 GOMZ만의 Web 3.0
-											SNS인 BetterWorld 앱에서 홀더가 본인의 GOMZ에 인생을 부여하여 자신의 혁신가적인 “Web 3.0 부캐”를 직접 생성합니다. 부캐들의 SNS
-											활동, 네트워킹, 오디오 세션 등 홀더들은 GOMZ로서 마음껏 활동하고 교류하며 서로 상생하고 발전할 수 있는 프로그램에 함께하고
-											다양한 보상을 받습니다. GOMZ를 보유하는 누구든 혁신에 앞장설 수 있습니다.
+									<Div textSecondary fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Collection</Div>
+								</Div>
+								<Div flex itemsCenter textSecondary2 fontSize28
+								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
+									<Div textSecondary2 fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>BetterWorld</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										Pioneer
+										<Div absolute right5 bottom0 w140 imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Pioneer:<Div textSm balooR mt10>WeBe will be the first collection to join
+												BetterWorld, the first social media for PFPs. Communicate,
+												post, and perform in BetterWorld via your Web 3 persona. </Div></Div>
+											</Div>
 										</Div>
 									</Div>
-									<EmptyBlock h={100} />
-									<Div textCenter bungee textPrimary textXl>
-										Mileage
-									</Div>
-									<EmptyBlock h={50} />
-									<Div maxW={300} mxAuto>
-										<Div imgTag src={IMAGES.document} mxAuto maxW={150}></Div>
-										<Div textWhite textBase textCenter>
-											PFP 100% 소유 <br />및 상업적 이용 권리
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										Socialize<br></br>to Earn
+										<Div absolute right10 bottom0 w150 imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Socialize to Earn:<Div textSm balooR mt10>Connect in the app to receive $Klay
+												every week. Socialize to earn passive income.</Div></Div>
+											</Div>
 										</Div>
 									</Div>
-									<EmptyBlock h={50} />
-									<Div maxW={300} mxAuto>
-										<Div imgTag src={IMAGES.gomzCards} mxAuto maxW={150}></Div>
-										<Div textWhite textBase textCenter>
-											공정성 확보를 위한 <br /> 8,888 GOMZ 랜덤화
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
+										Capsule
+										<Div absolute right20 bottom0 w130 imgTag src={IMAGES.journeyIcons.capsule}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Capsule:<Div textSm balooR mt10>WeBe holders receive a free metaverse land-the capsule-in BetterWorld.
+												Here, you can decorate, communicate, and explore the digital world.</Div></Div>
+											</Div>
 										</Div>
-									</Div>
-									<EmptyBlock h={50} />
-									<Div maxW={300} mxAuto>
-										<Div imgTag src={IMAGES.gomzHeart} mxAuto maxW={150}></Div>
-										<Div textWhite textBase textCenter>
-											일상 속에서 만나는 <br /> 오프라인 혜택
-										</Div>
-									</Div>
-									<EmptyBlock h={100} />
-									<Div textCenter bungee textPrimary textXl>
-										First 8{" "}
-										<Div spanTag textWhite>
-											GOMZ
-										</Div>
-									</Div>
-									<Div textCenter bungee textWhite textBase>
-										Departing for{" "}
-										<Div spanTag textPrimary>
-											BetterWorld
-										</Div>
-									</Div>
-									<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py40 clx={"scrollbar-off"}>
-										{team.map((member, index) => {
-											return (
-												<Div key={index} w100 inlineBlock mx20>
-													<Div imgTag src={`/images/team/${index + 1}.png`} w100 h100 roundedXl></Div>
-													<EmptyBlock h={30} />
-													<Div textWhite textCenter textXl fontBold>
-														{member.name}
-													</Div>
-													<EmptyBlock h={10} />
-													<Div textGray600 textCenter textLg fontBold>
-														{member.position}
-													</Div>
-												</Div>
-											);
-										})}
-									</Div>
-									<EmptyBlock h={100} />
-									<Div textCenter bungee textPrimary textXl>
-										FAQS
-									</Div>
-									<Div maxW={1200} px40 mxAuto>
-										{faqs.map(({ question, answer }, index) => {
-											return <Faq key={index} question={question} answer={answer} isTablet={true} />;
-										})}
 									</Div>
 								</Div>
-							</Scene>
-						</Controller>
-						<Footer />
-					</Div>
+
+								<EmptyBlock h={100} />
+								<Div textCenter textSecondary2 fontSize42 mb30 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+									In<Div spanTag textSecondary> Real </Div>World
+								</Div>
+								<Div flex itemsCenter textSecondary2 fontSize24
+								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										WeBe Goods
+										<Div absolute right50 bottom30 w100 imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe Goods:<Div textSm balooR mt10>Providing tangible accesorries to
+												expand our values IRL.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										WeBe Partners
+										<Div absolute right0 bottom0 w230 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe Partners:<Div textSm balooR mt10>Partnering with various restaurants, bars, and entreprises to expand
+												WeBe in various methods. In addition, holders will receive discounts and exclusive offers in
+												partnered ventures. Check out Public Docs to see our ready-to-go partnerships. More partnerships underway.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div textSecondary fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Brand</Div>
+								</Div>
+								<Div flex itemsCenter mt30 textSecondary2 fontSize24
+								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
+									<Div textSecondary2 fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Community</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										Weird<br></br>IRL
+										<Div absolute right30 bottom0 w140 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>Weird IRL:<Div textSm balooR mt10>Be weird, together. Regular events for holders to get together.
+												Wine nights, futsal games, and weird events prepared.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+										WeBe<br></br>DAO
+										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe DAO:<Div textSm balooR mt10>Propose, vote, and discuss the future of WeBe in our decentralized community
+												(Off-chain forums will be available in BetterWorld).</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
+										WeBe<br></br>Bank
+										<Div absolute right30 bottom30 w130 imgTag src={IMAGES.journeyIcons.webeBank}></Div>
+										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
+											<Div relative wFull hFull>
+												<Div textSecondary2 textLg p30
+													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
+												>WeBe Bank:<Div textSm balooR mt10>A systematic community treasury for holders to utilize. Holders will be
+												able to utilize the fund to turn their visions into reality.</Div></Div>
+											</Div>
+										</Div>
+									</Div>
+								</Div>
+								<EmptyBlock h={100} />
+								<Div textCenter textSecondary fontSize42 style={{textShadow: "5px 5px 5px rgba(0, 0, 0, 0.25)"}}>
+									First 8 <Div spanTag textSecondary2> WeBe</Div>
+								</Div>
+								<Div textCenter textSecondary2 text2xl style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+									Departing for<Div spanTag textSecondary> BetterWorld</Div>
+								</Div>
+								<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py30 clx={"scrollbar-off"}>
+									{team.map((member, index) => {
+										return (
+											<Div key={index} inlineBlock mx10 balooR>
+												<Div imgTag src={`/images/team/${index + 1}.png`} w150 h150 roundedXl border1 borderBlack></Div>
+												<EmptyBlock h={30} />
+												<Div textSecondary2 textCenter textLg balooB>
+													{member.name}
+												</Div>
+												<Div textSecondary2 textCenter textSm>
+													{member.position}
+												</Div>
+											</Div>
+										);
+									})}
+								</Div>
+								<EmptyBlock h={100} />
+								<Div textCenter textSecondary2 fontSize42 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+									Partnered with
+								</Div>
+								<Div textCenter textSecondary fontSize42 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+									the Best
+								</Div>
+								<Div flex justifyCenter itemsCenter mt30>
+									<Div w100 mx20 imgTag src={IMAGES.partners.bankofWine}></Div>
+									<Div w100 h35 mx20 imgTag src={IMAGES.partners.philosophiaCapital}></Div>
+								</Div>
+								<Div flex justifyCenter itemsCenter mt30>
+									<Div w130 h18 mx20 imgTag src={IMAGES.partners.blinkers}></Div>
+									<Div w90 h25 mx20 imgTag src={IMAGES.partners.kote}></Div>
+								</Div>
+								<EmptyBlock h={100} />
+								<Div textCenter textSecondary fontSize42 mb30
+								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+									FAQs
+								</Div>
+								<Div maxW={900} px40 mxAuto>
+									{faqs.map(({ question, answer }, index) => {
+										return <Faq key={index} question={question} answer={answer} isTablet={true} />;
+									})}
+								</Div>
+								<EmptyBlock h={30}/>
+							</Div>
+						</Scene>
+					</Controller>
+					<Footer  />
 				</Div>
-			</>
+			</Div>
+		</>
 		);
 	}
 
@@ -517,11 +626,8 @@ const Index: NextPage = () => {
 																flex
 																flexCol
 															>
-																<Div flex justifyCenter mt180 notItalic style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
-																	<Div textSecondary2 fontSize58 textCenter mr20>
-																		“We be</Div>
-																	<Div textSecondary text3xl textCenter>
-																		weird, different, and free”</Div>
+																<Div textCenter textSecondary2 fontSize58 mt180 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
+																	"We be<Div spanTag textSecondary> weird, different, and free.</Div>"
 																</Div>
 																<Div flex justifyCenter balooR textWhite textCenter textXl mt30 notItalic>
 																8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
@@ -790,9 +896,9 @@ function Faq({ question, answer, isTablet }) {
 	const [clicked, setClicked] = useState(false);
 	if (isTablet) {
 		return (
-			<Div textSecondary2 my20 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-				<Row textBase py20 borderB1 borderWhite>
-					<Col auto bungee>
+			<Div textSecondary2 my15 onClick={() => setClicked((prev) => !prev)} cursorPointer>
+				<Row textLg p15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
+					<Col auto balooB style={{webkitTextStroke: "1px #000"}}>
 						Q.{" "}
 					</Col>
 					<Col>
@@ -801,11 +907,11 @@ function Faq({ question, answer, isTablet }) {
 					<Col auto>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
 				</Row>
 				{clicked && (
-					<Row py20>
-						<Col auto bungee textPrimary textBase>
+					<Row py20 px30>
+						<Col auto textSecondary textBase balooB style={{webkitTextStroke: "1px #000",}}e>
 							A.{" "}
 						</Col>
-						<Col textSm>{answer}</Col>
+						<Col textMed balooR>{answer}</Col>
 					</Row>
 				)}
 			</Div>

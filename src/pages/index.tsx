@@ -21,15 +21,12 @@ const Index: NextPage = () => {
 	const handleClickMint = () => {
 		href(urls.mint.index);
 	}
-<<<<<<< HEAD
 	// useEffect(() => {
 	// 	if (mainImage == IMAGES.gomzMainAstronautGif) {
 	// 		const timeout = setTimeout(() => href(urls.home.index), 6500);
 	// 		setAnimation(timeout);
 	// 	}
 	// }, [mainImage]);
-=======
->>>>>>> e4f6e68eaf248582e9050fbf9f81fb616d359934
 
 	if (isTablet) {
 		return (
@@ -40,13 +37,12 @@ const Index: NextPage = () => {
 					relative
 					hScreen
 				>
-<<<<<<< HEAD
-						<Div absolute w200 bottom0 right0 imgTag src={IMAGES.starDusts}></Div>
-						<Div absolute top24 left24 w80 imgTag src={IMAGES.logos.webeLogo}></Div>
-						<Div onClick={() => setClicked((prev) => !prev)}>
-							{clicked ? <Div absolute z3 top30 right24 w18 imgTag src={IMAGES.cancelIcon}/> : <Div absolute z999 top30 right24 w18 imgTag src={IMAGES.menuIcon}/>}
-							{clicked && (
-								<Div
+					<Div absolute w200 bottom0 right0 imgTag src={IMAGES.starDusts}></Div>
+					<Div absolute top24 left24 w80 imgTag src={IMAGES.logos.webeLogo}></Div>
+					<Div onClick={() => setClicked((prev) => !prev)}>
+						{clicked ? <Div absolute z3 top30 right24 w18 imgTag src={IMAGES.cancelIcon}/> : <Div absolute z999 top30 right24 w18 imgTag src={IMAGES.menuIcon}/>}
+						{clicked && (
+							<Div
 								absolute
 								z2
 								top0
@@ -54,8 +50,9 @@ const Index: NextPage = () => {
 								hFull
 								style={{background: "rgba(218, 226, 255, 0.96)"}}
 								>
-									<Div mt90 ml35 textPrimary fontSize32>
-										<Div flex mb38 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
+								<Div mt90 mx50 textPrimary fontSize32>
+									<Div flex mb38 itemsCenter
+										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
 											<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
 											<Div ml18>Public Docs</Div>
 										</Div>
@@ -75,55 +72,17 @@ const Index: NextPage = () => {
 											<FaInstagram size={32} />
 											<Div ml18>Instagram</Div>
 										</Div>
-=======
-					<Div absolute top24 left24 w90 imgTag src={IMAGES.logos.webeWhiteLogo}></Div>
-					<Div onClick={() => setClicked((prev) => !prev)}>
-						{clicked ? (
-							<Div absolute z999 top24 right24 w18 imgTag src={IMAGES.cancelIcon} />
-						) : (
-							<Div absolute z999 top24 right24 w18 imgTag src={IMAGES.menuIcon} />
-						)}
-						{clicked && (
-							<Div absolute top0 wFull hFull style={{ background: "rgba(237, 238, 233, 0.96)" }}>
-								<Div mt90 ml35 textPrimary fontSize32>
-									<Div flex mb38 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
-										<Div w30 imgTag src={IMAGES.logos.webePrimaryIcon}></Div>
-										<Div ml18>Public Docs</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}>
-										<Div w32 imgTag src={IMAGES.logos.betterWorldPrimaryLogo}></Div>
-										<Div ml17>BetterWorld</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
-										<FaDiscord size={32} />
-										<Div ml18>Discord</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}>
-										<FaTwitter size={32} />
-										<Div ml18>Twitter</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://instagram.com/offical_gomz"}>
-										<FaInstagram size={32} />
-										<Div ml18>Instagram</Div>
->>>>>>> e4f6e68eaf248582e9050fbf9f81fb616d359934
 									</Div>
 								</Div>
-							</Div>
-						)}
-					</Div>
+							)}
+						</Div>
 					<Div flex justifyCenter>
 						<Div mt104 w346 imgTag src={IMAGES.webeMainAstronaut}></Div>
 					</Div>
 					<Div flex justifyCenter>
-<<<<<<< HEAD
 						<Div flex justifyCenter itemsCenter absolute z1 mt45 bgSecondary roundedFull w150 h50 textSecondary2 fontSize22
 						style={{webkitTextStroke: "1px #000"}}
 						onClick={handleClickHome}>ENTER</Div>
-=======
-						<Div flex justifyCenter itemsCenter mt45 bgSecondary roundedFull w150 h50 textSecondary2 fontSize20 onClick={handleClickHome}>
-							ENTER
-						</Div>
->>>>>>> e4f6e68eaf248582e9050fbf9f81fb616d359934
 					</Div>
 				</Div>
 			</>
@@ -142,12 +101,11 @@ const Index: NextPage = () => {
 			>
 				<Div absolute w400 bottom0 right0 imgTag src={IMAGES.starDusts3}></Div>
 				<Div absolute top0 wFull z200 flex px80 mt40>
-<<<<<<< HEAD
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
 							<Div
 								mx10
-								textWhite
+								textSecondary2
 								cursorPointer
 								aTag
 								href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
@@ -170,63 +128,12 @@ const Index: NextPage = () => {
 							<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textSecondary2={nextLocale!=LOCALES.KO} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
 							<Div textSm textSecondary2>l</Div>
 							<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textSecondary2={nextLocale!=LOCALES.EN} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
-=======
-					<Div flex1></Div>
-					<Div flex flexRow itemsCenter>
-						<Div
-							mx10
-							textWhite
-							clx={"hover:opacity-50"}
-							cursorPointer
-							aTag
-							href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
-						>
-							<Div roundedFull bgSecondary py4 px18 fontSize12 trackingWidest borderBlack border1 style={{ webkitTextStroke: "1px #000" }}>
-								Public Docs
-							</Div>
->>>>>>> e4f6e68eaf248582e9050fbf9f81fb616d359934
 						</Div>
-						<Div mx10 clx={"hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-							<Div imgTag src={IMAGES.logos.betterWorld} h20 wAuto></Div>
-						</Div>
-						<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
-							<FaDiscord size={30} />
-						</Div>
-						<Div mx10 textSecondary2 clx={"hover:opacity-50"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
-							<FaTwitter size={25} />
-						</Div>
-						<Div
-							mx10
-							textSm
-							textSecondary={nextLocale == LOCALES.KO}
-							textSecondary2={nextLocale != LOCALES.KO}
-							clx={"hover:opacity-50"}
-							cursorPointer
-							onClick={() => reloadWithLocale(LOCALES.KO)}
-						>
-							KOR
-						</Div>
-						<Div textSm textSecondary2>
-							l
-						</Div>
-						<Div
-							ml10
-							textSm
-							textSecondary={nextLocale == LOCALES.EN}
-							textSecondary2={nextLocale != LOCALES.EN}
-							clx={"hover:opacity-50"}
-							cursorPointer
-							onClick={() => reloadWithLocale(LOCALES.EN)}
-						>
-							ENG
-						</Div>
-					</Div>
 				</Div>
 				<Div flex hFull relative>
 					<Div flexCol z100 ml200 mt100>
 						<Div w300 imgTag src={IMAGES.logos.webeLogo}></Div>
 						<Div mt35 textLeft fontSize25 textSecondary2 leadingTight>
-<<<<<<< HEAD
 							Cultural franchise dedicated to global innovators,<br></br>party heads, and Web 3 enthusiasts</Div>
 						<Div mt35 clx={"group transition hover:bg-primary-light"} w140 bgSecondary roundedFull px40 py8 fontSize25 textWhite borderBlack border1
 						onClick={handleClickMint} cursorPointer>
@@ -237,33 +144,6 @@ const Index: NextPage = () => {
 						<Div absolute top200 right100 textSecondary2 textXl>
 						&lt; Click Me To Enter!
 						</Div>
-=======
-							Cultural franchise dedicated to global innovators,<br></br>party heads, and Web 3 enthusiasts
-						</Div>
-						<Div
-							mt35
-							clx={"hover:opacity-50"}
-							w140
-							bgSecondary
-							roundedFull
-							px40
-							py8
-							fontSize25
-							textWhite
-							borderBlack
-							border1
-							onClick={handleClickMint}
-							cursorPointer
-						>
-							MINT
-						</Div>
-						<Div mt45 w250 imgTag src={IMAGES.mintingProcess}></Div>
-					</Div>
-					<Div absolute w350 top110 right250 z999 imgTag src={IMAGES.gomzMainAstronaut} cursorPointer onClick={handleClickHome}></Div>
-					<Div absolute top200 right100 textSecondary2 textXl>
-						Click Me To Enter!
-					</Div>
->>>>>>> e4f6e68eaf248582e9050fbf9f81fb616d359934
 				</Div>
 			</Div>
 		</>
