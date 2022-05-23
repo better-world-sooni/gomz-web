@@ -4,9 +4,8 @@ import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import { href, LOCALES, reloadWithLocale } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
-import { FaColumns, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
-import Footer from "src/components/common/Footer";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 const Index: NextPage = () => {
@@ -33,11 +32,11 @@ const Index: NextPage = () => {
 			<>
 				<BasicHead />
 				<Div
-					style={{background:"linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)"}}
+					style={{background:"linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)", overflow :"hidden"}}
 					relative
 					hScreen
 				>
-					<Div absolute w200 bottom0 right0 imgTag src={IMAGES.starDusts}></Div>
+					<Div absolute w250 bottom20 right-40 imgTag src={IMAGES.starDusts3} rotate45></Div>
 					<Div absolute top24 left24 w80 imgTag src={IMAGES.logos.webeLogo}></Div>
 					<Div onClick={() => setClicked((prev) => !prev)}>
 						{clicked ? <Div absolute z3 top30 right24 w18 imgTag src={IMAGES.cancelIcon}/> : <Div absolute z999 top30 right24 w18 imgTag src={IMAGES.menuIcon}/>}
@@ -50,9 +49,10 @@ const Index: NextPage = () => {
 								hFull
 								style={{background: "rgba(218, 226, 255, 0.96)"}}
 								>
-								<Div mt90 mx50 textPrimary fontSize32>
-									<Div flex mb38 itemsCenter
-										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
+								<Div mt90 mx50 textPrimary fontSize32 style={{webkitTextStroke:"1px #fff"}}>
+									<Div flex mb38 itemsCenter 
+										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
+										style={{webkitTextStroke:"1px #fff"}}>
 											<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
 											<Div ml18>Public Docs</Div>
 										</Div>
@@ -60,11 +60,13 @@ const Index: NextPage = () => {
 											<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
 											<Div ml17>BetterWorld</Div>
 										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+										<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}
+										style={{webkitTextStroke:"1px #fff"}}>
 											<FaDiscord size={32} />
 											<Div ml18>Discord</Div>
 										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}>
+										<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}
+										style={{webkitTextStroke:"1px #fff"}}>
 											<FaTwitter size={32} />
 											<Div ml18>Twitter</Div>
 										</Div>
@@ -77,10 +79,10 @@ const Index: NextPage = () => {
 							)}
 						</Div>
 					<Div flex justifyCenter>
-						<Div mt104 w346 imgTag src={IMAGES.webeMainAstronaut}></Div>
+						<Div mt120 w346 imgTag src={IMAGES.webeMainAstronaut} style={{animation:"float 6s ease-in-out infinite"}}></Div>
 					</Div>
 					<Div flex justifyCenter>
-						<Div flex justifyCenter itemsCenter absolute z1 mt45 bgSecondary roundedFull w150 h50 textSecondary2 fontSize22
+						<Div flex justifyCenter itemsCenter absolute z1 mt35 bgSecondary roundedFull w150 h50 textSecondary2 fontSize22
 						style={{webkitTextStroke: "1px #000"}}
 						onClick={handleClickHome}>ENTER</Div>
 					</Div>
@@ -99,7 +101,7 @@ const Index: NextPage = () => {
 				hScreen
 				relative
 			>
-				<Div absolute w400 bottom0 right0 imgTag src={IMAGES.starDusts3}></Div>
+				<Div absolute w300 bottom0 right0 imgTag src={IMAGES.starDusts3}></Div>
 				<Div absolute top0 wFull z200 flex px80 mt40>
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
@@ -140,7 +142,8 @@ const Index: NextPage = () => {
 							MINT</Div>
 						<Div mt45 w250 imgTag src={IMAGES. mintingProcess}></Div>
 					</Div>
-					<Div absolute w350 top110 right250 z999 imgTag src={IMAGES.webeMainAstronaut } cursorPointer onClick={handleClickHome}></Div>
+					<Div absolute w350 top110 right250 z999 style={{animation:"float 6s ease-in-out infinite"}}
+					imgTag src={IMAGES.webeMainAstronaut} cursorPointer onClick={handleClickHome}></Div>
 						<Div absolute top200 right100 textSecondary2 textXl>
 						&lt; Click Me To Enter!
 						</Div>

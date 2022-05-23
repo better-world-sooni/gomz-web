@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
+	const [clicked, setClicked] = useState(false);
 	const { locale } = useRouter();
 	const team = [
 		{
@@ -91,7 +92,7 @@ const Index: NextPage = () => {
 				"WeBe's minting process is divided into 4 categories (Cohort A, Cohort B, Cohort C, and Public Minting). To be selected for Cohort A, B, or C, you must either 1) be invited by a cohort member, 2) submit a WeBe whitelist application, or 3) be selected for a whitelisted event. From whitelist to public minting, all sales are performed on this website. For secondary sales, it will be available via OpenSea.",
 		},
 		{
-			question: "Mnt date & price?",
+			question: "Mint date & price?",
 			answer: "Whitelist Minting: Date- TBD I Price- 100 KLAY Public Minting: Date- TBD I Price: 200 KLAY",
 		},
 		{
@@ -112,7 +113,20 @@ const Index: NextPage = () => {
 					<Controller>
 						<Scene duration={1000} triggerHook={0} pin={true}>
 							<Div relative>
-									<MainTopBar />
+							<MainTopBar />
+							<Div onClick={() => setClicked((prev) => !prev)}
+								style={{backgroundImage: `url(${IMAGES.storyPreview})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",}}
+								wFull h300>
+								{clicked ? <Div/>
+								:<Div flex justifyCenter itemsCenter hFull>
+								<Div flex justifyCenter itemsCenter w200 h50 border1 borderBlack bgSecondary roundedFull textSecondary2
+								style={{webkitTextStroke: "1px #000"}}>
+									View Their Story
+								</Div></Div>}
+								{clicked && (
 									<Div
 										style={{ backgroundSize: "cover", backgroundPositionY: "center" }}
 										relative
@@ -123,7 +137,6 @@ const Index: NextPage = () => {
 											style={{
 											backgroundImage: `url(${IMAGES.gomzStory1})`,
 											backgroundSize: "cover",
-											backdropFilter: "brightness(50%)",
 											backgroundPositionY: "center",
 											backgroundPositionX: "center",
 											}}
@@ -238,9 +251,11 @@ const Index: NextPage = () => {
 											)}
 										</Scene>
 									</Div>
+								)}
+							</Div>
 								<Div relative textCenter textSecondary2 fontSize36 pt50 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
 									"We be<Div spanTag textSecondary> weird, different, and free.</Div>"
-									<Div w120 absolute top5 imgTag src={IMAGES.starDusts4}></Div>
+									<Div w120 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 								</Div>
 								<Div relative flex justifyCenter balooR textWhite textCenter textSm mt20 pb80 px40 notItalic>
 								8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
@@ -248,92 +263,94 @@ const Index: NextPage = () => {
 								are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. 
 								WeBe challenges these social norms by creating a cultural franchise suggesting
 								an unique identity in both worlds, digital and real.
-									<Div w120 absolute right0 bottom0 imgTag src={IMAGES.starDusts5}></Div>
+									<Div w120 absolute right0 bottom0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 								</Div>
 								<EmptyBlock h={70}/>
 								<Div textCenter textSecondary2 fontSize42 mb30 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
 									In<Div spanTag textSecondary> Digital </Div>World
 								</Div>
-								<Div flex itemsCenter textSecondary2 fontSize24
-								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
-									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
-										Re-Birth
-										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.reBirth}></Div>
+								<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY:"hidden" }} clx={"scrollbar-off"}>
+									<Div inlineFlex itemsCenter>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight py40 px10 mr10 textCenter>
+										Re-<br></br>Birth
+										<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.reBirth}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py10 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Re-Birth:<Div textSm balooR mt10>We understand your minted WeBe may not be your favorite. You will be able to re-mint
+												>Re-Birth:<Div fontSize12 balooR mt10>We understand your minted WeBe may not be your favorite. You will be able to re-mint
 												your WeBe up to five times at 50 $Klay per trial.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 mr10 textCenter>
 										Weird<br></br>Wine
-										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+										<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py10 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Weird Wine:<Div textSm balooR mt10>A mysterious bottle of wine found in
+												>Weird Wine:<Div fontSize12 balooR mt10>A mysterious bottle of wine found in
 												BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders to
 												expand WeBe collection in BetterWorld metaverse.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 mr10 textCenter>
 										Wizard<br></br>WeBe
-										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
+										<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg p20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Wizard Webe:<Div textSm balooR mt10> 3D collection of our WeBes.
+												>Wizard Webe:<Div fontSize12 balooR mt10> 3D collection of our WeBes.
 												Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
 									<Div textSecondary fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Collection</Div>
+									</Div>
 								</Div>
-								<Div flex itemsCenter textSecondary2 fontSize28
-								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
+								<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY:"hidden"}} clx={"scrollbar-off"}>
+									<Div inlineFlex itemsCenter>
 									<Div textSecondary2 fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>BetterWorld</Div>
-									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter>
 										Pioneer
-										<Div absolute right5 bottom0 w140 imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+										<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.pioneer}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py10 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Pioneer:<Div textSm balooR mt10>WeBe will be the first collection to join
+												>Pioneer:<Div fontSize12 balooR mt10>WeBe will be the first collection to join
 												BetterWorld, the first social media for PFPs. Communicate,
 												post, and perform in BetterWorld via your Web 3 persona. </Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter>
 										Socialize<br></br>to Earn
-										<Div absolute right10 bottom0 w150 imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
+										<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py20 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Socialize to Earn:<Div textSm balooR mt10>Connect in the app to receive $Klay
+												>Socialize<br></br>to Earn:<Div fontSize12 balooR mt10>Connect in the app to receive $Klay
 												every week. Socialize to earn passive income.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 textCenter>
 										Capsule
-										<Div absolute right20 bottom0 w130 imgTag src={IMAGES.journeyIcons.capsule}></Div>
+										<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.capsule}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py20 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Capsule:<Div textSm balooR mt10>WeBe holders receive a free metaverse land-the capsule-in BetterWorld.
+												>Capsule:<Div fontSize12 balooR mt10>WeBe holders receive a free metaverse land-the capsule-in BetterWorld.
 												Here, you can decorate, communicate, and explore the digital world.</Div></Div>
 											</Div>
 										</Div>
+									</Div>
 									</Div>
 								</Div>
 
@@ -341,77 +358,79 @@ const Index: NextPage = () => {
 								<Div textCenter textSecondary2 fontSize42 mb30 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
 									In<Div spanTag textSecondary> Real </Div>World
 								</Div>
-								<Div flex itemsCenter textSecondary2 fontSize24
-								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
-									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+								<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY:"hidden" }} clx={"scrollbar-off"}>
+									<Div inlineFlex itemsCenter>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 mr10 textCenter>
 										WeBe Goods
-										<Div absolute right50 bottom30 w100 imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+										<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py40 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>WeBe Goods:<Div textSm balooR mt10>Providing tangible accesorries to
-												expand our values IRL.</Div></Div>
+												>WeBe Goods:<Div fontSize12 balooR mt10>Providing tangible accesorries to
+                                                expand our values IRL.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight py40 px10 mr10 textCenter>
 										WeBe Partners
-										<Div absolute right0 bottom0 w230 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+										<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.webePartners}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py10 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>WeBe Partners:<Div textSm balooR mt10>Partnering with various restaurants, bars, and entreprises to expand
-												WeBe in various methods. In addition, holders will receive discounts and exclusive offers in
-												partnered ventures. Check out Public Docs to see our ready-to-go partnerships. More partnerships underway.</Div></Div>
+												>WeBe Partners:<Div fontSize8 balooR mt10>Partnering with various restaurants, bars, and entreprises to expand
+                                                WeBe in various methods. In addition, holders will receive discounts and exclusive offers in
+                                                partnered ventures. More partnerships underway.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
 									<Div textSecondary fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Brand</Div>
+									</Div>
 								</Div>
-								<Div flex itemsCenter mt30 textSecondary2 fontSize24
-								style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
+								<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY:"hidden"}} clx={"scrollbar-off"}>
+									<Div inlineFlex itemsCenter>
 									<Div textSecondary2 fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Community</Div>
-									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
-										Weird<br></br>IRL
-										<Div absolute right30 bottom0 w140 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter>
+										Weird IRL
+										<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py20 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Weird IRL:<Div textSm balooR mt10>Be weird, together. Regular events for holders to get together.
-												Wine nights, futsal games, and weird events prepared.</Div></Div>
+												>Weird IRL:<Div fontSize12 balooR mt10>Be weird, together. Regular events for holders to get together.
+                                                Wine nights, futsal games, and weird events prepared.</Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr10 p40>
-										WeBe<br></br>DAO
-										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter>
+										Weird Projects
+										<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py20 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>WeBe DAO:<Div textSm balooR mt10>Propose, vote, and discuss the future of WeBe in our decentralized community
-												(Off-chain forums will be available in BetterWorld).</Div></Div>
+												>Weird Projects:<Div fontSize12 balooR mt10>Propose, vote, and discuss weird projects in our decentralized community
+                                                (Off-chain forums will be available in BetterWorld).</Div></Div>
 											</Div>
 										</Div>
 									</Div>
-									<Div relative w320 h200 border1 borderBlack bgPrimaryLight p40>
-										WeBe<br></br>Bank
-										<Div absolute right30 bottom30 w130 imgTag src={IMAGES.journeyIcons.webeBank}></Div>
+									<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 textCenter>
+										WeBe Bank
+										<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.webeBank}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
-												<Div textSecondary2 textLg p30
+												<Div textSecondary2 textLg py20 px20 textLeft
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>WeBe Bank:<Div textSm balooR mt10>A systematic community treasury for holders to utilize. Holders will be
-												able to utilize the fund to turn their visions into reality.</Div></Div>
+												>WeBe Bank:<Div fontSize12 balooR mt10>A systematic community treasury for holders to utilize. Holders will be
+                                                able to utilize the fund to turn their visions into reality.</Div></Div>
 											</Div>
 										</Div>
+									</Div>
 									</Div>
 								</Div>
 								<EmptyBlock h={100} />
-								<Div textCenter textSecondary fontSize42 style={{textShadow: "5px 5px 5px rgba(0, 0, 0, 0.25)"}}>
+								<Div textCenter textSecondary fontSize42 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
 									First 8 <Div spanTag textSecondary2> WeBe</Div>
 								</Div>
 								<Div textCenter textSecondary2 text2xl style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
@@ -450,7 +469,7 @@ const Index: NextPage = () => {
 								</Div>
 								<EmptyBlock h={100} />
 								<Div textCenter textSecondary fontSize42 mb30
-								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+								style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
 									FAQs
 								</Div>
 								<Div maxW={900} px40 mxAuto>
@@ -618,7 +637,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.homeBackground})`,
+																	background: "linear-gradient(180deg, #37315A 0%, #413F70 100%)",
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -626,8 +645,9 @@ const Index: NextPage = () => {
 																flex
 																flexCol
 															>
-																<Div textCenter textSecondary2 fontSize58 mt180 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
+																<Div textCenter textSecondary2 fontSize64 mt180 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
 																	"We be<Div spanTag textSecondary> weird, different, and free.</Div>"
+																	<Div w250 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 																</Div>
 																<Div flex justifyCenter balooR textWhite textCenter textXl mt30 notItalic>
 																8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
@@ -635,6 +655,7 @@ const Index: NextPage = () => {
 																<br></br>are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. 
 																<br></br>WeBe challenges these social norms by creating a cultural franchise suggesting
 																<br></br>an unique identity in both worlds, digital and real.
+																<Div w300 absolute right0 bottom0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 																</Div>
 															</Div>
 														}
@@ -648,10 +669,10 @@ const Index: NextPage = () => {
 									<Div h={"8vh"}></Div>
 								</Div>
 								<EmptyBlock h={150} />
-								<Div textCenter textSecondary2 text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+								<Div textCenter textSecondary2 fontSize72 style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									In<Div spanTag textSecondary> Digital </Div>World
 								</Div>
-								<Div flex itemsCenter mt30 textSecondary2 fontSize28>
+								<Div flex itemsCenter mt40 textSecondary2 fontSize28>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
 										Re-Birth
 										<Div absolute right10 bottom0 w200 imgTag src={IMAGES.journeyIcons.reBirth}></Div>
@@ -733,10 +754,10 @@ const Index: NextPage = () => {
 								</Div>
 
 								<EmptyBlock h={250} />
-								<Div textCenter textSecondary2 text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+								<Div textCenter textSecondary2 fontSize72 style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									In<Div spanTag textSecondary> Real </Div>World
 								</Div>
-								<Div flex itemsCenter mt30 textSecondary2 fontSize28>
+								<Div flex itemsCenter mt40 textSecondary2 fontSize28>
 									<Div relative w500 h200 border1 borderBlack bgPrimaryLight mr30 p40>
 										WeBe Goods
 										<Div absolute right50 bottom30 w100 imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
@@ -779,13 +800,13 @@ const Index: NextPage = () => {
 										</Div>
 									</Div>
 									<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40>
-										WeBe<br></br>DAO
-										<Div absolute right0 bottom0 w150 imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+										Weird<br></br>Projects
+										<Div absolute right0 bottom0 w130 imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
 										<Div absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"}>
 											<Div relative wFull hFull>
 												<Div textSecondary2 textLg p30
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>WeBe DAO:<Div textSm balooR mt10>Propose, vote, and discuss the future of WeBe in our decentralized community
+												>Weird Projects:<Div textSm balooR mt10>Propose, vote, and discuss weird projects in our decentralized community
 												(Off-chain forums will be available in BetterWorld).</Div></Div>
 											</Div>
 										</Div>
@@ -839,16 +860,16 @@ const Index: NextPage = () => {
 									</Div>
 								</Div> */}
 								<EmptyBlock h={250} />
-								<Div textCenter textSecondary text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+								<Div textCenter textSecondary fontSize72 style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									First 8 <Div spanTag textSecondary2> WeBe</Div>
 								</Div>
-								<Div textCenter textSecondary2 text2xl style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
+								<Div textCenter textSecondary2 fontSize36 mt-20 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}}>
 									Departing for<Div spanTag textSecondary> BetterWorld</Div>
 								</Div>
-								<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py40 clx={"scrollbar-off"}>
+								<Div mt40 style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
 									{team.map((member, index) => {
 										return (
-											<Div key={index} inlineBlock mx25 balooR>
+											<Div key={index} inlineBlock mx20 balooR>
 												<Div imgTag src={`/images/team/${index + 1}.png`} w200 h200 roundedXl border1 borderBlack></Div>
 												<EmptyBlock h={30} />
 												<Div textSecondary2 textCenter textXl balooB>
@@ -862,17 +883,17 @@ const Index: NextPage = () => {
 									})}
 								</Div>
 								<EmptyBlock h={250} />
-								<Div textCenter textSecondary2 text3xl style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
+								<Div textCenter textSecondary2 fontSize72 style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									Partnered with <Div spanTag textSecondary> the Best</Div>
 								</Div>
-								<Div flex justifyCenter itemsCenter mt30>
+								<Div flex justifyCenter itemsCenter mt40>
 									<Div w200 mr80 imgTag src={IMAGES.partners.bankofWine}></Div>
 									<Div w200 h70 mr80 imgTag src={IMAGES.partners.philosophiaCapital}></Div>
 									<Div w250 h35 mr80 imgTag src={IMAGES.partners.blinkers}></Div>
 									<Div w180 h50 imgTag src={IMAGES.partners.kote}></Div>
 								</Div>
 								<EmptyBlock h={200} />
-								<Div textCenter textSecondary text3xl mb30
+								<Div textCenter textSecondary fontSize72 mb40
 								style={{textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)"}}>
 									FAQs
 								</Div>
@@ -886,6 +907,7 @@ const Index: NextPage = () => {
 						</Scene>
 					</Controller>
 					<Footer  />
+					<Div absolute z99 w300 bottom0 right0 imgTag src={IMAGES.starDusts2}></Div>
 				</Div>
 			</Div>
 		</>
