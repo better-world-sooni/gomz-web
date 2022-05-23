@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  i18n: {
-    locales: ['ko', 'en'],
-    defaultLocale: 'ko',
-  },
   publicRuntimeConfig: {
     CONF_SERVER_URL: process.env.CONF_SERVER_URL,
     CONF_COOKIE_DOMAIN: process.env.CONF_COOKIE_DOMAIN,
