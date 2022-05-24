@@ -29,6 +29,7 @@ export const IMAGES = {
     starDusts4: '/images/starDusts4.png',
     circleLeftArrow: '/images/circleLeftArrow.png',
     storyPreview: '/images/storyPreview.png',
+    webeGalaxy: '/images/webeGalaxy.png',
 
     logos: {
         discord: '/images/logos/discord.png',

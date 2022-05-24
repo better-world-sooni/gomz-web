@@ -54,56 +54,62 @@ const Index: NextPage = () => {
 	return (
 		<Div
 			style={{
-				background: "#EDEEE9",
+				background: "linear-gradient(114.31deg, #3E4071 51.1%, #37315A 89.59%)",
 			}}
 			relative
-            hScreen>
-            <Div wFull h110 bgPrimary flex itemsCenter z2 borderB1 borderBlack style={{webkitTextStroke: "1px #000",}}>
-                <Div ml250 w200 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
-                <Div ml20 textWhite text3xl>Air</Div>
-                <Div absolute right150 textWhite fontSize32>OnBoarding Pass</Div>
-            </Div>
-            <Div wFull h10 z1 bgSecondary borderB1 borderBlack></Div>
-            <Div flex overMono fontSize25>
-                <Div my250 ml90 w50 h50 imgTag src={IMAGES.circleLeftArrow} onClick={handleClickWebe} cursorPointer></Div>
-                <Div ml100 my120>
-                    <Div flex>
-                        <Div mr20>WALLET ADDRESS:</Div>
-                        <Div w210 h40 borderBlack border2 roundedFull balooR fontSize25
-                        style={{webkitTextStroke: "1px #000"}} flex justifyCenter
-                        cursorPointer>
-                        Connect Wallet</Div>
-                    </Div>
-                    <Div flex mt40>
-                        <Div mr20>FLIGHT:</Div>
-                        <Div fontBold mr20>WhereverYouAre</Div>
-                        <Div mr20>TO</Div>
-                        <Div fontBold>BetterWorld</Div>
-                    </Div>
-                    <Div flex mt40>
-                        <Div mr20>SEAT TYPE:</Div>
-                        <Div fontBold>CohortA</Div>
-                    </Div>
-                    <Div mt40>AVAILABLE SEATS:</Div>
+            hScreen
+            flex
+            itemsCenter
+            justifyCenter
+            >
+            <Div flexCol style={{ boxShadow: "25px 25px 0px rgba(0, 0, 0, 0.25)"}}>
+                <Div flex itemsCenter w1300 h90 bgPrimary z2 borderB1 borderBlack style={{webkitTextStroke: "1px #000", }}>
+                    <Div ml70 w150 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
+                    <Div flex1 ml20 textWhite fontSize42>GALAXY</Div>
+                    <Div mr70 textWhite fontSize32>OnBOARDING PASS</Div>
                 </Div>
-                <Div absolute top475 right160 borderDashed border1 w700 h0 rotate90 borderBlack></Div>
-                <Div absolute top205 right110>
-                    <Div flex mt40>
-                        <Div mr20>PRICE:</Div>
-                        <Div fontBold>150 KLAY</Div>
+                <Div h10 z1 bgSecondary borderB1 borderBlack></Div>
+                <Div flex h380 bgWhite overMono fontSize22>
+                    <Div my160 mx70 w40 h40 imgTag src={IMAGES.circleLeftArrow} onClick={handleClickWebe} cursorPointer></Div>
+                    <Div flex1 py50>
+                        <Div flex>
+                            <Div mr20>WALLET ADDRESS:</Div>
+                            <Div w180 h35 borderBlack border2 roundedFull balooR fontSize20
+                            style={{webkitTextStroke: "1px #000"}} flex justifyCenter
+                            cursorPointer>
+                            Connect Wallet</Div>
+                        </Div>
+                        <Div flex mt30>
+                            <Div mr20>FLIGHT:</Div>
+                            <Div fontBold mr20>WhereverYouAre</Div>
+                            <Div mr20>TO</Div>
+                            <Div fontBold>BetterWorld</Div>
+                        </Div>
+                        <Div flex mt30>
+                            <Div mr20>SEAT TYPE:</Div>
+                            <Div fontBold>CohortA</Div>
+                        </Div>
+                        <Div mt30>AVAILABLE SEATS:</Div>
                     </Div>
-                    <Div flex mt40>
-                        <Div mr20>AMOUNT:</Div>
-                        <Div fontBold> 1 per Wallet</Div>
+                    <Div mr90 py20 borderL1 borderBlack borderDashed pl120>
+                        <Div flex mt30>
+                            <Div mr20>PRICE:</Div>
+                            <Div fontBold>150 KLAY</Div>
+                        </Div>
+                        <Div flex mt30>
+                            <Div mr20>AMOUNT:</Div>
+                            <Div fontBold> 1 per Wallet</Div>
+                        </Div>
+                        <Div mt40 w180 h60 borderBlack border1 roundedFull textWhite bgPrimary fontSize32 balooB
+                        style={{webkitTextStroke: "1px #000"}} flex justifyCenter itemsCenter
+                        clx={"group transition hover:bg-primary-teens"} cursorPointer>
+                            MINT
+                        </Div>
                     </Div>
-                    <Div mt40 w230 h70 borderBlack border1 roundedFull textWhite bgPrimary fontSize36 balooB
-                    style={{webkitTextStroke: "1px #000"}} flex justifyCenter itemsCenter
-                    clx={"group transition hover:bg-primary-teens"} cursorPointer>
-                        MINT
-                    </Div>
+                    <Div absolute right400 bottom180 w270 rotate12 imgTag src={IMAGES.webeGalaxy}></Div>
                 </Div>
             </Div>
-            <Div absolute bottom0 right100 w550 imgTag src={IMAGES.webeAir}></Div>
+            <Div absolute right0 bottom0 w200 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
         </Div>
     )
 }
