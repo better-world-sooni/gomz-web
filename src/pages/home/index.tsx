@@ -254,7 +254,7 @@ const Index: NextPage = () => {
 								)}
 							</Div>
 								<Div relative textCenter textSecondary2 fontSize36 pt50 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
-									&apos;We be<Div spanTag textSecondary> weird, different, and free.</Div>&apos;
+									&quot;We be<Div spanTag textSecondary> weird, different, and free.</Div>&apos;
 									<Div w120 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 								</Div>
 								<Div relative flex justifyCenter balooR textWhite textCenter textSm mt20 pb80 px40 notItalic>
@@ -646,7 +646,7 @@ const Index: NextPage = () => {
 																flexCol
 															>
 																<Div textCenter textSecondary2 fontSize64 mt180 style={{textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)"}} notItalic>
-																	&apos;We be<Div spanTag textSecondary> weird, different, and free.</Div>&apos;
+																	&quot;We be<Div spanTag textSecondary> weird, different, and free.</Div>&apos;
 																	<Div w250 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 																</Div>
 																<Div flex justifyCenter balooR textWhite textCenter textXl mt30 notItalic>
