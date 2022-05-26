@@ -32,7 +32,7 @@ const Index: NextPage = () => {
 			<>
 				<BasicHead />
 				<Div
-					style={{background:"linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)", overflow :"hidden"}}
+					style={{background:"linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)", overflow :"auto"}}
 					relative
 					hScreen
 				>
@@ -97,11 +97,12 @@ const Index: NextPage = () => {
 				style={{
 					background: "linear-gradient(114.31deg, #3E4071 51.1%, #37315A 89.59%)",
 					webkitTextStroke: "1px #000",
+					overflow: "auto"
 				}}
 				hScreen
 				relative
 			>
-				<Div absolute w300 bottom0 right0 imgTag src={IMAGES.starDusts3}></Div>
+				<Div absolute w350 bottom0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 				<Div absolute top0 wFull z200 flex px80 mt40>
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
@@ -132,21 +133,37 @@ const Index: NextPage = () => {
 							<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textSecondary2={nextLocale!=LOCALES.EN} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
 						</Div>
 				</Div>
-				<Div flex hFull relative>
-					<Div flexCol z100 ml200 mt100>
-						<Div w300 imgTag src={IMAGES.logos.webeLogo}></Div>
-						<Div mt35 textLeft fontSize25 textSecondary2 leadingTight>
-							Cultural franchise dedicated to global innovators,<br></br>party heads, and Web 3 enthusiasts</Div>
-						<Div mt35 clx={"group transition hover:bg-primary-light"} w140 bgSecondary roundedFull px40 py8 fontSize25 textWhite borderBlack border1
-						onClick={handleClickMint} cursorPointer>
-							MINT</Div>
-						<Div mt45 w250 imgTag src={IMAGES. mintingProcess}></Div>
-					</Div>
-					<Div absolute w350 top110 right250 z999 style={{animation:"float 6s ease-in-out infinite"}}
-					imgTag src={IMAGES.webeMainAstronaut} cursorPointer onClick={handleClickHome}></Div>
-						<Div absolute top200 right100 textSecondary2 textXl>
-						&lt; Click Me To Enter!
+				<Div flex hScreen wFull p150>
+					<Div flex1 flex justifyStart itemsCenter>
+						<Div flexCol>
+							<Div flex maxW350>
+								<Div pt30 pb20 imgTag src={IMAGES.logos.webeLogo}></Div>
+							</Div>
+							<Div flex maxW500>
+								<Div pb20 textLeft fontSize22 textSecondary2 leadingTight>
+								Cultural franchise dedicated to global innovators, party heads, and Web 3 enthusiasts</Div>
+							</Div>
+							<Div flex pb30>
+								<Div maxW150 flex justifyCenter clx={"group transition hover:bg-primary-light"} bgSecondary roundedFull px40 py8 fontSize25 textWhite borderBlack border1
+									onClick={handleClickMint} cursorPointer>
+									MINT
+								</Div>
+							</Div>
+							<Div flex maxW250>
+								<Div pb30 imgTag src={IMAGES. mintingProcess}></Div>
+							</Div>
 						</Div>
+					</Div>
+					<Div flex1 flex justifyEnd itemsCenter>
+						<Div flex2 maxW400>
+							<Div pt60 style={{animation:"float 6s ease-in-out infinite"}}
+							imgTag src={IMAGES.webeMainAstronaut} cursorPointer onClick={handleClickHome}>
+							</Div>
+						</Div>
+						<Div flex1 maxW300>
+							<Div pb300 imgTag src={IMAGES.clickmetoEnter}></Div>
+						</Div>
+					</Div>
 				</Div>
 			</Div>
 		</>

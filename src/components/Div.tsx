@@ -875,6 +875,7 @@ const propsToClx = (props) => {
 		flexNowrap: () => clxs.push("flex-nowrap"),
 		// flex
 		flex1: () => clxs.push("flex-1"),
+		flex2: () => addStyle(styles, "", { flex: 2 }),
 		flexAuto: () => clxs.push("flex-auto"),
 		flexInitial: () => clxs.push("flex-initial"),
 		flexNone: () => clxs.push("flex-none"),

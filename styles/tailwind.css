@@ -123,6 +123,7 @@
       word-break: keep-all;
       
     }
+
     .scrollbar-off::-webkit-scrollbar {
       display: none;
     }

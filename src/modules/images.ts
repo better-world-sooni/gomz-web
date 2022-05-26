@@ -22,7 +22,7 @@ export const IMAGES = {
     webeMainAstronaut: '/images/webeMainAstronaut.png',
     webeMainAstronautg: '/images/webeMainAstronaut.gif',
     mintingProcess: '/images/mintingProcess.png',
-    clickmetoenter: '/images/clickmetoenter.png',
+    clickmetoEnter: '/images/clickmetoEnter.png',
     menuIcon: '/images/menuIcon.png',
     cancelIcon: '/images/cancelIcon.png',
     starDusts3: '/images/starDusts3.png',

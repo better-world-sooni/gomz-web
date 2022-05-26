@@ -62,14 +62,14 @@ const Index: NextPage = () => {
             itemsCenter
             justifyCenter
             >
-            <Div flexCol style={{ boxShadow: "25px 25px 0px rgba(0, 0, 0, 0.25)"}}>
-                <Div flex itemsCenter w1300 h90 bgPrimary z2 borderB1 borderBlack style={{webkitTextStroke: "1px #000", }}>
+            <Div flexCol style={{ boxShadow: "25px 25px 0px rgba(0, 0, 0, 0.25)"}} roundedLg>
+                <Div flex itemsCenter w1300 h90 bgPrimary z2 borderB1 borderBlack style={{webkitTextStroke: "1px #000", }} roundedTLg>
                     <Div ml70 w150 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
                     <Div flex1 ml20 textWhite fontSize42>GALAXY</Div>
                     <Div mr70 textWhite fontSize32>OnBOARDING PASS</Div>
                 </Div>
                 <Div h10 z1 bgSecondary borderB1 borderBlack></Div>
-                <Div flex h380 bgWhite overMono fontSize22>
+                <Div flex h380 bgWhite overMono fontSize22 roundedBLg>
                     <Div my160 mx70 w40 h40 imgTag src={IMAGES.circleLeftArrow} onClick={handleClickWebe} cursorPointer></Div>
                     <Div flex1 py50>
                         <Div flex>
