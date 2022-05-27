@@ -32,7 +32,7 @@ const Index: NextPage = () => {
 			<>
 				<BasicHead />
 				<Div
-					style={{background:"linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)", overflow :"auto"}}
+					style={{background:"linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)", overflowY: "auto", overflowX: "hidden"}}
 					relative
 					hScreen
 				>
@@ -79,10 +79,10 @@ const Index: NextPage = () => {
 							)}
 						</Div>
 					<Div flex justifyCenter>
-						<Div mt120 w346 imgTag src={IMAGES.webeMainAstronaut} style={{animation:"float 6s ease-in-out infinite"}}></Div>
+						<Div mt100 w300 imgTag src={IMAGES.webeMainAstronaut} style={{animation:"float 6s ease-in-out infinite"}}></Div>
 					</Div>
 					<Div flex justifyCenter>
-						<Div flex justifyCenter itemsCenter absolute z1 mt35 bgSecondary roundedFull w150 h50 textSecondary2 fontSize22
+						<Div flex justifyCenter itemsCenter absolute z1 my30 bgSecondary roundedFull w150 h50 textSecondary2 fontSize22
 						style={{webkitTextStroke: "1px #000"}}
 						onClick={handleClickHome}>ENTER</Div>
 					</Div>
