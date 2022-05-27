@@ -74,7 +74,7 @@ function MainTopBar() {
 				aTag
 				href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
 			>
-					<Div roundedFull bgSecondary textWhite py4 px18 fontSize12 trackingWidest style={{webkitTextStroke: "1px #000"}}
+					<Div roundedFull bgSecondary textSecondary2 py4 px18 fontSize12 trackingWidest
 					clx={"group transition hover:bg-primary-light"}>
 					Public Docs
 					</Div>
@@ -88,9 +88,9 @@ function MainTopBar() {
 				<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 					<FaTwitter size={25} />
 				</Div>
-				<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textWhite={nextLocale!=LOCALES.KO} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
+				<Div mx10 textSm textSecondary={nextLocale==LOCALES.KO} textSecondary2={nextLocale!=LOCALES.KO} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.KO)}>KOR</Div>
 				<Div textSm textSecondary2>l</Div>
-				<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textWhite={nextLocale!=LOCALES.EN} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
+				<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textSecondary2={nextLocale!=LOCALES.EN} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
 			</Div>
 		</Div>
 	);

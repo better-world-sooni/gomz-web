@@ -91,7 +91,7 @@ const Index: NextPage = () => {
                         </Div>
                         <Div mt30>AVAILABLE SEATS:</Div>
                     </Div>
-                    <Div mr90 py20 borderL1 borderBlack borderDashed pl120>
+                    <Div relative mr90 py20 borderL1 borderBlack borderDashed pl120>
                         <Div flex mt30>
                             <Div mr20>PRICE:</Div>
                             <Div fontBold>150 KLAY</Div>
@@ -105,8 +105,8 @@ const Index: NextPage = () => {
                         clx={"group transition hover:bg-primary-teens"} cursorPointer>
                             MINT
                         </Div>
+                        <Div absolute right250 bottom70 w270 rotate12 imgTag src={IMAGES.webeGalaxy}></Div>
                     </Div>
-                    <Div absolute right400 bottom180 w270 rotate12 imgTag src={IMAGES.webeGalaxy}></Div>
                 </Div>
             </Div>
             <Div absolute right0 bottom0 w200 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>

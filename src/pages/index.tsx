@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
 	const [clicked, setClicked] = useState(false);
-	const { locale: nextLocale } = useRouter();
+	const { locale: nextLocale} = useRouter();
 	const [mainImage, setMainImage] = useState(IMAGES.gomzMainAstronaut);
 	const [animation, setAnimation] = useState(null);
 	const handleClickHome = () => {
@@ -100,8 +100,7 @@ const Index: NextPage = () => {
 					overflow: "auto"
 				}}
 				hScreen
-				relative
-			>
+				relative>
 				<Div absolute w350 bottom0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 				<Div absolute top0 wFull z200 flex px80 mt40>
 						<Div flex1></Div>
@@ -114,7 +113,6 @@ const Index: NextPage = () => {
 								href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
 							>
 								<Div roundedFull bgSecondary py4 px18 fontSize12 trackingWidest borderBlack border1
-								style={{webkitTextStroke: "1px #000"}}
 								clx={"group transition hover:bg-primary-light"}>
 									Public Docs
 								</Div>
@@ -133,35 +131,32 @@ const Index: NextPage = () => {
 							<Div ml10 textSm textSecondary={nextLocale==LOCALES.EN} textSecondary2={nextLocale!=LOCALES.EN} clx={"group transition hover:text-primary-light"} cursorPointer onClick={() => reloadWithLocale(LOCALES.EN)}>ENG</Div>
 						</Div>
 				</Div>
-				<Div flex hScreen wFull p150>
-					<Div flex1 flex justifyStart itemsCenter>
-						<Div flexCol>
-							<Div flex maxW350>
-								<Div pt30 pb20 imgTag src={IMAGES.logos.webeLogo}></Div>
+				<Div flex itemsCenter justifyCenter hScreen wFull p150>
+					<Div flexCol>
+						<Div flex maxW350>
+							<Div pt30 pb20 imgTag src={IMAGES.logos.webeLogo}></Div>
+						</Div>
+						<Div flex maxW500>
+							<Div pb20 textLeft fontSize22 textSecondary2 leadingTight>
+							Cultural franchise dedicated to global innovators, party heads, and Web 3 enthusiasts</Div>
+						</Div>
+						<Div flex pb30>
+							<Div maxW150 flex justifyCenter clx={"group transition hover:bg-primary-light"} bgSecondary roundedFull px40 py8 fontSize23 textWhite borderBlack border1
+								onClick={handleClickHome} cursorPointer>
+								ENTER
 							</Div>
-							<Div flex maxW500>
-								<Div pb20 textLeft fontSize22 textSecondary2 leadingTight>
-								Cultural franchise dedicated to global innovators, party heads, and Web 3 enthusiasts</Div>
+							<Div ml10 maxW150 flex justifyCenter clx={"group transition hover:bg-primary-light"} bgSecondary2 roundedFull px40 py8 fontSize23 textWhite borderBlack border1
+								onClick={handleClickMint} cursorPointer>
+								MINT
 							</Div>
-							<Div flex pb30>
-								<Div maxW150 flex justifyCenter clx={"group transition hover:bg-primary-light"} bgSecondary roundedFull px40 py8 fontSize25 textWhite borderBlack border1
-									onClick={handleClickMint} cursorPointer>
-									MINT
-								</Div>
-							</Div>
-							<Div flex maxW250>
-								<Div pb30 imgTag src={IMAGES. mintingProcess}></Div>
-							</Div>
+						</Div>
+						<Div flex maxW250>
+							<Div pb30 imgTag src={IMAGES. mintingProcess}></Div>
 						</Div>
 					</Div>
-					<Div flex1 flex justifyEnd itemsCenter>
-						<Div flex2 maxW400>
-							<Div pt60 style={{animation:"float 6s ease-in-out infinite"}}
-							imgTag src={IMAGES.webeMainAstronaut} cursorPointer onClick={handleClickHome}>
-							</Div>
-						</Div>
-						<Div flex1 maxW300>
-							<Div pb300 imgTag src={IMAGES.clickmetoEnter}></Div>
+					<Div ml30 maxW320>
+						<Div pt60 style={{animation:"float 6s ease-in-out infinite"}}
+							imgTag src={IMAGES.webeMainAstronaut}>
 						</Div>
 					</Div>
 				</Div>
