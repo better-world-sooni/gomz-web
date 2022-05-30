@@ -1,28 +1,12 @@
-export const IMAGES = {
-    spaceBg: '/images/spaceBgSquare.png',
-    gomzAstronaut: '/images/gomzAstronaut.png',
+const prefix = "https://dkwhovxeipvs0.cloudfront.net"
+
+const images = {
     webeStory1: '/images/webeStory1.png',
     webeStory2: '/images/webeStory2.png',
     webeStory3: '/images/webeStory3.png',
     webeStory4: '/images/webeStory4.png',
-    gomzInnovate: '/images/gomzInnovate.png',
-    gomzRebel: '/images/gomzRebel.png',
-    quote: '/images/quote.png',
-    gomzArtist: '/images/gomzArtist.png',
-    gomzPlanet: '/images/gomzPlanet.png',
-    appMain: '/images/appMain.png',
-    appForum: '/images/appForum.png',
-    document: '/images/document.png',
-    gomzCards: '/images/gomzCards.png',
-    gomzHeart: '/images/gomzHeart.png',
-    gomzStore: '/images/gomzStore.png',
-    circle: '/images/circle.png',
-    webeAir: '/images/webeAir.gif',
-    gomzMainAstronaut: '/images/gomzMainAstronaut.png',
     webeMainAstronaut: '/images/webeMainAstronaut.png',
-    webeMainAstronautg: '/images/webeMainAstronaut.gif',
     mintingProcess: '/images/mintingProcess.png',
-    clickmetoEnter: '/images/clickmetoEnter.png',
     menuIcon: '/images/menuIcon.png',
     cancelIcon: '/images/cancelIcon.png',
     starDusts3: '/images/starDusts3.png',
@@ -30,15 +14,12 @@ export const IMAGES = {
     circleLeftArrow: '/images/circleLeftArrow.png',
     storyPreview: '/images/storyPreview.png',
     webeGalaxy: '/images/webeGalaxy.png',
-
     logos: {
         discord: '/images/logos/discord.png',
         twitter: '/images/logos/twitter.png',
         betterWorld: '/images/logos/betterWorld.png',
         betterWorldPrimary: '/images/logos/betterWorldPrimary.png',
         betterWorldSecondary2: '/images/logos/betterWorldSecondary2.png',
-        gomzWord: '/images/logos/gomzWord.png',
-        gomzMotto: '/images/logos/gomzMotto.png',
         webeIcon: '/images/logos/webeIcon.png',
         webeIconPrimary: '/images/logos/webeIconPrimary.png',
         webeWhiteLogo: '/images/logos/webeWhiteLogo.png',
@@ -47,7 +28,7 @@ export const IMAGES = {
     journeyIcons: {
         capsule: '/images/journeyIcons/capsule.png',
         pioneer: '/images/journeyIcons/pioneer.png',
-        reBirth: '/images/journeyIcons/reBirth.png',
+        rebirth: '/images/journeyIcons/rebirth.png',
         socializetoEarn: '/images/journeyIcons/socializetoEarn.png',
         webeBank: '/images/journeyIcons/webeBank.png',
         webeDAO: '/images/journeyIcons/webeDAO.png',
@@ -75,3 +56,19 @@ export const IMAGES = {
         kote: "/images/partners/kote.png",
     }
 }
+
+const addPrefixToImageUris = (data) => {
+    data &&
+      Object.entries(data).map(([key, v]) => {
+        if (typeof v === 'string') {
+          data[key] = prefix + v;;
+        } else if (typeof v === 'object') {
+            addPrefixToImageUris(v);
+        }
+      });
+  };
+(function () {
+addPrefixToImageUris(images);
+})();
+
+export const IMAGES = images
