@@ -104,15 +104,8 @@ const Index: NextPage = () => {
 						)}
 						{clicked && (
 							<Div absolute z2 top0 wFull hFull style={{ background: "rgba(218, 226, 255, 0.96)" }}>
-								<Div mt90 mx50 textPrimary fontSize32 style={{ webkitTextStroke: "1px #fff" }}>
-									<Div
-										flex
-										mb38
-										itemsCenter
-										aTag
-										href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
-										style={{ webkitTextStroke: "1px #fff" }}
-									>
+								<Div mt90 mx50 textPrimary fontSize32>
+									<Div flex mb38 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
 										<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
 										<Div ml18>Public Docs</Div>
 									</Div>
@@ -120,11 +113,11 @@ const Index: NextPage = () => {
 										<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
 										<Div ml17>BetterWorld</Div>
 									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"} style={{ webkitTextStroke: "1px #fff" }}>
+									<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
 										<FaDiscord size={32} />
 										<Div ml18>Discord</Div>
 									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"} style={{ webkitTextStroke: "1px #fff" }}>
+									<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}>
 										<FaTwitter size={32} />
 										<Div ml18>Twitter</Div>
 									</Div>
@@ -169,7 +162,6 @@ const Index: NextPage = () => {
 			<Div
 				style={{
 					background: "linear-gradient(114.31deg, #3E4071 51.1%, #37315A 85.59%)",
-					webkitTextStroke: "1px #000",
 					overflow: "auto",
 				}}
 				hScreen
@@ -270,7 +262,7 @@ const Index: NextPage = () => {
 								>
 									MINT
 								</Div>
-								<Div mr10 flex justifyCenter roundedFull px40 py8 fontSize23 textWhite textBorder1 onClick={handleClickHome} cursorPointer>
+								<Div mr10 flex justifyCenter roundedFull px40 py8 fontSize23 textWhite onClick={handleClickHome} cursorPointer>
 									READ THE STORY
 								</Div>
 							</Div>
