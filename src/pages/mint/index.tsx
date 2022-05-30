@@ -3,7 +3,7 @@ import { useState } from "react";
 import Div from "src/components/Div";
 import { useSmartContract } from "src/hooks/contract/kip17";
 import { IMAGES } from "src/modules/images";
-import { href } from "src/modules/routeHelper";
+import { href } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 
 const Index: NextPage = () => {

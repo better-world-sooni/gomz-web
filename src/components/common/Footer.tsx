@@ -1,14 +1,13 @@
 import { useRouter } from "next/router";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { IMAGES } from "src/modules/images";
-import { href } from "src/modules/routeHelper";
+import { href } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import Col from "../Col";
 import Div from "../Div";
 import Row from "../Row";
 
 export default function Footer() {
-	const { asPath } = useRouter();
 	const handleClickGomz = () => {
 		href(urls.index);
 	};

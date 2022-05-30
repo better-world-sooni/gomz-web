@@ -1,7 +1,7 @@
 import { IMAGES } from "src/modules/images";
 import Div from "../Div";
 import { FaBook, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
-import { href, LOCALES, reloadWithLocale } from "src/modules/routeHelper";
+import { href, LOCALES, reloadWithLocale } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import { useRouter } from "next/router";
 import useIsTablet from "src/hooks/useIsTablet";

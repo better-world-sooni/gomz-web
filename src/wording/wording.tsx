@@ -141,8 +141,8 @@ export const wording = {
 						ko: "알파김",
 					},
 					position: {
-						ko: "CEO",
-						en: "CEO",
+						ko: "대표",
+						en: "Representative",
 					},
 					countries: "🇰🇷 🇨🇳 🇦🇺 🇺🇸",
 					specialty: {
@@ -175,8 +175,8 @@ export const wording = {
 					},
 					countries: "🇰🇷 🇻🇳 ",
 					position: {
-						ko: "COO",
-						en: "COO",
+						ko: "커뮤니티 진행자",
+						en: "Community Coordinator",
 					},
 					specialty: {
 						en: "People first",
@@ -205,8 +205,8 @@ export const wording = {
 						ko: "키드김",
 					},
 					position: {
-						ko: "CBO",
-						en: "CBO",
+						ko: "디젠",
+						en: "Degen",
 					},
 					countries: "🇰🇷 🇩🇪 🇨🇳 🇺🇸",
 					specialty: {
@@ -232,12 +232,12 @@ export const wording = {
 				},
 				jieun: {
 					name: {
-						en: "Disney Park",
-						ko: "디즈니박",
+						en: "Artist Park",
+						ko: "아티스트박",
 					},
 					position: {
-						en: "Illustrator",
-						ko: "일러스트 디자이너",
+						en: "Creator",
+						ko: "크리에이터",
 					},
 					countries: "🇰🇷 🇭🇰 🇨🇳",
 					specialty: {

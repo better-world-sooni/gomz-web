@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import BasicHead from "src/components/BasicHead";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
-import { href, LOCALES, reloadWithLocale } from "src/modules/routeHelper";
+import { href, LOCALES, reloadWithLocale } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
@@ -33,14 +33,6 @@ const Index: NextPage = () => {
 			countries: wording.team.index.members.jieun.countries,
 		},
 		{
-			name: wording.team.index.members.jade.name[locale],
-			imageUri: IMAGES.team.seonghyun,
-			position: wording.team.index.members.jade.position[locale],
-			desc: wording.team.index.members.jade.desc[locale],
-			specialty: wording.team.index.members.jade.specialty[locale],
-			countries: wording.team.index.members.jade.countries,
-		},
-		{
 			name: wording.team.index.members.minjun.name[locale],
 			imageUri: IMAGES.team.mj,
 			position: wording.team.index.members.minjun.position[locale],
@@ -63,30 +55,6 @@ const Index: NextPage = () => {
 			desc: wording.team.index.members.eric.desc[locale],
 			specialty: wording.team.index.members.eric.specialty[locale],
 			countries: wording.team.index.members.eric.countries,
-		},
-		{
-			name: wording.team.index.members.ian.name[locale],
-			imageUri: IMAGES.team.ian,
-			position: wording.team.index.members.ian.position[locale],
-			desc: wording.team.index.members.ian.desc[locale],
-			specialty: wording.team.index.members.ian.specialty[locale],
-			countries: wording.team.index.members.ian.countries,
-		},
-		{
-			name: wording.team.index.members.jaehwan.name[locale],
-			imageUri: IMAGES.team.jay,
-			position: wording.team.index.members.jaehwan.position[locale],
-			desc: wording.team.index.members.jaehwan.desc[locale],
-			specialty: wording.team.index.members.jaehwan.specialty[locale],
-			countries: wording.team.index.members.jaehwan.countries,
-		},
-		{
-			name: wording.team.index.members.seungan.name[locale],
-			imageUri: IMAGES.team.seungan,
-			position: wording.team.index.members.seungan.position[locale],
-			desc: wording.team.index.members.seungan.desc[locale],
-			specialty: wording.team.index.members.seungan.specialty[locale],
-			countries: wording.team.index.members.seungan.countries,
 		},
 	];
 	const faqs = [
@@ -292,7 +260,6 @@ const Index: NextPage = () => {
 									px40
 									py8
 									fontSize23
-									textGray800
 									textWhite
 									borderBlack
 									border2
@@ -613,68 +580,70 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={250} />
-					<Div textCenter textSecondary fontSize72 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
-						First 8{" "}
-						<Div spanTag textSecondary2>
-							{" "}
-							WeBe
+					<Div maxW={1100} mxAuto>
+						<Div textCenter textSecondary fontSize72 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
+							The First{" "}
+							<Div spanTag textSecondary2>
+								{" "}
+								WeBes
+							</Div>
 						</Div>
-					</Div>
-					<Div textCenter textSecondary2 fontSize36 mt-20 style={{ textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)" }}>
-						Departing for
-						<Div spanTag textSecondary>
-							{" "}
-							BetterWorld
+						<Div textCenter textSecondary2 fontSize36 mt-20 style={{ textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)" }}>
+							Departing for
+							<Div spanTag textSecondary>
+								{" "}
+								BetterWorld
+							</Div>
 						</Div>
-					</Div>
-					<Div mt40 style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"}>
-						{team.map((member, index) => {
-							return (
-								<Div key={index} inlineBlock mx20 balooR>
-									<Div imgTag src={member.imageUri} w200 h200 roundedXl border2 borderBlack></Div>
-									<EmptyBlock h={30} />
-									<Div textSecondary2 textCenter textXl balooB>
-										{member.name}
+						<Div mt40 mxAuto maxW={960} flex>
+							{team.map((member, index) => {
+								return (
+									<Div key={index} inlineBlock mx20 balooR>
+										<Div imgTag src={member.imageUri} roundedXl border2 borderBlack></Div>
+										<EmptyBlock h={30} />
+										<Div textSecondary2 textCenter textXl balooB>
+											{member.name}
+										</Div>
+										<Div textSecondary2 textCenter textLg>
+											{member.position}
+										</Div>
 									</Div>
-									<Div textSecondary2 textCenter textLg>
-										{member.position}
-									</Div>
-								</Div>
-							);
-						})}
-					</Div>
-					<EmptyBlock h={250} />
-					<Div textCenter textSecondary2 fontSize72 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
-						Partnered with{" "}
-						<Div spanTag textSecondary>
-							{" "}
-							the Best
+								);
+							})}
 						</Div>
-					</Div>
-					<Div flex itemsCenter mt40>
-						<Div flex1>
-							<Div mxAuto maxW250 imgTag src={IMAGES.partners.aiLabs}></Div>
+						<EmptyBlock h={250} />
+						<Div textCenter textSecondary2 fontSize72 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
+							Partnered with{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								the Best
+							</Div>
 						</Div>
-						<Div flex1>
-							<Div mxAuto maxW250 imgTag src={IMAGES.partners.bankofWine}></Div>
+						<Div flex itemsCenter mt40 gapX={80}>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.bankofWine}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.blinkers}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.kote}></Div>
+							</Div>
 						</Div>
-						<Div flex1>
-							<Div mxAuto maxW250 imgTag src={IMAGES.partners.blinkers}></Div>
+						<EmptyBlock h={200} />
+						<Div textCenter textSecondary fontSize72 mb40 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
+							FAQs
 						</Div>
-						<Div flex1>
-							<Div mxAuto maxW250 imgTag src={IMAGES.partners.kote}></Div>
+						<Div maxW={900} px40 mxAuto>
+							{faqs.map(({ question, answer }, index) => {
+								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
+							})}
 						</Div>
+						<EmptyBlock h={100} />
 					</Div>
-					<EmptyBlock h={200} />
-					<Div textCenter textSecondary fontSize72 mb40 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
-						FAQs
-					</Div>
-					<Div maxW={900} px40 mxAuto>
-						{faqs.map(({ question, answer }, index) => {
-							return <Faq key={index} question={question} answer={answer} isTablet={false} />;
-						})}
-					</Div>
-					<EmptyBlock h={100} />
 				</Div>
 				<Footer />
 			</Div>
