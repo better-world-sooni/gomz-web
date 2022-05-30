@@ -12,6 +12,8 @@ import EmptyBlock from "src/components/EmptyBlock";
 import { wording } from "src/wording/wording";
 import { Faq } from "src/components/Faq";
 import Footer from "src/components/common/Footer";
+import Col from "src/components/Col";
+import Row from "src/components/Row";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -642,7 +644,22 @@ const Index: NextPage = () => {
 								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 							})}
 						</Div>
-						<EmptyBlock h={100} />
+						<EmptyBlock h={200} />
+						<Div textCenter textSecondary2 fontSize72 mb40 style={{ textShadow: "8px 8px 0px rgba(0, 0, 0, 0.25)" }}>
+							Lastly,{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								Say
+							</Div>
+						</Div>
+						<Row mt100>
+							<Col></Col>
+							<Col auto>
+								<Div clx={"rainbow-text"}>WeeEEeeEeWwwoooOO</Div>
+							</Col>
+							<Col></Col>
+						</Row>
+						<EmptyBlock h={200} />
 					</Div>
 				</Div>
 				<Footer />
