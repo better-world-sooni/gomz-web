@@ -138,7 +138,7 @@ const Index: NextPage = () => {
 									>
 										<Div
 											style={{
-											backgroundImage: `url(${IMAGES.gomzStory1})`,
+											backgroundImage: `url(${IMAGES.webeStory1})`,
 											backgroundSize: "cover",
 											backgroundPositionY: "center",
 											backgroundPositionX: "center",
@@ -167,7 +167,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory2})`,
+																	backgroundImage: `url(${IMAGES.webeStory2})`,
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -200,7 +200,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory3})`,
+																	backgroundImage: `url(${IMAGES.webeStory3})`,
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -230,7 +230,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory4})`,
+																	backgroundImage: `url(${IMAGES.webeStory4})`,
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -302,7 +302,7 @@ const Index: NextPage = () => {
 										<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 											<Div textSecondary2 textLg px20 textLeft
 												clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-											>Wizard Webe:<Div fontSize12 balooR> 3D collection of our WeBes.
+											>Wizard WeBe:<Div fontSize12 balooR> 3D collection of our WeBes.
 											Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.</Div></Div>										</Div>
 									</Div>
 									<Div textSecondary fontSize36 mx50 style={{webkitTextStroke: "1px #000"}}>Collection</Div>
@@ -496,7 +496,7 @@ const Index: NextPage = () => {
 											hFull
 											textXl
 											style={{
-												backgroundImage: `url(${IMAGES.gomzStory1})`,
+												backgroundImage: `url(${IMAGES.webeStory1})`,
 												backgroundSize: "cover",
 												backdropFilter: "brightness(50%)",
 												backgroundPositionY: "center",
@@ -526,7 +526,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory2})`,
+																	backgroundImage: `url(${IMAGES.webeStory2})`,
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -536,10 +536,10 @@ const Index: NextPage = () => {
 															>
 																<Div flex justifyStart>
 																	<Div style={{textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)"}}>
-																		<Div maxW={500} textWhite mx80 my350 fontSize24 textLeft balooR>
+																		<Div maxW={500} textWhite mx80 my380 fontSize24 textLeft balooR>
 																			8,888 of these bears have turned to space travel with an altruistic vision:
 																		</Div>
-																		<Div maxW={500} textWhite mx80 my-320 fontSize24 textLeft balooR>
+																		<Div maxW={500} textWhite mx80 my-360 fontSize24 textLeft balooR>
 																			Establish a “BetterWorld”, a free and creative playground for diverse innovators.
 																		</Div>
 																		<EmptyBlock h={100} />
@@ -559,7 +559,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory3})`,
+																	backgroundImage: `url(${IMAGES.webeStory3})`,
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -589,7 +589,7 @@ const Index: NextPage = () => {
 																hFull
 																textXl
 																style={{
-																	backgroundImage: `url(${IMAGES.gomzStory4})`,
+																	backgroundImage: `url(${IMAGES.webeStory4})`,
 																	backgroundSize: "cover",
 																	backgroundPositionY: "center",
 																	backgroundPositionX: "center",
@@ -693,7 +693,7 @@ const Index: NextPage = () => {
 										<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 												<Div textSecondary2 px30 fontSize={"1.5vw"}
 													clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100"}
-												>Wizard Webe:<Div balooR fontSize={"0.95vw"}> 3D collection of our WeBes.
+												>Wizard WeBe:<Div balooR fontSize={"0.95vw"}> 3D collection of our WeBes.
 												Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.</Div></Div>
 										</Div>
 									</Div>
