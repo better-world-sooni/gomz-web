@@ -68,6 +68,7 @@ export const IMAGES = {
         seonghyun: "/images/team/8.png",
     },
     partners: {
+        aiLabs: "/images/partners/aiLabs.png",
         bankofWine: "/images/partners/bankofWine.png",
         philosophiaCapital: "/images/partners/philosophiaCapital.png",
         blinkers: "/images/partners/blinkers.png",

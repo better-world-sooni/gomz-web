@@ -16,7 +16,7 @@
 
 import React from 'react'
 import classNames from 'classnames'
-import _ from 'lodash'
+import _, { max } from 'lodash'
 import type { DivPropsType } from 'src/types/DivPropsType'
 import ReactTooltip from 'react-tooltip'
 import randomstring from 'randomstring'

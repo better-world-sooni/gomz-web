@@ -114,11 +114,15 @@ const Index: NextPage = () => {
 						<Scene duration={1000} triggerHook={0} pin={true}>
 							<Div relative>
 							<MainTopBar />
-							<Div onClick={() => setClicked((prev) => !prev)}
-								style={{backgroundImage: `url(${IMAGES.storyPreview})`,
+							<Div
+								onClick={() => setClicked((prev) => !prev)}
+								h250
+								style={{
+								backgroundImage: `url(${IMAGES.storyPreview})`,
 								backgroundSize: "cover",
 								backgroundPositionY: "center",
-								backgroundPositionX: "center",}}>
+								backgroundPositionX: "center",
+								}}>
 								{clicked ? <Div/>
 								:<Div flex justifyCenter itemsCenter hFull>
 								<Div flex justifyCenter itemsCenter w200 h50 border1 borderBlack bgSecondary roundedFull textSecondary2
@@ -436,8 +440,8 @@ const Index: NextPage = () => {
 									the Best
 								</Div>
 								<Div flex justifyCenter itemsCenter mt30>
+									<Div w100 mx20 imgTag src={IMAGES.partners.aiLabs}></Div>
 									<Div w100 mx20 imgTag src={IMAGES.partners.bankofWine}></Div>
-									<Div w100 h35 mx20 imgTag src={IMAGES.partners.philosophiaCapital}></Div>
 								</Div>
 								<Div flex justifyCenter itemsCenter mt30>
 									<Div w130 h18 mx20 imgTag src={IMAGES.partners.blinkers}></Div>
@@ -877,6 +881,7 @@ const Index: NextPage = () => {
 									Partnered with <Div spanTag textSecondary> the Best</Div>
 								</Div>
 								<Div flex itemsCenter mt40>
+									<Div flex1><Div mxAuto maxW250 imgTag src={IMAGES.partners.aiLabs}></Div></Div>
 									<Div flex1><Div mxAuto maxW250 imgTag src={IMAGES.partners.bankofWine}></Div></Div>
 									<Div flex1><Div mxAuto maxW250 imgTag src={IMAGES.partners.blinkers}></Div></Div>
 									<Div flex1><Div mxAuto maxW250 imgTag src={IMAGES.partners.kote}></Div></Div>
