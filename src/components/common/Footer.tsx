@@ -7,14 +7,14 @@ import Col from "../Col";
 import Div from "../Div";
 import Row from "../Row";
 
-export default function Footer({ index = false }) {
+export default function Footer() {
 	const { asPath } = useRouter();
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
 	return (
-		<Div>
-			<Div mxAuto maxW={!index && 1200} px={index ? 60 : 20} py30 balooR>
+		<Div px80 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
+			<Div mxAuto maxW={1100} py30 balooR>
 				<Row textWhite itemsCenter>
 					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
 						<Div imgTag src={IMAGES.logos.webeIcon} w60 h60></Div>
