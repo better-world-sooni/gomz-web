@@ -56,7 +56,8 @@ const Index: NextPage = () => {
 											<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
 											<Div ml18>Public Docs</Div>
 										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}>
+										<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}
+										style={{webkitTextStroke:"1px #fff"}}>
 											<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
 											<Div ml17>BetterWorld</Div>
 										</Div>

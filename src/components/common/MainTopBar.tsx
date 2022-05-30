@@ -34,23 +34,28 @@ function MainTopBar() {
 								>
 								<Div mt90 mx50 textPrimary fontSize32>
 									<Div flex mb38 itemsCenter
-										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
+										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
+										style={{webkitTextStroke:"1px #fff"}}>
 										<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
 										<Div ml18>Public Docs</Div>
 									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}>
+									<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}
+									style={{webkitTextStroke:"1px #fff"}}>
 										<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
 										<Div ml17>BetterWorld</Div>
 									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+									<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}
+									style={{webkitTextStroke:"1px #fff"}}>
 										<FaDiscord size={32} />
 										<Div ml18>Discord</Div>
 									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}>
+									<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}
+									style={{webkitTextStroke:"1px #fff"}}>
 										<FaTwitter size={32} />
 										<Div ml18>Twitter</Div>
 									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://instagram.com/offical_gomz"}>
+									<Div flex mb38 itemsCenter aTag href={"https://instagram.com/offical_gomz"}
+									style={{webkitTextStroke:"1px #fff"}}>
 										<FaInstagram size={32} />
 										<Div ml18>Instagram</Div>
 									</Div>
