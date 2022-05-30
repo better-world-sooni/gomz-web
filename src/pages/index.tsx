@@ -11,21 +11,13 @@ import { useRouter } from "next/router";
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
 	const [clicked, setClicked] = useState(false);
-	const { locale: nextLocale} = useRouter();
-	const [mainImage, setMainImage] = useState(IMAGES.gomzMainAstronaut);
-	const [animation, setAnimation] = useState(null);
+	const { locale: nextLocale } = useRouter();
 	const handleClickHome = () => {
 		href(urls.home.index)
 	};
 	const handleClickMint = () => {
 		href(urls.mint.index);
 	}
-	// useEffect(() => {
-	// 	if (mainImage == IMAGES.gomzMainAstronautGif) {
-	// 		const timeout = setTimeout(() => href(urls.home.index), 6500);
-	// 		setAnimation(timeout);
-	// 	}
-	// }, [mainImage]);
 
 	if (isTablet) {
 		return (
