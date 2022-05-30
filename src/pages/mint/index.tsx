@@ -1,16 +1,10 @@
 import type { NextPage } from "next";
 import { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import Col from "src/components/Col";
 import Div from "src/components/Div";
-import Row from "src/components/Row";
 import { useSmartContract } from "src/hooks/contract/kip17";
-import { useCaver } from "src/hooks/wallet/kaikas";
-import { COLORS } from "src/modules/constants";
 import { IMAGES } from "src/modules/images";
 import { href } from "src/modules/routeHelper";
 import { urls } from "src/modules/urls";
-import { VIDEOS } from "src/modules/videos";
 
 const Index: NextPage = () => {
 	const handleClickWebe = () => {

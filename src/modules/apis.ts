@@ -4,9 +4,7 @@ import querystring from 'querystring'
 import {isEmpty, omitBy, isNil} from 'lodash'
 const { publicRuntimeConfig } = getConfig()
 
-export const SERVER_URL = publicRuntimeConfig.CONF_SERVER_URL || 'https://api.gomz.io'
-// SERVER_URL을 바꾸고 싶으면, 위에 주소를 직접 수장하지 말고 .env.local 파일에 CONF_SERVER_URL를 추가해 주세요
-
+export const SERVER_URL = publicRuntimeConfig.CONF_SERVER_URL || 'https://api.betterworldapp.io'
 
 const apiV1 = (path) => urljoin(`${SERVER_URL}/api/v1`, path)
 
@@ -23,25 +21,6 @@ export const urlParams = (obj, nullable?) => {
 }
 
 const apis = {
-  land: {
-      get: (x, y) => apiV1(`/land${urlParams({
-        x,
-        y,
-      })}`),
-      getAll: () => apiV1('land/all'),
-  },
-  auth: {
-    kaikas: {
-      verification: () => apiV1('/auth/kaikas/verification'),
-      nonce: () => apiV1(`/auth/kaikas/nonce`),
-    },
-    klip: {
-      verify: () =>apiV1('/auth/klip/verification')
-    },
-    email: {
-      _: () => apiV1('/auth/email')
-    }
-  }
 }
 
 export default apis

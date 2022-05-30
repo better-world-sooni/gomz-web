@@ -1,16 +1,12 @@
 import type { NextPage } from "next";
-import BasicHead from "src/components/BasicHead";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
-import Row from "src/components/Row";
-import Col from "src/components/Col";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import Footer from "src/components/common/Footer";
 import EmptyBlock from "src/components/EmptyBlock";
 import MainTopBar from "src/components/common/MainTopBar";
 import { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
 import { wording } from "src/wording/wording";
 import { useRouter } from "next/router";
@@ -885,51 +881,6 @@ const Index: NextPage = () => {
 													>
 														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
 													</Timeline>
-													<Timeline
-														target={
-															<Div
-																wFull
-																absolute
-																top0
-																hFull
-																textXl
-																style={{
-																	background: "linear-gradient(180deg, #37315A 0%, #413F70 100%)",
-																	backgroundSize: "cover",
-																	backgroundPositionY: "center",
-																	backgroundPositionX: "center",
-																}}
-																flex
-																flexCol
-															>
-																<Div flex wFull hFull justifyCenter itemsCenter>
-																	<Div w250 absolute top5 left0 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-																	<Div flexCol>
-																		<Div textCenter textSecondary2 fontSize64 style={{ textShadow: "5px 5px 0px rgba(0, 0, 0, 0.25)" }} notItalic>
-																			&quot;We be
-																			<Div spanTag textSecondary>
-																				{" "}
-																				weird, different, and free.
-																			</Div>
-																			&quot;{" "}
-																		</Div>
-																		<Div balooR textWhite textCenter textXl mt30 notItalic>
-																			8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts,
-																			<br></br>but frankly, a little different compared to the majority. Individuals nowadays, especially those in 20
-																			and 30s,
-																			<br></br>are living breathlessly conforming to society’s expectations: go to a good university, find a stable
-																			job, and so on.
-																			<br></br>WeBe challenges these social norms by creating a cultural franchise suggesting
-																			<br></br>an unique identity in both worlds, digital and real.
-																			<Div w300 absolute right0 bottom0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
-																		</Div>
-																	</Div>
-																</Div>
-															</Div>
-														}
-													>
-														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-													</Timeline>
 												</Timeline>
 											)}
 										</Scene>
@@ -944,6 +895,5 @@ const Index: NextPage = () => {
 		</>
 	);
 };
-
 
 export default Index;

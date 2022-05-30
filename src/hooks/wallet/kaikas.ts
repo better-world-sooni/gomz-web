@@ -1,5 +1,3 @@
-import React from "react";
-
 export const useKaikasWallet = () => {
 	// @ts-ignore
 	if (typeof window !== "undefined" && typeof window.klaytn !== "undefined") {

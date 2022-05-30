@@ -12,6 +12,7 @@ import EmptyBlock from "src/components/EmptyBlock";
 import { wording } from "src/wording/wording";
 import { Faq } from "src/components/Faq";
 import Footer from "src/components/common/Footer";
+
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
 	const [clicked, setClicked] = useState(false);
