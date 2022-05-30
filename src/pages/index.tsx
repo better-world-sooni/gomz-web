@@ -377,7 +377,7 @@ const Index: NextPage = () => {
 						<Div textSecondary2 fontSize48 mx80 style={{ webkitTextStroke: "1px #000" }}>
 							BetterWorld
 						</Div>
-						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg>
+						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
 							Pioneer
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
@@ -400,7 +400,7 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg>
+						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
 							Socialize<br></br>to Earn
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
@@ -422,7 +422,7 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg>
+						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
 							Capsule
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
@@ -511,7 +511,7 @@ const Index: NextPage = () => {
 						<Div textSecondary2 fontSize48 mx90 style={{ webkitTextStroke: "1px #000" }}>
 							Community
 						</Div>
-						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg>
+						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
 							Weird<br></br>IRL
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
@@ -533,7 +533,7 @@ const Index: NextPage = () => {
 								</Div>{" "}
 							</Div>
 						</Div>
-						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg>
+						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
 							Weird<br></br>Projects
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
@@ -555,7 +555,7 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg>
+						<Div relative w320 h200 border2 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
 							WeBe<br></br>Bank
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
