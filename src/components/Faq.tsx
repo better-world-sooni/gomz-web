@@ -14,7 +14,7 @@ export function Faq({ question, answer, isTablet }) {
 						Q.{" "}
 					</Col>
 					<Col>
-						<Div>{question}</Div>
+						<Div textSm>{question}</Div>
 					</Col>
 					<Col auto>{clicked ? <FaChevronUp /> : <FaChevronDown />}</Col>
 				</Row>
@@ -23,7 +23,7 @@ export function Faq({ question, answer, isTablet }) {
 						<Col auto textSecondary textBase balooB clx={"text-stroke"}>
 							A.{" "}
 						</Col>
-						<Col textMed balooR>
+						<Col textSm balooR>
 							{answer}
 						</Col>
 					</Row>

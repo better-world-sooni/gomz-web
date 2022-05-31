@@ -4,7 +4,7 @@ import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import { href, LOCALES, reloadWithLocale } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
-import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -96,36 +96,67 @@ const Index: NextPage = () => {
 				>
 					<Div absolute w180 top60 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 					<Div absolute w120 top280 right20 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-					<Div absolute top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
-					<Div absolute top20 left24 w70 imgTag src={IMAGES.logos.webeLogo}></Div>
+					<Div absolute z99 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
+					<Div absolute z99 top20 left40 w70 imgTag src={IMAGES.logos.webeLogo}></Div>
 					<Div onClick={() => setClicked((prev) => !prev)}>
 						{clicked ? (
-							<Div absolute z999 top23 right24 w18 imgTag src={IMAGES.cancelIcon} />
+							<Div absolute z999 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
+							<Div absolute z999 top20 left40 w70 imgTag src={IMAGES.logos.webeLogo}></Div>
+							<Div absolute z999 top23 right40 w18 imgTag src={IMAGES.cancelIcon} />
+							</Div>
 						) : (
-							<Div absolute z99 top23 right24 w18 imgTag src={IMAGES.menuIcon} />
+							<Div absolute z99 top23 right40 w18 imgTag src={IMAGES.menuIcon} />
 							)}
 						{clicked && (
-							<Div absolute z99 top0 wFull hFull style={{ background: "rgba(218, 226, 255, 0.96)" }}>
-								<Div mt90 mx50 textPrimary fontSize32>
-									<Div flex pb15 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
-										<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
-											<Div ml18 clx={"text-stroke-white"}>Public Docs</Div>
+							<Div absolute z100 top0 wFull hFull style={{ background: "rgba(65, 63, 112, 0.55)", backdropFilter: "blur(20px)" }}>
+								<Div mt100 mx40 textSecondary2 fontSize24>
+									<Div flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
+										<Div mr18>Public Docs</Div>
 									</Div>
-									<Div flex py15 itemsCenter aTag href={"https://betterworldapp.io"}>
-										<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
-										<Div ml17 clx={"text-stroke-white"}>BetterWorld</Div>
+									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://betterworldapp.io"}>
+										<Div mr18>BetterWorld</Div>
+										<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
 									</Div>
-									<Div flex py15 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
-										<FaDiscord size={32} />
-										<Div ml18 clx={"text-stroke-white"}>Discord</Div>
+									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
+										<Div mr18>Discord</Div>
+										<FaDiscord size={20} />
 									</Div>
-									<Div flex py15 itemsCenter aTag href={"https://twitter.com/officialgomz"}>
-										<FaTwitter size={32} />
-											<Div ml18 clx={"text-stroke-white"}>Twitter</Div>
+									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://twitter.com/officialgomz"}>
+										<Div mr18> Twitter</Div>
+										<FaTwitter size={20} />
 									</Div>
-									<Div flex py15 itemsCenter aTag href={"https://instagram.com/offical_gomz"}>
-										<FaInstagram size={32} />
-										<Div ml18 clx={"text-stroke-white"}>Instagram</Div>
+									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://instagram.com/offical_gomz"}>
+										<Div mr18>Instagram</Div>
+										<FaInstagram size={20} />
+									</Div>
+								</Div>
+								<Div flex justifyCenter mt40 mx40 clx={"text-stroke"}>
+									<Div
+									flex2
+									flex
+									justifyCenter
+									text2xl
+									textSecondary={locale == LOCALES.KO}
+									textSecondary2={locale != LOCALES.KO}
+									cursorPointer
+									onClick={() => reloadWithLocale(LOCALES.KO)}
+									>
+										KOREAN
+									</Div>
+									<Div flex1 flex justifyCenter text2xl textSecondary2>
+										l
+									</Div>
+									<Div
+										flex2
+										flex
+										justifyCenter
+										text2xl
+										textSecondary={locale == LOCALES.EN}
+										textSecondary2={locale != LOCALES.EN}
+										cursorPointer
+										onClick={() => reloadWithLocale(LOCALES.EN)}
+									>
+										ENGLISH
 									</Div>
 								</Div>
 							</Div>
@@ -192,8 +223,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														We understand your minted WeBe may not be your favorite. You will be able to re-mint your WeBe up to five times at 50
-														$Klay per trial.
+														{wording.index.InDigitlaWorld.rebirth[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -219,8 +249,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														A mysterious bottle of wine found in BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders to expand WeBe
-														collection in BetterWorld metaverse.
+														{wording.index.InDigitlaWorld.weirdwine[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -246,7 +275,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														3D collection of our WeBes. Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.
+														{wording.index.InDigitlaWorld.wizardwebe[locale]}
 													</Div>{" "}
 												</Div>
 											</Div>
@@ -282,8 +311,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														WeBe will be the first collection to join BetterWorld, the first social media for PFPs. Communicate, post, and perform
-														in BetterWorld via your Web 3 persona.
+														{wording.index.InDigitlaWorld.pioneer[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -309,7 +337,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														Connect in the app to receive Klay every week. Socialize to earn passive income.
+														{wording.index.InDigitlaWorld.socializetoearn[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -335,8 +363,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														WeBe holders receive a free metaverse land-the capsule-in BetterWorld. Here, you can decorate, communicate, and explore
-														the digital world.
+														{wording.index.InDigitlaWorld.capsule[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -376,7 +403,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														Providing tangible accesorries to expand our values IRL.
+														{wording.index.InRealWorld.webegoods[locale]}
 													</Div>{" "}
 												</Div>
 											</Div>
@@ -402,8 +429,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														Partnering with various restaurants, bars, and entreprises to expand WeBe in various methods. In addition, holders will
-														receive discounts and exclusive offers in partnered ventures. More partnerships underway.
+														{wording.index.InRealWorld.webepartners[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -439,7 +465,8 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.													</Div>
+														{wording.index.InRealWorld.weirdirl[locale]}
+													</Div>
 												</Div>
 											</Div>
 											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
@@ -464,13 +491,12 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														Propose, vote, and discuss weird projects in our decentralized community (Off-chain forums will be available in
-														BetterWorld).
+														{wording.index.InRealWorld.weirdprojects[locale]}
 													</Div>
 												</Div>
 											</Div>
 											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
-												WeBe Bank
+												WeBe DAO
 												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.webeBank}></Div>
 												<Div
 													absolute
@@ -491,8 +517,7 @@ const Index: NextPage = () => {
 														balooR
 														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
-														A systematic community treasury for holders to utilize. Holders will be able to utilize the fund to turn their visions
-														into reality.
+														{wording.index.InRealWorld.webedao[locale]}
 													</Div>
 												</Div>
 											</Div>
@@ -555,7 +580,7 @@ const Index: NextPage = () => {
 										})}
 									</Div>
 									<EmptyBlock h={100} />
-									<Div textCenter textSecondary fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+									<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
 										Lastly,{" "}
 										<Div spanTag textSecondary>
 											{" "}

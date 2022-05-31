@@ -65,8 +65,8 @@ export const wording = {
 			webepartners: {
 				en: (
 					<>Partnering with various restaurants, bars, and entreprises to expand WeBe in various methods. 
-					In addition, holders will receive discounts and exclusive offers in partnered ventures. 
-					Check out Public Docs to see our ready-to-go partnerships. More partnerships underway.</>
+					Holders will receive exclusive offers in partnered ventures. 
+					Check out Public Docs to see our ready-to-go partnerships.</>
 				),
 				ko: (
 					<>다양한 레스토랑, 바, 기업과 제휴하여 다양한 방법으로 위비를 확장합니다. 위비라면 누구나 오프라인 제휴 파트너들로부터 혜택을 받을 수도 있습니다.
