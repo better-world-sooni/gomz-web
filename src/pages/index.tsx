@@ -172,7 +172,7 @@ const Index: NextPage = () => {
 										</Div>
 										World
 									</Div>
-									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
+									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 										<Div inlineFlex itemsCenter>
 											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py40 px10 ml10 textCenter roundedLg>
 												Re-<br></br>Birth
@@ -194,7 +194,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														We understand your minted WeBe may not be your favorite. You will be able to re-mint your WeBe up to five times at 50
 														$Klay per trial.
@@ -221,7 +221,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														A mysterious bottle of wine found in BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders to expand WeBe
 														collection in BetterWorld metaverse.
@@ -248,7 +248,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														3D collection of our WeBes. Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.
 													</Div>{" "}
@@ -259,7 +259,7 @@ const Index: NextPage = () => {
 											</Div>
 										</Div>
 									</Div>
-									<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
+									<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 										<Div inlineFlex itemsCenter>
 											<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
 												BetterWorld
@@ -284,7 +284,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														WeBe will be the first collection to join BetterWorld, the first social media for PFPs. Communicate, post, and perform
 														in BetterWorld via your Web 3 persona.
@@ -311,7 +311,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														Connect in the app to receive Klay every week. Socialize to earn passive income.
 													</Div>
@@ -337,7 +337,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														WeBe holders receive a free metaverse land-the capsule-in BetterWorld. Here, you can decorate, communicate, and explore
 														the digital world.
@@ -356,7 +356,7 @@ const Index: NextPage = () => {
 										</Div>
 										World
 									</Div>
-									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
+									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 										<Div inlineFlex itemsCenter>
 											<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 ml10 textCenter roundedLg>
 												WeBe Goods
@@ -378,7 +378,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														Providing tangible accesorries to expand our values IRL.
 													</Div>{" "}
@@ -404,7 +404,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														Partnering with various restaurants, bars, and entreprises to expand WeBe in various methods. In addition, holders will
 														receive discounts and exclusive offers in partnered ventures. More partnerships underway.
@@ -416,7 +416,7 @@ const Index: NextPage = () => {
 											</Div>
 										</Div>
 									</Div>
-									<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
+									<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 										<Div inlineFlex itemsCenter>
 											<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
 												Community
@@ -441,7 +441,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.													</Div>
 												</Div>
@@ -466,7 +466,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														Propose, vote, and discuss weird projects in our decentralized community (Off-chain forums will be available in
 														BetterWorld).
@@ -493,7 +493,7 @@ const Index: NextPage = () => {
 														px20
 														textLeft
 														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 													>
 														A systematic community treasury for holders to utilize. Holders will be able to utilize the fund to turn their visions
 														into reality.
@@ -585,7 +585,7 @@ const Index: NextPage = () => {
 			>
 				<Div absolute w350 top0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-				<Div sticky top0 wFull z200 px80 py15 style={{ backgroundColor: "rgba(0,0,0,0.1)" }} clx={"text-stroke"}>
+				<Div sticky top0 wFull z200 px80 py15 style={{ backgroundColor: "rgba(0,0,0,0.1)" }} clx={"text-stroke-thin"}>
 					<Div flex mxAuto maxW={1100}>
 						<Div>
 							<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>
@@ -647,7 +647,7 @@ const Index: NextPage = () => {
 							<Div flex maxW400>
 								<Div pt30 pb20></Div>
 							</Div>
-							<Div maxW650 pb40 imgTag src={IMAGES.mainWord}></Div>
+							<Div pb40 imgTag src={IMAGES.mainWord}></Div>
 							<Div flex pb30>
 								<Div
 									maxW150
@@ -689,7 +689,7 @@ const Index: NextPage = () => {
 						</Div>
 						World
 					</Div>
-					<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
+					<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 						<Div relative w320 h200 border1 borderBlack bgPrimaryLight ml30 pt40 px40 roundedLg>
 							Re-Birth
 							<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
@@ -714,7 +714,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									We understand your minted WeBe may not be your favorite.
 									You will be able to re-mint your WeBe up to five times at 50 $Klay per trial.
@@ -735,7 +735,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									A mysterious bottle of wine found in BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders
 									to expand WeBe collection in BetterWorld metaverse.
@@ -756,19 +756,19 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									3D collection of our WeBes.
 									Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.
 								</Div>
 							</Div>
 						</Div>
-						<Div textSecondary fontSize48 mx100>
+						<Div textSecondary fontSize48 mx100 clx={"text-stroke"}>
 							Collection
 						</Div>
 					</Div>
-					<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
-						<Div textSecondary2 fontSize48 mx80>
+					<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+						<Div textSecondary2 fontSize48 mx80 clx={"text-stroke"}>
 							BetterWorld
 						</Div>
 						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
@@ -785,7 +785,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									WeBe will be the first collection to join BetterWorld,
 									the first social media for PFPs. Communicate, post, and perform in BetterWorld via your Web 3 persona.{" "}
@@ -806,7 +806,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									Connect in the app to receive Klay every week. Socialize to earn passive income.
 								</Div>
@@ -826,7 +826,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									WeBe holders receive a free metaverse land-the capsule-in BetterWorld.
 									Here, you can decorate, communicate, and explore the digital world.
@@ -844,7 +844,7 @@ const Index: NextPage = () => {
 						</Div>
 						World
 					</Div>
-					<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
+					<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 						<Div relative w500 h200 border1 borderBlack bgPrimaryLight ml30 p40 roundedLg>
 							WeBe Goods
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
@@ -859,7 +859,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									Providing tangible accesorries to expand our values IRL.
 								</Div>
@@ -879,7 +879,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									Partnering with various restaurants, bars, and entreprises to expand WeBe in various methods. In addition, holders will receive
 									discounts and exclusive offers in partnered ventures. Check out Public Docs to see our ready-to-go partnerships. More partnerships
@@ -887,12 +887,12 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div textSecondary fontSize48 mx120>
+						<Div textSecondary fontSize48 mx120 clx={"text-stroke"}>
 							Brand
 						</Div>
 					</Div>
-					<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off text-stroke"}>
-						<Div textSecondary2 fontSize48 mx90>
+					<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+						<Div textSecondary2 fontSize48 mx90 clx={"text-stroke"}>
 							Community
 						</Div>
 						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
@@ -909,7 +909,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.
 								</Div>{" "}
@@ -929,7 +929,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									Propose, vote, and discuss weird projects in our decentralized community (Off-chain forums will be available in BetterWorld).
 								</Div>
@@ -949,7 +949,7 @@ const Index: NextPage = () => {
 									balooR
 									px30
 									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 text-stroke-none"}
+									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
 									A systematic community treasury for holders to utilize.
 									Holders will be able to utilize the fund to turn their visions into reality.
@@ -966,7 +966,7 @@ const Index: NextPage = () => {
 								WeBes
 							</Div>
 						</Div>
-						<Div textCenter textSecondary2 fontSize36 mt-20 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						<Div textCenter textSecondary2 fontSize36 mt-20 clx={"text-stroke"}>
 							Departing for
 							<Div spanTag textSecondary >
 								{" "}
@@ -1021,13 +1021,13 @@ const Index: NextPage = () => {
 							})}
 						</Div>
 						<EmptyBlock h={100} />
-						{/* <Div textCenter textSecondary2 fontSize72 mb40 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+						<Div textCenter textSecondary2 fontSize72 mb40 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 							Lastly,{" "}
 							<Div spanTag textSecondary>
 								{" "}
 								Say
 							</Div>
-						</Div> */}
+						</Div>
 						<Row mt100>
 							<Col></Col>
 							<Col auto>
