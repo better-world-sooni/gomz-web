@@ -3,127 +3,108 @@ import Div from "src/components/Div";
 
 export const wording = {
 	index: {
-		main: {
-			title: {
-				en: <>SOONI LABS</>,
-				ko: <>SOONI LABS</>,
-			},
-			motto: {
+		InDigitlaWorld: {
+			rebirth: {
 				en: (
-					<>
-						Blockchain
-						<br /> for the Betterment of Society
-					</>
-				),
-				ko: <>더 나은 사회를 위한 블록체인</>,
-			},
-		},
-		aboutUs: {
-			title: {
-				en: <>About Us</>,
-				ko: <>소개</>,
-			},
-			subtitle: {
-				en: (
-					<>
-						Founded in 2021, SOONI Labs is the first Korean NFT-focused company that bridges the gap between NFTs and Real-World utility through
-						practical B-Apps.
-					</>
+					<>We understand your minted WeBe may not be your favorite. You will be able to re-mint your WeBe up to five times at 50 $Klay per trial.</>
 				),
 				ko: (
-					<>
-						2021년에 설립된 SOONI LABS는 실용적인 B-App을 통해 NFT와 실제 사회를 연결하여 사회적 가치 창출에 앞장서는 한국 최초의 NFT 중심 기업입니다.
-					</>
+					<>본인의 위비가 썩 맘에 들지 않으신가요? 민팅 종료 1주일 후 환생 기회가 활성화됩니다. 다시 오지 않을 두 번째 기회, 놓치지 마세요!</>
 				),
 			},
-		},
-		mission: {
-			title: {
-				en: <>Our Misson</>,
-				ko: <>미션</>,
-			},
-			subtitle: {
+			weirdwine: {
 				en: (
-					<>
-						As NFT enthusiasts, we will continuously develop beneficial projects for not only Koreans but also the global community. We are here to
-						make a positive impact, to create a warm NFT ecosystem where art, society, and technology are all appreciated.
-					</>
+					<>A mysterious bottle of wine found in BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders to expand WeBe collection in BetterWorld metaverse.</>
 				),
 				ko: (
-					<>
-						SOONI LABS는 한국뿐만 아니라 전 세계를 위한 지속적인 프로젝트 개발을 통해 예술, 사회, 기술이 융합되어 긍정적인 영향을 주는 따뜻한 NFT
-						생태계를 만들어 갑니다.
-					</>
+					<>BetterWorld에서 신비한 와인 한 병을 발견했습니다. 메타버스에서 위비가 더 다양해질 수 있는 아이템이 제공됩니다.</>
+				),
+			},
+			wizardwebe: {
+				en: (
+					<>3D collection of our WeBes. Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.</>
+				),
+				ko: (
+					<>그래픽에서 보다 생생하고 실험적으로 변하는 관문입니다. 각 홀더는 메타버스에서의 활동을 확장하기 위해 본인의 3D 위비를 에어드롭을 받을 수 있습니다.</>
+				),
+			},
+			pioneer: {
+				en: (
+					<>WeBe will be the first collection to join BetterWorld, the first social media for PFPs. Communicate, post, and perform in BetterWorld via your Web 3 persona.</>
+				),
+				ko: (
+					<>위비는 웹3 아이덴티티로 교류하는 SNS 앱 BetterWorld에 호환되는 첫 컬렉션입니다. 게시물, 좋아요/댓글, 타 PFP 팔로우/팔로잉, 개인 메타버스 공간을 통해 자유롭게 표현하고 소통할 수 있습니다.</>
+				),
+			},
+			socializetoearn: {
+				en: (
+					<>Connect in the app to receive Klay every week. Socialize to earn passive income.</>
+				),
+				ko: (
+					<>BetterWorld에서 위비는 자유롭게 표현하고 다른 유저들과 교류하며 $Klay를 보상 받을 수 있습니다.</>
+				),
+			},
+			capsule: {
+				en: (
+					<>WeBe holders receive a free metaverse land-the capsule-in BetterWorld. Here, you can decorate, communicate, and explore the digital world.</>
+				),
+				ko: (
+					<>BetterWorld에서 무료 메타버스 개인 공간인 캡슐을 부여받습니다. 본인의 위비만을 위한 공간을 꾸미고, 소통하고, 탐험하세요.</>
 				),
 			},
 		},
-		values: {
-			title: {
-				en: <>Our Values</>,
-				ko: <>경영철학</>,
+		InRealWorld: {
+			webegoods: {
+				en: (
+					<>Providing tangible accesorries to expand our values IRL.</>
+				),
+				ko: (
+					<>브랜드로서의 신중한 첫걸음을 내딛습니다.</>
+				),
 			},
-			helping: {
-				title: {
-					en: <>For you and those around you</>,
-					ko: <>당신과 당신 주변 사람들을 위해</>,
-				},
-				desc: {
-					en: (
-						<>
-							Our every project is dedicated to solving societal issues. We aspire to help everyone create social value through the practicality of
-							NFTs, regardless of gender, background, or generational differences.
-						</>
-					),
-					ko: (
-						<>
-							모든 프로젝트는 사회적 문제 해결을 위해 존재합니다. 성별, 배경, 세대 차이에 상관없이 모두가 NFT의 실용성을 통해 사회적 가치를 창출할 수
-							있도록 돕습니다.
-						</>
-					),
-				},
+			webepartners: {
+				en: (
+					<>Partnering with various restaurants, bars, and entreprises to expand WeBe in various methods. 
+					In addition, holders will receive discounts and exclusive offers in partnered ventures. 
+					Check out Public Docs to see our ready-to-go partnerships. More partnerships underway.</>
+				),
+				ko: (
+					<>다양한 레스토랑, 바, 기업과 제휴하여 다양한 방법으로 위비를 확장합니다. 위비라면 누구나 오프라인 제휴 파트너들로부터 혜택을 받을 수도 있습니다.
+					우측 상단의 Public Docs에서 함께하기 시작한 파트너들을 확인하세요.</>
+				),
 			},
-			statusQuo: {
-				title: {
-					en: <>Breaking Stereotypes</>,
-					ko: <>고정관념에 도전하다</>,
-				},
-				desc: {
-					en: (
-						<>
-							Crypto is often recognized as a “rugpull”, “ponzi scheme”, and a “rich-getting-richer mechanism”. Through practical applications of
-							NFTs, we challenge such stereotypes surrounding digital assets.
-						</>
-					),
-					ko: (
-						<>
-							암호화폐, 블록체인 및 NFT와 관련하여 “투기”, “도박”, “불법” 등 부정적 사회적 인식이 존재합니다. NFT의 실제 사회적 가치 창출을 통해
-							디지털 자산을 둘러싼 고정관념에 도전합니다.
-						</>
-					),
-				},
+			weirdirl: {
+				en: (
+					<>Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.</>
+				),
+				ko: (
+					<>정기 오프라인 프로그램은 네트워크, 스포츠 대회, 글로벌 문화, 파티 등 다양한 주제로 구성됩니다.
+					커뮤니티원은 BetterWorld 앱 내 포럼에서 다양한 프로그램 아이디어를 논의할 수 있습니다.</>
+				),
 			},
-			community: {
-				title: {
-					en: [<>Community-</>, <>obsessed</>],
-					ko: [<>커뮤니티와 함께</>, <></>],
-				},
-				desc: {
-					en: (
-						<>
-							We believe the longevity of NFT collections are determined by the community. Our supporters’ voices will be reflected in our future
-							decisions to evolve into a powerful DAO.
-						</>
-					),
-					ko: (
-						<>
-							NFT 컬렉션의 수명은 함께 발전하는 커뮤니티에 의해 결정된다고 확신합니다. SOONI LABS는 커뮤니티의 목소리와 함께 진정한 DAO를 향해
-							나아갑니다.
-						</>
-					),
-				},
+			weirdprojects: {
+				en: (
+					<>Propose, vote, and discuss weird projects in our decentralized community 
+					(Off-chain forums will be available in BetterWorld).</>
+				),
+				ko: (
+					<>포럼을 통해 아이디어를 제공하여 다른 위비들과 함께 프로젝트를 구축하세요.
+					위비로서 이루고 싶은 모든 꿈은 아이디어와 파트너만 있다면 실현 가능합니다.</>
+				),
+			},
+			webedao: {
+				en: (
+					<>A systematic community treasury for holders to utilize.
+					Holders will be able to utilize the fund to turn their visions into reality.</>
+				),
+				ko: (
+					<>파트너십 후보 선정, 3D 컬렉션 디자인, 오프라인 이벤트 장소 선택을 포함한 모든 위비의 여정에 기여할 수 있습니다.
+					제안 및 아이디어 선택은 해당 시기에 BetterWorld 내에서 이루어집니다.</>
+				),
 			},
 		},
 	},
+	
 	team: {
 		index: {
 			title: {
@@ -138,7 +119,7 @@ export const wording = {
 				minjun: {
 					name: {
 						en: "Alpha Kim",
-						ko: "알파김",
+						ko: "Alpha Kim",
 					},
 					position: {
 						ko: "대표",
@@ -171,7 +152,7 @@ export const wording = {
 				yeajean: {
 					name: {
 						en: "Mama Lee",
-						ko: "마마리",
+						ko: "Mama Lee",
 					},
 					countries: "🇰🇷 🇻🇳 ",
 					position: {
@@ -202,7 +183,7 @@ export const wording = {
 				eric: {
 					name: {
 						en: "Kid Kim",
-						ko: "키드김",
+						ko: "Kid Kim",
 					},
 					position: {
 						ko: "디젠",
@@ -233,7 +214,7 @@ export const wording = {
 				jieun: {
 					name: {
 						en: "Artist Park",
-						ko: "아티스트박",
+						ko: "Artist Park",
 					},
 					position: {
 						en: "Creator",
@@ -266,7 +247,7 @@ export const wording = {
 				jade: {
 					name: {
 						en: "Jade Yang",
-						ko: "제이드양",
+						ko: "Jade Yang",
 					},
 					position: {
 						ko: "UI/UX 디자이너",
@@ -293,7 +274,7 @@ export const wording = {
 				ian: {
 					name: {
 						en: "Nerd Park",
-						ko: "너드박",
+						ko: "Nerd Park",
 					},
 					position: {
 						ko: "CTO",
@@ -324,7 +305,7 @@ export const wording = {
 				jaehwan: {
 					name: {
 						en: "Solidity Jeong",
-						ko: "솔리디티정",
+						ko: "Solidity Jeong",
 					},
 					position: {
 						ko: "스마트 컨트랙트 개발자",
@@ -355,7 +336,7 @@ export const wording = {
 				seungan: {
 					name: {
 						en: "Code Jung",
-						ko: "코드정",
+						ko: "Code Jung",
 					},
 					position: {
 						ko: "풀 스택 개발자",
@@ -382,103 +363,161 @@ export const wording = {
 			},
 		},
 	},
-	portfolio: {
+	story: {
 		index: {
-			title: {
-				ko: "Portfolio",
-				en: "Portfolio",
+			story1: {
+				ko: (
+					<>지나친 경쟁과 획일화로 인해 위비는 지난 수년간 전쟁 상태에 있었습니다. 이와 같은 갈등은 이미 행성을 너무 적대적이고 삭막하여 거주하기 힘든 환경으로 만들어버렸습니다. </>
+				),
+				en: (
+					<>WeBe have been in a planet-wide war for the past years. The war was provoked by excessive indoctrination of competition and uniformity.
+					Such violence has made the planet too hostile, colorless, and systematic,<br></br>rendering it uninhabitable. </>
+				),
 			},
-			items: {
-				founded: {
-					name: {
-						ko: "설립",
-						en: "Foundation",
-					},
-					desc: {
-						ko: "SOONI LABS 2021년 설립",
-						en: "SOONI LABS was founded in 2021",
-					},
-				},
-				thinktomi: {
-					name: {
-						ko: "실리콘밸리 Thinktomi x KAIST 스타트업 프로그램",
-						en: "SW Silicon Valley x KAIST Start Up Program",
-					},
-					desc: {
-						ko: <>Thinktomi 스타트업 대회 우승</>,
-						en: <>Thinktomi Start-Up Competition 1st Place</>,
-					},
-				},
-				pitchForce: {
-					name: {
-						ko: "실리콘밸리 PitchForce",
-						en: "Silicon Valley PitchForce",
-					},
-					desc: {
-						ko: <>PitchForce 스타트업 대회 결선 진출</>,
-						en: <>PitchForce Startup Competition Finalist</>,
-					},
-				},
-				gomz: {
-					name: {
-						ko: "NFT: GOMZ",
-						en: "NFT: GOMZ",
-					},
-					desc: {
-						ko: "COMING SOON",
-						en: "COMING SOON",
-					},
-				},
-				gomzSpace: {
-					name: {
-						ko: "BetterWorld",
-						en: "BetterWorld",
-					},
-					desc: {
-						ko: "COMING SOON",
-						en: "COMING SOON",
-					},
-				},
+			story2: {
+				ko: (
+					<>전쟁에 지친 8,888 마리의 위비는 이타적인 비전을 가지고 우주여행을 떠났습니다:</>
+				),
+				en: (
+					<>8,888 of these bears have turned to space travel with an altruistic vision:</>
+				),
+			},
+			story22: {
+				ko: (
+					<>더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.</>
+				),
+				en: (
+					<>Establish a “BetterWorld”, a free and creative playground for diverse innovators.</>
+				),
+			},
+			story3: {
+				ko: (
+					<>어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 위비는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해 깨어났습니다.</>
+				),
+				en: (
+					<>During deep hibernation in their capsules in BetterWorld,
+					WeBe have been awakened by other space wanderersM<br></br>who are also in search of a habitable planet.</>
+				),
+			},
+			story4: {
+				ko: (
+					<>위비는 이들과 맞서 싸우는 대신<br></br>BetterWorld로 초대하고 환영하기로 합니다.</>
+				),
+				en: (
+					<>Instead of fighting these space wanderers,<br></br>
+					WeBe decides to invite and welcome them<br></br>to BetterWorld.</>
+				),
+			},
+			value: {
+				ko: (
+					<>8,888마리의 위비는 독창적인 문화를 전합니다. 가끔은 좀 이상해보이는 우리는 정확히 내향적이진 않지만, 대다수와 조금 다를 수 있습니다.
+					요즘 우리는 좋은 대학에 가고, 안정적인 직장을 찾는 등 사회의 기대에 부응하며 숨가쁘게 살고 있죠.
+					위비는 디지털과 현실 세계 모두에서 고유한 정체성을 제시하는 문화의 프랜차이즈를 만들어 이러한 사회적 규범에 도전합니다.</>
+				),
+				en: (
+					<>8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts, but frankly, a little
+					different compared to the majority. Individuals nowadays, especially those in 20 and 30s, are living breathlessly conforming to
+					society’s expectations: go to a good university, find a stable job, and so on. WeBe challenges these social norms by creating a
+					cultural franchise suggesting an unique identity in both worlds, digital and real.</>
+				),
 			},
 		},
 	},
-	content: {
-		index: {
-			title: {
-				ko: "콘텐츠",
-				en: "Content",
+	faq: {
+		question: {
+			q1: {
+				ko: (
+					<>왜 8,888인가요?</>
+					),
+				en: (
+					<>Why 8,888?</>
+				),
 			},
-			subsribe: {
-				button: {
-					ko: "구독",
-					en: "Subscribe",
-				},
-				subscribe: {
-					ko: "이메일로 받는 SOONI 뉴스레터에 구독하기",
-					en: "Subscribe to our email newsletter",
-				},
+			q2: {
+				ko: (
+					<>왜 Klaytn인가요?</>
+				),
+				en: (
+					<>Why Klaytn?</>
+				),
 			},
-			items: {
-				gomz: {
-					name: {
-						ko: "Gomz",
-						en: "Gomz",
-					},
-					desc: {
-						ko: "팝아트 PFP NFT",
-						en: "Pop Art PFP NFT",
-					},
-				},
-				gomzSpace: {
-					name: {
-						ko: "GomzSpace",
-						en: "GomzSpace",
-					},
-					desc: {
-						ko: "2d 메타버스",
-						en: "2d Metaverse",
-					},
-				},
+			q3: {
+				ko: (
+					<>민팅 방법은 어떻게 되나요?</>
+				),
+				en: (
+					<>How to mint?</>
+				),
+			},
+			q4: {
+				ko: (
+					<>민팅 날짜와 가격은 어떻게 되나요?</>
+				),
+				en: (
+					<>Mint date & price?</>
+				),
+			},
+			q5: {
+				ko: (
+					<>최대 몇 개의 위비를 민팅할 수 있나요?</>
+				),
+				en: (
+					<>How many WeBe can I mint?</>
+				),
+			},
+		},
+		answer: {
+			q1: {
+				ko: (
+					<>숫자 ‘8’은 부, 명예, ∞(무한대) 등 삶의 다양한 측면을 의미합니다. 
+					위비는 다양한 의미 중에서 ∞ 로 인해 8,888을 선택했습니다. 
+					변덕스러운 가격, 폰지 사기가 수두룩한 NFT 공간의 모든 외부 요인에도 불구하고 위비는 무한하고 혁신적인 커뮤니티를 보장합니다. 
+					8,888 혁신가 GOMZ들과 함께 Web 3 Identity를 구축할 것입니다.</>
+					),
+				en: (
+					<>Eight signifies various aspects of life. Wealth, prosperity, ∞ (infinity), and many more. 
+					Out of all the different meanings, WeBe has chosen 8,888 due to ∞ . 
+					Despite all the external factors in the NFT space, such as volatile floor prices, rug pulls, 
+					and ponzi-like schemes,WeBe ensures an innovative community that will be infinite. 
+					We are here to create a culture of its own with 8,888 WeBe.</>
+				),
+			},
+			q2: {
+				ko: (
+					<>에너지 효율성, 짧은 지연 시간, 카카오톡 접근성, 안정적인 가스비 등의 이유로 Klaytn에서 출시하기로 결정했습니다.</>
+				),
+				en: (
+					<>WeBe decided to launch on Klaytn for the following reasons— energy efficient, 
+					low latency, easy access to Kakao Talk, and stable gas fee.</>
+				),
+			},
+			q3: {
+				ko: (
+					<>위비의 민팅 과정은 4가지로 (코호트 A, 코호트 B, 코호트 C, 퍼블릭 민팅)으로 나뉘어있습니다. 코호트 A, B, C로 선정되려면 1) 코호트 회원의 초대를 받거나 2) 위비 화이트리스트 지원서를 제출하여 통과거나 3) 화이트리스트 이벤트에 선정되어야합니다.
+					화이트리스트에서 퍼블릭 민팅까지, 모든 판매는 해당 공식 웹사이트에서만 이루어집니다. 2차 판매의 경우 OpenSea를 통해 제공됩니다.</>
+				),
+				en: (
+					<>WeBe's minting process is divided into 4 categories (Cohort A, Cohort B, Cohort C, and Public Minting). 
+					To be selected for Cohort A, B, or C, you must either 1) be invited by a cohort member, 2) 
+					submit a WeBe whitelist application, or 3) be selected for a whitelisted event. From whitelist to public minting, 
+					all sales are performed on this website. For secondary sales, it will be available via OpenSea.</>
+				),
+			},
+			q4: {
+				ko: (
+					<>화이트리스트 사전 민팅: 날짜 - 공개 예정 I 가격- 100 KLAY Public 민팅: 날짜 - 8월 8일 I 가격 -  200 KLAY</>
+				),
+				en: (
+					<>Whitelist Minting: Date- TBD I Price- 100 KLAY Public Minting: Date- August 8th I Price: 200 KLAY</>
+				),
+			},
+			q5: {
+				ko: (
+					<>다양한 구성원으로 이루어진 커뮤니티를 보장하기 위해 지갑당 3개의 위비로 제한합니다.</>
+				),
+				en: (
+					<>To ensure a wide range of community, we are limiting holders to 3 WeBe per wallet</>
+				),
 			},
 		},
 	},

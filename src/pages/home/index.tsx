@@ -133,9 +133,7 @@ const Index: NextPage = () => {
 												>
 													<Div flex justifyEnd>
 														<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
-															WeBe have been in a planet-wide war for the past years. The war was provoked by excessive indoctrination of competition
-															and uniformity. Such violence has made the planet too hostile, colorless, and systematic,<br></br>rendering it
-															uninhabitable.
+															{wording.story.index.story1[locale]}
 														</Div>
 													</Div>
 												</Div>
@@ -162,10 +160,10 @@ const Index: NextPage = () => {
 																		<Div flex justifyStart>
 																			<Div style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
 																				<Div maxW={150} textWhite mx24 my100 fontSize8 textLeft balooR>
-																					8,888 of these bears have turned to space travel with an altruistic vision:
+																					{wording.story.index.story2[locale]}
 																				</Div>
 																				<Div maxW={150} textWhite mx24 my-80 fontSize8 textLeft balooR>
-																					Establish a “BetterWorld”, a free and creative playground for diverse innovators.
+																					{wording.story.index.story22[locale]}
 																				</Div>
 																				<EmptyBlock h={100} />
 																			</Div>
@@ -204,8 +202,7 @@ const Index: NextPage = () => {
 																				balooR
 																				style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
 																			>
-																				During deep hibernation in their capsules in BetterWorld, WeBe have been awakened by other space wanderers
-																				<br></br>who are also in search of a habitable planet.
+																				{wording.story.index.story3[locale]}
 																			</Div>
 																		</Div>
 																	</Div>
@@ -241,8 +238,7 @@ const Index: NextPage = () => {
 																				balooR
 																				style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
 																			>
-																				Instead of fighting these space wanderers,<br></br>
-																				WeBe decides to invite and welcome them<br></br>to BetterWorld.
+																				{wording.story.index.story4[locale]}
 																			</Div>
 																		</Div>
 																	</Div>
@@ -264,10 +260,7 @@ const Index: NextPage = () => {
 										<Div w120 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 									</Div>
 									<Div relative flex justifyCenter balooR textWhite textCenter textSm mt20 pb80 px40 notItalic>
-										8,888 WeBes cultivating a culture of its own. We be weird, sometimes. We are not exactly introverts, but frankly, a little
-										different compared to the majority. Individuals nowadays, especially those in 20 and 30s, are living breathlessly conforming to
-										society’s expectations: go to a good university, find a stable job, and so on. WeBe challenges these social norms by creating a
-										cultural franchise suggesting an unique identity in both worlds, digital and real.
+										{wording.story.index.value[locale]}
 										<Div w120 absolute right0 bottom0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 									</Div>
 								</Div>
@@ -310,8 +303,7 @@ const Index: NextPage = () => {
 										>
 											<Div flex justifyEnd>
 												<Div maxW={600} textWhite mx80 my120 fontSize24 textRight balooR style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}>
-													WeBe have been in a planet-wide war for the past years. The war was provoked by excessive indoctrination of competition and
-													uniformity. Such violence has made the planet too hostile, colorless, and systematic,<br></br>rendering it uninhabitable.
+													{wording.story.index.story1[locale]}
 												</Div>
 											</Div>
 										</Div>
@@ -338,10 +330,10 @@ const Index: NextPage = () => {
 																<Div flex justifyStart>
 																	<Div style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}>
 																		<Div maxW={500} textWhite mx80 my380 fontSize24 textLeft balooR>
-																			8,888 of these bears have turned to space travel with an altruistic vision:
+																			{wording.story.index.story2[locale]}
 																		</Div>
 																		<Div maxW={500} textWhite mx80 my-360 fontSize24 textLeft balooR>
-																			Establish a “BetterWorld”, a free and creative playground for diverse innovators.
+																			{wording.story.index.story22[locale]}
 																		</Div>
 																		<EmptyBlock h={100} />
 																	</Div>
@@ -380,8 +372,7 @@ const Index: NextPage = () => {
 																		balooR
 																		style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}
 																	>
-																		During deep hibernation in their capsules in BetterWorld, WeBe have been awakened by other space wanderers
-																		<br></br>who are also in search of a habitable planet.
+																		{wording.story.index.story3[locale]}
 																	</Div>
 																</Div>
 															</Div>
@@ -417,8 +408,7 @@ const Index: NextPage = () => {
 																		balooR
 																		style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}
 																	>
-																		Instead of fighting these space wanderers,<br></br>
-																		WeBe decides to invite and welcome them<br></br>to BetterWorld.
+																		{wording.story.index.story4[locale]}
 																	</Div>
 																</Div>
 															</Div>

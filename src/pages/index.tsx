@@ -64,27 +64,24 @@ const Index: NextPage = () => {
 	];
 	const faqs = [
 		{
-			question: "Why 8,888?",
-			answer:
-				"Eight signifies various aspects of life. Wealth, prosperity, ∞ (infinity), and many more. Out of all the different meanings, WeBe has chosen 8,888 due to ∞ . Despite all the external factors in the NFT space, such as volatile floor prices, rug pulls, and ponzi-like schemes, WeBe ensures an innovative community that will be infinite. We are here to create a culture of its own with 8,888 WeBe. ",
+			question: wording.faq.question.q1[locale],
+			answer: wording.faq.answer.q1[locale],
 		},
 		{
-			question: "Why Klaytn?",
-			answer:
-				"WeBe decided to launch on Klaytn for the following reasons— energy efficient, low latency, easy access to Kakao Talk, and stable gas fee.",
+			question: wording.faq.question.q2[locale],
+			answer: wording.faq.answer.q2[locale],
 		},
 		{
-			question: "How to mint?",
-			answer:
-				"WeBe's minting process is divided into 4 categories (Cohort A, Cohort B, Cohort C, and Public Minting). To be selected for Cohort A, B, or C, you must either 1) be invited by a cohort member, 2) submit a WeBe whitelist application, or 3) be selected for a whitelisted event. From whitelist to public minting, all sales are performed on this website. For secondary sales, it will be available via OpenSea.",
+			question: wording.faq.question.q3[locale],
+			answer: wording.faq.answer.q3[locale],
 		},
 		{
-			question: "Mint date & price?",
-			answer: "Whitelist Minting: Date- TBD I Price- 100 KLAY Public Minting: Date- TBD I Price: 200 KLAY",
+			question: wording.faq.question.q4[locale],
+			answer: wording.faq.answer.q4[locale],
 		},
 		{
-			question: "How many WeBe can I mint?",
-			answer: "To ensure a wide range of community, we are limiting holders to five WeBe per wallet",
+			question: wording.faq.question.q5[locale],
+			answer: wording.faq.answer.q5[locale],
 		},
 	];
 
@@ -722,8 +719,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									We understand your minted WeBe may not be your favorite.
-									You will be able to re-mint your WeBe up to five times at 50 $Klay per trial.
+									{wording.index.InDigitlaWorld.rebirth[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -743,8 +739,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									A mysterious bottle of wine found in BetterWorld! Weird Wine is a utility NFT, allowing WeBe holders
-									to expand WeBe collection in BetterWorld metaverse.
+									{wording.index.InDigitlaWorld.weirdwine[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -764,8 +759,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									3D collection of our WeBes.
-									Holders receive a 3D version of their minted WeBe to expand its movement in the metaverse.
+									{wording.index.InDigitlaWorld.wizardwebe[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -793,8 +787,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									WeBe will be the first collection to join BetterWorld,
-									the first social media for PFPs. Communicate, post, and perform in BetterWorld via your Web 3 persona.{" "}
+									{wording.index.InDigitlaWorld.pioneer[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -814,7 +807,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									Connect in the app to receive Klay every week. Socialize to earn passive income.
+									{wording.index.InDigitlaWorld.socializetoearn[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -834,8 +827,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									WeBe holders receive a free metaverse land-the capsule-in BetterWorld.
-									Here, you can decorate, communicate, and explore the digital world.
+									{wording.index.InDigitlaWorld.capsule[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -867,7 +859,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									Providing tangible accesorries to expand our values IRL.
+									{wording.index.InRealWorld.webegoods[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -887,9 +879,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									Partnering with various restaurants, bars, and entreprises to expand WeBe in various methods. In addition, holders will receive
-									discounts and exclusive offers in partnered ventures. Check out Public Docs to see our ready-to-go partnerships. More partnerships
-									underway.
+									{wording.index.InRealWorld.webepartners[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -917,7 +907,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.
+									{wording.index.InRealWorld.weirdirl[locale]}
 								</Div>{" "}
 							</Div>
 						</Div>
@@ -937,7 +927,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									Propose, vote, and discuss weird projects in our decentralized community (Off-chain forums will be available in BetterWorld).
+									{wording.index.InRealWorld.weirdprojects[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -957,8 +947,7 @@ const Index: NextPage = () => {
 									fontSize={"0.95vw"}
 									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 								>
-									A systematic community treasury for holders to utilize.
-									Holders will be able to utilize the fund to turn their visions into reality.
+									{wording.index.InRealWorld.webedao[locale]}
 								</Div>
 							</Div>
 						</Div>
@@ -985,7 +974,7 @@ const Index: NextPage = () => {
 									<Div key={index} inlineBlock mx20>
 										<Div imgTag src={member.imageUri} roundedXl border1 borderBlack></Div>
 										<EmptyBlock h={30} />
-										<Div textSecondary2 textCenter textXl balooB>
+										<Div textSecondary2 textCenter textXl balooB fontBold>
 											{member.name}
 										</Div>
 										<Div textSecondary2 textCenter textLg balooR>

@@ -49,7 +49,7 @@ export function MintingModal({ open, onClose }) {
 		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
 			<Div roundedLg overflowHidden w800 mx80>
 				<Div flex itemsCenter bgPrimary z2 roundedTLg px50 py20>
-					<Div w120 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
+					<Div w100 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
 					<Div flex1 ml20 textWhite fontSize24>
 						GALAXY
 					</Div>
@@ -79,14 +79,14 @@ export function MintingModal({ open, onClose }) {
 						</Div>
 						<Div flex mb20>
 							<Div mr20>Amount:</Div>
-							<Div fontBold> 1</Div>
+							<Div fontBold> 1 WeBe</Div>
 						</Div>
 						<Div
 							mt50
 							px3
 							py10
 							borderBlack
-							border1
+							border2
 							roundedFull
 							textWhite
 							bgPrimary
