@@ -19,7 +19,7 @@ function MainTopBar() {
 		return (
 			<Div relative>
 				<Div wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
-				<Div absolute top20 z99 left24 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe}></Div>
+				<Div absolute top20 z99 left40 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe}></Div>
 				<Div onClick={() => setClicked((prev) => !prev)}>
 						{clicked ? (
 							<Div absolute z999 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
@@ -30,7 +30,7 @@ function MainTopBar() {
 							<Div absolute z99 top23 right40 w18 imgTag src={IMAGES.menuIcon} />
 							)}
 						{clicked && (
-							<Div absolute z100 top0 wFull hScreen style={{ background: "rgba(65, 63, 112, 0.55)", backdropFilter: "blur(20px)" }}>
+							<Div absolute z100 top0 wFull hScreen style={{ background: "rgba(65, 63, 112, 0.85)", backdropFilter: "blur(20px)" }}>
 								<Div mt100 mx40 textSecondary2 fontSize24>
 									<Div flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
 										<Div mr18>Public Docs</Div>

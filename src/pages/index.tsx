@@ -15,6 +15,7 @@ import Footer from "src/components/common/Footer";
 import Col from "src/components/Col";
 import Row from "src/components/Row";
 import { MintingModal } from "src/components/modal/MintingModal";
+import MainTopBar from "src/components/common/MainTopBar";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -96,74 +97,9 @@ const Index: NextPage = () => {
 				>
 					<Div absolute w180 top60 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 					<Div absolute w120 top280 right20 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-					<Div absolute z99 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
-					<Div absolute z99 top20 left40 w70 imgTag src={IMAGES.logos.webeLogo}></Div>
-					<Div onClick={() => setClicked((prev) => !prev)}>
-						{clicked ? (
-							<Div absolute z999 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
-							<Div absolute z999 top20 left40 w70 imgTag src={IMAGES.logos.webeLogo}></Div>
-							<Div absolute z999 top23 right40 w18 imgTag src={IMAGES.cancelIcon} />
-							</Div>
-						) : (
-							<Div absolute z99 top23 right40 w18 imgTag src={IMAGES.menuIcon} />
-							)}
-						{clicked && (
-							<Div absolute z100 top0 wFull hFull style={{ background: "rgba(65, 63, 112, 0.55)", backdropFilter: "blur(20px)" }}>
-								<Div mt100 mx40 textSecondary2 fontSize24>
-									<Div flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
-										<Div mr18>Public Docs</Div>
-									</Div>
-									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://betterworldapp.io"}>
-										<Div mr18>BetterWorld</Div>
-										<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
-									</Div>
-									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://discord.com/invite/7tV3WxWf8p"}>
-										<Div mr18>Discord</Div>
-										<FaDiscord size={20} />
-									</Div>
-									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://twitter.com/officialgomz"}>
-										<Div mr18> Twitter</Div>
-										<FaTwitter size={20} />
-									</Div>
-									<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://instagram.com/offical_gomz"}>
-										<Div mr18>Instagram</Div>
-										<FaInstagram size={20} />
-									</Div>
-								</Div>
-								<Div flex justifyCenter mt40 mx40 clx={"text-stroke"}>
-									<Div
-									flex2
-									flex
-									justifyCenter
-									text2xl
-									textSecondary={locale == LOCALES.KO}
-									textSecondary2={locale != LOCALES.KO}
-									cursorPointer
-									onClick={() => reloadWithLocale(LOCALES.KO)}
-									>
-										KOREAN
-									</Div>
-									<Div flex1 flex justifyCenter text2xl textSecondary2>
-										l
-									</Div>
-									<Div
-										flex2
-										flex
-										justifyCenter
-										text2xl
-										textSecondary={locale == LOCALES.EN}
-										textSecondary2={locale != LOCALES.EN}
-										cursorPointer
-										onClick={() => reloadWithLocale(LOCALES.EN)}
-									>
-										ENGLISH
-									</Div>
-								</Div>
-							</Div>
-						)}
-					</Div>
+					<MainTopBar/>
 					<Div flex justifyCenter>
-						<Div mt90 w230 imgTag src={IMAGES.webeMainAstronaut} style={{ animation: "float 6s ease-in-out infinite" }}></Div>
+						<Div mt30 w230 imgTag src={IMAGES.webeMainAstronaut} style={{ animation: "float 6s ease-in-out infinite" }}></Div>
 					</Div>
 					<Div flex justifyCenter>
 						<Div px30 imgTag src={IMAGES.mainWordMobile}></Div>
