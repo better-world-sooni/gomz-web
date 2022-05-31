@@ -115,7 +115,7 @@ const BasicHead = () => {
 					})([], length);
 
 					function generateColor(amount, total, multiplier) {
-					return 'hsla\(' + ((amount * multiplier) * (360 / total)) + ',100%,60%,0.90\)'
+					return 'hsla\(' + ((amount * multiplier) * (360 / total)) + ',100%,90%,1.0\)'
 					}
 				}
 
