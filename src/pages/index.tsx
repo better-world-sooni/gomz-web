@@ -14,16 +14,18 @@ import { Faq } from "src/components/Faq";
 import Footer from "src/components/common/Footer";
 import Col from "src/components/Col";
 import Row from "src/components/Row";
+import { MintingModal } from "src/components/modal/MintingModal";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
 	const [clicked, setClicked] = useState(false);
+	const [open, setOpen] = useState(false);
 	const { locale } = useRouter();
 	const handleClickHome = () => {
 		href(urls.home.index);
 	};
 	const handleClickMint = () => {
-		href(urls.mint.index);
+		setOpen(true);
 	};
 	const team = [
 		{
@@ -240,7 +242,7 @@ const Index: NextPage = () => {
 							</Div>
 							<Div flex>
 								<Div pb20 textLeft fontSize22 textSecondary2 leadingTight>
-									The Cultural franchise dedicated to global innovators, party heads, and Web 3 enthusiasts
+									The Cultural Franchise dedicated to global innovators, party heads, and Web 3 enthusiasts
 								</Div>
 							</Div>
 							<Div flex pb30>
@@ -656,6 +658,7 @@ const Index: NextPage = () => {
 				</Div>
 				<Footer />
 			</Div>
+			<MintingModal open={open} onClose={() => setOpen(false)} />
 		</>
 	);
 };

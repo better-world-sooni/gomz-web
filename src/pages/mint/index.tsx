@@ -34,7 +34,7 @@ const Index: NextPage = () => {
 				setError("You have declined authentication.");
 			}
 		} else {
-			console.log("Please install Kaikas");
+			// console.log("Please install Kaikas");
 		}
 	};
 	const handlePressUp = () => {

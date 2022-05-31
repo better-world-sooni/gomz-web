@@ -64,10 +64,7 @@ const addPrefixToImageUris = (data) => {
 			if (typeof v === "string") {
 				const source = prefix + v;
 				data[key] = source;
-				if (typeof Image !== "undefined") {
-					console.log("preloaded");
-					new Image().src = source;
-				}
+				if (typeof Image !== "undefined") new Image().src = source;
 			} else if (typeof v === "object") {
 				addPrefixToImageUris(v);
 			}

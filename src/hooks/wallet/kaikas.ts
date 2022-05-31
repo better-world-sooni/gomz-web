@@ -6,16 +6,16 @@ export const useKaikasWallet = () => {
 			try {
 				klaytn.enable();
 			} catch (error) {
-				console.error(error);
-				console.log("Most likely user cancelled popup");
+				// console.error(error);
+				// console.log("Most likely user cancelled popup");
 			}
 		} else if (!klaytn._kaikas.isApproved()) {
-			console.log("No kaikas wallet history");
+			// console.log("No kaikas wallet history");
 		} else {
-			console.log("kaikas enabled and approved");
+			// console.log("kaikas enabled and approved");
 		}
 	} else {
-		console.log("window undefined");
+		// console.log("window undefined");
 	}
 };
 
