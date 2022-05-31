@@ -157,7 +157,6 @@ const Index: NextPage = () => {
 							border1 borderBlack
 							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
 							onClick={handleClickHome}
-							clx={"text-stroke"}
 						>
 							READ THE STORY
 						</Div>
@@ -558,7 +557,14 @@ const Index: NextPage = () => {
 											return <Faq key={index} question={question} answer={answer} isTablet={true} />;
 										})}
 									</Div>
-									<EmptyBlock h={30} />
+									<EmptyBlock h={100} />
+									<Div textCenter textSecondary fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+										Lastly,{" "}
+										<Div spanTag textSecondary>
+											{" "}
+										Say
+										</Div>
+									</Div>
 									<Row mt30>
 										<Col></Col>
 										<Col auto>
@@ -566,7 +572,7 @@ const Index: NextPage = () => {
 										</Col>
 										<Col></Col>
 									</Row>
-									<EmptyBlock h={70} />
+									<EmptyBlock h={100} />
 								<Footer />
 				</Div>
 			</>
@@ -674,7 +680,7 @@ const Index: NextPage = () => {
 							</Div>
 							<Div flex maxW250></Div>
 						</Div>
-						<Div ml50 maxW300>
+						<Div ml110 maxW330>
 							{/* <Div pb30 imgTag src={IMAGES.mintingProcess}></Div> */}
 							<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
 						</Div>

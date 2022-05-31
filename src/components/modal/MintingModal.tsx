@@ -47,51 +47,52 @@ export function MintingModal({ open, onClose }) {
 	};
 	return (
 		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
-			<Div roundedLg overflowHidden maxW={1100} mx80>
-				<Div flex itemsCenter bgPrimary z2 roundedTLg px40 py20>
-					<Div w150 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
+			<Div roundedLg overflowHidden w800 mx80>
+				<Div flex itemsCenter bgPrimary z2 roundedTLg px50 py20>
+					<Div w120 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
 					<Div flex1 ml20 textWhite fontSize24>
 						GALAXY
 					</Div>
-					<Div textWhite fontSize24>
+					<Div mr20 textWhite fontSize24>
 						BOARDING PASS
 					</Div>
 				</Div>
 				<Div h14 z1 bgSecondary borderB2 borderT2 borderBlack></Div>
-				<Div flex bgWhite overMono fontSize22 py15>
-					<Div style={{ flex: 2 }} px40>
-						<Div flex>
+				<Div flex bgWhite overMono fontSize18 py50>
+					<Div style={{ flex: 2 }} pl50>
+						<Div flex mb20>
 							<Div mr20>Destination:</Div>
 							<Div fontBold>BetterWorld</Div>
 						</Div>
-						<Div flex>
+						<Div flex mb20>
 							<Div mr20>Seat Type:</Div>
 							<Div fontBold>Cohort A</Div>
 						</Div>
 						<Div>AVAILABLE SEATS:</Div>
 					</Div>
-					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px40>
-						<Div flex>
+					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50>
+						<Div flex mb20>
 							<Div mr20>Price:</Div>
 							<Div fontBold spanTag>
 								150 Klay
 							</Div>
 						</Div>
-						<Div flex>
+						<Div flex mb20>
 							<Div mr20>Amount:</Div>
 							<Div fontBold> 1</Div>
 						</Div>
 						<Div
-							w180
-							h60
+							mt50
+							px3
+							py10
 							borderBlack
 							border1
 							roundedFull
 							textWhite
 							bgPrimary
-							fontSize32
+							fontSize24
 							balooB
-							style={{ webkitTextStroke: "1px #000" }}
+							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
 							flex
 							justifyCenter
 							itemsCenter
