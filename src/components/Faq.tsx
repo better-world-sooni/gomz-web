@@ -9,8 +9,8 @@ export function Faq({ question, answer, isTablet }) {
 	if (isTablet) {
 		return (
 			<Div textSecondary2 my15 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-				<Row textLg p15 border2 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
-					<Col auto balooB style={{ webkitTextStroke: "1px #000" }}>
+				<Row textLg p15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
+					<Col auto balooB clx={"text-stroke"}>
 						Q.{" "}
 					</Col>
 					<Col>
@@ -20,7 +20,7 @@ export function Faq({ question, answer, isTablet }) {
 				</Row>
 				{clicked && (
 					<Row py20 px30>
-						<Col auto textSecondary textBase balooB style={{ webkitTextStroke: "1px #000" }} e>
+						<Col auto textSecondary textBase balooB clx={"text-stroke"}>
 							A.{" "}
 						</Col>
 						<Col textMed balooR>

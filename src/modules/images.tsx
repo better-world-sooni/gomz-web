@@ -9,6 +9,7 @@ const images = {
 	webeMainAstronaut: "/images/webeMainAstronaut.png",
 	mintingProcess: "/images/mintingProcess.png",
 	mainWord: '/images/mainWord.png',
+	mainWordMobile: '/images/mainWordMobile.png',
 	menuIcon: "/images/menuIcon.png",
 	cancelIcon: "/images/cancelIcon.png",
 	starDusts3: "/images/starDusts3.png",
