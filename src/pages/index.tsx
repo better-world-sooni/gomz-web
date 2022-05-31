@@ -593,7 +593,7 @@ const Index: NextPage = () => {
 						<Div flex1></Div>
 						<Div flex flexRow itemsCenter>
 							<Div mx10 textSecondary2 cursorPointer aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
-								<Div roundedFull bgSecondary py4 px18 fontSize12 trackingWidest borderBlack border1 clx={"group transition hover:bg-primary-light text-stroke-thin"}>
+								<Div roundedFull bgSecondary py4 px18 fontSize12 trackingWidest borderBlack border1 clx={"group transition hover:bg-primary-light"}>
 									PUBLIC DOCS
 								</Div>
 							</Div>
@@ -653,7 +653,7 @@ const Index: NextPage = () => {
 									maxW150
 									flex
 									justifyCenter
-									clx={"group transition hover:bg-primary-light text-stroke"}
+									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
 									roundedFull
 									px40
@@ -966,9 +966,9 @@ const Index: NextPage = () => {
 								WeBes
 							</Div>
 						</Div>
-						<Div textCenter textSecondary2 fontSize36 mt-20 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+						<Div textCenter textSecondary2 fontSize36 mt-20 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
 							Departing for
-							<Div spanTag textSecondary>
+							<Div spanTag textSecondary >
 								{" "}
 								BetterWorld
 							</Div>
