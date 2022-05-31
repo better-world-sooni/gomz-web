@@ -108,7 +108,6 @@ const Index: NextPage = () => {
 							<Div absolute z99 top23 right24 w18 imgTag src={IMAGES.menuIcon} />
 							)}
 						{clicked && (
-<<<<<<< HEAD
 							<Div absolute z99 top0 wFull hFull style={{ background: "rgba(218, 226, 255, 0.96)" }}>
 								<Div mt90 mx50 textPrimary fontSize32>
 									<Div flex pb15 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
@@ -130,42 +129,6 @@ const Index: NextPage = () => {
 									<Div flex py15 itemsCenter aTag href={"https://instagram.com/offical_gomz"}>
 										<FaInstagram size={32} />
 										<Div ml18 clx={"text-stroke-white"}>Instagram</Div>
-=======
-							<Div
-								absolute
-								z2
-								top0
-								wFull
-								hFull
-								style={{background: "rgba(218, 226, 255, 0.96)"}}
-								>
-								<Div mt90 mx50 textPrimary fontSize32 style={{webkitTextStroke:"1px #fff"}}>
-									<Div flex mb38 itemsCenter 
-										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
-										style={{webkitTextStroke:"1px #fff"}}>
-											<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
-											<Div ml18>Public Docs</Div>
-										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}
-										style={{webkitTextStroke:"1px #fff"}}>
-											<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
-											<Div ml17>BetterWorld</Div>
-										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}
-										style={{webkitTextStroke:"1px #fff"}}>
-											<FaDiscord size={32} />
-											<Div ml18>Discord</Div>
-										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}
-										style={{webkitTextStroke:"1px #fff"}}>
-											<FaTwitter size={32} />
-											<Div ml18>Twitter</Div>
-										</Div>
-										<Div flex mb38 itemsCenter aTag href={"https://instagram.com/offical_gomz"}>
-											<FaInstagram size={32} />
-											<Div ml18>Instagram</Div>
-										</Div>
->>>>>>> main
 									</Div>
 								</Div>
 							</Div>

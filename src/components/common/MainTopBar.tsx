@@ -17,7 +17,6 @@ function MainTopBar() {
 	};
 	if (isTablet) {
 		return (
-<<<<<<< HEAD
 			<Div relative>
 			<Div wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
 			<Div absolute top20 z99 left24 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe}></Div>
@@ -33,51 +32,6 @@ function MainTopBar() {
 							<Div flex mb38 itemsCenter aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
 								<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
 									<Div ml18 clx={"text-stroke-white"}>Public Docs</Div>
-=======
-			<Div absolute wFull z999 flex>
-				<Div flex1></Div>
-				<Div flex itemsCenter>
-					<Div absolute top24 left24 w80 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe} cursorPointer></Div>
-					<Div onClick={() => setClicked((prev) => !prev)}>
-						{clicked ? <Div absolute z999 top30 right24 w18 imgTag src={IMAGES.cancelIcon}/> : <Div absolute z999 top30 right24 w18 imgTag src={IMAGES.menuIcon}/>}
-						{clicked && (
-							<Div
-								absolute
-								hScreen
-								wFull
-								top0
-								left0
-								style={{background: "rgba(218, 226, 255, 0.96)"}}
-								>
-								<Div mt90 mx50 textPrimary fontSize32>
-									<Div flex mb38 itemsCenter
-										aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}
-										style={{webkitTextStroke:"1px #fff"}}>
-										<Div w30 imgTag src={IMAGES.logos.webeIconPrimary}></Div>
-										<Div ml18>Public Docs</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}
-									style={{webkitTextStroke:"1px #fff"}}>
-										<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
-										<Div ml17>BetterWorld</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://discord.com/invite/7tV3WxWf8p"}
-									style={{webkitTextStroke:"1px #fff"}}>
-										<FaDiscord size={32} />
-										<Div ml18>Discord</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://twitter.com/officialgomz"}
-									style={{webkitTextStroke:"1px #fff"}}>
-										<FaTwitter size={32} />
-										<Div ml18>Twitter</Div>
-									</Div>
-									<Div flex mb38 itemsCenter aTag href={"https://instagram.com/offical_gomz"}
-									style={{webkitTextStroke:"1px #fff"}}>
-										<FaInstagram size={32} />
-										<Div ml18>Instagram</Div>
-									</Div>
-								</Div>
->>>>>>> main
 							</Div>
 							<Div flex mb38 itemsCenter aTag href={"https://betterworldapp.io"}>
 								<Div w32 imgTag src={IMAGES.logos.betterWorldPrimary}></Div>
