@@ -396,7 +396,7 @@ export const wording = {
 				),
 				en: (
 					<>During deep hibernation in their capsules in BetterWorld,
-					WeBe have been awakened by other space wanderersM<br></br>who are also in search of a habitable planet.</>
+					WeBe have been awakened by other space wanderers<br></br>who are also in search of a habitable planet.</>
 				),
 			},
 			story4: {

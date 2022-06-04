@@ -137,9 +137,10 @@ const Index: NextPage = () => {
 									</Div>
 									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 										<Div inlineFlex itemsCenter>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py40 px10 ml10 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
+											style={{overflowY: "hidden" }}>
 												Re-<br></br>Birth
-												<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
 												<Div
 													absolute
 													flex
@@ -163,9 +164,10 @@ const Index: NextPage = () => {
 													</Div>
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 ml10 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												Weird<br></br>Wine
-												<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
 												<Div
 													absolute
 													flex
@@ -189,9 +191,10 @@ const Index: NextPage = () => {
 													</Div>
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 ml10 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												Wizard<br></br>WeBe
-												<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
 												<Div
 													absolute
 													flex
@@ -225,9 +228,10 @@ const Index: NextPage = () => {
 											<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
 												BetterWorld
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												Pioneer
-												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
 												<Div
 													absolute
 													flex
@@ -251,9 +255,10 @@ const Index: NextPage = () => {
 													</Div>
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												Socialize<br></br>to Earn
-												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
 												<Div
 													absolute
 													flex
@@ -277,9 +282,10 @@ const Index: NextPage = () => {
 													</Div>
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												Capsule
-												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.capsule}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
 												<Div
 													absolute
 													flex
@@ -317,9 +323,10 @@ const Index: NextPage = () => {
 									</Div>
 									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
 										<Div inlineFlex itemsCenter>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight p40 ml10 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												WeBe Goods
-												<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
 												<Div
 													absolute
 													flex
@@ -343,9 +350,10 @@ const Index: NextPage = () => {
 													</Div>{" "}
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py40 ml10 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												WeBe<br></br>Partners
-												<Div flex justifyCenter imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
 												<Div
 													absolute
 													flex
@@ -379,9 +387,10 @@ const Index: NextPage = () => {
 											<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
 												Community
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												Weird IRL
-												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
 												<Div
 													absolute
 													flex
@@ -405,9 +414,10 @@ const Index: NextPage = () => {
 													</Div>
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
-												Weird Projects
-												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
+												Weird Project
+												<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
 												<Div
 													absolute
 													flex
@@ -431,9 +441,10 @@ const Index: NextPage = () => {
 													</Div>
 												</Div>
 											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 p40 textCenter roundedLg>
+											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
+											style={{ overflowY: "hidden" }}>
 												WeBe DAO
-												<Div flex JustifyCenter imgTag src={IMAGES.journeyIcons.webeBank}></Div>
+												<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
 												<Div
 													absolute
 													flex
@@ -658,7 +669,7 @@ const Index: NextPage = () => {
 							Re-Birth
 							<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
 								<Div flex1></Div>
-								<Div flex2 pr10>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
 								</Div>
 							</Div>
@@ -688,7 +699,7 @@ const Index: NextPage = () => {
 							Weird<br></br>Wine
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
-								<Div flex2 pr10>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
 								</Div>
 							</Div>
@@ -708,7 +719,7 @@ const Index: NextPage = () => {
 							Wizard<br></br>WeBe
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
-								<Div flex1 pr10>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
 								</Div>
 							</Div>
@@ -736,7 +747,7 @@ const Index: NextPage = () => {
 							Pioneer
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
-								<Div flex1 pr10>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
 								</Div>
 							</Div>
@@ -756,7 +767,7 @@ const Index: NextPage = () => {
 							Socialize<br></br>to Earn
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
-								<Div flex1 pr10>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
 								</Div>
 							</Div>
@@ -776,7 +787,7 @@ const Index: NextPage = () => {
 							Capsule
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
-								<Div flex1 pr10>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
 								</Div>
 							</Div>
@@ -808,7 +819,7 @@ const Index: NextPage = () => {
 							WeBe Goods
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex2></Div>
-								<Div flex1 pr20>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
 								</Div>
 							</Div>
@@ -827,8 +838,8 @@ const Index: NextPage = () => {
 						<Div relative w500 h200 border1 borderBlack bgPrimaryLight ml30 p40 roundedLg>
 							WeBe Partners
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1 pr10>
+								<Div flex2></Div>
+								<Div flex1>
 									<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
 								</Div>
 							</Div>
@@ -873,11 +884,11 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							Weird<br></br>Projects
+							Weird<br></br>Project
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
 								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+									<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
 								</Div>
 							</Div>
 							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -896,8 +907,8 @@ const Index: NextPage = () => {
 							WeBe<br></br>DAO
 							<Div absolute top0 left0 wFull hFull flex itemsEnd>
 								<Div flex1></Div>
-								<Div flex1 pr10>
-									<Div imgTag src={IMAGES.journeyIcons.webeBank}></Div>
+								<Div flex1>
+									<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
 								</Div>
 							</Div>
 							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>

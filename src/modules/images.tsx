@@ -31,9 +31,9 @@ const images = {
 	journeyIcons: {
 		capsule: "/images/journeyIcons/capsule.png",
 		pioneer: "/images/journeyIcons/pioneer.png",
-		rebirth: "/images/journeyIcons/rebirth.png",
+		rebirth: "/images/journeyIcons/reBirth.png",
 		socializetoEarn: "/images/journeyIcons/socializetoEarn.png",
-		webeBank: "/images/journeyIcons/webeBank.png",
+		weirdProjects: "/images/journeyIcons/weirdProjects.png",
 		webeDAO: "/images/journeyIcons/webeDAO.png",
 		webeGoods: "/images/journeyIcons/webeGoods.png",
 		webePartners: "/images/journeyIcons/webePartners.png",

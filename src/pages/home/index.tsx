@@ -120,7 +120,7 @@ const Index: NextPage = () => {
 							<Scene duration={1000} triggerHook={0} pin={true}>
 								<Div relative>
 									<MainTopBar />
-											<Div style={{ backgroundSize: "cover", backgroundPositionY: "center" }} relative italic textSm>
+											<Div style={{ backgroundSize: "cover", backgroundPositionY: "center" }} relative italic textSm fontSemibold>
 												<Div
 													style={{
 														backgroundImage: `url(${IMAGES.webeStory1})`,
@@ -162,7 +162,7 @@ const Index: NextPage = () => {
 																				<Div maxW={150} textWhite mx24 my100 fontSize8 textLeft balooR>
 																					{wording.story.index.story2[locale]}
 																				</Div>
-																				<Div maxW={150} textWhite mx24 my-80 fontSize8 textLeft balooR>
+																				<Div maxW={150} textWhite mx24 my-90 fontSize8 textLeft balooR>
 																					{wording.story.index.story22[locale]}
 																				</Div>
 																				<EmptyBlock h={100} />
