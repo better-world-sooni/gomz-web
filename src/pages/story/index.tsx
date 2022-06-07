@@ -120,137 +120,147 @@ const Index: NextPage = () => {
 							<Scene duration={1000} triggerHook={0} pin={true}>
 								<Div relative>
 									<MainTopBar />
-											<Div style={{ backgroundSize: "cover", backgroundPositionY: "center" }} relative italic textSm fontSemibold>
-												<Div
-													style={{
-														backgroundImage: `url(${IMAGES.webeStory1})`,
-														backgroundSize: "cover",
-														backgroundPositionY: "center",
-														backgroundPositionX: "center",
-													}}
-													flex
-													flexCol
-												>
-													<Div flex justifyEnd>
-														<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
-															{wording.story.index.story1[locale]}
-														</Div>
-													</Div>
+									<Div style={{ backgroundSize: "cover", backgroundPositionY: "center" }} relative italic textSm fontSemibold>
+										<Div
+											style={{
+												backgroundImage: `url(${IMAGES.webeStory1})`,
+												backgroundSize: "cover",
+												backgroundPositionY: "center",
+												backgroundPositionX: "center",
+											}}
+											flex
+											flexCol
+										>
+											<Div flex justifyEnd>
+												<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
+													{wording.story.index.story1[locale]}
 												</Div>
-												<Scene duration={1000} triggerHook={0} pin={true}>
-													{(progress) => (
-														<Timeline totalProgress={progress} paused>
-															<Timeline
-																target={
-																	<Div
-																		wFull
-																		absolute
-																		top0
-																		hFull
-																		textXl
-																		style={{
-																			backgroundImage: `url(${IMAGES.webeStory2})`,
-																			backgroundSize: "cover",
-																			backgroundPositionY: "center",
-																			backgroundPositionX: "center",
-																		}}
-																		flexCol
-																		justifyEnd
-																	>
-																		<Div flex justifyStart>
-																			<Div style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
-																				<Div maxW={150} textWhite mx24 my100 fontSize8 textLeft balooR>
-																					{wording.story.index.story2[locale]}
-																				</Div>
-																				<Div maxW={150} textWhite mx24 my-90 fontSize8 textLeft balooR>
-																					{wording.story.index.story22[locale]}
-																				</Div>
-																				<EmptyBlock h={100} />
-																			</Div>
-																		</Div>
-																	</Div>
-																}
-															>
-																<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-															</Timeline>
-															<Timeline
-																target={
-																	<Div
-																		wFull
-																		absolute
-																		top0
-																		hFull
-																		textXl
-																		style={{
-																			backgroundImage: `url(${IMAGES.webeStory3})`,
-																			backgroundSize: "cover",
-																			backgroundPositionY: "center",
-																			backgroundPositionX: "center",
-																		}}
-																		flex
-																		flexCol
-																		justifyStart
-																	>
-																		<Div flex justifyStart>
-																			<Div
-																				maxW={150}
-																				textWhite
-																				mx24
-																				my90
-																				fontSize8
-																				textLeft
-																				balooR
-																				style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
-																			>
-																				{wording.story.index.story3[locale]}
-																			</Div>
-																		</Div>
-																	</Div>
-																}
-															>
-																<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-															</Timeline>
-															<Timeline
-																target={
-																	<Div
-																		wFull
-																		absolute
-																		top0
-																		hFull
-																		textXl
-																		style={{
-																			backgroundImage: `url(${IMAGES.webeStory4})`,
-																			backgroundSize: "cover",
-																			backgroundPositionY: "center",
-																			backgroundPositionX: "center",
-																		}}
-																		flex
-																		flexCol
-																	>
-																		<Div flex justifyEnd>
-																			<Div
-																				maxW={150}
-																				textWhite
-																				mx24
-																				my90
-																				fontSize8
-																				textRight
-																				balooR
-																				style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
-																			>
-																				{wording.story.index.story4[locale]}
-																			</Div>
-																		</Div>
-																	</Div>
-																}
-															>
-																<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
-															</Timeline>
-														</Timeline>
-													)}
-												</Scene>
 											</Div>
-									<Div relative textCenter textSecondary2 fontSize36 pt50 px20 style={{ textShadow: "2px 2px 0px rgba(0, 0, 0, 2)" }} clx={"text-stroke"} notItalic>
+										</Div>
+										<Scene duration={1000} triggerHook={0} pin={true}>
+											{(progress) => (
+												<Timeline totalProgress={progress} paused>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.webeStory2})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flexCol
+																justifyEnd
+															>
+																<Div flex justifyStart>
+																	<Div style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
+																		<Div maxW={150} textWhite mx24 my100 fontSize8 textLeft balooR>
+																			{wording.story.index.story2[locale]}
+																		</Div>
+																		<Div maxW={150} textWhite mx24 my-90 fontSize8 textLeft balooR>
+																			{wording.story.index.story22[locale]}
+																		</Div>
+																		<EmptyBlock h={100} />
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.webeStory3})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flex
+																flexCol
+																justifyStart
+															>
+																<Div flex justifyStart>
+																	<Div
+																		maxW={150}
+																		textWhite
+																		mx24
+																		my90
+																		fontSize8
+																		textLeft
+																		balooR
+																		style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
+																	>
+																		{wording.story.index.story3[locale]}
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+													<Timeline
+														target={
+															<Div
+																wFull
+																absolute
+																top0
+																hFull
+																textXl
+																style={{
+																	backgroundImage: `url(${IMAGES.webeStory4})`,
+																	backgroundSize: "cover",
+																	backgroundPositionY: "center",
+																	backgroundPositionX: "center",
+																}}
+																flex
+																flexCol
+															>
+																<Div flex justifyEnd>
+																	<Div
+																		maxW={150}
+																		textWhite
+																		mx24
+																		my90
+																		fontSize8
+																		textRight
+																		balooR
+																		style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
+																	>
+																		{wording.story.index.story4[locale]}
+																	</Div>
+																</Div>
+															</Div>
+														}
+													>
+														<Tween from={{ opacity: -1 }} to={{ opacity: 1 }} />
+													</Timeline>
+												</Timeline>
+											)}
+										</Scene>
+									</Div>
+									<Div
+										relative
+										textCenter
+										textSecondary2
+										fontSize36
+										pt50
+										px20
+										style={{ textShadow: "2px 2px 0px rgba(0, 0, 0, 2)" }}
+										clx={"text-stroke"}
+										notItalic
+									>
 										&quot;We be
 										<Div spanTag textSecondary>
 											{" "}
@@ -265,7 +275,8 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Scene>
-						</Controller><Footer />
+						</Controller>
+						<Footer />
 					</Div>
 				</Div>
 			</>
@@ -285,7 +296,7 @@ const Index: NextPage = () => {
 						<Scene duration={1000} triggerHook={0} pin={true}>
 							<Div relative>
 								<Div hScreen>
-									<MainTopBar />
+									<MainTopBar absolute />
 									<Div wFull style={{ backgroundSize: "cover", backgroundPositionY: "center" }} relative hFull italic textSm>
 										<Div
 											wFull

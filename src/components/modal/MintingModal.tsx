@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { href } from "src/helpers/routeHelper";
-import { useSmartContract } from "src/hooks/contract/kip17";
+import { useContract } from "src/hooks/klaytn/useContract";
 import { IMAGES } from "src/modules/images";
 import { urls } from "src/modules/urls";
 import Div from "../Div";
@@ -13,7 +13,7 @@ export function MintingModal({ open, onClose }) {
 	const price = 150;
 	const [error, setError] = useState("");
 	const [amountToMint, setAmountToMint] = useState(1);
-	const smartContract = useSmartContract();
+	const smartContract = useContract();
 	const mint = async () => {
 		// @ts-ignore
 		if (typeof window !== "undefined" && typeof window.klaytn !== "undefined") {
@@ -48,38 +48,44 @@ export function MintingModal({ open, onClose }) {
 	return (
 		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
 			<Div roundedLg overflowHidden w800 mx80>
-				<Div flex itemsCenter bgPrimary z2 roundedTLg px50 py20>
-					<Div w100 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
-					<Div flex1 ml20 textWhite fontSize24>
-						GALAXY
+				<Div flex bgPrimary fontSize24>
+					<Div style={{ flex: 2 }} pl50 flex flexRow py20>
+						<Div>
+							<Div w100 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
+						</Div>
+						<Div ml20 textWhite fontSize24>
+							GALAXY
+						</Div>
 					</Div>
-					<Div mr20 textWhite fontSize24>
-						BOARDING PASS
+					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py20>
+						<Div mr20 textWhite fontSize24>
+							BOARDING PASS
+						</Div>
 					</Div>
 				</Div>
-				<Div h14 z1 bgSecondary borderB2 borderT2 borderBlack></Div>
-				<Div flex bgWhite overMono fontSize18 py50>
-					<Div style={{ flex: 2 }} pl50>
+				<Div flex h14 z1 bgSecondary borderB2 borderT2 borderBlack>
+					<Div style={{ flex: 2 }} pl50 py20 flexRow></Div>
+					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py20></Div>
+				</Div>
+				<Div flex bgWhite fontSize24>
+					<Div style={{ flex: 2 }} pl50 py20>
 						<Div flex mb20>
 							<Div mr20>Destination:</Div>
-							<Div fontBold>BetterWorld</Div>
+							<Div>BetterWorld</Div>
 						</Div>
 						<Div flex mb20>
 							<Div mr20>Seat Type:</Div>
-							<Div fontBold>Cohort A</Div>
+							<Div>Cohort A</Div>
 						</Div>
-						<Div>AVAILABLE SEATS:</Div>
 					</Div>
-					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50>
+					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py20>
 						<Div flex mb20>
 							<Div mr20>Price:</Div>
-							<Div fontBold spanTag>
-								150 Klay
-							</Div>
+							<Div spanTag>150 Klay</Div>
 						</Div>
 						<Div flex mb20>
 							<Div mr20>Amount:</Div>
-							<Div fontBold> 1 WeBe</Div>
+							<Div> 1 WeBe</Div>
 						</Div>
 						<Div
 							mt50
@@ -101,7 +107,6 @@ export function MintingModal({ open, onClose }) {
 						>
 							Confirm
 						</Div>
-						{/* <Div absolute right250 bottom70 w270 rotate12 imgTag src={IMAGES.webeGalaxy}></Div> */}
 					</Div>
 				</Div>
 			</Div>

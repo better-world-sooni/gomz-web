@@ -2,9 +2,8 @@ import type { NextPage } from "next";
 import BasicHead from "src/components/BasicHead";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
-import { href, LOCALES, reloadWithLocale } from "src/helpers/routeHelper";
+import { href } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
-import { FaChevronDown, FaChevronUp, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import useIsTablet from "src/hooks/useIsTablet";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -16,75 +15,35 @@ import Col from "src/components/Col";
 import Row from "src/components/Row";
 import { MintingModal } from "src/components/modal/MintingModal";
 import MainTopBar from "src/components/common/MainTopBar";
+import { faqs } from "src/modules/faqs";
+import { team } from "src/modules/team";
+import { useContract } from "src/hooks/klaytn/useContract";
+import { useKaikas } from "src/hooks/klaytn/useKaikas";
+import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
+import { MintingState, MintingStep } from "src/modules/minting";
+import { useContractState } from "src/hooks/klaytn/useContractState";
+import { useAddressState } from "src/hooks/klaytn/useAddressState";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
-	const [clicked, setClicked] = useState(false);
 	const [open, setOpen] = useState(false);
 	const { locale } = useRouter();
-	const handleClickHome = () => {
-		href(urls.home.index);
+	const handleClickReadStory = () => {
+		href(urls.story.index);
 	};
 	const handleClickMint = () => {
 		setOpen(true);
 	};
-	const team = [
-		{
-			name: wording.team.index.members.jieun.name[locale],
-			imageUri: IMAGES.team.jieun,
-			position: wording.team.index.members.jieun.position[locale],
-			desc: wording.team.index.members.jieun.desc[locale],
-			specialty: wording.team.index.members.jieun.specialty[locale],
-			countries: wording.team.index.members.jieun.countries,
-		},
-		{
-			name: wording.team.index.members.minjun.name[locale],
-			imageUri: IMAGES.team.mj,
-			position: wording.team.index.members.minjun.position[locale],
-			desc: wording.team.index.members.minjun.desc[locale],
-			specialty: wording.team.index.members.minjun.specialty[locale],
-			countries: wording.team.index.members.minjun.countries,
-		},
-		{
-			name: wording.team.index.members.yeajean.name[locale],
-			imageUri: IMAGES.team.serena,
-			position: wording.team.index.members.yeajean.position[locale],
-			desc: wording.team.index.members.yeajean.desc[locale],
-			specialty: wording.team.index.members.yeajean.specialty[locale],
-			countries: wording.team.index.members.yeajean.countries,
-		},
-		{
-			name: wording.team.index.members.eric.name[locale],
-			imageUri: IMAGES.team.eric,
-			position: wording.team.index.members.eric.position[locale],
-			desc: wording.team.index.members.eric.desc[locale],
-			specialty: wording.team.index.members.eric.specialty[locale],
-			countries: wording.team.index.members.eric.countries,
-		},
-		
-	];
-	const faqs = [
-		{
-			question: wording.faq.question.q1[locale],
-			answer: wording.faq.answer.q1[locale],
-		},
-		{
-			question: wording.faq.question.q2[locale],
-			answer: wording.faq.answer.q2[locale],
-		},
-		{
-			question: wording.faq.question.q3[locale],
-			answer: wording.faq.answer.q3[locale],
-		},
-		{
-			question: wording.faq.question.q4[locale],
-			answer: wording.faq.answer.q4[locale],
-		},
-		{
-			question: wording.faq.question.q5[locale],
-			answer: wording.faq.answer.q5[locale],
-		},
-	];
+	const kaikas = useKaikas();
+	const connectWallet = async () => {
+		if (kaikas) {
+			await kaikas.enable();
+		}
+	};
+	const { mintingStep, totalSupply, maxSupply } = useContractState();
+	const { invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, balance } = useAddressState({
+		kaikas,
+	});
 
 	if (isTablet) {
 		return (
@@ -97,7 +56,7 @@ const Index: NextPage = () => {
 				>
 					<Div absolute w180 top60 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 					<Div absolute w120 top280 right20 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-					<MainTopBar/>
+					<MainTopBar />
 					<Div flex justifyCenter>
 						<Div mt30 w230 imgTag src={IMAGES.webeMainAstronaut} style={{ animation: "float 6s ease-in-out infinite" }}></Div>
 					</Div>
@@ -118,431 +77,313 @@ const Index: NextPage = () => {
 							h50
 							textSecondary2
 							fontSize18
-							border1 borderBlack
+							border1
+							borderBlack
 							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
-							onClick={handleClickHome}
+							onClick={handleClickReadStory}
 						>
 							READ THE STORY
 						</Div>
 					</Div>
 
-									<EmptyBlock h={200} />
-									<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										In
-										<Div spanTag textSecondary>
-											{" "}
-											Digital{" "}
-										</Div>
-										World
+					<EmptyBlock h={200} />
+					<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						In
+						<Div spanTag textSecondary>
+							{" "}
+							Digital{" "}
+						</Div>
+						World
+					</Div>
+					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+						<Div inlineFlex itemsCenter>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Re-<br></br>Birth
+								<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.rebirth[locale]}
 									</Div>
-									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-										<Div inlineFlex itemsCenter>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
-											style={{overflowY: "hidden" }}>
-												Re-<br></br>Birth
-												<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InDigitlaWorld.rebirth[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Weird<br></br>Wine
-												<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InDigitlaWorld.weirdwine[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Wizard<br></br>WeBe
-												<Div imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InDigitlaWorld.wizardwebe[locale]}
-													</Div>{" "}
-												</Div>
-											</Div>
-											<Div textSecondary fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
-												Collection
-											</Div>
-										</Div>
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Weird<br></br>Wine
+								<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.weirdwine[locale]}
 									</Div>
-									<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-										<Div inlineFlex itemsCenter>
-											<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
-												BetterWorld
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Pioneer
-												<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InDigitlaWorld.pioneer[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Socialize<br></br>to Earn
-												<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InDigitlaWorld.socializetoearn[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Capsule
-												<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InDigitlaWorld.capsule[locale]}
-													</Div>
-												</Div>
-											</Div>
-										</Div>
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Wizard<br></br>WeBe
+								<Div imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.wizardwebe[locale]}
+									</Div>{" "}
+								</Div>
+							</Div>
+							<Div textSecondary fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+								Collection
+							</Div>
+						</Div>
+					</Div>
+					<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+						<Div inlineFlex itemsCenter>
+							<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+								BetterWorld
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Pioneer
+								<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.pioneer[locale]}
 									</Div>
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Socialize<br></br>to Earn
+								<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.socializetoearn[locale]}
+									</Div>
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Capsule
+								<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.capsule[locale]}
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+					</Div>
 
-									<EmptyBlock h={100} />
-									<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										In
-										<Div spanTag textSecondary>
-											{" "}
-											Real{" "}
-										</Div>
-										World
+					<EmptyBlock h={100} />
+					<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						In
+						<Div spanTag textSecondary>
+							{" "}
+							Real{" "}
+						</Div>
+						World
+					</Div>
+					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+						<Div inlineFlex itemsCenter>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								WeBe Goods
+								<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.webegoods[locale]}
+									</Div>{" "}
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								WeBe<br></br>Partners
+								<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.webepartners[locale]}
 									</Div>
-									<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-										<Div inlineFlex itemsCenter>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												WeBe Goods
-												<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InRealWorld.webegoods[locale]}
-													</Div>{" "}
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												WeBe<br></br>Partners
-												<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InRealWorld.webepartners[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div textSecondary fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
-												Brand
-											</Div>
-										</Div>
+								</Div>
+							</Div>
+							<Div textSecondary fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+								Brand
+							</Div>
+						</Div>
+					</Div>
+					<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+						<Div inlineFlex itemsCenter>
+							<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+								Community
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Weird IRL
+								<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.weirdirl[locale]}
 									</Div>
-									<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-										<Div inlineFlex itemsCenter>
-											<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
-												Community
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Weird IRL
-												<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InRealWorld.weirdirl[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												Weird Project
-												<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InRealWorld.weirdprojects[locale]}
-													</Div>
-												</Div>
-											</Div>
-											<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg
-											style={{ overflowY: "hidden" }}>
-												WeBe DAO
-												<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
-												<Div
-													absolute
-													flex
-													itemsCenter
-													wFull
-													hFull
-													top0
-													left0
-													clx={"group transition hover:bg-primary-light hover:transition-all"}
-													roundedLg
-												>
-													<Div
-														textSecondary2
-														fontSize12
-														px20
-														textLeft
-														balooR
-														clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-													>
-														{wording.index.InRealWorld.webedao[locale]}
-													</Div>
-												</Div>
-											</Div>
-										</Div>
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								Weird Project
+								<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.weirdprojects[locale]}
 									</Div>
-									<EmptyBlock h={100} />
-									<Div textCenter textSecondary fontSize42 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										First 8{" "}
-										<Div spanTag textSecondary2>
-											{" "}
-											WeBe
-										</Div>
+								</Div>
+							</Div>
+							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								WeBe DAO
+								<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										fontSize12
+										px20
+										textLeft
+										balooR
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.webedao[locale]}
 									</Div>
-									<Div textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										Departing for
-										<Div spanTag textSecondary>
-											{" "}
-											BetterWorld
-										</Div>
+								</Div>
+							</Div>
+						</Div>
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textCenter textSecondary fontSize42 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						First 8{" "}
+						<Div spanTag textSecondary2>
+							{" "}
+							WeBe
+						</Div>
+					</Div>
+					<Div textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						Departing for
+						<Div spanTag textSecondary>
+							{" "}
+							BetterWorld
+						</Div>
+					</Div>
+					<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py30 clx={"scrollbar-off"}>
+						{team(locale).map((member, index) => {
+							return (
+								<Div key={index} inlineBlock mx10 balooR>
+									<Div imgTag src={member.imageUri} w150 h150 roundedXl border1 borderBlack></Div>
+									<EmptyBlock h={30} />
+									<Div textSecondary2 textCenter textLg balooB>
+										{member.name}
 									</Div>
-									<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py30 clx={"scrollbar-off"}>
-										{team.map((member, index) => {
-											return (
-												<Div key={index} inlineBlock mx10 balooR>
-													<Div imgTag src={member.imageUri} w150 h150 roundedXl border1 borderBlack></Div>
-													<EmptyBlock h={30} />
-													<Div textSecondary2 textCenter textLg balooB>
-														{member.name}
-													</Div>
-													<Div textSecondary2 textCenter textSm>
-														{member.position}
-													</Div>
-												</Div>
-											);
-										})}
+									<Div textSecondary2 textCenter textSm>
+										{member.position}
 									</Div>
-									<EmptyBlock h={100} />
-									<Div leadingTight textCenter textSecondary fontSize42 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										Partnered with <br></br>{" "}
-										<Div spanTag textSecondary2>
-											{" "}
-											the Best
-										</Div>
-									</Div>
-									<Div flex justifyCenter itemsCenter mt30>
-										<Div w100 mx20 imgTag src={IMAGES.partners.aiLabs}></Div>
-										<Div w100 mx20 imgTag src={IMAGES.partners.bankofWine}></Div>
-									</Div>
-									<Div flex justifyCenter itemsCenter mt30>
-										<Div w130 h18 mx20 imgTag src={IMAGES.partners.blinkers}></Div>
-										<Div w90 h25 mx20 imgTag src={IMAGES.partners.kote}></Div>
-									</Div>
-									<EmptyBlock h={100} />
-									<Div textCenter textSecondary fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										FAQs
-									</Div>
-									<Div maxW={900} px40 mxAuto>
-										{faqs.map(({ question, answer }, index) => {
-											return <Faq key={index} question={question} answer={answer} isTablet={true} />;
-										})}
-									</Div>
-									<EmptyBlock h={100} />
-									<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-										Lastly,{" "}
-										<Div spanTag textSecondary>
-											{" "}
-										Say
-										</Div>
-									</Div>
-									<Row mt30>
-										<Col></Col>
-										<Col auto>
-											<Div fontSize28 clx={"rainbow-text-mobile"}>WeeEEeeEeWwwoooOO</Div>
-										</Col>
-										<Col></Col>
-									</Row>
-									<EmptyBlock h={100} />
-								<Footer />
+								</Div>
+							);
+						})}
+					</Div>
+					<EmptyBlock h={100} />
+					<Div leadingTight textCenter textSecondary fontSize42 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						Partnered with <br></br>{" "}
+						<Div spanTag textSecondary2>
+							{" "}
+							the Best
+						</Div>
+					</Div>
+					<Div flex justifyCenter itemsCenter mt30>
+						<Div w100 mx20 imgTag src={IMAGES.partners.aiLabs}></Div>
+						<Div w100 mx20 imgTag src={IMAGES.partners.bankofWine}></Div>
+					</Div>
+					<Div flex justifyCenter itemsCenter mt30>
+						<Div w130 h18 mx20 imgTag src={IMAGES.partners.blinkers}></Div>
+						<Div w90 h25 mx20 imgTag src={IMAGES.partners.kote}></Div>
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textCenter textSecondary fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						FAQs
+					</Div>
+					<Div maxW={900} px40 mxAuto>
+						{faqs(locale).map(({ question, answer }, index) => {
+							return <Faq key={index} question={question} answer={answer} isTablet={true} />;
+						})}
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						Lastly,{" "}
+						<Div spanTag textSecondary>
+							{" "}
+							Say
+						</Div>
+					</Div>
+					<Row mt30>
+						<Col></Col>
+						<Col auto>
+							<Div fontSize28 clx={"rainbow-text-mobile"}>
+								WeeEEeeEeWwwoooOO
+							</Div>
+						</Col>
+						<Col></Col>
+					</Row>
+					<EmptyBlock h={100} />
+					<Footer />
 				</Div>
 			</>
 		);
@@ -560,95 +401,65 @@ const Index: NextPage = () => {
 			>
 				<Div absolute w350 top0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-				<Div sticky top0 wFull z200 px80 py15 style={{ backgroundColor: "rgba(0,0,0,0.1)" }} clx={"text-stroke-thin"}>
-					<Div flex mxAuto maxW={1100}>
-						<Div>
-							<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>
-						</Div>
-						<Div flex1></Div>
-						<Div flex flexRow itemsCenter>
-							<Div mx10 textSecondary2 cursorPointer aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
-								<Div roundedFull bgSecondary py4 px18 fontSize12 trackingWidest borderBlack border1 clx={"group transition hover:bg-primary-light"}>
-									PUBLIC DOCS
-								</Div>
-							</Div>
-							<Div mx10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-								<Div imgTag src={IMAGES.logos.betterWorldSecondary2} h20 wAuto></Div>
-							</Div>
-							<Div
-								mx10
-								textSecondary2
-								clx={"group transition hover:text-primary-light"}
-								cursorPointer
-								aTag
-								href={"https://discord.com/invite/7tV3WxWf8p"}
-							>
-								<FaDiscord size={30} />
-							</Div>
-							<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
-								<FaTwitter size={25} />
-							</Div>
-							<Div
-								mx10
-								textSm
-								textSecondary={locale == LOCALES.KO}
-								textSecondary2={locale != LOCALES.KO}
-								clx={"group transition hover:text-primary-light"}
-								cursorPointer
-								onClick={() => reloadWithLocale(LOCALES.KO)}
-							>
-								KOR
-							</Div>
-							<Div textSm textSecondary2>
-								l
-							</Div>
-							<Div
-								ml10
-								textSm
-								textSecondary={locale == LOCALES.EN}
-								textSecondary2={locale != LOCALES.EN}
-								clx={"group transition hover:text-primary-light"}
-								cursorPointer
-								onClick={() => reloadWithLocale(LOCALES.EN)}
-							>
-								ENG
-							</Div>
-						</Div>
-					</Div>
-				</Div>
+				<MainTopBar />
 				<Div px80>
 					<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
-						<Div flexCol>
-							<Div flex maxW400>
-								<Div pt30 pb20></Div>
-							</Div>
-							<Div pb40 imgTag src={IMAGES.mainWord}></Div>
-							<Div flex pb30>
-								<Div
-									maxW150
-									flex
-									justifyCenter
-									clx={"group transition hover:bg-primary-light"}
-									bgSecondary
-									roundedFull
-									px40
-									py8
-									fontSize23
-									textSecondary2
-									borderBlack
-									border2
-									onClick={handleClickMint}
-									cursorPointer
-									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-								>
-									MINT
+						{kaikas?.selectedAddress ? (
+							<MainPageActions
+								mintingStep={mintingStep}
+								invitesRemaining={invitesRemaining}
+								mintRemaining={mintRemaining}
+								mintingState={mintingState}
+								invitor={invitor}
+								amountMinted={amountMinted}
+								balance={balance}
+								totalSupply={totalSupply}
+								maxSupply={maxSupply}
+							/>
+						) : (
+							<Div flexCol>
+								<Div flex maxW400>
+									<Div pt30 pb20></Div>
 								</Div>
-								<Div mr10 flex justifyCenter roundedFull px40 py8 fontSize23 textSecondary2 onClick={handleClickHome} cursorPointer clx={"text-stroke"}>
-									READ THE STORY
+								<Div pb40 imgTag src={IMAGES.mainWord}></Div>
+								<Div flex pb30>
+									<Div
+										flex
+										justifyCenter
+										clx={"group transition hover:bg-primary-light"}
+										bgSecondary
+										roundedFull
+										px40
+										py8
+										fontSize23
+										textSecondary2
+										borderBlack
+										border2
+										onClick={connectWallet}
+										cursorPointer
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										CONNECT WALLET
+									</Div>
+									<Div
+										mr10
+										flex
+										justifyCenter
+										roundedFull
+										px40
+										py8
+										fontSize23
+										textSecondary2
+										onClick={handleClickReadStory}
+										cursorPointer
+										clx={"text-stroke"}
+									>
+										READ THE STORY
+									</Div>
 								</Div>
+								<Div flex maxW250></Div>
 							</Div>
-							<Div flex maxW250></Div>
-						</Div>
+						)}
 						<Div ml110 maxW330>
 							{/* <Div pb30 imgTag src={IMAGES.mintingProcess}></Div> */}
 							<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
@@ -935,13 +746,13 @@ const Index: NextPage = () => {
 						</Div>
 						<Div textCenter textSecondary2 fontSize36 mt-20 clx={"text-stroke"}>
 							Departing for
-							<Div spanTag textSecondary >
+							<Div spanTag textSecondary>
 								{" "}
 								BetterWorld
 							</Div>
 						</Div>
 						<Div mt40 mxAuto maxW={960} flex>
-							{team.map((member, index) => {
+							{team(locale).map((member, index) => {
 								return (
 									<Div key={index} inlineBlock mx20>
 										<Div imgTag src={member.imageUri} roundedXl border1 borderBlack></Div>
@@ -983,7 +794,7 @@ const Index: NextPage = () => {
 							FAQs
 						</Div>
 						<Div maxW={900} px40 mxAuto>
-							{faqs.map(({ question, answer }, index) => {
+							{faqs(locale).map(({ question, answer }, index) => {
 								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 							})}
 						</Div>
@@ -1011,6 +822,262 @@ const Index: NextPage = () => {
 		</>
 	);
 };
+
+function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, totalSupply, balance, maxSupply }) {
+	const tokensLeft = maxSupply - totalSupply;
+	const handleClickReadStory = () => {
+		href(urls.story.index);
+	};
+	if (mintingStep == MintingStep.Initial) {
+		const subtitle =
+			mintingState == MintingState.Initial
+				? "Apply for a whitelist for privileges and responsibilities!"
+				: "And you are set! Just join the count down in Discord:)";
+		const buttons =
+			mintingState == MintingState.Initial
+				? [
+						{ text: "Submit Application", handleClick: null },
+						{ text: "Read the Story", handleClick: handleClickReadStory },
+				  ]
+				: [
+						{ text: "Enter Discord", handleClick: null },
+						{ text: "Read the Story", handleClick: handleClickReadStory },
+				  ];
+		return (
+			<Div flexCol>
+				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					Webes are
+					<Div spanTag textSecondary>
+						{" "}
+						Getting Ready{" "}
+					</Div>
+					for Lift Off
+				</Div>
+				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+					{subtitle}
+				</Div>
+				<Div pt30 pb20></Div>
+				<Div flex itemsCenter justifyCenter gapX={20}>
+					{buttons.map((button, index) => (
+						<Div
+							key={index}
+							flex
+							justifyCenter
+							clx={index == 0 && "group transition hover:bg-primary-light"}
+							bgSecondary={index == 0}
+							roundedFull
+							px40
+							py8
+							fontSize23
+							textSecondary2
+							borderBlack={index == 0}
+							border2={index == 0}
+							cursorPointer
+							onClick={button.handleClick}
+							style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+						>
+							{button.text}
+						</Div>
+					))}
+				</Div>
+				<Div flex maxW250></Div>
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.WhitelistMint) {
+		const subtitle =
+			mintingState == MintingState.Initial
+				? "Apply for a whitelist for privileges and responsibilities!"
+				: amountMinted > 0 || mintingState == MintingState.Whitelisted
+				? mintRemaining > 0 || invitesRemaining > 0
+					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chances to mint` : ""}${mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""}${
+							invitesRemaining > 0 ? ` ${invitesRemaining} more chances invite your trusted companions on-chain (gas fee incurred)` : ""
+					  }!`
+					: "Congrats, you've finished the full package!"
+				: `${truncateKlaytnAddress(invitor)} invited you to join the crew! You have ${mintRemaining} more chances to mint`;
+		const buttons =
+			mintingState == MintingState.Initial
+				? [
+						{ text: "Submit Application", handleClick: null },
+						{ text: "Read the Story", handleClick: handleClickReadStory },
+				  ]
+				: [
+						mintRemaining > 0 && { text: "Mint", handleClick: null },
+						invitesRemaining > 0 && { text: "Invite", handleClick: null },
+						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
+				  ];
+		return (
+			<Div flexCol>
+				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					The Crew of
+					<Div spanTag textSecondary>
+						{" "}
+						Whitelisted Webes{" "}
+					</Div>
+					are getting on board
+				</Div>
+				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+					{subtitle}
+				</Div>
+				<Div pt30 pb20></Div>
+				<Div flex itemsCenter justifyCenter gapX={20}>
+					{buttons
+						.filter((button) => button)
+						.map((button, index) => (
+							<Div
+								key={index}
+								flex
+								justifyCenter
+								clx={index == 0 && "group transition hover:bg-primary-light"}
+								bgSecondary={index == 0}
+								roundedFull
+								px40
+								py8
+								fontSize23
+								textSecondary2
+								borderBlack={index == 0}
+								border2={index == 0}
+								cursorPointer
+								onClick={button.handleClick}
+								style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							>
+								{button.text}
+							</Div>
+						))}
+				</Div>
+				<Div flex maxW250></Div>
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.PublicMint) {
+		const subtitle =
+			tokensLeft > 0
+				? mintingState == mintRemaining > 0
+					? `You have${mintRemaining} more chances to mint!`
+					: "Congrats, you've finished the full package!"
+				: "Webes have sold out!";
+		const buttons = [
+			mintRemaining > 0 && tokensLeft > 0 && { text: "Mint", handleClick: null },
+			{ text: "Read the Story", handleClick: handleClickReadStory },
+		];
+		return (
+			<Div flexCol>
+				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					Get on board! The
+					<Div spanTag textSecondary>
+						{" "}
+						Whole Sleuth of Webes
+					</Div>
+					are Departing
+				</Div>
+				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+					{subtitle}
+				</Div>
+				<Div pt30 pb20></Div>
+				<Div flex itemsCenter justifyCenter gapX={20}>
+					{buttons
+						.filter((button) => button)
+						.map((button, index) => (
+							<Div
+								key={index}
+								flex
+								justifyCenter
+								clx={index == 0 && "group transition hover:bg-primary-light"}
+								bgSecondary={index == 0}
+								roundedFull
+								px40
+								py8
+								fontSize23
+								textSecondary2
+								borderBlack={index == 0}
+								border2={index == 0}
+								cursorPointer
+								onClick={button.handleClick}
+								style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							>
+								{button.text}
+							</Div>
+						))}
+				</Div>
+				<Div flex maxW250></Div>
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.Rebirth) {
+		const subtitle = balance > 0 ? `${balance} Webes may be eligible for rebirth...` : "Webes have sold out!";
+		const buttons = [
+			balance > 0 && { text: "Renaissance!", handleClick: handleClickReadStory },
+			{ text: "Read the Story", handleClick: handleClickReadStory },
+		];
+		return (
+			<Div flexCol>
+				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					The
+					<Div spanTag textSecondary>
+						{" "}
+						Rebirth, Enlightment, RENAISSANCE!!
+					</Div>
+					is here
+				</Div>
+				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+					{subtitle}
+				</Div>
+				<Div pt30 pb20></Div>
+				<Div flex itemsCenter justifyCenter gapX={20}>
+					{buttons
+						.filter((button) => button)
+						.map((button, index) => (
+							<Div
+								key={index}
+								flex
+								justifyCenter
+								clx={index == 0 && "group transition hover:bg-primary-light"}
+								bgSecondary={index == 0}
+								roundedFull
+								px40
+								py8
+								fontSize23
+								textSecondary2
+								borderBlack={index == 0}
+								border2={index == 0}
+								cursorPointer
+								onClick={button.handleClick}
+								style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							>
+								{button.text}
+							</Div>
+						))}
+				</Div>
+				<Div flex maxW250></Div>
+			</Div>
+		);
+	} else {
+		return (
+			<Div flexCol>
+				<Div flex maxW400>
+					<Div pt30 pb20></Div>
+				</Div>
+				<Div pb40 imgTag src={IMAGES.mainWord}></Div>
+				<Div flex pb30>
+					s
+					<Div
+						mr10
+						flex
+						justifyCenter
+						roundedFull
+						px40
+						py8
+						fontSize23
+						textSecondary2
+						onClick={handleClickReadStory}
+						cursorPointer
+						clx={"text-stroke"}
+					>
+						READ THE STORY
+					</Div>
+				</Div>
+				<Div flex maxW250></Div>
+			</Div>
+		);
+	}
+}
 
 
 export default Index;
