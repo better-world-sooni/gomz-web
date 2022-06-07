@@ -5,7 +5,6 @@ import { useContract } from "./useContract";
 export const useContractState = () => {
     const [mintingStep, setMintingStep] = useState<MintingStep>(MintingStep.Initial)
     const [totalSupply, setTotalSupply] = useState<number>(0)
-    const [balance, setBalance] = useState<number>(0)
     const contract = useContract();
     useEffect(() => {
 		if(contract){
@@ -18,5 +17,5 @@ export const useContractState = () => {
         }
 	}, [contract])
     const maxSupply = 8888
-    return {mintingStep, totalSupply, balance, maxSupply}
+    return {mintingStep, totalSupply, maxSupply}
 }

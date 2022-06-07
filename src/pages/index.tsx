@@ -26,13 +26,9 @@ import { useAddressState } from "src/hooks/klaytn/useAddressState";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
-	const [open, setOpen] = useState(false);
 	const { locale } = useRouter();
 	const handleClickReadStory = () => {
 		href(urls.story.index);
-	};
-	const handleClickMint = () => {
-		setOpen(true);
 	};
 	const kaikas = useKaikas();
 	const connectWallet = async () => {
@@ -41,7 +37,7 @@ const Index: NextPage = () => {
 		}
 	};
 	const { mintingStep, totalSupply, maxSupply } = useContractState();
-	const { invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, balance } = useAddressState({
+	const { invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, balance, loading } = useAddressState({
 		kaikas,
 	});
 
@@ -415,6 +411,7 @@ const Index: NextPage = () => {
 								balance={balance}
 								totalSupply={totalSupply}
 								maxSupply={maxSupply}
+								loading={loading}
 							/>
 						) : (
 							<Div flexCol>
@@ -818,20 +815,36 @@ const Index: NextPage = () => {
 				</Div>
 				<Footer />
 			</Div>
-			<MintingModal open={open} onClose={() => setOpen(false)} />
 		</>
 	);
 };
 
-function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, totalSupply, balance, maxSupply }) {
+function MainPageActions({
+	mintingStep,
+	invitesRemaining,
+	mintRemaining,
+	mintingState,
+	invitor,
+	amountMinted,
+	totalSupply,
+	balance,
+	maxSupply,
+	loading,
+}) {
 	const tokensLeft = maxSupply - totalSupply;
+	const [open, setOpen] = useState(false);
 	const handleClickReadStory = () => {
 		href(urls.story.index);
 	};
+	const handleClickCheckOnMyWebes = () => {
+		href(urls["my-webes"].index);
+	};
+	const handleClickMint = () => setOpen(true);
+	const loadingSubtitle = "Webes are waiting on the blockchain...";
 	if (mintingStep == MintingStep.Initial) {
 		const subtitle =
 			mintingState == MintingState.Initial
-				? "Apply for a whitelist for privileges and responsibilities!"
+				? "Apply for a whitelist for exclusive privileges and important responsibilities!"
 				: "And you are set! Just join the count down in Discord:)";
 		const buttons =
 			mintingState == MintingState.Initial
@@ -854,75 +867,12 @@ function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, minting
 					for Lift Off
 				</Div>
 				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{subtitle}
+					{loading ? loadingSubtitle : subtitle}
 				</Div>
 				<Div pt30 pb20></Div>
-				<Div flex itemsCenter justifyCenter gapX={20}>
-					{buttons.map((button, index) => (
-						<Div
-							key={index}
-							flex
-							justifyCenter
-							clx={index == 0 && "group transition hover:bg-primary-light"}
-							bgSecondary={index == 0}
-							roundedFull
-							px40
-							py8
-							fontSize23
-							textSecondary2
-							borderBlack={index == 0}
-							border2={index == 0}
-							cursorPointer
-							onClick={button.handleClick}
-							style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-						>
-							{button.text}
-						</Div>
-					))}
-				</Div>
-				<Div flex maxW250></Div>
-			</Div>
-		);
-	} else if (mintingStep == MintingStep.WhitelistMint) {
-		const subtitle =
-			mintingState == MintingState.Initial
-				? "Apply for a whitelist for privileges and responsibilities!"
-				: amountMinted > 0 || mintingState == MintingState.Whitelisted
-				? mintRemaining > 0 || invitesRemaining > 0
-					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chances to mint` : ""}${mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""}${
-							invitesRemaining > 0 ? ` ${invitesRemaining} more chances invite your trusted companions on-chain (gas fee incurred)` : ""
-					  }!`
-					: "Congrats, you've finished the full package!"
-				: `${truncateKlaytnAddress(invitor)} invited you to join the crew! You have ${mintRemaining} more chances to mint`;
-		const buttons =
-			mintingState == MintingState.Initial
-				? [
-						{ text: "Submit Application", handleClick: null },
-						{ text: "Read the Story", handleClick: handleClickReadStory },
-				  ]
-				: [
-						mintRemaining > 0 && { text: "Mint", handleClick: null },
-						invitesRemaining > 0 && { text: "Invite", handleClick: null },
-						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
-				  ];
-		return (
-			<Div flexCol>
-				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					The Crew of
-					<Div spanTag textSecondary>
-						{" "}
-						Whitelisted Webes{" "}
-					</Div>
-					are getting on board
-				</Div>
-				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{subtitle}
-				</Div>
-				<Div pt30 pb20></Div>
-				<Div flex itemsCenter justifyCenter gapX={20}>
-					{buttons
-						.filter((button) => button)
-						.map((button, index) => (
+				{!loading && (
+					<Div flex itemsCenter justifyCenter gapX={20}>
+						{buttons.map((button, index) => (
 							<Div
 								key={index}
 								flex
@@ -943,8 +893,79 @@ function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, minting
 								{button.text}
 							</Div>
 						))}
-				</Div>
+					</Div>
+				)}
 				<Div flex maxW250></Div>
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.WhitelistMint) {
+		const subtitle =
+			mintingState == MintingState.Initial
+				? "Apply for a whitelist for exclusive privileges and important responsibilities!"
+				: amountMinted > 0
+				? mintRemaining > 0 || invitesRemaining > 0
+					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chances to mint` : ""}${mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""}${
+							invitesRemaining > 0 ? ` ${invitesRemaining} more chances invite your trusted companions on-chain (gas fee incurred)` : ""
+					  }!`
+					: "Congrats, you've finished the full package!"
+				: mintingState == MintingState.Whitelisted
+				? `You are one of the 88 Webes to be whitelisted! Mint to participate in our movement.`
+				: `${truncateKlaytnAddress(invitor)} invited you to join the crew! You have ${mintRemaining} more chances to mint`;
+		const buttons =
+			mintingState == MintingState.Initial
+				? [
+						{ text: "Submit Application", handleClick: null },
+						{ text: "Read the Story", handleClick: handleClickReadStory },
+				  ]
+				: [
+						mintRemaining > 0 && { text: "Mint", handleClick: handleClickMint },
+						invitesRemaining > 0 && amountMinted > 0 && { text: "Invite", handleClick: null },
+						balance > 0 && { text: "Check on my Webes", handleClick: handleClickCheckOnMyWebes },
+						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
+				  ];
+		return (
+			<Div flexCol>
+				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					The Crew of
+					<Div spanTag textSecondary>
+						{" "}
+						Whitelisted Webes{" "}
+					</Div>
+					are boarding
+				</Div>
+				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+					{loading ? loadingSubtitle : subtitle}
+				</Div>
+				<Div pt30 pb20></Div>
+				{!loading && (
+					<Div flex itemsCenter justifyCenter gapX={20}>
+						{buttons
+							.filter((button) => button)
+							.map((button, index) => (
+								<Div
+									key={index}
+									flex
+									justifyCenter
+									clx={index == 0 && "group transition hover:bg-primary-light"}
+									bgSecondary={index == 0}
+									roundedFull
+									px={index == 0 ? 40 : 20}
+									py8
+									fontSize23
+									textSecondary2
+									borderBlack={index == 0}
+									border2={index == 0}
+									cursorPointer
+									onClick={button.handleClick}
+									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									{button.text}
+								</Div>
+							))}
+					</Div>
+				)}
+				<Div flex maxW250></Div>
+				<MintingModal open={open} onClose={() => setOpen(false)} />
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.PublicMint) {
@@ -955,7 +976,8 @@ function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, minting
 					: "Congrats, you've finished the full package!"
 				: "Webes have sold out!";
 		const buttons = [
-			mintRemaining > 0 && tokensLeft > 0 && { text: "Mint", handleClick: null },
+			mintRemaining > 0 && tokensLeft > 0 && { text: "Mint", handleClick: handleClickMint },
+			balance > 0 && { text: "Check on my Webes", handleClick: handleClickCheckOnMyWebes },
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
@@ -969,41 +991,44 @@ function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, minting
 					are Departing
 				</Div>
 				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{subtitle}
+					{loading ? loadingSubtitle : subtitle}
 				</Div>
 				<Div pt30 pb20></Div>
-				<Div flex itemsCenter justifyCenter gapX={20}>
-					{buttons
-						.filter((button) => button)
-						.map((button, index) => (
-							<Div
-								key={index}
-								flex
-								justifyCenter
-								clx={index == 0 && "group transition hover:bg-primary-light"}
-								bgSecondary={index == 0}
-								roundedFull
-								px40
-								py8
-								fontSize23
-								textSecondary2
-								borderBlack={index == 0}
-								border2={index == 0}
-								cursorPointer
-								onClick={button.handleClick}
-								style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-							>
-								{button.text}
-							</Div>
-						))}
-				</Div>
+				{!loading && (
+					<Div flex itemsCenter justifyCenter gapX={20}>
+						{buttons
+							.filter((button) => button)
+							.map((button, index) => (
+								<Div
+									key={index}
+									flex
+									justifyCenter
+									clx={index == 0 && "group transition hover:bg-primary-light"}
+									bgSecondary={index == 0}
+									roundedFull
+									px40
+									py8
+									fontSize23
+									textSecondary2
+									borderBlack={index == 0}
+									border2={index == 0}
+									cursorPointer
+									onClick={button.handleClick}
+									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									{button.text}
+								</Div>
+							))}
+					</Div>
+				)}
+				<MintingModal open={open} onClose={() => setOpen(false)} />
 				<Div flex maxW250></Div>
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Rebirth) {
 		const subtitle = balance > 0 ? `${balance} Webes may be eligible for rebirth...` : "Webes have sold out!";
 		const buttons = [
-			balance > 0 && { text: "Renaissance!", handleClick: handleClickReadStory },
+			balance > 0 && { text: "Renaissance!", handleClick: handleClickCheckOnMyWebes },
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
@@ -1017,34 +1042,36 @@ function MainPageActions({ mintingStep, invitesRemaining, mintRemaining, minting
 					is here
 				</Div>
 				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{subtitle}
+					{loading ? loadingSubtitle : subtitle}
 				</Div>
 				<Div pt30 pb20></Div>
-				<Div flex itemsCenter justifyCenter gapX={20}>
-					{buttons
-						.filter((button) => button)
-						.map((button, index) => (
-							<Div
-								key={index}
-								flex
-								justifyCenter
-								clx={index == 0 && "group transition hover:bg-primary-light"}
-								bgSecondary={index == 0}
-								roundedFull
-								px40
-								py8
-								fontSize23
-								textSecondary2
-								borderBlack={index == 0}
-								border2={index == 0}
-								cursorPointer
-								onClick={button.handleClick}
-								style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-							>
-								{button.text}
-							</Div>
-						))}
-				</Div>
+				{!loading && (
+					<Div flex itemsCenter justifyCenter gapX={20}>
+						{buttons
+							.filter((button) => button)
+							.map((button, index) => (
+								<Div
+									key={index}
+									flex
+									justifyCenter
+									clx={index == 0 && "group transition hover:bg-primary-light"}
+									bgSecondary={index == 0}
+									roundedFull
+									px40
+									py8
+									fontSize23
+									textSecondary2
+									borderBlack={index == 0}
+									border2={index == 0}
+									cursorPointer
+									onClick={button.handleClick}
+									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									{button.text}
+								</Div>
+							))}
+					</Div>
+				)}
 				<Div flex maxW250></Div>
 			</Div>
 		);

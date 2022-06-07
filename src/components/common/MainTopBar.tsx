@@ -28,7 +28,7 @@ function MainTopBar({ absolute = false }) {
 		return (
 			<Div relative>
 				<Div wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
-				<Div absolute top20 z99 left40 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe}></Div>
+				<Div absolute top20 z99 left40 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe} cursorPointer></Div>
 				<Div onClick={() => setClicked((prev) => !prev)}>
 					{clicked ? (
 						<Div absolute z999 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
@@ -138,7 +138,7 @@ function MainTopBar({ absolute = false }) {
 	return (
 		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py15 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
 			<Div flex mxAuto maxW={1100}>
-				<Div>
+				<Div onClick={handleClickWebe} cursorPointer>
 					<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>
 				</Div>
 				<Div flex1></Div>
