@@ -31,20 +31,20 @@ export const wording = {
 			pioneer: {
 				en: (
 					<>
-						WeBe will be the first collection to join BetterWorld, the first social media for PFPs. Communicate, post, and perform in BetterWorld via
-						your Web 3 persona.
+						WeBe will enter BetterWorld, an app created exclusively for PFP forum and communication, where they can propose, vote, comment to exercise
+						their rights and privileges as a member of the community.
 					</>
 				),
 				ko: (
 					<>
-						위비는 웹3 아이덴티티로 교류하는 SNS 앱 BetterWorld에 호환되는 첫 컬렉션입니다. 게시물, 좋아요/댓글, 타 PFP 팔로우/팔로잉, 개인 메타버스
-						공간을 통해 자유롭게 표현하고 소통할 수 있습니다.
+						위비는 편리한 포럼과 소통을 위해 만들어진 PFP 전용 앱 BetterWorld에서 제안서, 게시물, 투표, 댓글, 타 PFP 팔로우/팔로잉을 통해 위비의
+						권리를 행사하고 소통할 수 있습니다.
 					</>
 				),
 			},
 			socializetoearn: {
 				en: <>Connect in the app to receive Klay every week. Socialize to earn passive income.</>,
-				ko: <>BetterWorld에서 위비는 자유롭게 표현하고 다른 유저들과 교류하며 $Klay를 보상 받을 수 있습니다.</>,
+				ko: <>BetterWorld에서 위비는 자유롭게 표현하고 다른 PFP들과 교류하며 $Klay를 보상 받을 수 있습니다.</>,
 			},
 			capsule: {
 				en: (
@@ -52,7 +52,7 @@ export const wording = {
 						WeBe holders receive a free metaverse land-the capsule-in BetterWorld. Here, you can decorate, communicate, and explore the digital world.
 					</>
 				),
-				ko: <>BetterWorld에서 무료 메타버스 개인 공간인 캡슐을 부여받습니다. 본인의 위비만을 위한 공간을 꾸미고, 소통하고, 탐험하세요.</>,
+				ko: <>BetterWorld에서 메타버스 개인 공간인 캡슐을 부여받습니다. 본인의 위비만을 위한 공간을 꾸미고, 소통하고, 탐험하세요.</>,
 			},
 		},
 		InRealWorld: {

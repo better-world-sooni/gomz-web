@@ -5,7 +5,7 @@ import { IMAGES } from "src/modules/images";
 import { href } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import useIsTablet from "src/hooks/useIsTablet";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import EmptyBlock from "src/components/EmptyBlock";
 import { wording } from "src/wording/wording";
@@ -17,12 +17,12 @@ import { MintingModal } from "src/components/modal/MintingModal";
 import MainTopBar from "src/components/common/MainTopBar";
 import { faqs } from "src/modules/faqs";
 import { team } from "src/modules/team";
-import { useContract } from "src/hooks/klaytn/useContract";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
 import { MintingState, MintingStep } from "src/modules/minting";
 import { useContractState } from "src/hooks/klaytn/useContractState";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
+import { InviteModal } from "src/components/modal/InviteModal";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -803,7 +803,7 @@ const Index: NextPage = () => {
 								Say
 							</Div>
 						</Div>
-						<Row mt100>
+						<Row mt100 h100>
 							<Col></Col>
 							<Col auto>
 								<Div clx={"rainbow-text"}>WeeEEeeEeWwwoooOO</Div>
@@ -832,14 +832,16 @@ function MainPageActions({
 	loading,
 }) {
 	const tokensLeft = maxSupply - totalSupply;
-	const [open, setOpen] = useState(false);
+	const [mintingOpen, setMintingOpen] = useState(false);
+	const [inviteOpen, setInviteOpen] = useState(false);
 	const handleClickReadStory = () => {
 		href(urls.story.index);
 	};
 	const handleClickCheckOnMyWebes = () => {
 		href(urls["my-webes"].index);
 	};
-	const handleClickMint = () => setOpen(true);
+	const handleClickMint = () => setMintingOpen(true);
+	const handleClickInvite = () => setInviteOpen(true);
 	const loadingSubtitle = "Webes are waiting on the blockchain...";
 	if (mintingStep == MintingStep.Initial) {
 		const subtitle =
@@ -905,7 +907,7 @@ function MainPageActions({
 				: amountMinted > 0
 				? mintRemaining > 0 || invitesRemaining > 0
 					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chances to mint` : ""}${mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""}${
-							invitesRemaining > 0 ? ` ${invitesRemaining} more chances invite your trusted companions on-chain (gas fee incurred)` : ""
+							invitesRemaining > 0 ? ` ${invitesRemaining} more chances invite your trusted companions on-chain` : ""
 					  }!`
 					: "Congrats, you've finished the full package!"
 				: mintingState == MintingState.Whitelisted
@@ -919,7 +921,7 @@ function MainPageActions({
 				  ]
 				: [
 						mintRemaining > 0 && { text: "Mint", handleClick: handleClickMint },
-						invitesRemaining > 0 && amountMinted > 0 && { text: "Invite", handleClick: null },
+						invitesRemaining > 0 && amountMinted > 0 && { text: "Invite", handleClick: handleClickInvite },
 						balance > 0 && { text: "Check on my Webes", handleClick: handleClickCheckOnMyWebes },
 						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
@@ -965,7 +967,8 @@ function MainPageActions({
 					</Div>
 				)}
 				<Div flex maxW250></Div>
-				<MintingModal open={open} onClose={() => setOpen(false)} />
+				<MintingModal open={mintingOpen} onClose={() => setMintingOpen(false)} />
+				<InviteModal open={inviteOpen} onClose={() => setInviteOpen(false)} />
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.PublicMint) {
@@ -1021,7 +1024,8 @@ function MainPageActions({
 							))}
 					</Div>
 				)}
-				<MintingModal open={open} onClose={() => setOpen(false)} />
+				<MintingModal open={mintingOpen} onClose={() => setMintingOpen(false)} />
+				<InviteModal open={inviteOpen} onClose={() => setInviteOpen(false)} />
 				<Div flex maxW250></Div>
 			</Div>
 		);

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { href } from "src/helpers/routeHelper";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useCaver } from "src/hooks/klaytn/useCaver";
 import { useContract } from "src/hooks/klaytn/useContract";
@@ -9,17 +8,14 @@ import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { COLORS } from "src/modules/colors";
 import { IMAGES } from "src/modules/images";
 import { MintingState, MintingStep } from "src/modules/minting";
-import { urls } from "src/modules/urls";
-import Col from "../Col";
 import Div from "../Div";
-import Row from "../Row";
 import Modal from "./Modal";
 
 enum ButtonState {
 	Confirm = "Confirm",
 	Failed = "Failed",
 	Loading = "Loading...",
-	Success = "Success!",
+	GetOnboard = "Get Onboard!",
 	ConnectWallet = "Connect Wallet",
 }
 
@@ -35,8 +31,23 @@ export function MintingModal({ open, onClose }) {
 	const [mintResponse, setMintResponse] = useState(null);
 	const [amountToMint, setAmountToMint] = useState(1);
 	const [buttonState, setButtonState] = useState(ButtonState.Confirm);
+	const handlePressButton = async () => {
+		if (buttonState == ButtonState.Confirm) {
+			mint();
+			return;
+		}
+		if (buttonState == ButtonState.ConnectWallet) {
+			await kaikas.enable();
+			return;
+		}
+		if (buttonState == ButtonState.GetOnboard) {
+			window.location.href = "www.betterworldapp.io/onboarding";
+			return;
+		}
+	};
 	const mint = async () => {
 		try {
+			setButtonState(ButtonState.Loading);
 			const mintFn = mintingStep == MintingStep.WhitelistMint ? smartContract.methods.whitelistMint : smartContract.methods.publicMint;
 			const mintRes = await mintFn(amountToMint).send({
 				from: kaikas?.selectedAddress,
@@ -44,7 +55,7 @@ export function MintingModal({ open, onClose }) {
 				value: caver.utils.toPeb(price * amountToMint, "KLAY"),
 			});
 			setMintResponse(mintRes);
-			setButtonState(ButtonState.Success);
+			setButtonState(ButtonState.GetOnboard);
 		} catch {
 			setButtonState(ButtonState.Failed);
 		}
@@ -60,6 +71,9 @@ export function MintingModal({ open, onClose }) {
 	useEffect(() => {
 		setButtonState(kaikas ? ButtonState.Confirm : ButtonState.ConnectWallet);
 	}, [kaikas]);
+	useEffect(() => {
+		setButtonState(ButtonState.Confirm);
+	}, [open]);
 	return (
 		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
 			<Div roundedLg overflowHidden w800 mx80>
@@ -127,14 +141,14 @@ export function MintingModal({ open, onClose }) {
 							bgPrimary
 							bgDanger={buttonState == ButtonState.Failed}
 							bgSecondary={buttonState == ButtonState.ConnectWallet}
-							bgSuccess={buttonState == ButtonState.Success}
+							bgInfo={buttonState == ButtonState.GetOnboard}
 							fontSize24
 							balooB
 							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
 							flex
 							justifyCenter
 							itemsCenter
-							onClick={mint}
+							onClick={handlePressButton}
 							clx={"group transition hover:bg-primary-teens"}
 							cursorPointer
 						>
