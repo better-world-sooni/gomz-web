@@ -43,7 +43,7 @@ export function InviteModal({ open, onClose }) {
 	}, [open]);
 	return (
 		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
-			<Div roundedLg overflowHidden w650 mx80>
+			<Div roundedLg overflowHidden w500 mx80>
 				<Div flex bgPrimary fontSize24 px50>
 					<Div style={{ flex: 2 }} flex flexRow py20>
 						<Div>
@@ -59,16 +59,16 @@ export function InviteModal({ open, onClose }) {
 				</Div>
 				<Div flex bgWhite fontSize24 px50>
 					<Div style={{ flex: 2 }} py20>
-						<Div flex mb20>
+						<Div flex mb20 balooR>
 							<Div mr20>From:</Div>
 							{kaikas?.selectedAddress && <Div>{truncateKlaytnAddress(kaikas.selectedAddress)}</Div>}
 						</Div>
-						<Div flex mb20>
+						<Div flex mb20 balooR>
 							<Div mr20>To:</Div>
 							<Div wFull>
 								<input
 									onChange={handleAddressInput}
-									style={{ border: "none", outline: "none", backgroundColor: COLORS.GRAY400, borderRadius: 10, padding: 4, width: "100%" }}
+									style={{ border: "none", outline: "none", backgroundColor: COLORS.GRAY300, borderRadius: 10, paddingLeft: 10, paddingRight:10, paddingTop:2, paddingBottom: 2, width: "100%" }}
 								></input>
 							</Div>
 						</Div>
@@ -78,7 +78,6 @@ export function InviteModal({ open, onClose }) {
 							</Div>
 						)}
 						<Div
-							px3
 							py10
 							borderBlack
 							border2

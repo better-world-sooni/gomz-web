@@ -44,28 +44,29 @@ const Index: NextPage = () => {
 				relative
 				minH="100vh"
 			>
-				<Div absolute w350 top0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
-				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
+				<Div absolute z0 w350 top0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
+				<Div absolute z0 w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<MainTopBar />
 				<Div px80>
 					<Div maxW={1100} mxAuto>
 						<EmptyBlock h={100} />
-						<Div flex itemsEnd>
+						<Div flex itemsCenter>
 							<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 								My{" "}
 								<Div spanTag textSecondary>
 									{" "}
-									Webes
+									WeBes
 								</Div>
 							</Div>
 							<Div flex1></Div>
 							<Div
 								flex
+								z10
 								justifyCenter
 								clx={"group transition hover:bg-primary-light"}
 								bgSecondary
 								roundedFull
-								px30
+								px20
 								py4
 								fontSize18
 								textSecondary2
@@ -74,10 +75,10 @@ const Index: NextPage = () => {
 								cursorPointer
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
-								Get Onboard at BetterWorld
+								Clear Immigration at BetterWorld
 							</Div>
 						</Div>
-						<Div grid gridCols4 gapX={20} gapY={10} py50>
+						<Div grid gridCols4 gapX={20} gapY={10} py40>
 							{new Array(balance).map((_, index) => {
 								return <Webe key={index} index={index} selectedAddress={kaikas.selectedAddress} />;
 							})}
@@ -100,10 +101,10 @@ function Webe({ index, selectedAddress }) {
 		<Div wFull>
 			<Div imgTag src={metadata?.image || IMAGES.team.jieun} wFull hAuto roundedXl border1 borderBlack></Div>
 			<EmptyBlock h={20} />
-			<Div textSecondary2 textLg balooB fontBold fontSize={"1vw"}>
+			<Div textSecondary2 textCenter fontBold fontSize={"1.2vw"}>
 				{metadata?.name}
 			</Div>
-			<Div fontSize={"1vw"}>{rebirthChances} Rebirth Chances</Div>
+			<Div textSecondary textCenter fontSize={"1.15vw"}>{rebirthChances} Rebirth Chances</Div>
 		</Div>
 	);
 }

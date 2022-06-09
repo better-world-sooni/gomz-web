@@ -426,7 +426,7 @@ const Index: NextPage = () => {
 										clx={"group transition hover:bg-primary-light"}
 										bgSecondary
 										roundedFull
-										px40
+										px30
 										py8
 										fontSize23
 										textSecondary2
@@ -842,16 +842,16 @@ function MainPageActions({
 	};
 	const handleClickMint = () => setMintingOpen(true);
 	const handleClickInvite = () => setInviteOpen(true);
-	const loadingSubtitle = "Webes are waiting on the blockchain...";
+	const loadingSubtitle = "loading...";
 	if (mintingStep == MintingStep.Initial) {
 		const subtitle =
 			mintingState == MintingState.Initial
-				? "Apply for a whitelist for exclusive privileges and important responsibilities!"
+				? "The cultural franchise dedicated to global innovators, party heads, and Web 3 enthusiasts"
 				: "And you are set! Just join the count down in Discord:)";
 		const buttons =
 			mintingState == MintingState.Initial
 				? [
-						{ text: "Submit Application", handleClick: null },
+						{ text: "Apply", handleClick: null },
 						{ text: "Read the Story", handleClick: handleClickReadStory },
 				  ]
 				: [
@@ -860,20 +860,19 @@ function MainPageActions({
 				  ];
 		return (
 			<Div flexCol>
-				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					Webes are
+				<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					We Be
 					<Div spanTag textSecondary>
 						{" "}
-						Getting Ready{" "}
+						Weird, Different, and Free.{" "}
 					</Div>
-					for Lift Off
 				</Div>
-				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
 					{loading ? loadingSubtitle : subtitle}
 				</Div>
-				<Div pt30 pb20></Div>
+				<Div pt10 pb20></Div>
 				{!loading && (
-					<Div flex itemsCenter justifyCenter gapX={20}>
+					<Div flex itemsCenter gapX={20}>
 						{buttons.map((button, index) => (
 							<Div
 								key={index}
@@ -882,7 +881,7 @@ function MainPageActions({
 								clx={index == 0 && "group transition hover:bg-primary-light"}
 								bgSecondary={index == 0}
 								roundedFull
-								px40
+								px30
 								py8
 								fontSize23
 								textSecondary2
@@ -903,7 +902,7 @@ function MainPageActions({
 	} else if (mintingStep == MintingStep.WhitelistMint) {
 		const subtitle =
 			mintingState == MintingState.Initial
-				? "Apply for a whitelist for exclusive privileges and important responsibilities!"
+				? "Apply to be an early WeBe for exclusive privileges and important responsibilities!"
 				: amountMinted > 0
 				? mintRemaining > 0 || invitesRemaining > 0
 					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chances to mint` : ""}${mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""}${
@@ -916,31 +915,31 @@ function MainPageActions({
 		const buttons =
 			mintingState == MintingState.Initial
 				? [
-						{ text: "Submit Application", handleClick: null },
+						{ text: "Apply", handleClick: null },
 						{ text: "Read the Story", handleClick: handleClickReadStory },
 				  ]
 				: [
 						mintRemaining > 0 && { text: "Mint", handleClick: handleClickMint },
 						invitesRemaining > 0 && amountMinted > 0 && { text: "Invite", handleClick: handleClickInvite },
-						balance > 0 && { text: "Check on my Webes", handleClick: handleClickCheckOnMyWebes },
+						balance > 0 && { text: "Check on My WeBes", handleClick: handleClickCheckOnMyWebes },
 						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
 			<Div flexCol>
-				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+				<Div textSecondary2 fontSize71 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 					The Crew of
 					<Div spanTag textSecondary>
 						{" "}
-						Whitelisted Webes{" "}
+						Early WeBes{" "}
 					</Div>
-					are boarding
+					Are Boarding
 				</Div>
-				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
 					{loading ? loadingSubtitle : subtitle}
 				</Div>
-				<Div pt30 pb20></Div>
+				<Div pt10 pb20></Div>
 				{!loading && (
-					<Div flex itemsCenter justifyCenter gapX={20}>
+					<Div flex itemsCenter gapX={20}>
 						{buttons
 							.filter((button) => button)
 							.map((button, index) => (
@@ -975,37 +974,34 @@ function MainPageActions({
 		const subtitle =
 			tokensLeft > 0
 				? mintingState == mintRemaining > 0
-					? `You have${mintRemaining} more chances to mint!`
+					? `You have ${mintRemaining} more chances to mint!`
 					: "Congrats, you've finished the full package!"
-				: "Webes have sold out!";
+				: "All WeBes have departed!";
 		const buttons = [
 			mintRemaining > 0 && tokensLeft > 0 && { text: "Mint", handleClick: handleClickMint },
-			balance > 0 && { text: "Check on my Webes", handleClick: handleClickCheckOnMyWebes },
+			balance > 0 && { text: "Check on My WeBes", handleClick: handleClickCheckOnMyWebes },
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
 			<Div flexCol>
-				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					Get on board! The
+				<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					Get onBoard!
 					<Div spanTag textSecondary>
-						{" "}
-						Whole Sleuth of Webes
+						{" "}All WeBes{" "}
 					</Div>
-					are Departing
+					Are Departing
 				</Div>
-				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
 					{loading ? loadingSubtitle : subtitle}
 				</Div>
-				<Div pt30 pb20></Div>
+				<Div pt10 pb10></Div>
 				{!loading && (
-					<Div flex itemsCenter justifyCenter gapX={20}>
+					<Div flex itemsCenter justifyCenter>
 						{buttons
 							.filter((button) => button)
 							.map((button, index) => (
 								<Div
 									key={index}
-									flex
-									justifyCenter
 									clx={index == 0 && "group transition hover:bg-primary-light"}
 									bgSecondary={index == 0}
 									roundedFull
@@ -1026,31 +1022,29 @@ function MainPageActions({
 				)}
 				<MintingModal open={mintingOpen} onClose={() => setMintingOpen(false)} />
 				<InviteModal open={inviteOpen} onClose={() => setInviteOpen(false)} />
-				<Div flex maxW250></Div>
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Rebirth) {
-		const subtitle = balance > 0 ? `${balance} Webes may be eligible for rebirth...` : "Webes have sold out!";
+		const subtitle = balance > 0 ? `${balance} WeBe may be eligible for rebirth...` : "WeBes have sold out!";
 		const buttons = [
 			balance > 0 && { text: "Renaissance!", handleClick: handleClickCheckOnMyWebes },
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
 			<Div flexCol>
-				<Div textCenter textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					The
+				<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					The Rebirth, Enlightment,
 					<Div spanTag textSecondary>
 						{" "}
-						Rebirth, Enlightment, RENAISSANCE!!
+						RENAISSANCE!!
 					</Div>
-					is here
 				</Div>
-				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
 					{loading ? loadingSubtitle : subtitle}
 				</Div>
-				<Div pt30 pb20></Div>
+				<Div py15></Div>
 				{!loading && (
-					<Div flex itemsCenter justifyCenter gapX={20}>
+					<Div flex itemsCenter gapX={10}>
 						{buttons
 							.filter((button) => button)
 							.map((button, index) => (
@@ -1061,7 +1055,7 @@ function MainPageActions({
 									clx={index == 0 && "group transition hover:bg-primary-light"}
 									bgSecondary={index == 0}
 									roundedFull
-									px40
+									px30
 									py8
 									fontSize23
 									textSecondary2
@@ -1087,19 +1081,21 @@ function MainPageActions({
 				</Div>
 				<Div pb40 imgTag src={IMAGES.mainWord}></Div>
 				<Div flex pb30>
-					s
 					<Div
 						mr10
+						bgSecondary
+						border2
+						borderBlack
 						flex
 						justifyCenter
 						roundedFull
-						px40
+						px35
 						py8
 						fontSize23
 						textSecondary2
 						onClick={handleClickReadStory}
 						cursorPointer
-						clx={"text-stroke"}
+						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 					>
 						READ THE STORY
 					</Div>
