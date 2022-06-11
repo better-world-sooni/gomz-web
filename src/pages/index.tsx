@@ -841,12 +841,6 @@ function MainPageActions({
 	const handleClickCheckOnMyWebes = () => {
 		href(urls["my-webes"].index);
 	};
-	const loadingSubtitle = "Webes are waiting on the blockchain...";
-	if (mintingStep == MintingStep.Initial) {
-		const subtitle =
-			mintingState == MintingState.Initial
-				? "Apply for a whitelist for exclusive privileges and important responsibilities!"
-				: "And you are set! Just join the countdown in Discord:)";
 	const handleClickMint = () => dispatch(mintingModalAction({ enabled: true }));
 	const handleClickInvite = () => dispatch(inviteModalAction({ enabled: true }));
 	const loadingSubtitle = "loading...";
@@ -992,7 +986,8 @@ function MainPageActions({
 				<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 					Get onBoard!
 					<Div spanTag textSecondary>
-						{" "}All WeBes{" "}
+						{" "}
+						All WeBes{" "}
 					</Div>
 					Are Departing
 				</Div>
@@ -1111,7 +1106,6 @@ function MainPageActions({
 			</Div>
 		);
 	}
-}
 }
 
 

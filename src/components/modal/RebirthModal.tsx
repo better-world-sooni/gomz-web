@@ -31,8 +31,8 @@ export function RebirthModal() {
 	const smartContract = useContract(kaikas, true);
 	const dispatch = useDispatch();
 	const { baseURIArray } = useContractState();
-	const { tokenId, tokenUri, rebirthHistory } = useTokenState({ index: rebirthModal.index, selectedAddress: kaikas?.selectedAddress });
-	const [currentTokenUri, setCurrentTokenUri] = useState(null);
+	const { tokenId, tokenUri, rebirthHistory, metadata } = useTokenState({ index: rebirthModal.index, selectedAddress: kaikas?.selectedAddress });
+	const [currentTokenImage, setCurrentTokenImage] = useState(metadata?.image);
 	const rebirthChancesUsed = rebirthHistory?.filter((used) => used).length || 1;
 	const [buttonState, setButtonState] = useState(ButtonState.Rebirth);
 	const rebirth = () => {
@@ -44,7 +44,8 @@ export function RebirthModal() {
 					gas: "2500000",
 				});
 				const tokenUri = await smartContract.methods.tokenURI(tokenId).call();
-				setCurrentTokenUri(await (await fetch(tokenUri)).json());
+				const metadata = await (await fetch(tokenUri)).json();
+				setCurrentTokenImage(metadata?.image);
 			} catch {
 				setButtonState(ButtonState.Failed);
 				return;
@@ -67,11 +68,8 @@ export function RebirthModal() {
 		setButtonState(rebirthChancesUsed == 6 ? ButtonState.Reborn : ButtonState.Rebirth);
 	}, [rebirthModal.enabled, rebirthModal.index]);
 	useEffect(() => {
-		if (tokenUri)
-			fetch(tokenUri)
-				.then((res) => res.json())
-				.then(setCurrentTokenUri);
-	}, [tokenUri]);
+		setCurrentTokenImage(metadata?.image);
+	}, [metadata?.image]);
 	return (
 		<Modal open={rebirthModal.enabled} onClose={handleClose} bdClx={"bg-black/60"}>
 			<Div bgSecondary2 w400>
@@ -110,7 +108,7 @@ export function RebirthModal() {
 						<Div imgTag src={IMAGES.team.jieun} w400 h400></Div>
 					)
 				) : (
-					<Div imgTag src={currentTokenUri?.image} w400 h400></Div>
+					<Div imgTag src={currentTokenImage} w400 h400></Div>
 				)}
 				<Div px20 py20>
 					<Div
