@@ -69,16 +69,16 @@ export function InviteModal() {
 				</Div>
 				<Div flex bgWhite fontSize24 px50>
 					<Div style={{ flex: 2 }} py20>
-						<Div flex mb20>
+						<Div flex mb20 balooR>
 							<Div mr20>From:</Div>
 							{kaikas?.selectedAddress && <Div>{truncateKlaytnAddress(kaikas.selectedAddress)}</Div>}
 						</Div>
-						<Div flex mb20>
+						<Div flex mb20 balooR>
 							<Div mr20>To:</Div>
 							<Div wFull>
 								<input
 									onChange={handleAddressInput}
-									style={{ border: "none", outline: "none", backgroundColor: COLORS.GRAY400, borderRadius: 10, padding: 4, width: "100%" }}
+									style={{ border: "none", outline: "none", backgroundColor: COLORS.GRAY300, borderRadius: 10, paddingLeft: 10, paddingRight:10, paddingTop:2, paddingBottom: 2, width: "100%" }}
 								></input>
 							</Div>
 						</Div>
@@ -88,7 +88,6 @@ export function InviteModal() {
 							</Div>
 						)}
 						<Div
-							px3
 							py10
 							borderBlack
 							border2

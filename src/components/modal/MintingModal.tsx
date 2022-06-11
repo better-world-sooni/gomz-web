@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { FaChevronDown, FaChevronUp, FaMinus, FaMinusCircle, FaRegMinusSquare, FaRegPlusSquare, FaVolumeDown } from "react-icons/fa";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useCaver } from "src/hooks/klaytn/useCaver";
 import { useContract } from "src/hooks/klaytn/useContract";
@@ -105,44 +105,43 @@ export function MintingModal() {
 					<Div style={{ flex: 2 }} pl50 py20 flexRow></Div>
 					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py20></Div>
 				</Div>
-				<Div flex bgWhite fontSize24>
-					<Div style={{ flex: 2 }} pl50 py20>
-						<Div flex mb20>
+				<Div flex bgWhite fontSize22>
+					<Div style={{ flex: 2 }} pl50 py40>
+						<Div flex mb20 balooR>
 							<Div mr20>Destination:</Div>
 							<Div>BetterWorld</Div>
 						</Div>
-						<Div flex mb20>
+						<Div flex mb20 balooR>
 							<Div mr20>Seat Type:</Div>
-							<Div>{mintingState == MintingState.Whitelisted ? "Whitelist" : mintingState == MintingState.Invited ? "Invited" : "Public"}</Div>
+							<Div>{mintingState == MintingState.Whitelisted ? "WL" : mintingState == MintingState.Invited ? "IV" : "PB"}</Div>
 						</Div>
-						<Div flex mb20>
+						<Div flex balooR>
 							<Div mr20>Seats Available:</Div>
 							<Div>{maxSupply - totalSupply}</Div>
 						</Div>
 					</Div>
-					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py20>
-						<Div flex mb20>
+					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py40>
+						<Div flex mb20 balooR>
 							<Div mr20>Price:</Div>
 							<Div spanTag>{price * amountToMint} Klay</Div>
 						</Div>
-						<Div flex mb20 itemsCenter>
+						<Div flex mb20 itemsCenter balooR>
 							<Div>
 								<Div mr20>Amount:</Div>
 							</Div>
 							<Div cursorPointer onClick={handlePressDown}>
-								<FaChevronDown color={amountToMint <= 1 ? COLORS.GRAY400 : "black"}></FaChevronDown>
+								<FaRegMinusSquare color={amountToMint <= 1 ? COLORS.GRAY300 : "black"}></FaRegMinusSquare>
 							</Div>
 							<Div px15>
 								<Div>{amountToMint}</Div>
 							</Div>
 							<Div cursorPointer onClick={handlePressUp}>
-								<FaChevronUp color={amountToMint >= Math.min(mintRemaining, maxSupply - totalSupply) ? COLORS.GRAY400 : "black"}></FaChevronUp>
+								<FaRegPlusSquare color={amountToMint >= Math.min(mintRemaining, maxSupply - totalSupply) ? COLORS.GRAY300 : "black"}></FaRegPlusSquare>
 							</Div>
 						</Div>
 						<Div
-							mt50
-							px3
-							py10
+							mt20
+							py8
 							borderBlack
 							border2
 							roundedFull
