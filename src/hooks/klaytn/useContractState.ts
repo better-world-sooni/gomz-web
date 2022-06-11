@@ -17,9 +17,6 @@ export const useContractState = () => {
                     (res) => setTotalSupply(res)
                 )
             } catch{}
-            // Promise.all(baseURIArray.map((_, index) => contract.methods.baseURI(index).call())).then(
-            //     res => setBaseURIArray(res)
-            // )
         }
 	}, [])
     const maxSupply = 8888
