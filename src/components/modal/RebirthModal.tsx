@@ -65,7 +65,6 @@ export function RebirthModal() {
 	useEffect(() => {
 		setCurrentTokenImage(metadata?.image);
 	}, [metadata?.image]);
-	console.log(rebirthChancesUsed);
 	return (
 		<Modal open={rebirthModal.enabled} onClose={handleClose} bdClx={"bg-black/60"}>
 			<Div bgSecondary2 w400>
@@ -97,7 +96,8 @@ export function RebirthModal() {
 								})
 								.filter((obj) => !obj.used)
 								.map((obj) => {
-									return <Div key={obj.index} imgTag src={`${baseURIArray[obj.index]}${tokenId}.png` || IMAGES.team.jieun} w318 h318 rounded10></Div>;
+									const jsonURI = `${baseURIArray[obj.index]}${tokenId}.json`;
+									return <ImageFromMetadatum key={jsonURI} jsonURI={jsonURI} />;
 								})}
 						</Carousel>
 					) : (
@@ -136,4 +136,17 @@ export function RebirthModal() {
 			</Div>
 		</Modal>
 	);
+}
+
+function ImageFromMetadatum({ jsonURI }) {
+	const [imageURI, setImageURI] = useState(null);
+	useEffect(() => {
+		fetch(jsonURI)
+			.then((res) => res.json())
+			.then((res) => {
+				setImageURI(res.image);
+			});
+	}, [jsonURI]);
+	if (!imageURI) return <Div w318 h318></Div>;
+	return <Div imgTag src={imageURI} w318 h318 rounded10></Div>;
 }

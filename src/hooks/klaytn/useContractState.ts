@@ -5,7 +5,7 @@ import { useContract } from "./useContract";
 export const useContractState = () => {
     const [mintingStep, setMintingStep] = useState<MintingStep>(MintingStep.Initial)
     const [totalSupply, setTotalSupply] = useState<number>(0)
-    const [baseURIArray, setBaseURIArray] = useState(["https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/images/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/images/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/images/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/images/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/images/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/images/"])
+    const [baseURIArray, setBaseURIArray] = useState(["https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json1/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json1/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json1/"])
     const contract = useContract();
     useEffect(() => {
 		if(contract){
