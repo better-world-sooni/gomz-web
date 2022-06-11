@@ -906,13 +906,13 @@ function MainPageActions({
 				? "Apply to be an early WeBe for exclusive privileges and important responsibilities!"
 				: amountMinted > 0
 				? mintRemaining > 0 || invitesRemaining > 0
-					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chances to mint` : ""}${mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""}${
-							invitesRemaining > 0 ? ` ${invitesRemaining} more chances invite your trusted companions on-chain` : ""
-					  }!`
+					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chance${mintRemaining > 0 && "s"} to mint` : ""}${
+							mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""
+					  }${invitesRemaining > 0 ? ` ${invitesRemaining} more chance${mintRemaining > 0 && "s"} invite your trusted companions on-chain` : ""}!`
 					: "Congrats, you've finished the full package!"
 				: mintingState == MintingState.Whitelisted
 				? `You are one of the 88 Webes to be whitelisted! Mint to participate in our movement.`
-				: `${truncateKlaytnAddress(invitor)} invited you to join the crew! You have ${mintRemaining} more chances to mint`;
+				: `${truncateKlaytnAddress(invitor)} invited you to join the crew! You have ${mintRemaining} more chance${mintRemaining > 0 && "s"} to mint`;
 		const buttons =
 			mintingState == MintingState.Initial
 				? [
@@ -973,7 +973,7 @@ function MainPageActions({
 		const subtitle =
 			tokensLeft > 0
 				? mintRemaining > 0
-					? `You have ${mintRemaining} more chances to mint!`
+					? `You have ${mintRemaining} more chance${mintRemaining > 0 && "s"} to mint!`
 					: "Congrats, you've finished the full package!"
 				: "All WeBes have departed!";
 		const buttons = [
@@ -1034,7 +1034,7 @@ function MainPageActions({
 		return (
 			<Div flexCol>
 				<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					The Rebirth, Enlightment,
+					The
 					<Div spanTag textSecondary>
 						{" "}
 						REBIRTH

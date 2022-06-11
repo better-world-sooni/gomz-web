@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import BasicHead from "src/components/BasicHead";
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import { href } from "src/helpers/routeHelper";
@@ -71,11 +70,11 @@ const Index: NextPage = () => {
 								cursorPointer
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
-								Clear Immigration at BetterWorld
+								Finish Onboarding at BetterWorld
 							</Div>
 						</Div>
 						<Div grid gridCols4 gapX={20} gapY={10} py40>
-							{new Array(balance).map((_, index) => {
+							{new Array(balance).fill({}).map((_, index) => {
 								return <Webe key={index} index={index} selectedAddress={kaikas.selectedAddress} enableRebirth={mintingStep == MintingStep.Rebirth} />;
 							})}
 						</Div>
@@ -108,22 +107,22 @@ function Webe({ index, selectedAddress, enableRebirth }) {
 				<Div flex justifyCenter>
 					<Div
 						justifyCenter
-						clx={index == 0 && "group transition hover:bg-primary-light"}
-						bgSecondary={index == 0}
+						clx={"group transition hover:bg-primary-light"}
+						bgSecondary
 						roundedFull
 						px20
 						py8
 						fontSize16
 						textSecondary2
-						borderBlack={index == 0}
-						border2={index == 0}
+						borderBlack
+						border2
 						textCenter
 						cursorPointer
 						balooR
 						fontBold
 						onClick={handlePressRebirth}
 						fontSize={"1vw"}
-						style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 					>
 						{rebirthChances} Rebirth Chances
 					</Div>

@@ -35,23 +35,21 @@ export function RebirthModal() {
 	const [currentTokenImage, setCurrentTokenImage] = useState(metadata?.image);
 	const rebirthChancesUsed = rebirthHistory?.filter((used) => used).length || 1;
 	const [buttonState, setButtonState] = useState(ButtonState.Rebirth);
-	const rebirth = () => {
+	const rebirth = async () => {
 		setButtonState(ButtonState.Loading);
-		setTimeout(async () => {
-			try {
-				await smartContract.methods.rebirth(tokenId).send({
-					from: kaikas?.selectedAddress,
-					gas: "2500000",
-				});
-				const tokenUri = await smartContract.methods.tokenURI(tokenId).call();
-				const metadata = await (await fetch(tokenUri)).json();
-				setCurrentTokenImage(metadata?.image);
-			} catch {
-				setButtonState(ButtonState.Failed);
-				return;
-			}
-			setButtonState(rebirthChancesUsed > 4 ? ButtonState.Reborn : ButtonState.RebornTryAgain);
-		}, 3000);
+		try {
+			await smartContract.methods.rebirth(tokenId).send({
+				from: kaikas?.selectedAddress,
+				gas: "2500000",
+			});
+			const tokenUri = await smartContract.methods.tokenURI(tokenId).call();
+			const metadata = await(await fetch(tokenUri)).json();
+			setCurrentTokenImage(metadata?.image);
+		} catch {
+			setButtonState(ButtonState.Failed);
+			return;
+		}
+		setButtonState(rebirthChancesUsed > 4 ? ButtonState.Reborn : ButtonState.RebornTryAgain);
 	};
 	const handleClose = () => {
 		dispatch(rebirthModalAction({ enabled: false, index: rebirthModal.index }));
@@ -62,21 +60,19 @@ export function RebirthModal() {
 		rebirth();
 	};
 	useEffect(() => {
-		setButtonState(kaikas ? (rebirthChancesUsed == 6 ? ButtonState.Reborn : ButtonState.Rebirth) : ButtonState.ConnectWallet);
-	}, [kaikas]);
-	useEffect(() => {
-		setButtonState(rebirthChancesUsed == 6 ? ButtonState.Reborn : ButtonState.Rebirth);
-	}, [rebirthModal.enabled, rebirthModal.index]);
+		setButtonState(kaikas ? ButtonState.Rebirth : ButtonState.ConnectWallet);
+	}, [rebirthModal.enabled, rebirthModal.index, kaikas]);
 	useEffect(() => {
 		setCurrentTokenImage(metadata?.image);
 	}, [metadata?.image]);
+	console.log(rebirthChancesUsed);
 	return (
 		<Modal open={rebirthModal.enabled} onClose={handleClose} bdClx={"bg-black/60"}>
 			<Div bgSecondary2 w400>
 				<Div px20 py20 textCenter fontSize23 textPrimary>
-					{buttonState == ButtonState.Reborn ? "Congratulations!" : "Rebirth Possibilities"}
+					{rebirthChancesUsed > 5 ? "Rebirth Completed" : "Rebirth Possibilities"}
 				</Div>
-				{buttonState == ButtonState.Loading || buttonState == ButtonState.Rebirth ? (
+				{rebirthChancesUsed < 6 && (buttonState == ButtonState.Loading || buttonState == ButtonState.Rebirth) ? (
 					typeof rebirthModal.index == "number" && rebirthHistory ? (
 						<Carousel
 							plugins={
@@ -110,26 +106,33 @@ export function RebirthModal() {
 				) : (
 					<Div imgTag src={currentTokenImage} w400 h400></Div>
 				)}
-				<Div px20 py20>
-					<Div
-						flex
-						justifyCenter
-						clx={"group transition hover:bg-primary-light"}
-						bgSecondary
-						roundedFull
-						px40
-						py8
-						fontSize23
-						textSecondary2
-						borderBlack
-						border2
-						cursorPointer
-						onClick={handleClickRebirth}
-						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-					>
-						{buttonState == ButtonState.Rebirth ? `REBIRTH! (${rebirthChancesUsed - 1}/5)` : buttonState}
+				{rebirthChancesUsed < 6 && (
+					<Div px20 py20>
+						{buttonState == ButtonState.RebornTryAgain && (
+							<Div flex justifyCenter roundedFull px40 py8 fontSize23 cursorPointer onClick={() => location?.reload()}>
+								Reload
+							</Div>
+						)}
+						<Div
+							flex
+							justifyCenter
+							clx={"group transition hover:bg-primary-light"}
+							bgSecondary
+							roundedFull
+							px40
+							py8
+							fontSize23
+							textSecondary2
+							borderBlack
+							border2
+							cursorPointer
+							onClick={handleClickRebirth}
+							style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+						>
+							{buttonState == ButtonState.Rebirth ? `REBIRTH! (${rebirthChancesUsed - 1}/5)` : buttonState}
+						</Div>
 					</Div>
-				</Div>
+				)}
 			</Div>
 		</Modal>
 	);

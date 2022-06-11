@@ -20,7 +20,7 @@ export const useAddressState = ({kaikas}) => {
                 )
                 contract.methods.balanceOf(kaikas.selectedAddress).call().then(
                     (balanceOfRes) =>{
-                         setBalance(balanceOfRes)
+                         setBalance(parseInt(balanceOfRes))
                          setLoading(false)
                         }
                 )
