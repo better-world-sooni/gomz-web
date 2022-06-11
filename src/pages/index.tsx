@@ -22,7 +22,6 @@ import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
 import { MintingState, MintingStep } from "src/modules/minting";
 import { useContractState } from "src/hooks/klaytn/useContractState";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
-import { InviteModal } from "src/components/modal/InviteModal";
 import { useDispatch } from "react-redux";
 import { inviteModalAction, mintingModalAction } from "src/store/reducers/modalReducer";
 
@@ -36,6 +35,8 @@ const Index: NextPage = () => {
 	const connectWallet = async () => {
 		if (kaikas) {
 			await kaikas.enable();
+		} else {
+			alert("Please install kaikas.");
 		}
 	};
 	const { mintingStep, totalSupply, maxSupply } = useContractState();

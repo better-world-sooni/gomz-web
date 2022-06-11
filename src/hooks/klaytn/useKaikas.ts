@@ -8,7 +8,7 @@ export const useKaikas = () => {
 
     useEffect(() => {
         setKaikas(klaytn)
-        klaytn.on('accountsChanged', function(accounts) {
+        klaytn?.on('accountsChanged', function(accounts) {
             setKaikas({...klaytn, selectedAddress: accounts[0]})
         })
     }, [typeof window, klaytn, klaytn?._kaikas.isEnabled(), klaytn?.selectedAddress])
