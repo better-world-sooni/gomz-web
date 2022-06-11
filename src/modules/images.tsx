@@ -1,4 +1,3 @@
-import React from "react";
 const prefix = "https://dkwhovxeipvs0.cloudfront.net";
 
 const images = {
@@ -8,8 +7,8 @@ const images = {
 	webeStory4: "/images/webeStory4.png",
 	webeMainAstronaut: "/images/webeMainAstronaut.png",
 	mintingProcess: "/images/mintingProcess.png",
-	mainWord: '/images/mainWord.png',
-	mainWordMobile: '/images/mainWordMobile.png',
+	mainWord: "/images/mainWord.png",
+	mainWordMobile: "/images/mainWordMobile.png",
 	menuIcon: "/images/menuIcon.png",
 	cancelIcon: "/images/cancelIcon.png",
 	starDusts3: "/images/starDusts3.png",

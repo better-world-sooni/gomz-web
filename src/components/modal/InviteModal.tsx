@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
 import useAddressInput from "src/hooks/klaytn/useAddressInput";
 import { useContract } from "src/hooks/klaytn/useContract";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { COLORS } from "src/modules/colors";
 import { IMAGES } from "src/modules/images";
+import { inviteModalAction } from "src/store/reducers/modalReducer";
+import { RootState } from "src/store/reducers/rootReducer";
 import Div from "../Div";
 import Modal from "./Modal";
 
@@ -16,9 +19,10 @@ enum ButtonState {
 	ConnectWallet = "Connect Wallet",
 }
 
-export function InviteModal({ open, onClose }) {
+export function InviteModal() {
 	const kaikas = useKaikas();
 	const smartContract = useContract(kaikas, true);
+	const dispatch = useDispatch();
 	const { address, handleAddressInput, error } = useAddressInput();
 	const [buttonState, setButtonState] = useState(ButtonState.Confirm);
 	const mint = async () => {
@@ -34,15 +38,21 @@ export function InviteModal({ open, onClose }) {
 			setButtonState(ButtonState.Failed);
 		}
 	};
+	const { inviteModalEnabled } = useSelector((state: RootState) => ({
+		inviteModalEnabled: state.modal.inviteModal.enabled,
+	}));
+	const handleClose = () => {
+		dispatch(inviteModalAction({ enabled: false }));
+	};
 
 	useEffect(() => {
 		setButtonState(kaikas ? ButtonState.Confirm : ButtonState.ConnectWallet);
 	}, [kaikas]);
 	useEffect(() => {
 		setButtonState(ButtonState.Confirm);
-	}, [open]);
+	}, [inviteModalEnabled]);
 	return (
-		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
+		<Modal open={inviteModalEnabled} onClose={handleClose} bdClx={"bg-black/60"}>
 			<Div roundedLg overflowHidden w650 mx80>
 				<Div flex bgPrimary fontSize24 px50>
 					<Div style={{ flex: 2 }} flex flexRow py20>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useCaver } from "src/hooks/klaytn/useCaver";
 import { useContract } from "src/hooks/klaytn/useContract";
@@ -8,6 +9,8 @@ import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { COLORS } from "src/modules/colors";
 import { IMAGES } from "src/modules/images";
 import { MintingState, MintingStep } from "src/modules/minting";
+import { mintingModalAction } from "src/store/reducers/modalReducer";
+import { RootState } from "src/store/reducers/rootReducer";
 import Div from "../Div";
 import Modal from "./Modal";
 
@@ -19,18 +22,25 @@ enum ButtonState {
 	ConnectWallet = "Connect Wallet",
 }
 
-export function MintingModal({ open, onClose }) {
+export function MintingModal() {
 	const price = 150;
 	const kaikas = useKaikas();
 	const smartContract = useContract(kaikas, true);
 	const caver = useCaver();
+	const dispatch = useDispatch();
 	const { mintingStep, totalSupply, maxSupply } = useContractState();
 	const { mintRemaining, mintingState } = useAddressState({
 		kaikas,
 	});
+	const { mintingModalEnabled } = useSelector((state: RootState) => ({
+		mintingModalEnabled: state.modal.mintingModal.enabled,
+	}));
 	const [mintResponse, setMintResponse] = useState(null);
 	const [amountToMint, setAmountToMint] = useState(1);
 	const [buttonState, setButtonState] = useState(ButtonState.Confirm);
+	const handleClose = () => {
+		dispatch(mintingModalAction({ enabled: false }));
+	};
 	const handlePressButton = async () => {
 		if (buttonState == ButtonState.Confirm) {
 			mint();
@@ -48,8 +58,7 @@ export function MintingModal({ open, onClose }) {
 	const mint = async () => {
 		try {
 			setButtonState(ButtonState.Loading);
-			const mintFn = mintingStep == MintingStep.WhitelistMint ? smartContract.methods.whitelistMint : smartContract.methods.publicMint;
-			const mintRes = await mintFn(amountToMint).send({
+			const mintRes = await smartContract.methods.mint(amountToMint).send({
 				from: kaikas?.selectedAddress,
 				gas: "2500000",
 				value: caver.utils.toPeb(price * amountToMint, "KLAY"),
@@ -73,9 +82,9 @@ export function MintingModal({ open, onClose }) {
 	}, [kaikas]);
 	useEffect(() => {
 		setButtonState(ButtonState.Confirm);
-	}, [open]);
+	}, [mintingModalEnabled]);
 	return (
-		<Modal open={open} onClose={onClose} bdClx={"bg-black/60"}>
+		<Modal open={mintingModalEnabled} onClose={handleClose} bdClx={"bg-black/60"}>
 			<Div roundedLg overflowHidden w800 mx80>
 				<Div flex bgPrimary fontSize24>
 					<Div style={{ flex: 2 }} pl50 flex flexRow py20>

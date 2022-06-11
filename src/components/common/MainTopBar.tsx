@@ -8,6 +8,9 @@ import useIsTablet from "src/hooks/useIsTablet";
 import { useState } from "react";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
+import { MintingModal } from "../modal/MintingModal";
+import { InviteModal } from "../modal/InviteModal";
+import { RebirthModal } from "../modal/RebirthModal";
 
 function MainTopBar({ absolute = false }) {
 	const isTablet = useIsTablet();
@@ -137,6 +140,9 @@ function MainTopBar({ absolute = false }) {
 	}
 	return (
 		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py15 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
+			<MintingModal />
+			<InviteModal />
+			<RebirthModal />
 			<Div flex mxAuto maxW={1100}>
 				<Div onClick={handleClickWebe} cursorPointer>
 					<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>

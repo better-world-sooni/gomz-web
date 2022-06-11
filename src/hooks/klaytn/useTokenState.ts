@@ -24,9 +24,11 @@ export const useTokenState = ({index, selectedAddress}) => {
         })
     }
     useEffect(() => {
-		if(selectedAddress){
-            getTokenObject(selectedAddress, index)
+		if(selectedAddress && typeof index == 'number'){
+            try{
+                getTokenObject(selectedAddress, index)
+            } catch {}
         }
 	}, [index, selectedAddress])
-    return { ...tokenState,  }
+    return { ...tokenState }
 }

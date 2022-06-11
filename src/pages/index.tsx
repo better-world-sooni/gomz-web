@@ -23,6 +23,8 @@ import { MintingState, MintingStep } from "src/modules/minting";
 import { useContractState } from "src/hooks/klaytn/useContractState";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { InviteModal } from "src/components/modal/InviteModal";
+import { useDispatch } from "react-redux";
+import { inviteModalAction, mintingModalAction } from "src/store/reducers/modalReducer";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -832,22 +834,21 @@ function MainPageActions({
 	loading,
 }) {
 	const tokensLeft = maxSupply - totalSupply;
-	const [mintingOpen, setMintingOpen] = useState(false);
-	const [inviteOpen, setInviteOpen] = useState(false);
+	const dispatch = useDispatch();
 	const handleClickReadStory = () => {
 		href(urls.story.index);
 	};
 	const handleClickCheckOnMyWebes = () => {
 		href(urls["my-webes"].index);
 	};
-	const handleClickMint = () => setMintingOpen(true);
-	const handleClickInvite = () => setInviteOpen(true);
+	const handleClickMint = () => dispatch(mintingModalAction({ enabled: true }));
+	const handleClickInvite = () => dispatch(inviteModalAction({ enabled: true }));
 	const loadingSubtitle = "Webes are waiting on the blockchain...";
 	if (mintingStep == MintingStep.Initial) {
 		const subtitle =
 			mintingState == MintingState.Initial
 				? "Apply for a whitelist for exclusive privileges and important responsibilities!"
-				: "And you are set! Just join the count down in Discord:)";
+				: "And you are set! Just join the countdown in Discord:)";
 		const buttons =
 			mintingState == MintingState.Initial
 				? [
@@ -967,15 +968,13 @@ function MainPageActions({
 					</Div>
 				)}
 				<Div flex maxW250></Div>
-				<MintingModal open={mintingOpen} onClose={() => setMintingOpen(false)} />
-				<InviteModal open={inviteOpen} onClose={() => setInviteOpen(false)} />
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.PublicMint) {
 		const subtitle =
 			tokensLeft > 0
-				? mintingState == mintRemaining > 0
-					? `You have${mintRemaining} more chances to mint!`
+				? mintRemaining > 0
+					? `You have ${mintRemaining} more chances to mint!`
 					: "Congrats, you've finished the full package!"
 				: "Webes have sold out!";
 		const buttons = [
@@ -990,7 +989,7 @@ function MainPageActions({
 					<Div spanTag textSecondary>
 						{" "}
 						Whole Sleuth of Webes
-					</Div>
+					</Div>{" "}
 					are Departing
 				</Div>
 				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
@@ -1004,12 +1003,12 @@ function MainPageActions({
 							.map((button, index) => (
 								<Div
 									key={index}
-									flex
-									justifyCenter
 									clx={index == 0 && "group transition hover:bg-primary-light"}
 									bgSecondary={index == 0}
 									roundedFull
 									px40
+									pr0={index != 0}
+									textCenter
 									py8
 									fontSize23
 									textSecondary2
@@ -1024,15 +1023,13 @@ function MainPageActions({
 							))}
 					</Div>
 				)}
-				<MintingModal open={mintingOpen} onClose={() => setMintingOpen(false)} />
-				<InviteModal open={inviteOpen} onClose={() => setInviteOpen(false)} />
 				<Div flex maxW250></Div>
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Rebirth) {
-		const subtitle = balance > 0 ? `${balance} Webes may be eligible for rebirth...` : "Webes have sold out!";
+		const subtitle = balance > 0 ? `${balance} Webes may be eligible for rebirth` : "Webes have sold out!";
 		const buttons = [
-			balance > 0 && { text: "Renaissance!", handleClick: handleClickCheckOnMyWebes },
+			balance > 0 && { text: "REBIRTH!", handleClick: handleClickCheckOnMyWebes },
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
@@ -1041,8 +1038,8 @@ function MainPageActions({
 					The
 					<Div spanTag textSecondary>
 						{" "}
-						Rebirth, Enlightment, RENAISSANCE!!
-					</Div>
+						REBIRTH
+					</Div>{" "}
 					is here
 				</Div>
 				<Div pt20 textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>

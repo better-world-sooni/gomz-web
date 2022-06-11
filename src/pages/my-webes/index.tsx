@@ -13,29 +13,25 @@ import MainTopBar from "src/components/common/MainTopBar";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useTokenState } from "src/hooks/klaytn/useTokenState";
+import { useContractState } from "src/hooks/klaytn/useContractState";
+import { MintingStep } from "src/modules/minting";
+import { useDispatch } from "react-redux";
+import { rebirthModalAction } from "src/store/reducers/modalReducer";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
 	const { locale } = useRouter();
-	const handleClickReadStory = () => {
-		href(urls.story.index);
-	};
 	const kaikas = useKaikas();
-	const connectWallet = async () => {
-		if (kaikas) {
-			await kaikas.enable();
-		}
-	};
 	const { balance, loading } = useAddressState({
 		kaikas,
 	});
+	const { mintingStep, totalSupply, maxSupply } = useContractState();
 
 	useEffect(() => {
 		if (isTablet || (!loading && balance == 0)) href(urls.index);
 	}, [isTablet]);
 	return (
 		<>
-			<BasicHead />
 			<Div
 				style={{
 					background: "linear-gradient(114.31deg, #3E4071 51.1%, #37315A 85.59%)",
@@ -79,7 +75,7 @@ const Index: NextPage = () => {
 						</Div>
 						<Div grid gridCols4 gapX={20} gapY={10} py50>
 							{new Array(balance).map((_, index) => {
-								return <Webe key={index} index={index} selectedAddress={kaikas.selectedAddress} />;
+								return <Webe key={index} index={index} selectedAddress={kaikas.selectedAddress} enableRebirth={mintingStep == MintingStep.Rebirth} />;
 							})}
 						</Div>
 						<EmptyBlock h={200} />
@@ -93,17 +89,49 @@ const Index: NextPage = () => {
 	);
 };
 
-function Webe({ index, selectedAddress }) {
+function Webe({ index, selectedAddress, enableRebirth }) {
+	const dispatch = useDispatch();
 	const { tokenId, tokenUri, metadata, rebirthHistory } = useTokenState({ index, selectedAddress });
 	const rebirthChances = rebirthHistory?.filter((used) => !used).length || 0;
+	const handlePressRebirth = () => {
+		dispatch(rebirthModalAction({ enabled: true, index }));
+	};
 	return (
 		<Div wFull>
 			<Div imgTag src={metadata?.image || IMAGES.team.jieun} wFull hAuto roundedXl border1 borderBlack></Div>
 			<EmptyBlock h={20} />
-			<Div textSecondary2 textLg balooB fontBold fontSize={"1vw"}>
+			<Div textSecondary2 textLg balooB fontBold textCenter fontSize={"1vw"}>
 				{metadata?.name}
 			</Div>
-			<Div fontSize={"1vw"}>{rebirthChances} Rebirth Chances</Div>
+			{enableRebirth ? (
+				<Div flex justifyCenter>
+					<Div
+						justifyCenter
+						clx={index == 0 && "group transition hover:bg-primary-light"}
+						bgSecondary={index == 0}
+						roundedFull
+						px20
+						py8
+						fontSize16
+						textSecondary2
+						borderBlack={index == 0}
+						border2={index == 0}
+						textCenter
+						cursorPointer
+						balooR
+						fontBold
+						onClick={handlePressRebirth}
+						fontSize={"1vw"}
+						style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+					>
+						{rebirthChances} Rebirth Chances
+					</Div>
+				</Div>
+			) : (
+				<Div fontSize={"1vw"} textCenter balooR fontBold>
+					{rebirthChances} Rebirth Chances
+				</Div>
+			)}
 		</Div>
 	);
 }

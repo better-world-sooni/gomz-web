@@ -14,15 +14,17 @@ export const useAddressState = ({kaikas}) => {
     const contract = useContract();
     useEffect(() => {
 		if(kaikas?.selectedAddress){
-            contract.methods.addressState(kaikas.selectedAddress).call().then(
-                (res) => setAddressState(res)
-            )
-            contract.methods.balanceOf(kaikas.selectedAddress).call().then(
-                (balanceOfRes) =>{
-                     setBalance(balanceOfRes)
-                     setLoading(false)
-                    }
-            )
+            try {
+                contract.methods.addressState(kaikas.selectedAddress).call().then(
+                    (res) => setAddressState(res)
+                )
+                contract.methods.balanceOf(kaikas.selectedAddress).call().then(
+                    (balanceOfRes) =>{
+                         setBalance(balanceOfRes)
+                         setLoading(false)
+                        }
+                )
+            } catch {}
         }
 	}, [kaikas?.selectedAddress])
     const invitesRemaining = MintingState.Whitelisted ? 5 - addressState.inviteCount : 3 - addressState.inviteCount;
