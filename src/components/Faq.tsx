@@ -33,17 +33,17 @@ export function Faq({ question, answer, isTablet }) {
 	}
 	return (
 		<Div textSecondary2 my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row textXl py15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
+			<Row py15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
 				<Col auto fontSize36 ml20 balooB clx={"text-stroke"}>
 					Q.{" "}
 				</Col>
-				<Col>{question}</Col>
+				<Col textLg>{question}</Col>
 				<Col auto mr20>
 					{clicked ? <FaChevronUp /> : <FaChevronDown />}
 				</Col>
 			</Row>
 			{clicked && (
-				<Row textXl py20 balooR>
+				<Row py20 balooR>
 					<Col auto textSecondary fontSize36 ml40 balooB clx={"text-stroke"}>
 						A.{" "}
 					</Col>

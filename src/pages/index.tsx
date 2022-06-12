@@ -402,7 +402,6 @@ const Index: NextPage = () => {
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<MainTopBar />
 				<Div px80>
-					<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
 						{kaikas?.selectedAddress ? (
 							<MainPageActions
 								mintingStep={mintingStep}
@@ -417,54 +416,55 @@ const Index: NextPage = () => {
 								loading={loading}
 							/>
 						) : (
-							<Div flexCol>
-								<Div flex maxW400>
-									<Div pt30 pb20></Div>
-								</Div>
-								<Div pb40 imgTag src={IMAGES.mainWord}></Div>
-								<Div flex pb30>
-									<Div
-										flex
-										justifyCenter
-										clx={"group transition hover:bg-primary-light"}
-										bgSecondary
-										roundedFull
-										px30
-										py8
-										fontSize23
-										textSecondary2
-										borderBlack
-										border2
-										onClick={connectWallet}
-										cursorPointer
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										CONNECT WALLET
+							<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+								<Div flexCol>
+									<Div flex maxW400>
+										<Div pt30 pb20></Div>
 									</Div>
-									<Div
-										mr10
-										flex
-										justifyCenter
-										roundedFull
-										px40
-										py8
-										fontSize23
-										textSecondary2
-										onClick={handleClickReadStory}
-										cursorPointer
-										clx={"text-stroke"}
-									>
-										READ THE STORY
+									<Div pb40 imgTag src={IMAGES.mainWord}></Div>
+									<Div flex pb30>
+										<Div
+											flex
+											justifyCenter
+											clx={"group transition hover:bg-primary-light"}
+											bgSecondary
+											roundedFull
+											px30
+											py8
+											fontSize23
+											textSecondary2
+											borderBlack
+											border2
+											onClick={connectWallet}
+											cursorPointer
+											style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+										>
+											CONNECT WALLET
+										</Div>
+										<Div
+											mr10
+											flex
+											justifyCenter
+											roundedFull
+											px40
+											py8
+											fontSize23
+											textSecondary2
+											onClick={handleClickReadStory}
+											cursorPointer
+											clx={"text-stroke"}
+										>
+											READ THE STORY
+										</Div>
 									</Div>
+									<Div flex maxW250></Div>
 								</Div>
-								<Div flex maxW250></Div>
+								<Div ml110 maxW330>
+									<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+								</Div>
 							</Div>
 						)}
-						<Div ml110 maxW330>
-							{/* <Div pb30 imgTag src={IMAGES.mintingProcess}></Div> */}
-							<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
-						</Div>
-					</Div>
+
 
 					<EmptyBlock h={150} />
 					<Div textCenter textSecondary2 fontSize72 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
@@ -839,6 +839,9 @@ function MainPageActions({
 	const handleClickReadStory = () => {
 		href(urls.story.index);
 	};
+	const handleClickDiscord = () => {
+		href("https://discord.com/invite/7tV3WxWf8p");
+	};
 	const handleClickCheckOnMyWebes = () => {
 		href(urls["my-webes"].index);
 	};
@@ -857,48 +860,54 @@ function MainPageActions({
 						{ text: "Read the Story", handleClick: handleClickReadStory },
 				  ]
 				: [
-						{ text: "Enter Discord", handleClick: null },
+						{ text: "Enter Discord", handleClick: handleClickDiscord },
 						{ text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
-			<Div flexCol>
-				<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					We Be
-					<Div spanTag textSecondary>
-						{" "}
-						Weird, Different, and Free.{" "}
+			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+				<Div flexCol>
+					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+						We Be
+						<Div spanTag textSecondary>
+							{" "}
+							Weird, Different, and Free.
+						</Div>
 					</Div>
-				</Div>
-				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{loading ? loadingSubtitle : subtitle}
-				</Div>
-				<Div pt10 pb20></Div>
-				{!loading && (
-					<Div flex itemsCenter gapX={20}>
-						{buttons.map((button, index) => (
-							<Div
-								key={index}
-								flex
-								justifyCenter
-								clx={index == 0 && "group transition hover:bg-primary-light"}
-								bgSecondary={index == 0}
-								roundedFull
-								px30
-								py8
-								fontSize23
-								textSecondary2
-								borderBlack={index == 0}
-								border2={index == 0}
-								cursorPointer
-								onClick={button.handleClick}
-								style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-							>
-								{button.text}
-							</Div>
-						))}
+					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						{loading ? loadingSubtitle : subtitle}
 					</Div>
-				)}
-				<Div flex maxW250></Div>
+					<Div py15></Div>
+					{!loading && (
+						<Div flex itemsCenter gapX={10}>
+							{buttons.map((button, index) => (
+								<Div
+									key={index}
+									flex
+									justifyCenter
+									clx={
+										index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"
+									}
+									bgSecondary={index == 0}
+									roundedFull
+									px35
+									py8
+									fontSize23
+									textSecondary2
+									borderBlack={index == 0}
+									border2={index == 0}
+									cursorPointer
+									onClick={button.handleClick}
+									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									{button.text}
+								</Div>
+							))}
+						</Div>
+					)}
+				</Div>
+				<Div ml110 maxW330>
+					<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+				</Div>
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.WhitelistMint) {
@@ -907,9 +916,9 @@ function MainPageActions({
 				? "Apply to be an early WeBe for exclusive privileges and important responsibilities!"
 				: amountMinted > 0
 				? mintRemaining > 0 || invitesRemaining > 0
-					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chance${mintRemaining > 0 && "s"} to mint` : ""}${
+					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chance${mintRemaining > 1 && "s"} to mint` : ""}${
 							mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""
-					  }${invitesRemaining > 0 ? ` ${invitesRemaining} more chance${mintRemaining > 0 && "s"} invite your trusted companions on-chain` : ""}!`
+					  }${invitesRemaining > 0 ? ` ${invitesRemaining} more chance${invitesRemaining > 1 && "s"} to invite your trusted companions on-chain` : ""}!`
 					: "Congrats, you've finished the full package!"
 				: mintingState == MintingState.Whitelisted
 				? `You are one of the 88 Webes to be whitelisted! Mint to participate in our movement.`
@@ -927,48 +936,53 @@ function MainPageActions({
 						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
-			<Div flexCol>
-				<Div textSecondary2 fontSize71 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					The Crew of
-					<Div spanTag textSecondary>
-						{" "}
-						Early WeBes{" "}
+			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+				<Div flexCol>
+					<Div textSecondary2 fontSize70 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+						The Crew of
+						<Div spanTag textSecondary>
+							{" "}
+							Early WeBes{" "}
+						</Div>
+						Are Boarding
 					</Div>
-					Are Boarding
-				</Div>
-				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{loading ? loadingSubtitle : subtitle}
-				</Div>
-				<Div pt10 pb20></Div>
-				{!loading && (
-					<Div flex itemsCenter gapX={20}>
-						{buttons
-							.filter((button) => button)
-							.map((button, index) => (
-								<Div
-									key={index}
-									flex
-									justifyCenter
-									clx={index == 0 && "group transition hover:bg-primary-light"}
-									bgSecondary={index == 0}
-									roundedFull
-									px={index == 0 ? 40 : 20}
-									py8
-									fontSize23
-									textSecondary2
-									borderBlack={index == 0}
-									border2={index == 0}
-									cursorPointer
-									onClick={button.handleClick}
-									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-								>
-									{button.text}
-								</Div>
-							))}
+					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						{loading ? loadingSubtitle : subtitle}
 					</Div>
-				)}
-				<Div flex maxW250></Div>
+					<Div py15></Div>
+					{!loading && (
+						<Div flex itemsCenter gapX={10}>
+							{buttons
+								.filter((button) => button)
+								.map((button, index) => (
+									<Div
+										key={index}
+										flex
+										justifyCenter
+										clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
+										bgSecondary={index == 0}
+										roundedFull
+										px={index == 0 ? 35 : 20}
+										py8
+										fontSize23
+										textSecondary2
+										borderBlack={index == 0}
+										border2={index == 0}
+										cursorPointer
+										onClick={button.handleClick}
+										style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										{button.text}
+									</Div>
+								))}
+						</Div>
+					)}
+				</Div>
+				<Div ml110 maxW330>
+					<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+				</Div>
 			</Div>
+
 		);
 	} else if (mintingStep == MintingStep.PublicMint) {
 		const subtitle =
@@ -983,127 +997,140 @@ function MainPageActions({
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
-			<Div flexCol>
-				<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					Get onBoard!
-					<Div spanTag textSecondary>
-						{" "}
-						All WeBes{" "}
+			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+				<Div flexCol>
+					<Div textSecondary2 fontSize67 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+						Get onBoard!
+						<Div spanTag textSecondary>
+							{" "}
+							All WeBes{" "}
+						</Div>
+						Are Departing
 					</Div>
-					Are Departing
-				</Div>
-				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{loading ? loadingSubtitle : subtitle}
-				</Div>
-				<Div pt10 pb10></Div>
-				{!loading && (
-					<Div flex itemsCenter justifyCenter>
-						{buttons
-							.filter((button) => button)
-							.map((button, index) => (
-								<Div
-									key={index}
-									clx={index == 0 && "group transition hover:bg-primary-light"}
-									bgSecondary={index == 0}
-									roundedFull
-									px40
-									pr0={index != 0}
-									textCenter
-									py8
-									fontSize23
-									textSecondary2
-									borderBlack={index == 0}
-									border2={index == 0}
-									cursorPointer
-									onClick={button.handleClick}
-									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-								>
-									{button.text}
-								</Div>
-							))}
+					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						{loading ? loadingSubtitle : subtitle}
 					</Div>
-				)}
-				<Div flex maxW250></Div>
+					<Div py15></Div>
+					{!loading && (
+						<Div flex itemsCenter gapX={10}>
+							{buttons
+								.filter((button) => button)
+								.map((button, index) => (
+									<Div
+										key={index}
+										clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
+										bgSecondary={index == 0}
+										roundedFull
+										px35
+										pr0={index != 0}
+										textCenter
+										py8
+										fontSize23
+										textSecondary2
+										borderBlack={index == 0}
+										border2={index == 0}
+										cursorPointer
+										onClick={button.handleClick}
+										style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										{button.text}
+									</Div>
+								))}
+						</Div>
+					)}
+				</Div>
+				<Div ml20 maxW400>
+					<Div pt60 imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+				</Div>
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Rebirth) {
-		const subtitle = balance > 0 ? `${balance} Webes may be eligible for rebirth` : "Webes have sold out!";
+		const subtitle = balance > 0 ? `${balance} WeBes may be eligible for rebirth...` : "There's no WeBe eligible for rebirth :(";
 		const buttons = [
-			balance > 0 && { text: "REBIRTH!", handleClick: handleClickCheckOnMyWebes },
+			balance > 0 && { text: "REBIRTH", handleClick: handleClickCheckOnMyWebes },
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
-			<Div flexCol>
-				<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-					The
-					<Div spanTag textSecondary>
-						{" "}
-						REBIRTH
-					</Div>{" "}
-					is here
-				</Div>
-				<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-					{loading ? loadingSubtitle : subtitle}
-				</Div>
-				<Div py15></Div>
-				{!loading && (
-					<Div flex itemsCenter gapX={10}>
-						{buttons
-							.filter((button) => button)
-							.map((button, index) => (
-								<Div
-									key={index}
-									flex
-									justifyCenter
-									clx={index == 0 && "group transition hover:bg-primary-light"}
-									bgSecondary={index == 0}
-									roundedFull
-									px30
-									py8
-									fontSize23
-									textSecondary2
-									borderBlack={index == 0}
-									border2={index == 0}
-									cursorPointer
-									onClick={button.handleClick}
-									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-								>
-									{button.text}
-								</Div>
-							))}
+			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+				<Div flexCol>
+					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+						WeeEeWooO! The
+						<Div spanTag textSecondary>
+							{" "}
+							REBIRTH
+						</Div>{" "}
+						is here
 					</Div>
-				)}
-				<Div flex maxW250></Div>
+					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+						{loading ? loadingSubtitle : subtitle}
+					</Div>
+					<Div py15></Div>
+					{!loading && (
+						<Div flex itemsCenter gapX={10}>
+							{buttons
+								.filter((button) => button)
+								.map((button, index) => (
+									<Div
+										key={index}
+										flex
+										justifyCenter
+										clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
+										bgSecondary={index == 0}
+										roundedFull
+										px35
+										py8
+										fontSize23
+										textSecondary2
+										borderBlack={index == 0}
+										border2={index == 0}
+										cursorPointer
+										onClick={button.handleClick}
+										style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										{button.text}
+									</Div>
+								))}
+						</Div>
+					)}
+				</Div>
+				<Div ml90 maxW430 z99>
+					<Div pt60 style={{ animation: "spin 0.5s linear" }} imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+				</Div>
 			</Div>
 		);
 	} else {
 		return (
-			<Div flexCol>
-				<Div flex maxW400>
-					<Div pt30 pb20></Div>
-				</Div>
-				<Div pb40 imgTag src={IMAGES.mainWord}></Div>
-				<Div flex pb30>
-					<Div
-						mr10
-						bgSecondary
-						border2
-						borderBlack
-						flex
-						justifyCenter
-						roundedFull
-						px35
-						py8
-						fontSize23
-						textSecondary2
-						onClick={handleClickReadStory}
-						cursorPointer
-						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-					>
-						READ THE STORY
+			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+				<Div flexCol>
+					<Div flex maxW400>
+						<Div pt30 pb20></Div>
+					</Div>
+					<Div pb40 imgTag src={IMAGES.mainWord}></Div>
+					<Div flex pb30>
+						<Div
+							mr10
+							bgSecondary
+							border2
+							borderBlack
+							flex
+							justifyCenter
+							roundedFull
+							px35
+							py8
+							fontSize23
+							textSecondary2
+							onClick={handleClickReadStory}
+							cursorPointer
+							style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							clx={"group transition hover:bg-primary-light"}
+						>
+							READ THE STORY
+						</Div>
 					</Div>
 				</Div>
-				<Div flex maxW250></Div>
+				<Div ml110 maxW330>
+					<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+				</Div>
 			</Div>
 		);
 	}

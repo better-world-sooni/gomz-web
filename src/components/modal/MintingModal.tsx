@@ -144,13 +144,13 @@ export function MintingModal() {
 							py8
 							borderBlack
 							border2
-							roundedFull
+							roundedXl
 							textWhite
 							bgPrimary
 							bgDanger={buttonState == ButtonState.Failed}
 							bgSecondary={buttonState == ButtonState.ConnectWallet}
 							bgInfo={buttonState == ButtonState.GetOnboard}
-							fontSize24
+							fontSize22
 							balooB
 							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
 							flex

@@ -53,7 +53,7 @@ export function InviteModal() {
 	}, [inviteModalEnabled]);
 	return (
 		<Modal open={inviteModalEnabled} onClose={handleClose} bdClx={"bg-black/60"}>
-			<Div roundedLg overflowHidden w650 mx80>
+			<Div roundedLg overflowHidden w500 mx80>
 				<Div flex bgPrimary fontSize24 px50>
 					<Div style={{ flex: 2 }} flex flexRow py20>
 						<Div>
@@ -87,26 +87,30 @@ export function InviteModal() {
 								{error}
 							</Div>
 						)}
-						<Div
-							py10
-							borderBlack
-							border2
-							roundedFull
-							textWhite
-							bgPrimary
-							bgDanger={buttonState == ButtonState.Failed}
-							bgSecondary={buttonState == ButtonState.ConnectWallet}
-							fontSize24
-							balooB
-							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
-							flex
-							justifyCenter
-							itemsCenter
-							onClick={mint}
-							clx={"group transition hover:bg-primary-teens"}
-							cursorPointer
-						>
-							{buttonState}
+							<Div
+							>
+								<Div
+								flex
+								my5
+								py8
+								borderBlack
+								border2
+								roundedXl
+								textWhite
+								bgPrimary
+								bgDanger={buttonState == ButtonState.Failed}
+								bgSecondary={buttonState == ButtonState.ConnectWallet}
+								fontSize22
+								balooB
+								style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
+								justifyCenter
+								itemsCenter
+								onClick={mint}
+								clx={"group transition hover:bg-primary-teens"}
+								cursorPointer
+							>
+								{buttonState}
+							</Div>
 						</Div>
 					</Div>
 				</Div>

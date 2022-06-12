@@ -11,8 +11,9 @@ import { useTokenState } from "src/hooks/klaytn/useTokenState";
 import { useContractState } from "src/hooks/klaytn/useContractState";
 import Carousel, { autoplayPlugin, arrowsPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronCircleLeft, FaChevronLeft, FaChevronRight, FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { IMAGES } from "src/modules/images";
+import { COLORS } from "src/modules/colors";
 
 enum ButtonState {
 	Rebirth = "Rebirth",
@@ -67,9 +68,12 @@ export function RebirthModal() {
 	}, [metadata?.image]);
 	return (
 		<Modal open={rebirthModal.enabled} onClose={handleClose} bdClx={"bg-black/60"}>
-			<Div bgSecondary2 w400>
-				<Div px20 py20 textCenter fontSize23 textPrimary>
-					{rebirthChancesUsed > 5 ? "Rebirth Completed" : "Rebirth Possibilities"}
+			<Div bgSecondary2 w450>
+				<Div pt20 textCenter fontSize28 textPrimary>
+					{rebirthChancesUsed > 5 ? "Rebirth Completed" : "Ready for Rebirth?"}
+				</Div>
+				<Div textCenter pb20 fontSize16 textPrimary balooR>
+					{rebirthChancesUsed > 5 ? "" : "Here are some possibilities:"}
 				</Div>
 				{rebirthChancesUsed < 6 && (buttonState == ButtonState.Loading || buttonState == ButtonState.Rebirth) ? (
 					typeof rebirthModal.index == "number" && rebirthHistory ? (
@@ -78,7 +82,6 @@ export function RebirthModal() {
 								ButtonState.Loading == buttonState
 									? [
 											"infinite",
-											"arrows",
 											{
 												resolve: autoplayPlugin,
 												options: {
@@ -86,7 +89,18 @@ export function RebirthModal() {
 												},
 											},
 									  ]
-									: ["infinite", "arrows"]
+									: [ "infinite",
+										{
+											resolve: arrowsPlugin,
+											options: {
+											arrowLeft: <button><Div m20><FaChevronLeft color={COLORS.SECONDARY}/></Div></button>,
+											arrowLeftDisabled:<button><Div m20><FaChevronLeft color={COLORS.GRAY500}/></Div></button>,
+											arrowRight: <button><Div m20><FaChevronRight color={COLORS.SECONDARY}/></Div></button>,
+											arrowRightDisabled: <button><Div m20><FaChevronRight color={COLORS.GRAY500}/></Div></button>,
+											addArrowClickHandler: true,
+											},
+										}
+									]
 							}
 							animationSpeed={1000}
 						>
@@ -101,10 +115,10 @@ export function RebirthModal() {
 								})}
 						</Carousel>
 					) : (
-						<Div imgTag src={IMAGES.team.jieun} w400 h400></Div>
+						<Div imgTag src={IMAGES.team.jieun} w450 h450></Div>
 					)
 				) : (
-					<Div imgTag src={currentTokenImage} w400 h400></Div>
+					<Div imgTag src={currentTokenImage} w450 h450></Div>
 				)}
 				{rebirthChancesUsed < 6 && (
 					<Div px20 py20>
@@ -114,22 +128,25 @@ export function RebirthModal() {
 							</Div>
 						)}
 						<Div
-							flex
-							justifyCenter
+						flex
+						justifyCenter
+						my10>
+							<Div
 							clx={"group transition hover:bg-primary-light"}
-							bgSecondary
-							roundedFull
-							px40
+							bgPrimary
+							roundedXl
+							px90
 							py8
-							fontSize23
-							textSecondary2
+							fontSize21
+							textWhite
 							borderBlack
 							border2
 							cursorPointer
 							onClick={handleClickRebirth}
 							style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-						>
+							>
 							{buttonState == ButtonState.Rebirth ? `REBIRTH! (${rebirthChancesUsed - 1}/5)` : buttonState}
+							</Div>
 						</Div>
 					</Div>
 				)}

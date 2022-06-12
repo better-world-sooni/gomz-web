@@ -25,6 +25,7 @@ const Index: NextPage = () => {
 		kaikas,
 	});
 	const { mintingStep, totalSupply, maxSupply } = useContractState();
+	
 
 	useEffect(() => {
 		if (isTablet || (!loading && balance == 0)) href(urls.index);
@@ -61,9 +62,9 @@ const Index: NextPage = () => {
 								clx={"group transition hover:bg-primary-light"}
 								bgSecondary
 								roundedFull
-								px20
+								px21
 								py4
-								fontSize18
+								fontSize16
 								textSecondary2
 								borderBlack
 								border2
@@ -100,35 +101,33 @@ function Webe({ index, selectedAddress, enableRebirth }) {
 		<Div wFull>
 			<Div imgTag src={metadata?.image || IMAGES.team.jieun} wFull hAuto roundedXl border1 borderBlack></Div>
 			<EmptyBlock h={20} />
-			<Div textSecondary2 textLg balooB fontBold textCenter fontSize={"1vw"}>
+			<Div textSecondary2 textLg balooB fontBold textCenter fontSize={"1.3vw"}>
 				{metadata?.name}
 			</Div>
 			{enableRebirth ? (
-				<Div flex justifyCenter>
+				<Div flex justifyCenter mt10>
 					<Div
 						justifyCenter
 						clx={"group transition hover:bg-primary-light"}
-						bgSecondary
 						roundedFull
-						px20
-						py8
+						px15
+						py5
 						fontSize16
 						textSecondary2
-						borderBlack
-						border2
+						borderSecondary2
+						border1
 						textCenter
 						cursorPointer
 						balooR
 						fontBold
 						onClick={handlePressRebirth}
 						fontSize={"1vw"}
-						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 					>
 						{rebirthChances} Rebirth Chances
 					</Div>
 				</Div>
 			) : (
-				<Div fontSize={"1vw"} textCenter balooR fontBold>
+				<Div fontSize={"1vw"} textCenter textSecondary2 balooR fontBold>
 					{rebirthChances} Rebirth Chances
 				</Div>
 			)}
