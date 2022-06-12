@@ -31,7 +31,7 @@ export const wording = {
 			pioneer: {
 				en: (
 					<>
-						WeBe will enter BetterWorld, an app created exclusively for PFP forum and communication, where they can propose, vote, comment to exercise
+						WeBe will enter BetterWorld, an app created exclusively for PFP holders to exercise
 						their rights and privileges as a member of the community.
 					</>
 				),
