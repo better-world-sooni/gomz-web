@@ -11,7 +11,7 @@ import { useTokenState } from "src/hooks/klaytn/useTokenState";
 import { useContractState } from "src/hooks/klaytn/useContractState";
 import Carousel, { autoplayPlugin, arrowsPlugin } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import { FaChevronCircleLeft, FaChevronLeft, FaChevronRight, FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IMAGES } from "src/modules/images";
 import { COLORS } from "src/modules/colors";
 
@@ -68,7 +68,7 @@ export function RebirthModal() {
 	}, [metadata?.image]);
 	return (
 		<Modal open={rebirthModal.enabled} onClose={handleClose} bdClx={"bg-black/60"}>
-			<Div bgSecondary2 w450>
+			<Div bgSecondary2 w400>
 				<Div pt20 textCenter fontSize28 textPrimary>
 					{rebirthChancesUsed > 5 ? "Rebirth Completed" : "Ready for Rebirth?"}
 				</Div>
@@ -80,22 +80,31 @@ export function RebirthModal() {
 						<Carousel
 							plugins={
 								ButtonState.Loading == buttonState
-									? [
-											"infinite",
+									? [ "infinite",
 											{
 												resolve: autoplayPlugin,
 												options: {
 													interval: ButtonState.Loading == buttonState ? 100 : 3000,
 												},
 											},
+											{
+												resolve: arrowsPlugin,
+												options: {
+												arrowLeft: <button><Div m20><FaChevronLeft color={COLORS.SECONDARY2}/></Div></button>,
+												arrowLeftDisabled:<button><Div m20><FaChevronLeft color={COLORS.GRAY500}/></Div></button>,
+												arrowRight: <button><Div m20><FaChevronRight color={COLORS.SECONDARY2}/></Div></button>,
+												arrowRightDisabled: <button><Div m20><FaChevronRight color={COLORS.GRAY500}/></Div></button>,
+												addArrowClickHandler: true,
+												},
+											}
 									  ]
 									: [ "infinite",
 										{
 											resolve: arrowsPlugin,
 											options: {
-											arrowLeft: <button><Div m20><FaChevronLeft color={COLORS.SECONDARY}/></Div></button>,
+											arrowLeft: <button><Div m20><FaChevronLeft color={COLORS.SECONDARY2}/></Div></button>,
 											arrowLeftDisabled:<button><Div m20><FaChevronLeft color={COLORS.GRAY500}/></Div></button>,
-											arrowRight: <button><Div m20><FaChevronRight color={COLORS.SECONDARY}/></Div></button>,
+											arrowRight: <button><Div m20><FaChevronRight color={COLORS.SECONDARY2}/></Div></button>,
 											arrowRightDisabled: <button><Div m20><FaChevronRight color={COLORS.GRAY500}/></Div></button>,
 											addArrowClickHandler: true,
 											},
@@ -115,17 +124,17 @@ export function RebirthModal() {
 								})}
 						</Carousel>
 					) : (
-						<Div imgTag src={IMAGES.team.jieun} w450 h450></Div>
+						<Div imgTag src={IMAGES.team.jieun} wFull hAuto></Div>
 					)
 				) : (
-					<Div imgTag src={currentTokenImage} w450 h450></Div>
+					<Div imgTag src={currentTokenImage} wFull hAuto></Div>
 				)}
 				{rebirthChancesUsed < 6 && (
 					<Div px20 py20>
 						{buttonState == ButtonState.RebornTryAgain && (
-							<Div flex justifyCenter roundedFull px40 py8 fontSize23 cursorPointer onClick={() => location?.reload()}>
-								Reload
-							</Div>
+							<Div flex justifyCenter>
+								<Div roundedXl px90 py8 fontSize21 cursorPointer onClick={() => location?.reload()}></Div>
+							</Div> 
 						)}
 						<Div
 						flex
@@ -164,6 +173,6 @@ function ImageFromMetadatum({ jsonURI }) {
 				setImageURI(res.image);
 			});
 	}, [jsonURI]);
-	if (!imageURI) return <Div w318 h318></Div>;
-	return <Div imgTag src={imageURI} w318 h318 rounded10></Div>;
+	if (!imageURI) return <Div wFull hAuto></Div>;
+	return <Div imgTag src={imageURI} wFull hAuto rounded10></Div>;
 }

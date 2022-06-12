@@ -938,7 +938,7 @@ function MainPageActions({
 		return (
 			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
 				<Div flexCol>
-					<Div textSecondary2 fontSize70 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+					<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						The Crew of
 						<Div spanTag textSecondary>
 							{" "}
@@ -978,8 +978,8 @@ function MainPageActions({
 						</Div>
 					)}
 				</Div>
-				<Div ml110 maxW330>
-					<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+				<Div ml50 maxW380>
+					<Div pt60 imgTag src={IMAGES.whitelist}></Div>
 				</Div>
 			</Div>
 
@@ -1093,7 +1093,7 @@ function MainPageActions({
 						</Div>
 					)}
 				</Div>
-				<Div ml90 maxW430 z99>
+				<Div ml50 maxW450 z99>
 					<Div pt60 style={{ animation: "spin 0.5s linear" }} imgTag src={IMAGES.journeyIcons.rebirth}></Div>
 				</Div>
 			</Div>

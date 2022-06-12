@@ -78,7 +78,7 @@ export const wording = {
 				en: <>Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.</>,
 				ko: (
 					<>
-						정기 오프라인 프로그램은 네트워크, 스포츠 대회, 글로벌 문화, 파티 등 다양한 주제로 구성됩니다. 커뮤니티원은 BetterWorld 앱 내 포럼에서
+						정기 오프라인 프로그램은 스포츠 대회, 글로벌 파티 등 다양하게 구성됩니다. 커뮤니티원은 BetterWorld 앱 내 포럼에서
 						다양한 프로그램 아이디어를 논의할 수 있습니다.
 					</>
 				),

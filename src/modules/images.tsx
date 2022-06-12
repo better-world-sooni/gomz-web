@@ -16,6 +16,7 @@ const images = {
 	circleLeftArrow: "/images/circleLeftArrow.png",
 	storyPreview: "/images/storyPreview.png",
 	webeGalaxy: "/images/webeGalaxy.png",
+	whitelist: "/images/whitelist.png",
 	logos: {
 		discord: "/images/logos/discord.png",
 		twitter: "/images/logos/twitter.png",
