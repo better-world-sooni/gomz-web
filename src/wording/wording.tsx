@@ -455,8 +455,7 @@ export const wording = {
 				ko: (
 					<>
 						숫자 ‘8’은 부, 명예, ∞(무한대) 등 삶의 다양한 측면을 의미합니다. 위비는 다양한 의미 중에서 ∞ 로 인해 8,888을 선택했습니다. 변덕스러운
-						가격, 폰지 사기가 수두룩한 NFT 공간의 모든 외부 요인에도 불구하고 위비는 무한하고 혁신적인 커뮤니티를 보장합니다. 8,888 혁신가 GOMZ들과
-						함께 Web 3 Identity를 구축할 것입니다.
+						가격, 폰지 사기가 수두룩한 NFT 공간의 모든 외부 요인에도 불구하고 위비는 무한하고 혁신적인 커뮤니티를 보장합니다.
 					</>
 				),
 				en: (
@@ -492,8 +491,8 @@ export const wording = {
 				),
 			},
 			q4: {
-				ko: <>화이트리스트 사전 민팅: 날짜 - 공개 예정 I 가격- 100 KLAY Public 민팅: 날짜 - 8월 8일 I 가격 - 200 KLAY</>,
-				en: <>Whitelist Minting: Date- TBD I Price- 100 KLAY Public Minting: Date- August 8th I Price: 200 KLAY</>,
+				ko: <>화이트리스트 사전 민팅: 날짜 - 공개 예정 I 가격- 200 KLAY Public 민팅: 날짜 - 8월 8일 I 가격 - 300 KLAY</>,
+				en: <>Whitelist Minting: Date- TBD I Price- 200 KLAY Public Minting: Date- August 8th I Price: 300 KLAY</>,
 			},
 			q5: {
 				ko: <>다양한 구성원으로 이루어진 커뮤니티를 보장하기 위해 지갑당 3개의 위비로 제한합니다.</>,
