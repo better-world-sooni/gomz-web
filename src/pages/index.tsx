@@ -421,6 +421,16 @@ const Index: NextPage = () => {
 							</Div>
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
+								<Div textPrimary fontSize18 textCenter>
+									Webe is a cultural franchise dedicated to young,{" "}
+									<Div spanTag textSecondary>
+										WEirD
+									</Div>{" "}
+									innovators.
+								</Div>
+							</Div>
+							<EmptyBlock h={20} />
+							<Div flex justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -455,6 +465,7 @@ const Index: NextPage = () => {
 					<Div maxW={1150} mxAuto>
 						<EmptyBlock h={100} />
 						<Div
+							data-aos="fade-up"
 							shadowLg
 							style={{
 								backgroundImage: `url(${"/images/storyBanner.png"})`,
@@ -493,7 +504,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={200} />
-						<Div flex gapX={50} itemsCenter>
+						<Div flex gapX={50} itemsCenter data-aos="fade-up">
 							<Div grid gridCols3 gapX={20} gapY={20}>
 								{team(locale).map((member, index) => {
 									return (
@@ -519,12 +530,8 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 								<Div textSecondary2 fontSize18 mt30>
-									Webe is a cultural franchise dedicated to young,{" "}
-									<Div spanTag textSecondary>
-										WEirD
-									</Div>{" "}
-									innovators. Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job,
-									and a good life and find what they truely want.
+									Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job, and a good
+									life and find what they truely want.
 									<br />
 									<br />
 									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer. Holders
@@ -537,7 +544,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52>
+						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Vision:
 							<Div spanTag textSecondary>
 								{" "}
@@ -545,7 +552,7 @@ const Index: NextPage = () => {
 							</Div>
 							Embodiment
 						</Div>
-						<Div wFull flex mt40 textSecondary2 fontSize28 gapX={30}>
+						<Div wFull flex mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
 							<Div relative flex1 h200 shadowMd bgPrimaryLight pt40 px40 roundedLg>
 								Re-Birth
 								<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
@@ -600,7 +607,7 @@ const Index: NextPage = () => {
 								Collection
 							</Div>
 						</Div>
-						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gapX={30}>
+						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
 							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
 								BetterWorld
 							</Div>
@@ -646,7 +653,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52>
+						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Vision:
 							<Div spanTag textSecondary>
 								{" "}
@@ -654,7 +661,7 @@ const Index: NextPage = () => {
 							</Div>
 							Embodiment
 						</Div>
-						<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 gapX={30}>
+						<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
 							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
 								WeBe Goods
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
@@ -699,7 +706,7 @@ const Index: NextPage = () => {
 								Brand
 							</Div>
 						</Div>
-						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gap={30}>
+						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gap={30} data-aos="fade-up">
 							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
 								Community
 							</Div>
@@ -764,16 +771,24 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
+						{/* <EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52>
+							FAQs
+						</Div>
+						<Div maxW={900} mxAuto>
+							{faqs(locale).map(({ question, answer }, index) => {
+								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
+							})}
+						</Div> */}
 						<EmptyBlock h={200} />
-
-						<Div textCenter textSecondary fontSize52>
+						<Div textCenter textSecondary fontSize52 data-aos="fade-up">
 							The{" "}
 							<Div spanTag textWhite>
 								{" "}
 								Team
 							</Div>
 						</Div>
-						<Div mt40 mxAuto gapX={30} flex>
+						<Div mt40 mxAuto gapX={30} flex data-aos="fade-up">
 							{team(locale).map((member, index) => {
 								return (
 									<Div key={index} inlineBlock>
@@ -790,7 +805,7 @@ const Index: NextPage = () => {
 							})}
 						</Div>
 						<EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52>
+						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Lastly,{" "}
 							<Div spanTag textSecondary>
 								{" "}

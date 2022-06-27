@@ -9,7 +9,7 @@ export function Faq({ question, answer, isTablet }) {
 	if (isTablet) {
 		return (
 			<Div textSecondary2 my15 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-				<Row textLg p15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
+				<Row textLg p15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR>
 					<Col auto balooB clx={"text-stroke"}>
 						Q.{" "}
 					</Col>
@@ -33,7 +33,7 @@ export function Faq({ question, answer, isTablet }) {
 	}
 	return (
 		<Div textSecondary2 my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row py15 border1 roundedLg borderBlack itemsCenter bgPrimaryLight balooR>
+			<Row py15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR>
 				<Col auto fontSize36 ml20 balooB clx={"text-stroke"}>
 					Q.{" "}
 				</Col>
