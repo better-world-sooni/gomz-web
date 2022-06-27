@@ -390,8 +390,9 @@ const Index: NextPage = () => {
 	return (
 		<Div relative>
 			<BasicHead />
-			<Div absolute imgTag h={"60vh"} src={"/images/doodleRight.png"} top={"40vh"} right0></Div>
-			<Div absolute imgTag h={"60vh"} src={"/images/doodleLeft.png"} top0 left0></Div>
+			<Div absolute imgTag h={"80vh"} src={"/images/doodleRight.png"} top={"20vh"} right0></Div>
+			<Div absolute imgTag h={"80vh"} src={"/images/doodleLeft.png"} top0 left0></Div>
+
 			<MainTopBar />
 			<Div hScreen bgTertiary>
 				{kaikas?.selectedAddress ? (
@@ -408,14 +409,13 @@ const Index: NextPage = () => {
 						loading={loading}
 					/>
 				) : (
-					<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
-						<Div>
-							<Div mxAuto bgSecondary rounded20 borderWhite border10 pt30 px15 relative shadowMd>
-								<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={-40} right={-100} absolute z={-100}></Div>
-								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.16} h={3010 * 0.16} mb={-1}></Div>
+					<Div flex itemsEnd justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
+						<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={100} right={100} absolute z={-100}></Div>
+						<Div relative>
+							<Div mxAuto>
+								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.25} h={3010 * 0.25} mb={-1}></Div>
 							</Div>
-							<EmptyBlock h={20} />
-							<Div flex justifyCenter>
+							<Div absolute bottom50 flex wFull justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -432,10 +432,6 @@ const Index: NextPage = () => {
 								>
 									CONNECT WALLET
 								</Div>
-							</Div>
-							<EmptyBlock h={20} />
-							<Div textPrimary textCenter fontSize24 w500 mxAuto>
-								Webe is a cultural franchise dedicated to young, WEirD innovators.
 							</Div>
 						</Div>
 					</Div>
@@ -488,6 +484,42 @@ const Index: NextPage = () => {
 									>
 										READ OUR STORY
 									</Div>
+								</Div>
+							</Div>
+						</Div>
+						<EmptyBlock h={200} />
+						<Div flex gapX={50}>
+							<Div grid gridCols3 gapX={20} gapY={20}>
+								{team(locale).map((member, index) => {
+									return (
+										<Div key={index} inlineBlock>
+											<Div imgTag src={member.imageUri} roundedLg shadowLg w120 h120></Div>
+										</Div>
+									);
+								})}
+								{team(locale).map((member, index) => {
+									return (
+										<Div key={index} inlineBlock>
+											<Div imgTag src={member.imageUri} roundedLg shadowLg w120 h120></Div>
+										</Div>
+									);
+								})}
+							</Div>
+							<Div flex1>
+								<Div textWhite fontSize52 leadingNone>
+									We Be
+									<Div spanTag textSecondary>
+										{" "}
+										Weird, Different, and Free.
+									</Div>
+								</Div>
+								<Div textSecondary2 fontSize18 mt30>
+									Webe is a cultural franchise dedicated to young, WEirD innovators. We seek those a little different from the majority, Webe
+									challenges those in 20 and 30s to refuse to conform what others think is a good university, a good job, and good life and find what
+									they truely want. Holders of Webe will have exclusive access to future high-quality future products and experiences both virtual and
+									real.
+									<br />
+									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer.
 								</Div>
 							</Div>
 						</Div>
@@ -720,21 +752,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52>
-							Our{" "}
-							<Div spanTag textSecondary>
-								{" "}
-								Slogan
-							</Div>
-						</Div>
-						<Row mt100 h100>
-							<Col></Col>
-							<Col auto>
-								<Div clx={"rainbow-text"}>WeeEEeeEeWwwoooOO</Div>
-							</Col>
-							<Col></Col>
-						</Row>
-						<EmptyBlock h={200} />
+
 						<Div textCenter textSecondary fontSize52>
 							The{" "}
 							<Div spanTag textWhite>
@@ -758,6 +776,21 @@ const Index: NextPage = () => {
 								);
 							})}
 						</Div>
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52>
+							Lastly,{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								Say
+							</Div>
+						</Div>
+						<Row mt100 h100>
+							<Col></Col>
+							<Col auto>
+								<Div clx={"rainbow-text"}>WeeEEeeEeWwwoooOO</Div>
+							</Col>
+							<Col></Col>
+						</Row>
 						<EmptyBlock h={200} />
 					</Div>
 					<Footer />
