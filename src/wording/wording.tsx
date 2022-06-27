@@ -52,7 +52,8 @@ export const wording = {
 			capsule: {
 				en: (
 					<>
-						WeBe holders receive a free metaverse land-the capsule-in BetterWorld. Here, you can decorate, communicate, and explore the digital world.
+						WeBe holders receive a free metaverse land, the Capsule, in BetterWorld. Here, you can decorate, communicate, and explore the digital
+						world.
 					</>
 				),
 				ko: <>BetterWorld에서 메타버스 개인 공간인 캡슐을 부여받습니다. 본인의 위비만을 위한 공간을 꾸미고, 소통하고, 탐험하세요.</>,

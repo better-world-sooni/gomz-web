@@ -143,7 +143,7 @@ function MainTopBar({ absolute = false }) {
 			<MintingModal />
 			<InviteModal />
 			<RebirthModal />
-			<Div flex mxAuto maxW={1200}>
+			<Div flex mxAuto maxW={1150}>
 				<Div onClick={handleClickWebe} cursorPointer>
 					<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>
 				</Div>

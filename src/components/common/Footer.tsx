@@ -16,8 +16,8 @@ export default function Footer() {
 
 	if (isTablet) {
 		return (
-			<Div px20 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
-				<Div mxAuto maxW={1200} py20 balooR>
+			<Div px20 bgSecondary bgOpacity90>
+				<Div mxAuto maxW={1150} py20 balooR>
 					<Row textWhite itemsCenter>
 						<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
 							<Div imgTag src={IMAGES.logos.webeLogo} w100></Div>
@@ -48,31 +48,29 @@ export default function Footer() {
 	}
 
 	return (
-		<Div px80 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
-			<Div mxAuto maxW={1200} py30 balooR>
-				<Row textWhite itemsCenter>
-					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
-						<Div imgTag src={IMAGES.logos.webeLogo} h60></Div>
-					</Col>
-					<Col py20>
-						<Row py5>
-							<Col auto>
-								<Div spanTag>WeBe from </Div>
-								<Div spanTag textSecondary aTag href={"https://soonilabs.com"}>
-									SOONI Labs
-								</Div>
-							</Col>
-							<Col></Col>
-						</Row>
-						<Row textSm>
-							<Col auto>
-								<Div spanTag>COPYRIGHT © WeBe. ALL RIGHTS RESERVED</Div>
-							</Col>
-							<Col></Col>
-						</Row>
-					</Col>
-				</Row>
-			</Div>
+		<Div mxAuto maxW={1150} py30 balooR>
+			<Row textWhite itemsCenter>
+				<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
+					<Div imgTag src={IMAGES.logos.webeLogo} h60></Div>
+				</Col>
+				<Col py20>
+					<Row py5>
+						<Col auto>
+							<Div spanTag>WeBe from </Div>
+							<Div spanTag textSecondary aTag href={"https://soonilabs.com"}>
+								SOONI Labs
+							</Div>
+						</Col>
+						<Col></Col>
+					</Row>
+					<Row textSm>
+						<Col auto>
+							<Div spanTag>COPYRIGHT © WeBe. ALL RIGHTS RESERVED</Div>
+						</Col>
+						<Col></Col>
+					</Row>
+				</Col>
+			</Row>
 		</Div>
 	);
 }

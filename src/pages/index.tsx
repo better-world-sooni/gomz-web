@@ -408,9 +408,9 @@ const Index: NextPage = () => {
 						loading={loading}
 					/>
 				) : (
-					<Div flex itemsCenter justifyCenter hFull maxW={1200} mxAuto mt={-60} z100 relative>
+					<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
 						<Div>
-							<Div mxAuto bgSecondary rounded20 borderWhite border10 pt30 px15 relative>
+							<Div mxAuto bgSecondary rounded20 borderWhite border10 pt30 px15 relative shadowMd>
 								<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={-40} right={-100} absolute z={-100}></Div>
 								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.16} h={3010 * 0.16} mb={-1}></Div>
 							</Div>
@@ -435,7 +435,7 @@ const Index: NextPage = () => {
 							</Div>
 							<EmptyBlock h={20} />
 							<Div textPrimary textCenter fontSize24 w500 mxAuto>
-								The cultural franchise dedicated to young, WEirD innovators.
+								Webe is a cultural franchise dedicated to young, WEirD innovators.
 							</Div>
 						</Div>
 					</Div>
@@ -443,7 +443,7 @@ const Index: NextPage = () => {
 			</Div>
 			<Div
 				style={{
-					background: "linear-gradient(114.31deg, #3E4071 51.1%, #37315A 85.59%)",
+					background: "linear-gradient(180deg, #37315A 0%, #413F70 57.81%, rgb(102, 129, 197) 100%)",
 					overflow: "auto",
 				}}
 				relative
@@ -451,9 +451,9 @@ const Index: NextPage = () => {
 				<Div absolute w350 top0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<Div px80>
-					<Div maxW={1200} mxAuto>
+					<Div maxW={1150} mxAuto>
+						<EmptyBlock h={100} />
 						<Div
-							my80
 							shadowLg
 							style={{
 								backgroundImage: `url(${"/images/storyBanner.png"})`,
@@ -491,7 +491,8 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div textCenter textSecondary2 fontSize48>
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52>
 							Vision:
 							<Div spanTag textSecondary>
 								{" "}
@@ -499,8 +500,8 @@ const Index: NextPage = () => {
 							</Div>
 							Embodiment
 						</Div>
-						<Div wFull flex mt40 textSecondary2 fontSize28 clx={"scrollbar-off"} gapX={30}>
-							<Div relative flex1 h200 border4 borderWhite bgPrimaryLight pt40 px40 roundedLg>
+						<Div wFull flex mt40 textSecondary2 fontSize28 gapX={30}>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight pt40 px40 roundedLg>
 								Re-Birth
 								<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
 									<Div flex1></Div>
@@ -530,7 +531,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative flex1 h200 border4 borderWhite bgPrimaryLight p40 roundedLg>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg>
 								Weird<br></br>Wine
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
 									<Div flex1></Div>
@@ -550,15 +551,15 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div flex1 flex textWhite fontSize48 itemsCenter justifyCenter>
+							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
 								Collection
 							</Div>
 						</Div>
-						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 clx={"scrollbar-off"}>
-							<Div flex1 flex textWhite fontSize48 itemsCenter justifyCenter>
+						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gapX={30}>
+							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
 								BetterWorld
 							</Div>
-							<Div relative flex1 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
 								Pioneer
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
 									<Div flex1></Div>
@@ -578,7 +579,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative flex1 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
 								Capsule
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
 									<Div flex1></Div>
@@ -599,148 +600,153 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-					</Div>
-
-					<EmptyBlock h={250} />
-					<Div textCenter textSecondary2 fontSize72 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-						In
-						<Div spanTag textSecondary>
-							{" "}
-							Real{" "}
-						</Div>
-						World
-					</Div>
-					<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-						<Div relative w500 h200 border1 borderBlack bgPrimaryLight ml30 p40 roundedLg>
-							WeBe Goods
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex2></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InRealWorld.webegoods[locale]}
-								</Div>
-							</Div>
-						</Div>
-						<Div relative w500 h200 border1 borderBlack bgPrimaryLight ml30 p40 roundedLg>
-							WeBe Partners
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex2></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InRealWorld.webepartners[locale]}
-								</Div>
-							</Div>
-						</Div>
-						<Div textSecondary fontSize48 mx120 clx={"text-stroke"}>
-							Brand
-						</Div>
-					</Div>
-					<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-						<Div textSecondary2 fontSize48 mx90 clx={"text-stroke"}>
-							Community
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							Weird<br></br>IRL
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InRealWorld.weirdirl[locale]}
-								</Div>{" "}
-							</Div>
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							Weird<br></br>Project
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InRealWorld.weirdprojects[locale]}
-								</Div>
-							</Div>
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							WeBe<br></br>DAO
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InRealWorld.webedao[locale]}
-								</Div>
-							</Div>
-						</Div>
-					</Div>
-					<EmptyBlock h={250} />
-					<Div maxW={1200} mxAuto>
-						<Div textCenter textSecondary fontSize72 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-							The First{" "}
-							<Div spanTag textSecondary2>
-								{" "}
-								WeBes
-							</Div>
-						</Div>
-						<Div textCenter textSecondary2 fontSize36 mt-20 clx={"text-stroke"}>
-							Departing for
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52>
+							Vision:
 							<Div spanTag textSecondary>
 								{" "}
-								BetterWorld
+								Physical{" "}
+							</Div>
+							Embodiment
+						</Div>
+						<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 gapX={30}>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
+								WeBe Goods
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex2></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.webegoods[locale]}
+									</Div>
+								</Div>
+							</Div>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
+								WeBe Partners
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex2></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.webepartners[locale]}
+									</Div>
+								</Div>
+							</Div>
+							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
+								Brand
 							</Div>
 						</Div>
-						<Div mt40 mxAuto maxW={960} flex>
+						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gap={30}>
+							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
+								Community
+							</Div>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
+								Weird<br></br>IRL
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.weirdirl[locale]}
+									</Div>{" "}
+								</Div>
+							</Div>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
+								Weird<br></br>Project
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.weirdprojects[locale]}
+									</Div>
+								</Div>
+							</Div>
+							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
+								WeBe<br></br>DAO
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InRealWorld.webedao[locale]}
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52>
+							Our{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								Slogan
+							</Div>
+						</Div>
+						<Row mt100 h100>
+							<Col></Col>
+							<Col auto>
+								<Div clx={"rainbow-text"}>WeeEEeeEeWwwoooOO</Div>
+							</Col>
+							<Col></Col>
+						</Row>
+						<EmptyBlock h={200} />
+						<Div textCenter textSecondary fontSize52>
+							The{" "}
+							<Div spanTag textWhite>
+								{" "}
+								Team
+							</Div>
+						</Div>
+						<Div mt40 mxAuto gapX={80} flex>
 							{team(locale).map((member, index) => {
 								return (
-									<Div key={index} inlineBlock mx20>
-										<Div imgTag src={member.imageUri} roundedXl border1 borderBlack></Div>
+									<Div key={index} inlineBlock>
+										<Div imgTag src={member.imageUri} roundedFull shadowLg></Div>
 										<EmptyBlock h={30} />
 										<Div textSecondary2 textCenter textXl balooB fontBold>
 											{member.name}
@@ -752,56 +758,10 @@ const Index: NextPage = () => {
 								);
 							})}
 						</Div>
-						<EmptyBlock h={250} />
-						<Div textCenter textSecondary2 fontSize72 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-							Partnered with{" "}
-							<Div spanTag textSecondary>
-								{" "}
-								the Best
-							</Div>
-						</Div>
-						<Div flex itemsCenter mt40 gapX={80}>
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
-							</Div>
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.bankofWine}></Div>
-							</Div>
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.blinkers}></Div>
-							</Div>
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.kote}></Div>
-							</Div>
-						</Div>
-						<EmptyBlock h={200} />
-						<Div textCenter textSecondary fontSize72 mb40 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-							FAQs
-						</Div>
-						<Div maxW={900} px40 mxAuto>
-							{faqs(locale).map(({ question, answer }, index) => {
-								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
-							})}
-						</Div>
-						<EmptyBlock h={100} />
-						<Div textCenter textSecondary2 fontSize72 mb40 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-							Lastly,{" "}
-							<Div spanTag textSecondary>
-								{" "}
-								Say
-							</Div>
-						</Div>
-						<Row mt100 h100>
-							<Col></Col>
-							<Col auto>
-								<Div clx={"rainbow-text"}>WeeEEeeEeWwwoooOO</Div>
-							</Col>
-							<Col></Col>
-						</Row>
 						<EmptyBlock h={200} />
 					</Div>
+					<Footer />
 				</Div>
-				<Footer />
 			</Div>
 		</Div>
 	);
@@ -849,7 +809,7 @@ function MainPageActions({
 						{ text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						We Be
@@ -921,7 +881,7 @@ function MainPageActions({
 						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						The Crew of
@@ -981,7 +941,7 @@ function MainPageActions({
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize67 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						Get onBoard!
@@ -1035,7 +995,7 @@ function MainPageActions({
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						WeeEeWooO! The
@@ -1084,7 +1044,7 @@ function MainPageActions({
 		);
 	} else {
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div flex maxW400>
 						<Div pt30 pb20></Div>
