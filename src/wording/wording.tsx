@@ -6,7 +6,10 @@ export const wording = {
 		InDigitlaWorld: {
 			rebirth: {
 				en: (
-					<>We understand your minted WeBe may not be your favorite. You will be able to re-mint your WeBe up to five times at 50 $Klay per trial.</>
+					<>
+						Everyone deserves a second chance!! Webe will receive a chance to be reborn on-chain into a different appearance and rarity for a small
+						price.
+					</>
 				),
 				ko: <>본인의 위비가 썩 맘에 들지 않으신가요? 민팅 종료 1주일 후 환생 기회가 활성화됩니다. 다시 오지 않을 두 번째 기회, 놓치지 마세요!</>,
 			},
@@ -31,8 +34,8 @@ export const wording = {
 			pioneer: {
 				en: (
 					<>
-						WeBe will enter BetterWorld, an app created exclusively for PFP holders to exercise
-						their rights and privileges as a member of the community.
+						WeBe will enter BetterWorld, an app created exclusively for PFP holders to exercise their rights and privileges as a member of the
+						community.
 					</>
 				),
 				ko: (
@@ -78,8 +81,8 @@ export const wording = {
 				en: <>Be weird, together. Regular events for holders to get together. Wine nights, futsal games, and weird events prepared.</>,
 				ko: (
 					<>
-						정기 오프라인 프로그램은 스포츠 대회, 글로벌 파티 등 다양하게 구성됩니다. 커뮤니티원은 BetterWorld 앱 내 포럼에서
-						다양한 프로그램 아이디어를 논의할 수 있습니다.
+						정기 오프라인 프로그램은 스포츠 대회, 글로벌 파티 등 다양하게 구성됩니다. 커뮤니티원은 BetterWorld 앱 내 포럼에서 다양한 프로그램
+						아이디어를 논의할 수 있습니다.
 					</>
 				),
 			},
@@ -384,7 +387,7 @@ export const wording = {
 			},
 			story22: {
 				ko: <>더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.</>,
-				en: <>Establish a “BetterWorld”, a free and creative playground for diverse innovators.</>,
+				en: <>Establish a “BetterWorld”, a free and creative society for diverse innovators.</>,
 			},
 			story3: {
 				ko: <>어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 위비는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해 깨어났습니다.</>,

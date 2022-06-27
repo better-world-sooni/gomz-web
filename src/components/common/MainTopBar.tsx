@@ -30,7 +30,7 @@ function MainTopBar({ absolute = false }) {
 	if (isTablet) {
 		return (
 			<Div relative>
-				<Div wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}></Div>
+				<Div wFull px80 py32 bgPrimary></Div>
 				<Div absolute top20 z99 left40 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe} cursorPointer></Div>
 				<Div onClick={() => setClicked((prev) => !prev)}>
 					{clicked ? (
@@ -139,11 +139,11 @@ function MainTopBar({ absolute = false }) {
 		);
 	}
 	return (
-		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py15 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
+		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py12 bgSecondary bgOpacity90>
 			<MintingModal />
 			<InviteModal />
 			<RebirthModal />
-			<Div flex mxAuto maxW={1100}>
+			<Div flex mxAuto maxW={1200}>
 				<Div onClick={handleClickWebe} cursorPointer>
 					<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>
 				</Div>
@@ -166,7 +166,7 @@ function MainTopBar({ absolute = false }) {
 					<Div
 						ml10
 						textSm
-						textSecondary={locale == LOCALES.EN}
+						textPrimary={locale == LOCALES.EN}
 						textSecondary2={locale != LOCALES.EN}
 						clx={"group transition hover:text-primary-light"}
 						cursorPointer
@@ -196,11 +196,11 @@ function MainTopBar({ absolute = false }) {
 						<FaTwitter size={25} />
 					</Div>
 
-					<Div mx10 textSecondary2 cursorPointer>
+					<Div mx10 textSecondary cursorPointer>
 						{kaikas?.selectedAddress ? (
 							<Div
 								roundedFull
-								bgSecondary
+								bgWhite
 								py4
 								px18
 								fontSize12
@@ -215,7 +215,7 @@ function MainTopBar({ absolute = false }) {
 						) : (
 							<Div
 								roundedFull
-								bgSecondary
+								bgWhite
 								py4
 								px18
 								fontSize12

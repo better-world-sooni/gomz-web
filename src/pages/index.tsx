@@ -388,229 +388,214 @@ const Index: NextPage = () => {
 		);
 	}
 	return (
-		<>
+		<Div relative>
 			<BasicHead />
+			<Div absolute imgTag h={"60vh"} src={"/images/doodleRight.png"} top={"40vh"} right0></Div>
+			<Div absolute imgTag h={"60vh"} src={"/images/doodleLeft.png"} top0 left0></Div>
+			<MainTopBar />
+			<Div hScreen bgTertiary>
+				{kaikas?.selectedAddress ? (
+					<MainPageActions
+						mintingStep={mintingStep}
+						invitesRemaining={invitesRemaining}
+						mintRemaining={mintRemaining}
+						mintingState={mintingState}
+						invitor={invitor}
+						amountMinted={amountMinted}
+						balance={balance}
+						totalSupply={totalSupply}
+						maxSupply={maxSupply}
+						loading={loading}
+					/>
+				) : (
+					<Div flex itemsCenter justifyCenter hFull maxW={1200} mxAuto mt={-60} z100 relative>
+						<Div>
+							<Div mxAuto bgSecondary rounded20 borderWhite border10 pt30 px15 relative>
+								<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={-40} right={-100} absolute z={-100}></Div>
+								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.16} h={3010 * 0.16} mb={-1}></Div>
+							</Div>
+							<EmptyBlock h={20} />
+							<Div flex justifyCenter>
+								<Div
+									clx={"group transition hover:bg-primary-light"}
+									bgSecondary
+									roundedFull
+									px30
+									py8
+									fontSize23
+									textWhite
+									borderBlack
+									border2
+									onClick={connectWallet}
+									cursorPointer
+									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									CONNECT WALLET
+								</Div>
+							</Div>
+							<EmptyBlock h={20} />
+							<Div textPrimary textCenter fontSize24 w500 mxAuto>
+								The cultural franchise dedicated to young, WEirD innovators.
+							</Div>
+						</Div>
+					</Div>
+				)}
+			</Div>
 			<Div
 				style={{
 					background: "linear-gradient(114.31deg, #3E4071 51.1%, #37315A 85.59%)",
 					overflow: "auto",
 				}}
-				hScreen
 				relative
 			>
 				<Div absolute w350 top0 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-				<MainTopBar />
 				<Div px80>
-						{kaikas?.selectedAddress ? (
-							<MainPageActions
-								mintingStep={mintingStep}
-								invitesRemaining={invitesRemaining}
-								mintRemaining={mintRemaining}
-								mintingState={mintingState}
-								invitor={invitor}
-								amountMinted={amountMinted}
-								balance={balance}
-								totalSupply={totalSupply}
-								maxSupply={maxSupply}
-								loading={loading}
-							/>
-						) : (
-							<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
-								<Div flexCol>
-									<Div flex maxW400>
-										<Div pt30 pb20></Div>
+					<Div maxW={1200} mxAuto>
+						<Div
+							my80
+							shadowLg
+							style={{
+								backgroundImage: `url(${"/images/storyBanner.png"})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h200
+							rounded20
+							flex
+							px50
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize18>
+									Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. It&apos;s something to be proud of.
+								</Div>
+								<Div flex mt10>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px30
+										py8
+										fontSize23
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										READ OUR STORY
 									</Div>
-									<Div pb40 imgTag src={IMAGES.mainWord}></Div>
-									<Div flex pb30>
-										<Div
-											flex
-											justifyCenter
-											clx={"group transition hover:bg-primary-light"}
-											bgSecondary
-											roundedFull
-											px30
-											py8
-											fontSize23
-											textSecondary2
-											borderBlack
-											border2
-											onClick={connectWallet}
-											cursorPointer
-											style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-										>
-											CONNECT WALLET
-										</Div>
-										<Div
-											mr10
-											flex
-											justifyCenter
-											roundedFull
-											px40
-											py8
-											fontSize23
-											textSecondary2
-											onClick={handleClickReadStory}
-											cursorPointer
-											clx={"text-stroke"}
-										>
-											READ THE STORY
-										</Div>
+								</Div>
+							</Div>
+						</Div>
+						<Div textCenter textSecondary2 fontSize48>
+							Vision:
+							<Div spanTag textSecondary>
+								{" "}
+								Digital{" "}
+							</Div>
+							Embodiment
+						</Div>
+						<Div wFull flex mt40 textSecondary2 fontSize28 clx={"scrollbar-off"} gapX={30}>
+							<Div relative flex1 h200 border4 borderWhite bgPrimaryLight pt40 px40 roundedLg>
+								Re-Birth
+								<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
 									</Div>
-									<Div flex maxW250></Div>
 								</Div>
-								<Div ml110 maxW330>
-									<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
-								</Div>
-							</Div>
-						)}
-
-
-					<EmptyBlock h={150} />
-					<Div textCenter textSecondary2 fontSize72 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-						In
-						<Div spanTag textSecondary>
-							{" "}
-							Digital{" "}
-						</Div>
-						World
-					</Div>
-					<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight ml30 pt40 px40 roundedLg>
-							Re-Birth
-							<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
-								</Div>
-							</Div>
-							<Div
-								flex
-								itemsCenter
-								absolute
-								wFull
-								hFull
-								top0
-								left0
-								clx={"group transition hover:bg-primary-light hover:transition-all hover:hard-shadow"}
-								roundedLg
-							>
 								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									flex
+									itemsCenter
+									absolute
+									wFull
+									hFull
+									top0
+									left0
+									clx={"group transition hover:bg-primary-light hover:transition-all hover:hard-shadow"}
+									roundedLg
 								>
-									{wording.index.InDigitlaWorld.rebirth[locale]}
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.rebirth[locale]}
+									</Div>
 								</Div>
+							</Div>
+							<Div relative flex1 h200 border4 borderWhite bgPrimaryLight p40 roundedLg>
+								Weird<br></br>Wine
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.weirdwine[locale]}
+									</Div>
+								</Div>
+							</Div>
+							<Div flex1 flex textWhite fontSize48 itemsCenter justifyCenter>
+								Collection
 							</Div>
 						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight ml30 p40 roundedLg>
-							Weird<br></br>Wine
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 clx={"scrollbar-off"}>
+							<Div flex1 flex textWhite fontSize48 itemsCenter justifyCenter>
+								BetterWorld
+							</Div>
+							<Div relative flex1 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
+								Pioneer
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+									</Div>
+								</Div>
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.pioneer[locale]}
+									</Div>
 								</Div>
 							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InDigitlaWorld.weirdwine[locale]}
+							<Div relative flex1 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
+								Capsule
+								<Div absolute top0 left0 wFull hFull flex itemsEnd>
+									<Div flex1></Div>
+									<Div flex1>
+										<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
+									</Div>
 								</Div>
-							</Div>
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight ml30 p40 roundedLg>
-							Wizard<br></br>WeBe
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InDigitlaWorld.wizardwebe[locale]}
-								</Div>
-							</Div>
-						</Div>
-						<Div textSecondary fontSize48 mx100 clx={"text-stroke"}>
-							Collection
-						</Div>
-					</Div>
-					<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
-						<Div textSecondary2 fontSize48 mx80 clx={"text-stroke"}>
-							BetterWorld
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							Pioneer
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InDigitlaWorld.pioneer[locale]}
-								</Div>
-							</Div>
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							Socialize<br></br>to Earn
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InDigitlaWorld.socializetoearn[locale]}
-								</Div>
-							</Div>
-						</Div>
-						<Div relative w320 h200 border1 borderBlack bgPrimaryLight mr30 p40 roundedLg overflowHidden>
-							Capsule
-							<Div absolute top0 left0 wFull hFull flex itemsEnd>
-								<Div flex1></Div>
-								<Div flex1>
-									<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
-								</Div>
-							</Div>
-							<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-								<Div
-									textSecondary2
-									balooR
-									px30
-									fontSize={"0.95vw"}
-									clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-								>
-									{wording.index.InDigitlaWorld.capsule[locale]}
+								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+									<Div
+										textSecondary2
+										balooR
+										px30
+										fontSize={"0.95vw"}
+										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+									>
+										{wording.index.InDigitlaWorld.capsule[locale]}
+									</Div>
 								</Div>
 							</Div>
 						</Div>
@@ -736,7 +721,7 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={250} />
-					<Div maxW={1100} mxAuto>
+					<Div maxW={1200} mxAuto>
 						<Div textCenter textSecondary fontSize72 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 							The First{" "}
 							<Div spanTag textSecondary2>
@@ -818,7 +803,7 @@ const Index: NextPage = () => {
 				</Div>
 				<Footer />
 			</Div>
-		</>
+		</Div>
 	);
 };
 
@@ -864,7 +849,7 @@ function MainPageActions({
 						{ text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						We Be
@@ -884,9 +869,7 @@ function MainPageActions({
 									key={index}
 									flex
 									justifyCenter
-									clx={
-										index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"
-									}
+									clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
 									bgSecondary={index == 0}
 									roundedFull
 									px35
@@ -918,7 +901,9 @@ function MainPageActions({
 				? mintRemaining > 0 || invitesRemaining > 0
 					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chance${mintRemaining > 1 && "s"} to mint` : ""}${
 							mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""
-					  }${invitesRemaining > 0 ? ` ${invitesRemaining} more chance${invitesRemaining > 1 && "s"} to invite your trusted companions on-chain` : ""}!`
+					  }${
+							invitesRemaining > 0 ? ` ${invitesRemaining} more chance${invitesRemaining > 1 && "s"} to invite your trusted companions on-chain` : ""
+					  }!`
 					: "Congrats, you've finished the full package!"
 				: mintingState == MintingState.Whitelisted
 				? `You are one of the 88 Webes to be whitelisted! Mint to participate in our movement.`
@@ -936,7 +921,7 @@ function MainPageActions({
 						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
 				  ];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						The Crew of
@@ -982,7 +967,6 @@ function MainPageActions({
 					<Div pt60 imgTag src={IMAGES.whitelist}></Div>
 				</Div>
 			</Div>
-
 		);
 	} else if (mintingStep == MintingStep.PublicMint) {
 		const subtitle =
@@ -997,7 +981,7 @@ function MainPageActions({
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize67 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						Get onBoard!
@@ -1051,7 +1035,7 @@ function MainPageActions({
 			{ text: "Read the Story", handleClick: handleClickReadStory },
 		];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
 						WeeEeWooO! The
@@ -1100,7 +1084,7 @@ function MainPageActions({
 		);
 	} else {
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1100} mxAuto mt={-60}>
+			<Div flex itemsCenter justifyCenter hScreen maxW={1200} mxAuto mt={-60}>
 				<Div flexCol>
 					<Div flex maxW400>
 						<Div pt30 pb20></Div>

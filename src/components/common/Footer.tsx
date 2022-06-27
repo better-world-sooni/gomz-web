@@ -17,7 +17,7 @@ export default function Footer() {
 	if (isTablet) {
 		return (
 			<Div px20 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
-				<Div mxAuto maxW={1100} py20 balooR>
+				<Div mxAuto maxW={1200} py20 balooR>
 					<Row textWhite itemsCenter>
 						<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
 							<Div imgTag src={IMAGES.logos.webeLogo} w100></Div>
@@ -45,11 +45,11 @@ export default function Footer() {
 				</Div>
 			</Div>
 		);
-		}
+	}
 
 	return (
 		<Div px80 style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
-			<Div mxAuto maxW={1100} py30 balooR>
+			<Div mxAuto maxW={1200} py30 balooR>
 				<Row textWhite itemsCenter>
 					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
 						<Div imgTag src={IMAGES.logos.webeLogo} h60></Div>

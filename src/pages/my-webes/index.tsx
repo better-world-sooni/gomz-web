@@ -44,7 +44,7 @@ const Index: NextPage = () => {
 				<Div absolute z0 w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<MainTopBar />
 				<Div px80>
-					<Div maxW={1100} mxAuto>
+					<Div maxW={1200} mxAuto>
 						<EmptyBlock h={100} />
 						<Div flex itemsCenter>
 							<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>

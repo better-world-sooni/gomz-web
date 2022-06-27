@@ -1028,6 +1028,7 @@ const propsToClx = (props) => {
 		bgPrimaryLight: () => clxs.push("bg-primary-light"),
 		bgSecondary: () => clxs.push("bg-secondary"),
 		bgSecondary2: () => clxs.push("bg-secondary2"),
+		bgTertiary: () => clxs.push("bg-tertiary"),
 		bgInfo: () => clxs.push("bg-info"),
 		bgInfoLight: () => clxs.push("bg-info-light"),
 		bgSuccess: () => clxs.push("bg-success"),
