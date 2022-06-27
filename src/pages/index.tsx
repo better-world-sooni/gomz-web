@@ -390,10 +390,8 @@ const Index: NextPage = () => {
 	return (
 		<Div relative>
 			<BasicHead />
-			<Div absolute imgTag h={"60vh"} src={"/images/doodleRight.png"} top={"40vh"} right0></Div>
-			<Div absolute imgTag h={"60vh"} src={"/images/doodleLeft.png"} top0 left0></Div>
 			<MainTopBar />
-			<Div hScreen bgTertiary>
+			<Div hScreen bgTertiary px80>
 				{kaikas?.selectedAddress ? (
 					<MainPageActions
 						mintingStep={mintingStep}
@@ -410,9 +408,16 @@ const Index: NextPage = () => {
 				) : (
 					<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
 						<Div>
-							<Div mxAuto bgSecondary rounded20 borderWhite border10 pt30 px15 relative shadowMd>
-								<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={-40} right={-100} absolute z={-100} clx={""}></Div>
-								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.16} h={3010 * 0.16} mb={-1}></Div>
+							<Div mxAuto bgSecondary rounded20 borderWhite border10 px150 relative shadowSm mt50>
+								<Div imgTag src={"/images/webeIceCream.png"} h={"35vw"} mb={-1} mt={"-13%"}></Div>
+								{/* change height of the above line to change overall size of the box*/}
+								<Div imgTag src={"/images/spaceship.png"} h={"34%"} top={"-10%"} right={"-15%"} absolute z={-100} clx={""}></Div>
+								<Div absolute imgTag h={"8%"} src={"/images/earth.png"} top={"55%"} right={"5%"}></Div>
+								<Div absolute imgTag h={"5%"} src={"/images/moon.png"} top={"63%"} right={"10%"}></Div>
+								<Div absolute imgTag h={"13%"} src={"/images/alien.png"} top={"80%"} left={"-5%"}></Div>
+								<Div absolute imgTag h={"7%"} src={"/images/saturn.png"} top={"60%"} left={"10%"}></Div>
+								<Div absolute imgTag h={"5%"} src={"/images/planet.png"} top={"20%"} left={"3%"}></Div>
+								<Div absolute imgTag h={"5%"} src={"/images/spaceGun.png"} top={"10%"} left={"15%"}></Div>
 							</Div>
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
@@ -432,10 +437,6 @@ const Index: NextPage = () => {
 								>
 									CONNECT WALLET
 								</Div>
-							</Div>
-							<EmptyBlock h={20} />
-							<Div textPrimary textCenter fontSize24 w500 mxAuto>
-								Webe is a cultural franchise dedicated to young, WEirD innovators.
 							</Div>
 						</Div>
 					</Div>
@@ -492,7 +493,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={200} />
-						<Div flex gapX={50}>
+						<Div flex gapX={50} itemsCenter>
 							<Div grid gridCols3 gapX={20} gapY={20}>
 								{team(locale).map((member, index) => {
 									return (
@@ -527,7 +528,7 @@ const Index: NextPage = () => {
 									<br />
 									<br />
 									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer. Holders
-									of Webe will have exclusive access to future products and experiences planned and designed in the{" "}
+									of Webe will have exclusive access to future products and experiences which are planned and designed in the{" "}
 									<Div spanTag textSecondary>
 										WEirDest
 									</Div>{" "}

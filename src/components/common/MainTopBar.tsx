@@ -139,7 +139,7 @@ function MainTopBar({ absolute = false }) {
 		);
 	}
 	return (
-		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py12 bgSecondary bgOpacity90>
+		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py12 bgSecondary bgOpacity60>
 			<MintingModal />
 			<InviteModal />
 			<RebirthModal />
@@ -195,19 +195,18 @@ function MainTopBar({ absolute = false }) {
 					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
 						<FaTwitter size={25} />
 					</Div>
-
-					<Div mx10 textSecondary cursorPointer>
+					<Div ml10 textPrimary cursorPointer>
 						{kaikas?.selectedAddress ? (
 							<Div
 								roundedFull
-								bgWhite
+								bgSecondary2
 								py4
 								px18
 								fontSize12
 								trackingWidest
 								borderBlack
 								border1
-								clx={"group transition hover:bg-primary-light"}
+								clx={"group transition hover:bg-secondary"}
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
 								{truncateKlaytnAddress(kaikas.selectedAddress)}
@@ -215,7 +214,7 @@ function MainTopBar({ absolute = false }) {
 						) : (
 							<Div
 								roundedFull
-								bgWhite
+								bgSecondary2
 								py4
 								px18
 								fontSize12
@@ -223,7 +222,7 @@ function MainTopBar({ absolute = false }) {
 								borderBlack
 								border1
 								onClick={connectWallet}
-								clx={"group transition hover:bg-primary-light"}
+								clx={"group transition hover:bg-secondary"}
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
 								CONNECT WALLET

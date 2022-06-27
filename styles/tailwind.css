@@ -87,13 +87,13 @@
     }
 .rainbow-text {
   letter-spacing: 0px;
-  text-shadow:
-    3px 3px 0px rgba(0 , 0, 0, 1);
+  /* text-shadow:
+      3px 3px 0px rgba(0 , 0, 0, 1); */
   margin: 0;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-text-stroke: 2px #000;
+  /* -webkit-text-stroke: 2px #000; */
 }
 .rainbow-text-mobile {
   background: linear-gradient(90deg, #e5acc2 0%, #FFF2DA 14.58%, #FAFFDA 30.21%, #E6FFDA 46.88%, #DAE2FF 59.37%, #EADAFF 75.52%, #FFDAFB 92.19%);
