@@ -390,9 +390,8 @@ const Index: NextPage = () => {
 	return (
 		<Div relative>
 			<BasicHead />
-			<Div absolute imgTag h={"80vh"} src={"/images/doodleRight.png"} top={"20vh"} right0></Div>
-			<Div absolute imgTag h={"80vh"} src={"/images/doodleLeft.png"} top0 left0></Div>
-
+			<Div absolute imgTag h={"60vh"} src={"/images/doodleRight.png"} top={"40vh"} right0></Div>
+			<Div absolute imgTag h={"60vh"} src={"/images/doodleLeft.png"} top0 left0></Div>
 			<MainTopBar />
 			<Div hScreen bgTertiary>
 				{kaikas?.selectedAddress ? (
@@ -409,13 +408,14 @@ const Index: NextPage = () => {
 						loading={loading}
 					/>
 				) : (
-					<Div flex itemsEnd justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
-						<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={100} right={100} absolute z={-100}></Div>
-						<Div relative>
-							<Div mxAuto>
-								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.25} h={3010 * 0.25} mb={-1}></Div>
+					<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
+						<Div>
+							<Div mxAuto bgSecondary rounded20 borderWhite border10 pt30 px15 relative shadowMd>
+								<Div imgTag src={"/images/spaceship.png"} w={2221 * 0.12} h={1448 * 0.12} top={-40} right={-100} absolute z={-100} clx={""}></Div>
+								<Div imgTag src={"/images/webeIceCream.png"} w={3510 * 0.16} h={3010 * 0.16} mb={-1}></Div>
 							</Div>
-							<Div absolute bottom50 flex wFull justifyCenter>
+							<EmptyBlock h={20} />
+							<Div flex justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -432,6 +432,10 @@ const Index: NextPage = () => {
 								>
 									CONNECT WALLET
 								</Div>
+							</Div>
+							<EmptyBlock h={20} />
+							<Div textPrimary textCenter fontSize24 w500 mxAuto>
+								Webe is a cultural franchise dedicated to young, WEirD innovators.
 							</Div>
 						</Div>
 					</Div>
