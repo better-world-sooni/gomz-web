@@ -34,4 +34,20 @@ export const team = (locale) => [
         specialty: wording.team.index.members.eric.specialty[locale],
         countries: wording.team.index.members.eric.countries,
     },
+    {
+        name: wording.team.index.members.ian.name[locale],
+        imageUri: IMAGES.team.ian,
+        position: wording.team.index.members.ian.position[locale],
+        desc: wording.team.index.members.ian.desc[locale],
+        specialty: wording.team.index.members.ian.specialty[locale],
+        countries: wording.team.index.members.ian.countries,
+    },
+    {
+        name: wording.team.index.members.seungan.name[locale],
+        imageUri: IMAGES.team.seungan,
+        position: wording.team.index.members.seungan.position[locale],
+        desc: wording.team.index.members.seungan.desc[locale],
+        specialty: wording.team.index.members.seungan.specialty[locale],
+        countries: wording.team.index.members.seungan.countries,
+    },
 ];

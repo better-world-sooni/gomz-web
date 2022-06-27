@@ -280,8 +280,8 @@ export const wording = {
 						ko: "Nerd Park",
 					},
 					position: {
-						ko: "CTO",
-						en: "CTO",
+						ko: "개발 리드",
+						en: "Lead Dev",
 					},
 					specialty: {
 						en: "Developing the next generation of web",

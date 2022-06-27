@@ -443,7 +443,7 @@ const Index: NextPage = () => {
 			</Div>
 			<Div
 				style={{
-					background: "linear-gradient(180deg, #37315A 0%, #413F70 57.81%, rgb(102, 129, 197) 100%)",
+					background: "linear-gradient(180deg, #37315A 0%, #413F70 37.81%, rgb(102, 129, 197) 100%)",
 					overflow: "auto",
 				}}
 				relative
@@ -742,7 +742,7 @@ const Index: NextPage = () => {
 								Team
 							</Div>
 						</Div>
-						<Div mt40 mxAuto gapX={80} flex>
+						<Div mt40 mxAuto gapX={30} flex>
 							{team(locale).map((member, index) => {
 								return (
 									<Div key={index} inlineBlock>
