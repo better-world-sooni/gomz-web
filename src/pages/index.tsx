@@ -514,10 +514,18 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 								<Div textSecondary2 fontSize18 mt30>
-									Webe is a cultural franchise dedicated to young, WEirD innovators. We seek those a little different from the majority, Webe
-									challenges those in 20 and 30s to refuse to conform what others think is a good university, a good job, and good life and find what
-									they truely want. Holders of Webe will have exclusive access to future high-quality future products and experiences both virtual and
-									real.
+									Webe is a cultural franchise dedicated to young,{" "}
+									<Div spanTag textSecondary>
+										WEirD
+									</Div>{" "}
+									innovators. We seek those a little different from the majority, Webe challenges those in their 20 and 30s to refuse to conform what
+									others think is a good university, a good job, and a good life and find what they truely want. Holders of Webe will have exclusive
+									access to future products and experiences both virtual and real planned and designed in the{" "}
+									<Div spanTag textSecondary>
+										WEirDest
+									</Div>{" "}
+									manner possible.
+									<br />
 									<br />
 									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer.
 								</Div>
