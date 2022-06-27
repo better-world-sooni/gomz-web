@@ -518,16 +518,16 @@ const Index: NextPage = () => {
 									<Div spanTag textSecondary>
 										WEirD
 									</Div>{" "}
-									innovators. We seek those a little different from the majority, Webe challenges those in their 20 and 30s to refuse to conform what
-									others think is a good university, a good job, and a good life and find what they truely want. Holders of Webe will have exclusive
-									access to future products and experiences both virtual and real planned and designed in the{" "}
+									innovators. Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job,
+									and a good life and find what they truely want.
+									<br />
+									<br />
+									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer. Holders
+									of Webe will have exclusive access to future products and experiences planned and designed in the{" "}
 									<Div spanTag textSecondary>
 										WEirDest
 									</Div>{" "}
 									manner possible.
-									<br />
-									<br />
-									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer.
 								</Div>
 							</Div>
 						</Div>
