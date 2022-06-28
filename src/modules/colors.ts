@@ -1,8 +1,9 @@
 export const COLORS = {
-    PRIMARY: '#7a5de8',
-    PRIMARY_LIGHT: 'rgba(122, 93, 232, 0.2)',
-    SECONDARY: '#513ccd',
-    SECONDARY2: '#3f3d88',
+    PRIMARY: '#413F70',
+    PRIMARY_LIGHT: '#616AAA',
+    SECONDARY: '#8798E9',
+    SECONDARY2: '#DAE2FF',
+    TERTIARY: '#C2CFFF',
     SUCCESS: '#3cd278',
     SUCCESS_LIGHT: 'rgba(60, 210, 120, 0.1)',
     INFO: '#2A97FF',

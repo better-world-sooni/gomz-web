@@ -132,7 +132,7 @@ const Index: NextPage = () => {
 											flexCol
 										>
 											<Div flex justifyEnd>
-												<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
+												<Div maxW={150} textWhite mx24 my90 fontSize8 textRight balooR style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}>
 													{wording.story.index.story1[locale]}
 												</Div>
 											</Div>
@@ -158,11 +158,29 @@ const Index: NextPage = () => {
 																justifyEnd
 															>
 																<Div flex justifyStart>
-																	<Div style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}>
-																		<Div maxW={150} textWhite mx24 my100 fontSize8 textLeft balooR>
+																	<Div>
+																		<Div
+																			maxW={150}
+																			textWhite
+																			mx24
+																			my100
+																			fontSize8
+																			textLeft
+																			balooR
+																			style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}
+																		>
 																			{wording.story.index.story2[locale]}
 																		</Div>
-																		<Div maxW={150} textWhite mx24 my-90 fontSize8 textLeft balooR>
+																		<Div
+																			maxW={150}
+																			textWhite
+																			mx24
+																			my-90
+																			fontSize8
+																			textLeft
+																			balooR
+																			style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}
+																		>
 																			{wording.story.index.story22[locale]}
 																		</Div>
 																		<EmptyBlock h={100} />
@@ -200,7 +218,7 @@ const Index: NextPage = () => {
 																		fontSize8
 																		textLeft
 																		balooR
-																		style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
+																		style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}
 																	>
 																		{wording.story.index.story3[locale]}
 																	</Div>
@@ -236,7 +254,7 @@ const Index: NextPage = () => {
 																		fontSize8
 																		textRight
 																		balooR
-																		style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 0.81)" }}
+																		style={{ textShadow: "0px 3px 0px rgba(0, 0, 0, 0.81)" }}
 																	>
 																		{wording.story.index.story4[locale]}
 																	</Div>
@@ -250,28 +268,31 @@ const Index: NextPage = () => {
 											)}
 										</Scene>
 									</Div>
-									<Div
-										relative
-										textCenter
-										textSecondary2
-										fontSize36
-										pt50
-										px20
-										style={{ textShadow: "2px 2px 0px rgba(0, 0, 0, 2)" }}
-										clx={"text-stroke"}
-										notItalic
-									>
-										&quot;We be
+									<EmptyBlock h={50} />
+									<Div relative textCenter textSecondary2 fontSize36 px20 notItalic>
+										We be
 										<Div spanTag textSecondary>
 											{" "}
 											weird, different, and free.
 										</Div>
-										&quot;
 										<Div w120 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 									</Div>
-									<Div relative flex justifyCenter balooR textWhite textCenter textSm mt20 pb80 px40 notItalic>
-										{wording.story.index.value[locale]}
-										<Div w120 absolute right0 bottom0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
+									<EmptyBlock h={30} />
+									<Div textSecondary2 fontSize14 px30 textCenter>
+										Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job, and a good
+										life and find what they truely want.
+										<br />
+										<br />
+										The collection begins with 88 whitelisted holders minting on{" "}
+										<Div spanTag textSecondary>
+											July 18, 2022
+										</Div>{" "}
+										and will expand to a total of 8,888 NFTs by the end of the summer. Holders of Webe will have exclusive access to future products
+										and experiences which are planned and designed in the{" "}
+										<Div spanTag textSecondary>
+											WEirDest
+										</Div>{" "}
+										manner possible.
 									</Div>
 								</Div>
 							</Scene>

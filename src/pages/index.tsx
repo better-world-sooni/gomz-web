@@ -5,17 +5,13 @@ import { IMAGES } from "src/modules/images";
 import { href } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import useIsTablet from "src/hooks/useIsTablet";
-import { useState } from "react";
 import { useRouter } from "next/router";
 import EmptyBlock from "src/components/EmptyBlock";
 import { wording } from "src/wording/wording";
-import { Faq } from "src/components/Faq";
 import Footer from "src/components/common/Footer";
 import Col from "src/components/Col";
 import Row from "src/components/Row";
-import { MintingModal } from "src/components/modal/MintingModal";
 import MainTopBar from "src/components/common/MainTopBar";
-import { faqs } from "src/modules/faqs";
 import { team } from "src/modules/team";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
@@ -48,55 +44,157 @@ const Index: NextPage = () => {
 		return (
 			<>
 				<BasicHead />
-				<Div
-					style={{ background: "linear-gradient:(169.77deg, #413F70 59%, #37315A 92.97%)", overflowY: "auto", overflowX: "hidden" }}
-					relative
-					hScreen
-				>
-					<Div absolute w180 top60 right0 imgTag src={IMAGES.starDusts3} clx={"animate-pulse"}></Div>
-					<Div absolute w120 top280 right20 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
-					<MainTopBar />
-					<Div flex justifyCenter>
-						<Div mt30 w230 imgTag src={IMAGES.webeMainAstronaut} style={{ animation: "float 6s ease-in-out infinite" }}></Div>
-					</Div>
-					<Div flex justifyCenter>
-						<Div px30 imgTag src={IMAGES.mainWordMobile}></Div>
-					</Div>
-					<Div flex justifyCenter>
-						<Div
-							flex
-							justifyCenter
-							itemsCenter
-							absolute
-							z1
-							my30
-							bgSecondary
-							roundedFull
-							w200
-							h50
-							textSecondary2
-							fontSize18
-							border1
-							borderBlack
-							style={{ boxShadow: "2px 2px 0px rgba(0, 0, 0, 1)" }}
-							onClick={handleClickReadStory}
-						>
-							READ THE STORY
+				<MainTopBar />
+				<Div hScreen bgTertiary px15>
+					<Div flex itemsCenter justifyCenter hFull mxAuto z100 relative>
+						<Div>
+							<Div mxAuto bgSecondary rounded20 borderWhite border10 relative shadowSm mt50 wFull px30>
+								<Div imgTag src={"/images/webeIceCream.png"} mb={-1} mt={"-13%"}></Div>
+								{/* change height of the above line to change overall size of the box*/}
+								{/* <Div imgTag src={"/images/spaceship.png"} h={"34%"} top={"-10%"} right={"-15%"} absolute z={-100} clx={""}></Div> */}
+								<Div absolute imgTag h={"8%"} src={"/images/earth.png"} top={"55%"} right={"5%"}></Div>
+								<Div absolute imgTag h={"5%"} src={"/images/moon.png"} top={"63%"} right={"10%"}></Div>
+								<Div absolute imgTag h={"13%"} src={"/images/alien.png"} top={"80%"} left={"-5%"}></Div>
+								<Div absolute imgTag h={"7%"} src={"/images/saturn.png"} top={"60%"} left={"10%"}></Div>
+								<Div absolute imgTag h={"5%"} src={"/images/planet.png"} top={"20%"} left={"3%"}></Div>
+								<Div absolute imgTag h={"5%"} src={"/images/spaceGun.png"} top={"10%"} left={"15%"}></Div>
+							</Div>
+							<EmptyBlock h={20} />
+							<Div flex justifyCenter>
+								<Div textPrimary fontSize18 textCenter>
+									Webe is a cultural franchise dedicated to <br />
+									young,{" "}
+									<Div spanTag textSecondary>
+										WEirD
+									</Div>{" "}
+									innovators.
+								</Div>
+							</Div>
+							<EmptyBlock h={20} />
+							<Div flex justifyCenter>
+								<Div
+									clx={"group transition hover:bg-primary-light"}
+									bgSecondary
+									roundedFull
+									px30
+									py8
+									fontSize23
+									textWhite
+									borderBlack
+									border2
+									onClick={connectWallet}
+									cursorPointer
+									flex
+									gapX={10}
+									itemsCenter
+									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									<Div imgTag src={"/images/spaceship.png"} h30></Div>
+									<Div>GET WHITELISTED</Div>
+								</Div>
+							</Div>
 						</Div>
 					</Div>
-
-					<EmptyBlock h={200} />
-					<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						In
+				</Div>
+				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 37.81%, rgb(102, 129, 197) 100%)" }} relative>
+					<Div px15>
+						<EmptyBlock h={100} />
+						<Div
+							data-aos="fade-up"
+							shadowLg
+							style={{
+								backgroundImage: `url(${"/images/storyBannerMobile.png"})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h150
+							rounded20
+							flex
+							px30
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize14>
+									Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. <br />
+									It&apos;s something to be proud of.
+								</Div>
+								<Div flex mt10>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px15
+										py4
+										fontSize16
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										READ OUR STORY
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textWhite fontSize42 leadingNone data-aos="fade-up" px30>
+						We Be
+						<Div spanTag textSecondary>
+							{" "}
+							Weird, Different, and Free.
+						</Div>
+					</Div>
+					<EmptyBlock h={30} />
+					<Div textSecondary2 fontSize18 px30 data-aos="fade-up">
+						Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job, and a good life and
+						find what they truely want.
+						<br />
+						<br />
+						The collection begins with 88 whitelisted holders minting on{" "}
+						<Div spanTag textSecondary>
+							July 18, 2022
+						</Div>{" "}
+						and will expand to a total of 8,888 NFTs by the end of the summer. Holders of Webe will have exclusive access to future products and
+						experiences which are planned and designed in the{" "}
+						<Div spanTag textSecondary>
+							WEirDest
+						</Div>{" "}
+						manner possible.
+					</Div>
+					<EmptyBlock h={30} />
+					<Div grid gridCols4 gapX={20} gapY={15} px15 data-aos="fade-up">
+						{team(locale).map((member, index) => {
+							return (
+								<Div key={index} inlineBlock>
+									<Div imgTag src={member.imageUri} roundedLg shadowLg></Div>
+								</Div>
+							);
+						})}
+						{team(locale).map((member, index) => {
+							return (
+								<Div key={index} inlineBlock>
+									<Div imgTag src={member.imageUri} roundedLg shadowLg></Div>
+								</Div>
+							);
+						})}
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+						Vision:
 						<Div spanTag textSecondary>
 							{" "}
 							Digital{" "}
 						</Div>
-						World
+						Embodiment
 					</Div>
-					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+					<EmptyBlock h={30} />
+					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Re-<br></br>Birth
 								<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -112,7 +210,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird<br></br>Wine
 								<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -128,33 +226,18 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Wizard<br></br>WeBe
-								<Div imgTag src={IMAGES.journeyIcons.wizardWebe}></Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InDigitlaWorld.wizardwebe[locale]}
-									</Div>{" "}
-								</Div>
-							</Div>
-							<Div textSecondary fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+							<Div textSecondary fontSize36 mx15>
 								Collection
 							</Div>
 						</Div>
 					</Div>
-					<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+					<EmptyBlock h={15} />
+					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
-							<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+							<Div textSecondary2 fontSize36 mx30>
 								BetterWorld
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Pioneer
 								<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -170,23 +253,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Socialize<br></br>to Earn
-								<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InDigitlaWorld.socializetoearn[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Capsule
 								<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -204,19 +271,19 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 					</Div>
-
 					<EmptyBlock h={100} />
-					<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						In
+					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+						Vision:
 						<Div spanTag textSecondary>
 							{" "}
-							Real{" "}
+							Physical{" "}
 						</Div>
-						World
+						Embodiment
 					</Div>
-					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+					<EmptyBlock h={30} />
+					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								WeBe Goods
 								<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -232,7 +299,7 @@ const Index: NextPage = () => {
 									</Div>{" "}
 								</Div>
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight py30 ml10 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								WeBe<br></br>Partners
 								<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -248,17 +315,18 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div textSecondary fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+							<Div textSecondary fontSize36 mx30>
 								Brand
 							</Div>
 						</Div>
 					</Div>
-					<Div mt10 textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"}>
+					<EmptyBlock h={15} />
+					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
-							<Div textSecondary2 fontSize36 mx50 style={{ webkitTextStroke: "1px #000" }}>
+							<Div textSecondary2 fontSize36 mx30>
 								Community
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird IRL
 								<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -274,7 +342,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird Project
 								<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -290,7 +358,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 border1 borderBlack bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+							<Div relative w180 h200 shadowLg bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								WeBe DAO
 								<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -309,25 +377,19 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textSecondary fontSize42 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						First 8{" "}
+					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+						The{" "}
 						<Div spanTag textSecondary2>
 							{" "}
-							WeBe
+							Team
 						</Div>
 					</Div>
-					<Div textCenter textSecondary2 text2xl style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						Departing for
-						<Div spanTag textSecondary>
-							{" "}
-							BetterWorld
-						</Div>
-					</Div>
-					<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} py30 clx={"scrollbar-off"}>
+					<EmptyBlock h={30} />
+					<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"} data-aos="fade-up">
 						{team(locale).map((member, index) => {
 							return (
-								<Div key={index} inlineBlock mx10 balooR>
-									<Div imgTag src={member.imageUri} w150 h150 roundedXl border1 borderBlack></Div>
+								<Div key={index} inlineBlock mx15 balooR>
+									<Div imgTag src={member.imageUri} w150 h150 roundedFull shadowLg></Div>
 									<EmptyBlock h={30} />
 									<Div textSecondary2 textCenter textLg balooB>
 										{member.name}
@@ -340,39 +402,15 @@ const Index: NextPage = () => {
 						})}
 					</Div>
 					<EmptyBlock h={100} />
-					<Div leadingTight textCenter textSecondary fontSize42 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						Partnered with <br></br>{" "}
-						<Div spanTag textSecondary2>
-							{" "}
-							the Best
-						</Div>
-					</Div>
-					<Div flex justifyCenter itemsCenter mt30>
-						<Div w100 mx20 imgTag src={IMAGES.partners.aiLabs}></Div>
-						<Div w100 mx20 imgTag src={IMAGES.partners.bankofWine}></Div>
-					</Div>
-					<Div flex justifyCenter itemsCenter mt30>
-						<Div w130 h18 mx20 imgTag src={IMAGES.partners.blinkers}></Div>
-						<Div w90 h25 mx20 imgTag src={IMAGES.partners.kote}></Div>
-					</Div>
-					<EmptyBlock h={100} />
-					<Div textCenter textSecondary fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						FAQs
-					</Div>
-					<Div maxW={900} px40 mxAuto>
-						{faqs(locale).map(({ question, answer }, index) => {
-							return <Faq key={index} question={question} answer={answer} isTablet={true} />;
-						})}
-					</Div>
-					<EmptyBlock h={100} />
-					<Div textCenter textSecondary2 fontSize42 mb30 style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
+					<Div textCenter textWhite fontSize42 data-aos="fade-up">
 						Lastly,{" "}
 						<Div spanTag textSecondary>
 							{" "}
 							Say
 						</Div>
 					</Div>
-					<Row mt30>
+					<EmptyBlock h={30} />
+					<Row data-aos="fade-up">
 						<Col></Col>
 						<Col auto>
 							<Div fontSize28 clx={"rainbow-text-mobile"}>
@@ -411,7 +449,7 @@ const Index: NextPage = () => {
 							<Div mxAuto bgSecondary rounded20 borderWhite border10 px150 relative shadowSm mt50>
 								<Div imgTag src={"/images/webeIceCream.png"} h={"35vw"} mb={-1} mt={"-13%"}></Div>
 								{/* change height of the above line to change overall size of the box*/}
-								<Div imgTag src={"/images/spaceship.png"} h={"34%"} top={"-10%"} right={"-15%"} absolute z={-100} clx={""}></Div>
+								<Div imgTag src={"/images/spaceship.png"} h={"28%"} top={"-3%"} right={"-10%"} absolute z={-100} clx={""}></Div>
 								<Div absolute imgTag h={"8%"} src={"/images/earth.png"} top={"55%"} right={"5%"}></Div>
 								<Div absolute imgTag h={"5%"} src={"/images/moon.png"} top={"63%"} right={"10%"}></Div>
 								<Div absolute imgTag h={"13%"} src={"/images/alien.png"} top={"80%"} left={"-5%"}></Div>
@@ -534,12 +572,38 @@ const Index: NextPage = () => {
 									life and find what they truely want.
 									<br />
 									<br />
-									The collection begins with 88 whitelisted holders @July 8 and will expand to a total of 8,888 NFTs by the end of the summer. Holders
-									of Webe will have exclusive access to future products and experiences which are planned and designed in the{" "}
+									The collection begins with 88 whitelisted holders minting on{" "}
+									<Div spanTag textSecondary>
+										July 18, 2022
+									</Div>{" "}
+									and will expand to a total of 8,888 NFTs by the end of the summer. Holders of Webe will have exclusive access to future products and
+									experiences which are planned and designed in the{" "}
 									<Div spanTag textSecondary>
 										WEirDest
 									</Div>{" "}
 									manner possible.
+								</Div>
+								<Div flex mt30>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgSecondary
+										roundedFull
+										px30
+										py8
+										fontSize23
+										textWhite
+										borderBlack
+										border2
+										onClick={connectWallet}
+										cursorPointer
+										flex
+										gapX={10}
+										itemsCenter
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										<Div imgTag src={"/images/spaceship.png"} h30></Div>
+										<Div>GET WHITELISTED</Div>
+									</Div>
 								</Div>
 							</Div>
 						</Div>

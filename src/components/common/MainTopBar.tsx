@@ -1,6 +1,6 @@
 import { IMAGES } from "src/modules/images";
 import Div from "../Div";
-import { FaBook, FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaBars, FaBook, FaDiscord, FaInstagram, FaTimes, FaTwitter, FaWindowMinimize, FaXbox, FaXing, FaXingSquare } from "react-icons/fa";
 import { href, LOCALES, reloadWithLocale } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import { useRouter } from "next/router";
@@ -11,6 +11,7 @@ import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
 import { MintingModal } from "../modal/MintingModal";
 import { InviteModal } from "../modal/InviteModal";
 import { RebirthModal } from "../modal/RebirthModal";
+import { COLORS } from "src/modules/colors";
 
 function MainTopBar({ absolute = false }) {
 	const isTablet = useIsTablet();
@@ -29,117 +30,141 @@ function MainTopBar({ absolute = false }) {
 
 	if (isTablet) {
 		return (
-			<Div relative>
-				<Div wFull px80 py32 bgPrimary></Div>
-				<Div absolute top20 z99 left40 w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe} cursorPointer></Div>
-				<Div onClick={() => setClicked((prev) => !prev)}>
-					{clicked ? (
-						<Div absolute z999 top0 wFull px80 py32 style={{ backgroundColor: "rgba(0,0,0,0.1)" }}>
-							<Div absolute z999 top20 left40 w70 imgTag src={IMAGES.logos.webeLogo}></Div>
-							<Div absolute z999 top23 right40 w18 imgTag src={IMAGES.cancelIcon} />
+			<>
+				<Div wFull z300 px15 py15 bgSecondary absolute>
+					<Div flex mxAuto maxW={1150} itemsCenter>
+						<Div onClick={handleClickWebe} cursorPointer>
+							<Div w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe} cursorPointer></Div>
 						</Div>
-					) : (
-						<Div absolute z99 top23 right40 w18 imgTag src={IMAGES.menuIcon} />
-					)}
-					{clicked && (
-						<Div absolute z100 top0 wFull hScreen style={{ background: "rgba(65, 63, 112, 0.85)", backdropFilter: "blur(20px)" }}>
-							<Div mt100 mx40 textSecondary2 fontSize24>
-								<Div flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
-									<Div mr18>Public Docs</Div>
-								</Div>
-								<Div mt20 flex px30 py10 border1 borderBlack bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://betterworldapp.io"}>
-									<Div mr18>BetterWorld</Div>
-									<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
-								</Div>
-								<Div
-									mt20
-									flex
-									px30
-									py10
-									border1
-									borderBlack
-									bgSecondary
-									roundedLg
-									itemsCenter
-									cursorPointer
-									aTag
-									href={"https://discord.com/invite/7tV3WxWf8p"}
-								>
-									<Div mr18>Discord</Div>
-									<FaDiscord size={20} />
-								</Div>
-								<Div
-									mt20
-									flex
-									px30
-									py10
-									border1
-									borderBlack
-									bgSecondary
-									roundedLg
-									itemsCenter
-									cursorPointer
-									aTag
-									href={"https://twitter.com/officialgomz"}
-								>
-									<Div mr18> Twitter</Div>
-									<FaTwitter size={20} />
-								</Div>
-								<Div
-									mt20
-									flex
-									px30
-									py10
-									border1
-									borderBlack
-									bgSecondary
-									roundedLg
-									itemsCenter
-									cursorPointer
-									aTag
-									href={"https://instagram.com/offical_gomz"}
-								>
-									<Div mr18>Instagram</Div>
-									<FaInstagram size={20} />
-								</Div>
-							</Div>
-							<Div flex justifyCenter mt40 mx40 clx={"text-stroke"}>
-								<Div
-									flex2
-									flex
-									justifyCenter
-									text2xl
-									textSecondary={locale == LOCALES.KO}
-									textSecondary2={locale != LOCALES.KO}
-									cursorPointer
-									onClick={() => reloadWithLocale(LOCALES.KO)}
-								>
-									KOREAN
-								</Div>
-								<Div flex1 flex justifyCenter text2xl textSecondary2>
-									l
-								</Div>
-								<Div
-									flex2
-									flex
-									justifyCenter
-									text2xl
-									textSecondary={locale == LOCALES.EN}
-									textSecondary2={locale != LOCALES.EN}
-									cursorPointer
-									onClick={() => reloadWithLocale(LOCALES.EN)}
-								>
-									ENGLISH
-								</Div>
-							</Div>
+						<Div flex1></Div>
+						<Div onClick={() => setClicked((prev) => !prev)}>
+							{clicked ? <FaTimes size={25} color={COLORS.SECONDARY2} /> : <FaBars size={25} color={COLORS.SECONDARY2} />}
 						</Div>
-					)}
+					</Div>
 				</Div>
-			</Div>
+				{clicked && (
+					<Div absolute z200 top0 wFull hScreen style={{ background: COLORS.SECONDARY, backdropFilter: "blur(20px)" }}>
+						<Div mt100 mx40 textSecondary2 fontSize24>
+							<Div flex px30 py10 border2 borderSecondary bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
+								<Div mr18>Public Docs</Div>
+							</Div>
+							<Div
+								mt20
+								flex
+								px30
+								py10
+								border2
+								borderSecondary
+								bgSecondary
+								roundedLg
+								itemsCenter
+								cursorPointer
+								aTag
+								href={"https://betterworldapp.io"}
+							>
+								<Div mr18>BetterWorld</Div>
+								<Div w20 imgTag src={"/images/betterWorld.png"}></Div>
+							</Div>
+							<Div
+								mt20
+								flex
+								px30
+								py10
+								border2
+								borderSecondary
+								bgSecondary
+								roundedLg
+								itemsCenter
+								cursorPointer
+								aTag
+								href={"https://discord.com/invite/7tV3WxWf8p"}
+							>
+								<Div mr18>Discord</Div>
+								<FaDiscord size={20} />
+							</Div>
+							<Div
+								mt20
+								flex
+								px30
+								py10
+								border2
+								borderSecondary
+								bgSecondary
+								roundedLg
+								itemsCenter
+								cursorPointer
+								aTag
+								href={"https://twitter.com/officialgomz"}
+							>
+								<Div mr18> Twitter</Div>
+								<FaTwitter size={20} />
+							</Div>
+							<Div
+								mt20
+								flex
+								px30
+								py10
+								border2
+								borderSecondary
+								bgSecondary
+								roundedLg
+								itemsCenter
+								cursorPointer
+								aTag
+								href={"https://instagram.com/offical_gomz"}
+							>
+								<Div mr18>Instagram</Div>
+								<FaInstagram size={20} />
+							</Div>
+						</Div>
+						<Div flex justifyCenter mt40 mx40>
+							<Div
+								flex2
+								flex
+								justifyCenter
+								text2xl
+								textPrimary={locale == LOCALES.KO}
+								textSecondary2={locale != LOCALES.KO}
+								cursorPointer
+								onClick={() => reloadWithLocale(LOCALES.KO)}
+							>
+								KOREAN
+							</Div>
+							<Div flex1 flex justifyCenter text2xl textSecondary2>
+								l
+							</Div>
+							<Div
+								flex2
+								flex
+								justifyCenter
+								text2xl
+								textPrimary={locale == LOCALES.EN}
+								textSecondary2={locale != LOCALES.EN}
+								cursorPointer
+								onClick={() => reloadWithLocale(LOCALES.EN)}
+							>
+								ENGLISH
+							</Div>
+						</Div>
+					</Div>
+				)}
+			</>
 		);
 	}
 	return (
-		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py12 bgSecondary bgOpacity60>
+		<Div
+			sticky={!absolute}
+			absolute={absolute}
+			top0
+			wFull
+			z200
+			px80
+			py12
+			bgSecondary={!absolute}
+			bgBlack={absolute}
+			bgOpacity60={!absolute}
+			bgOpacity30={absolute}
+		>
 			<MintingModal />
 			<InviteModal />
 			<RebirthModal />
@@ -180,7 +205,7 @@ function MainTopBar({ absolute = false }) {
 						</Div>
 					</Div>
 					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
-						<Div imgTag src={IMAGES.logos.betterWorldSecondary2} h20 wAuto></Div>
+						<Div imgTag src={"/images/betterWorld.png"} h30 wAuto></Div>
 					</Div>
 					<Div
 						mx10
