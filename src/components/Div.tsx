@@ -664,6 +664,7 @@ const propsToClx = (props) => {
 		borderDanger: () => clxs.push("border-danger"),
 		borderWarning: () => clxs.push("border-warning"),
 		borderSuccess: () => clxs.push("border-success"),
+		borderSecondary: () => clxs.push("border-secondary"),
 		borderSecondary2: () => clxs.push("border-secondary2"),
 		borderGray100: () => clxs.push("border-gray-100"),
 		borderGray200: () => clxs.push("border-gray-200"),

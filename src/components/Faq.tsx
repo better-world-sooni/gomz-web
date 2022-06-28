@@ -9,8 +9,8 @@ export function Faq({ question, answer, isTablet }) {
 	if (isTablet) {
 		return (
 			<Div textSecondary2 my15 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-				<Row textLg p15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR>
-					<Col auto balooB clx={"text-stroke"}>
+				<Row textLg p15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR fontBold>
+					<Col auto balooB>
 						Q.{" "}
 					</Col>
 					<Col>
@@ -20,7 +20,7 @@ export function Faq({ question, answer, isTablet }) {
 				</Row>
 				{clicked && (
 					<Row py20 px30>
-						<Col auto textSecondary textBase balooB clx={"text-stroke"}>
+						<Col auto textSecondary textBase balooB>
 							A.{" "}
 						</Col>
 						<Col textSm balooR>
@@ -33,8 +33,8 @@ export function Faq({ question, answer, isTablet }) {
 	}
 	return (
 		<Div textSecondary2 my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row py15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR>
-				<Col auto fontSize36 ml20 balooB clx={"text-stroke"}>
+			<Row py15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR fontBold>
+				<Col auto fontSize36 ml20 balooB>
 					Q.{" "}
 				</Col>
 				<Col textLg>{question}</Col>
@@ -44,7 +44,7 @@ export function Faq({ question, answer, isTablet }) {
 			</Row>
 			{clicked && (
 				<Row py20 balooR>
-					<Col auto textSecondary fontSize36 ml40 balooB clx={"text-stroke"}>
+					<Col auto textSecondary fontSize36 ml40 balooB>
 						A.{" "}
 					</Col>
 					<Col textLg maxW={690} flex itemsCenter>

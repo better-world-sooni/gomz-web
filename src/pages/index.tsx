@@ -20,6 +20,8 @@ import { useContractState } from "src/hooks/klaytn/useContractState";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useDispatch } from "react-redux";
 import { inviteModalAction, mintingModalAction } from "src/store/reducers/modalReducer";
+import { faqs } from "src/modules/faqs";
+import { Faq } from "src/components/Faq";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -446,8 +448,8 @@ const Index: NextPage = () => {
 				) : (
 					<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
 						<Div>
-							<Div mxAuto bgSecondary rounded20 borderWhite border10 px150 relative shadowSm mt50>
-								<Div imgTag src={"/images/webeIceCream.png"} h={"35vw"} mb={-1} mt={"-13%"}></Div>
+							<Div mxAuto bgSecondary rounded20 borderSecondary border={0.1} px150 relative mt50>
+								<Div imgTag src={"/images/webeIceCream.png"} h={"35vw"} mb={-1} mt={"-15%"}></Div>
 								{/* change height of the above line to change overall size of the box*/}
 								<Div imgTag src={"/images/spaceship.png"} h={"28%"} top={"-3%"} right={"-10%"} absolute z={-100} clx={""}></Div>
 								<Div absolute imgTag h={"8%"} src={"/images/earth.png"} top={"55%"} right={"5%"}></Div>
@@ -501,46 +503,6 @@ const Index: NextPage = () => {
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<Div px80>
 					<Div maxW={1150} mxAuto>
-						<EmptyBlock h={100} />
-						<Div
-							data-aos="fade-up"
-							shadowLg
-							style={{
-								backgroundImage: `url(${"/images/storyBanner.png"})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h200
-							rounded20
-							flex
-							px50
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize18>
-									Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. It&apos;s something to be proud of.
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px30
-										py8
-										fontSize23
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ OUR STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
 						<EmptyBlock h={200} />
 						<Div flex gapX={50} itemsCenter data-aos="fade-up">
 							<Div grid gridCols3 gapX={20} gapY={20}>
@@ -835,17 +797,70 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						{/* <EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52>
-							FAQs
-						</Div>
-						<Div maxW={900} mxAuto>
-							{faqs(locale).map(({ question, answer }, index) => {
-								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
-							})}
-						</Div> */}
 						<EmptyBlock h={200} />
-						<Div textCenter textSecondary fontSize52 data-aos="fade-up">
+						<Div
+							data-aos="fade-up"
+							shadowLg
+							style={{
+								backgroundImage: `url(${"/images/storyBanner.png"})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h200
+							rounded20
+							flex
+							px50
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize18>
+									Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. It&apos;s something to be proud of.
+								</Div>
+								<Div flex mt10>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px30
+										py8
+										fontSize23
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										READ OUR STORY
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52>
+							Partnered with{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								the Best
+							</Div>
+						</Div>
+						<Div flex itemsCenter mt30 gapX={80}>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.bankofWine}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.blinkers}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.kote}></Div>
+							</Div>
+						</Div>
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							The{" "}
 							<Div spanTag textWhite>
 								{" "}
@@ -866,6 +881,15 @@ const Index: NextPage = () => {
 										</Div>
 									</Div>
 								);
+							})}
+						</Div>
+						<EmptyBlock h={200} />
+						<Div textCenter textWhite fontSize52 mb30>
+							FAQs
+						</Div>
+						<Div maxW={900} px40 mxAuto>
+							{faqs(locale).map(({ question, answer }, index) => {
+								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 							})}
 						</Div>
 						<EmptyBlock h={200} />
