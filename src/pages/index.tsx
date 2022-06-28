@@ -44,7 +44,7 @@ const Index: NextPage = () => {
 
 	if (isTablet) {
 		return (
-			<>
+			<Div relative overflowHidden>
 				<BasicHead />
 				<MainTopBar />
 				<Div hScreen bgTertiary px15>
@@ -337,7 +337,7 @@ const Index: NextPage = () => {
 					<Div px15>
 						<Div
 							data-aos="fade-up"
-							shadowLg
+							shadowMd
 							style={{
 								backgroundImage: `url(${"/images/storyBannerMobile.png"})`,
 								backgroundSize: "cover",
@@ -345,7 +345,7 @@ const Index: NextPage = () => {
 								backgroundPositionX: "center",
 							}}
 							h150
-							rounded20
+							roundedLg
 							flex
 							px30
 							onClick={handleClickReadStory}
@@ -431,7 +431,7 @@ const Index: NextPage = () => {
 					<EmptyBlock h={100} />
 					<Footer />
 				</Div>
-			</>
+			</Div>
 		);
 	}
 	return (
@@ -805,7 +805,7 @@ const Index: NextPage = () => {
 						<EmptyBlock h={160} />
 						<Div
 							data-aos="fade-up"
-							shadowLg
+							shadowMd
 							style={{
 								backgroundImage: `url(${"/images/storyBanner.png"})`,
 								backgroundSize: "cover",
@@ -813,7 +813,7 @@ const Index: NextPage = () => {
 								backgroundPositionX: "center",
 							}}
 							h200
-							rounded20
+							roundedLg
 							flex
 							px50
 							onClick={handleClickReadStory}

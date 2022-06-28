@@ -165,7 +165,7 @@ function MainTopBar({ absolute = false }) {
 					<Div
 						mx10
 						textSm
-						textSecondary={locale == LOCALES.KO}
+						textPrimary={locale == LOCALES.KO}
 						textSecondary2={locale != LOCALES.KO}
 						clx={"group transition hover:text-primary-light"}
 						cursorPointer
