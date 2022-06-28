@@ -44,8 +44,8 @@ function MainTopBar({ absolute = false }) {
 				</Div>
 				{clicked && (
 					<Div absolute z200 top0 wFull hScreen style={{ background: COLORS.SECONDARY, backdropFilter: "blur(20px)" }}>
-						<Div mt100 mx40 textSecondary2 fontSize24>
-							<Div flex px30 py10 border2 borderSecondary bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
+						<Div mt100 mx15 textSecondary2 fontSize24>
+							<Div flex px30 py10 border2 borderSecondary2 bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
 								<Div mr18>Public Docs</Div>
 							</Div>
 							<Div
@@ -54,7 +54,7 @@ function MainTopBar({ absolute = false }) {
 								px30
 								py10
 								border2
-								borderSecondary
+								borderSecondary2
 								bgSecondary
 								roundedLg
 								itemsCenter
@@ -71,7 +71,7 @@ function MainTopBar({ absolute = false }) {
 								px30
 								py10
 								border2
-								borderSecondary
+								borderSecondary2
 								bgSecondary
 								roundedLg
 								itemsCenter
@@ -88,7 +88,7 @@ function MainTopBar({ absolute = false }) {
 								px30
 								py10
 								border2
-								borderSecondary
+								borderSecondary2
 								bgSecondary
 								roundedLg
 								itemsCenter
@@ -105,7 +105,7 @@ function MainTopBar({ absolute = false }) {
 								px30
 								py10
 								border2
-								borderSecondary
+								borderSecondary2s
 								bgSecondary
 								roundedLg
 								itemsCenter
@@ -117,9 +117,9 @@ function MainTopBar({ absolute = false }) {
 								<FaInstagram size={20} />
 							</Div>
 						</Div>
-						<Div flex justifyCenter mt40 mx40>
+						<Div flex justifyCenter mt20 mx15>
 							<Div
-								flex2
+								flex1
 								flex
 								justifyCenter
 								text2xl
@@ -130,11 +130,11 @@ function MainTopBar({ absolute = false }) {
 							>
 								KOREAN
 							</Div>
-							<Div flex1 flex justifyCenter text2xl textSecondary2>
+							<Div flex justifyCenter text2xl textSecondary2>
 								l
 							</Div>
 							<Div
-								flex2
+								flex1
 								flex
 								justifyCenter
 								text2xl
@@ -152,19 +152,7 @@ function MainTopBar({ absolute = false }) {
 		);
 	}
 	return (
-		<Div
-			sticky={!absolute}
-			absolute={absolute}
-			top0
-			wFull
-			z200
-			px80
-			py12
-			bgSecondary={!absolute}
-			bgBlack={absolute}
-			bgOpacity60={!absolute}
-			bgOpacity30={absolute}
-		>
+		<Div sticky={!absolute} absolute={absolute} top0 wFull z200 px80 py12 bgSecondary={!absolute} bgBlack={absolute} bgOpacity30={absolute}>
 			<MintingModal />
 			<InviteModal />
 			<RebirthModal />

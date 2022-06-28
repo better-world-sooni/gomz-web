@@ -50,7 +50,7 @@ const Index: NextPage = () => {
 				<Div hScreen bgTertiary px15>
 					<Div flex itemsCenter justifyCenter hFull mxAuto z100 relative>
 						<Div>
-							<Div mxAuto bgSecondary rounded20 borderWhite border10 relative shadowSm mt50 wFull px30>
+							<Div mxAuto bgSecondary rounded20 borderSecondary border={0.1} relative mt50 wFull px30>
 								<Div imgTag src={"/images/webeIceCream.png"} mb={-1} mt={"-13%"}></Div>
 								{/* change height of the above line to change overall size of the box*/}
 								{/* <Div imgTag src={"/images/spaceship.png"} h={"34%"} top={"-10%"} right={"-15%"} absolute z={-100} clx={""}></Div> */}
@@ -80,7 +80,7 @@ const Index: NextPage = () => {
 									roundedFull
 									px30
 									py8
-									fontSize23
+									fontSize18
 									textWhite
 									borderBlack
 									border2
@@ -99,51 +99,8 @@ const Index: NextPage = () => {
 					</Div>
 				</Div>
 				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 37.81%, rgb(102, 129, 197) 100%)" }} relative>
-					<Div px15>
-						<EmptyBlock h={100} />
-						<Div
-							data-aos="fade-up"
-							shadowLg
-							style={{
-								backgroundImage: `url(${"/images/storyBannerMobile.png"})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h150
-							rounded20
-							flex
-							px30
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize14>
-									Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. <br />
-									It&apos;s something to be proud of.
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px15
-										py4
-										fontSize16
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ OUR STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
-					</Div>
 					<EmptyBlock h={100} />
-					<Div textWhite fontSize42 leadingNone data-aos="fade-up" px30>
+					<Div textWhite fontSize36 leadingNone data-aos="fade-up" px30>
 						We Be
 						<Div spanTag textSecondary>
 							{" "}
@@ -168,7 +125,7 @@ const Index: NextPage = () => {
 						manner possible.
 					</Div>
 					<EmptyBlock h={30} />
-					<Div grid gridCols4 gapX={20} gapY={15} px15 data-aos="fade-up">
+					<Div grid gridCols4 gapX={20} gapY={15} px30 data-aos="fade-up">
 						{team(locale).map((member, index) => {
 							return (
 								<Div key={index} inlineBlock>
@@ -185,13 +142,12 @@ const Index: NextPage = () => {
 						})}
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+					<Div textCenter textWhite fontSize36 data-aos="fade-up">
 						Vision:
 						<Div spanTag textSecondary>
 							{" "}
 							Digital{" "}
 						</Div>
-						Embodiment
 					</Div>
 					<EmptyBlock h={30} />
 					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
@@ -228,7 +184,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div textSecondary fontSize36 mx15>
+							<Div textSecondary fontSize24 mx15>
 								Collection
 							</Div>
 						</Div>
@@ -236,7 +192,7 @@ const Index: NextPage = () => {
 					<EmptyBlock h={15} />
 					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
-							<Div textSecondary2 fontSize36 mx30>
+							<Div textSecondary2 fontSize24 mx30>
 								BetterWorld
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
@@ -274,13 +230,12 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+					<Div textCenter textWhite fontSize36 data-aos="fade-up">
 						Vision:
 						<Div spanTag textSecondary>
 							{" "}
 							Physical{" "}
 						</Div>
-						Embodiment
 					</Div>
 					<EmptyBlock h={30} />
 					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
@@ -317,7 +272,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div textSecondary fontSize36 mx30>
+							<Div textSecondary fontSize24 mx30>
 								Brand
 							</Div>
 						</Div>
@@ -325,7 +280,7 @@ const Index: NextPage = () => {
 					<EmptyBlock h={15} />
 					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
-							<Div textSecondary2 fontSize36 mx30>
+							<Div textSecondary2 fontSize24 mx30>
 								Community
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
@@ -379,9 +334,52 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+					<Div px15>
+						<Div
+							data-aos="fade-up"
+							shadowLg
+							style={{
+								backgroundImage: `url(${"/images/storyBannerMobile.png"})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h150
+							rounded20
+							flex
+							px30
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize14>
+									Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. <br />
+									It&apos;s something to be proud of.
+								</Div>
+								<Div flex mt10>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px15
+										py4
+										fontSize16
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										READ OUR STORY
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textCenter textWhite fontSize36 data-aos="fade-up">
 						The{" "}
-						<Div spanTag textSecondary2>
+						<Div spanTag textSecondary>
 							{" "}
 							Team
 						</Div>
@@ -391,7 +389,7 @@ const Index: NextPage = () => {
 						{team(locale).map((member, index) => {
 							return (
 								<Div key={index} inlineBlock mx15 balooR>
-									<Div imgTag src={member.imageUri} w150 h150 roundedFull shadowLg></Div>
+									<Div imgTag src={member.imageUri} w150 h150 roundedXl shadowLg></Div>
 									<EmptyBlock h={30} />
 									<Div textSecondary2 textCenter textLg balooB>
 										{member.name}
@@ -404,7 +402,16 @@ const Index: NextPage = () => {
 						})}
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textWhite fontSize42 data-aos="fade-up">
+					<Div textCenter textWhite fontSize36 mb30 data-aos="fade-up">
+						FAQs
+					</Div>
+					<Div px30 data-aos="fade-up">
+						{faqs(locale).map(({ question, answer }, index) => {
+							return <Faq key={index} question={question} answer={answer} isTablet={true} />;
+						})}
+					</Div>
+					<EmptyBlock h={100} />
+					<Div textCenter textWhite fontSize36 data-aos="fade-up">
 						Lastly,{" "}
 						<Div spanTag textSecondary>
 							{" "}
@@ -503,7 +510,7 @@ const Index: NextPage = () => {
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<Div px80>
 					<Div maxW={1150} mxAuto>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 						<Div flex gapX={50} itemsCenter data-aos="fade-up">
 							<Div grid gridCols3 gapX={20} gapY={20}>
 								{team(locale).map((member, index) => {
@@ -569,14 +576,13 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Vision:
 							<Div spanTag textSecondary>
 								{" "}
 								Digital{" "}
 							</Div>
-							Embodiment
 						</Div>
 						<Div wFull flex mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
 							<Div relative flex1 h200 shadowMd bgPrimaryLight pt40 px40 roundedLg>
@@ -678,14 +684,13 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Vision:
 							<Div spanTag textSecondary>
 								{" "}
 								Physical{" "}
 							</Div>
-							Embodiment
 						</Div>
 						<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
 							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
@@ -797,7 +802,7 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 						<Div
 							data-aos="fade-up"
 							shadowLg
@@ -837,15 +842,15 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52>
+						<EmptyBlock h={160} />
+						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Partnered with{" "}
 							<Div spanTag textSecondary>
 								{" "}
 								the Best
 							</Div>
 						</Div>
-						<Div flex itemsCenter mt30 gapX={80}>
+						<Div flex itemsCenter mt30 gapX={80} data-aos="fade-up">
 							<Div flex1>
 								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
 							</Div>
@@ -859,10 +864,10 @@ const Index: NextPage = () => {
 								<Div imgTag src={IMAGES.partners.kote}></Div>
 							</Div>
 						</Div>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							The{" "}
-							<Div spanTag textWhite>
+							<Div spanTag textSecondary>
 								{" "}
 								Team
 							</Div>
@@ -871,7 +876,7 @@ const Index: NextPage = () => {
 							{team(locale).map((member, index) => {
 								return (
 									<Div key={index} inlineBlock>
-										<Div imgTag src={member.imageUri} roundedFull shadowLg></Div>
+										<Div imgTag src={member.imageUri} roundedXl shadowLg></Div>
 										<EmptyBlock h={30} />
 										<Div textSecondary2 textCenter textXl balooB fontBold>
 											{member.name}
@@ -883,16 +888,16 @@ const Index: NextPage = () => {
 								);
 							})}
 						</Div>
-						<EmptyBlock h={200} />
-						<Div textCenter textWhite fontSize52 mb30>
+						<EmptyBlock h={160} />
+						<Div textCenter textWhite fontSize52 mb30 data-aos="fade-up">
 							FAQs
 						</Div>
-						<Div maxW={900} px40 mxAuto>
+						<Div maxW={900} px40 mxAuto data-aos="fade-up">
 							{faqs(locale).map(({ question, answer }, index) => {
 								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
 							})}
 						</Div>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Lastly,{" "}
 							<Div spanTag textSecondary>
@@ -907,7 +912,7 @@ const Index: NextPage = () => {
 							</Col>
 							<Col></Col>
 						</Row>
-						<EmptyBlock h={200} />
+						<EmptyBlock h={160} />
 					</Div>
 					<Footer />
 				</Div>
