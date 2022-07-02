@@ -3,9 +3,9 @@ import { MintingStep } from "src/modules/minting";
 import { useContract } from "./useContract";
 
 export const useContractState = () => {
+    const [salePrice, setSalePrice] = useState(0)
     const [mintingStep, setMintingStep] = useState<MintingStep>(MintingStep.Initial)
     const [totalSupply, setTotalSupply] = useState<number>(0)
-    const baseURIArray = ["https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json1/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json1/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json/", "https://gomz-pfp-test.s3.ap-northeast-2.amazonaws.com/json1/"]
     const contract = useContract();
     useEffect(() => {
 		if(contract){
@@ -16,9 +16,11 @@ export const useContractState = () => {
                 contract.methods.totalSupply().call().then(
                     (res) => setTotalSupply(res)
                 )
+                contract.methods.salePrice().call().then(
+                    (res) => setSalePrice(res)
+                )
             } catch{}
         }
 	}, [])
-    const maxSupply = 8888
-    return {mintingStep, totalSupply, maxSupply, baseURIArray}
+    return {mintingStep, totalSupply, salePrice}
 }

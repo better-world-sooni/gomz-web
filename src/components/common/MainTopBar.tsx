@@ -12,16 +12,22 @@ import { MintingModal } from "../modal/MintingModal";
 import { InviteModal } from "../modal/InviteModal";
 import { RebirthModal } from "../modal/RebirthModal";
 import { COLORS } from "src/modules/colors";
+import { useAddressState } from "src/hooks/klaytn/useAddressState";
 
 function MainTopBar({ absolute = false }) {
 	const isTablet = useIsTablet();
 	const [clicked, setClicked] = useState(false);
 	const { locale } = useRouter();
-	const { asPath } = useRouter();
 	const handleClickWebe = () => {
 		href(urls.index);
 	};
+	const handleClickCheckOnMyWebes = () => {
+		href(urls["my-webes"].index);
+	};
 	const kaikas = useKaikas();
+	const { balance } = useAddressState({
+		kaikas,
+	});
 	const connectWallet = async () => {
 		if (kaikas) {
 			await kaikas.enable();
@@ -192,6 +198,13 @@ function MainTopBar({ absolute = false }) {
 							PUBLIC DOCS
 						</Div>
 					</Div>
+					{balance > 0 && (
+						<Div mr10 textSecondary2 cursorPointer onClick={handleClickCheckOnMyWebes}>
+							<Div roundedFull py4 pr10 fontSize12 trackingWidest clx={"group transition hover:text-primary-light"}>
+								MY WEBES
+							</Div>
+						</Div>
+					)}
 					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
 						<Div imgTag src={"/images/betterWorld.png"} h30 wAuto></Div>
 					</Div>

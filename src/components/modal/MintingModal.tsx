@@ -8,7 +8,15 @@ import { useContractState } from "src/hooks/klaytn/useContractState";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { COLORS } from "src/modules/colors";
 import { IMAGES } from "src/modules/images";
-import { MintingState, MintingStep } from "src/modules/minting";
+import {
+	MAX_MINT,
+	MAX_SUPPLY,
+	MintingStep,
+	POST_WHITELIST2_SUPPLY,
+	POST_WHITELIST_PRESALE_SUPPLY,
+	POST_WHITELIST_SUPPLY,
+	WHITELIST_MAX_MINT,
+} from "src/modules/minting";
 import { mintingModalAction } from "src/store/reducers/modalReducer";
 import { RootState } from "src/store/reducers/rootReducer";
 import Div from "../Div";
@@ -16,20 +24,19 @@ import Modal from "./Modal";
 
 enum ButtonState {
 	Confirm = "Confirm",
-	Failed = "Failed",
+	Failed = "Failed. Reload?",
 	Loading = "Loading...",
 	GetOnboard = "Get Onboard!",
 	ConnectWallet = "Connect Wallet",
 }
 
 export function MintingModal() {
-	const price = 150;
 	const kaikas = useKaikas();
 	const smartContract = useContract(kaikas, true);
 	const caver = useCaver();
 	const dispatch = useDispatch();
-	const { mintingStep, totalSupply, maxSupply } = useContractState();
-	const { mintRemaining, mintingState } = useAddressState({
+	const { mintingStep, totalSupply, salePrice } = useContractState();
+	const { amountMinted, whitelisted } = useAddressState({
 		kaikas,
 	});
 	const { mintingModalEnabled } = useSelector((state: RootState) => ({
@@ -38,6 +45,16 @@ export function MintingModal() {
 	const [mintResponse, setMintResponse] = useState(null);
 	const [amountToMint, setAmountToMint] = useState(1);
 	const [buttonState, setButtonState] = useState(ButtonState.Confirm);
+	const currentStageMintRemaining =
+		(mintingStep == MintingStep.WhitelistPresale || mintingStep == MintingStep.Public ? MAX_MINT : WHITELIST_MAX_MINT) - amountMinted;
+	const currentStageMaxSupply =
+		mintingStep == MintingStep.Whitelist
+			? POST_WHITELIST_SUPPLY
+			: mintingStep == MintingStep.Whitelist2
+			? POST_WHITELIST2_SUPPLY
+			: mintingStep == MintingStep.WhitelistPresale
+			? POST_WHITELIST_PRESALE_SUPPLY
+			: MAX_SUPPLY;
 	const handleClose = () => {
 		dispatch(mintingModalAction({ enabled: false }));
 	};
@@ -54,6 +71,10 @@ export function MintingModal() {
 			window.location.href = "www.betterworldapp.io/onboarding";
 			return;
 		}
+		if (buttonState == ButtonState.Failed) {
+			window.location.reload();
+			return;
+		}
 	};
 	const mint = async () => {
 		try {
@@ -61,7 +82,7 @@ export function MintingModal() {
 			const mintRes = await smartContract.methods.mint(amountToMint).send({
 				from: kaikas?.selectedAddress,
 				gas: "2500000",
-				value: caver.utils.toPeb(price * amountToMint, "KLAY"),
+				value: caver.utils.fromPeb(salePrice * amountToMint, "peb"),
 			});
 			setMintResponse(mintRes);
 			setButtonState(ButtonState.GetOnboard);
@@ -70,7 +91,7 @@ export function MintingModal() {
 		}
 	};
 	const handlePressUp = () => {
-		if (amountToMint >= Math.min(mintRemaining, maxSupply - totalSupply)) return;
+		if (amountToMint >= Math.min(currentStageMintRemaining, currentStageMaxSupply - totalSupply)) return;
 		setAmountToMint((prevAmount) => prevAmount + 1);
 	};
 	const handlePressDown = () => {
@@ -85,8 +106,8 @@ export function MintingModal() {
 	}, [mintingModalEnabled]);
 	return (
 		<Modal open={mintingModalEnabled} onClose={handleClose} bdClx={"bg-black/60"}>
-			<Div roundedLg overflowHidden w800 mx80>
-				<Div flex bgPrimary fontSize24>
+			<Div roundedLg overflowHidden w800 mx80 fontBold>
+				<Div flex bgSecondary fontSize24>
 					<Div style={{ flex: 2 }} pl50 flex flexRow py20>
 						<Div>
 							<Div w100 hAuto imgTag src={IMAGES.logos.webeLogo}></Div>
@@ -101,7 +122,7 @@ export function MintingModal() {
 						</Div>
 					</Div>
 				</Div>
-				<Div flex h14 z1 bgSecondary borderB2 borderT2 borderBlack>
+				<Div flex h14 z1 bgTertiary borderB2 borderT2 borderBlack>
 					<Div style={{ flex: 2 }} pl50 py20 flexRow></Div>
 					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py20></Div>
 				</Div>
@@ -113,17 +134,17 @@ export function MintingModal() {
 						</Div>
 						<Div flex mb20 balooR>
 							<Div mr20>Seat Type:</Div>
-							<Div>{mintingState == MintingState.Whitelisted ? "WL" : mintingState == MintingState.Invited ? "IV" : "PB"}</Div>
+							<Div>{whitelisted ? "WL" : "PB"}</Div>
 						</Div>
 						<Div flex balooR>
 							<Div mr20>Seats Available:</Div>
-							<Div>{maxSupply - totalSupply}</Div>
+							<Div>{currentStageMaxSupply - totalSupply}</Div>
 						</Div>
 					</Div>
 					<Div relative style={{ flex: 1 }} borderL1 borderBlack borderDashed px50 py40>
 						<Div flex mb20 balooR>
 							<Div mr20>Price:</Div>
-							<Div spanTag>{price * amountToMint} Klay</Div>
+							<Div spanTag>{caver.utils.fromPeb(salePrice * amountToMint, "KLAY")} Klay</Div>
 						</Div>
 						<Div flex mb20 itemsCenter balooR>
 							<Div>
@@ -136,7 +157,9 @@ export function MintingModal() {
 								<Div>{amountToMint}</Div>
 							</Div>
 							<Div cursorPointer onClick={handlePressUp}>
-								<FaRegPlusSquare color={amountToMint >= Math.min(mintRemaining, maxSupply - totalSupply) ? COLORS.GRAY300 : "black"}></FaRegPlusSquare>
+								<FaRegPlusSquare
+									color={amountToMint >= Math.min(currentStageMintRemaining, currentStageMaxSupply - totalSupply) ? COLORS.GRAY300 : "black"}
+								></FaRegPlusSquare>
 							</Div>
 						</Div>
 						<Div
@@ -146,9 +169,8 @@ export function MintingModal() {
 							border2
 							roundedXl
 							textWhite
-							bgPrimary
 							bgDanger={buttonState == ButtonState.Failed}
-							bgSecondary={buttonState == ButtonState.ConnectWallet}
+							bgSecondary
 							bgInfo={buttonState == ButtonState.GetOnboard}
 							fontSize22
 							balooB
@@ -157,7 +179,7 @@ export function MintingModal() {
 							justifyCenter
 							itemsCenter
 							onClick={handlePressButton}
-							clx={"group transition hover:bg-primary-teens"}
+							clx={"group transition hover:bg-primary-light"}
 							cursorPointer
 						>
 							{buttonState}

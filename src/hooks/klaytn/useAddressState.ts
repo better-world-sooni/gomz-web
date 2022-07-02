@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react"
-import { AddressState, MintingState } from "src/modules/minting";
+import { AddressState } from "src/modules/minting";
 import { useContract } from "./useContract";
 
 export const useAddressState = ({kaikas}) => {
     const [addressState, setAddressState] = useState<AddressState>({
         amountMinted: 0,
-        mintingState: MintingState.Initial,
-        invitor: "0x",
-        inviteCount: 0,
+        whitelisted: false,
     })
     const [balance, setBalance] = useState(0)
     const [loading, setLoading] = useState(true)
@@ -27,10 +25,7 @@ export const useAddressState = ({kaikas}) => {
             } catch {}
         }
 	}, [kaikas?.selectedAddress])
-    const invitesRemaining = MintingState.Whitelisted ? 5 - addressState.inviteCount : 3 - addressState.inviteCount;
-	const mintRemaining = 3 - addressState.amountMinted;
-    const mintingState = addressState.mintingState
-    const invitor = addressState.invitor
+    const whitelisted = addressState.whitelisted
     const amountMinted = addressState.amountMinted
-    return {invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, balance, loading}
+    return {whitelisted, amountMinted, balance, loading}
 }

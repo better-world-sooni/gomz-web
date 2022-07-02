@@ -7,21 +7,23 @@ export const useTokenState = ({index, selectedAddress}) => {
         tokenId: null,
         tokenUri: null,
         metadata: null,
-        rebirthHistory: null
+        baseURIType: null,
     })
     const contract = useContract();
     const getTokenObject = async (selectedAddress, index) => {
-        const tokenId = await contract.methods.tokenOfOwnerByIndex(selectedAddress, index).call()
-        const tokenUri = await contract.methods.tokenURI(tokenId).call()
-        const metadata = await (await fetch(tokenUri)).json()
-        const rebirthHistory = await contract.methods.getBaseURITypesLeft(tokenId).call()
-        setTokenState({
-            index,
-            tokenId,
-            tokenUri,
-            metadata,
-            rebirthHistory
-        })
+        try{
+            const tokenId = await contract.methods.tokenOfOwnerByIndex(selectedAddress, index).call()
+            const baseURIType = await contract.methods.tokenBaseURIType(tokenId).call()
+            const tokenUri = await contract.methods.tokenURI(tokenId).call()
+            const metadata = await (await fetch(tokenUri)).json()
+            setTokenState({
+                index,
+                tokenId,
+                tokenUri,
+                metadata,
+                baseURIType,
+            })
+        } catch {}
     }
     useEffect(() => {
 		if(selectedAddress && typeof index == 'number'){

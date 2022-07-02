@@ -24,8 +24,7 @@ const Index: NextPage = () => {
 	const { balance, loading } = useAddressState({
 		kaikas,
 	});
-	const { mintingStep, totalSupply, maxSupply } = useContractState();
-	
+	const { mintingStep } = useContractState();
 
 	useEffect(() => {
 		if (isTablet || (!loading && balance == 0)) href(urls.index);
@@ -47,12 +46,13 @@ const Index: NextPage = () => {
 					<Div maxW={1150} mxAuto>
 						<EmptyBlock h={100} />
 						<Div flex itemsCenter>
-							<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
+							<Div textWhite fontSize52 leadingNone>
 								My{" "}
 								<Div spanTag textSecondary>
 									{" "}
 									WeBes
-								</Div>
+								</Div>{" "}
+								({balance})
 							</Div>
 							<Div flex1></Div>
 							<Div
@@ -81,8 +81,6 @@ const Index: NextPage = () => {
 						</Div>
 						<EmptyBlock h={200} />
 					</Div>
-				</Div>
-				<Div absolute bottom0 wFull>
 					<Footer />
 				</Div>
 			</Div>
@@ -92,19 +90,19 @@ const Index: NextPage = () => {
 
 function Webe({ index, selectedAddress, enableRebirth }) {
 	const dispatch = useDispatch();
-	const { tokenId, tokenUri, metadata, rebirthHistory } = useTokenState({ index, selectedAddress });
-	const rebirthChances = rebirthHistory?.filter((used) => !used).length || 0;
+	const { metadata, baseURIType } = useTokenState({ index, selectedAddress });
+	const hasBeenReborn = baseURIType == MintingStep.Rebirth;
 	const handlePressRebirth = () => {
 		dispatch(rebirthModalAction({ enabled: true, index }));
 	};
 	return (
 		<Div wFull>
 			<Div imgTag src={metadata?.image || IMAGES.team.jieun} wFull hAuto roundedXl border1 borderBlack></Div>
-			<EmptyBlock h={20} />
+			<EmptyBlock h={10} />
 			<Div textSecondary2 textLg balooB fontBold textCenter fontSize={"1.3vw"}>
 				{metadata?.name}
 			</Div>
-			{enableRebirth ? (
+			{enableRebirth && (
 				<Div flex justifyCenter mt10>
 					<Div
 						justifyCenter
@@ -123,14 +121,11 @@ function Webe({ index, selectedAddress, enableRebirth }) {
 						onClick={handlePressRebirth}
 						fontSize={"1vw"}
 					>
-						{rebirthChances} Rebirth Chances
+						{hasBeenReborn ? "Reborn" : "Available for Rebirth"}
 					</Div>
 				</Div>
-			) : (
-				<Div fontSize={"1vw"} textCenter textSecondary2 balooR fontBold>
-					{rebirthChances} Rebirth Chances
-				</Div>
 			)}
+			<EmptyBlock h={20} />
 		</Div>
 	);
 }

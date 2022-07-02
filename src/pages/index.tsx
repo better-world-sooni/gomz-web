@@ -15,13 +15,22 @@ import MainTopBar from "src/components/common/MainTopBar";
 import { team } from "src/modules/team";
 import { useKaikas } from "src/hooks/klaytn/useKaikas";
 import { truncateKlaytnAddress } from "src/helpers/klaytnAddressHelper";
-import { MintingState, MintingStep } from "src/modules/minting";
+import {
+	MAX_MINT,
+	MAX_SUPPLY,
+	MintingStep,
+	POST_WHITELIST2_SUPPLY,
+	POST_WHITELIST_PRESALE_SUPPLY,
+	POST_WHITELIST_SUPPLY,
+	WHITELIST_MAX_MINT,
+} from "src/modules/minting";
 import { useContractState } from "src/hooks/klaytn/useContractState";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useDispatch } from "react-redux";
-import { inviteModalAction, mintingModalAction } from "src/store/reducers/modalReducer";
+import { mintingModalAction } from "src/store/reducers/modalReducer";
 import { faqs } from "src/modules/faqs";
 import { Faq } from "src/components/Faq";
+import { FaDiscord } from "react-icons/fa";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -37,8 +46,8 @@ const Index: NextPage = () => {
 			alert("Please install kaikas.");
 		}
 	};
-	const { mintingStep, totalSupply, maxSupply } = useContractState();
-	const { invitesRemaining, mintRemaining, mintingState, invitor, amountMinted, balance, loading } = useAddressState({
+	const { mintingStep, totalSupply } = useContractState();
+	const { whitelisted, amountMinted, balance } = useAddressState({
 		kaikas,
 	});
 
@@ -50,16 +59,15 @@ const Index: NextPage = () => {
 				<Div hScreen bgTertiary px15>
 					<Div flex itemsCenter justifyCenter hFull mxAuto z100 relative>
 						<Div>
-							<Div mxAuto bgSecondary rounded20 borderSecondary border={0.1} relative mt50 wFull px30>
-								<Div imgTag src={"/images/webeIceCream.png"} mb={-1} mt={"-13%"}></Div>
+							<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border10 relative mt50 wFull px30>
+								<Div imgTag src={IMAGES.webeTshirtillust} mb={-1} mt={"-13%"}></Div>
 								{/* change height of the above line to change overall size of the box*/}
-								{/* <Div imgTag src={"/images/spaceship.png"} h={"34%"} top={"-10%"} right={"-15%"} absolute z={-100} clx={""}></Div> */}
-								<Div absolute imgTag h={"8%"} src={"/images/earth.png"} top={"55%"} right={"5%"}></Div>
-								<Div absolute imgTag h={"5%"} src={"/images/moon.png"} top={"63%"} right={"10%"}></Div>
-								<Div absolute imgTag h={"13%"} src={"/images/alien.png"} top={"80%"} left={"-5%"}></Div>
-								<Div absolute imgTag h={"7%"} src={"/images/saturn.png"} top={"60%"} left={"10%"}></Div>
-								<Div absolute imgTag h={"5%"} src={"/images/planet.png"} top={"20%"} left={"3%"}></Div>
-								<Div absolute imgTag h={"5%"} src={"/images/spaceGun.png"} top={"10%"} left={"15%"}></Div>
+								<Div absolute imgTag h={"8%"} src={IMAGES.earth} top={"55%"} right={"5%"}></Div>
+								<Div absolute imgTag h={"5%"} src={IMAGES.moon} top={"63%"} right={"10%"}></Div>
+								<Div absolute imgTag h={"13%"} src={IMAGES.alien} top={"80%"} left={"-5%"}></Div>
+								<Div absolute imgTag h={"7%"} src={IMAGES.saturn} top={"60%"} left={"10%"}></Div>
+								<Div absolute imgTag h={"5%"} src={IMAGES.planet} top={"20%"} left={"3%"}></Div>
+								<Div absolute imgTag h={"5%"} src={IMAGES.spaceGun} top={"10%"} left={"15%"}></Div>
 							</Div>
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
@@ -91,7 +99,7 @@ const Index: NextPage = () => {
 									itemsCenter
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
-									<Div imgTag src={"/images/spaceship.png"} h30></Div>
+									<Div imgTag src={IMAGES.spaceship} h30></Div>
 									<Div>GET WHITELISTED</Div>
 								</Div>
 							</Div>
@@ -99,6 +107,49 @@ const Index: NextPage = () => {
 					</Div>
 				</Div>
 				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 37.81%, rgb(102, 129, 197) 100%)" }} relative>
+					<EmptyBlock h={100} />
+					<Div px15>
+						<Div
+							data-aos="fade-up"
+							shadowMd
+							style={{
+								backgroundImage: `url(${IMAGES.storyBannerMobile})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h150
+							roundedLg
+							flex
+							px30
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize14>
+									Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. <br />
+									It&apos;s something to be proud of.
+								</Div>
+								<Div flex mt10>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px15
+										py4
+										fontSize16
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										READ OUR STORY
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+					</Div>
 					<EmptyBlock h={100} />
 					<Div textWhite fontSize36 leadingNone data-aos="fade-up" px30>
 						We Be
@@ -334,49 +385,6 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div px15>
-						<Div
-							data-aos="fade-up"
-							shadowMd
-							style={{
-								backgroundImage: `url(${"/images/storyBannerMobile.png"})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h150
-							roundedLg
-							flex
-							px30
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize14>
-									Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. <br />
-									It&apos;s something to be proud of.
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px15
-										py4
-										fontSize16
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ OUR STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
-					</Div>
-					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 data-aos="fade-up">
 						The{" "}
 						<Div spanTag textSecondary>
@@ -439,44 +447,51 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<MainTopBar />
 			<Div hScreen bgTertiary px80>
-				{kaikas?.selectedAddress ? (
-					<MainPageActions
-						mintingStep={mintingStep}
-						invitesRemaining={invitesRemaining}
-						mintRemaining={mintRemaining}
-						mintingState={mintingState}
-						invitor={invitor}
-						amountMinted={amountMinted}
-						balance={balance}
-						totalSupply={totalSupply}
-						maxSupply={maxSupply}
-						loading={loading}
-					/>
-				) : (
-					<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z100 relative>
-						<Div>
-							<Div mxAuto bgSecondary rounded20 borderSecondary border={0.1} px150 relative mt50>
-								<Div imgTag src={"/images/webeIceCream.png"} h={"35vw"} mb={-1} mt={"-15%"}></Div>
-								{/* change height of the above line to change overall size of the box*/}
-								<Div imgTag src={"/images/spaceship.png"} h={"28%"} top={"-3%"} right={"-10%"} absolute z={-100} clx={""}></Div>
-								<Div absolute imgTag h={"8%"} src={"/images/earth.png"} top={"55%"} right={"5%"}></Div>
-								<Div absolute imgTag h={"5%"} src={"/images/moon.png"} top={"63%"} right={"10%"}></Div>
-								<Div absolute imgTag h={"13%"} src={"/images/alien.png"} top={"80%"} left={"-5%"}></Div>
-								<Div absolute imgTag h={"7%"} src={"/images/saturn.png"} top={"60%"} left={"10%"}></Div>
-								<Div absolute imgTag h={"5%"} src={"/images/planet.png"} top={"20%"} left={"3%"}></Div>
-								<Div absolute imgTag h={"5%"} src={"/images/spaceGun.png"} top={"10%"} left={"15%"}></Div>
-							</Div>
-							<EmptyBlock h={20} />
-							<Div flex justifyCenter>
-								<Div textPrimary fontSize18 textCenter>
-									Webe is a cultural franchise dedicated to young,{" "}
-									<Div spanTag textSecondary>
-										WEirD
-									</Div>{" "}
-									innovators.
+				<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z10 relative>
+					<Div>
+						<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border10 px={kaikas?.selectedAddress ? 130 : 150} relative mt50>
+							{kaikas?.selectedAddress ? (
+								<Div textWhite fontSize={"3vw"} h={"30vw"} w={"40vw"} textCenter flex itemsCenter justifyCenter>
+									<Title
+										mintingStep={mintingStep}
+										whitelisted={whitelisted}
+										totalSupply={totalSupply}
+										amountMinted={amountMinted}
+										balance={balance}
+									/>
 								</Div>
+							) : (
+								<Div imgTag src={IMAGES.webeTshirtillust} h={"35vw"} mb={-1} mt={"-15%"}></Div>
+							)}
+							{/* change height of the above line to change overall size of the box*/}
+							<Div imgTag src={IMAGES.spaceship} h={"28%"} top={"-3%"} right={"-10%"} absolute z={-100} clx={""}></Div>
+							<Div absolute imgTag h={"8%"} src={IMAGES.earth} top={"55%"} right={"5%"}></Div>
+							<Div absolute imgTag h={"5%"} src={IMAGES.moon} top={"63%"} right={"10%"}></Div>
+							<Div absolute imgTag h={"13%"} src={IMAGES.alien} top={"80%"} left={"-5%"}></Div>
+							<Div absolute imgTag h={"7%"} src={IMAGES.saturn} top={"60%"} left={"10%"}></Div>
+							<Div absolute imgTag h={"5%"} src={IMAGES.planet} top={"20%"} left={"3%"}></Div>
+							<Div absolute imgTag h={"5%"} src={IMAGES.spaceGun} top={"10%"} left={"15%"}></Div>
+						</Div>
+						<EmptyBlock h={20} />
+						<Div flex justifyCenter>
+							<Div textPrimary fontSize18 textCenter>
+								Webe is a cultural franchise dedicated to young,{" "}
+								<Div spanTag textSecondary>
+									WEirD
+								</Div>{" "}
+								innovators.
 							</Div>
-							<EmptyBlock h={20} />
+						</Div>
+						<EmptyBlock h={20} />
+						{kaikas?.selectedAddress ? (
+							<CallToAction
+								mintingStep={mintingStep}
+								whitelisted={whitelisted}
+								totalSupply={totalSupply}
+								amountMinted={amountMinted}
+								balance={balance}
+							/>
+						) : (
 							<Div flex justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
@@ -490,14 +505,18 @@ const Index: NextPage = () => {
 									border2
 									onClick={connectWallet}
 									cursorPointer
+									flex
+									gapX={10}
+									itemsCenter
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
-									CONNECT WALLET
+									<FaDiscord size={30} />
+									<Div>CONNECT WALLET</Div>
 								</Div>
 							</Div>
-						</Div>
+						)}
 					</Div>
-				)}
+				</Div>
 			</Div>
 			<Div
 				style={{
@@ -511,19 +530,52 @@ const Index: NextPage = () => {
 				<Div px80>
 					<Div maxW={1150} mxAuto>
 						<EmptyBlock h={160} />
+						<Div
+							data-aos="fade-up"
+							shadowMd
+							style={{
+								backgroundImage: `url(${IMAGES.storyBanner})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h200
+							roundedLg
+							flex
+							px50
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize18>
+									Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. It&apos;s something to be proud of.
+								</Div>
+								<Div flex mt10>
+									<Div
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px30
+										py8
+										fontSize23
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>
+										READ OUR STORY
+									</Div>
+								</Div>
+							</Div>
+						</Div>
+						<EmptyBlock h={160} />
 						<Div flex gapX={50} itemsCenter data-aos="fade-up">
 							<Div grid gridCols3 gapX={20} gapY={20}>
-								{team(locale).map((member, index) => {
+								{new Array(12).fill(null).map((_, index) => {
 									return (
 										<Div key={index} inlineBlock>
-											<Div imgTag src={member.imageUri} roundedLg shadowLg w120 h120></Div>
-										</Div>
-									);
-								})}
-								{team(locale).map((member, index) => {
-									return (
-										<Div key={index} inlineBlock>
-											<Div imgTag src={member.imageUri} roundedLg shadowLg w120 h120></Div>
+											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg w120 h120></Div>
 										</Div>
 									);
 								})}
@@ -570,7 +622,7 @@ const Index: NextPage = () => {
 										itemsCenter
 										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 									>
-										<Div imgTag src={"/images/spaceship.png"} h30></Div>
+										<Div imgTag src={IMAGES.spaceship} h30></Div>
 										<Div>GET WHITELISTED</Div>
 									</Div>
 								</Div>
@@ -803,46 +855,6 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
-						<Div
-							data-aos="fade-up"
-							shadowMd
-							style={{
-								backgroundImage: `url(${"/images/storyBanner.png"})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h200
-							roundedLg
-							flex
-							px50
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize18>
-									Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. It&apos;s something to be proud of.
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px30
-										py8
-										fontSize23
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ OUR STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
-						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Partnered with{" "}
 							<Div spanTag textSecondary>
@@ -921,23 +933,324 @@ const Index: NextPage = () => {
 	);
 };
 
-function MainPageActions({
-	mintingStep,
-	invitesRemaining,
-	mintRemaining,
-	mintingState,
-	invitor,
-	amountMinted,
-	totalSupply,
-	balance,
-	maxSupply,
-	loading,
-}) {
-	const tokensLeft = maxSupply - totalSupply;
+const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance }) => {
+	if (mintingStep == MintingStep.Initial) {
+		if (whitelisted)
+			return (
+				<Div spanTag>
+					You are whitelisted! Whitelist Minting Starts{" "}
+					<Div spanTag textPrimary>
+						June 16th
+					</Div>
+					. Enter Discord for the countdown.
+				</Div>
+			);
+		return (
+			<Div spanTag>
+				Whitelist Minting Starts{" "}
+				<Div spanTag textPrimary>
+					June 16th
+				</Div>
+				. Enter Discord to apply to get on the whitelist!
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.Whitelist) {
+		if (whitelisted) {
+			if (totalSupply < POST_WHITELIST_SUPPLY) {
+				if (amountMinted < WHITELIST_MAX_MINT)
+					return (
+						<Div spanTag>
+							Whitelist minting is in progress.{" "}
+							<Div spanTag textPrimary>
+								Mint{" "}
+							</Div>
+							your first Webe!
+						</Div>
+					);
+				return (
+					<Div spanTag>
+						Looks like you&apos;ve minted. Talk to your fellow Webes on{" "}
+						<Div spanTag textPrimary>
+							Discord{" "}
+						</Div>
+						!
+					</Div>
+				);
+			}
+			if (amountMinted < WHITELIST_MAX_MINT)
+				return (
+					<Div spanTag>
+						The first Webe whitelist has sold out. Get ready for the next one on{" "}
+						<Div spanTag textPrimary>
+							Discord
+						</Div>
+						!
+					</Div>
+				);
+			return (
+				<Div spanTag>
+					The first Webe whitelist has sold out. Enter{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					for to apply to get on the next whitelist!
+				</Div>
+			);
+		}
+		if (totalSupply < POST_WHITELIST_SUPPLY) {
+			return (
+				<Div spanTag>
+					Whitelist minting is in progress. Enter{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					to apply to get on the next whitelist!
+				</Div>
+			);
+		}
+		return (
+			<Div spanTag>
+				The first Webe whitelist has sold out. Enter{" "}
+				<Div spanTag textPrimary>
+					Discord{" "}
+				</Div>
+				to apply to get on the next whitelist!
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.Whitelist2) {
+		if (whitelisted) {
+			if (totalSupply < POST_WHITELIST2_SUPPLY) {
+				if (amountMinted < WHITELIST_MAX_MINT)
+					return (
+						<Div spanTag>
+							Whitelist2 minting is in progress.{" "}
+							<Div spanTag textPrimary>
+								Mint{" "}
+							</Div>
+							your first Webe!
+						</Div>
+					);
+				return (
+					<Div spanTag>
+						Looks like you&apos;ve minted. Talk to your fellow Webes in{" "}
+						<Div spanTag textPrimary>
+							Discord{" "}
+						</Div>
+						!
+					</Div>
+				);
+			}
+			if (amountMinted < WHITELIST_MAX_MINT)
+				return (
+					<Div spanTag>
+						The second Webe whitelist has sold out. Talk to your fellow Webes on{" "}
+						<Div spanTag textPrimary>
+							Discord{" "}
+						</Div>
+						!
+					</Div>
+				);
+			return (
+				<Div spanTag>
+					The second Webe whitelist has sold out. Enter{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					for to apply for the presale!
+				</Div>
+			);
+		}
+		if (totalSupply < POST_WHITELIST2_SUPPLY) {
+			return (
+				<Div spanTag>
+					Whitelist2 minting is in progress. Enter{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					to apply for the presale!
+				</Div>
+			);
+		}
+		return (
+			<Div spanTag>
+				The second Webe whitelist has sold out. Enter{" "}
+				<Div spanTag textPrimary>
+					Discord{" "}
+				</Div>
+				to apply for the presale!
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.WhitelistPresale) {
+		if (whitelisted) {
+			if (totalSupply < POST_WHITELIST_PRESALE_SUPPLY) {
+				if (amountMinted < MAX_MINT) {
+					if (amountMinted > 0)
+						return (
+							<Div spanTag>
+								Presale is in progress.{" "}
+								<Div spanTag textPrimary>
+									Mint{" "}
+								</Div>
+								another Webe!
+							</Div>
+						);
+					return (
+						<Div spanTag>
+							Presale is in progress.{" "}
+							<Div spanTag textPrimary>
+								Mint{" "}
+							</Div>
+							your first Webe!
+						</Div>
+					);
+				}
+				return (
+					<Div spanTag>
+						Looks like you&apos;ve minted the max amount allowed for a wallet. Talk to your fellow Webes in{" "}
+						<Div spanTag textPrimary>
+							Discord{" "}
+						</Div>
+						!
+					</Div>
+				);
+			}
+			if (amountMinted > 0)
+				return (
+					<Div spanTag>
+						The Webe presale has sold out. Talk to your fellow Webes in{" "}
+						<Div spanTag textPrimary>
+							Discord{" "}
+						</Div>
+						!
+					</Div>
+				);
+			return (
+				<Div spanTag>
+					The Webe presale has sold out. Enter{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					to get ready for the public sale!
+				</Div>
+			);
+		}
+		if (totalSupply < POST_WHITELIST_PRESALE_SUPPLY) {
+			return (
+				<Div spanTag>
+					Presale minting is in progress. Enter{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					to get ready for the public sale!
+				</Div>
+			);
+		}
+		return (
+			<Div spanTag>
+				The Webe presale has sold out. Enter{" "}
+				<Div spanTag textPrimary>
+					Discord{" "}
+				</Div>
+				to get ready for the public sale!
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.Public) {
+		if (totalSupply < MAX_SUPPLY) {
+			if (amountMinted < MAX_MINT) {
+				if (amountMinted > 0)
+					return (
+						<Div spanTag>
+							Public mint is in progress.{" "}
+							<Div spanTag textPrimary>
+								Mint{" "}
+							</Div>
+							your first Webe!
+						</Div>
+					);
+				return (
+					<Div spanTag>
+						Public mint is in progress.{" "}
+						<Div spanTag textPrimary>
+							Mint
+						</Div>
+						another Webe!
+					</Div>
+				);
+			}
+			return (
+				<Div spanTag>
+					Looks like you&apos;ve minted the max amount allowed for a wallet. Talk to your fellow Webes in{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					!
+				</Div>
+			);
+		}
+		if (amountMinted > 0)
+			return (
+				<Div spanTag>
+					Webes have sold out! Talk to your fellow Webes in{" "}
+					<Div spanTag textPrimary>
+						Discord{" "}
+					</Div>
+					!
+				</Div>
+			);
+		return (
+			<Div spanTag>
+				Webes have sold out! Check out the community out in{" "}
+				<Div spanTag textPrimary>
+					Discord{" "}
+				</Div>
+				!
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.Rebirth) {
+		if (balance > 0)
+			return (
+				<Div spanTag>
+					Everybody deserves a second chance! Check on your Webes for{" "}
+					<Div spanTag textPrimary>
+						Rebirth
+					</Div>
+					.
+				</Div>
+			);
+		return (
+			<Div spanTag>
+				Webes have sold out! Check out the community out in{" "}
+				<Div spanTag textPrimary>
+					Discord{" "}
+				</Div>
+				!
+			</Div>
+		);
+	} else {
+		if (balance > 0)
+			return (
+				<Div spanTag>
+					Check on your{" "}
+					<Div spanTag textPrimary>
+						Webes{" "}
+					</Div>
+					!
+				</Div>
+			);
+		return (
+			<Div spanTag>
+				Webes have sold out! Check out the community out in{" "}
+				<Div spanTag textPrimary>
+					Discord{" "}
+				</Div>
+				!
+			</Div>
+		);
+	}
+};
+
+const CallToAction = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance }) => {
 	const dispatch = useDispatch();
-	const handleClickReadStory = () => {
-		href(urls.story.index);
-	};
 	const handleClickDiscord = () => {
 		href("https://discord.com/invite/7tV3WxWf8p");
 	};
@@ -945,294 +1258,343 @@ function MainPageActions({
 		href(urls["my-webes"].index);
 	};
 	const handleClickMint = () => dispatch(mintingModalAction({ enabled: true }));
-	const handleClickInvite = () => dispatch(inviteModalAction({ enabled: true }));
-	const loadingSubtitle = "loading...";
 	if (mintingStep == MintingStep.Initial) {
-		const subtitle =
-			mintingState == MintingState.Initial
-				? "The cultural franchise dedicated to global innovators, party heads, and Web 3 enthusiasts"
-				: "And you are set! Just join the countdown in Discord:)";
-		const buttons =
-			mintingState == MintingState.Initial
-				? [
-						{ text: "Apply", handleClick: null },
-						{ text: "Read the Story", handleClick: handleClickReadStory },
-				  ]
-				: [
-						{ text: "Enter Discord", handleClick: handleClickDiscord },
-						{ text: "Read the Story", handleClick: handleClickReadStory },
-				  ];
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
-				<Div flexCol>
-					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-						We Be
-						<Div spanTag textSecondary>
-							{" "}
-							Weird, Different, and Free.
-						</Div>
-					</Div>
-					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						{loading ? loadingSubtitle : subtitle}
-					</Div>
-					<Div py15></Div>
-					{!loading && (
-						<Div flex itemsCenter gapX={10}>
-							{buttons.map((button, index) => (
-								<Div
-									key={index}
-									flex
-									justifyCenter
-									clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
-									bgSecondary={index == 0}
-									roundedFull
-									px35
-									py8
-									fontSize23
-									textSecondary2
-									borderBlack={index == 0}
-									border2={index == 0}
-									cursorPointer
-									onClick={button.handleClick}
-									style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-								>
-									{button.text}
-								</Div>
-							))}
-						</Div>
-					)}
-				</Div>
-				<Div ml110 maxW330>
-					<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
 				</Div>
 			</Div>
 		);
-	} else if (mintingStep == MintingStep.WhitelistMint) {
-		const subtitle =
-			mintingState == MintingState.Initial
-				? "Apply to be an early WeBe for exclusive privileges and important responsibilities!"
-				: amountMinted > 0
-				? mintRemaining > 0 || invitesRemaining > 0
-					? `You have${mintRemaining > 0 ? ` ${mintRemaining} more chance${mintRemaining > 1 && "s"} to mint` : ""}${
-							mintRemaining > 0 && invitesRemaining > 0 ? " and" : ""
-					  }${
-							invitesRemaining > 0 ? ` ${invitesRemaining} more chance${invitesRemaining > 1 && "s"} to invite your trusted companions on-chain` : ""
-					  }!`
-					: "Congrats, you've finished the full package!"
-				: mintingState == MintingState.Whitelisted
-				? `You are one of the 88 Webes to be whitelisted! Mint to participate in our movement.`
-				: `${truncateKlaytnAddress(invitor)} invited you to join the crew! You have ${mintRemaining} more chance${mintRemaining > 0 && "s"} to mint`;
-		const buttons =
-			mintingState == MintingState.Initial
-				? [
-						{ text: "Apply", handleClick: null },
-						{ text: "Read the Story", handleClick: handleClickReadStory },
-				  ]
-				: [
-						mintRemaining > 0 && { text: "Mint", handleClick: handleClickMint },
-						invitesRemaining > 0 && amountMinted > 0 && { text: "Invite", handleClick: handleClickInvite },
-						balance > 0 && { text: "Check on My WeBes", handleClick: handleClickCheckOnMyWebes },
-						(mintRemaining == 0 || invitesRemaining == 0 || amountMinted == 0) && { text: "Read the Story", handleClick: handleClickReadStory },
-				  ];
+	} else if (mintingStep == MintingStep.Whitelist) {
+		if (whitelisted) {
+			if (totalSupply < POST_WHITELIST_SUPPLY) {
+				if (amountMinted < WHITELIST_MAX_MINT)
+					return (
+						<Div flex justifyCenter>
+							<Div
+								clx={"group transition hover:bg-primary-light"}
+								bgSecondary
+								roundedFull
+								px30
+								py8
+								fontSize23
+								textWhite
+								borderBlack
+								border2
+								onClick={handleClickMint}
+								cursorPointer
+								flex
+								gapX={10}
+								itemsCenter
+								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							>
+								<Div>MINT</Div>
+							</Div>
+						</Div>
+					);
+			}
+		}
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
-				<Div flexCol>
-					<Div textSecondary2 fontSize68 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-						The Crew of
-						<Div spanTag textSecondary>
-							{" "}
-							Early WeBes{" "}
-						</Div>
-						Are Boarding
-					</Div>
-					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						{loading ? loadingSubtitle : subtitle}
-					</Div>
-					<Div py15></Div>
-					{!loading && (
-						<Div flex itemsCenter gapX={10}>
-							{buttons
-								.filter((button) => button)
-								.map((button, index) => (
-									<Div
-										key={index}
-										flex
-										justifyCenter
-										clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
-										bgSecondary={index == 0}
-										roundedFull
-										px={index == 0 ? 35 : 20}
-										py8
-										fontSize23
-										textSecondary2
-										borderBlack={index == 0}
-										border2={index == 0}
-										cursorPointer
-										onClick={button.handleClick}
-										style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										{button.text}
-									</Div>
-								))}
-						</Div>
-					)}
-				</Div>
-				<Div ml50 maxW380>
-					<Div pt60 imgTag src={IMAGES.whitelist}></Div>
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
 				</Div>
 			</Div>
 		);
-	} else if (mintingStep == MintingStep.PublicMint) {
-		const subtitle =
-			tokensLeft > 0
-				? mintRemaining > 0
-					? `You have ${mintRemaining} more chance${mintRemaining > 0 && "s"} to mint!`
-					: "Congrats, you've finished the full package!"
-				: "All WeBes have departed!";
-		const buttons = [
-			mintRemaining > 0 && tokensLeft > 0 && { text: "Mint", handleClick: handleClickMint },
-			balance > 0 && { text: "Check on My WeBes", handleClick: handleClickCheckOnMyWebes },
-			{ text: "Read the Story", handleClick: handleClickReadStory },
-		];
+	} else if (mintingStep == MintingStep.Whitelist2) {
+		if (whitelisted) {
+			if (totalSupply < POST_WHITELIST2_SUPPLY) {
+				if (amountMinted < WHITELIST_MAX_MINT)
+					return (
+						<Div flex justifyCenter>
+							<Div
+								clx={"group transition hover:bg-primary-light"}
+								bgSecondary
+								roundedFull
+								px30
+								py8
+								fontSize23
+								textWhite
+								borderBlack
+								border2
+								onClick={handleClickMint}
+								cursorPointer
+								flex
+								gapX={10}
+								itemsCenter
+								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							>
+								<Div>MINT</Div>
+							</Div>
+						</Div>
+					);
+			}
+		}
 		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
-				<Div flexCol>
-					<Div textSecondary2 fontSize67 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-						Get onBoard!
-						<Div spanTag textSecondary>
-							{" "}
-							All WeBes{" "}
-						</Div>
-						Are Departing
-					</Div>
-					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						{loading ? loadingSubtitle : subtitle}
-					</Div>
-					<Div py15></Div>
-					{!loading && (
-						<Div flex itemsCenter gapX={10}>
-							{buttons
-								.filter((button) => button)
-								.map((button, index) => (
-									<Div
-										key={index}
-										clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
-										bgSecondary={index == 0}
-										roundedFull
-										px35
-										pr0={index != 0}
-										textCenter
-										py8
-										fontSize23
-										textSecondary2
-										borderBlack={index == 0}
-										border2={index == 0}
-										cursorPointer
-										onClick={button.handleClick}
-										style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										{button.text}
-									</Div>
-								))}
-						</Div>
-					)}
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
 				</Div>
-				<Div ml20 maxW400>
-					<Div pt60 imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.WhitelistPresale) {
+		if (whitelisted) {
+			if (totalSupply < POST_WHITELIST_PRESALE_SUPPLY) {
+				if (amountMinted < MAX_MINT) {
+					return (
+						<Div flex justifyCenter>
+							<Div
+								clx={"group transition hover:bg-primary-light"}
+								bgSecondary
+								roundedFull
+								px30
+								py8
+								fontSize23
+								textWhite
+								borderBlack
+								border2
+								onClick={handleClickMint}
+								cursorPointer
+								flex
+								gapX={10}
+								itemsCenter
+								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+							>
+								<Div>MINT</Div>
+							</Div>
+						</Div>
+					);
+				}
+			}
+		}
+		return (
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
+				</Div>
+			</Div>
+		);
+	} else if (mintingStep == MintingStep.Public) {
+		if (totalSupply < MAX_SUPPLY) {
+			if (amountMinted < MAX_MINT) {
+				return (
+					<Div flex justifyCenter>
+						<Div
+							clx={"group transition hover:bg-primary-light"}
+							bgSecondary
+							roundedFull
+							px30
+							py8
+							fontSize23
+							textWhite
+							borderBlack
+							border2
+							onClick={handleClickMint}
+							cursorPointer
+							flex
+							gapX={10}
+							itemsCenter
+							style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+						>
+							<Div>MINT</Div>
+						</Div>
+					</Div>
+				);
+			}
+		}
+		return (
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
 				</Div>
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Rebirth) {
-		const subtitle = balance > 0 ? `${balance} WeBes may be eligible for rebirth...` : "There's no WeBe eligible for rebirth :(";
-		const buttons = [
-			balance > 0 && { text: "REBIRTH", handleClick: handleClickCheckOnMyWebes },
-			{ text: "Read the Story", handleClick: handleClickReadStory },
-		];
-		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
-				<Div flexCol>
-					<Div textSecondary2 fontSize72 leadingNone style={{ textShadow: "3px 3px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke-bold"}>
-						WeeEeWooO! The
-						<Div spanTag textSecondary>
-							{" "}
-							REBIRTH
-						</Div>{" "}
-						is here
+		if (balance > 0)
+			return (
+				<Div flex justifyCenter>
+					<Div
+						clx={"group transition hover:bg-primary-light"}
+						bgSecondary
+						roundedFull
+						px30
+						py8
+						fontSize23
+						textWhite
+						borderBlack
+						border2
+						onClick={handleClickCheckOnMyWebes}
+						cursorPointer
+						flex
+						gapX={10}
+						itemsCenter
+						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+					>
+						<Div>CHECK ON MY WEBES</Div>
 					</Div>
-					<Div pt20 textSecondary2 fontSize27 style={{ textShadow: "1px 1px 0px rgba(0, 0, 0, 1)" }} clx={"text-stroke"}>
-						{loading ? loadingSubtitle : subtitle}
-					</Div>
-					<Div py15></Div>
-					{!loading && (
-						<Div flex itemsCenter gapX={10}>
-							{buttons
-								.filter((button) => button)
-								.map((button, index) => (
-									<Div
-										key={index}
-										flex
-										justifyCenter
-										clx={index == 0 ? "group transition hover:bg-primary-light" : "text-stroke"}
-										bgSecondary={index == 0}
-										roundedFull
-										px35
-										py8
-										fontSize23
-										textSecondary2
-										borderBlack={index == 0}
-										border2={index == 0}
-										cursorPointer
-										onClick={button.handleClick}
-										style={index == 0 && { boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										{button.text}
-									</Div>
-								))}
-						</Div>
-					)}
 				</Div>
-				<Div ml50 maxW450 z99>
-					<Div pt60 style={{ animation: "spin 0.5s linear" }} imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+			);
+		return (
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
 				</Div>
 			</Div>
 		);
 	} else {
-		return (
-			<Div flex itemsCenter justifyCenter hScreen maxW={1150} mxAuto mt={-60}>
-				<Div flexCol>
-					<Div flex maxW400>
-						<Div pt30 pb20></Div>
-					</Div>
-					<Div pb40 imgTag src={IMAGES.mainWord}></Div>
-					<Div flex pb30>
-						<Div
-							mr10
-							bgSecondary
-							border2
-							borderBlack
-							flex
-							justifyCenter
-							roundedFull
-							px35
-							py8
-							fontSize23
-							textSecondary2
-							onClick={handleClickReadStory}
-							cursorPointer
-							style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-							clx={"group transition hover:bg-primary-light"}
-						>
-							READ THE STORY
-						</Div>
+		if (balance > 0)
+			return (
+				<Div flex justifyCenter>
+					<Div
+						clx={"group transition hover:bg-primary-light"}
+						bgSecondary
+						roundedFull
+						px30
+						py8
+						fontSize23
+						textWhite
+						borderBlack
+						border2
+						onClick={handleClickCheckOnMyWebes}
+						cursorPointer
+						flex
+						gapX={10}
+						itemsCenter
+						style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+					>
+						<Div>CHECK ON MY WEBES</Div>
 					</Div>
 				</Div>
-				<Div ml110 maxW330>
-					<Div pt60 style={{ animation: "float 6s ease-in-out infinite" }} imgTag src={IMAGES.webeMainAstronaut}></Div>
+			);
+		return (
+			<Div flex justifyCenter>
+				<Div
+					clx={"group transition hover:bg-primary-light"}
+					bgSecondary
+					roundedFull
+					px30
+					py8
+					fontSize23
+					textWhite
+					borderBlack
+					border2
+					onClick={handleClickDiscord}
+					cursorPointer
+					flex
+					gapX={10}
+					itemsCenter
+					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+				>
+					<FaDiscord size={30} />
+					<Div>ENTER DISCORD</Div>
 				</Div>
 			</Div>
 		);
 	}
-}
+};
 
 
 export default Index;
