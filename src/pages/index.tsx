@@ -59,9 +59,10 @@ const Index: NextPage = () => {
 				<Div hScreen bgTertiary px15>
 					<Div flex itemsCenter justifyCenter hFull mxAuto z100 relative>
 						<Div>
-							<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border10 relative mt50 wFull px30>
+							<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border5 relative mt50 wFull px30>
 								<Div imgTag src={IMAGES.webeTshirtillust} mb={-1} mt={"-13%"}></Div>
 								{/* change height of the above line to change overall size of the box*/}
+								<Div absolute imgTag h={"5%"} src={IMAGES.heart} top={"12%"} right={"10%"}></Div>
 								<Div absolute imgTag h={"8%"} src={IMAGES.earth} top={"55%"} right={"5%"}></Div>
 								<Div absolute imgTag h={"5%"} src={IMAGES.moon} top={"63%"} right={"10%"}></Div>
 								<Div absolute imgTag h={"13%"} src={IMAGES.alien} top={"80%"} left={"-5%"}></Div>
@@ -72,7 +73,7 @@ const Index: NextPage = () => {
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
 								<Div textPrimary fontSize18 textCenter>
-									Webe is a cultural franchise dedicated to <br />
+									WeBe is a cultural franchise dedicated to <br />
 									young,{" "}
 									<Div spanTag textSecondary>
 										WEirD
@@ -86,27 +87,28 @@ const Index: NextPage = () => {
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
 									roundedFull
-									px30
+									px25
 									py8
 									fontSize18
 									textWhite
 									borderBlack
 									border2
-									onClick={connectWallet}
+									aTag
+									href={"https://discord.com/invite/7tV3WxWf8p"}
 									cursorPointer
 									flex
 									gapX={10}
 									itemsCenter
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
-									<Div imgTag src={IMAGES.spaceship} h30></Div>
-									<Div>GET WHITELISTED</Div>
+									<Div imgTag src={IMAGES.spaceship} h25></Div>
+									<Div>JOIN WeBe</Div>
 								</Div>
 							</Div>
 						</Div>
 					</Div>
 				</Div>
-				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 37.81%, rgb(102, 129, 197) 100%)" }} relative>
+				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)" }} relative>
 					<EmptyBlock h={100} />
 					<Div px15>
 						<Div
@@ -138,7 +140,7 @@ const Index: NextPage = () => {
 										roundedFull
 										px15
 										py4
-										fontSize16
+										fontSize13
 										textWhite
 										borderBlack
 										border2
@@ -159,21 +161,8 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={30} />
-					<Div textSecondary2 fontSize18 px30 data-aos="fade-up">
-						Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job, and a good life and
-						find what they truely want.
-						<br />
-						<br />
-						The collection begins with 88 whitelisted holders minting on{" "}
-						<Div spanTag textSecondary>
-							July 18, 2022
-						</Div>{" "}
-						and will expand to a total of 8,888 NFTs by the end of the summer. Holders of Webe will have exclusive access to future products and
-						experiences which are planned and designed in the{" "}
-						<Div spanTag textSecondary>
-							WEirDest
-						</Div>{" "}
-						manner possible.
+					<Div fontSize15 px30 mt5 data-aos="fade-up">
+						{wording.story.index.value[locale]}
 					</Div>
 					<EmptyBlock h={30} />
 					<Div grid gridCols4 gapX={20} gapY={15} px30 data-aos="fade-up">
@@ -193,11 +182,11 @@ const Index: NextPage = () => {
 						})}
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textWhite fontSize36 data-aos="fade-up">
-						Vision:
-						<Div spanTag textSecondary>
+					<Div textCenter textSecondary fontSize36 data-aos="fade-up">
+						Digital
+						<Div spanTag textWhite>
 							{" "}
-							Digital{" "}
+							Journey{" "}
 						</Div>
 					</Div>
 					<EmptyBlock h={30} />
@@ -235,7 +224,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div textSecondary fontSize24 mx15>
+							<Div textSecondary2 fontSize24 mx30>
 								Collection
 							</Div>
 						</Div>
@@ -262,9 +251,9 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Capsule
-								<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
+							<Div relative w180 h200 shadowLg bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
+								WeBe DAO
+								<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -274,18 +263,18 @@ const Index: NextPage = () => {
 										balooR
 										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 									>
-										{wording.index.InDigitlaWorld.capsule[locale]}
+										{wording.index.InRealWorld.webedao[locale]}
 									</Div>
 								</Div>
 							</Div>
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textWhite fontSize36 data-aos="fade-up">
-						Vision:
-						<Div spanTag textSecondary>
+					<Div textCenter textSecondary fontSize36 data-aos="fade-up">
+						Physical
+						<Div spanTag textWhite>
 							{" "}
-							Physical{" "}
+							Journey{" "}
 						</Div>
 					</Div>
 					<EmptyBlock h={30} />
@@ -323,7 +312,7 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div textSecondary fontSize24 mx30>
+							<Div textSecondary2 fontSize24 mx30>
 								Brand
 							</Div>
 						</Div>
@@ -366,49 +355,71 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								WeBe DAO
-								<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webedao[locale]}
-									</Div>
-								</Div>
-							</Div>
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 data-aos="fade-up">
-						The{" "}
-						<Div spanTag textSecondary>
-							{" "}
-							Team
+							Partnered with<br></br>
+							<Div spanTag textSecondary>
+								{" "}
+								the Best
+							</Div>
 						</Div>
+						<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
+							
+							<Div flex1>
+								<Div imgTag src={"images/pala.png"}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
+							</Div>
+						</Div>
+						<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.blinkers}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag src={IMAGES.partners.kote}></Div>
+							</Div>
 					</Div>
-					<EmptyBlock h={30} />
-					<Div style={{ whiteSpace: "nowrap", overflow: "auto" }} clx={"scrollbar-off"} data-aos="fade-up">
-						{team(locale).map((member, index) => {
-							return (
-								<Div key={index} inlineBlock mx15 balooR>
-									<Div imgTag src={member.imageUri} w150 h150 roundedXl shadowLg></Div>
-									<EmptyBlock h={30} />
-									<Div textSecondary2 textCenter textLg balooB>
-										{member.name}
+					<EmptyBlock h={100} />
+					<Div textCenter textWhite fontSize36 data-aos="fade-up">
+							The{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								First 8 
+							</Div>
+							{" "}WeBe
+							<Div textCenter textWhite fontSize18 data-aos="fade-up">
+							Departing for{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								BetterWorld
+							</Div>
+						</Div>
+						</Div>
+						<Div mt20 data-aos="fade-up">
+							{team(locale).map((member, index) => {
+								return (
+									<Div key={index} inlineBlock>
+										<Div flex mt20 itemsCenter>
+											<Div mx15 w150 imgTag src={member.imageUri} roundedXl shadowLg></Div>
+											<Div flexCol mr15>
+												<Div textSecondary2 textLeft textMd balooB fontBold>
+													{member.name} {"  "}
+													<Div textSecondary2 textLeft fontSize8 balooR italic spanTag>
+													{member.position}
+													</Div>
+												</Div>
+												<Div mt5 textSecondary2 textLeft fontSize10 balooR>
+													{member.specialty}
+												</Div>
+											</Div>
+										</Div>
 									</Div>
-									<Div textSecondary2 textCenter textSm>
-										{member.position}
-									</Div>
-								</Div>
-							);
-						})}
-					</Div>
+								);
+							})}
+						</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 mb30 data-aos="fade-up">
 						FAQs
@@ -447,7 +458,7 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<MainTopBar />
 			<Div hScreen bgTertiary px80>
-				<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-60} z10 relative>
+				<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-50} z10 relative>
 					<Div>
 						<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border10 px={kaikas?.selectedAddress ? 130 : 150} relative mt50>
 							{kaikas?.selectedAddress ? (
@@ -461,12 +472,13 @@ const Index: NextPage = () => {
 									/>
 								</Div>
 							) : (
-								<Div imgTag src={IMAGES.webeTshirtillust} h={"35vw"} mb={-1} mt={"-15%"}></Div>
+								<Div imgTag src={IMAGES.webeTshirtillust} h={"60vh"} mb={-1} mt={"-10%"}></Div>
 							)}
 							{/* change height of the above line to change overall size of the box*/}
-							<Div imgTag src={IMAGES.spaceship} h={"28%"} top={"-3%"} right={"-10%"} absolute z={-100} clx={""}></Div>
 							<Div absolute imgTag h={"8%"} src={IMAGES.earth} top={"55%"} right={"5%"}></Div>
 							<Div absolute imgTag h={"5%"} src={IMAGES.moon} top={"63%"} right={"10%"}></Div>
+							<Div absolute imgTag h={"5%"} src={IMAGES.heart} top={"12%"} right={"10%"}></Div>
+							<Div absolute imgTag h={"32%"} src={IMAGES.spaceship} bottom={"-5%"} right={"-10%"}></Div>
 							<Div absolute imgTag h={"13%"} src={IMAGES.alien} top={"80%"} left={"-5%"}></Div>
 							<Div absolute imgTag h={"7%"} src={IMAGES.saturn} top={"60%"} left={"10%"}></Div>
 							<Div absolute imgTag h={"5%"} src={IMAGES.planet} top={"20%"} left={"3%"}></Div>
@@ -475,7 +487,7 @@ const Index: NextPage = () => {
 						<EmptyBlock h={20} />
 						<Div flex justifyCenter>
 							<Div textPrimary fontSize18 textCenter>
-								Webe is a cultural franchise dedicated to young,{" "}
+								WeBe is a cultural franchise dedicated to young,{" "}
 								<Div spanTag textSecondary>
 									WEirD
 								</Div>{" "}
@@ -510,7 +522,7 @@ const Index: NextPage = () => {
 									itemsCenter
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
-									<FaDiscord size={30} />
+									<Div imgTag src={IMAGES.twinkle} h25></Div>
 									<Div>CONNECT WALLET</Div>
 								</Div>
 							</Div>
@@ -520,8 +532,8 @@ const Index: NextPage = () => {
 			</Div>
 			<Div
 				style={{
-					background: "linear-gradient(180deg, #37315A 0%, #413F70 37.81%, rgb(102, 129, 197) 100%)",
-					overflow: "auto",
+					background: "linear-gradient(180deg,  #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)",
+					overflow: "hidden"
 				}}
 				relative
 			>
@@ -558,7 +570,7 @@ const Index: NextPage = () => {
 										roundedFull
 										px30
 										py8
-										fontSize23
+										fontSize20
 										textWhite
 										borderBlack
 										border2
@@ -575,65 +587,31 @@ const Index: NextPage = () => {
 								{new Array(12).fill(null).map((_, index) => {
 									return (
 										<Div key={index} inlineBlock>
-											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg w120 h120></Div>
+											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg w100 h100></Div>
 										</Div>
 									);
 								})}
 							</Div>
+							
 							<Div flex1>
 								<Div textWhite fontSize52 leadingNone>
 									We Be
 									<Div spanTag textSecondary>
 										{" "}
-										Weird, Different, and Free.
+										Weird,<br></br> Different, and Free.
 									</Div>
 								</Div>
-								<Div textSecondary2 fontSize18 mt30>
-									Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job, and a good
-									life and find what they truely want.
-									<br />
-									<br />
-									The collection begins with 88 whitelisted holders minting on{" "}
-									<Div spanTag textSecondary>
-										July 18, 2022
-									</Div>{" "}
-									and will expand to a total of 8,888 NFTs by the end of the summer. Holders of Webe will have exclusive access to future products and
-									experiences which are planned and designed in the{" "}
-									<Div spanTag textSecondary>
-										WEirDest
-									</Div>{" "}
-									manner possible.
-								</Div>
-								<Div flex mt30>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgSecondary
-										roundedFull
-										px30
-										py8
-										fontSize23
-										textWhite
-										borderBlack
-										border2
-										onClick={connectWallet}
-										cursorPointer
-										flex
-										gapX={10}
-										itemsCenter
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										<Div imgTag src={IMAGES.spaceship} h30></Div>
-										<Div>GET WHITELISTED</Div>
-									</Div>
+								<Div fontSize18 mt30>
+									{wording.story.index.value[locale]}
 								</Div>
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
-						<Div textCenter textWhite fontSize52 data-aos="fade-up">
-							Vision:
-							<Div spanTag textSecondary>
+						<Div textCenter textSecondary fontSize52 data-aos="fade-up">
+							Digital
+							<Div spanTag textWhite>
 								{" "}
-								Digital{" "}
+								Journey{" "}
 							</Div>
 						</Div>
 						<Div wFull flex mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
@@ -716,11 +694,11 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								Capsule
+								WeBe<br></br>DAO
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
 									<Div flex1></Div>
 									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.capsule}></Div>
+										<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
 									</Div>
 								</Div>
 								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
@@ -731,22 +709,22 @@ const Index: NextPage = () => {
 										fontSize={"0.95vw"}
 										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
 									>
-										{wording.index.InDigitlaWorld.capsule[locale]}
+										{wording.index.InRealWorld.webedao[locale]}
 									</Div>
 								</Div>
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
-						<Div textCenter textWhite fontSize52 data-aos="fade-up">
-							Vision:
-							<Div spanTag textSecondary>
+						<Div textCenter textSecondary fontSize52 data-aos="fade-up">
+							Physical
+							<Div spanTag textWhite>
 								{" "}
-								Physical{" "}
+								Journey{" "}
 							</Div>
 						</Div>
 						<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
 							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								WeBe Goods
+								Weird Goods
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
 									<Div flex2></Div>
 									<Div flex1>
@@ -766,7 +744,7 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								WeBe Partners
+								Weird Partners
 								<Div absolute top0 left0 wFull hFull flex itemsEnd>
 									<Div flex2></Div>
 									<Div flex1>
@@ -833,26 +811,6 @@ const Index: NextPage = () => {
 									</Div>
 								</Div>
 							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								WeBe<br></br>DAO
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.webeDAO}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webedao[locale]}
-									</Div>
-								</Div>
-							</Div>
 						</Div>
 						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
@@ -867,7 +825,7 @@ const Index: NextPage = () => {
 								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.bankofWine}></Div>
+								<Div imgTag src={"images/pala.png"}></Div>
 							</Div>
 							<Div flex1>
 								<Div imgTag src={IMAGES.partners.blinkers}></Div>
@@ -881,20 +839,34 @@ const Index: NextPage = () => {
 							The{" "}
 							<Div spanTag textSecondary>
 								{" "}
-								Team
+								First 8 
+							</Div>
+							{" "}WeBe
+							<Div textCenter textWhite fontSize24 data-aos="fade-up">
+							Departing for{" "}
+							<Div spanTag textSecondary>
+								{" "}
+								BetterWorld
 							</Div>
 						</Div>
-						<Div mt40 mxAuto gapX={30} flex data-aos="fade-up">
+						</Div>
+						<Div mt20 data-aos="fade-up">
 							{team(locale).map((member, index) => {
 								return (
-									<Div key={index} inlineBlock>
-										<Div imgTag src={member.imageUri} roundedXl shadowLg></Div>
-										<EmptyBlock h={30} />
-										<Div textSecondary2 textCenter textXl balooB fontBold>
-											{member.name}
-										</Div>
-										<Div textSecondary2 textCenter textLg balooR>
-											{member.position}
+									<Div key={index} inlineBlock mx30>
+										<Div flex mt20 itemsCenter maxW500 textCenter>
+											<Col maxW180 imgTag src={member.imageUri} roundedXl shadowLg></Col>
+											<Col ml30>
+												<Div textSecondary2 textLeft textLg balooB fontBold>
+													{member.name}
+												</Div>
+												<Div textSecondary2 textLeft fontSize11 balooR italic>
+													{member.position}
+												</Div>
+												<Div mt5 textSecondary2 textLeft fontSize12 balooR>
+													{member.specialty}
+												</Div>
+											</Col>
 										</Div>
 									</Div>
 								);
@@ -905,8 +877,8 @@ const Index: NextPage = () => {
 							FAQs
 						</Div>
 						<Div maxW={900} px40 mxAuto data-aos="fade-up">
-							{faqs(locale).map(({ question, answer }, index) => {
-								return <Faq key={index} question={question} answer={answer} isTablet={false} />;
+							{faqs(locale).map(({ question, answer, image }, index) => {
+								return <Faq key={index} question={question} answer={answer} image={image} isTablet={false} />;
 							})}
 						</Div>
 						<EmptyBlock h={160} />
@@ -938,20 +910,20 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		if (whitelisted)
 			return (
 				<Div spanTag>
-					You are whitelisted! Whitelist Minting Starts{" "}
+					You are the first OG! Your minting starts{" "}
 					<Div spanTag textPrimary>
-						June 16th
+						June 18th
 					</Div>
 					. Enter Discord for the countdown.
 				</Div>
 			);
 		return (
 			<Div spanTag>
-				Whitelist Minting Starts{" "}
+				The first OG minting starts{" "}
 				<Div spanTag textPrimary>
-					June 16th
+					June 18th
 				</Div>
-				. Enter Discord to apply to get on the whitelist!
+				. Enter Discord to apply to get on the first OG!
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Whitelist) {
@@ -960,16 +932,16 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				if (amountMinted < WHITELIST_MAX_MINT)
 					return (
 						<Div spanTag>
-							Whitelist minting is in progress.{" "}
+							The first OG minting is in progress.{" "}
 							<Div spanTag textPrimary>
-								Mint{" "}
+								mint{" "}
 							</Div>
-							your first Webe!
+							your first WeBe!
 						</Div>
 					);
 				return (
 					<Div spanTag>
-						Looks like you&apos;ve minted. Talk to your fellow Webes on{" "}
+						Looks like you&apos;ve minted. Talk to your fellow WeBes on{" "}
 						<Div spanTag textPrimary>
 							Discord{" "}
 						</Div>
@@ -980,7 +952,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 			if (amountMinted < WHITELIST_MAX_MINT)
 				return (
 					<Div spanTag>
-						The first Webe whitelist has sold out. Get ready for the next one on{" "}
+						The first WeBe OG has sold out. Get ready for the next one on{" "}
 						<Div spanTag textPrimary>
 							Discord
 						</Div>
@@ -989,32 +961,32 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				);
 			return (
 				<Div spanTag>
-					The first Webe whitelist has sold out. Enter{" "}
+					The first WeBe OG has sold out. Join WeBe's journey on{" "}
 					<Div spanTag textPrimary>
-						Discord{" "}
+						BetterWorld{" "}
 					</Div>
-					for to apply to get on the next whitelist!
+					!
 				</Div>
 			);
 		}
 		if (totalSupply < POST_WHITELIST_SUPPLY) {
 			return (
 				<Div spanTag>
-					Whitelist minting is in progress. Enter{" "}
+					The first OG minting is in progress. Enter{" "}
 					<Div spanTag textPrimary>
 						Discord{" "}
 					</Div>
-					to apply to get on the next whitelist!
+					to apply to get on the next OG!
 				</Div>
 			);
 		}
 		return (
 			<Div spanTag>
-				The first Webe whitelist has sold out. Enter{" "}
+				The first WeBe OG has sold out. Enter{" "}
 				<Div spanTag textPrimary>
 					Discord{" "}
 				</Div>
-				to apply to get on the next whitelist!
+				to apply to get on the next OG!
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Whitelist2) {
@@ -1023,18 +995,18 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				if (amountMinted < WHITELIST_MAX_MINT)
 					return (
 						<Div spanTag>
-							Whitelist2 minting is in progress.{" "}
+							The second OG minting is in progress.{" "}
 							<Div spanTag textPrimary>
 								Mint{" "}
 							</Div>
-							your first Webe!
+							your first WeBe!
 						</Div>
 					);
 				return (
 					<Div spanTag>
-						Looks like you&apos;ve minted. Talk to your fellow Webes in{" "}
+						Looks like you&apos;ve minted. You can now talk to your fellow WeBes on{" "}
 						<Div spanTag textPrimary>
-							Discord{" "}
+							BetterWorld{" "}
 						</Div>
 						!
 					</Div>
@@ -1043,41 +1015,41 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 			if (amountMinted < WHITELIST_MAX_MINT)
 				return (
 					<Div spanTag>
-						The second Webe whitelist has sold out. Talk to your fellow Webes on{" "}
+						The second WeBe OG has sold out. You can now talk to your fellow WeBes on{" "}
 						<Div spanTag textPrimary>
-							Discord{" "}
+							BetterWorld{" "}
 						</Div>
 						!
 					</Div>
 				);
 			return (
 				<Div spanTag>
-					The second Webe whitelist has sold out. Enter{" "}
+					The second Webe OG has sold out. Enter{" "}
 					<Div spanTag textPrimary>
 						Discord{" "}
 					</Div>
-					for to apply for the presale!
+					for to apply for the whitelist!
 				</Div>
 			);
 		}
 		if (totalSupply < POST_WHITELIST2_SUPPLY) {
 			return (
 				<Div spanTag>
-					Whitelist2 minting is in progress. Enter{" "}
+					The second OG minting is in progress. Enter{" "}
 					<Div spanTag textPrimary>
 						Discord{" "}
 					</Div>
-					to apply for the presale!
+					to apply for the whitelist!
 				</Div>
 			);
 		}
 		return (
 			<Div spanTag>
-				The second Webe whitelist has sold out. Enter{" "}
+				The second Webe OG has sold out. Enter{" "}
 				<Div spanTag textPrimary>
 					Discord{" "}
 				</Div>
-				to apply for the presale!
+				to apply for the whitelist!
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.WhitelistPresale) {
@@ -1087,28 +1059,28 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 					if (amountMinted > 0)
 						return (
 							<Div spanTag>
-								Presale is in progress.{" "}
+								Whitelist is in progress.{" "}
 								<Div spanTag textPrimary>
 									Mint{" "}
 								</Div>
-								another Webe!
+								another WeBe!
 							</Div>
 						);
 					return (
 						<Div spanTag>
-							Presale is in progress.{" "}
+							Whitelist is in progress.{" "}
 							<Div spanTag textPrimary>
 								Mint{" "}
 							</Div>
-							your first Webe!
+							your first WeBe!
 						</Div>
 					);
 				}
 				return (
 					<Div spanTag>
-						Looks like you&apos;ve minted the max amount allowed for a wallet. Talk to your fellow Webes in{" "}
+						Looks like you&apos;ve minted the max amount allowed for a wallet. You can now talk to your fellow WeBes on{" "}
 						<Div spanTag textPrimary>
-							Discord{" "}
+							BetterWorld{" "}
 						</Div>
 						!
 					</Div>
@@ -1117,27 +1089,27 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 			if (amountMinted > 0)
 				return (
 					<Div spanTag>
-						The Webe presale has sold out. Talk to your fellow Webes in{" "}
+						The WeBe whitelist has sold out. You can now talk to your fellow WeBes on{" "}
 						<Div spanTag textPrimary>
-							Discord{" "}
+							BetterWorld{" "}
 						</Div>
 						!
 					</Div>
 				);
 			return (
 				<Div spanTag>
-					The Webe presale has sold out. Enter{" "}
+					The WeBe whitelist has sold out. You can now talk to your fellow WeBes on{" "}
 					<Div spanTag textPrimary>
-						Discord{" "}
+						BetterWorld{" "}
 					</Div>
-					to get ready for the public sale!
+					!
 				</Div>
 			);
 		}
 		if (totalSupply < POST_WHITELIST_PRESALE_SUPPLY) {
 			return (
 				<Div spanTag>
-					Presale minting is in progress. Enter{" "}
+					Whitelist minting is in progress. Enter{" "}
 					<Div spanTag textPrimary>
 						Discord{" "}
 					</Div>
@@ -1147,7 +1119,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		}
 		return (
 			<Div spanTag>
-				The Webe presale has sold out. Enter{" "}
+				The WeBe whitelist has sold out. Enter{" "}
 				<Div spanTag textPrimary>
 					Discord{" "}
 				</Div>
@@ -1164,7 +1136,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 							<Div spanTag textPrimary>
 								Mint{" "}
 							</Div>
-							your first Webe!
+							your first WeBe!
 						</Div>
 					);
 				return (
@@ -1179,9 +1151,9 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 			}
 			return (
 				<Div spanTag>
-					Looks like you&apos;ve minted the max amount allowed for a wallet. Talk to your fellow Webes in{" "}
+					Looks like you&apos;ve minted the max amount allowed for a wallet. You can now talk to your fellow WeBes on{" "}
 					<Div spanTag textPrimary>
-						Discord{" "}
+						BetterWorld{" "}
 					</Div>
 					!
 				</Div>
@@ -1190,16 +1162,16 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		if (amountMinted > 0)
 			return (
 				<Div spanTag>
-					Webes have sold out! Talk to your fellow Webes in{" "}
+					WeBes have sold out! You can now talk to your fellow WeBes on{" "}
 					<Div spanTag textPrimary>
-						Discord{" "}
+						BetterWorld{" "}
 					</Div>
 					!
 				</Div>
 			);
 		return (
 			<Div spanTag>
-				Webes have sold out! Check out the community out in{" "}
+				WeBes have sold out! Check out the weird community in{" "}
 				<Div spanTag textPrimary>
 					Discord{" "}
 				</Div>
@@ -1210,7 +1182,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		if (balance > 0)
 			return (
 				<Div spanTag>
-					Everybody deserves a second chance! Check on your Webes for{" "}
+					Everybody deserves a second chance! Check on your WeBes for{" "}
 					<Div spanTag textPrimary>
 						Rebirth
 					</Div>
@@ -1219,7 +1191,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 			);
 		return (
 			<Div spanTag>
-				Webes have sold out! Check out the community out in{" "}
+				WeBes have sold out! Check out the weird community in{" "}
 				<Div spanTag textPrimary>
 					Discord{" "}
 				</Div>
@@ -1232,14 +1204,14 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				<Div spanTag>
 					Check on your{" "}
 					<Div spanTag textPrimary>
-						Webes{" "}
+						WeBes{" "}
 					</Div>
 					!
 				</Div>
 			);
 		return (
 			<Div spanTag>
-				Webes have sold out! Check out the community out in{" "}
+				WeBes have sold out! Check out the weird community in{" "}
 				<Div spanTag textPrimary>
 					Discord{" "}
 				</Div>

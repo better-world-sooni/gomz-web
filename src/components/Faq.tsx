@@ -4,7 +4,7 @@ import Col from "./Col";
 import Div from "./Div";
 import Row from "./Row";
 
-export function Faq({ question, answer, isTablet }) {
+export function Faq({ question, answer, image, isTablet }) {
 	const [clicked, setClicked] = useState(false);
 	if (isTablet) {
 		return (
@@ -23,9 +23,12 @@ export function Faq({ question, answer, isTablet }) {
 						<Col auto textSecondary textBase balooB>
 							A.{" "}
 						</Col>
-						<Col textSm balooR>
-							{answer}
-						</Col>
+						<Col flex itemsEnd>
+						<Row textSm balooR>
+						{answer}<Div my5></Div>
+						{image}
+						</Row>
+					</Col>
 					</Row>
 				)}
 			</Div>
@@ -47,8 +50,11 @@ export function Faq({ question, answer, isTablet }) {
 					<Col auto textSecondary fontSize36 ml40 balooB>
 						A.{" "}
 					</Col>
-					<Col textLg maxW={690} flex itemsCenter>
-						{answer}
+					<Col flex itemsEnd>
+						<Row textMd maxW={690}>
+						{answer}<Div my5></Div>
+						{image}
+						</Row>
 					</Col>
 				</Row>
 			)}

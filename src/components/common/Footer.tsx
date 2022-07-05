@@ -22,7 +22,7 @@ export default function Footer() {
 					<Row py5>
 						<Col auto>
 							<Div spanTag>WeBe from </Div>
-							<Div spanTag textSecondary aTag href={"https://soonilabs.com"}>
+							<Div spanTag textSecondary2 aTag href={"https://soonilabs.com"}>
 								SOONI Labs
 							</Div>
 						</Col>

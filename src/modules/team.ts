@@ -50,4 +50,20 @@ export const team = (locale) => [
         specialty: wording.team.index.members.seungan.specialty[locale],
         countries: wording.team.index.members.seungan.countries,
     },
+    {
+        name: wording.team.index.members.jaehwan.name[locale],
+        imageUri: IMAGES.team.jay,
+        position: wording.team.index.members.jaehwan.position[locale],
+        desc: wording.team.index.members.jaehwan.desc[locale],
+        specialty: wording.team.index.members.jaehwan.specialty[locale],
+        countries: wording.team.index.members.jaehwan.countries,
+    },
+    {
+        name: wording.team.index.members.jade.name[locale],
+        imageUri: IMAGES.team.jade,
+        position: wording.team.index.members.jade.position[locale],
+        desc: wording.team.index.members.jade.desc[locale],
+        specialty: wording.team.index.members.jade.specialty[locale],
+        countries: wording.team.index.members.jade.countries,
+    },
 ];

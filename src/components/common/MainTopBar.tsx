@@ -51,7 +51,7 @@ function MainTopBar({ absolute = false }) {
 				{clicked && (
 					<Div absolute z200 top0 wFull hScreen style={{ background: COLORS.SECONDARY, backdropFilter: "blur(20px)" }}>
 						<Div mt100 mx15 textSecondary2 fontSize24>
-							<Div flex px30 py10 border2 borderSecondary2 bgSecondary roundedLg itemsCenter cursorPointer aTag href={""}>
+							<Div flex px30 py10 border2 borderSecondary2 bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://soonilabs.notion.site/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0"}>
 								<Div mr18>Public Docs</Div>
 							</Div>
 							<Div
@@ -66,10 +66,10 @@ function MainTopBar({ absolute = false }) {
 								itemsCenter
 								cursorPointer
 								aTag
-								href={"https://betterworldapp.io"}
+								href={""}
 							>
 								<Div mr18>BetterWorld</Div>
-								<Div w20 imgTag src={"/images/betterWorld.png"}></Div>
+								<Div w12 imgTag src={"/images/betterWorld.png"}></Div>
 							</Div>
 							<Div
 								mt20
@@ -100,7 +100,7 @@ function MainTopBar({ absolute = false }) {
 								itemsCenter
 								cursorPointer
 								aTag
-								href={"https://twitter.com/officialgomz"}
+								href={"https://twitter.com/webe_weirdbears"}
 							>
 								<Div mr18> Twitter</Div>
 								<FaTwitter size={20} />
@@ -117,7 +117,7 @@ function MainTopBar({ absolute = false }) {
 								itemsCenter
 								cursorPointer
 								aTag
-								href={"https://instagram.com/offical_gomz"}
+								href={"https://instagram.com/weirdbears"}
 							>
 								<Div mr18>Instagram</Div>
 								<FaInstagram size={20} />
@@ -193,7 +193,7 @@ function MainTopBar({ absolute = false }) {
 					>
 						ENG
 					</Div>
-					<Div mx10 textSecondary2 cursorPointer aTag href={"https://soonilabs.notion.site/GOMZ-9708c13f69c94ed39672ac8c1b7b8e12"}>
+					<Div mx10 textSecondary2 cursorPointer aTag href={"https://soonilabs.notion.site/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0"}>
 						<Div roundedFull py4 px10 fontSize12 trackingWidest clx={"group transition hover:text-primary-light"}>
 							PUBLIC DOCS
 						</Div>
@@ -205,7 +205,7 @@ function MainTopBar({ absolute = false }) {
 							</Div>
 						</Div>
 					)}
-					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={"https://betterworldapp.io"}>
+					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""}>
 						<Div imgTag src={"/images/betterWorld.png"} h30 wAuto></Div>
 					</Div>
 					<Div
@@ -218,8 +218,11 @@ function MainTopBar({ absolute = false }) {
 					>
 						<FaDiscord size={30} />
 					</Div>
-					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/officialgomz"}>
+					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/webe_weirdbears"}>
 						<FaTwitter size={25} />
+					</Div>
+					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://instagram.com/weirdbears"}>
+						<FaInstagram size={25} />
 					</Div>
 					<Div ml10 textPrimary cursorPointer>
 						{kaikas?.selectedAddress ? (
@@ -232,7 +235,7 @@ function MainTopBar({ absolute = false }) {
 								trackingWidest
 								borderBlack
 								border1
-								clx={"group transition hover:bg-secondary"}
+								clx={"group transition hover:bg-primary-light"}
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
 								{truncateKlaytnAddress(kaikas.selectedAddress)}
@@ -248,7 +251,7 @@ function MainTopBar({ absolute = false }) {
 								borderBlack
 								border1
 								onClick={connectWallet}
-								clx={"group transition hover:bg-secondary"}
+								clx={"group transition hover:bg-primary-light"}
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
 								CONNECT WALLET
