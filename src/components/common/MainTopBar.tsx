@@ -14,16 +14,22 @@ import { RebirthModal } from "../modal/RebirthModal";
 import { COLORS } from "src/modules/colors";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useDispatch } from "react-redux";
+import { betterWorldModalAction } from "src/store/reducers/modalReducer";
+import { BetterWorldModal } from "../modal/BetterWorldModal";
 
 function MainTopBar({ absolute = false }) {
 	const isTablet = useIsTablet();
 	const [clicked, setClicked] = useState(false);
 	const { locale } = useRouter();
+	const dispatch = useDispatch();
 	const handleClickWebe = () => {
 		href(urls.index);
 	};
 	const handleClickCheckOnMyWebes = () => {
 		href(urls["my-webes"].index);
+	};
+	const handleClickBetterWorld = () => {
+		dispatch(betterWorldModalAction({ enabled: true }));
 	};
 	const kaikas = useKaikas();
 	const { balance } = useAddressState({
@@ -38,7 +44,7 @@ function MainTopBar({ absolute = false }) {
 	if (isTablet) {
 		return (
 			<>
-				<Div wFull z300 px15 py15 bgSecondary absolute>
+				<Div wFull z30 px15 py15 bgSecondary absolute>
 					<Div flex mxAuto maxW={1150} itemsCenter>
 						<Div onClick={handleClickWebe} cursorPointer>
 							<Div w70 imgTag src={IMAGES.logos.webeLogo} onClick={handleClickWebe} cursorPointer></Div>
@@ -50,9 +56,21 @@ function MainTopBar({ absolute = false }) {
 					</Div>
 				</Div>
 				{clicked && (
-					<Div absolute z200 top0 wFull hScreen style={{ background: COLORS.SECONDARY, backdropFilter: "blur(20px)" }}>
+					<Div absolute z20 top0 wFull hScreen style={{ background: COLORS.SECONDARY, backdropFilter: "blur(20px)" }}>
 						<Div mt100 mx15 textSecondary2 fontSize24>
-							<Div flex px30 py10 border2 borderSecondary2 bgSecondary roundedLg itemsCenter cursorPointer aTag href={"https://soonilabs.notion.site/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0"}>
+							<Div
+								flex
+								px30
+								py10
+								border2
+								borderSecondary2
+								bgSecondary
+								roundedLg
+								itemsCenter
+								cursorPointer
+								aTag
+								href={"https://soonilabs.notion.site/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0"}
+							>
 								<Div mr18>Public Docs</Div>
 							</Div>
 							<Div
@@ -68,6 +86,7 @@ function MainTopBar({ absolute = false }) {
 								cursorPointer
 								aTag
 								href={""}
+								onClick={handleClickBetterWorld}
 							>
 								<Div mr18>BetterWorld</Div>
 								<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
@@ -155,6 +174,7 @@ function MainTopBar({ absolute = false }) {
 						</Div>
 					</Div>
 				)}
+				<BetterWorldModal />
 			</>
 		);
 	}
@@ -163,6 +183,7 @@ function MainTopBar({ absolute = false }) {
 			<MintingModal />
 			<InviteModal />
 			<RebirthModal />
+			<BetterWorldModal />
 			<Div flex mxAuto maxW={1150}>
 				<Div onClick={handleClickWebe} cursorPointer>
 					<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>
@@ -206,7 +227,7 @@ function MainTopBar({ absolute = false }) {
 							</Div>
 						</Div>
 					)}
-					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""}>
+					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""} onClick={handleClickBetterWorld}>
 						<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
 					</Div>
 					<Div

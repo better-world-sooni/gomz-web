@@ -7,7 +7,10 @@ const initialState = {
   },
   rebirthModal: {
     enabled: false,
-    tokenId: null,
+    index: null,
+  },
+  betterWorldModal: {
+    enabled: false,
   },
 }
 
@@ -15,11 +18,13 @@ const initialState = {
 export const MINTING_MODAL = 'modal/MINTING_MODAL' as const
 export const INVITE_MODAL = 'modal/INVITE_MODAL' as const
 export const REBIRTH_MODAL = 'modal/REBIRTH_MODAL' as const
+export const BETTER_WORLD_MODAL = 'modal/BETTER_WORLD_MOAL' as const
 
 // action function
 export const mintingModalAction = ({enabled}) => ({ type: MINTING_MODAL, enabled })
 export const inviteModalAction = ({enabled}) => ({ type: INVITE_MODAL, enabled })
 export const rebirthModalAction = ({enabled, index}) => ({ type: REBIRTH_MODAL, enabled, index })
+export const betterWorldModalAction = ({enabled}) => ({ type: BETTER_WORLD_MODAL, enabled })
 
 const f = (action, func) => func(action)
 
@@ -53,6 +58,15 @@ export const modalReducer = (state = initialState, action) => {
           }
         }
       })
+      case BETTER_WORLD_MODAL:
+        return f(action, ({ enabled, index }) => {
+          return {
+            ...state,
+            betterWorldModal: {
+              enabled
+            }
+          }
+        })
     default: {
       return state
     }

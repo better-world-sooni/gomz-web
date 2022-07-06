@@ -57,7 +57,7 @@ const Index: NextPage = () => {
 				<BasicHead />
 				<MainTopBar />
 				<Div hScreen bgTertiary px15>
-					<Div flex itemsCenter justifyCenter hFull mxAuto z100 relative>
+					<Div flex itemsCenter justifyCenter hFull mxAuto relative>
 						<Div>
 							<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border5 relative mt50 wFull px30>
 								<Div imgTag src={IMAGES.webeTshirtillust} mb={-1} mt={"-13%"}></Div>
@@ -166,13 +166,13 @@ const Index: NextPage = () => {
 					</Div>
 					<EmptyBlock h={30} />
 					<Div grid gridCols4 gapX={20} gapY={15} px30 data-aos="fade-up">
-					{new Array(12).fill(null).map((_, index) => {
-									return (
-										<Div key={index} inlineBlock>
-											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg></Div>
-										</Div>
-									);
-								})}
+						{new Array(12).fill(null).map((_, index) => {
+							return (
+								<Div key={index} inlineBlock>
+									<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg></Div>
+								</Div>
+							);
+						})}
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textSecondary fontSize36 data-aos="fade-up">
@@ -188,7 +188,7 @@ const Index: NextPage = () => {
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Re-<br></br>Birth
 								<Div flex justifyCenter>
-								<Div w150 imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+									<Div w150 imgTag src={IMAGES.journeyIcons.rebirth}></Div>
 								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -206,7 +206,7 @@ const Index: NextPage = () => {
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird<br></br>Wine
 								<Div flex justifyCenter>
-								<Div w150 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+									<Div w150 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
 								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -235,7 +235,7 @@ const Index: NextPage = () => {
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Pioneer
 								<Div flex justifyCenter>
-								<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+									<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
 								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -298,7 +298,7 @@ const Index: NextPage = () => {
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird<br></br>Partners
 								<Div flex justifyCenter>
-								<Div w120 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+									<Div w120 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
 								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -327,7 +327,7 @@ const Index: NextPage = () => {
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird IRL
 								<Div flex justifyCenter>
-								<Div w150 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+									<Div w150 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
 								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -345,7 +345,7 @@ const Index: NextPage = () => {
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird Project
 								<Div flex justifyCenter>
-								<Div w150 imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
+									<Div w150 imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
 								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -364,67 +364,66 @@ const Index: NextPage = () => {
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 data-aos="fade-up">
-							Partnered with<br></br>
-							<Div spanTag textSecondary>
-								{" "}
-								the Best
-							</Div>
+						Partnered with<br></br>
+						<Div spanTag textSecondary>
+							{" "}
+							the Best
 						</Div>
-						<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
-							
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.pala}></Div>
-							</Div>
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
-							</Div>
+					</Div>
+					<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
+						<Div flex1 px15>
+							<Div imgTag src={IMAGES.partners.pala}></Div>
 						</Div>
-						<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.blinkers}></Div>
-							</Div>
-							<Div flex1>
-								<Div imgTag src={IMAGES.partners.kote}></Div>
-							</Div>
+						<Div flex1 px15>
+							<Div imgTag src={IMAGES.partners.aiLabs}></Div>
+						</Div>
+					</Div>
+					<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
+						<Div flex1 px15>
+							<Div imgTag src={IMAGES.partners.blinkers}></Div>
+						</Div>
+						<Div flex1 px15>
+							<Div imgTag src={IMAGES.partners.kote}></Div>
+						</Div>
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 data-aos="fade-up">
-							The{" "}
-							<Div spanTag textSecondary>
-								{" "}
-								First 8 
-							</Div>
-							{" "}WeBe
-							<Div textCenter textWhite fontSize18 data-aos="fade-up">
+						The{" "}
+						<Div spanTag textSecondary>
+							{" "}
+							First 8
+						</Div>{" "}
+						WeBe
+						<Div textCenter textWhite fontSize18 data-aos="fade-up">
 							Departing for{" "}
 							<Div spanTag textSecondary>
 								{" "}
 								BetterWorld
 							</Div>
 						</Div>
-						</Div>
-						<Div mt20 data-aos="fade-up">
-							{team(locale).map((member, index) => {
-								return (
-									<Div key={index} inlineBlock>
-										<Div flex mt20 itemsCenter>
-											<Div mx15 w150 imgTag src={member.imageUri} roundedXl shadowLg></Div>
-											<Div flexCol mr15>
-												<Div textSecondary2 textLeft textMd balooB fontBold>
-													{member.name} {"  "}
-													<Div textSecondary2 textLeft fontSize8 balooR italic spanTag>
+					</Div>
+					<Div mt20 data-aos="fade-up">
+						{team(locale).map((member, index) => {
+							return (
+								<Div key={index} inlineBlock>
+									<Div flex mt20 itemsCenter>
+										<Div mx15 w150 imgTag src={member.imageUri} roundedXl shadowLg></Div>
+										<Div flexCol mr15>
+											<Div textSecondary2 textLeft textMd balooB fontBold>
+												{member.name} {"  "}
+												<Div textSecondary2 textLeft fontSize8 balooR italic spanTag>
 													{member.position}
-													</Div>
 												</Div>
-												<Div mt5 textSecondary2 textLeft fontSize10 balooR>
-													{member.specialty}
-												</Div>
+											</Div>
+											<Div mt5 textSecondary2 textLeft fontSize10 balooR>
+												{member.specialty}
 											</Div>
 										</Div>
 									</Div>
-								);
-							})}
-						</Div>
+								</Div>
+							);
+						})}
+					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 mb30 data-aos="fade-up">
 						FAQs
@@ -538,7 +537,7 @@ const Index: NextPage = () => {
 			<Div
 				style={{
 					background: "linear-gradient(180deg,  #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)",
-					overflow: "hidden"
+					overflow: "hidden",
 				}}
 				relative
 			>
@@ -597,7 +596,7 @@ const Index: NextPage = () => {
 									);
 								})}
 							</Div>
-							
+
 							<Div flex1>
 								<Div textWhite fontSize52 leadingNone>
 									We Be
@@ -844,34 +843,34 @@ const Index: NextPage = () => {
 							The{" "}
 							<Div spanTag textSecondary>
 								{" "}
-								First 8 
-							</Div>
-							{" "}WeBe
+								First 8
+							</Div>{" "}
+							WeBe
 							<Div textCenter textWhite fontSize24 data-aos="fade-up">
-							Departing for{" "}
-							<Div spanTag textSecondary>
-								{" "}
-								BetterWorld
+								Departing for{" "}
+								<Div spanTag textSecondary>
+									{" "}
+									BetterWorld
+								</Div>
 							</Div>
 						</Div>
-						</Div>
-						<Div mt20 data-aos="fade-up">
+						<Div mt20 data-aos="fade-up" grid gridCols2 gapX={30} gapY={30}>
 							{team(locale).map((member, index) => {
 								return (
-									<Div key={index} inlineBlock mx30>
-										<Div flex mt20 itemsCenter maxW500 textCenter>
-											<Col maxW180 imgTag src={member.imageUri} roundedXl shadowLg></Col>
-											<Col ml30>
-												<Div textSecondary2 textLeft textLg balooB fontBold>
-													{member.name}
-												</Div>
-												<Div textSecondary2 textLeft fontSize11 balooR italic>
-													{member.position}
-												</Div>
-												<Div mt5 textSecondary2 textLeft fontSize12 balooR>
-													{member.specialty}
-												</Div>
-											</Col>
+									<Div key={index} inlineBlock flex gapX={30}>
+										<Div style={{ flex: 0.6 }}>
+											<Div imgTag src={member.imageUri} roundedXl shadowLg></Div>
+										</Div>
+										<Div flex1>
+											<Div textSecondary2 textLeft textLg balooB fontBold>
+												{member.name}
+											</Div>
+											<Div textSecondary2 textLeft fontSize11 balooR italic>
+												{member.position}
+											</Div>
+											<Div mt5 textSecondary2 textLeft fontSize12 balooR>
+												{member.specialty}
+											</Div>
 										</Div>
 									</Div>
 								);
@@ -939,7 +938,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 						<Div spanTag>
 							The first OG minting is in progress.{" "}
 							<Div spanTag textPrimary>
-								mint{" "}
+								Mint{" "}
 							</Div>
 							your first WeBe!
 						</Div>
@@ -966,7 +965,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				);
 			return (
 				<Div spanTag>
-					The first WeBe OG has sold out. Join WeBe's journey on{" "}
+					The first WeBe OG has sold out. Join WeBe&apos;s journey on{" "}
 					<Div spanTag textPrimary>
 						BetterWorld{" "}
 					</Div>
