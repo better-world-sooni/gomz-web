@@ -17,7 +17,8 @@ export const wording = {
 			weirdwine: {
 				en: (
 					<>
-						WeBes have found a mysterious bottle of wine in BetterWorld. An exclusive supply of wine is available for WeBe holders. The wine itself will provide tools and items for WeBe to be more diverse in the metaverse. 
+						WeBes have found a mysterious bottle of wine in BetterWorld. An exclusive supply of wine is available for WeBe holders. The wine itself
+						will provide tools and items for WeBe to be more diverse in the metaverse.
 					</>
 				),
 				ko: <>BetterWorld에서 신비한 와인 한 병을 발견했습니다. 메타버스에서 위비가 더 다양해질 수 있는 아이템들이 기다리고 있습니다.</>,
@@ -40,8 +41,8 @@ export const wording = {
 				),
 				ko: (
 					<>
-						위비는 편리한 커뮤니티 활동을 위해 만들어진 PFP 전용 앱 BetterWorld에서 게시물, 투표, 채팅, 팔로우/팔로잉 등의 기능을 통해 커뮤니티원으로서 위비의
-						권리를 행사하고 교류할 수 있습니다.
+						위비는 편리한 커뮤니티 활동을 위해 만들어진 PFP 전용 앱 BetterWorld에서 게시물, 투표, 채팅, 팔로우/팔로잉 등의 기능을 통해
+						커뮤니티원으로서 위비의 권리를 행사하고 교류할 수 있습니다.
 					</>
 				),
 			},
@@ -67,8 +68,8 @@ export const wording = {
 			webepartners: {
 				en: (
 					<>
-						Partnering with various WeBe-like restaurants, bars, and entreprises to expand WeBe in various methods. Holders will receive exclusive offers in
-						partnered ventures. Check out Public Docs to see our ready-to-go partnerships.
+						Partnering with various WeBe-like restaurants, bars, and entreprises to expand WeBe in various methods. Holders will receive exclusive
+						offers in partnered ventures. Check out Public Docs to see our ready-to-go partnerships.
 					</>
 				),
 				ko: (
@@ -88,18 +89,31 @@ export const wording = {
 				),
 			},
 			weirdprojects: {
-				en: <>Build WeBe project by contributing your ideas through forums. Whether you are a designer, coder, or even just a typical holder in BetterWorld, we provide a project for you to contribute to the collection. Based on the quality of your proposal, you will receive 1) financial support to turn your ideas into reality 2) receive compensation based on your work.</>,
+				en: (
+					<>
+						Build weird projects by contributing your ideas through forums. Based on the quality of your proposal, you will receive 1)
+						financial support to turn your ideas into reality 2) receive compensation based on your work.
+					</>
+				),
 				ko: (
 					<>
-						포럼을 통해 위비만의 프로젝트를 구축하세요. 위비로서 이루고 싶은 모든 꿈이 아이디어만 있다면 실현 가능할 수 있습니다. 제안의 종류에 따라 1) 아이디어를 현실로 전환하기 위한 재정적 지원 또는 2) 업무에 따른 보상을 받게 됩니다.
+						포럼을 통해 위비만의 프로젝트를 구축하세요. 위비로서 이루고 싶은 모든 꿈이 아이디어만 있다면 실현 가능할 수 있습니다. 제안의 종류에 따라
+						1) 아이디어를 현실로 전환하기 위한 재정적 지원 또는 2) 업무에 따른 보상을 받게 됩니다.
 					</>
 				),
 			},
 			webedao: {
-				en: <>Perfect DAO cannot exist. Therefore, WeBe aims to build a healthy NFT community that can grow together with minimal intervention. The NFT is your "legal right" in the project. Holders can easily propose, discuss, and contribute to WeBe’s brand. Participate in BetterWorld’s proposals and off-chain votes.</>,
+				en: (
+					<>
+						Your WeBe NFT
+						is your &quot;legal right&quot; in the project. Holders can easily propose, discuss, and contribute to WeBe’s brand. Participate in
+						BetterWorld’s proposals and off-chain votes.
+					</>
+				),
 				ko: (
 					<>
-						완벽한 DAO는 존재할 수 없습니다. 따라서 위비는 최소한의 개입으로 건강한 DAO가 되는 것이 목표입니다. NFT는 위비의 "투표권"입니다. 커뮤니티 포럼에서 프로젝트에 관해 쉽게 토론 및 기여할 수 있습니다.
+						완벽한 DAO는 존재할 수 없습니다. 따라서 위비는 최소한의 개입으로 건강한 DAO가 되는 것이 목표입니다. NFT는 위비의 &quot;투표권&quot; 입니다.
+						커뮤니티 포럼에서 프로젝트에 관해 쉽게 토론 및 기여할 수 있습니다.
 					</>
 				),
 			},
@@ -385,8 +399,8 @@ export const wording = {
 				en: <>8,888 of these bears have turned to space travel with an altruistic vision:</>,
 			},
 			story22: {
-				ko: <>더 많은 자유와 다양성이 존재하는 세상, “BetterWorld”를 구축하다.</>,
-				en: <>Establish a “BetterWorld”, a free and creative society for diverse innovators.</>,
+				ko: <>더 많은 자유와 다양성이 존재하는 세상, &quot;BetterWorld&quot;를 구축하다.</>,
+				en: <>Establish a &quot;BetterWorld&quot;, a free and creative society for diverse innovators.</>,
 			},
 			story3: {
 				ko: <>어느 날, 구축한 BetterWorld 캡슐에서 수면 중이던 위비는 거주 가능한 행성을 찾고 있는 다른 우주 방랑자들에 의해 깨어났습니다.</>,
@@ -412,37 +426,44 @@ export const wording = {
 			},
 			value: {
 				ko: (
-				<Div textSecondary2 fontBold>
-					8,888마리의 위비는 독창적인 문화를 전합니다. 가끔은 좀 특이해보이는 우리는 정확히 이상하진 않지만, 대다수와 조금 다를 수 있습니다. 어느 순간부터 사람들은, 특히 2030 세대 청년들은 꿈을 모색하고 쫓기보다 현실에 타협하며 살아가고 있습니다. 그저 좋은 학교를 진학하고, 안정된 직장에 취업해야 한다는 사회의 외침에 대답하며 하루하루 숨가쁘게 살아가고있습니다. 위비는 묻습니다. “여러분의 진정한 꿈은 무엇인가요? 무엇을 할 때 가장 행복한가요?” 위비는 보편적인 사회구조에 도전하고 이들만의 문화를 개척하기 위해 나타났습니다. 그리고 우리의 가치가 더 넓은 차원의 지식과 혁신을 만들어낼 것이라고 믿습니다.
-					<br/>
-					<br/>
-					이런 위비의 여정은{" "}
-					<Div spanTag textSecondary>
-						2022년 7월 28일
-					</Div>{" "}
-					첫 88명의 OG 홀더들의 민팅을 시작으로 여름의 끝자락에 8,888 NFT까지 확장될 예정입니다. 위비 홀더들은 다가오는 위비의{" "} 
-					<Div spanTag textSecondary>
-						이상한
-					</Div>{" "}
-					서비스와 경험들을 함께하게 됩니다.
-				</Div>
+					<Div textSecondary2>
+						8,888마리의 위비는 독창적인 문화를 전합니다. 가끔은 좀 특이해보이는 우리는 정확히 이상하진 않지만, 대다수와 조금 다를 수 있습니다. 어느
+						순간부터 사람들은, 특히 2030 세대 청년들은 꿈을 모색하고 쫓기보다 현실에 타협하며 살아가고 있습니다. 그저 좋은 학교를 진학하고, 안정된
+						직장에 취업해야 한다는 사회의 외침에 대답하며 하루하루 숨가쁘게 살아가고있습니다. 위비는 묻습니다. “여러분의 진정한 꿈은 무엇인가요?
+						무엇을 할 때 가장 행복한가요?” 위비는 보편적인 사회구조에 도전하고 이들만의 문화를 개척하기 위해 나타났습니다. 그리고 우리의 가치가 더
+						넓은 차원의 지식과 혁신을 만들어낼 것이라고 믿습니다.
+						<br />
+						<br />
+						이런 위비의 여정은{" "}
+						<Div spanTag textSecondary>
+							2022년 7월 28일
+						</Div>{" "}
+						첫 88명의 OG 홀더들의 민팅을 시작으로 여름의 끝자락에 8,888 NFT까지 확장될 예정입니다. 위비 홀더들은 다가오는 위비의{" "}
+						<Div spanTag textSecondary>
+							이상한
+						</Div>{" "}
+						서비스와 경험들을 함께하게 됩니다.
+					</Div>
 				),
 				en: (
 					<Div textSecondary2>
-					We are not literally weird in a sense, we are just, frankly, a little different compared to the majority. WeBe is here to provide more dreams and freedom for everyone. Individuals nowadays, especially those in 20 and 30s, are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. Yet WeBe asks, “What makes you truly happy?” We believe that our values create wider dimensions of knowledge and innovation.
-					<br/>
-					<br/>
-					The collection begins with the first 88 OG holders minting on{" "}
-					<Div spanTag textSecondary>
-						July 28, 2022
-					</Div>{" "}
-					and will expand to a total of 8,888 NFTs by the end of the summer. Holders of WeBe will have exclusive access to future products and
-					experiences which are planned and designed in the{" "}
-					<Div spanTag textSecondary>
-						WEirDest
-					</Div>{" "}
-					manner possible.
-				</Div>
+						We are not literally weird in a sense, we are just, frankly, a little different compared to the majority. WeBe is here to provide more
+						dreams and freedom for everyone. Individuals nowadays, especially those in 20 and 30s, are living breathlessly conforming to society’s
+						expectations: go to a good university, find a stable job, and so on. Yet WeBe asks, “What makes you truly happy?” We believe that our
+						values create wider dimensions of knowledge and innovation.
+						<br />
+						<br />
+						The collection begins with the first 88 OG holders minting on{" "}
+						<Div spanTag textSecondary>
+							July 28, 2022
+						</Div>{" "}
+						and will expand to a total of 8,888 NFTs by the end of the summer. Holders of WeBe will have exclusive access to future products and
+						experiences which are planned and designed in the{" "}
+						<Div spanTag textSecondary>
+							WEirDest
+						</Div>{" "}
+						manner possible.
+					</Div>
 				),
 			},
 		},
@@ -482,22 +503,29 @@ export const wording = {
 			q1: {
 				ko: (
 					<>
-						 숫자 “8”은 무한대 (∞)를 의미합니다. 위비는 변덕스러운 가격변동, 폰지사기, 덤핑 등의 무수한 외부요인을 묵묵히 이겨나갈 수 있는 무한한 잠재력과 성장력을 가진 커뮤니티가 되고자합니다.
+						숫자 “8”은 무한대 (∞)를 의미합니다. 위비는 변덕스러운 가격변동, 폰지사기, 덤핑 등의 무수한 외부요인을 묵묵히 이겨나갈 수 있는 무한한
+						잠재력과 성장력을 가진 커뮤니티가 되고자합니다.
 					</>
 				),
 				en: (
 					<>
-						Out of all the different meanings, WeBe has
-						chosen 8,888 due to ∞ . Despite all the external factors in the NFT space, such as volatile floor prices, rug pulls, and ponzi-like
-						schemes, WeBe aspires to be a community with infinite potential and growth. We are here to create a culture of its own with 8,888 WeBe.
+						Out of all the different meanings, WeBe has chosen 8,888 due to ∞ . Despite all the external factors in the NFT space, such as volatile
+						floor prices, rug pulls, and ponzi-like schemes, WeBe aspires to be a community with infinite potential and growth. We are here to create
+						a culture of its own with 8,888 WeBe.
 					</>
 				),
 			},
 			q2: {
-				ko: <>국내에서 ‘NFT 대중화'라는 목표를 가지고 있는 위비는 1) 낮은 가스비 2) 높은 처리량 및 속도 [Klaytn: 4,000 TPS vs. 이더리움: 15 TPS] 그리고 3) 같은 체인 내 유연한 서비스 호환성을 고려하였을 때 Klaytn의 국내에서 전망을 긍정적으로 판단하였습니다.</>,
+				ko: (
+					<>
+						국내에서 &apos;NFT 대중화&apos;라는 목표를 가지고 있는 위비는 1) 낮은 가스비 2) 높은 처리량 및 속도 [Klaytn: 4,000 TPS vs. 이더리움: 15
+						TPS] 그리고 3) 같은 체인 내 유연한 서비스 호환성을 고려하였을 때 Klaytn의 국내에서 전망을 긍정적으로 판단하였습니다.
+					</>
+				),
 				en: (
 					<>
-						With the goal of "NFT popularization" in Korea, WeBe positively judged Klaytn's domestic outlook considering 1) low gas fee 2) high throughput and speed [Klaytn: 4,000 TPS vs. Ethereum: 15 TPS] and 3) flexible service compatibility within the chain.
+						With the goal of &quot;NFT popularization&quot; in Korea, WeBe positively judged Klaytn&apos;s domestic outlook considering 1) low gas fee
+						2) high throughput and speed [Klaytn: 4,000 TPS vs. Ethereum: 15 TPS] and 3) flexible service compatibility within the chain.
 					</>
 				),
 			},
@@ -508,22 +536,67 @@ export const wording = {
 			q4: {
 				ko: (
 					<>
-						위비의 민팅 방식은 비공개와 공개 세일 두가지로 나뉘어져있습니다. 비공개 세일의 경우 모집 기간 동안 짧은 지원서를 작성하여야합니다. 첫 OG 모집은 7월 10일부터 시작됩니다. 자세한 사항은 디스코드를 참고해주세요.
+						위비의 민팅 방식은 비공개와 공개 세일 두가지로 나뉘어져있습니다. 비공개 세일의 경우 모집 기간 동안 짧은 지원서를 작성하여야합니다. 첫 OG
+						모집은 7월 10일부터 시작됩니다. 자세한 사항은 디스코드를 참고해주세요.
 					</>
 				),
 				en: (
 					<>
-						WeBe's minting process is divided into Private Sale & Public Mint. For private sales, you need to submit a short form in Discord during the application period. The first OG application starts on July 10th. Details will be notified on Twitter(@webe_weirdbears) and Discord.
+						WeBe&apos;s minting process is divided into Private Sale & Public Mint. For private sales, you need to submit a short form in Discord
+						during the application period. The first OG application starts on July 10th. Details will be notified on Twitter(@webe_weirdbears) and
+						Discord.
 					</>
 				),
 			},
 			q5: {
-				ko: <Div>상단바에 위치한 Public Docs 속 위비의{" "}<Div underline aTag href={"https://www.notion.so/soonilabs/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0#00bb93a8f2b74c8b8f16137156b792aa"} spanTag>여정</Div>을 참고해주세요.</Div>,
-				en: <Div>Check out a detailed explanation of our{" "}<Div underline aTag href={"https://www.notion.so/soonilabs/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0#c7697b1f3e0b44529a563e1d7589228d"} spanTag>JOURNEY</Div>{" "}via Public Docs.</Div>,
+				ko: (
+					<Div>
+						상단바에 위치한 Public Docs 속 위비의{" "}
+						<Div
+							underline
+							aTag
+							href={"https://www.notion.so/soonilabs/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0#00bb93a8f2b74c8b8f16137156b792aa"}
+							spanTag
+						>
+							여정
+						</Div>
+						을 참고해주세요.
+					</Div>
+				),
+				en: (
+					<Div>
+						Check out a detailed explanation of our{" "}
+						<Div
+							underline
+							aTag
+							href={"https://www.notion.so/soonilabs/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0#c7697b1f3e0b44529a563e1d7589228d"}
+							spanTag
+						>
+							JOURNEY
+						</Div>{" "}
+						via Public Docs.
+					</Div>
+				),
 			},
 			q6: {
-				ko: <Div>위비는 <Div underline aTag href={""}>BetteWorld 앱</Div>에서 소통하고 활동합니다. 트위터, 인스타그램, 디스코드는 외부인들과 교감하기 위해 존재하는 징검다리랍니다! </Div>,
-				en: <Div>WeBe communicates and participates in <Div underline aTag href={""}>BetterWorld App</Div>. Twitter, Instagram, and Discord are bridges to interact with other space wanderers outside!</Div>,
+				ko: (
+					<Div>
+						위비는{" "}
+						<Div underline aTag href={""}>
+							BetterWorld 앱
+						</Div>
+						에서 소통하고 활동합니다. 트위터, 인스타그램, 디스코드는 외부인들과 교감하기 위해 존재하는 징검다리랍니다!{" "}
+					</Div>
+				),
+				en: (
+					<Div>
+						WeBe communicates and participates in{" "}
+						<Div underline aTag href={""}>
+							BetterWorld App
+						</Div>
+						. Twitter, Instagram, and Discord are bridges to interact with other space wanderers outside!
+					</Div>
+				),
 			},
 		},
 	},

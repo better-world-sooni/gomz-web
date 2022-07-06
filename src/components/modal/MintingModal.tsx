@@ -134,7 +134,7 @@ export function MintingModal() {
 						</Div>
 						<Div flex mb20 balooR>
 							<Div mr20>Seat Type:</Div>
-							<Div>{whitelisted ? "WL" : "PB"}</Div>
+							<Div>{whitelisted ? (mintingStep == MintingStep.WhitelistPresale ? "WL" : "OG") : "PB"}</Div>
 						</Div>
 						<Div flex balooR>
 							<Div mr20>Seats Available:</Div>

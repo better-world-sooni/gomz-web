@@ -8,8 +8,8 @@ export function Faq({ question, answer, image, isTablet }) {
 	const [clicked, setClicked] = useState(false);
 	if (isTablet) {
 		return (
-			<Div textSecondary2 my15 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-				<Row textLg p15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR fontBold>
+			<Div textSecondary2 my15 cursorPointer>
+				<Row textLg p15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR fontBold onClick={() => setClicked((prev) => !prev)}>
 					<Col auto balooB>
 						Q.{" "}
 					</Col>
@@ -24,19 +24,20 @@ export function Faq({ question, answer, image, isTablet }) {
 							A.{" "}
 						</Col>
 						<Col flex itemsEnd>
-						<Row textSm balooR>
-						{answer}<Div my5></Div>
-						{image}
-						</Row>
-					</Col>
+							<Row textSm balooR>
+								{answer}
+								<Div my5></Div>
+								{image}
+							</Row>
+						</Col>
 					</Row>
 				)}
 			</Div>
 		);
 	}
 	return (
-		<Div textSecondary2 my10 onClick={() => setClicked((prev) => !prev)} cursorPointer>
-			<Row py15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR fontBold>
+		<Div textSecondary2 my10 cursorPointer>
+			<Row py15 roundedLg shadowLg itemsCenter bgPrimaryLight balooR fontBold onClick={() => setClicked((prev) => !prev)}>
 				<Col auto fontSize36 ml20 balooB>
 					Q.{" "}
 				</Col>
@@ -52,8 +53,9 @@ export function Faq({ question, answer, image, isTablet }) {
 					</Col>
 					<Col flex itemsEnd>
 						<Row textMd maxW={690}>
-						{answer}<Div my5></Div>
-						{image}
+							{answer}
+							<Div my5></Div>
+							{image}
 						</Row>
 					</Col>
 				</Row>
