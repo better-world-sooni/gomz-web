@@ -101,8 +101,7 @@ const Index: NextPage = () => {
 									itemsCenter
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
-									<Div imgTag src={IMAGES.spaceship} h25></Div>
-									<Div>JOIN WeBe</Div>
+									<Div spanTag>JOIN WeBe</Div>
 								</Div>
 							</Div>
 						</Div>
