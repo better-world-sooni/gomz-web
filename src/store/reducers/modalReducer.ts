@@ -15,6 +15,7 @@ const initialState = {
 export const MINTING_MODAL = 'modal/MINTING_MODAL' as const
 export const INVITE_MODAL = 'modal/INVITE_MODAL' as const
 export const REBIRTH_MODAL = 'modal/REBIRTH_MODAL' as const
+
 // action function
 export const mintingModalAction = ({enabled}) => ({ type: MINTING_MODAL, enabled })
 export const inviteModalAction = ({enabled}) => ({ type: INVITE_MODAL, enabled })

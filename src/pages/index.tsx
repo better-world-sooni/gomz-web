@@ -166,20 +166,13 @@ const Index: NextPage = () => {
 					</Div>
 					<EmptyBlock h={30} />
 					<Div grid gridCols4 gapX={20} gapY={15} px30 data-aos="fade-up">
-						{team(locale).map((member, index) => {
-							return (
-								<Div key={index} inlineBlock>
-									<Div imgTag src={member.imageUri} roundedLg shadowLg></Div>
-								</Div>
-							);
-						})}
-						{team(locale).map((member, index) => {
-							return (
-								<Div key={index} inlineBlock>
-									<Div imgTag src={member.imageUri} roundedLg shadowLg></Div>
-								</Div>
-							);
-						})}
+					{new Array(12).fill(null).map((_, index) => {
+									return (
+										<Div key={index} inlineBlock>
+											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg></Div>
+										</Div>
+									);
+								})}
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textSecondary fontSize36 data-aos="fade-up">
@@ -194,7 +187,9 @@ const Index: NextPage = () => {
 						<Div inlineFlex itemsCenter>
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Re-<br></br>Birth
-								<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+								<Div flex justifyCenter>
+								<Div w150 imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -210,7 +205,9 @@ const Index: NextPage = () => {
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird<br></br>Wine
-								<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+								<Div flex justifyCenter>
+								<Div w150 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
+								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -237,7 +234,9 @@ const Index: NextPage = () => {
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Pioneer
+								<Div flex justifyCenter>
 								<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
+								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -281,7 +280,7 @@ const Index: NextPage = () => {
 					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
 						<Div inlineFlex itemsCenter>
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								WeBe Goods
+								Weird Goods
 								<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
@@ -297,8 +296,10 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								WeBe<br></br>Partners
-								<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+								Weird<br></br>Partners
+								<Div flex justifyCenter>
+								<Div w120 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
+								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -325,7 +326,9 @@ const Index: NextPage = () => {
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird IRL
-								<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+								<Div flex justifyCenter>
+								<Div w150 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
+								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -341,7 +344,9 @@ const Index: NextPage = () => {
 							</Div>
 							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
 								Weird Project
-								<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
+								<Div flex justifyCenter>
+								<Div w150 imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
+								</Div>
 								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
 									<Div
 										textSecondary2
@@ -368,7 +373,7 @@ const Index: NextPage = () => {
 						<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
 							
 							<Div flex1>
-								<Div imgTag src={"images/pala.png"}></Div>
+								<Div imgTag src={IMAGES.partners.pala}></Div>
 							</Div>
 							<Div flex1>
 								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
@@ -425,8 +430,8 @@ const Index: NextPage = () => {
 						FAQs
 					</Div>
 					<Div px30 data-aos="fade-up">
-						{faqs(locale).map(({ question, answer }, index) => {
-							return <Faq key={index} question={question} answer={answer} isTablet={true} />;
+						{faqs(locale).map(({ question, answer, image }, index) => {
+							return <Faq key={index} question={question} answer={answer} image={image} isTablet={true} />;
 						})}
 					</Div>
 					<EmptyBlock h={100} />
@@ -825,7 +830,7 @@ const Index: NextPage = () => {
 								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={"images/pala.png"}></Div>
+								<Div imgTag src={IMAGES.partners.pala}></Div>
 							</Div>
 							<Div flex1>
 								<Div imgTag src={IMAGES.partners.blinkers}></Div>

@@ -30,8 +30,8 @@ const images = {
 	spaceship: "/images/spaceship.png",
 	storyBanner: "/images/storyBanner.png",
 	storyBannerMobile: "/images/storyBannerMobile.png",
-	mintingDetailsKor: "/images/mintingDetailsKor.png",
-	mintingDetailsEng: "/images/mintingDetailsKor.png",
+	mintingDetailsKor: "/images/MintingDetailsKor.png",
+	mintingDetailsEng: "/images/MintingDetailsEng.png",
 	logos: {
 		discord: "/images/logos/discord.png",
 		twitter: "/images/logos/twitter.png",
@@ -86,6 +86,7 @@ const images = {
 		philosophiaCapital: "/images/partners/philosophiaCapital.png",
 		blinkers: "/images/partners/blinkers.png",
 		kote: "/images/partners/kote.png",
+		pala: "/images/partners/pala.png",
 	},
 };
 

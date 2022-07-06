@@ -185,22 +185,9 @@ const Index: NextPage = () => {
 									</Div>
 									<EmptyBlock h={30} />
 									<Div textSecondary2 fontSize14 px30 textCenter>
-										Webe challenges those in their 20 and 30s to refuse to conform to what others think is a good university, a good job, and a good
-										life and find what they truely want.
-										<br />
-										<br />
-										The collection begins with 88 whitelisted holders minting on{" "}
-										<Div spanTag textSecondary>
-											July 18, 2022
-										</Div>{" "}
-										and will expand to a total of 8,888 NFTs by the end of the summer. Holders of Webe will have exclusive access to future products
-										and experiences which are planned and designed in the{" "}
-										<Div spanTag textSecondary>
-											WEirDest
-										</Div>{" "}
-										manner possible.
+										{wording.story.index.value[locale]}
 									</Div>
-									<EmptyBlock h={100} />
+									<EmptyBlock h={30} />
 								</Div>
 							</Scene>
 						</Controller>

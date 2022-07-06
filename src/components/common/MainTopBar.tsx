@@ -13,6 +13,7 @@ import { InviteModal } from "../modal/InviteModal";
 import { RebirthModal } from "../modal/RebirthModal";
 import { COLORS } from "src/modules/colors";
 import { useAddressState } from "src/hooks/klaytn/useAddressState";
+import { useDispatch } from "react-redux";
 
 function MainTopBar({ absolute = false }) {
 	const isTablet = useIsTablet();
@@ -69,7 +70,7 @@ function MainTopBar({ absolute = false }) {
 								href={""}
 							>
 								<Div mr18>BetterWorld</Div>
-								<Div w12 imgTag src={"/images/betterWorld.png"}></Div>
+								<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
 							</Div>
 							<Div
 								mt20
@@ -206,7 +207,7 @@ function MainTopBar({ absolute = false }) {
 						</Div>
 					)}
 					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""}>
-						<Div imgTag src={"/images/betterWorld.png"} h30 wAuto></Div>
+						<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
 					</Div>
 					<Div
 						mx10

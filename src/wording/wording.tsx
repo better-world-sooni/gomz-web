@@ -91,7 +91,7 @@ export const wording = {
 				en: <>Build WeBe project by contributing your ideas through forums. Whether you are a designer, coder, or even just a typical holder in BetterWorld, we provide a project for you to contribute to the collection. Based on the quality of your proposal, you will receive 1) financial support to turn your ideas into reality 2) receive compensation based on your work.</>,
 				ko: (
 					<>
-						포럼을 통해 다른 위비들과 함께 위비만의 프로젝트를 구축하세요. 위비로서 이루고 싶은 모든 꿈이 아이디어만 있다면 실현 가능할 수 있습니다. 제안의 종류에 따라 1) 아이디어를 현실로 전환하기 위한 재정적 지원 또는 2) 업무에 따른 보상을 받게 됩니다.
+						포럼을 통해 위비만의 프로젝트를 구축하세요. 위비로서 이루고 싶은 모든 꿈이 아이디어만 있다면 실현 가능할 수 있습니다. 제안의 종류에 따라 1) 아이디어를 현실로 전환하기 위한 재정적 지원 또는 2) 업무에 따른 보상을 받게 됩니다.
 					</>
 				),
 			},
@@ -256,7 +256,7 @@ export const wording = {
 					},
 					countries: "🇰🇷 🇨🇳",
 					specialty: {
-						en: "Devotes his soul once he is hooked on to something, yet he lies back down when he loses interest. Due to such tendency, his toes are optimized to pick up things that are in his toe-radar. Owns extremely well-trained and flexible toes. The only time he gets up is when he feels threatened or finds something interesting. No one knows the reason why he loves lying down but perhaps it’s for the sake of charging energy to start something big.",
+						en: "Devotes his soul once he is hooked on to something, yet he lies back down when he loses interest. Owns extremely well-trained and flexible toes to pick up things that are in his toe-radar. The only time he gets up is when he feels threatened or finds something interesting. No one knows the reason why he loves lying down but perhaps it’s for the sake of charging energy to start something big.",
 						ko: "누워있는 것이 취미이자 특기인 개발자 Jack. 무언가에 한 번 꽂히면 미친듯이 파긴 하는데 흥미를 잃으면 다시 누우러 간다. 멀리있는 물건은 발을 뻗어 집는다. 그래서인지 발가락이 유연하고 발가락 힘이 좋은 편.. 그가 일어나는 순간은 위기를 느끼거나, 흥미로워 보이는 일이 생길때이다. 그리 누워서 무슨 생각을 하는지 도통 알 수 없지만.. 새로운 일을 시작하기 위해 힘을 비축하는 것은 아닐까?",
 					},
 					desc: {
@@ -428,7 +428,7 @@ export const wording = {
 				</Div>
 				),
 				en: (
-					<Div textSecondary2 fontSize18 mt30>
+					<Div textSecondary2>
 					We are not literally weird in a sense, we are just, frankly, a little different compared to the majority. WeBe is here to provide more dreams and freedom for everyone. Individuals nowadays, especially those in 20 and 30s, are living breathlessly conforming to society’s expectations: go to a good university, find a stable job, and so on. Yet WeBe asks, “What makes you truly happy?” We believe that our values create wider dimensions of knowledge and innovation.
 					<br/>
 					<br/>
