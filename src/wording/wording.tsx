@@ -91,8 +91,7 @@ export const wording = {
 			weirdprojects: {
 				en: (
 					<>
-						Build WeBe project by contributing your ideas through forums. Whether you are a designer, coder, or even just a typical holder in
-						BetterWorld, we provide a project for you to contribute to the collection. Based on the quality of your proposal, you will receive 1)
+						Build weird projects by contributing your ideas through forums. Based on the quality of your proposal, you will receive 1)
 						financial support to turn your ideas into reality 2) receive compensation based on your work.
 					</>
 				),
@@ -106,14 +105,14 @@ export const wording = {
 			webedao: {
 				en: (
 					<>
-						Perfect DAO cannot exist. Therefore, WeBe aims to build a healthy NFT community that can grow together with minimal intervention. The NFT
-						is your &qout;legal right&qout; in the project. Holders can easily propose, discuss, and contribute to WeBe’s brand. Participate in
+						Your WeBe NFT
+						is your &quot;legal right&quot; in the project. Holders can easily propose, discuss, and contribute to WeBe’s brand. Participate in
 						BetterWorld’s proposals and off-chain votes.
 					</>
 				),
 				ko: (
 					<>
-						완벽한 DAO는 존재할 수 없습니다. 따라서 위비는 최소한의 개입으로 건강한 DAO가 되는 것이 목표입니다. NFT는 위비의 &qout;투표권&qout;입니다.
+						완벽한 DAO는 존재할 수 없습니다. 따라서 위비는 최소한의 개입으로 건강한 DAO가 되는 것이 목표입니다. NFT는 위비의 &quot;투표권&quot; 입니다.
 						커뮤니티 포럼에서 프로젝트에 관해 쉽게 토론 및 기여할 수 있습니다.
 					</>
 				),
@@ -427,7 +426,7 @@ export const wording = {
 			},
 			value: {
 				ko: (
-					<Div textSecondary2 fontBold>
+					<Div textSecondary2>
 						8,888마리의 위비는 독창적인 문화를 전합니다. 가끔은 좀 특이해보이는 우리는 정확히 이상하진 않지만, 대다수와 조금 다를 수 있습니다. 어느
 						순간부터 사람들은, 특히 2030 세대 청년들은 꿈을 모색하고 쫓기보다 현실에 타협하며 살아가고 있습니다. 그저 좋은 학교를 진학하고, 안정된
 						직장에 취업해야 한다는 사회의 외침에 대답하며 하루하루 숨가쁘게 살아가고있습니다. 위비는 묻습니다. “여러분의 진정한 꿈은 무엇인가요?
@@ -525,7 +524,7 @@ export const wording = {
 				),
 				en: (
 					<>
-						With the goal of &qout;NFT popularization&qout; in Korea, WeBe positively judged Klaytn&apos;s domestic outlook considering 1) low gas fee
+						With the goal of &quot;NFT popularization&quot; in Korea, WeBe positively judged Klaytn&apos;s domestic outlook considering 1) low gas fee
 						2) high throughput and speed [Klaytn: 4,000 TPS vs. Ethereum: 15 TPS] and 3) flexible service compatibility within the chain.
 					</>
 				),

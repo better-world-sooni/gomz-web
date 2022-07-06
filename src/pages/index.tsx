@@ -73,12 +73,11 @@ const Index: NextPage = () => {
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
 								<Div textPrimary fontSize18 textCenter>
-									WeBe is a cultural franchise dedicated to <br />
-									young,{" "}
+									WeBe is a cultural franchise for <br />
+									young and global innovators{" "}
 									<Div spanTag textSecondary>
-										WEirD
-									</Div>{" "}
-									innovators.
+									<br/>who are willing to be WEirD.
+									</Div>
 								</Div>
 							</Div>
 							<EmptyBlock h={20} />
@@ -101,6 +100,7 @@ const Index: NextPage = () => {
 									itemsCenter
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
+									<Div imgTag src={IMAGES.twinkle} h20></Div>
 									<Div spanTag>JOIN WeBe</Div>
 								</Div>
 							</Div>
@@ -160,7 +160,7 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={30} />
-					<Div fontSize15 px30 mt5 data-aos="fade-up">
+					<Div fontSize15 balooR px30 mt5 data-aos="fade-up">
 						{wording.story.index.value[locale]}
 					</Div>
 					<EmptyBlock h={30} />
@@ -490,11 +490,10 @@ const Index: NextPage = () => {
 						<EmptyBlock h={20} />
 						<Div flex justifyCenter>
 							<Div textPrimary fontSize18 textCenter>
-								WeBe is a cultural franchise dedicated to young,{" "}
+								WeBe is a cultural franchise for young and global innovators{" "}
 								<Div spanTag textSecondary>
-									WEirD
+								who are willing to be WEirD.
 								</Div>{" "}
-								innovators.
 							</Div>
 						</Div>
 						<EmptyBlock h={20} />
@@ -604,7 +603,7 @@ const Index: NextPage = () => {
 										Weird,<br></br> Different, and Free.
 									</Div>
 								</Div>
-								<Div fontSize18 mt30>
+								<Div fontSize18 balooR mt30>
 									{wording.story.index.value[locale]}
 								</Div>
 							</Div>
@@ -856,20 +855,20 @@ const Index: NextPage = () => {
 						<Div mt20 data-aos="fade-up" grid gridCols2 gapX={30} gapY={30}>
 							{team(locale).map((member, index) => {
 								return (
-									<Div key={index} inlineBlock flex gapX={30}>
-										<Div style={{ flex: 0.6 }}>
-											<Div imgTag src={member.imageUri} roundedXl shadowLg></Div>
-										</Div>
-										<Div flex1>
-											<Div textSecondary2 textLeft textLg balooB fontBold>
-												{member.name}
-											</Div>
-											<Div textSecondary2 textLeft fontSize11 balooR italic>
-												{member.position}
-											</Div>
-											<Div mt5 textSecondary2 textLeft fontSize12 balooR>
-												{member.specialty}
-											</Div>
+									<Div key={index} inlineBlock mx30>
+										<Div flex mt20 maxW500>
+											<Col maxW180 imgTag src={member.imageUri} roundedXl shadowLg></Col>
+											<Col ml30>
+												<Div textSecondary2 textLeft textLg balooB fontBold>
+													{member.name}
+												</Div>
+												<Div textSecondary2 textLeft fontSize11 balooR italic>
+													{member.position}
+												</Div>
+												<Div mt5 textSecondary2 textLeft fontSize12 balooR>
+													{member.specialty}
+												</Div>
+											</Col>
 										</Div>
 									</Div>
 								);

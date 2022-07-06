@@ -184,7 +184,7 @@ const Index: NextPage = () => {
 										<Div w120 absolute top5 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 									</Div>
 									<EmptyBlock h={30} />
-									<Div textSecondary2 fontSize14 px30 textCenter>
+									<Div textSecondary2 fontSize14 px30 textCenter balooR>
 										{wording.story.index.value[locale]}
 									</Div>
 									<EmptyBlock h={30} />
