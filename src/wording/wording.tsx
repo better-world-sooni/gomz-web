@@ -297,8 +297,8 @@ export const wording = {
 						en: "Lead Dev",
 					},
 					specialty: {
-						en: "Has thought about WeBe and its holders' experience more than anything in his life. Worked as a software engineer at one of the best edutech start-ups in Korea and is currently developing full stack + blockchain. (He calls it Web2 + 3 = Web5) Also a global WeBe, who has lived in Korea, Vietnam, and Canada. He claims to be one of the best at footsal @ KAIST, but it is nowhere near Eric’s level. Ha!",
-						ko: "삶에서 그 어떤 것보다도 위비 그리고 위비와 함께할 사람들에 대해 생각해왔다. 국내 최고의 에듀텍 스타트업 중 한 곳에서의 소프트웨어 엔지니어 경험을 거쳐 현재 풀스택+블록체인 개발을 한다. (그는 그걸 Web2 + 3 = Web5 라고 부르더라) 한국, 베트남, 캐나다에서 지낸 글로벌 위비이기도하다. 스스로 KAIST에서 풋살짱이라고 하던데 에릭은 못따라잡을듯. ㅋㅋ",
+						en: "Has thought about WeBe and its holders' experience more than anything in his life. Worked as a software engineer at one of the best edutech start-ups in Korea and is currently developing full stack + blockchain. (He calls it Web2 + 3 = Web5) Also a global WeBe, who has lived in Korea, Vietnam, and Canada. He claims to be one of the best at footsal at his School, but it is nowhere near Eric’s level. Ha!",
+						ko: "삶에서 그 어떤 것보다도 위비 그리고 위비와 함께할 사람들에 대해 생각해왔다. 국내 최고의 에듀텍 스타트업 중 한 곳에서의 소프트웨어 엔지니어 경험을 거쳐 현재 풀스택+블록체인 개발을 한다. (그는 그걸 Web2 + 3 = Web5 라고 부르더라) 한국, 베트남, 캐나다에서 지낸 글로벌 위비이기도하다. 스스로 학교에서 풋살짱이라고 하던데 에릭은 못따라잡을듯. ㅋㅋ",
 					},
 					countries: "🇰🇷 🇻🇳 🇨🇦",
 					desc: {
