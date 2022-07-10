@@ -4,6 +4,12 @@ import { IMAGES } from "src/modules/images";
 
 export const wording = {
 	index: {
+		invitation:{
+			en:(<>https://soonilabs.notion.site/Looking-for-88-Young-Weirdos-33bc481a16a24d6f98552cb6f6f07907</>
+			),
+			kor:(<>https://soonilabs.notion.site/88-e6212d891f674cf281a1577d7828e634</>
+			),
+		},
 		InDigitlaWorld: {
 			rebirth: {
 				en: (

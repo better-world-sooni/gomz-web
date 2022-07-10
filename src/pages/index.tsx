@@ -93,7 +93,7 @@ const Index: NextPage = () => {
 									borderBlack
 									border2
 									aTag
-									href={"https://discord.com/invite/7tV3WxWf8p"}
+									href={"https://ov0lo4k3pio.typeform.com/to/iWSAFBhN"}
 									cursorPointer
 									flex
 									gapX={10}
@@ -101,7 +101,22 @@ const Index: NextPage = () => {
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
 									<Div imgTag src={IMAGES.twinkle} h20></Div>
-									<Div spanTag>JOIN WeBe</Div>
+									<Div spanTag>Apply</Div>
+								</Div>
+								<Div
+									roundedFull
+									px25
+									py8
+									fontSize18
+									textWhite
+									aTag
+									href={"https://soonilabs.notion.site/88-e6212d891f674cf281a1577d7828e634 "}
+									cursorPointer
+									flex
+									gapX={10}
+									itemsCenter
+								>
+									<Div spanTag>See the Invitation</Div>
 								</Div>
 							</Div>
 						</Div>
@@ -497,7 +512,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={20} />
-						{kaikas?.selectedAddress ? (
+						{/* {kaikas?.selectedAddress ? (
 							<CallToAction
 								mintingStep={mintingStep}
 								whitelisted={whitelisted}
@@ -528,7 +543,45 @@ const Index: NextPage = () => {
 									<Div>CONNECT WALLET</Div>
 								</Div>
 							</Div>
-						)}
+						)} */}
+						<Div flex justifyCenter>
+								<Div
+									clx={"group transition hover:bg-primary-light"}
+									bgSecondary
+									roundedFull
+									px30
+									py8
+									fontSize23
+									textWhite
+									borderBlack
+									border2
+									aTag
+									href={"https://ov0lo4k3pio.typeform.com/to/iWSAFBhN"}
+									cursorPointer
+									flex
+									gapX={10}
+									itemsCenter
+									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+								>
+									<Div imgTag src={IMAGES.twinkle} h25></Div>
+									<Div>Apply</Div>
+								</Div>
+								<Div
+									roundedFull
+									px30
+									py8
+									fontSize23
+									textWhite
+									aTag
+									href={"https://soonilabs.notion.site/88-e6212d891f674cf281a1577d7828e634"}
+									cursorPointer
+									flex
+									gapX={10}
+									itemsCenter
+								>
+									<Div>See the Invitation</Div>
+								</Div>
+							</Div>
 					</Div>
 				</Div>
 			</Div>

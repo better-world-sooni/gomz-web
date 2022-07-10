@@ -228,7 +228,7 @@ function MainTopBar({ absolute = false }) {
 						</Div>
 					)}
 					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""} onClick={handleClickBetterWorld}>
-						<Div imgTag src={IMAGES.logos.betterWorld} h30 wAuto></Div>
+						<Div imgTag src={IMAGES.logos.betterWorld} h25 wAuto></Div>
 					</Div>
 					<Div
 						mx10
@@ -246,7 +246,7 @@ function MainTopBar({ absolute = false }) {
 					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://instagram.com/weirdbears"}>
 						<FaInstagram size={25} />
 					</Div>
-					<Div ml10 textPrimary cursorPointer>
+					{/* <Div ml10 textPrimary cursorPointer>
 						{kaikas?.selectedAddress ? (
 							<Div
 								roundedFull
@@ -279,7 +279,7 @@ function MainTopBar({ absolute = false }) {
 								CONNECT WALLET
 							</Div>
 						)}
-					</Div>
+					</Div> */}
 				</Div>
 			</Div>
 		</Div>
