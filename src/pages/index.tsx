@@ -875,18 +875,18 @@ const Index: NextPage = () => {
 								the Best
 							</Div>
 						</Div>
-						<Div flex itemsCenter mt30 gapX={80} data-aos="fade-up">
+						<Div flex itemsCenter gapX={100} mt30 data-aos="fade-up">
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
+								<Div imgTag h40 src={IMAGES.partners.aiLabs}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.pala}></Div>
+								<Div imgTag h40 src={IMAGES.partners.pala}></Div>
 							</Div>
 							<Div flex1>
 								<Div imgTag src={IMAGES.partners.blinkers}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.kote}></Div>
+								<Div imgTag h40 src={IMAGES.partners.kote}></Div>
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
