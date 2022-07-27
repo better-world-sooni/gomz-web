@@ -43,7 +43,7 @@ const Index: NextPage = () => {
 		if (kaikas) {
 			await kaikas.enable();
 		} else {
-			alert("Please install kaikas.");
+			alert("카이카스를 설치해 주세요.");
 		}
 	};
 	const { mintingStep, totalSupply } = useContractState();
