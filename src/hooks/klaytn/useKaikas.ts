@@ -14,13 +14,20 @@ export const useKaikas = () => {
 
     useEffect(() => {
         if(klaytn && klaytn._kaikas.isEnabled()){
-            if(klaytn.networkVersion == '8217' && !publicRuntimeConfig.CONF_IS_DEVELOPMENT){
+            if(!publicRuntimeConfig.CONF_IS_DEVELOPMENT){
+                if(klaytn.networkVersion == '8217'){
+                    setKaikas(klaytn)
+                    klaytn?.on('accountsChanged', function(accounts) {
+                        setKaikas({...klaytn, selectedAddress: accounts[0]})
+                    })
+                } else {
+                    alertChangeChain()
+                }
+            } else {
                 setKaikas(klaytn)
                 klaytn?.on('accountsChanged', function(accounts) {
                     setKaikas({...klaytn, selectedAddress: accounts[0]})
                 })
-            } else {
-                alertChangeChain()
             }
         }
     }, [typeof window, klaytn, klaytn?._kaikas.isEnabled(), klaytn?.selectedAddress])
