@@ -90,6 +90,7 @@ const images = {
 		club021: '/images/partners/club021.png',
 		lgc: '/images/partners/lgc.png',
 		level19: '/images/partners/level19.png',
+		myBias: '/images/partners/myBias.png',
 	},
 };
 

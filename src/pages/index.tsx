@@ -413,7 +413,7 @@ const Index: NextPage = () => {
 							<Div imgTag src={IMAGES.partners.level19}></Div>
 						</Div>
 						<Div flex1 px30>
-							<Div></Div>
+							<Div imgTag src={IMAGES.partners.myBias}></Div>
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
@@ -528,7 +528,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={20} />
-						{/* {kaikas?.selectedAddress ? (
+						{kaikas?.selectedAddress ? (
 							<CallToAction
 								mintingStep={mintingStep}
 								whitelisted={whitelisted}
@@ -559,8 +559,8 @@ const Index: NextPage = () => {
 									<Div>CONNECT WALLET</Div>
 								</Div>
 							</Div>
-						)} */}
-						<Div flex justifyCenter>
+						)}
+						{/* <Div flex justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -597,7 +597,7 @@ const Index: NextPage = () => {
 								>
 									<Div>See the Invitation</Div>
 								</Div>
-							</Div>
+							</Div> */}
 					</Div>
 				</Div>
 			</Div>
@@ -915,6 +915,9 @@ const Index: NextPage = () => {
 							<Div flex1>
 								<Div imgTag h40 src={IMAGES.partners.kote}></Div>
 							</Div>
+							<Div flex1>
+								<Div imgTag h60 src={IMAGES.partners.myBias}></Div>
+							</Div>
 						</Div>
 						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
@@ -994,7 +997,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				<Div spanTag>
 					You are the first OG! Your minting starts{" "}
 					<Div spanTag textPrimary>
-						June 18th
+						June 28th
 					</Div>
 					. Enter Discord for the countdown.
 				</Div>
@@ -1003,7 +1006,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 			<Div spanTag>
 				The first OG minting starts{" "}
 				<Div spanTag textPrimary>
-					June 18th
+					June 28th
 				</Div>
 				. Enter Discord to apply to get on the first OG!
 			</Div>
