@@ -87,6 +87,10 @@ const images = {
 		blinkers: "/images/partners/blinkers.png",
 		kote: "/images/partners/kote.png",
 		pala: "/images/partners/pala.png",
+		club021: '/images/partners/club021.png',
+		lgc: '/images/partners/lgc.png',
+		level19: '/images/partners/level19.png',
+		myBias: '/images/partners/myBias.png',
 	},
 };
 

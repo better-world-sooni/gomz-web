@@ -387,7 +387,7 @@ const Index: NextPage = () => {
 					</Div>
 					<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
 						<Div flex1 px15>
-							<Div imgTag src={IMAGES.partners.pala}></Div>
+							<Div w100 imgTag src={IMAGES.partners.pala}></Div>
 						</Div>
 						<Div flex1 px15>
 							<Div imgTag src={IMAGES.partners.aiLabs}></Div>
@@ -397,8 +397,24 @@ const Index: NextPage = () => {
 						<Div flex1 px15>
 							<Div imgTag src={IMAGES.partners.blinkers}></Div>
 						</Div>
-						<Div flex1 px15>
+						<Div flex1 px30>
 							<Div imgTag src={IMAGES.partners.kote}></Div>
+						</Div>
+					</Div>
+					<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
+						<Div flex1 px15>
+							<Div imgTag src={IMAGES.partners.club021}></Div>
+						</Div>
+						<Div flex1 px30>
+							<Div imgTag src={IMAGES.partners.lgc}></Div>
+						</Div>
+					</Div>
+					<Div px30 flex itemsCenter mt30 gapX={20} data-aos="fade-up">
+						<Div flex1 px15>
+							<Div imgTag src={IMAGES.partners.level19}></Div>
+						</Div>
+						<Div flex1 px30>
+							<Div imgTag src={IMAGES.partners.myBias}></Div>
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
@@ -876,18 +892,32 @@ const Index: NextPage = () => {
 								the Best
 							</Div>
 						</Div>
-						<Div flex itemsCenter mt30 gapX={80} data-aos="fade-up">
+						<Div flex itemsCenter gapX={100} mt30 data-aos="fade-up">
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.aiLabs}></Div>
+								<Div imgTag h40 src={IMAGES.partners.aiLabs}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.pala}></Div>
+								<Div imgTag h30 src={IMAGES.partners.blinkers}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.blinkers}></Div>
+								<Div imgTag h30 src={IMAGES.partners.level19}></Div>
 							</Div>
 							<Div flex1>
-								<Div imgTag src={IMAGES.partners.kote}></Div>
+								<Div imgTag h40 src={IMAGES.partners.club021}></Div>
+							</Div>
+						</Div>
+						<Div flex justifyCenter itemsCenter gapX={100} mt30 data-aos="fade-up">
+							<Div flex1>
+								<Div imgTag h40 src={IMAGES.partners.pala}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag h40 src={IMAGES.partners.lgc}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag h40 src={IMAGES.partners.kote}></Div>
+							</Div>
+							<Div flex1>
+								<Div imgTag h60 src={IMAGES.partners.myBias}></Div>
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
