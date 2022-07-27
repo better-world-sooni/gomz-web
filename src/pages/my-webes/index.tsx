@@ -16,6 +16,7 @@ import { useContractState } from "src/hooks/klaytn/useContractState";
 import { MintingStep } from "src/modules/minting";
 import { useDispatch } from "react-redux";
 import { rebirthModalAction } from "src/store/reducers/modalReducer";
+import { GATEWAY_PREFIX } from "src/modules/ipfs";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -55,7 +56,7 @@ const Index: NextPage = () => {
 								({balance})
 							</Div>
 							<Div flex1></Div>
-							<Div
+							{/* <Div
 								flex
 								z10
 								justifyCenter
@@ -72,7 +73,7 @@ const Index: NextPage = () => {
 								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 							>
 								Finish Onboarding at BetterWorld
-							</Div>
+							</Div> */}
 						</Div>
 						<Div grid gridCols4 gapX={20} gapY={10} py40>
 							{new Array(balance).fill({}).map((_, index) => {
@@ -97,7 +98,15 @@ function Webe({ index, selectedAddress, enableRebirth }) {
 	};
 	return (
 		<Div wFull>
-			<Div imgTag src={metadata?.image || IMAGES.team.jieun} wFull hAuto roundedXl border1 borderBlack></Div>
+			<Div
+				imgTag
+				src={metadata?.image?.replace("ipfs:/", GATEWAY_PREFIX) || "https://weirdbears.s3.ap-northeast-2.amazonaws.com/hidden.png"}
+				wFull
+				hAuto
+				roundedXl
+				border1
+				borderBlack
+			></Div>
 			<EmptyBlock h={10} />
 			<Div textSecondary2 textLg balooB fontBold textCenter fontSize={"1.3vw"}>
 				{metadata?.name}

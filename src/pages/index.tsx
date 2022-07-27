@@ -76,7 +76,8 @@ const Index: NextPage = () => {
 									WeBe is a cultural franchise for <br />
 									young and global innovators{" "}
 									<Div spanTag textSecondary>
-									<br/>who are willing to be WEirD.
+										<br />
+										who are willing to be WEirD.
 									</Div>
 								</Div>
 							</Div>
@@ -507,12 +508,12 @@ const Index: NextPage = () => {
 							<Div textPrimary fontSize18 textCenter>
 								WeBe is a cultural franchise for young and global innovators{" "}
 								<Div spanTag textSecondary>
-								who are willing to be WEirD.
+									who are willing to be WEirD.
 								</Div>{" "}
 							</Div>
 						</Div>
 						<EmptyBlock h={20} />
-						{/* {kaikas?.selectedAddress ? (
+						{kaikas?.selectedAddress ? (
 							<CallToAction
 								mintingStep={mintingStep}
 								whitelisted={whitelisted}
@@ -543,8 +544,8 @@ const Index: NextPage = () => {
 									<Div>CONNECT WALLET</Div>
 								</Div>
 							</Div>
-						)} */}
-						<Div flex justifyCenter>
+						)}
+						{/* <Div flex justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -581,7 +582,7 @@ const Index: NextPage = () => {
 								>
 									<Div>See the Invitation</Div>
 								</Div>
-							</Div>
+							</Div> */}
 					</Div>
 				</Div>
 			</Div>
@@ -965,20 +966,20 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		if (whitelisted)
 			return (
 				<Div spanTag>
-					You are the first OG! Your minting starts{" "}
+					You are our first OGs! Your minting starts{" "}
 					<Div spanTag textPrimary>
-						June 18th
+						June 28th
 					</Div>
 					. Enter Discord for the countdown.
 				</Div>
 			);
 		return (
 			<Div spanTag>
-				The first OG minting starts{" "}
+				our first OGs minting starts{" "}
 				<Div spanTag textPrimary>
-					June 18th
+					June 28th
 				</Div>
-				. Enter Discord to apply to get on the first OG!
+				. Enter Discord to apply to get on our first OGs!
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Whitelist) {
@@ -987,7 +988,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 				if (amountMinted < WHITELIST_MAX_MINT)
 					return (
 						<Div spanTag>
-							The first OG minting is in progress.{" "}
+							our first OGs minting is in progress.{" "}
 							<Div spanTag textPrimary>
 								Mint{" "}
 							</Div>
@@ -1027,7 +1028,7 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		if (totalSupply < POST_WHITELIST_SUPPLY) {
 			return (
 				<Div spanTag>
-					The first OG minting is in progress. Enter{" "}
+					our first OGs minting is in progress. Enter{" "}
 					<Div spanTag textPrimary>
 						Discord{" "}
 					</Div>

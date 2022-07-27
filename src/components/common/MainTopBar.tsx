@@ -16,6 +16,7 @@ import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useDispatch } from "react-redux";
 import { betterWorldModalAction } from "src/store/reducers/modalReducer";
 import { BetterWorldModal } from "../modal/BetterWorldModal";
+import { AlertModal } from "../modal/AlertModal";
 
 function MainTopBar({ absolute = false }) {
 	const isTablet = useIsTablet();
@@ -184,6 +185,7 @@ function MainTopBar({ absolute = false }) {
 			<InviteModal />
 			<RebirthModal />
 			<BetterWorldModal />
+			<AlertModal />
 			<Div flex mxAuto maxW={1150}>
 				<Div onClick={handleClickWebe} cursorPointer>
 					<Div w100 imgTag src={IMAGES.logos.webeLogo}></Div>

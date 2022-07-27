@@ -91,8 +91,8 @@ export const wording = {
 			weirdprojects: {
 				en: (
 					<>
-						Build weird projects by contributing your ideas through forums. Based on the quality of your proposal, you will receive 1)
-						financial support to turn your ideas into reality 2) receive compensation based on your work.
+						Build weird projects by contributing your ideas through forums. Based on the quality of your proposal, you will receive 1) financial
+						support to turn your ideas into reality 2) receive compensation based on your work.
 					</>
 				),
 				ko: (
@@ -105,15 +105,14 @@ export const wording = {
 			webedao: {
 				en: (
 					<>
-						Your WeBe NFT
-						is your &quot;legal right&quot; in the project. Holders can easily propose, discuss, and contribute to WeBe’s brand. Participate in
-						BetterWorld’s proposals and off-chain votes.
+						Your WeBe NFT is your &quot;legal right&quot; in the project. Holders can easily propose, discuss, and contribute to WeBe’s brand.
+						Participate in BetterWorld’s proposals and off-chain votes.
 					</>
 				),
 				ko: (
 					<>
-						완벽한 DAO는 존재할 수 없습니다. 따라서 위비는 최소한의 개입으로 건강한 DAO가 되는 것이 목표입니다. NFT는 위비의 &quot;투표권&quot; 입니다.
-						커뮤니티 포럼에서 프로젝트에 관해 쉽게 토론 및 기여할 수 있습니다.
+						완벽한 DAO는 존재할 수 없습니다. 따라서 위비는 최소한의 개입으로 건강한 DAO가 되는 것이 목표입니다. NFT는 위비의 &quot;투표권&quot;
+						입니다. 커뮤니티 포럼에서 프로젝트에 관해 쉽게 토론 및 기여할 수 있습니다.
 					</>
 				),
 			},
@@ -543,7 +542,7 @@ export const wording = {
 				en: (
 					<>
 						WeBe&apos;s minting process is divided into Private Sale & Public Mint. For private sales, you need to submit a short form in Discord
-						during the application period. The first OG application starts on July 10th. Details will be notified on Twitter(@webe_weirdbears) and
+						during the application period. our first OGs application starts on July 10th. Details will be notified on Twitter(@webe_weirdbears) and
 						Discord.
 					</>
 				),

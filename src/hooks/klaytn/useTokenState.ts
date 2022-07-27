@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { GATEWAY_PREFIX } from "src/modules/ipfs";
 import { useContract } from "./useContract";
 
 export const useTokenState = ({index, selectedAddress}) => {
@@ -15,7 +16,7 @@ export const useTokenState = ({index, selectedAddress}) => {
             const tokenId = await contract.methods.tokenOfOwnerByIndex(selectedAddress, index).call()
             const baseURIType = await contract.methods.tokenBaseURIType(tokenId).call()
             const tokenUri = await contract.methods.tokenURI(tokenId).call()
-            const metadata = await (await fetch(tokenUri)).json()
+            const metadata = await (await fetch(tokenUri.replace("ipfs:/", GATEWAY_PREFIX))).json()
             setTokenState({
                 index,
                 tokenId,

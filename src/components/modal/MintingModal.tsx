@@ -68,7 +68,8 @@ export function MintingModal() {
 			return;
 		}
 		if (buttonState == ButtonState.GetOnboard) {
-			window.location.href = "www.betterworldapp.io/onboarding";
+			// window.location.href = "www.betterworldapp.io/onboarding";
+			window.location.href = "https://discord.com/invite/7tV3WxWf8p";
 			return;
 		}
 		if (buttonState == ButtonState.Failed) {
