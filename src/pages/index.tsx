@@ -528,7 +528,7 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={20} />
-						{kaikas?.selectedAddress ? (
+						{/* {kaikas?.selectedAddress ? (
 							<CallToAction
 								mintingStep={mintingStep}
 								whitelisted={whitelisted}
@@ -559,8 +559,8 @@ const Index: NextPage = () => {
 									<Div>CONNECT WALLET</Div>
 								</Div>
 							</Div>
-						)}
-						{/* <Div flex justifyCenter>
+						)} */}
+						<Div flex justifyCenter>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -597,7 +597,7 @@ const Index: NextPage = () => {
 								>
 									<Div>See the Invitation</Div>
 								</Div>
-							</Div> */}
+							</Div>
 					</Div>
 				</Div>
 			</Div>
