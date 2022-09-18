@@ -32,6 +32,9 @@ const images = {
 	storyBannerMobile: "/images/storyBannerMobile.png",
 	mintingDetailsKor: "/images/MintingDetailsKor.png",
 	mintingDetailsEng: "/images/MintingDetailsEng.png",
+	bwpreview: "/images/bwpreview.png",
+	bwpreview2: "/images/bwpreview2.png",
+	webeBetterworld: "/images/webeBetterworld.png",
 	logos: {
 		discord: "/images/logos/discord.png",
 		twitter: "/images/logos/twitter.png",

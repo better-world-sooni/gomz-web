@@ -30,7 +30,7 @@ import { useDispatch } from "react-redux";
 import { mintingModalAction } from "src/store/reducers/modalReducer";
 import { faqs } from "src/modules/faqs";
 import { Faq } from "src/components/Faq";
-import { FaDiscord } from "react-icons/fa";
+import { FaArrowsAlt, FaDirections, FaDiscord, FaLink, FaLocationArrow } from "react-icons/fa";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -73,12 +73,11 @@ const Index: NextPage = () => {
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
 								<Div textPrimary fontSize18 textCenter>
-									WeBe is a cultural franchise for <br />
-									young and global innovators{" "}
-									<Div spanTag textSecondary>
-										<br />
-										who are willing to be WEirD.
-									</Div>
+								The Weird Promoters of 
+								<Div spanTag textSecondary>
+								{" "}BetterWorld
+									</Div>, the Ultimate Playground for Your Web 3.0 Identites.{" "}
+									
 								</Div>
 							</Div>
 							<EmptyBlock h={20} />
@@ -94,7 +93,7 @@ const Index: NextPage = () => {
 									borderBlack
 									border2
 									aTag
-									href={"https://ov0lo4k3pio.typeform.com/to/iWSAFBhN"}
+									href={"https://ov0lo4k3pio.typeform.com/to/X2mrqgWB"}
 									cursorPointer
 									flex
 									gapX={10}
@@ -102,71 +101,13 @@ const Index: NextPage = () => {
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
 									<Div imgTag src={IMAGES.twinkle} h20></Div>
-									<Div spanTag>Apply</Div>
-								</Div>
-								<Div
-									roundedFull
-									px25
-									py8
-									fontSize18
-									textWhite
-									aTag
-									href={"https://soonilabs.notion.site/88-e6212d891f674cf281a1577d7828e634 "}
-									cursorPointer
-									flex
-									gapX={10}
-									itemsCenter
-								>
-									<Div spanTag>See the Invitation</Div>
+									<Div spanTag>Apply for 2nd OG</Div>
 								</Div>
 							</Div>
 						</Div>
 					</Div>
 				</Div>
 				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)" }} relative>
-					<EmptyBlock h={100} />
-					<Div px15>
-						<Div
-							data-aos="fade-up"
-							shadowMd
-							style={{
-								backgroundImage: `url(${IMAGES.storyBannerMobile})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h150
-							roundedLg
-							flex
-							px30
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize14>
-									Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. <br />
-									It&apos;s something to be proud of.
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px15
-										py4
-										fontSize13
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ OUR STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
-					</Div>
 					<EmptyBlock h={100} />
 					<Div textWhite fontSize36 leadingNone data-aos="fade-up" px30>
 						We Be
@@ -190,193 +131,88 @@ const Index: NextPage = () => {
 						})}
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textSecondary fontSize36 data-aos="fade-up">
-						Digital
-						<Div spanTag textWhite>
-							{" "}
-							Journey{" "}
-						</Div>
-					</Div>
-					<EmptyBlock h={30} />
-					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
-						<Div inlineFlex itemsCenter>
-							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Re-<br></br>Birth
-								<Div flex justifyCenter>
-									<Div w150 imgTag src={IMAGES.journeyIcons.rebirth}></Div>
+					<Div px15>
+						<Div
+							data-aos="fade-up"
+							shadowMd
+							style={{
+								backgroundImage: `url(${IMAGES.storyBannerMobile})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h150
+							roundedLg
+							flex
+							px30
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize14>
+									How did the weird journey begin?
+									<br/>Once upon a time...{/* Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. <br />
+									It&apos;s something to be proud of. */}
 								</Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+								<Div flex mt10>
 									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
+										px15
+										py4
+										fontSize13
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 									>
-										{wording.index.InDigitlaWorld.rebirth[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Weird<br></br>Wine
-								<Div flex justifyCenter>
-									<Div w150 imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
-								</Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InDigitlaWorld.weirdwine[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div textSecondary2 fontSize24 mx30>
-								Collection
-							</Div>
-						</Div>
-					</Div>
-					<EmptyBlock h={15} />
-					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
-						<Div inlineFlex itemsCenter>
-							<Div textSecondary2 fontSize24 mx30>
-								BetterWorld
-							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Pioneer
-								<Div flex justifyCenter>
-									<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
-								</Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InDigitlaWorld.pioneer[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight mr10 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								WeBe DAO
-								<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webedao[locale]}
+										READ THE STORY
 									</Div>
 								</Div>
 							</Div>
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div textCenter textSecondary fontSize36 data-aos="fade-up">
-						Physical
-						<Div spanTag textWhite>
-							{" "}
-							Journey{" "}
-						</Div>
+					<Div flex px30 gapX={20} data-aos="fade-up">
+							<Div maxW={150} imgTag src={IMAGES.bwpreview2}></Div>
+							<Div maxW={150} imgTag src={IMAGES.bwpreview}></Div>
 					</Div>
 					<EmptyBlock h={30} />
-					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
-						<Div inlineFlex itemsCenter>
-							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Weird Goods
-								<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webegoods[locale]}
-									</Div>{" "}
+							<Div px30 textCenter textWhite fontSize36>
+								<Div spanTag textSecondary leadingNone>
+									Be Weird to Earn
+								</Div><br/>in BetterWorld
+								<EmptyBlock h={30} />
+								<Div fontSize15 balooR mt5>
+								{wording.index.BetterWorld[locale]}
 								</Div>
-							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight py30 ml15 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Weird<br></br>Partners
-								<Div flex justifyCenter>
-									<Div w120 imgTag src={IMAGES.journeyIcons.webePartners}></Div>
-								</Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+								<EmptyBlock h={30} />
+								<Div flex justifyCenter mt5>
 									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webepartners[locale]}
+										clx={"group transition hover:bg-primary-light"}
+										bgSecondary
+										roundedFull
+										px30
+										py8
+										fontSize18
+										textWhite
+										borderBlack
+										border2
+										aTag
+										href={"https://www.betterworldapp.io"}
+										cursorPointer
+										flex
+										gapX={10}
+										itemsCenter
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>	
+										<FaLocationArrow></FaLocationArrow>
+										<Div> Go to BetterWorld</Div>
 									</Div>
 								</Div>
 							</Div>
-							<Div textSecondary2 fontSize24 mx30>
-								Brand
-							</Div>
-						</Div>
-					</Div>
-					<EmptyBlock h={15} />
-					<Div textSecondary2 fontSize24 style={{ overflow: "auto", overflowY: "hidden" }} clx={"scrollbar-off"} data-aos="fade-up">
-						<Div inlineFlex itemsCenter>
-							<Div textSecondary2 fontSize24 mx30>
-								Community
-							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Weird IRL
-								<Div flex justifyCenter>
-									<Div w150 imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
-								</Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.weirdirl[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative w180 h200 shadowLg bgPrimaryLight mr15 py30 textCenter roundedLg style={{ overflowY: "hidden" }}>
-								Weird Project
-								<Div flex justifyCenter>
-									<Div w150 imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
-								</Div>
-								<Div absolute flex itemsCenter wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										fontSize12
-										px20
-										textLeft
-										balooR
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.weirdprojects[locale]}
-									</Div>
-								</Div>
-							</Div>
-						</Div>
-					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 data-aos="fade-up">
 						Partnered with<br></br>
@@ -493,11 +329,15 @@ const Index: NextPage = () => {
 			<BasicHead />
 			<MainTopBar />
 			<Div hScreen bgTertiary px80>
-				<Div flex itemsCenter justifyCenter hFull maxW={1150} mxAuto mt={-50} z10 relative>
-					<Div>
-						<Div mxAuto bgSecondary rounded20 borderWhite shadowSm border10 px={kaikas?.selectedAddress ? 130 : 150} relative mt50>
+				<Div flex itemsCenter hFull mxAuto z10 relative>
+					<Div flex itemsCenter>
+						<Div flexCol>
+						<Div flex justifyCenter>
+							<Div imgTag src={IMAGES.logos.webeLogo} w300></Div>
+						</Div>
+						<Div px={kaikas?.selectedAddress ? 130 : 150} relative mt20 w700>
 							{kaikas?.selectedAddress ? (
-								<Div textWhite fontSize={"3vw"} h={"30vw"} w={"40vw"} textCenter flex itemsCenter justifyCenter>
+								<Div textWhite fontSize={"1.5vw"} textCenter itemsCenter>
 									<Title
 										mintingStep={mintingStep}
 										whitelisted={whitelisted}
@@ -507,26 +347,13 @@ const Index: NextPage = () => {
 									/>
 								</Div>
 							) : (
-								<Div imgTag src={IMAGES.webeTshirtillust} h={"60vh"} mb={-1} mt={"-10%"}></Div>
-							)}
-							{/* change height of the above line to change overall size of the box*/}
-							<Div absolute imgTag h={"8%"} src={IMAGES.earth} top={"55%"} right={"5%"}></Div>
-							<Div absolute imgTag h={"5%"} src={IMAGES.moon} top={"63%"} right={"10%"}></Div>
-							<Div absolute imgTag h={"5%"} src={IMAGES.heart} top={"12%"} right={"10%"}></Div>
-							<Div absolute imgTag h={"32%"} src={IMAGES.spaceship} bottom={"-5%"} right={"-10%"}></Div>
-							<Div absolute imgTag h={"13%"} src={IMAGES.alien} top={"80%"} left={"-5%"}></Div>
-							<Div absolute imgTag h={"7%"} src={IMAGES.saturn} top={"60%"} left={"10%"}></Div>
-							<Div absolute imgTag h={"5%"} src={IMAGES.planet} top={"20%"} left={"3%"}></Div>
-							<Div absolute imgTag h={"5%"} src={IMAGES.spaceGun} top={"10%"} left={"15%"}></Div>
-						</Div>
-						<EmptyBlock h={20} />
-						<Div flex justifyCenter>
-							<Div textPrimary fontSize18 textCenter>
-								WeBe is a cultural franchise for young and global innovators{" "}
+								<Div textPrimary fontSize={"1.5vw"} textCenter>
+								The Weird Promoters of 
 								<Div spanTag textSecondary>
-									who are willing to be WEirD.
-								</Div>{" "}
-							</Div>
+								{" "}BetterWorld
+									</Div>, the Ultimate Playground for Your Web 3.0 Identites.{" "}
+								</Div>
+							)}
 						</Div>
 						<EmptyBlock h={20} />
 						{kaikas?.selectedAddress ? (
@@ -557,48 +384,12 @@ const Index: NextPage = () => {
 									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 								>
 									<Div imgTag src={IMAGES.twinkle} h25></Div>
-									<Div>CONNECT WALLET</Div>
+									<Div>MINT</Div>
 								</Div>
 							</Div>
 						)}
-						{/* <Div flex justifyCenter>
-								<Div
-									clx={"group transition hover:bg-primary-light"}
-									bgSecondary
-									roundedFull
-									px30
-									py8
-									fontSize23
-									textWhite
-									borderBlack
-									border2
-									aTag
-									href={"https://ov0lo4k3pio.typeform.com/to/iWSAFBhN"}
-									cursorPointer
-									flex
-									gapX={10}
-									itemsCenter
-									style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-								>
-									<Div imgTag src={IMAGES.twinkle} h25></Div>
-									<Div>Apply</Div>
-								</Div>
-								<Div
-									roundedFull
-									px30
-									py8
-									fontSize23
-									textWhite
-									aTag
-									href={"https://soonilabs.notion.site/88-e6212d891f674cf281a1577d7828e634"}
-									cursorPointer
-									flex
-									gapX={10}
-									itemsCenter
-								>
-									<Div>See the Invitation</Div>
-								</Div>
-							</Div> */}
+						</Div>
+						<Div absolute right={-80} imgTag src={IMAGES.webeBetterworld} hScreen></Div>
 					</Div>
 				</Div>
 			</Div>
@@ -614,49 +405,9 @@ const Index: NextPage = () => {
 				<Div px80>
 					<Div maxW={1150} mxAuto>
 						<EmptyBlock h={160} />
-						<Div
-							data-aos="fade-up"
-							shadowMd
-							style={{
-								backgroundImage: `url(${IMAGES.storyBanner})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h200
-							roundedLg
-							flex
-							px50
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize18>
-									Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. It&apos;s something to be proud of.
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px30
-										py8
-										fontSize20
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ OUR STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
-						<EmptyBlock h={160} />
 						<Div flex gapX={50} itemsCenter data-aos="fade-up">
 							<Div grid gridCols3 gapX={20} gapY={20}>
-								{new Array(12).fill(null).map((_, index) => {
+								{new Array(9).fill(null).map((_, index) => {
 									return (
 										<Div key={index} inlineBlock>
 											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg w100 h100></Div>
@@ -679,211 +430,83 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
-						<Div textCenter textSecondary fontSize52 data-aos="fade-up">
-							Digital
-							<Div spanTag textWhite>
-								{" "}
-								Journey{" "}
-							</Div>
-						</Div>
-						<Div wFull flex mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
-							<Div relative flex1 h200 shadowMd bgPrimaryLight pt40 px40 roundedLg>
-								Re-Birth
-								<Div absolute top0 left0 wFull hFull flex itemsEnd justifyEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.rebirth}></Div>
-									</Div>
+						<Div
+							data-aos="fade-up"
+							shadowMd
+							style={{
+								backgroundImage: `url(${IMAGES.storyBanner})`,
+								backgroundSize: "cover",
+								backgroundPositionY: "center",
+								backgroundPositionX: "center",
+							}}
+							h200
+							roundedLg
+							flex
+							px50
+							onClick={handleClickReadStory}
+							cursorPointer
+						>
+							<Div flex flexCol justifyCenter>
+								<Div textWhite fontSize18>
+									How did the weird journey begin?
+									<br/>Once upon a time...{/* Becoming WEirD isn&apos;t easy.. <br />
+									It requires courage. It&apos;s something to be proud of. */}
 								</Div>
-								<Div
-									flex
-									itemsCenter
-									absolute
-									wFull
-									hFull
-									top0
-									left0
-									clx={"group transition hover:bg-primary-light hover:transition-all hover:hard-shadow"}
-									roundedLg
-								>
+								<Div flex mt10>
 									<Div
-										textSecondary2
-										balooR
+										clx={"group transition hover:bg-primary-light"}
+										bgPrimary
+										roundedFull
 										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
+										py8
+										fontSize20
+										textWhite
+										borderBlack
+										border2
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 									>
-										{wording.index.InDigitlaWorld.rebirth[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg>
-								Weird<br></br>Wine
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.weirdWine}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InDigitlaWorld.weirdwine[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
-								Collection
-							</Div>
-						</Div>
-						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
-							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
-								BetterWorld
-							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								Pioneer
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.pioneer}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InDigitlaWorld.pioneer[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								WeBe<br></br>DAO
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.socializetoEarn}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webedao[locale]}
+										READ THE STORY
 									</Div>
 								</Div>
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
-						<Div textCenter textSecondary fontSize52 data-aos="fade-up">
-							Physical
-							<Div spanTag textWhite>
-								{" "}
-								Journey{" "}
-							</Div>
-						</Div>
-						<Div flex justifyCenter itemsCenter mt40 textSecondary2 fontSize28 gapX={30} data-aos="fade-up">
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								Weird Goods
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex2></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.webeGoods}></Div>
-									</Div>
+						<Div flex gapX={20} justifyCenter itemsCenter data-aos="fade-up">
+							<Div w250 imgTag src={IMAGES.bwpreview2}></Div>
+							<Div w250 imgTag src={IMAGES.bwpreview}></Div>
+							<Div ml50 textCenter textWhite maxW={550} fontSize52>
+								<Div spanTag textSecondary>
+									Be Weird to Earn
+								</Div><br/>in BetterWorld
+								<Div fontSize18 balooR mt20>
+								{wording.index.BetterWorld[locale]}
 								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
+								<Div flex justifyCenter mt30>
 									<Div
-										textSecondary2
-										balooR
+										clx={"group transition hover:bg-primary-light"}
+										bgSecondary
+										roundedFull
 										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webegoods[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								Weird Partners
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex2></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.webePartners}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.webepartners[locale]}
-									</Div>
-								</Div>
-							</Div>
-							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
-								Brand
-							</Div>
-						</Div>
-						<Div flex justifyCenter itemsCenter mt30 textSecondary2 fontSize28 gap={30} data-aos="fade-up">
-							<Div flex1 flex textSecondary2 fontSize40 itemsCenter justifyCenter>
-								Community
-							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								Weird<br></br>IRL
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.weirdIRL}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.weirdirl[locale]}
-									</Div>{" "}
-								</Div>
-							</Div>
-							<Div relative flex1 h200 shadowMd bgPrimaryLight p40 roundedLg overflowHidden>
-								Weird<br></br>Project
-								<Div absolute top0 left0 wFull hFull flex itemsEnd>
-									<Div flex1></Div>
-									<Div flex1>
-										<Div imgTag src={IMAGES.journeyIcons.weirdProjects}></Div>
-									</Div>
-								</Div>
-								<Div flex itemsCenter absolute wFull hFull top0 left0 clx={"group transition hover:bg-primary-light hover:transition-all"} roundedLg>
-									<Div
-										textSecondary2
-										balooR
-										px30
-										fontSize={"0.95vw"}
-										clx={"opacity-0 transition group-hover:transition-all group-hover:translate-y-10 group-hover:opacity-100 "}
-									>
-										{wording.index.InRealWorld.weirdprojects[locale]}
+										py8
+										fontSize23
+										textWhite
+										borderBlack
+										border2
+										aTag
+										href={"https://www.betterworldapp.io"}
+										cursorPointer
+										flex
+										gapX={10}
+										itemsCenter
+										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
+									>	
+										<FaLocationArrow></FaLocationArrow>
+										<Div> Go to BetterWorld</Div>
 									</Div>
 								</Div>
 							</Div>
 						</Div>
+
 						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
 							Partnered with{" "}
@@ -1068,11 +691,11 @@ const Title = ({ mintingStep, whitelisted, totalSupply, amountMinted, balance })
 		}
 		return (
 			<Div spanTag>
-				The first WeBe OG has sold out. Enter{" "}
+				The first WeBe OG has sold out. {" "}
 				<Div spanTag textPrimary>
-					Discord{" "}
+					Apply now{" "}
 				</Div>
-				to apply to get on the next OG!
+					to be the 2nd OG!
 			</Div>
 		);
 	} else if (mintingStep == MintingStep.Whitelist2) {
@@ -1382,7 +1005,8 @@ const CallToAction = ({ mintingStep, whitelisted, totalSupply, amountMinted, bal
 					textWhite
 					borderBlack
 					border2
-					onClick={handleClickDiscord}
+					aTag
+					href={"https://ov0lo4k3pio.typeform.com/to/X2mrqgWB"}
 					cursorPointer
 					flex
 					gapX={10}
@@ -1390,7 +1014,7 @@ const CallToAction = ({ mintingStep, whitelisted, totalSupply, amountMinted, bal
 					style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
 				>
 					<FaDiscord size={30} />
-					<Div>ENTER DISCORD</Div>
+					<Div>Apply for 2nd OG</Div>
 				</Div>
 			</Div>
 		);

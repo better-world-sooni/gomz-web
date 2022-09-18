@@ -4,6 +4,16 @@ import { IMAGES } from "src/modules/images";
 
 export const wording = {
 	index: {
+		BetterWorld: {
+			en: (
+				<></>
+			),
+			ko: (
+				<>BetterWorld 앱은 위비 커뮤니티원 모두가 자유롭게 자신의 색을 표현하고 활동할 수 있는 PFP NFT 전용 소셜앱입니다. 이 곳에서 내가 보유한 PFP NFT는 나의 유일무이한 Web 3.0 세계 정체성이 됩니다.
+				<br/>
+				<Div py10/>위비 홀더들은 이 곳에서 본인만의 정체성을 구축하여 자신이 현실 세계에서 못 다 이룬 꿈을 꾸고, 못다한 이야기 등을 자유롭게 표출하는 등 진정한 BetterWorld를 만드는 다양한 활동을 하며 보상을 얻을 수 있습니다.</>
+			)
+		},
 		InDigitlaWorld: {
 			rebirth: {
 				en: (
@@ -426,22 +436,9 @@ export const wording = {
 			value: {
 				ko: (
 					<Div textSecondary2>
-						8,888마리의 위비는 독창적인 문화를 전합니다. 가끔은 좀 특이해보이는 우리는 정확히 이상하진 않지만, 대다수와 조금 다를 수 있습니다. 어느
-						순간부터 사람들은, 특히 2030 세대 청년들은 꿈을 모색하고 쫓기보다 현실에 타협하며 살아가고 있습니다. 그저 좋은 학교를 진학하고, 안정된
-						직장에 취업해야 한다는 사회의 외침에 대답하며 하루하루 숨가쁘게 살아가고있습니다. 위비는 묻습니다. “여러분의 진정한 꿈은 무엇인가요?
-						무엇을 할 때 가장 행복한가요?” 위비는 보편적인 사회구조에 도전하고 이들만의 문화를 개척하기 위해 나타났습니다. 그리고 우리의 가치가 더
-						넓은 차원의 지식과 혁신을 만들어낼 것이라고 믿습니다.
-						<br />
-						<br />
-						이런 위비의 여정은{" "}
-						<Div spanTag textSecondary>
-							2022년 7월 28일
-						</Div>{" "}
-						첫 88명의 OG 홀더들의 민팅을 시작으로 여름의 끝자락에 8,888 NFT까지 확장될 예정입니다. 위비 홀더들은 다가오는 위비의{" "}
-						<Div spanTag textSecondary>
-							이상한
-						</Div>{" "}
-						서비스와 경험들을 함께하게 됩니다.
+						우리 모두 저마다의 색을 가지고 태어난다. 하지만 학교는 몇 살에 졸업하고, 직장은 어떤 곳을 다니며, 결혼은 어떤 나이에 해야한다와 같은 사회의 외침에 대답하다 문득 주위를 둘러보면 되려 자신의 색을 표현하는 사람들이 이상하게 여겨지곤한다. 하지만 위비는 그런 이상함을 사랑하는 NFT 커뮤니티다.
+<Div pt1></Div><br></br>그리고 위비는 이런 이상함이 환영되는 더 나은 세상(BetterWorld)을 원한다. 우리는 함께 BetterWorld를 만들고, 이 곳에서 나만의 이상한 정체성을 찾아간다.
+Will you join our journey?
 					</Div>
 				),
 				en: (
@@ -474,11 +471,11 @@ export const wording = {
 		},
 		question: {
 			q1: {
-				ko: <>왜 8,888인가요?</>,
+				ko: <>PFP 갯수는 왜 8,888 인가요?</>,
 				en: <>Why 8,888?</>,
 			},
 			q2: {
-				ko: <>왜 Klaytn인가요?</>,
+				ko: <>커뮤니티 활동은 앱활동만 있나요?</>,
 				en: <>Why Klaytn?</>,
 			},
 			q3: {
@@ -490,12 +487,8 @@ export const wording = {
 				en: <>How to mint?</>,
 			},
 			q5: {
-				ko: <>로드맵은 어디서 확인할 수 있나요?</>,
+				ko: <>BetterWorld 앱에서 활동하며 받는 보상이 정확히 무엇인가요?</>,
 				en: <>How can I check WeBe Roadmap?</>,
-			},
-			q6: {
-				ko: <>위비의 주 활동 공간은 어디인가요?</>,
-				en: <>Where are all the WeBes?</>,
 			},
 		},
 		answer: {
@@ -517,8 +510,7 @@ export const wording = {
 			q2: {
 				ko: (
 					<>
-						국내에서 &apos;NFT 대중화&apos;라는 목표를 가지고 있는 위비는 1) 낮은 가스비 2) 높은 처리량 및 속도 [Klaytn: 4,000 TPS vs. 이더리움: 15
-						TPS] 그리고 3) 같은 체인 내 유연한 서비스 호환성을 고려하였을 때 Klaytn의 국내에서 전망을 긍정적으로 판단하였습니다.
+						아닙니다. 위비의 비전은 현실과 가상세계를 불문하고 BetterWorld를 만드는 것입니다. To earn 체계가 있는 주 활동은 BetterWorld 앱 활동이 맞으나, 2022년 8월에 개최된 weird party와 같이 위비의 신념과 커뮤니티원들의 의견에 따른 다양한 활동/행사들을 함께할 예정입니다.
 					</>
 				),
 				en: (
@@ -535,8 +527,7 @@ export const wording = {
 			q4: {
 				ko: (
 					<>
-						위비의 민팅 방식은 비공개와 공개 세일 두가지로 나뉘어져있습니다. 비공개 세일의 경우 모집 기간 동안 짧은 지원서를 작성하여야합니다. 첫 OG
-						모집은 7월 10일부터 시작됩니다. 자세한 사항은 디스코드를 참고해주세요.
+						위비의 민팅 방식은 비공개와 공개 세일 두가지로 나뉘어져있습니다. 곧 비공개 2nd OG 민팅이 시작됩니다. 자세한 사항은 디스코드를 통해 공지될 예정입니다.
 					</>
 				),
 				en: (
@@ -550,16 +541,7 @@ export const wording = {
 			q5: {
 				ko: (
 					<Div>
-						상단바에 위치한 Public Docs 속 위비의{" "}
-						<Div
-							underline
-							aTag
-							href={"https://www.notion.so/soonilabs/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0#00bb93a8f2b74c8b8f16137156b792aa"}
-							spanTag
-						>
-							여정
-						</Div>
-						을 참고해주세요.
+						현재 앱 내 활동에 의한 보상의 방식과 종류에 대하여 논의 중에 있습니다. Klaytn 토큰이 가장 유력할 것으로 예상되며, 정확한 활동 내용과 보상 체계에 관하여 곧 디스코드를 통해 공지될 예정입니다.
 					</Div>
 				),
 				en: (
@@ -574,26 +556,6 @@ export const wording = {
 							JOURNEY
 						</Div>{" "}
 						via Public Docs.
-					</Div>
-				),
-			},
-			q6: {
-				ko: (
-					<Div>
-						위비는{" "}
-						<Div underline aTag href={""}>
-							BetterWorld 앱
-						</Div>
-						에서 소통하고 활동합니다. 트위터, 인스타그램, 디스코드는 외부인들과 교감하기 위해 존재하는 징검다리랍니다!{" "}
-					</Div>
-				),
-				en: (
-					<Div>
-						WeBe communicates and participates in{" "}
-						<Div underline aTag href={""}>
-							BetterWorld App
-						</Div>
-						. Twitter, Instagram, and Discord are bridges to interact with other space wanderers outside!
 					</Div>
 				),
 			},

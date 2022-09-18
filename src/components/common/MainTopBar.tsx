@@ -59,7 +59,8 @@ function MainTopBar({ absolute = false }) {
 				{clicked && (
 					<Div absolute z20 top0 wFull hScreen style={{ background: COLORS.SECONDARY, backdropFilter: "blur(20px)" }}>
 						<Div mt100 mx15 textSecondary2 fontSize24>
-							<Div
+						<Div
+								mt20
 								flex
 								px30
 								py10
@@ -70,9 +71,10 @@ function MainTopBar({ absolute = false }) {
 								itemsCenter
 								cursorPointer
 								aTag
-								href={"https://soonilabs.notion.site/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0"}
+								href={"https://discord.com/invite/7tV3WxWf8p"}
 							>
-								<Div mr18>Public Docs</Div>
+								<Div mr18>Discord</Div>
+								<FaDiscord size={20} />
 							</Div>
 							<Div
 								mt20
@@ -91,23 +93,6 @@ function MainTopBar({ absolute = false }) {
 							>
 								<Div mr18>BetterWorld</Div>
 								<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
-							</Div>
-							<Div
-								mt20
-								flex
-								px30
-								py10
-								border2
-								borderSecondary2
-								bgSecondary
-								roundedLg
-								itemsCenter
-								cursorPointer
-								aTag
-								href={"https://discord.com/invite/7tV3WxWf8p"}
-							>
-								<Div mr18>Discord</Div>
-								<FaDiscord size={20} />
 							</Div>
 							<Div
 								mt20
@@ -145,7 +130,7 @@ function MainTopBar({ absolute = false }) {
 							</Div>
 						</Div>
 						<Div flex justifyCenter mt20 mx15>
-							<Div
+							{/* <Div
 								flex1
 								flex
 								justifyCenter
@@ -171,7 +156,7 @@ function MainTopBar({ absolute = false }) {
 								onClick={() => reloadWithLocale(LOCALES.EN)}
 							>
 								ENGLISH
-							</Div>
+							</Div> */}
 						</Div>
 					</Div>
 				)}
@@ -192,7 +177,33 @@ function MainTopBar({ absolute = false }) {
 				</Div>
 				<Div flex1></Div>
 				<Div flex flexRow itemsCenter>
+					{balance > 0 && (
+						<Div mr10 textSecondary2 cursorPointer onClick={handleClickCheckOnMyWebes}>
+							<Div roundedFull py4 pr10 fontSize12 trackingWidest clx={"group transition hover:text-primary-light"}>
+								MY WEBES
+							</Div>
+						</Div>
+					)}
 					<Div
+						mr10
+						textSecondary2
+						clx={"group transition hover:text-primary-light"}
+						cursorPointer
+						aTag
+						href={"https://discord.com/invite/7tV3WxWf8p"}
+					>
+						<FaDiscord size={30} />
+					</Div>
+					<Div mx10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""} onClick={handleClickBetterWorld}>
+						<Div imgTag src={IMAGES.logos.betterWorld} h25 wAuto></Div>
+					</Div>
+					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/webe_weirdbears"}>
+						<FaTwitter size={25} />
+					</Div>
+					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://instagram.com/weirdbears"}>
+						<FaInstagram size={25} />
+					</Div>
+					{/* <Div
 						mx10
 						textSm
 						textPrimary={locale == LOCALES.KO}
@@ -216,71 +227,6 @@ function MainTopBar({ absolute = false }) {
 						onClick={() => reloadWithLocale(LOCALES.EN)}
 					>
 						ENG
-					</Div>
-					<Div mx10 textSecondary2 cursorPointer aTag href={"https://soonilabs.notion.site/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0"}>
-						<Div roundedFull py4 px10 fontSize12 trackingWidest clx={"group transition hover:text-primary-light"}>
-							PUBLIC DOCS
-						</Div>
-					</Div>
-					{balance > 0 && (
-						<Div mr10 textSecondary2 cursorPointer onClick={handleClickCheckOnMyWebes}>
-							<Div roundedFull py4 pr10 fontSize12 trackingWidest clx={"group transition hover:text-primary-light"}>
-								MY WEBES
-							</Div>
-						</Div>
-					)}
-					<Div mr10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""} onClick={handleClickBetterWorld}>
-						<Div imgTag src={IMAGES.logos.betterWorld} h25 wAuto></Div>
-					</Div>
-					<Div
-						mx10
-						textSecondary2
-						clx={"group transition hover:text-primary-light"}
-						cursorPointer
-						aTag
-						href={"https://discord.com/invite/7tV3WxWf8p"}
-					>
-						<FaDiscord size={30} />
-					</Div>
-					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/webe_weirdbears"}>
-						<FaTwitter size={25} />
-					</Div>
-					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://instagram.com/weirdbears"}>
-						<FaInstagram size={25} />
-					</Div>
-					{/* <Div ml10 textPrimary cursorPointer>
-						{kaikas?.selectedAddress ? (
-							<Div
-								roundedFull
-								bgSecondary2
-								py4
-								px18
-								fontSize12
-								trackingWidest
-								borderBlack
-								border1
-								clx={"group transition hover:bg-primary-light"}
-								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-							>
-								{truncateKlaytnAddress(kaikas.selectedAddress)}
-							</Div>
-						) : (
-							<Div
-								roundedFull
-								bgSecondary2
-								py4
-								px18
-								fontSize12
-								trackingWidest
-								borderBlack
-								border1
-								onClick={connectWallet}
-								clx={"group transition hover:bg-primary-light"}
-								style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-							>
-								CONNECT WALLET
-							</Div>
-						)}
 					</Div> */}
 				</Div>
 			</Div>

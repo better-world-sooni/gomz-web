@@ -2,10 +2,6 @@ import { wording } from "src/wording/wording";
 
 export const faqs = (locale) => [
     {
-        question: wording.faq.question.q1[locale],
-        answer: wording.faq.answer.q1[locale],
-    },
-    {
         question: wording.faq.question.q2[locale],
         answer: wording.faq.answer.q2[locale],
     },
@@ -23,7 +19,7 @@ export const faqs = (locale) => [
         answer: wording.faq.answer.q5[locale],
     },
     {
-        question: wording.faq.question.q6[locale],
-        answer: wording.faq.answer.q6[locale],
+        question: wording.faq.question.q1[locale],
+        answer: wording.faq.answer.q1[locale],
     },
 ];
