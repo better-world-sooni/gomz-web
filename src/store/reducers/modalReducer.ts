@@ -22,7 +22,7 @@ export const MINTING_MODAL = 'modal/MINTING_MODAL' as const
 export const ALERT_MODAL = 'modal/ALERT_MODAL' as const
 export const INVITE_MODAL = 'modal/INVITE_MODAL' as const
 export const REBIRTH_MODAL = 'modal/REBIRTH_MODAL' as const
-export const BETTER_WORLD_MODAL = 'modal/BETTER_WORLD_MOAL' as const
+export const BETTER_WORLD_MODAL = 'modal/BETTER_WORLD_MODAL' as const
 
 // action function
 export const mintingModalAction = ({enabled}) => ({ type: MINTING_MODAL, enabled })
