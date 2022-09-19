@@ -1,9 +1,9 @@
 export const urls = {
     index: '/',
-    home: {
-        index: '/home'
+    story: {
+        index: '/story'
     },
-    mint: {
-        index: '/mint'
+    'my-webes': {
+        index: '/my-webes'
     }
 }

@@ -17,6 +17,7 @@ const basicColors = {
   },
   secondary: '#8798E9',
   secondary2: '#DAE2FF',
+  tertiary: '#C2CFFF',
   transparent: 'transparent',
   current: 'currentColor',
   gray: {
@@ -52,33 +53,6 @@ const basicColors = {
   white: '#ffffff',
   danger: { DEFAULT: '#ff3051', light: 'rgba(255, 48, 81, 0.1)' },
   info: { DEFAULT: '#2a97ff', light: 'rgba(42, 151, 255, 0.1)' },
-}
-
-const teensColors = {
-  primary: { DEFAULT: 'rgb(174, 86, 28)', light: '#dbebff' },
-  secondary: '#317CD9',
-  secondary2: '#105DBB',
-  transparent: 'transparent',
-  current: 'currentColor',
-  gray: {
-    DEFAULT: 'rgb(142, 142, 147)',
-    100: 'rgb(242, 242, 247)',
-    200: 'rgb(209, 209, 214)',
-    300: 'rgb(174, 174, 178)',
-    400: 'rgb(142, 142, 147)',
-    500: 'rgb(99, 99, 102)',
-    600: 'rgb(58, 58, 60)',
-    700: 'rgb(28, 28, 30)',
-  },
-  success: { DEFAULT: '#3ACABB', light: '#d8f4f1' },
-  warning: { DEFAULT: '#F6D34A', light: '#f5edd0'},
-  black: {
-    DEFAULT: '#1b1b1b',
-    overlay: 'rgba(0, 0, 0, 0.7)',
-  },
-  white: '#ffffff',
-  danger: { DEFAULT: '#FA5C5C', light: '#FFD2D2' },
-  info: { DEFAULT: '#B774EC', light: '#F5E5FF' },
 }
 
 module.exports = {
@@ -117,9 +91,7 @@ module.exports = {
       xld: { max: em(1279) },
       xl: em(1280),
     },
-
-    // 2021 DESIGN SYSTEM
-    colors: process.env.CONF_IS_TEENS == 'true' ? teensColors : basicColors,
+    colors: basicColors,
     fontFamily: {
       sans: ['Noto Sans KR', 'sans-serif'], //.font-sans
       serif: ['Droid serif', 'Georgia', 'serif'], //.font-serif

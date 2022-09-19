@@ -5,6 +5,7 @@ text-primary-teens
 text-primary-teensLight
 text-secondary
 text-secondary2
+text-tertiary
 text-transparent
 text-current
 text-gray-100

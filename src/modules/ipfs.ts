@@ -1,0 +1,1 @@
+export const GATEWAY_PREFIX = "https://betterworld.mypinata.cloud/ipfs"

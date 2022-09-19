@@ -1,66 +1,50 @@
-// https://nerdcave.com/tailwind-cheat-sheet
-// 스타일링은 prop을 우선적으로 사용해주시고 → 없을 경우에만 clx 사용 해주세요
-
-// *************
-// -----사용법----
-// *************
-
-// clx="class class class"
-// px={number}
-// py={number}
-// h32 w32 px10 py10
-// fontSize14 fontSize={14}
-// wFull, hFull, wScreen, hScreen
-// cond={[ isSthTrue && 'class']}
-// md="class" ==> screen md 이상일 때에만 적용(md:class)
-
-import React from 'react'
-import classNames from 'classnames'
-import _ from 'lodash'
-import type { DivPropsType } from 'src/types/DivPropsType'
-import ReactTooltip from 'react-tooltip'
-import randomstring from 'randomstring'
-import { COLORS } from 'src/modules/constants'
+import React from "react";
+import classNames from "classnames";
+import _, { max } from "lodash";
+import type { DivPropsType } from "src/types/DivPropsType";
+import ReactTooltip from "react-tooltip";
+import randomstring from "randomstring";
+import { COLORS } from "src/modules/colors";
 
 const addToClxs = (clxs, obj, breakpoints?) => {
-  if (obj) {
-    const list = classNames(obj)
-      .split(' ')
-      .map((clx) => {
-        return breakpoints ? `${breakpoints}:${clx}` : clx
-      })
-    clxs.push(list.join(' '))
-  }
-}
+	if (obj) {
+		const list = classNames(obj)
+			.split(" ")
+			.map((clx) => {
+				return breakpoints ? `${breakpoints}:${clx}` : clx;
+			});
+		clxs.push(list.join(" "));
+	}
+};
 
 const addStyle = (styles, v, obj) => {
-  if (_.isNumber(v) || _.isString(v)) styles.push(obj)
-}
+	if (_.isNumber(v) || _.isString(v)) styles.push(obj);
+};
 
 const addByPrefix = (props, styles, key, prefix, styleObj) => {
-  if (!_.startsWith(key, prefix)) return false
-  const postStr = key.substring(prefix.length)
-  if (_.isEmpty(postStr)) return false
-  const n = _.toNumber(postStr)
-  if (_.isNaN(n)) return false
-  if (props[key]) {
-    styles.push(_.isFunction(styleObj) ? styleObj(n) : styleObj)
-    return true
-  } else {
-    return false
-  }
-}
+	if (!_.startsWith(key, prefix)) return false;
+	const postStr = key.substring(prefix.length);
+	if (_.isEmpty(postStr)) return false;
+	const n = _.toNumber(postStr);
+	if (_.isNaN(n)) return false;
+	if (props[key]) {
+		styles.push(_.isFunction(styleObj) ? styleObj(n) : styleObj);
+		return true;
+	} else {
+		return false;
+	}
+};
 
 const pixelOrValue = (v) => {
-  if (_.isNumber(v)) return `${v}px`
-  if (_.isFunction(v)) return v()
-  return v
-}
+	if (_.isNumber(v)) return `${v}px`;
+	if (_.isFunction(v)) return v();
+	return v;
+};
 
 const propsToClx = (props) => {
-  const clxs = []
-  const styles = []
-  const map = {
+	const clxs = [];
+	const styles = [];
+	const map = {
 		// basic
 		clx: (v) => addToClxs(clxs, v),
 		cond: (v) => addToClxs(clxs, v),
@@ -421,12 +405,10 @@ const propsToClx = (props) => {
 		textOpacity75: () => clxs.push("text-opacity-75"),
 		textOpacity80: () => clxs.push("text-opacity-80"),
 		//font-family
-		moonget: (v) => addStyle(styles, "", { fontFamily: "MOONGET" }),
-		bungee: (v) => addStyle(styles, "", { fontFamily: "Bungee" }),
-		notoSans: (v) => addStyle(styles, "", {fontFamily: "Noto Sans"}),
-		overMono: (v) => addStyle(styles, "", {fontFamily: "OverpassMono"}),
-		balooB: (v) => addStyle(styles, "", {fontFamily: "BalooBhaijaan"}),
-		balooR: (v) => addStyle(styles, "", {fontFamily: "Baloo"}),
+		notoSans: (v) => addStyle(styles, "", { fontFamily: "Noto Sans" }),
+		overMono: (v) => addStyle(styles, "", { fontFamily: "OverpassMono" }),
+		balooB: (v) => addStyle(styles, "", { fontFamily: "BalooBhaijaan" }),
+		balooR: (v) => addStyle(styles, "", { fontFamily: "Baloo" }),
 
 		// font-smoothing
 		antialiased: () => clxs.push("antialiased"),
@@ -682,6 +664,7 @@ const propsToClx = (props) => {
 		borderDanger: () => clxs.push("border-danger"),
 		borderWarning: () => clxs.push("border-warning"),
 		borderSuccess: () => clxs.push("border-success"),
+		borderSecondary: () => clxs.push("border-secondary"),
 		borderSecondary2: () => clxs.push("border-secondary2"),
 		borderGray100: () => clxs.push("border-gray-100"),
 		borderGray200: () => clxs.push("border-gray-200"),
@@ -1046,6 +1029,7 @@ const propsToClx = (props) => {
 		bgPrimaryLight: () => clxs.push("bg-primary-light"),
 		bgSecondary: () => clxs.push("bg-secondary"),
 		bgSecondary2: () => clxs.push("bg-secondary2"),
+		bgTertiary: () => clxs.push("bg-tertiary"),
 		bgInfo: () => clxs.push("bg-info"),
 		bgInfoLight: () => clxs.push("bg-info-light"),
 		bgSuccess: () => clxs.push("bg-success"),
@@ -1261,198 +1245,187 @@ const propsToClx = (props) => {
 		}
 		others[key] = prop;
 	}
-  others['style'] = styles.reduce((acc, styl) => _.merge(acc, styl), {})
-  others['className'] = classNames(clxs)
-  return others
-}
+	others["style"] = styles.reduce((acc, styl) => _.merge(acc, styl), {});
+	others["className"] = classNames(clxs);
+	return others;
+};
 
 const getActivePropsAndStyle = (props) => {
-  if (!props) return [{}, {}]
-  const { isActive, children, clxComp, style, ...others } = props
-  if (_.has(props, 'isActive')) {
-    return isActive ? [others, style] : [{}, {}]
-  }
-  return [others, style]
-}
+	if (!props) return [{}, {}];
+	const { isActive, children, clxComp, style, ...others } = props;
+	if (_.has(props, "isActive")) {
+		return isActive ? [others, style] : [{}, {}];
+	}
+	return [others, style];
+};
 
 const mergedPropsFromClxComp = (props) => {
-  const { clxComp, ...others } = props
-  const mergedProps = { ...others }
-  const mergedStyles = _.isArray(others.style) ? others.style : [others.style]
-  if (clxComp) {
-    const clxComps = _.isArray(clxComp) ? clxComp : [clxComp]
-    clxComps.map((comp) => {
-      if (comp && comp.props) {
-        const [activeProps, activeStyle] = getActivePropsAndStyle(comp.props)
-        Object.assign(mergedProps, activeProps)
-        mergedStyles.push(...(_.isArray(activeStyle) ? activeStyle : [activeStyle]))
-      }
-    })
-  }
-  mergedProps.style = mergedStyles
-  return mergedProps
-}
+	const { clxComp, ...others } = props;
+	const mergedProps = { ...others };
+	const mergedStyles = _.isArray(others.style) ? others.style : [others.style];
+	if (clxComp) {
+		const clxComps = _.isArray(clxComp) ? clxComp : [clxComp];
+		clxComps.map((comp) => {
+			if (comp && comp.props) {
+				const [activeProps, activeStyle] = getActivePropsAndStyle(comp.props);
+				Object.assign(mergedProps, activeProps);
+				mergedStyles.push(...(_.isArray(activeStyle) ? activeStyle : [activeStyle]));
+			}
+		});
+	}
+	mergedProps.style = mergedStyles;
+	return mergedProps;
+};
 
 const Div: React.ComponentType<DivPropsType> = React.forwardRef((props: DivPropsType, ref: any) => {
-  const {
-    tag,
-    h1Tag,
-    h2Tag,
-    h3Tag,
-    h4Tag,
-    h5Tag,
-    pTag,
-    ulTag,
-    olTag,
-    liTag,
-    spanTag,
-    footerTag,
-    sectionTag,
-    aTag,
-    imgTag,
-    hrTag,
-    buttonTag,
-    children,
-    ...others
-  } = props
-  const mergedProps = mergedPropsFromClxComp(others)
-  const propsToPass = propsToClx(mergedProps)
-  let htmlTag = 'div'
-  if (h1Tag) htmlTag = 'h1'
-  if (h2Tag) htmlTag = 'h2'
-  if (h3Tag) htmlTag = 'h3'
-  if (h4Tag) htmlTag = 'h4'
-  if (h5Tag) htmlTag = 'h5'
-  if (pTag) htmlTag = 'p'
-  if (ulTag) htmlTag = 'ul'
-  if (olTag) htmlTag = 'ol'
-  if (liTag) htmlTag = 'li'
-  if (spanTag) htmlTag = 'span'
-  if (footerTag) htmlTag = 'footer'
-  if (sectionTag) htmlTag = 'section'
-  if (aTag) htmlTag = 'a'
-  if (imgTag) htmlTag = 'img'
-  if (hrTag) htmlTag = 'hr'
-  if (buttonTag) htmlTag = 'button'
+	const {
+		tag,
+		h1Tag,
+		h2Tag,
+		h3Tag,
+		h4Tag,
+		h5Tag,
+		pTag,
+		ulTag,
+		olTag,
+		liTag,
+		spanTag,
+		footerTag,
+		sectionTag,
+		aTag,
+		imgTag,
+		hrTag,
+		buttonTag,
+		children,
+		...others
+	} = props;
+	const mergedProps = mergedPropsFromClxComp(others);
+	const propsToPass = propsToClx(mergedProps);
+	let htmlTag = "div";
+	if (h1Tag) htmlTag = "h1";
+	if (h2Tag) htmlTag = "h2";
+	if (h3Tag) htmlTag = "h3";
+	if (h4Tag) htmlTag = "h4";
+	if (h5Tag) htmlTag = "h5";
+	if (pTag) htmlTag = "p";
+	if (ulTag) htmlTag = "ul";
+	if (olTag) htmlTag = "ol";
+	if (liTag) htmlTag = "li";
+	if (spanTag) htmlTag = "span";
+	if (footerTag) htmlTag = "footer";
+	if (sectionTag) htmlTag = "section";
+	if (aTag) htmlTag = "a";
+	if (imgTag) htmlTag = "img";
+	if (hrTag) htmlTag = "hr";
+	if (buttonTag) htmlTag = "button";
 
-  if (htmlTag == 'h1')
-    return (
-      <h1 {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </h1>
-    )
-  if (htmlTag == 'h2')
-    return (
-      <h2 {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </h2>
-    )
-  if (htmlTag == 'h3')
-    return (
-      <h3 {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </h3>
-    )
-  if (htmlTag == 'h4')
-    return (
-      <h4 {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </h4>
-    )
-  if (htmlTag == 'h5')
-    return (
-      <h5 {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </h5>
-    )
-  if (htmlTag == 'p')
-    return (
-      <p {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </p>
-    )
-  if (htmlTag == 'ul')
-    return (
-      <ul {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </ul>
-    )
-  if (htmlTag == 'li')
-    return (
-      <li {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </li>
-    )
-  if (htmlTag == 'span')
-    return (
-      <span {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </span>
-    )
-  if (htmlTag == 'section')
-    return (
-      <section {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </section>
-    )
-  if (htmlTag == 'footer')
-    return (
-      <footer {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </footer>
-    )
-  if (htmlTag == 'a')
-    return (
-      <a {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </a>
-    )
-  // @ts-ignore
-  if (htmlTag == 'img') return <img {...(ref && { ref })} {...propsToPass} />
-  if (htmlTag == 'hr') return <hr {...(ref && { ref })} {...propsToPass} />
-  if (htmlTag == 'button')
-    return (
-      <button {...(ref && { ref })} {...propsToPass}>
-        {children}
-      </button>
-    )
-  return (
-    <div {...(ref && { ref })} {...propsToPass}>
-      {children}
-    </div>
-  )
-})
+	if (htmlTag == "h1")
+		return (
+			<h1 {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</h1>
+		);
+	if (htmlTag == "h2")
+		return (
+			<h2 {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</h2>
+		);
+	if (htmlTag == "h3")
+		return (
+			<h3 {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</h3>
+		);
+	if (htmlTag == "h4")
+		return (
+			<h4 {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</h4>
+		);
+	if (htmlTag == "h5")
+		return (
+			<h5 {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</h5>
+		);
+	if (htmlTag == "p")
+		return (
+			<p {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</p>
+		);
+	if (htmlTag == "ul")
+		return (
+			<ul {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</ul>
+		);
+	if (htmlTag == "li")
+		return (
+			<li {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</li>
+		);
+	if (htmlTag == "span")
+		return (
+			<span {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</span>
+		);
+	if (htmlTag == "section")
+		return (
+			<section {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</section>
+		);
+	if (htmlTag == "footer")
+		return (
+			<footer {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</footer>
+		);
+	if (htmlTag == "a")
+		return (
+			<a {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</a>
+		);
+	// @ts-ignore
+	if (htmlTag == "img") return <img {...(ref && { ref })} {...propsToPass} />;
+	if (htmlTag == "hr") return <hr {...(ref && { ref })} {...propsToPass} />;
+	if (htmlTag == "button")
+		return (
+			<button {...(ref && { ref })} {...propsToPass}>
+				{children}
+			</button>
+		);
+	return (
+		<div {...(ref && { ref })} {...propsToPass}>
+			{children}
+		</div>
+	);
+});
 
-Div.displayName = 'Div'
+Div.displayName = "Div";
 
 const withTip = (Component) => {
-  const withTipComp = React.forwardRef((props: DivPropsType, ref: any) => {
-    const { dataTip, ...others } = props
-    const dataFor = 'tooltip-' + randomstring.generate(8)
-    return (
-      <>
-        <Component
-          ref={ref}
-          {...others}
-          {...(dataTip && { 'data-for': dataFor })}
-          {...(dataTip && { 'data-tip': dataTip })}
-        />
-        {dataTip && (
-          <ReactTooltip
-            id={dataFor}
-            className="react-tooltip px-8 py-7 text-h6"
-            effect="solid"
-            place="right"
-            backgroundColor={COLORS.SECONDARY}
-          />
-        )}
-      </>
-    )
-  })
+	const withTipComp = React.forwardRef((props: DivPropsType, ref: any) => {
+		const { dataTip, ...others } = props;
+		const dataFor = "tooltip-" + randomstring.generate(8);
+		return (
+			<>
+				<Component ref={ref} {...others} {...(dataTip && { "data-for": dataFor })} {...(dataTip && { "data-tip": dataTip })} />
+				{dataTip && (
+					<ReactTooltip id={dataFor} className="react-tooltip px-8 py-7 text-h6" effect="solid" place="right" backgroundColor={COLORS.SECONDARY} />
+				)}
+			</>
+		);
+	});
 
-  withTipComp.displayName = 'withTip'
+	withTipComp.displayName = "withTip";
 
-  return withTipComp
-}
+	return withTipComp;
+};
 
-export default withTip(Div)
+export default withTip(Div);

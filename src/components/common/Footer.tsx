@@ -1,43 +1,41 @@
-import { useRouter } from "next/router";
-import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { IMAGES } from "src/modules/images";
-import { href } from "src/modules/routeHelper";
+import { href } from "src/helpers/routeHelper";
 import { urls } from "src/modules/urls";
 import Col from "../Col";
 import Div from "../Div";
 import Row from "../Row";
+import useIsTablet from "src/hooks/useIsTablet";
 
-export default function Footer({ index = false }) {
-	const { asPath } = useRouter();
+export default function Footer() {
 	const handleClickGomz = () => {
 		href(urls.index);
 	};
+	const isTablet = useIsTablet();
+
 	return (
-		<Div>
-			<Div mxAuto maxW={!index && 1200} px={index ? 60 : 20} py30 balooR>
-				<Row textWhite itemsCenter>
-					<Col auto clx={"hover:animate-pulse"} p30 onClick={handleClickGomz}>
-						<Div imgTag src={IMAGES.logos.webeIcon} w60 h60></Div>
-					</Col>
-					<Col py20>
-						<Row py5>
-							<Col auto>
-								<Div spanTag>WeBe from </Div>
-								<Div spanTag textSecondary aTag href={"https://soonilabs.com"}>
-									SOONI Labs
-								</Div>
-							</Col>
-							<Col></Col>
-						</Row>
-						<Row textSm>
-							<Col auto>
-								<Div spanTag>COPYRIGHT © WeBe. ALL RIGHTS RESERVED</Div>
-							</Col>
-							<Col></Col>
-						</Row>
-					</Col>
-				</Row>
-			</Div>
+		<Div mxAuto maxW={1150} py30 px30={isTablet}>
+			<Row textWhite itemsCenter>
+				<Col auto onClick={handleClickGomz}>
+					<Div imgTag src={IMAGES.logos.webeLogo} h={isTablet ? 30 : 60}></Div>
+				</Col>
+				<Col py20>
+					<Row py5>
+						<Col auto>
+							<Div spanTag>WeBe from </Div>
+							<Div spanTag textSecondary2 aTag href={"https://soonilabs.com"}>
+								SOONI Labs
+							</Div>
+						</Col>
+						<Col></Col>
+					</Row>
+					<Row textSm>
+						<Col auto>
+							<Div spanTag>COPYRIGHT © WeBe. ALL RIGHTS RESERVED</Div>
+						</Col>
+						<Col></Col>
+					</Row>
+				</Col>
+			</Row>
 		</Div>
 	);
 }

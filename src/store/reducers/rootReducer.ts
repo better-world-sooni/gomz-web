@@ -1,11 +1,13 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import { appReducer } from './appReducer'
-
+import { klaytnReducer } from './klaytnReducer'
+import { modalReducer } from './modalReducer'
 
 export const rootReducer = combineReducers({
-  app: appReducer,
+  modal: modalReducer,
+  klaytn: klaytnReducer
 })
 
 export type RootState = {
-  app: ReturnType<typeof appReducer>
+  modal: ReturnType<typeof modalReducer>
+  klaytn: ReturnType<typeof klaytnReducer>
 }

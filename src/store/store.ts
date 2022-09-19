@@ -23,9 +23,9 @@ const makeStore = (context: Context) => {
   const sagaMiddleware = createSagaMiddleware()
 
   const enhancer =
-    process.env.NODE_ENV === 'production'
-      ? compose(applyMiddleware(sagaMiddleware, ReduxThunk))
-      : composeWithDevTools(applyMiddleware(sagaMiddleware, ReduxThunk))
+    process.env.NODE_ENV === 'development'
+      ? composeWithDevTools(applyMiddleware(sagaMiddleware, ReduxThunk))
+      : compose(applyMiddleware(sagaMiddleware, ReduxThunk))
 
   const store = createStore(reducer, enhancer)
   sagaMiddleware.run(rootSaga)
