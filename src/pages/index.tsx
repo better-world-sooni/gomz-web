@@ -31,6 +31,7 @@ import { mintingModalAction } from "src/store/reducers/modalReducer";
 import { faqs } from "src/modules/faqs";
 import { Faq } from "src/components/Faq";
 import { FaArrowsAlt, FaDirections, FaDiscord, FaLink, FaLocationArrow } from "react-icons/fa";
+import BWappDrafts from "src/components/common/drafts";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -475,8 +476,7 @@ const Index: NextPage = () => {
 						</Div>
 						<EmptyBlock h={160} />
 						<Div flex gapX={20} justifyCenter itemsCenter data-aos="fade-up">
-							<Div w250 imgTag src={IMAGES.bwpreview2}></Div>
-							<Div w250 imgTag src={IMAGES.bwpreview}></Div>
+							<BWappDrafts/>
 							<Div ml50 textCenter textWhite maxW={550} fontSize52>
 								<Div spanTag textSecondary>
 									Be Weird to Earn

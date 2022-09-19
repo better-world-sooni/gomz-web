@@ -35,6 +35,14 @@ const images = {
 	bwpreview: "/images/bwpreview.png",
 	bwpreview2: "/images/bwpreview2.png",
 	webeBetterworld: "/images/webeBetterworld.png",
+	iphon13: "/images/iphone13_pro.png",
+	appDrafts:{
+		draft1:{
+			bwLogo1:"/images/appDrafts/draft1/bwLogo_1.png",
+			bwLogo2:"/images/appDrafts/draft1/bwLogo_2.png",
+			bwWord:"/images/appDrafts/draft1/bwWord.png"
+		}
+	},
 	logos: {
 		discord: "/images/logos/discord.png",
 		twitter: "/images/logos/twitter.png",
