@@ -331,7 +331,10 @@ const Index: NextPage = () => {
 			<Div hScreen bgTertiary px80>
 				<Div flex itemsCenter hFull mxAuto z10 relative>
 					<Div flex itemsCenter>
-						<Div flexCol>
+						<Div right={-80} absolute wFull hFull flex justifyEnd>
+							<Div maxW={"114.4vh"} imgTag src={IMAGES.webeBetterworld}></Div>
+						</Div>
+						<Div relative flexCol>
 						<Div flex justifyCenter>
 							<Div imgTag src={IMAGES.logos.webeLogo} w300></Div>
 						</Div>
@@ -389,7 +392,7 @@ const Index: NextPage = () => {
 							</Div>
 						)}
 						</Div>
-						<Div absolute right={-80} imgTag src={IMAGES.webeBetterworld} hScreen></Div>
+						
 					</Div>
 				</Div>
 			</Div>
