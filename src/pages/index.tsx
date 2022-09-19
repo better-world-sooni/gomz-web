@@ -564,7 +564,7 @@ const Index: NextPage = () => {
 								return (
 									<Div key={index} inlineBlock mx30>
 										<Div flex mt20 maxW500>
-											<Col maxW180 imgTag src={member.imageUri} roundedXl shadowLg></Col>
+											<Col itemsCenter justifyCenter><Div maxH180 imgTag src={member.imageUri} roundedXl shadowLg/></Col>
 											<Col ml30>
 												<Div textSecondary2 textLeft textLg balooB fontBold>
 													{member.name}
