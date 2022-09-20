@@ -88,8 +88,7 @@ function MainTopBar({ absolute = false }) {
 								itemsCenter
 								cursorPointer
 								aTag
-								href={""}
-								onClick={handleClickBetterWorld}
+								href={"https://www.betterworldapp.io"}
 							>
 								<Div mr18>BetterWorld</Div>
 								<Div w20 imgTag src={IMAGES.logos.betterWorld}></Div>
@@ -194,7 +193,7 @@ function MainTopBar({ absolute = false }) {
 					>
 						<FaDiscord size={30} />
 					</Div>
-					<Div mx10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={""} onClick={handleClickBetterWorld}>
+					<Div mx10 clx={"group transition hover:opacity-50"} cursorPointer aTag href={"https://www.betterworldapp.io"}>
 						<Div imgTag src={IMAGES.logos.betterWorld} h25 wAuto></Div>
 					</Div>
 					<Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://twitter.com/webe_weirdbears"}>
