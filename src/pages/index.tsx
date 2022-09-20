@@ -176,9 +176,10 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div flex px30 gapX={20} data-aos="fade-up">
-							<Div maxW={150} imgTag src={IMAGES.bwpreview2}></Div>
-							<Div maxW={150} imgTag src={IMAGES.bwpreview}></Div>
+					<Div wFull flex px30 gapX={20} data-aos="fade-up" itemsCenter justifyCenter>
+							{/* <Div maxW={150} imgTag src={IMAGES.bwpreview2}></Div> */}
+							{/* <Div maxW={150} imgTag src={IMAGES.bwpreview}></Div> */}
+							<BWappDrafts isTablet={isTablet}/>
 					</Div>
 					<EmptyBlock h={30} />
 							<Div px30 textCenter textWhite fontSize36>
@@ -476,7 +477,7 @@ const Index: NextPage = () => {
 						</Div>
 						<EmptyBlock h={160} />
 						<Div flex gapX={20} justifyCenter itemsCenter data-aos="fade-up">
-							<BWappDrafts/>
+							<BWappDrafts isTablet={isTablet}/>
 							<Div ml50 textCenter textWhite maxW={550} fontSize52>
 								<Div spanTag textSecondary>
 									Be Weird to Earn

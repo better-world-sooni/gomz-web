@@ -41,6 +41,17 @@ const images = {
 			bwLogo1:"/images/appDrafts/draft1/bwLogo_1.png",
 			bwLogo2:"/images/appDrafts/draft1/bwLogo_2.png",
 			bwWord:"/images/appDrafts/draft1/bwWord.png"
+		},
+		draft2:{
+			feed:{
+				head:"/images/appDrafts/draft2/feedhead.png",
+				content:"/images/appDrafts/draft2/feedcontent.png",
+			},
+			profile:{
+				head1:"/images/appDrafts/draft2/profilehead1.png",
+				head2:"/images/appDrafts/draft2/profilehead2.png",
+				content:"/images/appDrafts/draft2/profilecontent.png",
+			},
 		}
 	},
 	logos: {
