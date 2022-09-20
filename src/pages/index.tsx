@@ -31,6 +31,8 @@ import { mintingModalAction } from "src/store/reducers/modalReducer";
 import { faqs } from "src/modules/faqs";
 import { Faq } from "src/components/Faq";
 import { FaArrowsAlt, FaDirections, FaDiscord, FaLink, FaLocationArrow } from "react-icons/fa";
+import BWappDrafts from "src/components/common/drafts";
+import ReadStroy from "src/components/common/readstory";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -132,52 +134,13 @@ const Index: NextPage = () => {
 					</Div>
 					<EmptyBlock h={100} />
 					<Div px15>
-						<Div
-							data-aos="fade-up"
-							shadowMd
-							style={{
-								backgroundImage: `url(${IMAGES.storyBannerMobile})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h150
-							roundedLg
-							flex
-							px30
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize14>
-									How did the weird journey begin?
-									<br/>Once upon a time...{/* Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. <br />
-									It&apos;s something to be proud of. */}
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px15
-										py4
-										fontSize13
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ THE STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
+						<ReadStroy isTablet={isTablet} handleClickReadStory={handleClickReadStory}/>
 					</Div>
 					<EmptyBlock h={100} />
-					<Div flex px30 gapX={20} data-aos="fade-up">
-							<Div maxW={150} imgTag src={IMAGES.bwpreview2}></Div>
-							<Div maxW={150} imgTag src={IMAGES.bwpreview}></Div>
+					<Div wFull flex px30 gapX={20} data-aos="fade-up" itemsCenter justifyCenter>
+							{/* <Div maxW={150} imgTag src={IMAGES.bwpreview2}></Div> */}
+							{/* <Div maxW={150} imgTag src={IMAGES.bwpreview}></Div> */}
+							<BWappDrafts isTablet={isTablet}/>
 					</Div>
 					<EmptyBlock h={30} />
 							<Div px30 textCenter textWhite fontSize36>
@@ -433,50 +396,10 @@ const Index: NextPage = () => {
 							</Div>
 						</Div>
 						<EmptyBlock h={160} />
-						<Div
-							data-aos="fade-up"
-							shadowMd
-							style={{
-								backgroundImage: `url(${IMAGES.storyBanner})`,
-								backgroundSize: "cover",
-								backgroundPositionY: "center",
-								backgroundPositionX: "center",
-							}}
-							h200
-							roundedLg
-							flex
-							px50
-							onClick={handleClickReadStory}
-							cursorPointer
-						>
-							<Div flex flexCol justifyCenter>
-								<Div textWhite fontSize18>
-									How did the weird journey begin?
-									<br/>Once upon a time...{/* Becoming WEirD isn&apos;t easy.. <br />
-									It requires courage. It&apos;s something to be proud of. */}
-								</Div>
-								<Div flex mt10>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgPrimary
-										roundedFull
-										px30
-										py8
-										fontSize20
-										textWhite
-										borderBlack
-										border2
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>
-										READ THE STORY
-									</Div>
-								</Div>
-							</Div>
-						</Div>
+						<ReadStroy isTablet={isTablet} handleClickReadStory={handleClickReadStory}/>
 						<EmptyBlock h={160} />
 						<Div flex gapX={20} justifyCenter itemsCenter data-aos="fade-up">
-							<Div w250 imgTag src={IMAGES.bwpreview2}></Div>
-							<Div w250 imgTag src={IMAGES.bwpreview}></Div>
+							<BWappDrafts isTablet={isTablet}/>
 							<Div ml50 textCenter textWhite maxW={550} fontSize52>
 								<Div spanTag textSecondary>
 									Be Weird to Earn
