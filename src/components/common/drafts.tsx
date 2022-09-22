@@ -95,7 +95,7 @@ const SocialDraft = ({iPhoneWidth, isTablet, showTime}) => {
 			},
 			feed: {
 				animate:{
-					y: hover? "-140%":"0%"
+					backgroundPositionY: hover?"100%":"0%"
 				},
 				transition:{
 					duration: time
@@ -112,7 +112,7 @@ const SocialDraft = ({iPhoneWidth, isTablet, showTime}) => {
 				},
 				content: {
 					animate:{
-						y: hover? "-130%":"0%"
+						backgroundPositionY: hover?"100%":"0%"
 					},
 					transition:{
 						duration: time
@@ -135,14 +135,33 @@ const SocialDraft = ({iPhoneWidth, isTablet, showTime}) => {
 		<Draft draft={draft2} onMouseEnter={isTablet ? ()=>setHover2Mobile(true):()=>sethover2(true)} onMouseLeave={!isTablet&&(()=>sethover2(false))} onClick={onClickToChangeContent} iPhoneWidth={iPhoneWidth} content={
 			<Div absolute wFull hFull bgWhite>
 				<>
-					<motion.div animate={draft2.show(changeDraft, true).animate} transition={draft2.show(changeDraft, 0).transition} style={{position:'absolute', width:"100%", height:"100%"}}><motion.div animate={draft2.hover.feed.animate} transition={draft2.hover.feed.transition} style={{position:'absolute', width:"100%", height:"100%"}}><Div wFull imgTag src={IMAGES.appDrafts.draft2.feed.content}></Div></motion.div>
-					<Div absolute wFull imgTag src={IMAGES.appDrafts.draft2.feed.head}></Div></motion.div>
-					<motion.div animate={draft2.show(changeDraft, false).animate} transition={draft2.show(changeDraft, 0).transition} style={{position:'absolute', width:"100%", height:"100%"}}><motion.div animate={draft2.hover.profile.content.animate} transition={draft2.hover.profile.content.transition} style={{position:'absolute', width:"100%", height:"100%"}}><Div wFull imgTag src={IMAGES.appDrafts.draft2.profile.content}></Div></motion.div>
-					<Div absolute wFull imgTag src={IMAGES.appDrafts.draft2.profile.head1}></Div>
-					<motion.div animate={draft2.hover.profile.head.animate} transition={draft2.hover.profile.head.transition} style={{position:'absolute', width:"100%", height:"100%"}}><Div wFull imgTag src={IMAGES.appDrafts.draft2.profile.head2}></Div></motion.div> </motion.div>
+					<motion.div animate={draft2.show(changeDraft, true).animate} transition={draft2.show(changeDraft, 0).transition} style={{position:'absolute', width:"100%", height:"100%"}}>
+						<ContentImage animate={draft2.hover.feed.animate} transition={draft2.hover.feed.transition} src={IMAGES.appDrafts.draft2.feed.content}/>
+						<ContentImage src={IMAGES.appDrafts.draft2.feed.head}/>
+					</motion.div>
+					<motion.div animate={draft2.show(changeDraft, false).animate} transition={draft2.show(changeDraft, 0).transition} style={{position:'absolute', width:"100%", height:"100%"}}>
+						<ContentImage animate={draft2.hover.profile.content.animate} transition={draft2.hover.profile.content.transition} src={IMAGES.appDrafts.draft2.profile.content}/>
+						<ContentImage src={IMAGES.appDrafts.draft2.profile.head1}/>
+						<motion.div animate={draft2.hover.profile.head.animate} transition={draft2.hover.profile.head.transition} style={{position:'absolute', width:"100%", height:"100%"}}>
+							<Div wFull imgTag src={IMAGES.appDrafts.draft2.profile.head2}></Div>
+						</motion.div>
+					</motion.div>
 				</>
 			  </Div>
 		}/>
+	)
+}
+
+const ContentImage = ({animate=null, transition=null, src}) => {
+	return (
+		animate&&transition ?<motion.div animate={animate} transition={transition} style={{
+			position:"absolute",
+            height:"100%",
+            width:"100%",
+            backgroundImage: `url(${src})`,
+            backgroundSize: "cover",
+            backgroundPositionX: "center",
+        }}/> : <Div absolute wFull imgTag src={src}/>
 	)
 }
 
