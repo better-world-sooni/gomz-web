@@ -29,10 +29,14 @@ import { useAddressState } from "src/hooks/klaytn/useAddressState";
 import { useDispatch } from "react-redux";
 import { mintingModalAction } from "src/store/reducers/modalReducer";
 import { faqs } from "src/modules/faqs";
-import { Faq } from "src/components/Faq";
+import FaqList from "src/components/Faq";
 import { FaArrowsAlt, FaDirections, FaDiscord, FaLink, FaLocationArrow } from "react-icons/fa";
 import BWappDrafts from "src/components/common/drafts";
 import ReadStroy from "src/components/common/readstory";
+import UseTimeButton from "src/components/common/useTimeButton";
+import GotoBetterWorldButton from "src/components/common/BetterWorldButton";
+import { motion, LayoutGroup } from "framer-motion";
+import Teams from "src/components/common/team";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -52,7 +56,7 @@ const Index: NextPage = () => {
 	const { whitelisted, amountMinted, balance } = useAddressState({
 		kaikas,
 	});
-
+	const {MotionButton:MotionButtonTimer} = UseTimeButton(true)
 	if (isTablet) {
 		return (
 			<Div relative overflowHidden>
@@ -84,6 +88,7 @@ const Index: NextPage = () => {
 							</Div>
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
+								<MotionButtonTimer>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -105,11 +110,15 @@ const Index: NextPage = () => {
 									<Div imgTag src={IMAGES.twinkle} h20></Div>
 									<Div spanTag>Apply for 2nd OG</Div>
 								</Div>
+								</MotionButtonTimer>
 							</Div>
 						</Div>
 					</Div>
 				</Div>
+				<LayoutGroup>
+				<motion.div layout transition={{duration:0.3}}>
 				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)" }} relative>
+					<motion.div layout transition={{duration:0.3}}>
 					<EmptyBlock h={100} />
 					<Div textWhite fontSize36 leadingNone data-aos="fade-up" px30>
 						We Be
@@ -153,27 +162,7 @@ const Index: NextPage = () => {
 								</Div>
 								<EmptyBlock h={30} />
 								<Div flex justifyCenter mt5>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgSecondary
-										roundedFull
-										px30
-										py8
-										fontSize18
-										textWhite
-										borderBlack
-										border2
-										aTag
-										href={"https://www.betterworldapp.io"}
-										cursorPointer
-										flex
-										gapX={10}
-										itemsCenter
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>	
-										<FaLocationArrow></FaLocationArrow>
-										<Div> Go to BetterWorld</Div>
-									</Div>
+									<GotoBetterWorldButton isTablet={isTablet}/>
 								</Div>
 							</Div>
 					<EmptyBlock h={100} />
@@ -233,35 +222,15 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<Div mt20 data-aos="fade-up">
-						{team(locale).map((member, index) => {
-							return (
-								<Div key={index} inlineBlock>
-									<Div flex mt20 itemsCenter>
-										<Div mx15 w150 imgTag src={member.imageUri} roundedXl shadowLg></Div>
-										<Div flexCol mr15>
-											<Div textSecondary2 textLeft textMd balooB fontBold>
-												{member.name} {"  "}
-												<Div textSecondary2 textLeft fontSize8 balooR italic spanTag>
-													{member.position}
-												</Div>
-											</Div>
-											<Div mt5 textSecondary2 textLeft fontSize10 balooR>
-												{member.specialty}
-											</Div>
-										</Div>
-									</Div>
-								</Div>
-							);
-						})}
+						<Teams team={team} locale={locale} isTablet={isTablet}/>
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 mb30 data-aos="fade-up">
 						FAQs
 					</Div>
+					</motion.div>
 					<Div px30 data-aos="fade-up">
-						{faqs(locale).map(({ question, answer, image }, index) => {
-							return <Faq key={index} question={question} answer={answer} image={image} isTablet={true} />;
-						})}
+						<FaqList locale={locale} faqs={faqs} isTablet={isTablet}/>
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 data-aos="fade-up">
@@ -284,6 +253,8 @@ const Index: NextPage = () => {
 					<EmptyBlock h={100} />
 					<Footer />
 				</Div>
+				</motion.div>
+				</LayoutGroup>
 			</Div>
 		);
 	}
@@ -332,6 +303,7 @@ const Index: NextPage = () => {
 							/>
 						) : (
 							<Div flex justifyCenter>
+								<MotionButtonTimer>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -352,6 +324,7 @@ const Index: NextPage = () => {
 									<Div imgTag src={IMAGES.twinkle} h25></Div>
 									<Div>MINT</Div>
 								</Div>
+								</MotionButtonTimer>
 							</Div>
 						)}
 						</Div>
@@ -359,6 +332,8 @@ const Index: NextPage = () => {
 					</Div>
 				</Div>
 			</Div>
+			<LayoutGroup>
+			<motion.div layout transition={{duration:0.3}}>
 			<Div
 				style={{
 					background: "linear-gradient(180deg,  #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)",
@@ -370,6 +345,7 @@ const Index: NextPage = () => {
 				<Div absolute w280 top400 right50 imgTag src={IMAGES.starDusts4} clx={"animate-pulse"}></Div>
 				<Div px80>
 					<Div maxW={1150} mxAuto>
+						<motion.div layout transition={{duration:0.3}}>
 						<EmptyBlock h={160} />
 						<Div flex gapX={50} itemsCenter data-aos="fade-up">
 							<Div grid gridCols3 gapX={20} gapY={20}>
@@ -408,27 +384,7 @@ const Index: NextPage = () => {
 								{wording.index.BetterWorld[locale]}
 								</Div>
 								<Div flex justifyCenter mt30>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgSecondary
-										roundedFull
-										px30
-										py8
-										fontSize23
-										textWhite
-										borderBlack
-										border2
-										aTag
-										href={"https://www.betterworldapp.io"}
-										cursorPointer
-										flex
-										gapX={10}
-										itemsCenter
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>	
-										<FaLocationArrow></FaLocationArrow>
-										<Div> Go to BetterWorld</Div>
-									</Div>
+								<GotoBetterWorldButton isTablet={isTablet}/>
 								</Div>
 							</Div>
 						</Div>
@@ -485,36 +441,16 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div mt20 data-aos="fade-up" grid gridCols2 gapX={30} gapY={30}>
-							{team(locale).map((member, index) => {
-								return (
-									<Div key={index} inlineBlock mx30>
-										<Div flex mt20 maxW500>
-											<Col itemsCenter justifyCenter><Div maxH180 imgTag src={member.imageUri} roundedXl shadowLg/></Col>
-											<Col ml30>
-												<Div textSecondary2 textLeft textLg balooB fontBold>
-													{member.name}
-												</Div>
-												<Div textSecondary2 textLeft fontSize11 balooR italic>
-													{member.position}
-												</Div>
-												<Div mt5 textSecondary2 textLeft fontSize12 balooR>
-													{member.specialty}
-												</Div>
-											</Col>
-										</Div>
-									</Div>
-								);
-							})}
+						<Div mt20 data-aos="fade-up">
+							<Teams team={team} locale={locale} isTablet={isTablet}/>
 						</Div>
 						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 mb30 data-aos="fade-up">
 							FAQs
 						</Div>
+						</motion.div>
 						<Div maxW={900} px40 mxAuto data-aos="fade-up">
-							{faqs(locale).map(({ question, answer, image }, index) => {
-								return <Faq key={index} question={question} answer={answer} image={image} isTablet={false} />;
-							})}
+							<FaqList locale={locale} faqs={faqs} isTablet={isTablet}/>
 						</Div>
 						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 data-aos="fade-up">
@@ -536,6 +472,8 @@ const Index: NextPage = () => {
 					<Footer />
 				</Div>
 			</Div>
+			</motion.div>
+			</LayoutGroup>
 		</Div>
 	);
 };

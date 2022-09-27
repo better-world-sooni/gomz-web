@@ -46,11 +46,13 @@ const images = {
 			feed:{
 				head:"/images/appDrafts/draft2/feedhead.png",
 				content:"/images/appDrafts/draft2/feedcontent.png",
+				contentMobile:"/images/appDrafts/draft2/feedcontentMobile.png",
 			},
 			profile:{
 				head1:"/images/appDrafts/draft2/profilehead1.png",
 				head2:"/images/appDrafts/draft2/profilehead2.png",
 				content:"/images/appDrafts/draft2/profilecontent.png",
+				contentMobile:"/images/appDrafts/draft2/profilecontentMobile.png",
 			},
 		}
 	},
