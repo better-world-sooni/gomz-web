@@ -36,6 +36,7 @@ import ReadStroy from "src/components/common/readstory";
 import UseTimeButton from "src/components/common/useTimeButton";
 import GotoBetterWorldButton from "src/components/common/BetterWorldButton";
 import { motion, LayoutGroup } from "framer-motion";
+import Teams from "src/components/common/team";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -221,26 +222,7 @@ const Index: NextPage = () => {
 						</Div>
 					</Div>
 					<Div mt20 data-aos="fade-up">
-						{team(locale).map((member, index) => {
-							return (
-								<Div key={index} inlineBlock>
-									<Div flex mt20 itemsCenter>
-										<Div mx15 w150 imgTag src={member.imageUri} roundedXl shadowLg></Div>
-										<Div flexCol mr15>
-											<Div textSecondary2 textLeft textMd balooB fontBold>
-												{member.name} {"  "}
-												<Div textSecondary2 textLeft fontSize8 balooR italic spanTag>
-													{member.position}
-												</Div>
-											</Div>
-											<Div mt5 textSecondary2 textLeft fontSize10 balooR>
-												{member.specialty}
-											</Div>
-										</Div>
-									</Div>
-								</Div>
-							);
-						})}
+						<Teams team={team} locale={locale} isTablet={isTablet}/>
 					</Div>
 					<EmptyBlock h={100} />
 					<Div textCenter textWhite fontSize36 mb30 data-aos="fade-up">
@@ -459,27 +441,8 @@ const Index: NextPage = () => {
 								</Div>
 							</Div>
 						</Div>
-						<Div mt20 data-aos="fade-up" grid gridCols2 gapX={30} gapY={30}>
-							{team(locale).map((member, index) => {
-								return (
-									<Div key={index} inlineBlock mx30>
-										<Div flex mt20 maxW500>
-											<Col itemsCenter justifyCenter><Div maxH180 imgTag src={member.imageUri} roundedXl shadowLg/></Col>
-											<Col ml30>
-												<Div textSecondary2 textLeft textLg balooB fontBold>
-													{member.name}
-												</Div>
-												<Div textSecondary2 textLeft fontSize11 balooR italic>
-													{member.position}
-												</Div>
-												<Div mt5 textSecondary2 textLeft fontSize12 balooR>
-													{member.specialty}
-												</Div>
-											</Col>
-										</Div>
-									</Div>
-								);
-							})}
+						<Div mt20 data-aos="fade-up">
+							<Teams team={team} locale={locale} isTablet={isTablet}/>
 						</Div>
 						<EmptyBlock h={160} />
 						<Div textCenter textWhite fontSize52 mb30 data-aos="fade-up">
