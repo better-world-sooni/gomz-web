@@ -33,6 +33,8 @@ import { Faq } from "src/components/Faq";
 import { FaArrowsAlt, FaDirections, FaDiscord, FaLink, FaLocationArrow } from "react-icons/fa";
 import BWappDrafts from "src/components/common/drafts";
 import ReadStroy from "src/components/common/readstory";
+import UseTimeButton from "src/components/common/useTimeButton";
+import GotoBetterWorldButton from "src/components/common/BetterWorldButton";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -52,7 +54,7 @@ const Index: NextPage = () => {
 	const { whitelisted, amountMinted, balance } = useAddressState({
 		kaikas,
 	});
-
+	const {MotionButton:MotionButtonTimer} = UseTimeButton(true)
 	if (isTablet) {
 		return (
 			<Div relative overflowHidden>
@@ -84,6 +86,7 @@ const Index: NextPage = () => {
 							</Div>
 							<EmptyBlock h={20} />
 							<Div flex justifyCenter>
+								<MotionButtonTimer>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -105,6 +108,7 @@ const Index: NextPage = () => {
 									<Div imgTag src={IMAGES.twinkle} h20></Div>
 									<Div spanTag>Apply for 2nd OG</Div>
 								</Div>
+								</MotionButtonTimer>
 							</Div>
 						</Div>
 					</Div>
@@ -153,27 +157,7 @@ const Index: NextPage = () => {
 								</Div>
 								<EmptyBlock h={30} />
 								<Div flex justifyCenter mt5>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgSecondary
-										roundedFull
-										px30
-										py8
-										fontSize18
-										textWhite
-										borderBlack
-										border2
-										aTag
-										href={"https://www.betterworldapp.io"}
-										cursorPointer
-										flex
-										gapX={10}
-										itemsCenter
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>	
-										<FaLocationArrow></FaLocationArrow>
-										<Div> Go to BetterWorld</Div>
-									</Div>
+									<GotoBetterWorldButton isTablet={isTablet}/>
 								</Div>
 							</Div>
 					<EmptyBlock h={100} />
@@ -332,6 +316,7 @@ const Index: NextPage = () => {
 							/>
 						) : (
 							<Div flex justifyCenter>
+								<MotionButtonTimer>
 								<Div
 									clx={"group transition hover:bg-primary-light"}
 									bgSecondary
@@ -352,6 +337,7 @@ const Index: NextPage = () => {
 									<Div imgTag src={IMAGES.twinkle} h25></Div>
 									<Div>MINT</Div>
 								</Div>
+								</MotionButtonTimer>
 							</Div>
 						)}
 						</Div>
@@ -408,27 +394,7 @@ const Index: NextPage = () => {
 								{wording.index.BetterWorld[locale]}
 								</Div>
 								<Div flex justifyCenter mt30>
-									<Div
-										clx={"group transition hover:bg-primary-light"}
-										bgSecondary
-										roundedFull
-										px30
-										py8
-										fontSize23
-										textWhite
-										borderBlack
-										border2
-										aTag
-										href={"https://www.betterworldapp.io"}
-										cursorPointer
-										flex
-										gapX={10}
-										itemsCenter
-										style={{ boxShadow: "3px 3px 0px rgba(0, 0, 0, 1.0)" }}
-									>	
-										<FaLocationArrow></FaLocationArrow>
-										<Div> Go to BetterWorld</Div>
-									</Div>
+								<GotoBetterWorldButton isTablet={isTablet}/>
 								</Div>
 							</Div>
 						</Div>

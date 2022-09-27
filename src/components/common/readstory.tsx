@@ -1,7 +1,8 @@
 import Div from "src/components/Div";
 import { IMAGES } from "src/modules/images";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import UseTimeButton from "./useTimeButton";
 
 const UseScrollProgress = (isTablet) => {
 	const ref = useRef(null);
@@ -14,9 +15,11 @@ const UseScrollProgress = (isTablet) => {
 	return ({ref, scrollProgress, opacity})
 }
 
+
+
 export default function ReadStroy({isTablet, handleClickReadStory}) {
-    const [hover, setHover] = useState(false)
     const {ref, scrollProgress, opacity} = UseScrollProgress(isTablet)
+    const {MotionButton} = UseTimeButton(true)
     return (
         <Div
         data-aos="fade-up" 
@@ -25,8 +28,6 @@ export default function ReadStroy({isTablet, handleClickReadStory}) {
         roundedLg
         flex
         h150={isTablet}
-        onMouseEnter={()=>setHover(true)}
-        onMouseLeave={()=>setHover(false)}
         onClick={handleClickReadStory}
         cursorPointer
         overflowHidden
@@ -53,6 +54,7 @@ export default function ReadStroy({isTablet, handleClickReadStory}) {
                 It&apos;s something to be proud of. */}
             </Div>
             <Div flex mt10>
+                <MotionButton>
                 <Div
                     clx={"group transition hover:bg-primary-light"}
                     bgPrimary
@@ -70,6 +72,7 @@ export default function ReadStroy({isTablet, handleClickReadStory}) {
                 >
                     READ THE STORY
                 </Div>
+                </MotionButton>
             </Div>
         </Div>
     </Div>
