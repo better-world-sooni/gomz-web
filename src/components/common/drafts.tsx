@@ -80,7 +80,7 @@ const SplashDraft = ({iPhoneWidth, isTablet, showTime}) => {
 					<Div absolute _translateY1over2 _translateX1over2><motion.div style={{width:"100%", height:"100%", scale:scaleBack}}><Div imgTag src={IMAGES.appDrafts.draft1.bwLogo1}/></motion.div></Div>
 					<Div absolute _translateY1over2 _translateX1over2><motion.div style={{width:"100%", height:"100%", scale:scaleFront}}><Div imgTag src={IMAGES.appDrafts.draft1.bwLogo2}/></motion.div></Div>
 				</Div>
-				<motion.div style={{position:"relative", opacity:scrollYProgress}}><Div maxH={10} maxH15={!isTablet} imgTag src={IMAGES.appDrafts.draft1.bwWord}/></motion.div>
+				<motion.div style={{position:"relative", opacity:scrollYProgress, top:isTablet ? -10:0}}><Div maxH={10} maxH15={!isTablet} imgTag src={IMAGES.appDrafts.draft1.bwWord}/></motion.div>
 			</Div>
 		}/>
 	)
@@ -149,11 +149,11 @@ const SocialDraft = ({iPhoneWidth, isTablet, showTime}) => {
 			<Div ref={ref} absolute wFull hFull bgWhite>
 				<>
 					<motion.div animate={draft2.show(changeDraft, true).animate} transition={draft2.show(changeDraft, 0).transition} style={{position:'absolute', width:"100%", height:"100%"}}>
-						<ContentImage scrollProgress={scrollProgress} animate={draft2.hover.feed.animate} transition={draft2.hover.feed.transition} src={IMAGES.appDrafts.draft2.feed.content}/>
+						<ContentImage scrollProgress={scrollProgress} animate={draft2.hover.feed.animate} transition={draft2.hover.feed.transition} src={isTablet ? IMAGES.appDrafts.draft2.feed.contentMobile:IMAGES.appDrafts.draft2.feed.content}/>
 						<ContentImage src={IMAGES.appDrafts.draft2.feed.head}/>
 					</motion.div>
 					<motion.div animate={draft2.show(changeDraft, false).animate} transition={draft2.show(changeDraft, 0).transition} style={{position:'absolute', width:"100%", height:"100%"}}>
-						<ContentImage scrollProgress={scrollProgress} animate={draft2.hover.profile.content.animate} transition={draft2.hover.profile.content.transition} src={IMAGES.appDrafts.draft2.profile.content}/>
+						<ContentImage scrollProgress={scrollProgress} animate={draft2.hover.profile.content.animate} transition={draft2.hover.profile.content.transition} src={isTablet ? IMAGES.appDrafts.draft2.profile.contentMobile: IMAGES.appDrafts.draft2.profile.content}/>
 						<ContentImage src={IMAGES.appDrafts.draft2.profile.head1}/>
 						<motion.div style={{position:'absolute', width:"100%", height:"100%", opacity:opacity}}>
 							<Div wFull imgTag src={IMAGES.appDrafts.draft2.profile.head2}></Div>
