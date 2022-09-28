@@ -37,6 +37,7 @@ import UseTimeButton from "src/components/common/useTimeButton";
 import GotoBetterWorldButton from "src/components/common/BetterWorldButton";
 import { motion, LayoutGroup } from "framer-motion";
 import Teams from "src/components/common/team";
+import { IntroduceWebeMobile, IntroduceWebe} from "src/components/common/IntroduceWebe";
 
 const Index: NextPage = () => {
 	const isTablet = useIsTablet();
@@ -120,27 +121,7 @@ const Index: NextPage = () => {
 				<Div style={{ background: "linear-gradient(180deg, #37315A 0%, #413F70 72%, rgb(102, 129, 197) 100%)" }} relative>
 					<motion.div layout transition={{duration:0.3}}>
 					<EmptyBlock h={100} />
-					<Div textWhite fontSize36 leadingNone data-aos="fade-up" px30>
-						We Be
-						<Div spanTag textSecondary>
-							{" "}
-							Weird, Different, and Free.
-						</Div>
-					</Div>
-					<EmptyBlock h={30} />
-					<Div fontSize15 balooR px30 mt5 data-aos="fade-up">
-						{wording.story.index.value[locale]}
-					</Div>
-					<EmptyBlock h={30} />
-					<Div grid gridCols4 gapX={20} gapY={15} px30 data-aos="fade-up">
-						{new Array(12).fill(null).map((_, index) => {
-							return (
-								<Div key={index} inlineBlock>
-									<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg></Div>
-								</Div>
-							);
-						})}
-					</Div>
+					<IntroduceWebeMobile wording={wording} locale={locale}/>
 					<EmptyBlock h={100} />
 					<Div px15>
 						<ReadStroy isTablet={isTablet} handleClickReadStory={handleClickReadStory}/>
@@ -347,30 +328,7 @@ const Index: NextPage = () => {
 					<Div maxW={1150} mxAuto>
 						<motion.div layout transition={{duration:0.3}}>
 						<EmptyBlock h={160} />
-						<Div flex gapX={50} itemsCenter data-aos="fade-up">
-							<Div grid gridCols3 gapX={20} gapY={20}>
-								{new Array(9).fill(null).map((_, index) => {
-									return (
-										<Div key={index} inlineBlock>
-											<Div imgTag src={IMAGES.examplePfp[index + 1]} roundedLg shadowLg w100 h100></Div>
-										</Div>
-									);
-								})}
-							</Div>
-
-							<Div flex1>
-								<Div textWhite fontSize52 leadingNone>
-									We Be
-									<Div spanTag textSecondary>
-										{" "}
-										Weird,<br></br> Different, and Free.
-									</Div>
-								</Div>
-								<Div fontSize18 balooR mt30>
-									{wording.story.index.value[locale]}
-								</Div>
-							</Div>
-						</Div>
+						<IntroduceWebe wording={wording} locale={locale}/>
 						<EmptyBlock h={160} />
 						<ReadStroy isTablet={isTablet} handleClickReadStory={handleClickReadStory}/>
 						<EmptyBlock h={160} />
