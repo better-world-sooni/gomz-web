@@ -85,7 +85,7 @@ const Index: NextPage = () => {
                     {" "}
                     BetterWorld
                   </Div>
-                  , the Ultimate Playground for Your Web 3.0 Identities.{" "}
+                  -the Ultimate App for Your Web 3.0 Community{" "}
                 </Div>
               </Div>
               <EmptyBlock h={20} />
@@ -268,7 +268,7 @@ const Index: NextPage = () => {
                       {" "}
                       BetterWorld
                     </Div>
-                    , the Ultimate Playground for Your Web 3.0 Identities.{" "}
+                    -the Ultimate App for Your Web 3.0 Community{" "}
                   </Div>
                 )}
               </Div>
