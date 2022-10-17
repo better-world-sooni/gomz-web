@@ -38,6 +38,7 @@ import GotoBetterWorldButton from "src/components/common/BetterWorldButton";
 import { motion, LayoutGroup } from "framer-motion";
 import Teams from "src/components/common/team";
 import { IntroduceWebeMobile, IntroduceWebe } from "src/components/common/IntroduceWebe";
+import LoadMap from "src/components/common/loadmap";
 
 const Index: NextPage = () => {
   const isTablet = useIsTablet();
@@ -149,7 +150,7 @@ const Index: NextPage = () => {
                     <GotoBetterWorldButton isTablet={isTablet} />
                   </Div>
                 </Div>
-                <EmptyBlock h={100} />
+                <LoadMap isTablet={isTablet} />
                 <Div textCenter textWhite fontSize36 data-aos="fade-up">
                   Partnered with<br></br>
                   <Div spanTag textSecondary>
@@ -340,8 +341,7 @@ const Index: NextPage = () => {
                       </Div>
                     </Div>
                   </Div>
-
-                  <EmptyBlock h={160} />
+                  <LoadMap isTablet={isTablet} />
                   <Div textCenter textWhite fontSize52 data-aos="fade-up">
                     Partnered with{" "}
                     <Div spanTag textSecondary>
