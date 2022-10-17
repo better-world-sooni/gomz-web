@@ -36,7 +36,7 @@ const images = {
   bwpreview2: "/images/bwpreview2.png",
   webeBetterworld: "/images/webeBetterworld.png",
   iphon13: "/images/iphone13_pro.png",
-  journey2: "/images/journey2.png",
+  journey2: { ko: "/images/journey_ko.png", en: "/images/journey_en.png" },
   appDrafts: {
     draft1: {
       bwLogo1: "/images/appDrafts/draft1/bwLogo_1.png",

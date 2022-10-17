@@ -48,7 +48,7 @@ const TeamsDesktop = ({ team, locale }) => {
                 <Div textSecondary2 textLeft fontSize11 balooR italic>
                   {member.position}
                 </Div>
-                <Div mt5 textSecondary2 textLeft fontSize12 balooR>
+                <Div mt5 textSecondary2 textLeft fontSize12 balooR breakAll>
                   {member.specialty}
                 </Div>
               </Col>

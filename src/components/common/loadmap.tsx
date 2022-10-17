@@ -13,7 +13,7 @@ const UseScrollProgress = (isTablet) => {
   return { ref, scrollProgress };
 };
 
-export default function LoadMap({ isTablet }) {
+export default function LoadMap({ isTablet, locale }) {
   const { ref, scrollProgress } = UseScrollProgress(isTablet);
   return (
     <Div data-aos="fade-up" mt160 mb160 mt100={isTablet} mb100={isTablet} wFull hScreen={false} flex flexCol justifyCenter>
@@ -24,14 +24,14 @@ export default function LoadMap({ isTablet }) {
         {"'"}s Journey
       </Div>
       {true ? (
-        <Div relative wFull imgTag src={IMAGES.journey2} />
+        <Div relative wFull imgTag src={IMAGES.journey2[locale]} />
       ) : (
         <Div ref={ref} wFull hFull overflowHidden>
           <motion.div
             style={{
               height: "100%",
               width: "100%",
-              backgroundImage: `url(${IMAGES.journey2})`,
+              backgroundImage: `url(${IMAGES.journey2[locale]})`,
               backgroundSize: "cover",
               backgroundPositionX: "center",
               backgroundPositionY: scrollProgress,

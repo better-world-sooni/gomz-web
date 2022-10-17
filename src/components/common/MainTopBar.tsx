@@ -103,33 +103,33 @@ function MainTopBar({ absolute = false }) {
               </Div>
             </Div>
             <Div flex justifyCenter mt20 mx15>
-              {/* <Div
-								flex1
-								flex
-								justifyCenter
-								text2xl
-								textPrimary={locale == LOCALES.KO}
-								textSecondary2={locale != LOCALES.KO}
-								cursorPointer
-								onClick={() => reloadWithLocale(LOCALES.KO)}
-							>
-								KOREAN
-							</Div>
-							<Div flex justifyCenter text2xl textSecondary2>
-								l
-							</Div>
-							<Div
-								flex1
-								flex
-								justifyCenter
-								text2xl
-								textPrimary={locale == LOCALES.EN}
-								textSecondary2={locale != LOCALES.EN}
-								cursorPointer
-								onClick={() => reloadWithLocale(LOCALES.EN)}
-							>
-								ENGLISH
-							</Div> */}
+              <Div
+                flex1
+                flex
+                justifyCenter
+                text2xl
+                textPrimary={locale == LOCALES.KO}
+                textSecondary2={locale != LOCALES.KO}
+                cursorPointer
+                onClick={() => reloadWithLocale(LOCALES.KO)}
+              >
+                KOREAN
+              </Div>
+              <Div flex justifyCenter text2xl textSecondary2>
+                l
+              </Div>
+              <Div
+                flex1
+                flex
+                justifyCenter
+                text2xl
+                textPrimary={locale == LOCALES.EN}
+                textSecondary2={locale != LOCALES.EN}
+                cursorPointer
+                onClick={() => reloadWithLocale(LOCALES.EN)}
+              >
+                ENGLISH
+              </Div>
             </Div>
           </Div>
         )}
@@ -169,31 +169,31 @@ function MainTopBar({ absolute = false }) {
           <Div mx10 textSecondary2 clx={"group transition hover:text-primary-light"} cursorPointer aTag href={"https://instagram.com/weirdbears"}>
             <FaInstagram size={25} />
           </Div>
-          {/* <Div
-						mx10
-						textSm
-						textPrimary={locale == LOCALES.KO}
-						textSecondary2={locale != LOCALES.KO}
-						clx={"group transition hover:text-primary-light"}
-						cursorPointer
-						onClick={() => reloadWithLocale(LOCALES.KO)}
-					>
-						KOR
-					</Div>
-					<Div textSm textSecondary2>
-						l
-					</Div>
-					<Div
-						ml10
-						textSm
-						textPrimary={locale == LOCALES.EN}
-						textSecondary2={locale != LOCALES.EN}
-						clx={"group transition hover:text-primary-light"}
-						cursorPointer
-						onClick={() => reloadWithLocale(LOCALES.EN)}
-					>
-						ENG
-					</Div> */}
+          <Div
+            mx10
+            textSm
+            textPrimary={locale == LOCALES.KO}
+            textSecondary2={locale != LOCALES.KO}
+            clx={"group transition hover:text-primary-light"}
+            cursorPointer
+            onClick={() => reloadWithLocale(LOCALES.KO)}
+          >
+            KOR
+          </Div>
+          <Div textSm textSecondary2>
+            l
+          </Div>
+          <Div
+            ml10
+            textSm
+            textPrimary={locale == LOCALES.EN}
+            textSecondary2={locale != LOCALES.EN}
+            clx={"group transition hover:text-primary-light"}
+            cursorPointer
+            onClick={() => reloadWithLocale(LOCALES.EN)}
+          >
+            ENG
+          </Div>
         </Div>
       </Div>
     </Div>

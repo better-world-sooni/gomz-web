@@ -150,7 +150,7 @@ const Index: NextPage = () => {
                     <GotoBetterWorldButton isTablet={isTablet} />
                   </Div>
                 </Div>
-                <LoadMap isTablet={isTablet} />
+                <LoadMap isTablet={isTablet} locale={locale} />
                 <Div textCenter textWhite fontSize36 data-aos="fade-up">
                   Partnered with<br></br>
                   <Div spanTag textSecondary>
@@ -341,7 +341,7 @@ const Index: NextPage = () => {
                       </Div>
                     </Div>
                   </Div>
-                  <LoadMap isTablet={isTablet} />
+                  <LoadMap isTablet={isTablet} locale={locale} />
                   <Div textCenter textWhite fontSize52 data-aos="fade-up">
                     Partnered with{" "}
                     <Div spanTag textSecondary>

@@ -5,7 +5,16 @@ import { IMAGES } from "src/modules/images";
 export const wording = {
   index: {
     BetterWorld: {
-      en: <></>,
+      en: (
+        <>
+          BetterWorld is an optimized service for NFT communities that catalogs announcements and events of your favorite projects. It further provides a
+          communal space for holders of various communities to interact through social tabs and messaging features
+          <br />
+          <Div py10 />
+          BetterWorld will continue to change and evlove in line with the blockchain industry. As of today, WeBe will challenge and endeavor after the true
+          BetterWorld.
+        </>
+      ),
       ko: (
         <>
           Better World는 팔로우한 NFT 프로젝트의 새로운 소식들을 공지 탭에서 모아서 한눈에 확인하고, 소셜 탭과 메시지 기능으로 다양한 사람들과 함께 어울릴 수
@@ -430,22 +439,11 @@ export const wording = {
         ),
         en: (
           <Div textSecondary2>
-            We are not literally weird in a sense, we are just, frankly, a little different compared to the majority. WeBe is here to provide more dreams and
-            freedom for everyone. Individuals nowadays, especially those in 20 and 30s, are living breathlessly conforming to society’s expectations: go to a
-            good university, find a stable job, and so on. Yet WeBe asks, “What makes you truly happy?” We believe that our values create wider dimensions of
-            knowledge and innovation.
-            <br />
-            <br />
-            The collection begins with the first 88 OG holders minting on{" "}
-            <Div spanTag textSecondary>
-              July 28, 2022
-            </Div>{" "}
-            and will expand to a total of 8,888 NFTs by the end of the summer. Holders of WeBe will have exclusive access to future products and experiences
-            which are planned and designed in the{" "}
-            <Div spanTag textSecondary>
-              WEirDest
-            </Div>{" "}
-            manner possible.
+            WeBe aims to collectively build a creative space designated and optimized for NFT, FT, DAO, and other Web 3.0 communities. Join WeBe and become part
+            of glorious history of BUIDLing BetterWorld - ‘THE’ social media for the next generation.
+            <Div pt1></Div>
+            <br></br>Members of WeBe community, the pioneers of BetterWorld, will become the shareholders of BetterWorld. In turn, you shall receive dividends
+            generated from BetterWorld as well as WeBe NFT Sales as an incentive
           </Div>
         ),
       },
@@ -459,11 +457,11 @@ export const wording = {
     question: {
       q1: {
         ko: <>PFP 갯수는 왜 8,888 인가요?</>,
-        en: <>Why 8,888?</>,
+        en: <>What’s up with the number “8”?</>,
       },
       q2: {
         ko: <>커뮤니티 활동은 앱활동만 있나요?</>,
-        en: <>Why Klaytn?</>,
+        en: <>Do community activities only occur in BetterWorld?</>,
       },
       q3: {
         ko: <>민팅 날짜와 가격은 어떻게 되나요?</>,
@@ -475,7 +473,7 @@ export const wording = {
       },
       q5: {
         ko: <>WeBe가 Better World의 공동 주주로서 받게 되는 혜택이 있나요?</>,
-        en: <>How can I check WeBe Roadmap?</>,
+        en: <>What are the perks (a.k.a utilities) of becoming a part of WeBe community?</>,
       },
     },
     answer: {
@@ -503,8 +501,8 @@ export const wording = {
         ),
         en: (
           <>
-            With the goal of &quot;NFT popularization&quot; in Korea, WeBe positively judged Klaytn&apos;s domestic outlook considering 1) low gas fee 2) high
-            throughput and speed [Klaytn: 4,000 TPS vs. Ethereum: 15 TPS] and 3) flexible service compatibility within the chain.
+            Not at all. Our vision is to build a ‘better world’ that transcends the boundary between reality and virtuality. Though main community activities
+            are associated with BetterWorld App, we will continue to hold IRL events and other activities (such as the 1st OG party during August 2022).
           </>
         ),
       },
@@ -522,7 +520,7 @@ export const wording = {
         en: (
           <>
             WeBe&apos;s minting process is divided into Private Sale & Public Mint. For private sales, you need to submit a short form in Discord during the
-            application period. our first OGs application starts on July 10th. Details will be notified on Twitter(@webe_weirdbears) and Discord.
+            application period. Our 2nd OGs has just started! Details will be notified on Twitter(@webe_weirdbears) and Discord.
           </>
         ),
       },
@@ -535,16 +533,9 @@ export const wording = {
         ),
         en: (
           <Div>
-            Check out a detailed explanation of our{" "}
-            <Div
-              underline
-              aTag
-              href={"https://www.notion.so/soonilabs/WeBe-Public-Docs-da28665852454d25afe12f9bbc8e2aa0#c7697b1f3e0b44529a563e1d7589228d"}
-              spanTag
-            >
-              JOURNEY
-            </Div>{" "}
-            via Public Docs.
+            As a collective pioneers of BetterWorld, members of WeBe receives certain ‘dividends’ from our community treasury as ‘shareholders’. Such
+            ‘dividends’ will increase as the revenue from BetterWorld App increases. Thus, we truly need community’s engagement and help in order to foster
+            BetterWorld.
           </Div>
         ),
       },
