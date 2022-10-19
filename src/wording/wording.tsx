@@ -7,22 +7,26 @@ export const wording = {
     BetterWorld: {
       en: (
         <>
-          BetterWorld is an optimized service for NFT communities that catalogs announcements and events of your favorite projects. It further provides a
-          communal space for holders of various communities to interact through social tabs and messaging features
+          BetterWorld is an optimized service for NFT communities that catalogs announcements and events of your favorite projects in addition to social tabs
+          and messaging features.
           <br />
           <Div py10 />
-          BetterWorld will continue to change and evlove in line with the blockchain industry. As of today, WeBe will challenge and endeavor after the true
-          BetterWorld.
+          Members of WeBe community, the pioneers of BetterWorld, will become the shareholders of BetterWorld. In turn, you shall receive dividends generated
+          from BetterWorld (50%) and WeBe NFT Sales (30% of primary, 50% of secondary) as an incentive.
+          <br />
+          <Div py10 />
+          WeBe aims to collectively build a creative space designated and optimized for NFT, FT, DAO, and other Web 3.0 communities. Join WeBe and become part
+          of glorious history of BUIDLing BetterWorld - ‘THE’ social media for the next generation.
         </>
       ),
       ko: (
         <>
-          Better World는 팔로우한 NFT 프로젝트의 새로운 소식들을 공지 탭에서 모아서 한눈에 확인하고, 소셜 탭과 메시지 기능으로 다양한 사람들과 함께 어울릴 수
-          있는 NFT 커뮤니티에 최적화된 공간입니다.
+          BetterWorld는 팔로우한 NFT 프로젝트의 새로운 소식들을 공지 탭에서 모아서 한눈에 확인하고, 이벤트를 편리하게 참여하며, 소셜 피드와 메시지 기능으로
+          다양한 홀더들과 함께 어울릴 수 있는 NFT 커뮤니티에 최적화된 웹3.0 플랫폼입니다.
           <br />
           <Div py10 />
-          끊임없이 변화하는 세상에 맞춰 Better World도 계속해서 변화하고 진화해 나갈 것이며 WeBe들과 함께 더 나은 세상이란 어떤 세상인지 고민하고 도전해 나갈
-          것입니다.
+          WeBe는 이런 BetterWorld 플랫폼을 함께 성장시키고, 그 보상으로 플랫폼 전체 수익의 50%를 나누어 배당 받게 됩니다. 플랫폼에 대한 자세한 소개는
+          BetterWorld 홈페이지를 참조해주세요.
         </>
       ),
     },
@@ -432,18 +436,27 @@ export const wording = {
       value: {
         ko: (
           <Div textSecondary2>
-            WeBe는 NFT 커뮤니티 활동에 최적화된 Better World 라는 새로운 공간을 만들고자 합니다. WeBe가 되어 Better World Building의 영광을 함께 하세요.
+            우리 모두 저마다의 색을 가지고 태어난다. 하지만 학교는 몇 살에 졸업하고, 직장은 어떤 곳을 다니며, 결혼은 어떤 나이에 해야한다와 같은 사회의 외침에
+            대답하다 문득 주위를 둘러보면 되려 자신의 색을 표현하는 사람들이 이상하게 여겨지곤한다. 하지만 위비는 그런 이상함을 사랑하는 NFT 커뮤니티다.
             <Div pt1></Div>
-            <br></br>영광의 개척자가 된 WeBe들은 Better World를 함께 일궈나가고 공동 주주가 되어 성공을 함께 나누게 됩니다.
+            <br></br>그리고 WeBe는 이런 이상함이 환영되는 더 나은 세상(BetterWorld)을 원한다. 따라서 WeBe는 함께 BetterWorld를 만들고, 이 곳에서 나만의 이상한
+            정체성을 찾아간다. Will you join our journey?
           </Div>
         ),
         en: (
           <Div textSecondary2>
-            WeBe aims to collectively build a creative space designated and optimized for NFT, FT, DAO, and other Web 3.0 communities. Join WeBe and become part
-            of glorious history of BUIDLing BetterWorld - ‘THE’ social media for the next generation.
+            Everyone has his/her own ‘color’. However, individuals are often regarded “weird” for challenging against the social norms (such as college degree,
+            occupation, marriage). Then we realize that our ‘color’ has faded. WeBe is a NFT community that loves the “weirdness”.
             <Div pt1></Div>
-            <br></br>Members of WeBe community, the pioneers of BetterWorld, will become the shareholders of BetterWorld. In turn, you shall receive dividends
-            generated from BetterWorld as well as WeBe NFT Sales as an incentive
+            <br></br>WeBe yearns for{" "}
+            <Div spanTag fontExtrabold>
+              BetterWorld
+            </Div>{" "}
+            where such “weirdness” can be embraced. Thus, WeBe collectively establishes{" "}
+            <Div spanTag fontExtrabold>
+              BetterWorld
+            </Div>
+            , discovering one’s ‘weird identity’. Will YOU join our journey?
           </Div>
         ),
       },
