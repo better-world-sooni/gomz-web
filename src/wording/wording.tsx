@@ -7,16 +7,17 @@ export const wording = {
     BetterWorld: {
       en: (
         <>
-          BetterWorld is an optimized service for NFT communities that catalogs announcements and events of your favorite projects in addition to social tabs
-          and messaging features.
+          BetterWorld is a Web 3.0 platform optimized for NFT communities that aggregates important announcements and events of your favorite projects in
+          addition to social tabs and messaging features.
           <br />
           <Div py10 />
-          Members of WeBe community, the pioneers of BetterWorld, will become the shareholders of BetterWorld. In turn, you shall receive dividends generated
-          from BetterWorld (50%) and WeBe NFT Sales (30% of primary, 50% of secondary) as an incentive.
+          Members of WeBe community, the pioneers of BetterWorld, will become the builders of BetterWorld. In turn, the holders shall receive WeBe-exclusive
+          benefits in BetterWorld (TBA) and WeBe NFT Sales (30% of primary, 50% of secondary) as an incentive. Please visit BetterWorld website for more
+          details.
           <br />
           <Div py10 />
           WeBe aims to collectively build a creative space designated and optimized for NFT, FT, DAO, and other Web 3.0 communities. Join WeBe and become part
-          of glorious history of BUIDLing BetterWorld - ‘THE’ social media for the next generation.
+          of glorious history of BUIDLing BetterWorld - {"'"}THE{"'"} social media for the next generation.
         </>
       ),
       ko: (
@@ -25,8 +26,8 @@ export const wording = {
           다양한 홀더들과 함께 어울릴 수 있는 NFT 커뮤니티에 최적화된 웹3.0 플랫폼입니다.
           <br />
           <Div py10 />
-          WeBe는 이런 BetterWorld 플랫폼을 함께 성장시키고, 그 보상으로 플랫폼 전체 수익의 50%를 나누어 배당 받게 됩니다. 플랫폼에 대한 자세한 소개는
-          BetterWorld 홈페이지를 참조해주세요.
+          WeBe는 이런 BetterWorld 플랫폼의 Builder로서 함께 성장시키고, 그 보상으로 플랫폼 수익을 통한 다양한 혜택을 누릴 수 있습니다. 플랫폼에 대한 자세한
+          소개는 BetterWorld 홈페이지를 참조해주세요.
         </>
       ),
     },
